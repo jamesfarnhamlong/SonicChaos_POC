@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"SFX_plate_spin",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":3,
+  "compressionQuality":9,
+  "conversionMode":0,
+  "duration":0.0,
+  "exportDir":"",
+  "name":"SFX_plate_spin",
+  "parent":{
+    "name":"Level Objects",
+    "path":"folders/Sounds/Level Objects.yy",
+  },
+  "preload":true,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"SFX_plate_spin",
+  "volume":1.0,
+}

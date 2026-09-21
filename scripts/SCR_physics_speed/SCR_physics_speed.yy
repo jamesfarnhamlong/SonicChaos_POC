@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SCR_physics_speed",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SCR_physics_speed",
+  "parent":{
+    "name":"Physics",
+    "path":"folders/Scripts/Player/Physics.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

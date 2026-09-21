@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SCR_player_view",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SCR_player_view",
+  "parent":{
+    "name":"View",
+    "path":"folders/Scripts/Player/View.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

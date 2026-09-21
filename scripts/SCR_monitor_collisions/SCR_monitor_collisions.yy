@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SCR_monitor_collisions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SCR_monitor_collisions",
+  "parent":{
+    "name":"Monitors",
+    "path":"folders/Scripts/Monitors.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

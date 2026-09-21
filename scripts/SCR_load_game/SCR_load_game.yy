@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SCR_load_game",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SCR_load_game",
+  "parent":{
+    "name":"Data",
+    "path":"folders/Scripts/Data.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

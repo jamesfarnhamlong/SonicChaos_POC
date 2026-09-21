@@ -1,0 +1,14 @@
+{
+  "$GMTimeline":"",
+  "%Name":"TIME_tails_fly",
+  "momentList":[
+    {"$GMMoment":"","%Name":"","evnt":{"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":110,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},"moment":110,"name":"","resourceType":"GMMoment","resourceVersion":"2.0",},
+  ],
+  "name":"TIME_tails_fly",
+  "parent":{
+    "name":"Timelines",
+    "path":"folders/Timelines.yy",
+  },
+  "resourceType":"GMTimeline",
+  "resourceVersion":"2.0",
+}

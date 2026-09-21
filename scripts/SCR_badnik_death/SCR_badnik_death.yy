@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SCR_badnik_death",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SCR_badnik_death",
+  "parent":{
+    "name":"Badniks",
+    "path":"folders/Scripts/Badniks.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

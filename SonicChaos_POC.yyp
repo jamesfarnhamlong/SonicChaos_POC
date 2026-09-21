@@ -1,0 +1,3648 @@
+{
+  "$GMProject": "v1",
+  "%Name": "SonicChaos_POC",
+  "AudioGroups": [
+    {
+      "$GMAudioGroup": "v1",
+      "%Name": "audiogroup_default",
+      "exportDir": "",
+      "name": "audiogroup_default",
+      "resourceType": "GMAudioGroup",
+      "resourceVersion": "2.0",
+      "targets": -1
+    }
+  ],
+  "configs": {
+    "children": [],
+    "name": "Default"
+  },
+  "defaultScriptType": 1,
+  "Folders": [
+    {
+      "$GMFolder": "",
+      "%Name": "Extensions",
+      "folderPath": "folders/Extensions.yy",
+      "name": "Extensions",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Fonts",
+      "folderPath": "folders/Fonts.yy",
+      "name": "Fonts",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Notes",
+      "folderPath": "folders/Notes.yy",
+      "name": "Notes",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Objects",
+      "folderPath": "folders/Objects.yy",
+      "name": "Objects",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Badniks",
+      "folderPath": "folders/Objects/Badniks.yy",
+      "name": "Badniks",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Collisions",
+      "folderPath": "folders/Objects/Collisions.yy",
+      "name": "Collisions",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Controls",
+      "folderPath": "folders/Objects/Controls.yy",
+      "name": "Controls",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Effects",
+      "folderPath": "folders/Objects/Effects.yy",
+      "name": "Effects",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Level Objects",
+      "folderPath": "folders/Objects/Level Objects.yy",
+      "name": "Level Objects",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Chao Emeralds",
+      "folderPath": "folders/Objects/Level Objects/Chao Emeralds.yy",
+      "name": "Chao Emeralds",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Monitors",
+      "folderPath": "folders/Objects/Level Objects/Monitors.yy",
+      "name": "Monitors",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Plate",
+      "folderPath": "folders/Objects/Level Objects/Plate.yy",
+      "name": "Plate",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Rings",
+      "folderPath": "folders/Objects/Level Objects/Rings.yy",
+      "name": "Rings",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Spring",
+      "folderPath": "folders/Objects/Level Objects/Spring.yy",
+      "name": "Spring",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Menus",
+      "folderPath": "folders/Objects/Menus.yy",
+      "name": "Menus",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Data Select",
+      "folderPath": "folders/Objects/Menus/Data Select.yy",
+      "name": "Data Select",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Slots",
+      "folderPath": "folders/Objects/Menus/Data Select/Slots.yy",
+      "name": "Slots",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Game Over",
+      "folderPath": "folders/Objects/Menus/Game Over.yy",
+      "name": "Game Over",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Opening",
+      "folderPath": "folders/Objects/Menus/Opening.yy",
+      "name": "Opening",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Options",
+      "folderPath": "folders/Objects/Menus/Options.yy",
+      "name": "Options",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Point Counter",
+      "folderPath": "folders/Objects/Menus/Point Counter.yy",
+      "name": "Point Counter",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Title",
+      "folderPath": "folders/Objects/Menus/Title.yy",
+      "name": "Title",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Platforms",
+      "folderPath": "folders/Objects/Platforms.yy",
+      "name": "Platforms",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Fake wall extended",
+      "folderPath": "folders/Objects/Platforms/Fake wall extended.yy",
+      "name": "Fake wall extended",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Player",
+      "folderPath": "folders/Objects/Player.yy",
+      "name": "Player",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Characters",
+      "folderPath": "folders/Objects/Player/Characters.yy",
+      "name": "Characters",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Extended",
+      "folderPath": "folders/Objects/Player/Characters/Extended.yy",
+      "name": "Extended",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Powers",
+      "folderPath": "folders/Objects/Player/Powers.yy",
+      "name": "Powers",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "System",
+      "folderPath": "folders/Objects/System.yy",
+      "name": "System",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Paths",
+      "folderPath": "folders/Paths.yy",
+      "name": "Paths",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Rooms",
+      "folderPath": "folders/Rooms.yy",
+      "name": "Rooms",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Menus",
+      "folderPath": "folders/Rooms/Menus.yy",
+      "name": "Menus",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Zones",
+      "folderPath": "folders/Rooms/Zones.yy",
+      "name": "Zones",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Scripts",
+      "folderPath": "folders/Scripts.yy",
+      "name": "Scripts",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Badniks",
+      "folderPath": "folders/Scripts/Badniks.yy",
+      "name": "Badniks",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "compatibility",
+      "folderPath": "folders/Scripts/compatibility.yy",
+      "name": "compatibility",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "action",
+      "folderPath": "folders/Scripts/compatibility/action.yy",
+      "name": "action",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "instance",
+      "folderPath": "folders/Scripts/compatibility/instance.yy",
+      "name": "instance",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "object",
+      "folderPath": "folders/Scripts/compatibility/object.yy",
+      "name": "object",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "view",
+      "folderPath": "folders/Scripts/compatibility/view.yy",
+      "name": "view",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Data",
+      "folderPath": "folders/Scripts/Data.yy",
+      "name": "Data",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Monitors",
+      "folderPath": "folders/Scripts/Monitors.yy",
+      "name": "Monitors",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Player",
+      "folderPath": "folders/Scripts/Player.yy",
+      "name": "Player",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Physics",
+      "folderPath": "folders/Scripts/Player/Physics.yy",
+      "name": "Physics",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Sprites",
+      "folderPath": "folders/Scripts/Player/Sprites.yy",
+      "name": "Sprites",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "View",
+      "folderPath": "folders/Scripts/Player/View.yy",
+      "name": "View",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "System",
+      "folderPath": "folders/Scripts/System.yy",
+      "name": "System",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Sequences",
+      "folderPath": "folders/Sequences.yy",
+      "name": "Sequences",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Shaders",
+      "folderPath": "folders/Shaders.yy",
+      "name": "Shaders",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Sounds",
+      "folderPath": "folders/Sounds.yy",
+      "name": "Sounds",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Level Objects",
+      "folderPath": "folders/Sounds/Level Objects.yy",
+      "name": "Level Objects",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Platforms",
+      "folderPath": "folders/Sounds/Platforms.yy",
+      "name": "Platforms",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Player",
+      "folderPath": "folders/Sounds/Player.yy",
+      "name": "Player",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "System",
+      "folderPath": "folders/Sounds/System.yy",
+      "name": "System",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Sprites",
+      "folderPath": "folders/Sprites.yy",
+      "name": "Sprites",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Badniks",
+      "folderPath": "folders/Sprites/Badniks.yy",
+      "name": "Badniks",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Collisions",
+      "folderPath": "folders/Sprites/Collisions.yy",
+      "name": "Collisions",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Effects",
+      "folderPath": "folders/Sprites/Effects.yy",
+      "name": "Effects",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Fonts",
+      "folderPath": "folders/Sprites/Fonts.yy",
+      "name": "Fonts",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Icons",
+      "folderPath": "folders/Sprites/Icons.yy",
+      "name": "Icons",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Level Objects",
+      "folderPath": "folders/Sprites/Level Objects.yy",
+      "name": "Level Objects",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Chao Emeralds",
+      "folderPath": "folders/Sprites/Level Objects/Chao Emeralds.yy",
+      "name": "Chao Emeralds",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Monitors",
+      "folderPath": "folders/Sprites/Level Objects/Monitors.yy",
+      "name": "Monitors",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Plate",
+      "folderPath": "folders/Sprites/Level Objects/Plate.yy",
+      "name": "Plate",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Rings",
+      "folderPath": "folders/Sprites/Level Objects/Rings.yy",
+      "name": "Rings",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Spring",
+      "folderPath": "folders/Sprites/Level Objects/Spring.yy",
+      "name": "Spring",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Menus",
+      "folderPath": "folders/Sprites/Menus.yy",
+      "name": "Menus",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Data Select",
+      "folderPath": "folders/Sprites/Menus/Data Select.yy",
+      "name": "Data Select",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Game Over",
+      "folderPath": "folders/Sprites/Menus/Game Over.yy",
+      "name": "Game Over",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Opening",
+      "folderPath": "folders/Sprites/Menus/Opening.yy",
+      "name": "Opening",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Point Counter",
+      "folderPath": "folders/Sprites/Menus/Point Counter.yy",
+      "name": "Point Counter",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Title",
+      "folderPath": "folders/Sprites/Menus/Title.yy",
+      "name": "Title",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Platforms",
+      "folderPath": "folders/Sprites/Platforms.yy",
+      "name": "Platforms",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Player",
+      "folderPath": "folders/Sprites/Player.yy",
+      "name": "Player",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Knuckles",
+      "folderPath": "folders/Sprites/Player/Knuckles.yy",
+      "name": "Knuckles",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Normal",
+      "folderPath": "folders/Sprites/Player/Knuckles/Normal.yy",
+      "name": "Normal",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Super",
+      "folderPath": "folders/Sprites/Player/Knuckles/Super.yy",
+      "name": "Super",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Powers",
+      "folderPath": "folders/Sprites/Player/Powers.yy",
+      "name": "Powers",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Sonic",
+      "folderPath": "folders/Sprites/Player/Sonic.yy",
+      "name": "Sonic",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Normal",
+      "folderPath": "folders/Sprites/Player/Sonic/Normal.yy",
+      "name": "Normal",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Super",
+      "folderPath": "folders/Sprites/Player/Sonic/Super.yy",
+      "name": "Super",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Tails",
+      "folderPath": "folders/Sprites/Player/Tails.yy",
+      "name": "Tails",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Normal",
+      "folderPath": "folders/Sprites/Player/Tails/Normal.yy",
+      "name": "Normal",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Super",
+      "folderPath": "folders/Sprites/Player/Tails/Super.yy",
+      "name": "Super",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "tilesets",
+      "folderPath": "folders/Sprites/tilesets.yy",
+      "name": "tilesets",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Zone 1",
+      "folderPath": "folders/Sprites/tilesets/Zone 1.yy",
+      "name": "Zone 1",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Touch Buttons",
+      "folderPath": "folders/Sprites/Touch Buttons.yy",
+      "name": "Touch Buttons",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Tile Sets",
+      "folderPath": "folders/Tile Sets.yy",
+      "name": "Tile Sets",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Zone 1",
+      "folderPath": "folders/Tile Sets/Zone 1.yy",
+      "name": "Zone 1",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Timelines",
+      "folderPath": "folders/Timelines.yy",
+      "name": "Timelines",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    }
+  ],
+  "ForcedPrefabProjectReferences": [],
+  "IncludedFiles": [],
+  "isEcma": false,
+  "LibraryEmitters": [],
+  "MetaData": {
+    "IDEVersion": "2026.0.0.16"
+  },
+  "name": "SonicChaos_POC",
+  "resources": [
+    {"id": {"name": "SCR_chaos_core", "path": "scripts/SCR_chaos_core/SCR_chaos_core.yy"}},
+    {"id": {"name": "SCR_chaos_core_data", "path": "scripts/SCR_chaos_core_data/SCR_chaos_core_data.yy"}},
+    {"id": {"name": "SCR_chaos_adapter", "path": "scripts/SCR_chaos_adapter/SCR_chaos_adapter.yy"}},
+
+    {
+      "id": {
+        "name": "compatibility_report_190926_1658555855",
+        "path": "notes/compatibility_report_190926_1658555855/compatibility_report_190926_1658555855.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "notes",
+        "path": "notes/notes/notes.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_badnik_1",
+        "path": "objects/OBJ_badnik_1/OBJ_badnik_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_badniks",
+        "path": "objects/OBJ_badniks/OBJ_badniks.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chao_emerald_1",
+        "path": "objects/OBJ_chao_emerald_1/OBJ_chao_emerald_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chao_emerald_2",
+        "path": "objects/OBJ_chao_emerald_2/OBJ_chao_emerald_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chao_emerald_3",
+        "path": "objects/OBJ_chao_emerald_3/OBJ_chao_emerald_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chao_emerald_4",
+        "path": "objects/OBJ_chao_emerald_4/OBJ_chao_emerald_4.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chao_emerald_5",
+        "path": "objects/OBJ_chao_emerald_5/OBJ_chao_emerald_5.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chao_emerald_6",
+        "path": "objects/OBJ_chao_emerald_6/OBJ_chao_emerald_6.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chao_emerald_7",
+        "path": "objects/OBJ_chao_emerald_7/OBJ_chao_emerald_7.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_collision_death",
+        "path": "objects/OBJ_collision_death/OBJ_collision_death.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_collision_floor_edge",
+        "path": "objects/OBJ_collision_floor_edge/OBJ_collision_floor_edge.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_collision_floor_ghost",
+        "path": "objects/OBJ_collision_floor_ghost/OBJ_collision_floor_ghost.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_collision_floor",
+        "path": "objects/OBJ_collision_floor/OBJ_collision_floor.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_collision_platforms",
+        "path": "objects/OBJ_collision_platforms/OBJ_collision_platforms.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_collision_ramp_1_ghost",
+        "path": "objects/OBJ_collision_ramp_1_ghost/OBJ_collision_ramp_1_ghost.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_collision_ramp_1",
+        "path": "objects/OBJ_collision_ramp_1/OBJ_collision_ramp_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_collision_ramp_2_ghost",
+        "path": "objects/OBJ_collision_ramp_2_ghost/OBJ_collision_ramp_2_ghost.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_collision_ramp_2",
+        "path": "objects/OBJ_collision_ramp_2/OBJ_collision_ramp_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_collision_roof",
+        "path": "objects/OBJ_collision_roof/OBJ_collision_roof.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_collision_wall_edge",
+        "path": "objects/OBJ_collision_wall_edge/OBJ_collision_wall_edge.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_collision_wall",
+        "path": "objects/OBJ_collision_wall/OBJ_collision_wall.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_collision_water",
+        "path": "objects/OBJ_collision_water/OBJ_collision_water.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_count_lifes",
+        "path": "objects/OBJ_count_lifes/OBJ_count_lifes.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_count_rings",
+        "path": "objects/OBJ_count_rings/OBJ_count_rings.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_count_time",
+        "path": "objects/OBJ_count_time/OBJ_count_time.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_effect_fade_in",
+        "path": "objects/OBJ_effect_fade_in/OBJ_effect_fade_in.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_effect_fade_out",
+        "path": "objects/OBJ_effect_fade_out/OBJ_effect_fade_out.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_emerald_stars",
+        "path": "objects/OBJ_emerald_stars/OBJ_emerald_stars.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_explosion_silent",
+        "path": "objects/OBJ_explosion_silent/OBJ_explosion_silent.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_explosion",
+        "path": "objects/OBJ_explosion/OBJ_explosion.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_menu_data_button_del",
+        "path": "objects/OBJ_menu_data_button_del/OBJ_menu_data_button_del.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_menu_data_card_1",
+        "path": "objects/OBJ_menu_data_card_1/OBJ_menu_data_card_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_menu_data_card_2",
+        "path": "objects/OBJ_menu_data_card_2/OBJ_menu_data_card_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_menu_data_card_3",
+        "path": "objects/OBJ_menu_data_card_3/OBJ_menu_data_card_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_menu_data_card_4",
+        "path": "objects/OBJ_menu_data_card_4/OBJ_menu_data_card_4.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_menu_data_card_5",
+        "path": "objects/OBJ_menu_data_card_5/OBJ_menu_data_card_5.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_menu_data_select",
+        "path": "objects/OBJ_menu_data_select/OBJ_menu_data_select.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_menu_game_over",
+        "path": "objects/OBJ_menu_game_over/OBJ_menu_game_over.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_menu_opening",
+        "path": "objects/OBJ_menu_opening/OBJ_menu_opening.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_menu_options",
+        "path": "objects/OBJ_menu_options/OBJ_menu_options.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_menu_point_counter",
+        "path": "objects/OBJ_menu_point_counter/OBJ_menu_point_counter.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_menu_title_options",
+        "path": "objects/OBJ_menu_title_options/OBJ_menu_title_options.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_menu_title",
+        "path": "objects/OBJ_menu_title/OBJ_menu_title.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_monitor_checkpoint",
+        "path": "objects/OBJ_monitor_checkpoint/OBJ_monitor_checkpoint.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_monitor_eggman",
+        "path": "objects/OBJ_monitor_eggman/OBJ_monitor_eggman.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_monitor_invincibility",
+        "path": "objects/OBJ_monitor_invincibility/OBJ_monitor_invincibility.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_monitor_life",
+        "path": "objects/OBJ_monitor_life/OBJ_monitor_life.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_monitor_ring",
+        "path": "objects/OBJ_monitor_ring/OBJ_monitor_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_monitor_shield_flame",
+        "path": "objects/OBJ_monitor_shield_flame/OBJ_monitor_shield_flame.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_monitor_shield_magnet",
+        "path": "objects/OBJ_monitor_shield_magnet/OBJ_monitor_shield_magnet.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_monitor_shield",
+        "path": "objects/OBJ_monitor_shield/OBJ_monitor_shield.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_monitors",
+        "path": "objects/OBJ_monitors/OBJ_monitors.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_pause",
+        "path": "objects/OBJ_pause/OBJ_pause.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_plate",
+        "path": "objects/OBJ_plate/OBJ_plate.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_platform_belt",
+        "path": "objects/OBJ_platform_belt/OBJ_platform_belt.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_platform_bridge",
+        "path": "objects/OBJ_platform_bridge/OBJ_platform_bridge.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_platform_fake_wall_destroy_l_1",
+        "path": "objects/OBJ_platform_fake_wall_destroy_l_1/OBJ_platform_fake_wall_destroy_l_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_platform_fake_wall_destroy_l_2",
+        "path": "objects/OBJ_platform_fake_wall_destroy_l_2/OBJ_platform_fake_wall_destroy_l_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_platform_fake_wall_destroy_r_1",
+        "path": "objects/OBJ_platform_fake_wall_destroy_r_1/OBJ_platform_fake_wall_destroy_r_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_platform_fake_wall_destroy_r_2",
+        "path": "objects/OBJ_platform_fake_wall_destroy_r_2/OBJ_platform_fake_wall_destroy_r_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_platform_fake_wall_solid",
+        "path": "objects/OBJ_platform_fake_wall_solid/OBJ_platform_fake_wall_solid.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_platform_fake_wall",
+        "path": "objects/OBJ_platform_fake_wall/OBJ_platform_fake_wall.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_platform_fall",
+        "path": "objects/OBJ_platform_fall/OBJ_platform_fall.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_platform_left_right",
+        "path": "objects/OBJ_platform_left_right/OBJ_platform_left_right.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_platform_roll",
+        "path": "objects/OBJ_platform_roll/OBJ_platform_roll.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_platform_up_down",
+        "path": "objects/OBJ_platform_up_down/OBJ_platform_up_down.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_player_char_spin",
+        "path": "objects/OBJ_player_char_spin/OBJ_player_char_spin.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_player_char",
+        "path": "objects/OBJ_player_char/OBJ_player_char.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_player_climbing",
+        "path": "objects/OBJ_player_climbing/OBJ_player_climbing.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_player_death",
+        "path": "objects/OBJ_player_death/OBJ_player_death.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_player_lost_a",
+        "path": "objects/OBJ_player_lost_a/OBJ_player_lost_a.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_player_lost_b",
+        "path": "objects/OBJ_player_lost_b/OBJ_player_lost_b.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_player_plate",
+        "path": "objects/OBJ_player_plate/OBJ_player_plate.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_player_super_transform",
+        "path": "objects/OBJ_player_super_transform/OBJ_player_super_transform.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_player",
+        "path": "objects/OBJ_player/OBJ_player.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_power_invincibility",
+        "path": "objects/OBJ_power_invincibility/OBJ_power_invincibility.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_power_shield_flame_jump",
+        "path": "objects/OBJ_power_shield_flame_jump/OBJ_power_shield_flame_jump.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_power_shield_flame",
+        "path": "objects/OBJ_power_shield_flame/OBJ_power_shield_flame.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_power_shield_magnet",
+        "path": "objects/OBJ_power_shield_magnet/OBJ_power_shield_magnet.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_power_shield",
+        "path": "objects/OBJ_power_shield/OBJ_power_shield.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_power_super_stars",
+        "path": "objects/OBJ_power_super_stars/OBJ_power_super_stars.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_ring_big",
+        "path": "objects/OBJ_ring_big/OBJ_ring_big.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_ring_stars",
+        "path": "objects/OBJ_ring_stars/OBJ_ring_stars.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_ring",
+        "path": "objects/OBJ_ring/OBJ_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_spring_1",
+        "path": "objects/OBJ_spring_1/OBJ_spring_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_spring_2",
+        "path": "objects/OBJ_spring_2/OBJ_spring_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_system_save_data",
+        "path": "objects/OBJ_system_save_data/OBJ_system_save_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_system_start",
+        "path": "objects/OBJ_system_start/OBJ_system_start.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_system_zone",
+        "path": "objects/OBJ_system_zone/OBJ_system_zone.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_system",
+        "path": "objects/OBJ_system/OBJ_system.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_virtual_controller_menus",
+        "path": "objects/OBJ_virtual_controller_menus/OBJ_virtual_controller_menus.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_virtual_controller",
+        "path": "objects/OBJ_virtual_controller/OBJ_virtual_controller.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_menu_data_select",
+        "path": "rooms/ROM_menu_data_select/ROM_menu_data_select.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_menu_game_over",
+        "path": "rooms/ROM_menu_game_over/ROM_menu_game_over.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_menu_opening",
+        "path": "rooms/ROM_menu_opening/ROM_menu_opening.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_menu_options",
+        "path": "rooms/ROM_menu_options/ROM_menu_options.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_menu_point_counter",
+        "path": "rooms/ROM_menu_point_counter/ROM_menu_point_counter.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_menu_title",
+        "path": "rooms/ROM_menu_title/ROM_menu_title.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_system_start",
+        "path": "rooms/ROM_system_start/ROM_system_start.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_zone_1",
+        "path": "rooms/ROM_zone_1/ROM_zone_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_zone_2",
+        "path": "rooms/ROM_zone_2/ROM_zone_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "__global_object_depths",
+        "path": "scripts/__global_object_depths/__global_object_depths.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "__init_action",
+        "path": "scripts/__init_action/__init_action.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "__init_global",
+        "path": "scripts/__init_global/__init_global.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "__init_view",
+        "path": "scripts/__init_view/__init_view.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "__view_get",
+        "path": "scripts/__view_get/__view_get.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "__view_set_internal",
+        "path": "scripts/__view_set_internal/__view_set_internal.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "__view_set",
+        "path": "scripts/__view_set/__view_set.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "action_kill_object",
+        "path": "scripts/action_kill_object/action_kill_object.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "instance_create",
+        "path": "scripts/instance_create/instance_create.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "object_get_depth",
+        "path": "scripts/object_get_depth/object_get_depth.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_badnik_death",
+        "path": "scripts/SCR_badnik_death/SCR_badnik_death.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_buttons",
+        "path": "scripts/SCR_buttons/SCR_buttons.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_load_cards",
+        "path": "scripts/SCR_load_cards/SCR_load_cards.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_load_game",
+        "path": "scripts/SCR_load_game/SCR_load_game.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_monitor_collisions",
+        "path": "scripts/SCR_monitor_collisions/SCR_monitor_collisions.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_physics_break_jump",
+        "path": "scripts/SCR_physics_break_jump/SCR_physics_break_jump.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_physics_break",
+        "path": "scripts/SCR_physics_break/SCR_physics_break.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_physics_jump_objects",
+        "path": "scripts/SCR_physics_jump_objects/SCR_physics_jump_objects.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_physics_ramp_spin",
+        "path": "scripts/SCR_physics_ramp_spin/SCR_physics_ramp_spin.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_physics_ramp",
+        "path": "scripts/SCR_physics_ramp/SCR_physics_ramp.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_physics_speed",
+        "path": "scripts/SCR_physics_speed/SCR_physics_speed.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_physics_spring",
+        "path": "scripts/SCR_physics_spring/SCR_physics_spring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_physics",
+        "path": "scripts/SCR_physics/SCR_physics.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_player_sprites_knuckles",
+        "path": "scripts/SCR_player_sprites_knuckles/SCR_player_sprites_knuckles.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_player_sprites_sonic",
+        "path": "scripts/SCR_player_sprites_sonic/SCR_player_sprites_sonic.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_player_sprites_tails",
+        "path": "scripts/SCR_player_sprites_tails/SCR_player_sprites_tails.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_player_sprites",
+        "path": "scripts/SCR_player_sprites/SCR_player_sprites.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_player_view",
+        "path": "scripts/SCR_player_view/SCR_player_view.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_save_game",
+        "path": "scripts/SCR_save_game/SCR_save_game.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_screen",
+        "path": "scripts/SCR_screen/SCR_screen.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_special_stage_goto",
+        "path": "scripts/SCR_special_stage_goto/SCR_special_stage_goto.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_zone_goto",
+        "path": "scripts/SCR_zone_goto/SCR_zone_goto.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SFX_bumper",
+        "path": "sounds/SFX_bumper/SFX_bumper.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SFX_explosion",
+        "path": "sounds/SFX_explosion/SFX_explosion.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SFX_life",
+        "path": "sounds/SFX_life/SFX_life.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SFX_plate_action",
+        "path": "sounds/SFX_plate_action/SFX_plate_action.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SFX_plate_spin",
+        "path": "sounds/SFX_plate_spin/SFX_plate_spin.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SFX_platform_bridge",
+        "path": "sounds/SFX_platform_bridge/SFX_platform_bridge.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SFX_platform_destroy",
+        "path": "sounds/SFX_platform_destroy/SFX_platform_destroy.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SFX_ring",
+        "path": "sounds/SFX_ring/SFX_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SFX_score1",
+        "path": "sounds/SFX_score1/SFX_score1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SFX_score2",
+        "path": "sounds/SFX_score2/SFX_score2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SFX_sonic_break",
+        "path": "sounds/SFX_sonic_break/SFX_sonic_break.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SFX_sonic_jump",
+        "path": "sounds/SFX_sonic_jump/SFX_sonic_jump.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SFX_sonic_lost_rings",
+        "path": "sounds/SFX_sonic_lost_rings/SFX_sonic_lost_rings.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SFX_sonic_spin_dash",
+        "path": "sounds/SFX_sonic_spin_dash/SFX_sonic_spin_dash.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SFX_sonic_spin",
+        "path": "sounds/SFX_sonic_spin/SFX_sonic_spin.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SFX_sonic_spring",
+        "path": "sounds/SFX_sonic_spring/SFX_sonic_spring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SFX_sonic_water",
+        "path": "sounds/SFX_sonic_water/SFX_sonic_water.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SND_plate_finish",
+        "path": "sounds/SND_plate_finish/SND_plate_finish.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SND_power_invincibility",
+        "path": "sounds/SND_power_invincibility/SND_power_invincibility.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SND_sonic_death",
+        "path": "sounds/SND_sonic_death/SND_sonic_death.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SND_super_sonic_trans",
+        "path": "sounds/SND_super_sonic_trans/SND_super_sonic_trans.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "BG_zone_1_trap",
+        "path": "sprites/BG_zone_1_trap/BG_zone_1_trap.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_badnik_1",
+        "path": "sprites/SPR_badnik_1/SPR_badnik_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_black_screen",
+        "path": "sprites/SPR_black_screen/SPR_black_screen.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_button_action_press",
+        "path": "sprites/SPR_button_action_press/SPR_button_action_press.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_button_action",
+        "path": "sprites/SPR_button_action/SPR_button_action.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_button_delete",
+        "path": "sprites/SPR_button_delete/SPR_button_delete.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_button_dpad_press",
+        "path": "sprites/SPR_button_dpad_press/SPR_button_dpad_press.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_button_dpad",
+        "path": "sprites/SPR_button_dpad/SPR_button_dpad.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_button_pause",
+        "path": "sprites/SPR_button_pause/SPR_button_pause.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chao_emeralds",
+        "path": "sprites/SPR_chao_emeralds/SPR_chao_emeralds.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_collision_death",
+        "path": "sprites/SPR_collision_death/SPR_collision_death.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_collision_floor_edge",
+        "path": "sprites/SPR_collision_floor_edge/SPR_collision_floor_edge.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_collision_floor_ghost",
+        "path": "sprites/SPR_collision_floor_ghost/SPR_collision_floor_ghost.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_collision_floor",
+        "path": "sprites/SPR_collision_floor/SPR_collision_floor.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_collision_platforms",
+        "path": "sprites/SPR_collision_platforms/SPR_collision_platforms.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_collision_ramp_1_ghost",
+        "path": "sprites/SPR_collision_ramp_1_ghost/SPR_collision_ramp_1_ghost.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_collision_ramp_1",
+        "path": "sprites/SPR_collision_ramp_1/SPR_collision_ramp_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_collision_ramp_2_ghost",
+        "path": "sprites/SPR_collision_ramp_2_ghost/SPR_collision_ramp_2_ghost.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_collision_ramp_2",
+        "path": "sprites/SPR_collision_ramp_2/SPR_collision_ramp_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_collision_roof",
+        "path": "sprites/SPR_collision_roof/SPR_collision_roof.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_collision_wall_edge",
+        "path": "sprites/SPR_collision_wall_edge/SPR_collision_wall_edge.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_collision_wall",
+        "path": "sprites/SPR_collision_wall/SPR_collision_wall.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_collision_water",
+        "path": "sprites/SPR_collision_water/SPR_collision_water.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_data_form_2",
+        "path": "sprites/SPR_data_form_2/SPR_data_form_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_data_form",
+        "path": "sprites/SPR_data_form/SPR_data_form.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_data_icon_emerald",
+        "path": "sprites/SPR_data_icon_emerald/SPR_data_icon_emerald.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_data_icon_life",
+        "path": "sprites/SPR_data_icon_life/SPR_data_icon_life.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_data_zones",
+        "path": "sprites/SPR_data_zones/SPR_data_zones.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_explosion",
+        "path": "sprites/SPR_explosion/SPR_explosion.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_font_numbers",
+        "path": "sprites/SPR_font_numbers/SPR_font_numbers.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_font_system",
+        "path": "sprites/SPR_font_system/SPR_font_system.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_font_two_points",
+        "path": "sprites/SPR_font_two_points/SPR_font_two_points.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_font_x",
+        "path": "sprites/SPR_font_x/SPR_font_x.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_get_stars",
+        "path": "sprites/SPR_get_stars/SPR_get_stars.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_icon_life",
+        "path": "sprites/SPR_icon_life/SPR_icon_life.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_icon_players_super",
+        "path": "sprites/SPR_icon_players_super/SPR_icon_players_super.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_icon_players",
+        "path": "sprites/SPR_icon_players/SPR_icon_players.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_icon_ring",
+        "path": "sprites/SPR_icon_ring/SPR_icon_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_break",
+        "path": "sprites/SPR_knuckles_break/SPR_knuckles_break.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_climbing",
+        "path": "sprites/SPR_knuckles_climbing/SPR_knuckles_climbing.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_death",
+        "path": "sprites/SPR_knuckles_death/SPR_knuckles_death.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_down",
+        "path": "sprites/SPR_knuckles_down/SPR_knuckles_down.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_falling",
+        "path": "sprites/SPR_knuckles_falling/SPR_knuckles_falling.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_fly",
+        "path": "sprites/SPR_knuckles_fly/SPR_knuckles_fly.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_jump",
+        "path": "sprites/SPR_knuckles_jump/SPR_knuckles_jump.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_run",
+        "path": "sprites/SPR_knuckles_run/SPR_knuckles_run.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_spin_dash",
+        "path": "sprites/SPR_knuckles_spin_dash/SPR_knuckles_spin_dash.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_spin",
+        "path": "sprites/SPR_knuckles_spin/SPR_knuckles_spin.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_stop",
+        "path": "sprites/SPR_knuckles_stop/SPR_knuckles_stop.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_super_break",
+        "path": "sprites/SPR_knuckles_super_break/SPR_knuckles_super_break.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_super_climbing",
+        "path": "sprites/SPR_knuckles_super_climbing/SPR_knuckles_super_climbing.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_super_down",
+        "path": "sprites/SPR_knuckles_super_down/SPR_knuckles_super_down.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_super_falling",
+        "path": "sprites/SPR_knuckles_super_falling/SPR_knuckles_super_falling.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_super_fly",
+        "path": "sprites/SPR_knuckles_super_fly/SPR_knuckles_super_fly.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_super_jump",
+        "path": "sprites/SPR_knuckles_super_jump/SPR_knuckles_super_jump.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_super_run",
+        "path": "sprites/SPR_knuckles_super_run/SPR_knuckles_super_run.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_super_spin_dash",
+        "path": "sprites/SPR_knuckles_super_spin_dash/SPR_knuckles_super_spin_dash.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_super_spin",
+        "path": "sprites/SPR_knuckles_super_spin/SPR_knuckles_super_spin.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_super_stop",
+        "path": "sprites/SPR_knuckles_super_stop/SPR_knuckles_super_stop.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_super_transform",
+        "path": "sprites/SPR_knuckles_super_transform/SPR_knuckles_super_transform.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_super_up",
+        "path": "sprites/SPR_knuckles_super_up/SPR_knuckles_super_up.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_super_wait",
+        "path": "sprites/SPR_knuckles_super_wait/SPR_knuckles_super_wait.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_super_walk",
+        "path": "sprites/SPR_knuckles_super_walk/SPR_knuckles_super_walk.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_up",
+        "path": "sprites/SPR_knuckles_up/SPR_knuckles_up.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_wait",
+        "path": "sprites/SPR_knuckles_wait/SPR_knuckles_wait.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_walk",
+        "path": "sprites/SPR_knuckles_walk/SPR_knuckles_walk.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_water_air",
+        "path": "sprites/SPR_knuckles_water_air/SPR_knuckles_water_air.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_knuckles_water_death",
+        "path": "sprites/SPR_knuckles_water_death/SPR_knuckles_water_death.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_menu_game_over",
+        "path": "sprites/SPR_menu_game_over/SPR_menu_game_over.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_monitor_checkpoint",
+        "path": "sprites/SPR_monitor_checkpoint/SPR_monitor_checkpoint.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_monitor_eggman",
+        "path": "sprites/SPR_monitor_eggman/SPR_monitor_eggman.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_monitor_invincibility",
+        "path": "sprites/SPR_monitor_invincibility/SPR_monitor_invincibility.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_monitor_life",
+        "path": "sprites/SPR_monitor_life/SPR_monitor_life.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_monitor_ring",
+        "path": "sprites/SPR_monitor_ring/SPR_monitor_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_monitor_shield_flame",
+        "path": "sprites/SPR_monitor_shield_flame/SPR_monitor_shield_flame.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_monitor_shield_magnet",
+        "path": "sprites/SPR_monitor_shield_magnet/SPR_monitor_shield_magnet.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_monitor_shield",
+        "path": "sprites/SPR_monitor_shield/SPR_monitor_shield.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_opening_sega",
+        "path": "sprites/SPR_opening_sega/SPR_opening_sega.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_plate_action",
+        "path": "sprites/SPR_plate_action/SPR_plate_action.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_plate_extra_life",
+        "path": "sprites/SPR_plate_extra_life/SPR_plate_extra_life.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_plate_spin",
+        "path": "sprites/SPR_plate_spin/SPR_plate_spin.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_plate_stop",
+        "path": "sprites/SPR_plate_stop/SPR_plate_stop.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_platform_belt_left",
+        "path": "sprites/SPR_platform_belt_left/SPR_platform_belt_left.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_platform_belt_right",
+        "path": "sprites/SPR_platform_belt_right/SPR_platform_belt_right.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_platform_bridge",
+        "path": "sprites/SPR_platform_bridge/SPR_platform_bridge.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_platform_fake_wall_destroy",
+        "path": "sprites/SPR_platform_fake_wall_destroy/SPR_platform_fake_wall_destroy.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_platform_fake_wall",
+        "path": "sprites/SPR_platform_fake_wall/SPR_platform_fake_wall.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_platform_move_1",
+        "path": "sprites/SPR_platform_move_1/SPR_platform_move_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_platform_move_2",
+        "path": "sprites/SPR_platform_move_2/SPR_platform_move_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_platform_roll",
+        "path": "sprites/SPR_platform_roll/SPR_platform_roll.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_player_mask",
+        "path": "sprites/SPR_player_mask/SPR_player_mask.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_point_counter_text",
+        "path": "sprites/SPR_point_counter_text/SPR_point_counter_text.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_power_shield_flame_jump",
+        "path": "sprites/SPR_power_shield_flame_jump/SPR_power_shield_flame_jump.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_power_shield_flame",
+        "path": "sprites/SPR_power_shield_flame/SPR_power_shield_flame.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_power_shield_magnet",
+        "path": "sprites/SPR_power_shield_magnet/SPR_power_shield_magnet.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_power_shield",
+        "path": "sprites/SPR_power_shield/SPR_power_shield.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_power_star",
+        "path": "sprites/SPR_power_star/SPR_power_star.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_power_super_star",
+        "path": "sprites/SPR_power_super_star/SPR_power_super_star.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_ring_big",
+        "path": "sprites/SPR_ring_big/SPR_ring_big.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_ring",
+        "path": "sprites/SPR_ring/SPR_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_break",
+        "path": "sprites/SPR_sonic_break/SPR_sonic_break.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_death",
+        "path": "sprites/SPR_sonic_death/SPR_sonic_death.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_down",
+        "path": "sprites/SPR_sonic_down/SPR_sonic_down.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_falling",
+        "path": "sprites/SPR_sonic_falling/SPR_sonic_falling.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_jump",
+        "path": "sprites/SPR_sonic_jump/SPR_sonic_jump.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_run",
+        "path": "sprites/SPR_sonic_run/SPR_sonic_run.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_spin_dash",
+        "path": "sprites/SPR_sonic_spin_dash/SPR_sonic_spin_dash.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_spin",
+        "path": "sprites/SPR_sonic_spin/SPR_sonic_spin.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_stop",
+        "path": "sprites/SPR_sonic_stop/SPR_sonic_stop.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_super_break",
+        "path": "sprites/SPR_sonic_super_break/SPR_sonic_super_break.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_super_down",
+        "path": "sprites/SPR_sonic_super_down/SPR_sonic_super_down.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_super_falling",
+        "path": "sprites/SPR_sonic_super_falling/SPR_sonic_super_falling.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_super_jump",
+        "path": "sprites/SPR_sonic_super_jump/SPR_sonic_super_jump.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_super_run",
+        "path": "sprites/SPR_sonic_super_run/SPR_sonic_super_run.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_super_spin_dash",
+        "path": "sprites/SPR_sonic_super_spin_dash/SPR_sonic_super_spin_dash.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_super_spin",
+        "path": "sprites/SPR_sonic_super_spin/SPR_sonic_super_spin.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_super_stop",
+        "path": "sprites/SPR_sonic_super_stop/SPR_sonic_super_stop.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_super_transform",
+        "path": "sprites/SPR_sonic_super_transform/SPR_sonic_super_transform.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_super_up",
+        "path": "sprites/SPR_sonic_super_up/SPR_sonic_super_up.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_super_wait",
+        "path": "sprites/SPR_sonic_super_wait/SPR_sonic_super_wait.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_super_walk",
+        "path": "sprites/SPR_sonic_super_walk/SPR_sonic_super_walk.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_up",
+        "path": "sprites/SPR_sonic_up/SPR_sonic_up.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_wait",
+        "path": "sprites/SPR_sonic_wait/SPR_sonic_wait.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_walk",
+        "path": "sprites/SPR_sonic_walk/SPR_sonic_walk.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_water_air",
+        "path": "sprites/SPR_sonic_water_air/SPR_sonic_water_air.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_sonic_water_death",
+        "path": "sprites/SPR_sonic_water_death/SPR_sonic_water_death.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_spring",
+        "path": "sprites/SPR_spring/SPR_spring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_break",
+        "path": "sprites/SPR_tails_break/SPR_tails_break.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_death",
+        "path": "sprites/SPR_tails_death/SPR_tails_death.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_down",
+        "path": "sprites/SPR_tails_down/SPR_tails_down.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_falling",
+        "path": "sprites/SPR_tails_falling/SPR_tails_falling.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_fly",
+        "path": "sprites/SPR_tails_fly/SPR_tails_fly.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_jump",
+        "path": "sprites/SPR_tails_jump/SPR_tails_jump.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_run",
+        "path": "sprites/SPR_tails_run/SPR_tails_run.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_spin_dash",
+        "path": "sprites/SPR_tails_spin_dash/SPR_tails_spin_dash.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_spin",
+        "path": "sprites/SPR_tails_spin/SPR_tails_spin.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_stop",
+        "path": "sprites/SPR_tails_stop/SPR_tails_stop.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_super_break",
+        "path": "sprites/SPR_tails_super_break/SPR_tails_super_break.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_super_down",
+        "path": "sprites/SPR_tails_super_down/SPR_tails_super_down.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_super_falling",
+        "path": "sprites/SPR_tails_super_falling/SPR_tails_super_falling.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_super_fly",
+        "path": "sprites/SPR_tails_super_fly/SPR_tails_super_fly.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_super_jump",
+        "path": "sprites/SPR_tails_super_jump/SPR_tails_super_jump.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_super_run",
+        "path": "sprites/SPR_tails_super_run/SPR_tails_super_run.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_super_spin_dash",
+        "path": "sprites/SPR_tails_super_spin_dash/SPR_tails_super_spin_dash.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_super_spin",
+        "path": "sprites/SPR_tails_super_spin/SPR_tails_super_spin.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_super_stop",
+        "path": "sprites/SPR_tails_super_stop/SPR_tails_super_stop.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_super_transform",
+        "path": "sprites/SPR_tails_super_transform/SPR_tails_super_transform.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_super_up",
+        "path": "sprites/SPR_tails_super_up/SPR_tails_super_up.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_super_wait",
+        "path": "sprites/SPR_tails_super_wait/SPR_tails_super_wait.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_super_walk",
+        "path": "sprites/SPR_tails_super_walk/SPR_tails_super_walk.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_super_water_swim",
+        "path": "sprites/SPR_tails_super_water_swim/SPR_tails_super_water_swim.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_up",
+        "path": "sprites/SPR_tails_up/SPR_tails_up.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_wait",
+        "path": "sprites/SPR_tails_wait/SPR_tails_wait.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_walk",
+        "path": "sprites/SPR_tails_walk/SPR_tails_walk.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_water_air",
+        "path": "sprites/SPR_tails_water_air/SPR_tails_water_air.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_tails_water_swim",
+        "path": "sprites/SPR_tails_water_swim/SPR_tails_water_swim.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_title",
+        "path": "sprites/SPR_title/SPR_title.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "BG_zone_1_trap_tileset",
+        "path": "tilesets/BG_zone_1_trap_tileset/BG_zone_1_trap_tileset.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "TIME_player_blink",
+        "path": "timelines/TIME_player_blink/TIME_player_blink.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "TIME_tails_fly",
+        "path": "timelines/TIME_tails_fly/TIME_tails_fly.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_00",
+        "path": "sprites/SPR_CHAOS_mask_00/SPR_CHAOS_mask_00.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_00",
+        "path": "objects/OBJ_CHAOS_mask_00/OBJ_CHAOS_mask_00.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_01",
+        "path": "sprites/SPR_CHAOS_mask_01/SPR_CHAOS_mask_01.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_01",
+        "path": "objects/OBJ_CHAOS_mask_01/OBJ_CHAOS_mask_01.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_02",
+        "path": "sprites/SPR_CHAOS_mask_02/SPR_CHAOS_mask_02.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_02",
+        "path": "objects/OBJ_CHAOS_mask_02/OBJ_CHAOS_mask_02.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_03",
+        "path": "sprites/SPR_CHAOS_mask_03/SPR_CHAOS_mask_03.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_03",
+        "path": "objects/OBJ_CHAOS_mask_03/OBJ_CHAOS_mask_03.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_04",
+        "path": "sprites/SPR_CHAOS_mask_04/SPR_CHAOS_mask_04.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_04",
+        "path": "objects/OBJ_CHAOS_mask_04/OBJ_CHAOS_mask_04.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_05",
+        "path": "sprites/SPR_CHAOS_mask_05/SPR_CHAOS_mask_05.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_05",
+        "path": "objects/OBJ_CHAOS_mask_05/OBJ_CHAOS_mask_05.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_06",
+        "path": "sprites/SPR_CHAOS_mask_06/SPR_CHAOS_mask_06.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_06",
+        "path": "objects/OBJ_CHAOS_mask_06/OBJ_CHAOS_mask_06.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_07",
+        "path": "sprites/SPR_CHAOS_mask_07/SPR_CHAOS_mask_07.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_07",
+        "path": "objects/OBJ_CHAOS_mask_07/OBJ_CHAOS_mask_07.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_08",
+        "path": "sprites/SPR_CHAOS_mask_08/SPR_CHAOS_mask_08.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_08",
+        "path": "objects/OBJ_CHAOS_mask_08/OBJ_CHAOS_mask_08.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_09",
+        "path": "sprites/SPR_CHAOS_mask_09/SPR_CHAOS_mask_09.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_09",
+        "path": "objects/OBJ_CHAOS_mask_09/OBJ_CHAOS_mask_09.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_10",
+        "path": "sprites/SPR_CHAOS_mask_10/SPR_CHAOS_mask_10.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_10",
+        "path": "objects/OBJ_CHAOS_mask_10/OBJ_CHAOS_mask_10.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_11",
+        "path": "sprites/SPR_CHAOS_mask_11/SPR_CHAOS_mask_11.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_11",
+        "path": "objects/OBJ_CHAOS_mask_11/OBJ_CHAOS_mask_11.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_12",
+        "path": "sprites/SPR_CHAOS_mask_12/SPR_CHAOS_mask_12.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_12",
+        "path": "objects/OBJ_CHAOS_mask_12/OBJ_CHAOS_mask_12.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_13",
+        "path": "sprites/SPR_CHAOS_mask_13/SPR_CHAOS_mask_13.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_13",
+        "path": "objects/OBJ_CHAOS_mask_13/OBJ_CHAOS_mask_13.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_terrain_0",
+        "path": "sprites/SPR_chaos_terrain_0/SPR_chaos_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_terrain_0",
+        "path": "objects/OBJ_chaos_terrain_0/OBJ_chaos_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_terrain_1",
+        "path": "sprites/SPR_chaos_terrain_1/SPR_chaos_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_terrain_1",
+        "path": "objects/OBJ_chaos_terrain_1/OBJ_chaos_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_terrain_2",
+        "path": "sprites/SPR_chaos_terrain_2/SPR_chaos_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_terrain_2",
+        "path": "objects/OBJ_chaos_terrain_2/OBJ_chaos_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_terrain_3",
+        "path": "sprites/SPR_chaos_terrain_3/SPR_chaos_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_terrain_3",
+        "path": "objects/OBJ_chaos_terrain_3/OBJ_chaos_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_pixel",
+        "path": "sprites/SPR_chaos_pixel/SPR_chaos_pixel.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_wall",
+        "path": "objects/OBJ_chaos_wall/OBJ_chaos_wall.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_roof",
+        "path": "objects/OBJ_chaos_roof/OBJ_chaos_roof.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_spring_48",
+        "path": "sprites/SPR_chaos_spring_48/SPR_chaos_spring_48.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_spring_48",
+        "path": "objects/OBJ_chaos_spring_48/OBJ_chaos_spring_48.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_spring_49",
+        "path": "sprites/SPR_chaos_spring_49/SPR_chaos_spring_49.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_spring_49",
+        "path": "objects/OBJ_chaos_spring_49/OBJ_chaos_spring_49.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_spring_54",
+        "path": "sprites/SPR_chaos_spring_54/SPR_chaos_spring_54.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_spring_54",
+        "path": "objects/OBJ_chaos_spring_54/OBJ_chaos_spring_54.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_spring_56",
+        "path": "sprites/SPR_chaos_spring_56/SPR_chaos_spring_56.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_spring_56",
+        "path": "objects/OBJ_chaos_spring_56/OBJ_chaos_spring_56.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_spikes",
+        "path": "objects/OBJ_chaos_spikes/OBJ_chaos_spikes.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_zone",
+        "path": "objects/OBJ_chaos_zone/OBJ_chaos_zone.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_controls",
+        "path": "objects/OBJ_chaos_controls/OBJ_chaos_controls.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_thz1",
+        "path": "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_72",
+        "path": "sprites/SPR_chaos_contour_72/SPR_chaos_contour_72.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_72",
+        "path": "objects/OBJ_chaos_contour_72/OBJ_chaos_contour_72.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_73",
+        "path": "sprites/SPR_chaos_contour_73/SPR_chaos_contour_73.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_73",
+        "path": "objects/OBJ_chaos_contour_73/OBJ_chaos_contour_73.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_74",
+        "path": "sprites/SPR_chaos_contour_74/SPR_chaos_contour_74.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_74",
+        "path": "objects/OBJ_chaos_contour_74/OBJ_chaos_contour_74.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_75",
+        "path": "sprites/SPR_chaos_contour_75/SPR_chaos_contour_75.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_75",
+        "path": "objects/OBJ_chaos_contour_75/OBJ_chaos_contour_75.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_76",
+        "path": "sprites/SPR_chaos_contour_76/SPR_chaos_contour_76.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_76",
+        "path": "objects/OBJ_chaos_contour_76/OBJ_chaos_contour_76.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_77",
+        "path": "sprites/SPR_chaos_contour_77/SPR_chaos_contour_77.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_77",
+        "path": "objects/OBJ_chaos_contour_77/OBJ_chaos_contour_77.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_78",
+        "path": "sprites/SPR_chaos_contour_78/SPR_chaos_contour_78.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_78",
+        "path": "objects/OBJ_chaos_contour_78/OBJ_chaos_contour_78.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_79",
+        "path": "sprites/SPR_chaos_contour_79/SPR_chaos_contour_79.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_79",
+        "path": "objects/OBJ_chaos_contour_79/OBJ_chaos_contour_79.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_80",
+        "path": "sprites/SPR_chaos_contour_80/SPR_chaos_contour_80.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_80",
+        "path": "objects/OBJ_chaos_contour_80/OBJ_chaos_contour_80.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_81",
+        "path": "sprites/SPR_chaos_contour_81/SPR_chaos_contour_81.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_81",
+        "path": "objects/OBJ_chaos_contour_81/OBJ_chaos_contour_81.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_82",
+        "path": "sprites/SPR_chaos_contour_82/SPR_chaos_contour_82.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_82",
+        "path": "objects/OBJ_chaos_contour_82/OBJ_chaos_contour_82.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_83",
+        "path": "sprites/SPR_chaos_contour_83/SPR_chaos_contour_83.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_83",
+        "path": "objects/OBJ_chaos_contour_83/OBJ_chaos_contour_83.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_84",
+        "path": "sprites/SPR_chaos_contour_84/SPR_chaos_contour_84.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_84",
+        "path": "objects/OBJ_chaos_contour_84/OBJ_chaos_contour_84.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_85",
+        "path": "sprites/SPR_chaos_contour_85/SPR_chaos_contour_85.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_85",
+        "path": "objects/OBJ_chaos_contour_85/OBJ_chaos_contour_85.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_88",
+        "path": "sprites/SPR_chaos_contour_88/SPR_chaos_contour_88.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_88",
+        "path": "objects/OBJ_chaos_contour_88/OBJ_chaos_contour_88.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_89",
+        "path": "sprites/SPR_chaos_contour_89/SPR_chaos_contour_89.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_89",
+        "path": "objects/OBJ_chaos_contour_89/OBJ_chaos_contour_89.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_90",
+        "path": "sprites/SPR_chaos_contour_90/SPR_chaos_contour_90.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_90",
+        "path": "objects/OBJ_chaos_contour_90/OBJ_chaos_contour_90.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_91",
+        "path": "sprites/SPR_chaos_contour_91/SPR_chaos_contour_91.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_91",
+        "path": "objects/OBJ_chaos_contour_91/OBJ_chaos_contour_91.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_92",
+        "path": "sprites/SPR_chaos_contour_92/SPR_chaos_contour_92.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_92",
+        "path": "objects/OBJ_chaos_contour_92/OBJ_chaos_contour_92.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_93",
+        "path": "sprites/SPR_chaos_contour_93/SPR_chaos_contour_93.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_93",
+        "path": "objects/OBJ_chaos_contour_93/OBJ_chaos_contour_93.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_94",
+        "path": "sprites/SPR_chaos_contour_94/SPR_chaos_contour_94.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_94",
+        "path": "objects/OBJ_chaos_contour_94/OBJ_chaos_contour_94.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_95",
+        "path": "sprites/SPR_chaos_contour_95/SPR_chaos_contour_95.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_95",
+        "path": "objects/OBJ_chaos_contour_95/OBJ_chaos_contour_95.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_96",
+        "path": "sprites/SPR_chaos_contour_96/SPR_chaos_contour_96.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_96",
+        "path": "objects/OBJ_chaos_contour_96/OBJ_chaos_contour_96.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_97",
+        "path": "sprites/SPR_chaos_contour_97/SPR_chaos_contour_97.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_97",
+        "path": "objects/OBJ_chaos_contour_97/OBJ_chaos_contour_97.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_98",
+        "path": "sprites/SPR_chaos_contour_98/SPR_chaos_contour_98.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_98",
+        "path": "objects/OBJ_chaos_contour_98/OBJ_chaos_contour_98.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_99",
+        "path": "sprites/SPR_chaos_contour_99/SPR_chaos_contour_99.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_99",
+        "path": "objects/OBJ_chaos_contour_99/OBJ_chaos_contour_99.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_100",
+        "path": "sprites/SPR_chaos_contour_100/SPR_chaos_contour_100.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_100",
+        "path": "objects/OBJ_chaos_contour_100/OBJ_chaos_contour_100.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_101",
+        "path": "sprites/SPR_chaos_contour_101/SPR_chaos_contour_101.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_101",
+        "path": "objects/OBJ_chaos_contour_101/OBJ_chaos_contour_101.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_102",
+        "path": "sprites/SPR_chaos_contour_102/SPR_chaos_contour_102.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_102",
+        "path": "objects/OBJ_chaos_contour_102/OBJ_chaos_contour_102.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_103",
+        "path": "sprites/SPR_chaos_contour_103/SPR_chaos_contour_103.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_103",
+        "path": "objects/OBJ_chaos_contour_103/OBJ_chaos_contour_103.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_104",
+        "path": "sprites/SPR_chaos_contour_104/SPR_chaos_contour_104.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_104",
+        "path": "objects/OBJ_chaos_contour_104/OBJ_chaos_contour_104.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_105",
+        "path": "sprites/SPR_chaos_contour_105/SPR_chaos_contour_105.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_105",
+        "path": "objects/OBJ_chaos_contour_105/OBJ_chaos_contour_105.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_106",
+        "path": "sprites/SPR_chaos_contour_106/SPR_chaos_contour_106.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_106",
+        "path": "objects/OBJ_chaos_contour_106/OBJ_chaos_contour_106.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_107",
+        "path": "sprites/SPR_chaos_contour_107/SPR_chaos_contour_107.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_107",
+        "path": "objects/OBJ_chaos_contour_107/OBJ_chaos_contour_107.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_108",
+        "path": "sprites/SPR_chaos_contour_108/SPR_chaos_contour_108.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_108",
+        "path": "objects/OBJ_chaos_contour_108/OBJ_chaos_contour_108.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_115",
+        "path": "sprites/SPR_chaos_contour_115/SPR_chaos_contour_115.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_115",
+        "path": "objects/OBJ_chaos_contour_115/OBJ_chaos_contour_115.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_spring_51",
+        "path": "sprites/SPR_chaos_spring_51/SPR_chaos_spring_51.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_spring_51",
+        "path": "objects/OBJ_chaos_spring_51/OBJ_chaos_spring_51.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_platform",
+        "path": "sprites/SPR_chaos_platform/SPR_chaos_platform.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_platform_mask",
+        "path": "sprites/SPR_chaos_platform_mask/SPR_chaos_platform_mask.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_platform",
+        "path": "objects/OBJ_chaos_platform/OBJ_chaos_platform.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_80_0",
+        "path": "sprites/SPR_chaos_loop_80_0/SPR_chaos_loop_80_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_80_1",
+        "path": "sprites/SPR_chaos_loop_80_1/SPR_chaos_loop_80_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_loop_floor_80",
+        "path": "objects/OBJ_chaos_loop_floor_80/OBJ_chaos_loop_floor_80.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_81_0",
+        "path": "sprites/SPR_chaos_loop_81_0/SPR_chaos_loop_81_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_81_1",
+        "path": "sprites/SPR_chaos_loop_81_1/SPR_chaos_loop_81_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_loop_floor_81",
+        "path": "objects/OBJ_chaos_loop_floor_81/OBJ_chaos_loop_floor_81.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_82_0",
+        "path": "sprites/SPR_chaos_loop_82_0/SPR_chaos_loop_82_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_82_1",
+        "path": "sprites/SPR_chaos_loop_82_1/SPR_chaos_loop_82_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_loop_floor_82",
+        "path": "objects/OBJ_chaos_loop_floor_82/OBJ_chaos_loop_floor_82.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_83_0",
+        "path": "sprites/SPR_chaos_loop_83_0/SPR_chaos_loop_83_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_83_1",
+        "path": "sprites/SPR_chaos_loop_83_1/SPR_chaos_loop_83_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_loop_floor_83",
+        "path": "objects/OBJ_chaos_loop_floor_83/OBJ_chaos_loop_floor_83.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_161_0",
+        "path": "sprites/SPR_chaos_loop_161_0/SPR_chaos_loop_161_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_161_1",
+        "path": "sprites/SPR_chaos_loop_161_1/SPR_chaos_loop_161_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_loop_floor_161",
+        "path": "objects/OBJ_chaos_loop_floor_161/OBJ_chaos_loop_floor_161.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_162_0",
+        "path": "sprites/SPR_chaos_loop_162_0/SPR_chaos_loop_162_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_162_1",
+        "path": "sprites/SPR_chaos_loop_162_1/SPR_chaos_loop_162_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_loop_floor_162",
+        "path": "objects/OBJ_chaos_loop_floor_162/OBJ_chaos_loop_floor_162.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_motion_data",
+        "path": "scripts/SCR_chaos_motion_data/SCR_chaos_motion_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_motion",
+        "path": "scripts/SCR_chaos_motion/SCR_chaos_motion.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_loop_base",
+        "path": "objects/OBJ_chaos_loop_base/OBJ_chaos_loop_base.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_26",
+        "path": "sprites/SPR_chaos_object_26/SPR_chaos_object_26.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_spring_26_normal",
+        "path": "objects/OBJ_chaos_object_spring_26_normal/OBJ_chaos_object_spring_26_normal.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_spring_26_weak",
+        "path": "objects/OBJ_chaos_object_spring_26_weak/OBJ_chaos_object_spring_26_weak.yy"
+      }
+    }
+  ],
+  "resourceType": "GMProject",
+  "resourceVersion": "2.0",
+  "RoomOrderNodes": [
+    {
+      "roomId": {
+        "name": "ROM_system_start",
+        "path": "rooms/ROM_system_start/ROM_system_start.yy"
+      }
+    },
+    {
+      "roomId": {
+        "name": "ROM_menu_opening",
+        "path": "rooms/ROM_menu_opening/ROM_menu_opening.yy"
+      }
+    },
+    {
+      "roomId": {
+        "name": "ROM_menu_title",
+        "path": "rooms/ROM_menu_title/ROM_menu_title.yy"
+      }
+    },
+    {
+      "roomId": {
+        "name": "ROM_menu_options",
+        "path": "rooms/ROM_menu_options/ROM_menu_options.yy"
+      }
+    },
+    {
+      "roomId": {
+        "name": "ROM_menu_data_select",
+        "path": "rooms/ROM_menu_data_select/ROM_menu_data_select.yy"
+      }
+    },
+    {
+      "roomId": {
+        "name": "ROM_menu_point_counter",
+        "path": "rooms/ROM_menu_point_counter/ROM_menu_point_counter.yy"
+      }
+    },
+    {
+      "roomId": {
+        "name": "ROM_menu_game_over",
+        "path": "rooms/ROM_menu_game_over/ROM_menu_game_over.yy"
+      }
+    },
+    {
+      "roomId": {
+        "name": "ROM_zone_1",
+        "path": "rooms/ROM_zone_1/ROM_zone_1.yy"
+      }
+    },
+    {
+      "roomId": {
+        "name": "ROM_zone_2",
+        "path": "rooms/ROM_zone_2/ROM_zone_2.yy"
+      }
+    },
+    {
+      "roomId": {
+        "name": "ROM_chaos_thz1",
+        "path": "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
+      }
+    }
+  ],
+  "templateType": null,
+  "TextureGroups": [
+    {
+      "$GMTextureGroup": "",
+      "%Name": "Default",
+      "autocrop": true,
+      "border": 2,
+      "compressFormat": "bz2",
+      "customOptions": "",
+      "directory": "",
+      "groupParent": null,
+      "isScaled": false,
+      "loadType": "default",
+      "mipsToGenerate": 0,
+      "name": "Default",
+      "resourceType": "GMTextureGroup",
+      "resourceVersion": "2.0",
+      "targets": -1
+    }
+  ]
+}

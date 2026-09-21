@@ -1,0 +1,19 @@
+{
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "actual_gml_executed": true,
+  "subroutine_cases": 15660,
+  "first_ramp_updates": 48,
+  "vertical_spring_updates": 160,
+  "game_maker_compiled": false,
+  "limitation": "Numerical ROM fixtures, not GameMaker gameplay or full scheduler emulation",
+  "project_resource_counts": {
+    "SonicChaos_POC.yyp": 471,
+    "sms_project_backup.yyp": 319
+  },
+  "resource_metadata_validated": true,
+  "source_sha256": {
+    "scripts/SCR_chaos_core/SCR_chaos_core.gml": "9c289637ed6cfa0a59fbf4952079e042a9a9ddf5e43529a438e17827503128ad",
+    "scripts/SCR_chaos_core_data/SCR_chaos_core_data.gml": "45fc257f5065e03b6684502389a1b8259a50641a4325f552653e3672e7893fed",
+    "scripts/SCR_chaos_adapter/SCR_chaos_adapter.gml": "c1b35ccf0c2e2370ecf87b78fdca7fbcedd7872665e3c76e453a03f376333c91"
+  }
+}

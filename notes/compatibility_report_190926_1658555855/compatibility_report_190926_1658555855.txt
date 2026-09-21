@@ -1,0 +1,1001 @@
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\scripts\SCR_screen\SCR_screen.gml
+Converted builtin - line 83: view_wview[view_current] = screenWidth -> __view_set( e__VW.WView, view_current, screenWidth )
+Converted builtin - line 84: view_hview[view_current] = screenHeight -> __view_set( e__VW.HView, view_current, screenHeight )
+Converted builtin - line 85: view_wport[view_current] = screenWidth*global.windowSize -> __view_set( e__VW.WPort, view_current, screenWidth*global.windowSize )
+Converted builtin - line 86: view_hport[view_current] = screenHeight*global.windowSize -> __view_set( e__VW.HPort, view_current, screenHeight*global.windowSize )
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\scripts\SCR_buttons\SCR_buttons.gml
+Converted description /// @description  Keyboard + Gamepad
+String not found: ConversionLog_ConvertedString 9 'A' "A"
+String not found: ConversionLog_ConvertedString 18 'A' "A"
+String not found: ConversionLog_ConvertedString 27 'A' "A"
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\scripts\SCR_load_cards\SCR_load_cards.gml
+Converted description /// @description  Load data icons and zones name
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\scripts\SCR_player_view\SCR_player_view.gml
+Converted builtin - line 6: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 7: view_vborder[0] = 0 -> __view_set( e__VW.VBorder, 0, 0 )
+Converted builtin - line 8: view_hspeed[0] = -1 -> __view_set( e__VW.HSpeed, 0, -1 )
+Converted builtin - line 9: view_vspeed[0] = -1 -> __view_set( e__VW.VSpeed, 0, -1 )
+Converted builtin - line 5: view_object[0] = OBJ_player -> __view_set( e__VW.Object, 0, OBJ_player )
+Converted description /// @description  View follows the playe
+Converted builtin - line 6: view_hborder[0] = round(__view_get( e__VW.WView, 0 ) / 2.3) -> __view_set( e__VW.HBorder, 0, round(__view_get( e__VW.WView, 0 ) / 2.3) )
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\scripts\SCR_player_sprites\SCR_player_sprites.gml
+Converted description /// @description  Map of players sprite
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\scripts\SCR_player_sprites_sonic\SCR_player_sprites_sonic.gml
+Converted description /// @description  Sonic Sprite
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\scripts\SCR_player_sprites_tails\SCR_player_sprites_tails.gml
+Converted description /// @description  tails Sprite
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\scripts\SCR_player_sprites_knuckles\SCR_player_sprites_knuckles.gml
+Converted description /// @description  knuckles Sprite
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\scripts\SCR_physics_speed\SCR_physics_speed.gml
+Converted builtin - line 59: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 59: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 59: view_wview[0] -> __view_get( e__VW.WView, 0 )
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\scripts\SCR_badnik_death\SCR_badnik_death.gml
+Converted description /// @description  Destroy badnik with..
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\scripts\SCR_monitor_collisions\SCR_monitor_collisions.gml
+Converted description /// @description  Collision with..
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\timelines\TIME_player_blink\moment_60.gml
+Converted description /// @description  Stop blin
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\timelines\TIME_tails_fly\moment_110.gml
+Converted description /// @description  Fly timeou
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_system\Create_0.gml
+Converted description /// @description  Syste
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_system_start\Create_0.gml
+Converted description /// @description  Start action
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_system_start\Alarm_1.gml
+Converted description /// @description  Next roo
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_system_start\Alarm_0.gml
+Converted description /// @description Center view of scree
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_system_zone\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_system_zone\Alarm_0.gml
+Converted description /// @description  Control
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_system_zone\Step_2.gml
+Converted builtin - line 5: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 5: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 7: view_yview[0] = round(OBJ_player.y - view_hview[0] / 1.5) -> __view_set( e__VW.YView, 0, round(OBJ_player.y - view_hview[0] / 1.5) )
+Converted builtin - line 3: view_object[0] -> __view_get( e__VW.Object, 0 )
+Converted description /// @description Player View 
+Converted builtin - line 7: view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_system_zone\Step_0.gml
+Converted builtin - line 10: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 10: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 10: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 10: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 10: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 10: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description  Loading optimization (optional
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_system_save_data\Create_0.gml
+Converted description /// @description  Write data (memory card
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_opening\Create_0.gml
+Converted builtin - line 5: view_object[0] = self -> __view_set( e__VW.Object, 0, self )
+Converted description /// @description  Center Scree
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_opening\Alarm_1.gml
+Converted description /// @description  Next roo
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_opening\Alarm_0.gml
+Converted description /// @description  Fade-out Effec
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_opening\Draw_0.gml
+Converted description /// @description  Sega animatio
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_title\Create_0.gml
+Converted builtin - line 9: view_object[0] = self -> __view_set( e__VW.Object, 0, self )
+Converted description /// @description Restart system variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_title\Alarm_0.gml
+Converted description /// @description  Button
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_title\Draw_0.gml
+Converted description /// @description  Title Scree
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_title_options\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_title_options\Alarm_2.gml
+Converted description /// @description  Go To Option
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_title_options\Alarm_1.gml
+Converted description /// @description  Go To Data Selec
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_title_options\Step_0.gml
+Converted description /// @description  Movement
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_title_options\Draw_0.gml
+Converted description /// @description  Option
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_options\Create_0.gml
+Converted builtin - line 5: view_object[0] = self -> __view_set( e__VW.Object, 0, self )
+Converted description /// @description  Center Scree
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_options\Destroy_0.gml
+Converted description /// @description  Save option
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_options\Alarm_0.gml
+Converted description /// @description  Button
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_options\Step_2.gml
+Converted description /// @description  Positio
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_options\Step_0.gml
+Converted description /// @description  Movement
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_options\Draw_0.gml
+Converted description /// @description  Option
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_select\Create_0.gml
+Converted builtin - line 5: view_object[0] = self -> __view_set( e__VW.Object, 0, self )
+Converted description /// @description  Center Scree
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_select\Alarm_2.gml
+Converted description /// @description  Go To Zone... (Rotes
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_select\Alarm_1.gml
+Converted description /// @description  Fade-out Effec
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_select\Alarm_0.gml
+Converted description /// @description  Button
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_select\Step_0.gml
+Converted description /// @description  Movement
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_button_del\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_button_del\Step_0.gml
+Converted description /// @description  Delete Actio
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_button_del\Mouse_4.gml
+Converted description /// @description  Pres
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_button_del\Draw_0.gml
+Converted builtin - line 3: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 4: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 3: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted description /// @description  Positio
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_button_del\KeyPress_46.gml
+Converted description /// @description  Pres
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_card_1\Create_0.gml
+Converted description /// @description Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_card_1\Step_0.gml
+Converted builtin - line 5: view_object[0] = self -> __view_set( e__VW.Object, 0, self )
+Converted description /// @description  Card Selecte
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_card_1\Draw_0.gml
+Converted description /// @description  Card Selecte
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_card_2\Create_0.gml
+Converted description /// @description Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_card_2\Step_0.gml
+Converted builtin - line 5: view_object[0] = self -> __view_set( e__VW.Object, 0, self )
+Converted description /// @description  Card Selecte
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_card_2\Draw_0.gml
+Converted description /// @description  Card Selecte
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_card_3\Create_0.gml
+Converted description /// @description Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_card_3\Step_0.gml
+Converted builtin - line 5: view_object[0] = self -> __view_set( e__VW.Object, 0, self )
+Converted description /// @description  Card Selecte
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_card_3\Draw_0.gml
+Converted description /// @description  Card Selecte
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_card_4\Create_0.gml
+Converted description /// @description Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_card_4\Step_0.gml
+Converted builtin - line 5: view_object[0] = self -> __view_set( e__VW.Object, 0, self )
+Converted description /// @description  Card Selecte
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_card_4\Draw_0.gml
+Converted description /// @description  Card Selecte
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_card_5\Create_0.gml
+Converted description /// @description Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_card_5\Step_0.gml
+Converted builtin - line 5: view_object[0] = self -> __view_set( e__VW.Object, 0, self )
+Converted description /// @description  Card Selecte
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_data_card_5\Draw_0.gml
+Converted description /// @description  Card Selecte
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_point_counter\Create_0.gml
+Converted builtin - line 5: view_object[0] = self -> __view_set( e__VW.Object, 0, self )
+Converted description /// @description  Center Scree
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_point_counter\Alarm_11.gml
+Converted description /// @description Go To Zone... (Rotes
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_point_counter\Alarm_10.gml
+Converted description /// @description Go to Special Stag
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_point_counter\Alarm_1.gml
+Converted description /// @description  Go To ..
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_point_counter\Alarm_0.gml
+Converted description /// @description  Start Countdow
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_point_counter\Step_0.gml
+Converted description /// @description  Countdown Tim
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_point_counter\Draw_0.gml
+Converted description /// @description Score Time Ring
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_game_over\Create_0.gml
+Converted builtin - line 5: view_object[0] = self -> __view_set( e__VW.Object, 0, self )
+Converted description /// @description  Center Scree
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_game_over\Alarm_0.gml
+Converted description /// @description  Back to Star
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_menu_game_over\Draw_0.gml
+Converted description /// @description  Game Ove
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_count_rings\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_count_rings\Alarm_0.gml
+Converted description /// @description  Lost 1 ring with Super Soni
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_count_rings\Step_0.gml
+Converted description /// @description  Minimun Ring
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_count_rings\Draw_0.gml
+Converted builtin - line 1: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 2: view_yview[0] -> __view_get( e__VW.YView, 0 )
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_count_time\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_count_time\Alarm_0.gml
+Converted description /// @description  Seconds counte
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_count_time\Step_0.gml
+Converted description /// @description  Time Counte
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_count_time\Draw_0.gml
+Converted builtin - line 1: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 2: view_yview[0] -> __view_get( e__VW.YView, 0 )
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_count_lifes\Draw_0.gml
+Converted builtin - line 3: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 23: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 4: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 24: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 3: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 23: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted description /// @description  Icon
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_virtual_controller_menus\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_virtual_controller_menus\Step_0.gml
+Converted description /// @description  Control
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_virtual_controller_menus\Draw_64.gml
+Converted builtin - line 7: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 9: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 3: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 4: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 5: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 6: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 7: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 9: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description  Touch Ma
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_virtual_controller_menus\Draw_0.gml
+Converted builtin - line 3: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 4: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 9: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 32: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 8: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 9: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 16: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 20: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 24: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 28: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 32: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description  Sprite
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_virtual_controller\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_virtual_controller\Step_0.gml
+Converted description /// @description  Control
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_virtual_controller\Draw_64.gml
+Converted builtin - line 7: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 8: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 10: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 3: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 4: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 5: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 6: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 7: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 10: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description  Touch Ma
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_virtual_controller\Draw_0.gml
+Converted builtin - line 3: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 38: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 4: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 39: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 9: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 32: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 42: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 8: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 9: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 16: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 20: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 24: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 28: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 32: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description  Sprite
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_pause\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_pause\Alarm_1.gml
+Converted description /// @description  Back to men
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_pause\Alarm_0.gml
+Converted description /// @description  Pause actio
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_pause\Step_0.gml
+Converted description /// @description  Transition Effec
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_pause\Draw_0.gml
+Converted builtin - line 4: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 16: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 17: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 20: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 31: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 33: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 39: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 4: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 16: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 17: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 20: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 31: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 33: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 40: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 16: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 17: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 20: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 31: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 33: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 44: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 60: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 31: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 33: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 43: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 44: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 52: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 56: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 60: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description  Black Backgroun
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_climbing\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_climbing\Step_0.gml
+Converted description /// @description  Controls and Gravit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_lost_a\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_lost_a\Alarm_2.gml
+Converted description /// @description  Blink (on
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_lost_a\Alarm_1.gml
+Converted description /// @description  Blink (off
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_lost_a\Step_1.gml
+Converted description /// @description  Sprite
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_lost_a\Step_0.gml
+Converted builtin - line 127: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 127: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 127: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted description /// @description  Physic
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_lost_a\Draw_0.gml
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_lost_b\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_lost_b\Alarm_3.gml
+Converted description /// @description  Lost All Ring
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_lost_b\Alarm_2.gml
+Converted description /// @description  Blink (on
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_lost_b\Alarm_1.gml
+Converted description /// @description  Blink (off
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_lost_b\Alarm_0.gml
+Converted description /// @description  Destroy m
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_lost_b\Step_0.gml
+Converted description /// @description  Gravit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_lost_b\Draw_0.gml
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_death\Create_0.gml
+Converted description /// @description  Default value
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_death\Alarm_2.gml
+Converted description /// @description  Destroy super playe
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_death\Alarm_1.gml
+Converted description /// @description  Restart zone or game over
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_death\Alarm_0.gml
+Converted description /// @description  Action
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_death\Step_1.gml
+Converted description /// @description  Sprite
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_death\Step_0.gml
+Converted description /// @description  Gravit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_plate\Create_0.gml
+Converted description /// @description Variavei
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_plate\Step_1.gml
+Converted description /// @description  Sprite
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_plate\Step_0.gml
+Converted description /// @description  Gravit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_super_transform\Create_0.gml
+Converted description /// @description  Lost shields and power-up
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_super_transform\Alarm_0.gml
+Converted description /// @description  Change me to Super player.
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_super_transform\Step_0.gml
+Converted description /// @description  Sprite
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_char\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_char\Alarm_2.gml
+Converted description /// @description  Blink Of
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_char\Alarm_1.gml
+Converted description /// @description  Blink O
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_char\Alarm_0.gml
+Converted description /// @description  Waitin
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_char\Step_1.gml
+Converted description /// @description  Sprite
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_char\Step_0.gml
+Converted builtin - line 502: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 502: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 502: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted description /// @description  Controls and Gravit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_char\KeyPress_18.gml
+Converted description /// @description  Change Playaer (Debug
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_char_spin\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_char_spin\Alarm_2.gml
+Converted description /// @description  Blink Of
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_char_spin\Alarm_1.gml
+Converted description /// @description  Blink O
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_char_spin\Step_2.gml
+Converted description /// @description  Ram
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_player_char_spin\Step_0.gml
+Converted builtin - line 187: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 187: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 187: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted description /// @description  Control
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_super_stars\Create_0.gml
+Converted description /// @description  Time to destro
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_super_stars\Alarm_0.gml
+Converted description /// @description  Time ou
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_super_stars\Step_0.gml
+Converted description /// @description  Direction
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_super_stars\Draw_0.gml
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_invincibility\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_invincibility\Destroy_0.gml
+Converted description /// @description  Time Out Action
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_invincibility\Alarm_5.gml
+Converted description /// @description  Star Animation 
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_invincibility\Alarm_4.gml
+Converted description /// @description  Star Animation 
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_invincibility\Alarm_3.gml
+Converted description /// @description  Star Animation 
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_invincibility\Alarm_2.gml
+Converted description /// @description  Star Animation 
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_invincibility\Alarm_1.gml
+Converted description /// @description  Star Animation 
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_invincibility\Alarm_0.gml
+Converted description /// @description  Time ou
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_invincibility\Step_0.gml
+Converted description /// @description  If player doesn't exist
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_invincibility\Draw_0.gml
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_shield\Destroy_0.gml
+Converted description /// @description  Disable powe
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_shield\Step_2.gml
+Converted description /// @description  Follow player.
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_shield\Step_0.gml
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_shield_magnet\Destroy_0.gml
+Converted description /// @description  Disable powe
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_shield_magnet\Step_2.gml
+Converted description /// @description  Follow player.
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_shield_magnet\Step_0.gml
+Converted builtin - line 10: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 10: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 10: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 10: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 10: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 10: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_shield_flame\Destroy_0.gml
+Converted description /// @description  Disable powe
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_shield_flame\Step_2.gml
+Converted description /// @description  Follow player.
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_shield_flame\Step_0.gml
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_shield_flame_jump\Create_0.gml
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_shield_flame_jump\Alarm_0.gml
+Converted description /// @description Destroy m
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_power_shield_flame_jump\Step_2.gml
+Converted description /// @description  Follow player.
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_collision_floor_ghost\Step_2.gml
+Converted description /// @description  Pass between platfor
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_collision_ramp_1_ghost\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_collision_ramp_1_ghost\Step_2.gml
+Converted description /// @description  Collision (Beta
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_collision_ramp_2_ghost\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_collision_ramp_2_ghost\Step_2.gml
+Converted description /// @description  Collision (Beta
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_collision_water\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_collision_water\Step_0.gml
+Converted description /// @description  Wate
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_fake_wall_solid\Step_2.gml
+Converted description /// @description  Solid wall
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_fake_wall_destroy_r_1\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_fake_wall_destroy_r_1\Step_0.gml
+Converted description /// @description  Gravit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_fake_wall_destroy_r_2\Create_0.gml
+Converted description /// @description Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_fake_wall_destroy_r_2\Step_0.gml
+Converted description /// @description  Gravit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_fake_wall_destroy_l_1\Create_0.gml
+Converted description /// @description Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_fake_wall_destroy_l_1\Step_0.gml
+Converted description /// @description Gravit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_fake_wall_destroy_l_2\Create_0.gml
+Converted description /// @description Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_fake_wall_destroy_l_2\Step_0.gml
+Converted description /// @description Gravit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_left_right\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_left_right\Alarm_0.gml
+Converted description /// @description  Return spee
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_left_right\Step_2.gml
+Converted description /// @description  Solid 
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_left_right\Step_0.gml
+Converted description /// @description  Direction
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_up_down\Create_0.gml
+Converted description /// @description Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_up_down\Step_2.gml
+Converted description /// @description  Solid 
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_up_down\Step_0.gml
+Converted description /// @description  Sine wave move
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_fall\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_fall\Alarm_1.gml
+Converted description /// @description  Recreat
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_fall\Alarm_0.gml
+Converted description /// @description Fall dow
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_fall\Step_2.gml
+Converted description /// @description  Solid 
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_fall\Step_0.gml
+Converted description /// @description  Collision with playe
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_bridge\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_bridge\Alarm_1.gml
+Converted description /// @description Recreat
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_bridge\Alarm_0.gml
+Converted description /// @description Fall dow
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_bridge\Step_2.gml
+Converted description /// @description  Solid 
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_bridge\Step_0.gml
+Converted description /// @description  Collision with playe
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_roll\Step_2.gml
+Converted description /// @description  Solid 
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_roll\Collision_1d073ec9-cdf5-4538-8736-0ea6a1839f81.gml
+Converted description /// @description  Stop when collide the wal
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_belt\Create_0.gml
+Converted description /// @description  Direction
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_belt\Step_2.gml
+Converted description /// @description  Solid 
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_belt\Step_0.gml
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_platform_fake_wall\Step_2.gml
+Converted description /// @description  Solid wall
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_ring\Create_0.gml
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_ring\Destroy_0.gml
+Converted description /// @description  More point
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_ring\Step_0.gml
+Converted description /// @description  Player get rin
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_ring_big\Create_0.gml
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_ring_big\Destroy_0.gml
+Converted description /// @description  More point
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_ring_big\Step_0.gml
+Converted description /// @description  Player get rin
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_chao_emerald_1\Create_0.gml
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_chao_emerald_1\Destroy_0.gml
+Converted description /// @description  More point
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_chao_emerald_1\Step_0.gml
+Converted description /// @description  Player get chao emeral
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_chao_emerald_2\Create_0.gml
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_chao_emerald_2\Destroy_0.gml
+Converted description /// @description  More point
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_chao_emerald_2\Step_0.gml
+Converted description /// @description  Player get chao emeral
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_chao_emerald_3\Create_0.gml
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_chao_emerald_3\Destroy_0.gml
+Converted description /// @description  More point
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_chao_emerald_3\Step_0.gml
+Converted description /// @description  Player get chao emeral
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_chao_emerald_4\Create_0.gml
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_chao_emerald_4\Destroy_0.gml
+Converted description /// @description  More point
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_chao_emerald_4\Step_0.gml
+Converted description /// @description  Player get chao emeral
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_chao_emerald_5\Create_0.gml
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_chao_emerald_5\Destroy_0.gml
+Converted description /// @description  More point
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_chao_emerald_5\Step_0.gml
+Converted description /// @description  Player get chao emeral
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_chao_emerald_6\Create_0.gml
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_chao_emerald_6\Destroy_0.gml
+Converted description /// @description  More point
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_chao_emerald_6\Step_0.gml
+Converted description /// @description  Player get chao emeral
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_chao_emerald_7\Create_0.gml
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_chao_emerald_7\Destroy_0.gml
+Converted description /// @description  More point
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_chao_emerald_7\Step_0.gml
+Converted description /// @description  Player get chao emeral
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_ring\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_ring\Destroy_0.gml
+Converted description /// @description  Action
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_ring\Step_0.gml
+Converted description /// @description  Collision with Playe
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_life\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_life\Destroy_0.gml
+Converted description /// @description  Action
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_life\Step_0.gml
+Converted description /// @description  Collision with Playe
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_life\Draw_0.gml
+Converted description /// @description  Players icon
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_checkpoint\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_checkpoint\Destroy_0.gml
+Converted description /// @description  Action
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_checkpoint\Step_0.gml
+Converted description /// @description  Collision with Playe
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_invincibility\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_invincibility\Destroy_0.gml
+Converted description /// @description  Action
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_invincibility\Step_0.gml
+Converted description /// @description  Collision with Playe
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_shield\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_shield\Destroy_0.gml
+Converted description /// @description  Action
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_shield\Step_0.gml
+Converted description /// @description  Collision with Playe
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_shield_magnet\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_shield_magnet\Destroy_0.gml
+Converted description /// @description  Action
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_shield_magnet\Step_0.gml
+Converted description /// @description  Collision with Playe
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_shield_flame\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_shield_flame\Destroy_0.gml
+Converted description /// @description  Action
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_shield_flame\Step_0.gml
+Converted description /// @description  Collision with Playe
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_eggman\Create_0.gml
+Converted description /// @description Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_eggman\Destroy_0.gml
+Converted description /// @description  Action
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_monitor_eggman\Step_0.gml
+Converted description /// @description  Collision with Playe
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_plate\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_plate\Alarm_3.gml
+Converted description /// @description  Go To Point Counter "Sonic Has Passed
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_plate\Alarm_2.gml
+Converted description /// @description  Fade-out Effec
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_plate\Alarm_1.gml
+Converted description /// @description  Sfx and Value
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_plate\Alarm_0.gml
+Converted description /// @description  Sprite
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_plate\Step_0.gml
+Converted builtin - line 50: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 51: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 52: view_hspeed[0] = 5 -> __view_set( e__VW.HSpeed, 0, 5 )
+Converted builtin - line 53: view_vspeed[0] = 5 -> __view_set( e__VW.VSpeed, 0, 5 )
+Converted builtin - line 49: view_object[0] = OBJ_plate -> __view_set( e__VW.Object, 0, OBJ_plate )
+Converted description /// @description  Gravit
+Converted builtin - line 50: view_hborder[0] = round(__view_get( e__VW.WView, 0 )/2) -> __view_set( e__VW.HBorder, 0, round(__view_get( e__VW.WView, 0 )/2) )
+Converted builtin - line 51: view_vborder[0] = round(__view_get( e__VW.HView, 0 )/2/1.4) -> __view_set( e__VW.VBorder, 0, round(__view_get( e__VW.HView, 0 )/2/1.4) )
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_plate\Collision_5825c204-64cd-4fbc-8f5b-3ed361dfe176.gml
+Converted description /// @description  Plate Spi
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_spring_1\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_spring_1\Step_0.gml
+Converted description /// @description  If collision is tru
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_spring_2\Create_0.gml
+Converted description /// @description  Variable
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_spring_2\Step_0.gml
+Converted description /// @description  If collision is tru
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_badnik_1\Destroy_0.gml
+Converted description /// @description  Aciton
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_badnik_1\Step_0.gml
+Converted description /// @description  Player Collisio
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_effect_fade_in\Draw_0.gml
+Converted builtin - line 3: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 3: view_yview[0] -> __view_get( e__VW.YView, 0 )
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_effect_fade_out\Draw_0.gml
+Converted builtin - line 3: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 3: view_yview[0] -> __view_get( e__VW.YView, 0 )
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_ring_stars\Create_0.gml
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_ring_stars\Step_0.gml
+Converted description /// @description  End Animatio
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_emerald_stars\Create_0.gml
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_emerald_stars\Step_0.gml
+Converted description /// @description  End Animatio
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_explosion\Create_0.gml
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_explosion\Step_0.gml
+Converted description /// @description  End Animatio
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_explosion_silent\Create_0.gml
+Converted description /// @description  Sprit
+
+Converting GML script: <local-source>\prj-openSonicSMS-master\prj-openSonicSMS-master\mvc\objects\OBJ_explosion_silent\Step_0.gml
+Converted description /// @description  End animatio
+
+Missing audiogroup for sound: 'SFX_score1' - setting to default audio group
+Missing audiogroup for sound: 'SFX_score2' - setting to default audio group
+Missing audiogroup for sound: 'SFX_sonic_jump' - setting to default audio group
+Missing audiogroup for sound: 'SFX_sonic_spin' - setting to default audio group
+Missing audiogroup for sound: 'SFX_sonic_break' - setting to default audio group
+Missing audiogroup for sound: 'SFX_sonic_lost_rings' - setting to default audio group
+Missing audiogroup for sound: 'SFX_sonic_spring' - setting to default audio group
+Missing audiogroup for sound: 'SFX_sonic_water' - setting to default audio group
+Missing audiogroup for sound: 'SFX_sonic_spin_dash' - setting to default audio group
+Missing audiogroup for sound: 'SND_sonic_death' - setting to default audio group
+Missing audiogroup for sound: 'SND_super_sonic_trans' - setting to default audio group
+Missing audiogroup for sound: 'SND_power_invincibility' - setting to default audio group
+Missing audiogroup for sound: 'SFX_ring' - setting to default audio group
+Missing audiogroup for sound: 'SFX_life' - setting to default audio group
+Missing audiogroup for sound: 'SFX_plate_spin' - setting to default audio group
+Missing audiogroup for sound: 'SFX_plate_action' - setting to default audio group
+Missing audiogroup for sound: 'SND_plate_finish' - setting to default audio group
+Missing audiogroup for sound: 'SFX_explosion' - setting to default audio group
+Missing audiogroup for sound: 'SFX_bumper' - setting to default audio group
+Missing audiogroup for sound: 'SFX_platform_bridge' - setting to default audio group
+Missing audiogroup for sound: 'SFX_platform_destroy' - setting to default audio group
+Game speed set to 30
+Added compatibility script 'action\action_kill_object.gml'
+Added compatibility script 'instance\instance_create.gml'
+Added compatibility script 'object\object_get_depth.gml'
+Added compatibility script 'view\__view_get.gml'
+Added compatibility script 'view\__view_set.gml'
+Added compatibility script 'view\__view_set_internal.gml'
+Added compatibility script 'action\__init_action.gml'
+Added compatibility script 'view\__init_view.gml'
+Added compatibility script '__init_global.gml'
+Added compatibility script '__global_object_depths.gml'

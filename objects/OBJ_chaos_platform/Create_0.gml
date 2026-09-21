@@ -1,0 +1,10 @@
+depth = -10;
+mask_index = SPR_chaos_platform_mask;
+chaosHomeY = y;
+chaosPreviousY = y;
+chaosTravel = (x == 592) ? 144 : ((x == 3664) ? 208 : 0);
+chaosTravelTick = 0;
+chaosMoveY = -1;
+chaosDeltaY = 0;
+chaosSag = 0;
+chaosSagReturning = false;

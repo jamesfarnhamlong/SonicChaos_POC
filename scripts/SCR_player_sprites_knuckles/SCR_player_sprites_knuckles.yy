@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SCR_player_sprites_knuckles",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SCR_player_sprites_knuckles",
+  "parent":{
+    "name":"Sprites",
+    "path":"folders/Scripts/Player/Sprites.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

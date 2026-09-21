@@ -1,0 +1,481 @@
+{
+  "description": "User supplied sound test addresses; hexadecimal physical ROM offsets. Headers checked against supplied SMS ROM only. Sound IDs 81\u20139F are songs; A0\u2013C4 are effects. GG data not checked against a GG ROM.",
+  "entries": [
+    {
+      "sound_test_id": "81",
+      "kind": "song",
+      "sms_1_2_offset": "9169",
+      "gg_1_0_offset": "91B7",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "82",
+      "kind": "song",
+      "sms_1_2_offset": "963F",
+      "gg_1_0_offset": "975F",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "83",
+      "kind": "song",
+      "sms_1_2_offset": "9793",
+      "gg_1_0_offset": "985D",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "84",
+      "kind": "song",
+      "sms_1_2_offset": "9CE8",
+      "gg_1_0_offset": "9DB2",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "85",
+      "kind": "song",
+      "sms_1_2_offset": "9EB2",
+      "gg_1_0_offset": "9F7C",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "86",
+      "kind": "song",
+      "sms_1_2_offset": "9F7A",
+      "gg_1_0_offset": "A044",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "87",
+      "kind": "song",
+      "sms_1_2_offset": "A005",
+      "gg_1_0_offset": "A0CF",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "88",
+      "kind": "song",
+      "sms_1_2_offset": "A0A5",
+      "gg_1_0_offset": "A16F",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "89",
+      "kind": "song",
+      "sms_1_2_offset": "A152",
+      "gg_1_0_offset": "A21C",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "8A",
+      "kind": "song",
+      "sms_1_2_offset": "A1E1",
+      "gg_1_0_offset": "A2AB",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "8B",
+      "kind": "song",
+      "sms_1_2_offset": "A23D",
+      "gg_1_0_offset": "A307",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "8C",
+      "kind": "song",
+      "sms_1_2_offset": "A948",
+      "gg_1_0_offset": "AA12",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "8D",
+      "kind": "song",
+      "sms_1_2_offset": "AF69",
+      "gg_1_0_offset": "B033",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "8E",
+      "kind": "song",
+      "sms_1_2_offset": "B634",
+      "gg_1_0_offset": "B6FE",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "8F",
+      "kind": "song",
+      "sms_1_2_offset": "B6C4",
+      "gg_1_0_offset": "B78E",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "90",
+      "kind": "song",
+      "sms_1_2_offset": "B8EB",
+      "gg_1_0_offset": "B9B5",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "91",
+      "kind": "song",
+      "sms_1_2_offset": "BEF6",
+      "gg_1_0_offset": "BFC0",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "92",
+      "kind": "song",
+      "sms_1_2_offset": "C3DD",
+      "gg_1_0_offset": "C4B4",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "93",
+      "kind": "song",
+      "sms_1_2_offset": "C8B6",
+      "gg_1_0_offset": "C98D",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "94",
+      "kind": "song",
+      "sms_1_2_offset": "CFDD",
+      "gg_1_0_offset": "D0F9",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "95",
+      "kind": "song",
+      "sms_1_2_offset": "D206",
+      "gg_1_0_offset": "D322",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "96",
+      "kind": "song",
+      "sms_1_2_offset": "D7DC",
+      "gg_1_0_offset": "D8F6",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "97",
+      "kind": "song",
+      "sms_1_2_offset": "D881",
+      "gg_1_0_offset": "D99B",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "98",
+      "kind": "song",
+      "sms_1_2_offset": "D91C",
+      "gg_1_0_offset": "DA36",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "99",
+      "kind": "song",
+      "sms_1_2_offset": "D991",
+      "gg_1_0_offset": "DAAB",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "9A",
+      "kind": "song",
+      "sms_1_2_offset": "DBCA",
+      "gg_1_0_offset": "DCE4",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "9B",
+      "kind": "song",
+      "sms_1_2_offset": "DE54",
+      "gg_1_0_offset": "DF6E",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "9C",
+      "kind": "song",
+      "sms_1_2_offset": "DE6E",
+      "gg_1_0_offset": "E52D",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "9D",
+      "kind": "song",
+      "sms_1_2_offset": "DE88",
+      "gg_1_0_offset": "EBCC",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "9E",
+      "kind": "song",
+      "sms_1_2_offset": "DEA2",
+      "gg_1_0_offset": "ECF4",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "9F",
+      "kind": "song",
+      "sms_1_2_offset": "DEBC",
+      "gg_1_0_offset": "F16F",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "A0",
+      "kind": "effect",
+      "sms_1_2_offset": "DED6",
+      "gg_1_0_offset": "F2BF",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "A1",
+      "kind": "effect",
+      "sms_1_2_offset": "DF05",
+      "gg_1_0_offset": "F2EE",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "A2",
+      "kind": "effect",
+      "sms_1_2_offset": "DF1B",
+      "gg_1_0_offset": "F304",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "A3",
+      "kind": "effect",
+      "sms_1_2_offset": "DF42",
+      "gg_1_0_offset": "F32B",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "A4",
+      "kind": "effect",
+      "sms_1_2_offset": "DF6D",
+      "gg_1_0_offset": "F356",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "A5",
+      "kind": "effect",
+      "sms_1_2_offset": "DFAC",
+      "gg_1_0_offset": "F395",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "A6",
+      "kind": "effect",
+      "sms_1_2_offset": "DFC4",
+      "gg_1_0_offset": "F3AD",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "A7",
+      "kind": "effect",
+      "sms_1_2_offset": "DFF5",
+      "gg_1_0_offset": "F3DE",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "A8",
+      "kind": "effect",
+      "sms_1_2_offset": "E00B",
+      "gg_1_0_offset": "F3F4",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "A9",
+      "kind": "effect",
+      "sms_1_2_offset": "E04B",
+      "gg_1_0_offset": "F434",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "AA",
+      "kind": "effect",
+      "sms_1_2_offset": "E079",
+      "gg_1_0_offset": "F462",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "AB",
+      "kind": "effect",
+      "sms_1_2_offset": "E08C",
+      "gg_1_0_offset": "F475",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "AC",
+      "kind": "effect",
+      "sms_1_2_offset": "E0A5",
+      "gg_1_0_offset": "F48E",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "AD",
+      "kind": "effect",
+      "sms_1_2_offset": "E0D4",
+      "gg_1_0_offset": "F4BD",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "AE",
+      "kind": "effect",
+      "sms_1_2_offset": "E0EC",
+      "gg_1_0_offset": "F4D5",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "AF",
+      "kind": "effect",
+      "sms_1_2_offset": "E10F",
+      "gg_1_0_offset": "F4F8",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "B0",
+      "kind": "effect",
+      "sms_1_2_offset": "E132",
+      "gg_1_0_offset": "F51B",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "B1",
+      "kind": "effect",
+      "sms_1_2_offset": "E150",
+      "gg_1_0_offset": "F539",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "B2",
+      "kind": "effect",
+      "sms_1_2_offset": "E16B",
+      "gg_1_0_offset": "F554",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "B3",
+      "kind": "effect",
+      "sms_1_2_offset": "E193",
+      "gg_1_0_offset": "F57C",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "B4",
+      "kind": "effect",
+      "sms_1_2_offset": "E1B9",
+      "gg_1_0_offset": "F5A2",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "B5",
+      "kind": "effect",
+      "sms_1_2_offset": "E1E1",
+      "gg_1_0_offset": "F5CA",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "B6",
+      "kind": "effect",
+      "sms_1_2_offset": "E1FC",
+      "gg_1_0_offset": "F5E5",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "B7",
+      "kind": "effect",
+      "sms_1_2_offset": "E22E",
+      "gg_1_0_offset": "F617",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "B8",
+      "kind": "effect",
+      "sms_1_2_offset": "E24C",
+      "gg_1_0_offset": "F635",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "B9",
+      "kind": "effect",
+      "sms_1_2_offset": "E267",
+      "gg_1_0_offset": "F650",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "BA",
+      "kind": "effect",
+      "sms_1_2_offset": "E29B",
+      "gg_1_0_offset": "F684",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "BB",
+      "kind": "effect",
+      "sms_1_2_offset": "E2DD",
+      "gg_1_0_offset": "F6C6",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "BC",
+      "kind": "effect",
+      "sms_1_2_offset": "E30D",
+      "gg_1_0_offset": "F6F6",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "BD",
+      "kind": "effect",
+      "sms_1_2_offset": "E330",
+      "gg_1_0_offset": "F719",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "BE",
+      "kind": "effect",
+      "sms_1_2_offset": "E358",
+      "gg_1_0_offset": "F741",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "BF",
+      "kind": "effect",
+      "sms_1_2_offset": "E376",
+      "gg_1_0_offset": "F75F",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "C0",
+      "kind": "effect",
+      "sms_1_2_offset": "E391",
+      "gg_1_0_offset": "F77A",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "C1",
+      "kind": "effect",
+      "sms_1_2_offset": "E3B4",
+      "gg_1_0_offset": "F79D",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "C2",
+      "kind": "effect",
+      "sms_1_2_offset": "E3CC",
+      "gg_1_0_offset": "F7B5",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "C3",
+      "kind": "effect",
+      "sms_1_2_offset": "E40C",
+      "gg_1_0_offset": "F7F5",
+      "sms_1_2_header": "FD 49"
+    },
+    {
+      "sound_test_id": "C4",
+      "kind": "effect",
+      "sms_1_2_offset": "E434",
+      "gg_1_0_offset": "F81D",
+      "sms_1_2_header": "FD 49"
+    }
+  ]
+}

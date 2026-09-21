@@ -1,0 +1,39 @@
+# Original game images and emulator state
+*.sms
+*.gg
+*.rom
+*.sav
+roms/
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Generated packages and builds
+*.exe
+*.zip
+build/
+builds/
+dist/
+exports/
+
+# Tool caches and temporary files
+.cache/
+temp/
+tmp/
+__pycache__/
+*.py[cod]
+node_modules/
+
+# OS and editor clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.tmp
+

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SCR_physics_jump_objects",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SCR_physics_jump_objects",
+  "parent":{
+    "name":"Physics",
+    "path":"folders/Scripts/Player/Physics.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

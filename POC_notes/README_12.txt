@@ -1,0 +1,1 @@
+v12 fixes the height-profile lookup crash at level start: unused ROM block IDs have a -1 sentinel and the lookup checks is_array before indexing. No terrain or spring behaviour was otherwise changed from v11. GameMaker runtime has not been run here.

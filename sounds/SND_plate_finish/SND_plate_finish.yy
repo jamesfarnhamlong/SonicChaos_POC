@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"SND_plate_finish",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":3,
+  "compressionQuality":9,
+  "conversionMode":0,
+  "duration":0.0,
+  "exportDir":"",
+  "name":"SND_plate_finish",
+  "parent":{
+    "name":"Level Objects",
+    "path":"folders/Sounds/Level Objects.yy",
+  },
+  "preload":true,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"SND_plate_finish",
+  "volume":1.0,
+}

@@ -1,0 +1,377 @@
+{
+  "source": "Supplied Sonic Chaos SMS 1.2 ROM, physical offset 0x705AE",
+  "format": "53 records of nine bytes until 0xFF terminator; type meaning and final four bytes not fully decoded",
+  "records": [
+    {
+      "rom_offset": "0705AE",
+      "type_id": "28",
+      "x": 848,
+      "y": 720,
+      "unknown_bytes": "00 0A 6A 09"
+    },
+    {
+      "rom_offset": "0705B7",
+      "type_id": "28",
+      "x": 3920,
+      "y": 768,
+      "unknown_bytes": "00 0A 6A 0D"
+    },
+    {
+      "rom_offset": "0705C0",
+      "type_id": "28",
+      "x": 1296,
+      "y": 640,
+      "unknown_bytes": "00 84 6A 00"
+    },
+    {
+      "rom_offset": "0705C9",
+      "type_id": "28",
+      "x": 1392,
+      "y": 576,
+      "unknown_bytes": "00 84 6A 00"
+    },
+    {
+      "rom_offset": "0705D2",
+      "type_id": "28",
+      "x": 1488,
+      "y": 512,
+      "unknown_bytes": "00 84 6A 00"
+    },
+    {
+      "rom_offset": "0705DB",
+      "type_id": "28",
+      "x": 1584,
+      "y": 464,
+      "unknown_bytes": "00 84 6A 00"
+    },
+    {
+      "rom_offset": "0705E4",
+      "type_id": "26",
+      "x": 944,
+      "y": 1120,
+      "unknown_bytes": "00 00 72 72"
+    },
+    {
+      "rom_offset": "0705ED",
+      "type_id": "26",
+      "x": 3824,
+      "y": 1024,
+      "unknown_bytes": "00 00 72 72"
+    },
+    {
+      "rom_offset": "0705F6",
+      "type_id": "10",
+      "x": 912,
+      "y": 1102,
+      "unknown_bytes": "00 06 00 00"
+    },
+    {
+      "rom_offset": "0705FF",
+      "type_id": "10",
+      "x": 1968,
+      "y": 750,
+      "unknown_bytes": "00 06 00 00"
+    },
+    {
+      "rom_offset": "070608",
+      "type_id": "10",
+      "x": 592,
+      "y": 526,
+      "unknown_bytes": "00 04 00 00"
+    },
+    {
+      "rom_offset": "070611",
+      "type_id": "10",
+      "x": 1728,
+      "y": 366,
+      "unknown_bytes": "00 04 00 00"
+    },
+    {
+      "rom_offset": "07061A",
+      "type_id": "10",
+      "x": 2944,
+      "y": 942,
+      "unknown_bytes": "00 02 00 00"
+    },
+    {
+      "rom_offset": "070623",
+      "type_id": "09",
+      "x": 3380,
+      "y": 804,
+      "unknown_bytes": "00 00 00 00"
+    },
+    {
+      "rom_offset": "07062C",
+      "type_id": "09",
+      "x": 3416,
+      "y": 778,
+      "unknown_bytes": "00 00 00 00"
+    },
+    {
+      "rom_offset": "070635",
+      "type_id": "09",
+      "x": 3464,
+      "y": 768,
+      "unknown_bytes": "00 00 00 00"
+    },
+    {
+      "rom_offset": "07063E",
+      "type_id": "09",
+      "x": 3136,
+      "y": 640,
+      "unknown_bytes": "00 00 00 00"
+    },
+    {
+      "rom_offset": "070647",
+      "type_id": "09",
+      "x": 3088,
+      "y": 704,
+      "unknown_bytes": "00 00 00 00"
+    },
+    {
+      "rom_offset": "070650",
+      "type_id": "09",
+      "x": 3096,
+      "y": 664,
+      "unknown_bytes": "00 00 00 00"
+    },
+    {
+      "rom_offset": "070659",
+      "type_id": "09",
+      "x": 3184,
+      "y": 704,
+      "unknown_bytes": "00 00 00 00"
+    },
+    {
+      "rom_offset": "070662",
+      "type_id": "09",
+      "x": 3176,
+      "y": 664,
+      "unknown_bytes": "00 00 00 00"
+    },
+    {
+      "rom_offset": "07066B",
+      "type_id": "26",
+      "x": 1552,
+      "y": 864,
+      "unknown_bytes": "00 8A 72 72"
+    },
+    {
+      "rom_offset": "070674",
+      "type_id": "26",
+      "x": 2168,
+      "y": 1120,
+      "unknown_bytes": "00 01 72 72"
+    },
+    {
+      "rom_offset": "07067D",
+      "type_id": "27",
+      "x": 3760,
+      "y": 480,
+      "unknown_bytes": "10 00 AA AA"
+    },
+    {
+      "rom_offset": "070686",
+      "type_id": "27",
+      "x": 2544,
+      "y": 1024,
+      "unknown_bytes": "10 00 AA AA"
+    },
+    {
+      "rom_offset": "07068F",
+      "type_id": "27",
+      "x": 2496,
+      "y": 368,
+      "unknown_bytes": "10 00 AA AA"
+    },
+    {
+      "rom_offset": "070698",
+      "type_id": "21",
+      "x": 1056,
+      "y": 862,
+      "unknown_bytes": "00 08 86 98"
+    },
+    {
+      "rom_offset": "0706A1",
+      "type_id": "21",
+      "x": 1504,
+      "y": 1118,
+      "unknown_bytes": "00 06 86 98"
+    },
+    {
+      "rom_offset": "0706AA",
+      "type_id": "21",
+      "x": 2304,
+      "y": 574,
+      "unknown_bytes": "00 06 86 98"
+    },
+    {
+      "rom_offset": "0706B3",
+      "type_id": "21",
+      "x": 3408,
+      "y": 1150,
+      "unknown_bytes": "00 03 86 98"
+    },
+    {
+      "rom_offset": "0706BC",
+      "type_id": "21",
+      "x": 3552,
+      "y": 542,
+      "unknown_bytes": "00 04 86 98"
+    },
+    {
+      "rom_offset": "0706C5",
+      "type_id": "21",
+      "x": 2656,
+      "y": 510,
+      "unknown_bytes": "00 02 86 98"
+    },
+    {
+      "rom_offset": "0706CE",
+      "type_id": "1B",
+      "x": 1600,
+      "y": 1120,
+      "unknown_bytes": "00 00 00 00"
+    },
+    {
+      "rom_offset": "0706D7",
+      "type_id": "1B",
+      "x": 2192,
+      "y": 1120,
+      "unknown_bytes": "00 00 00 00"
+    },
+    {
+      "rom_offset": "0706E0",
+      "type_id": "1B",
+      "x": 2720,
+      "y": 1120,
+      "unknown_bytes": "00 00 00 00"
+    },
+    {
+      "rom_offset": "0706E9",
+      "type_id": "1B",
+      "x": 3168,
+      "y": 1120,
+      "unknown_bytes": "00 00 00 00"
+    },
+    {
+      "rom_offset": "0706F2",
+      "type_id": "09",
+      "x": 3623,
+      "y": 1086,
+      "unknown_bytes": "00 00 00 00"
+    },
+    {
+      "rom_offset": "0706FB",
+      "type_id": "09",
+      "x": 3650,
+      "y": 1054,
+      "unknown_bytes": "00 00 00 00"
+    },
+    {
+      "rom_offset": "070704",
+      "type_id": "09",
+      "x": 3678,
+      "y": 1030,
+      "unknown_bytes": "00 00 00 00"
+    },
+    {
+      "rom_offset": "07070D",
+      "type_id": "09",
+      "x": 1072,
+      "y": 1100,
+      "unknown_bytes": "00 01 00 00"
+    },
+    {
+      "rom_offset": "070716",
+      "type_id": "09",
+      "x": 1120,
+      "y": 1100,
+      "unknown_bytes": "00 01 00 00"
+    },
+    {
+      "rom_offset": "07071F",
+      "type_id": "09",
+      "x": 1200,
+      "y": 1100,
+      "unknown_bytes": "00 01 00 00"
+    },
+    {
+      "rom_offset": "070728",
+      "type_id": "09",
+      "x": 1296,
+      "y": 1100,
+      "unknown_bytes": "00 01 00 00"
+    },
+    {
+      "rom_offset": "070731",
+      "type_id": "09",
+      "x": 1984,
+      "y": 844,
+      "unknown_bytes": "00 01 00 00"
+    },
+    {
+      "rom_offset": "07073A",
+      "type_id": "09",
+      "x": 2016,
+      "y": 844,
+      "unknown_bytes": "00 01 00 00"
+    },
+    {
+      "rom_offset": "070743",
+      "type_id": "09",
+      "x": 2112,
+      "y": 844,
+      "unknown_bytes": "00 01 00 00"
+    },
+    {
+      "rom_offset": "07074C",
+      "type_id": "09",
+      "x": 2224,
+      "y": 844,
+      "unknown_bytes": "00 01 00 00"
+    },
+    {
+      "rom_offset": "070755",
+      "type_id": "09",
+      "x": 2304,
+      "y": 844,
+      "unknown_bytes": "00 01 00 00"
+    },
+    {
+      "rom_offset": "07075E",
+      "type_id": "09",
+      "x": 2336,
+      "y": 844,
+      "unknown_bytes": "00 01 00 00"
+    },
+    {
+      "rom_offset": "070767",
+      "type_id": "09",
+      "x": 2656,
+      "y": 940,
+      "unknown_bytes": "00 01 00 00"
+    },
+    {
+      "rom_offset": "070770",
+      "type_id": "09",
+      "x": 2768,
+      "y": 940,
+      "unknown_bytes": "00 01 00 00"
+    },
+    {
+      "rom_offset": "070779",
+      "type_id": "09",
+      "x": 2896,
+      "y": 940,
+      "unknown_bytes": "00 01 00 00"
+    },
+    {
+      "rom_offset": "070782",
+      "type_id": "18",
+      "x": 4216,
+      "y": 814,
+      "unknown_bytes": "00 00 00 00"
+    }
+  ]
+}
