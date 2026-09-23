@@ -1,4 +1,6 @@
 {
+  "status": "superseded_poc16_inspection_cache",
+  "warning": "Object labels were reversed and palette 0x15 was the THZ1 background palette. Use POC 17 thz1-object-sprites.json and the updated reference extractor.",
   "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
   "palette_offset": "0x3B79D",
   "scope": "Native decompressed tiles only; frame mappings remain unclaimed.",

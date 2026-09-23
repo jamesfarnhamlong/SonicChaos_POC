@@ -7233,6 +7233,18 @@
     {
       "name": "inst_EFBA89E9",
       "path": "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
+    },
+    {
+      "name": "inst_C2700001",
+      "path": "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
+    },
+    {
+      "name": "inst_C2700002",
+      "path": "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
+    },
+    {
+      "name": "inst_C2700003",
+      "path": "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
     }
   ],
   "isDnd": false,
@@ -56039,6 +56051,21 @@
           "scaleY": 1.0,
           "x": 1912.0,
           "y": 864.0
+        },
+        {
+          "$GMRInstance":"v4","%Name":"inst_C2700001","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":0.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_C2700001",
+          "objectId":{"name":"OBJ_chaos_object_27","path":"objects/OBJ_chaos_object_27/OBJ_chaos_object_27.yy"},
+          "properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3504.0,"y":224.0
+        },
+        {
+          "$GMRInstance":"v4","%Name":"inst_C2700002","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":0.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_C2700002",
+          "objectId":{"name":"OBJ_chaos_object_27","path":"objects/OBJ_chaos_object_27/OBJ_chaos_object_27.yy"},
+          "properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2288.0,"y":768.0
+        },
+        {
+          "$GMRInstance":"v4","%Name":"inst_C2700003","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":0.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_C2700003",
+          "objectId":{"name":"OBJ_chaos_object_27","path":"objects/OBJ_chaos_object_27/OBJ_chaos_object_27.yy"},
+          "properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2240.0,"y":112.0
         }
       ],
       "layers": [],

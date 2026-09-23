@@ -2938,6 +2938,24 @@
     },
     {
       "id": {
+        "name": "SPR_chaos_object_1B",
+        "path": "sprites/SPR_chaos_object_1B/SPR_chaos_object_1B.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_27",
+        "path": "sprites/SPR_chaos_object_27/SPR_chaos_object_27.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_27",
+        "path": "objects/OBJ_chaos_object_27/OBJ_chaos_object_27.yy"
+      }
+    },
+    {
+      "id": {
         "name": "OBJ_chaos_zone",
         "path": "objects/OBJ_chaos_zone/OBJ_chaos_zone.yy"
       }

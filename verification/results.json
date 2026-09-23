@@ -10,11 +10,13 @@
     "terrain_springs": 9,
     "concealed_springs": 4,
     "moving_spikes": 4,
+    "static_spikes": 4,
+    "type_27_objects": 3,
     "platforms": 6,
     "rings": 142,
     "monitors": 4,
     "unsupported_instances": 0,
-    "graphics_added": false,
+    "rom_derived_object_graphics": true,
     "rom_bytes_included": false
   },
   "twist_state_22": {
@@ -30,20 +32,97 @@
     "rolling_exit": true,
     "game_maker_compiled": false
   },
+  "type_27_handlers": {
+    "initial": {
+      "state": 1,
+      "vx_8_8": 64896,
+      "vy_8_8": 0
+    },
+    "state_two_entry": {
+      "state": 2,
+      "vx_8_8": 0,
+      "vy_8_8": 0,
+      "counter": 128,
+      "flag": 1
+    },
+    "acceleration_callbacks": [
+      {
+        "handler": "0x89DF",
+        "vy_8_8": 3,
+        "counter": 127
+      },
+      {
+        "handler": "0x89F3",
+        "vy_8_8": 65533,
+        "counter": 127
+      }
+    ],
+    "counter_underflow": {
+      "state": 3,
+      "vx_8_8": 64896,
+      "vy_8_8": 0
+    },
+    "distance_boundaries": [
+      {
+        "delta": 383,
+        "removed": false
+      },
+      {
+        "delta": 384,
+        "removed": true
+      },
+      {
+        "delta": -383,
+        "removed": false
+      },
+      {
+        "delta": -384,
+        "removed": true
+      }
+    ],
+    "gml_contract_checked": true,
+    "limitation": "Selected original callbacks and static GML contract; not full scheduler or GameMaker runtime"
+  },
   "enemy_research": {
     "verified_placements": 9,
-    "cached_native_tiles": 38,
-    "room_enemy_instances_added": 0,
-    "scope": "research cache only; frame composition and AI deferred"
+    "rom_derived_sprite_assets": 3,
+    "room_type_27_instances_added": 3,
+    "type_21_instances_added": 0,
+    "scope": "type $27 implemented from recovered handlers; type $21 deliberately deferred"
   },
   "project_resource_counts": {
-    "sms_project_backup.yyp": 319,
-    "SonicChaos_POC.yyp": 472
+    "SonicChaos_POC.yyp": 475,
+    "sms_project_backup.yyp": 319
   },
   "resource_metadata_validated": true,
+  "sprite_root_and_layer_pngs_validated": true,
+  "data_card_draw_defaults_validated": true,
+  "moving_spike_floor_anchor_validated": true,
+  "terrain_spring_transparency": {
+    "48": {
+      "transparent_pixels": 856,
+      "opaque_pixels": 168
+    },
+    "49": {
+      "transparent_pixels": 856,
+      "opaque_pixels": 168
+    },
+    "51": {
+      "transparent_pixels": 856,
+      "opaque_pixels": 168
+    },
+    "54": {
+      "transparent_pixels": 854,
+      "opaque_pixels": 170
+    },
+    "56": {
+      "transparent_pixels": 854,
+      "opaque_pixels": 170
+    }
+  },
   "source_sha256": {
-    "scripts/SCR_chaos_core/SCR_chaos_core.gml": "c92a440447939601522b1ed07a4de6d6da852d9c349d38b6f1a2fef388f9f3bd",
+    "scripts/SCR_chaos_core/SCR_chaos_core.gml": "07cc1db29ca0f2b37b74ef4b017f3c8223f0ad0373b92fd0a4778336ef6b79cc",
     "scripts/SCR_chaos_core_data/SCR_chaos_core_data.gml": "eb1dfddcb2930bf77299d827c02286f1d8490905af3ba690c9677d5d86bb1614",
-    "scripts/SCR_chaos_adapter/SCR_chaos_adapter.gml": "6b2bf71e545c731f04d42a175e4312ed2cbb1986412a9135b610a437c3f34599"
+    "scripts/SCR_chaos_adapter/SCR_chaos_adapter.gml": "fe21c55071525be093db030e5ab3130d119754639dc65cbc50a898bf1c1c58b3"
   }
 }

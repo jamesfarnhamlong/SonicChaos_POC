@@ -29,11 +29,10 @@ both directions and checks the rolling exit. The previous 15,660 movement cases,
 GameMaker is not installed here, so Windows compilation and three gameplay passes
 in each direction are still required.
 
-## Enemy research/cache
+## Enemy research/cache (superseded by POC 17)
 
-Act 1 contains six type-`$21` flying enemies and three type-`$27` Motobugs. Their
-exact ROM records and world anchors are in `POC_notes/enemy-placements.json`.
-`POC_notes/rom-cache/enemy-art/` contains the positively identified Chaos tile art
-for both flying directions and Motobug. These are native tile atlases only: exact
-frame composition, origins, object grounding and AI are deliberately deferred, so
-POC 16 adds no guessed enemy instances or graphics to the room.
+POC 16 recorded six type-`$21` and three type-`$27` placements but assigned their
+visual labels before the mapping tables were reconstructed. Those labels were
+reversed and are retained only as historical context. POC 17 uses the decoded
+mapping/handler chain, adds type `$27` under its numeric name, and leaves `$21`
+deferred pending its full reverse-engineering pass.

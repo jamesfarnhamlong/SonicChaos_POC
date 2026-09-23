@@ -1,7 +1,8 @@
-"""Extract positively identified THZ enemy tile art from the checked SMS ROM.
+"""Historical POC-16 tile inspection script; superseded in POC 17.
 
-This caches native 8x8 tiles and inspection atlases only. It does not guess sprite
-mappings, frame composition, object anchors, or collision bounds.
+Its object labels and palette choice predate the decoded mapping/palette chain and
+must not be used for implementation. Use the companion reference repository's
+``tools/thz1_object_assets.py`` instead.
 """
 import argparse, hashlib, json, struct
 from pathlib import Path
@@ -61,6 +62,10 @@ def render_tile(raw, colors):
     return image
 
 def main():
+    raise SystemExit(
+        "Superseded: use sonic-chaos-reference/tools/thz1_object_assets.py"
+    )
+    # Historical implementation retained below to explain the POC-16 cache.
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("rom", type=Path)
     parser.add_argument("--output", type=Path, default=Path("data/rom-cache/thz1/enemy-art"))
@@ -93,4 +98,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

@@ -21,6 +21,16 @@ for(let i=0;i<data.spring.trace.length;i++){
     check(c,data.spring.trace[i],`spring tick ${i}`);
 }
 ctx.global.chaosTileIds=saved;
+// THZ1 block $3D uses tile $3D/surface type 5. The original $6ACE handler
+// requests damage only once ordinary floor projection has made contact.
+c=initial({xu:1504*256,yu:830*256,previous:133,bg:0,player_flags:0});
+ctx.SCR_cc_floor(c);
+assert.strictEqual(c.tile,61,'THZ1 static-spike tile');
+assert.strictEqual(c.bg&2,2,'static-spike floor contact');
+assert.strictEqual(c.hazard,1,'surface type 5 must request hazard damage');
+c=initial({xu:1504*256,yu:830*256,previous:133,bg:0,player_flags:128});
+ctx.SCR_cc_floor(c);
+assert.strictEqual(c.hazard,0,'player damage-disable flag suppresses hazard');
 assert.strictEqual(ctx.SCR_cc_lookup(4095,1023,0).index,-1,'4096th map cell must not be queried');
 const report={rom_sha256:data.rom_sha256,actual_gml_executed:true,subroutine_cases:count,
     first_ramp_updates:48,vertical_spring_updates:160,game_maker_compiled:false,

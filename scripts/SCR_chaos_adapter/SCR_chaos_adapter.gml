@@ -125,7 +125,8 @@ function SCR_chaos_adapter_step(cp_p) {
         if (cp_c.sound == 2) audio_play_sound(SFX_sonic_spring,10,false);
     }
     // Keep sample-engine damage/ring-loss/death behaviour, outside the physics core.
-    with (cp_p) { SCR_chaos_sample_damage(); }
+    if (cp_c.hazard != 0) SCR_chaos_apply_hazard_damage(cp_p);
+    else with (cp_p) { SCR_chaos_sample_damage(); }
 }
 function SCR_chaos_adapter_end(cp_p) {
     if (!variable_instance_exists(cp_p,"chaosCore")) return;
@@ -278,25 +279,25 @@ function SCR_chaos_spike_step(cp_o) {
     if (cp_o.chaosOffset > 0 && (cp_o.chaosState == 1 || cp_o.chaosState == 2) &&
         instance_exists(OBJ_player)) {
         var cp_p = instance_find(OBJ_player,0);
+        var cp_visible = min(32,18+cp_o.chaosOffset);
+        var cp_spike_top = cp_o.chaosBaseY-cp_visible;
+        var cp_spike_bottom = cp_o.chaosBaseY;
         if (cp_p.bbox_right >= cp_o.x-16 && cp_p.bbox_left <= cp_o.x+16 &&
-            cp_p.bbox_bottom >= cp_o.chaosBaseY-cp_o.chaosOffset &&
-            cp_p.bbox_top <= cp_o.chaosBaseY) SCR_chaos_apply_hazard_damage(cp_p);
+            cp_p.bbox_bottom >= cp_spike_top &&
+            cp_p.bbox_top <= cp_spike_bottom) SCR_chaos_apply_hazard_damage(cp_p);
     }
 }
 
 function SCR_chaos_spike_draw(cp_o) {
-    if (cp_o.chaosOffset <= 0) return;
-    var cp_bottom = cp_o.chaosBaseY;
-    for (var cp_i=0; cp_i<3; cp_i++) {
-        var cp_l = cp_o.x-15+cp_i*10;
-        var cp_r = cp_l+10;
-        var cp_m = (cp_l+cp_r)/2;
-        draw_set_color(make_color_rgb(180,48,64));
-        draw_triangle(cp_l,cp_bottom,cp_r,cp_bottom,cp_m,cp_bottom-cp_o.chaosOffset,false);
-        draw_set_color(c_white);
-        draw_triangle(cp_l+2,cp_bottom-2,cp_r-2,cp_bottom-2,
-            cp_m,cp_bottom-cp_o.chaosOffset+2,false);
-    }
+    // Mapping frame $0E is 24x32. The ROM moves it upward only 18 pixels;
+    // presentation keeps the exposed portion bottom-aligned to the floor so
+    // it grows upward from 18 pixels at rest to the complete raised frame.
+    var cp_visible = min(32,18+cp_o.chaosOffset);
+    draw_sprite_part(
+        SPR_chaos_object_1B,0,
+        4,4,24,cp_visible,
+        cp_o.x-12,cp_o.chaosBaseY-cp_visible
+    );
 }
 
 function SCR_chaos_sample_damage() {

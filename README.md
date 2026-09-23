@@ -1,12 +1,12 @@
 # Sonic Chaos — Windows proof of concept
 
-A GameMaker proof of concept for recreating *Sonic Chaos* Master System behaviour on Windows. The current playable baseline is **POC 14.5**.
+A GameMaker proof of concept for recreating *Sonic Chaos* Master System behaviour on Windows. The current source baseline is **POC 17**.
 
 This repository tracks the current working project rather than storing a new copy of the whole project for every test build. Git history and version tags preserve milestones.
 
 ## Start here
 
-- [POC 14.5 notes and test checklist](README_14_5.md)
+- [POC 17 notes and test checklist](README_17.md)
 - [Detailed historical prototype notes](README_POC.md)
 - [Original-engine research and partial disassembly](https://github.com/jamesfarnhamlong/sonic-chaos-reference)
 
@@ -23,4 +23,3 @@ When updating from a complete test ZIP, replace the project files in this workin
 The original GameMaker project is derived from [Open Sonic SMS](https://github.com/joaoaraya/prj-openSonicSMS). The Chaos-specific work uses verified findings from the companion engine-reference repository.
 
 No Sonic Chaos ROM is included. Sonic characters, graphics, audio, game code and related material belong to their respective rights holders. This is a non-commercial research and fan-development project.
-

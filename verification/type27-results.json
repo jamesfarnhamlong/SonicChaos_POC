@@ -1,0 +1,51 @@
+{
+  "initial": {
+    "state": 1,
+    "vx_8_8": 64896,
+    "vy_8_8": 0
+  },
+  "state_two_entry": {
+    "state": 2,
+    "vx_8_8": 0,
+    "vy_8_8": 0,
+    "counter": 128,
+    "flag": 1
+  },
+  "acceleration_callbacks": [
+    {
+      "handler": "0x89DF",
+      "vy_8_8": 3,
+      "counter": 127
+    },
+    {
+      "handler": "0x89F3",
+      "vy_8_8": 65533,
+      "counter": 127
+    }
+  ],
+  "counter_underflow": {
+    "state": 3,
+    "vx_8_8": 64896,
+    "vy_8_8": 0
+  },
+  "distance_boundaries": [
+    {
+      "delta": 383,
+      "removed": false
+    },
+    {
+      "delta": 384,
+      "removed": true
+    },
+    {
+      "delta": -383,
+      "removed": false
+    },
+    {
+      "delta": -384,
+      "removed": true
+    }
+  ],
+  "gml_contract_checked": true,
+  "limitation": "Selected original callbacks and static GML contract; not full scheduler or GameMaker runtime"
+}

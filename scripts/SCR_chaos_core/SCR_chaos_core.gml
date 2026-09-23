@@ -8,7 +8,7 @@ function SCR_cc_new(cp_x, cp_y) {
         player_flags:0, plane:0, previous:0, tile:255, modifier:0,
         input_delta:0, surface_delta:0, maximum:1024, water:0,
         held:0, pressed:0, jump_ticks:0, sound:0, unsupported:0,
-        angle:0, magnitude:0, twist_variant:0, level:0};
+        hazard:0, angle:0, magnitude:0, twist_variant:0, level:0};
 }
 function SCR_cc_merge(cp_c) {
     cp_c.contacts = cp_c.bg;
@@ -283,6 +283,12 @@ function SCR_cc_floor(cp_c) {
     cp_c.previous = cp_s.flags;
     var cp_kind = cp_s.flags & 31;
     if (cp_kind == 18) SCR_cc_ramp(cp_c,cp_old_mod,cp_s.tile);
+    else if (cp_kind == 5) {
+        // $6ACE: ordinary floor hazards act only after floor contact. Tiles
+        // $F4/$F5 are exempt in the original handler.
+        if ((cp_s.tile & 254) != 244 && (cp_c.bg & 2) != 0 &&
+            (cp_c.player_flags & 128) == 0) cp_c.hazard = 1;
+    }
     else if (cp_kind == 9 || cp_kind == 20) SCR_cc_spring(cp_c,cp_kind,cp_s.tile);
     else if (cp_kind == 23) SCR_cc_twist_enter(cp_c,cp_s.tile);
     else if (cp_kind == 0 || cp_kind == 6 || cp_kind == 7) {
@@ -362,7 +368,7 @@ function SCR_cc_shared(cp_c) {
 }
 // Ordinary state wrappers. Animation-script scheduling and special states remain out of scope.
 function SCR_cc_tick(cp_c) {
-    cp_c.state = cp_c.next; cp_c.sound = 0; cp_c.unsupported = 0;
+    cp_c.state = cp_c.next; cp_c.sound = 0; cp_c.unsupported = 0; cp_c.hazard = 0;
     if (cp_c.state == 34) { SCR_cc_twist_tick(cp_c); return; }
     if ((cp_c.state == 7 && (cp_c.contacts & 8) != 0) || (cp_c.state == 8 && (cp_c.contacts & 4) != 0)) {
         SCR_cc_walk(cp_c); return;

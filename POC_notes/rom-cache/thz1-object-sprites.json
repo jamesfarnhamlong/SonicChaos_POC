@@ -1,0 +1,37 @@
+{
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "palette_selector_table_rom": "0x07F3C",
+  "background_palette_index": "0x15",
+  "sprite_palette_index": "0x06",
+  "sprite_palette_rom": "0x3B6AD",
+  "assets": [
+    {
+      "type_id": "0x1B",
+      "role": "retracting_spikes",
+      "mapping_frame": "0x0E",
+      "frame_record_cpu": "0x8D30",
+      "mapping_bounds": {"x": -12, "y": -32, "width": 24, "height": 32},
+      "sprite_path": "sprites/SPR_chaos_object_1B/1b1b1b1b-1b1b-41b1-81b1-1b1b1b1b1b1b.png",
+      "sha256": "a88fd646419695619807a94d77a1a5c9881f9769a0187bab52009ef2e6194929"
+    },
+    {
+      "type_id": "0x27",
+      "role": "semantic_name_open",
+      "mapping_frame": "0x01",
+      "frame_record_cpu": "0x91FB",
+      "mapping_bounds": {"x": -12, "y": -16, "width": 24, "height": 16},
+      "sprite_path": "sprites/SPR_chaos_object_27/27272727-2727-4272-8272-272727272701.png",
+      "sha256": "705608e9508c787ed12fcbe5b67871d4ddf63c08bf251f2d9cc1efd0c2ddfe54"
+    },
+    {
+      "type_id": "0x27",
+      "role": "semantic_name_open",
+      "mapping_frame": "0x02",
+      "frame_record_cpu": "0x9206",
+      "mapping_bounds": {"x": -12, "y": -16, "width": 24, "height": 16},
+      "sprite_path": "sprites/SPR_chaos_object_27/27272727-2727-4272-8272-272727272702.png",
+      "sha256": "e7abb61c05b07c3a66cfbd0cd187251894f4d8fbb9220f19bdbbd748964e844f"
+    }
+  ],
+  "scope": "ROM-derived sprite pixels, mappings and THZ1 sprite palette only. No complete ROM image is included."
+}

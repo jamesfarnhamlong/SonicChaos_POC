@@ -21,6 +21,7 @@ def main():
 
     expected_26 = {"0x00": Counter(), "0x01": Counter(), "0x8A": Counter()}
     expected_1b = Counter()
+    expected_27 = Counter()
     expected_28 = Counter()
     for record in records:
         point = (record["world_x"], record["world_y"])
@@ -28,6 +29,8 @@ def main():
             expected_26[record["parameter"]][point] += 1
         elif record["type_id"] == "0x1B":
             expected_1b[point] += 1
+        elif record["type_id"] == "0x27":
+            expected_27[point] += 1
         elif record["type_id"] == "0x28":
             expected_28[point] += 1
 
@@ -35,6 +38,7 @@ def main():
     assert positions(instances, "OBJ_chaos_object_spring_26_weak") == expected_26["0x01"]
     assert positions(instances, "OBJ_chaos_object_spring_26_span") == expected_26["0x8A"]
     assert positions(instances, "OBJ_chaos_spikes") == expected_1b
+    assert positions(instances, "OBJ_chaos_object_27") == expected_27
     assert positions(instances, "OBJ_chaos_platform") == expected_28
 
     terrain_names = {
@@ -48,6 +52,10 @@ def main():
         expected = Counter((x["x"], x["y"]) for x in layout["terrain"]
                            if x["block_id"] == block_id)
         assert positions(instances, name) == expected, name
+
+    expected_static_spikes = Counter((x["x"], x["y"]) for x in layout["terrain"]
+                                     if x["block_id"] == 61)
+    assert positions(instances, "OBJ_CHAOS_mask_12") == expected_static_spikes
 
     expected_rings = Counter((x["x"], x["y"]) for x in layout["rings"])
     assert positions(instances, "OBJ_ring") == expected_rings
@@ -66,11 +74,13 @@ def main():
         "terrain_springs": sum(positions(instances, n).total() for n in terrain_names.values()),
         "concealed_springs": sum(x.total() for x in expected_26.values()),
         "moving_spikes": expected_1b.total(),
+        "static_spikes": expected_static_spikes.total(),
+        "type_27_objects": expected_27.total(),
         "platforms": expected_28.total(),
         "rings": expected_rings.total(),
         "monitors": expected_monitors.total(),
         "unsupported_instances": 0,
-        "graphics_added": False,
+        "rom_derived_object_graphics": True,
         "rom_bytes_included": False,
     }
     (ROOT / "verification/layout-results.json").write_text(json.dumps(report, indent=2) + "\n")
