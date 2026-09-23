@@ -1,6 +1,6 @@
 # Sonic Chaos: Turquoise Hill Act 1 — Windows prototype 14
 
-See [prototype 14 notes](POC_notes/README_14.md) for the current collision, ramp and spring changes and remaining test scope. Earlier sections below describe historical prototypes.
+See [POC 15.1 notes](README_15_1.md) for the canon-only placement audit and [prototype 14 notes](POC_notes/README_14.md) for the collision and ramp foundation. Earlier sections below describe historical prototypes.
 
 ## Run
 Extract into a NEW folder, open SonicChaos_POC.yyp in your working GameMaker LTS2026 installation, press F5, then Start Game / first stage. Use existing movement and jump controls. R restarts from the beginning; F2 switches to the original engine sample. Unpause before using these keys.

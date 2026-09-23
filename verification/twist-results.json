@@ -1,0 +1,13 @@
+{
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "actual_gml_executed": true,
+  "dispatch_entries": 112,
+  "entry_boundary_cases": 1078,
+  "both_directions": true,
+  "traversal_updates": {
+    "right": 83,
+    "left": 75
+  },
+  "rolling_exit": true,
+  "game_maker_compiled": false
+}

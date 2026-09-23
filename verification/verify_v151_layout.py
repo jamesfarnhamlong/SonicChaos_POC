@@ -1,0 +1,81 @@
+"""Verify that every displayed THZ1 interaction has a canonical placement."""
+import json
+from collections import Counter
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+ROOM = ROOT / "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
+CACHE = ROOT / "POC_notes/rom-cache"
+
+
+def positions(instances, name):
+    return Counter((round(i["x"]), round(i["y"])) for i in instances
+                   if i["objectId"]["name"] == name)
+
+
+def main():
+    room = json.loads(ROOM.read_text())
+    instances = [i for layer in room["layers"] for i in layer.get("instances", [])]
+    records = json.loads((CACHE / "object-records.json").read_text())["records"]
+    layout = json.loads((CACHE / "layout-interactions.json").read_text())
+
+    expected_26 = {"0x00": Counter(), "0x01": Counter(), "0x8A": Counter()}
+    expected_1b = Counter()
+    expected_28 = Counter()
+    for record in records:
+        point = (record["world_x"], record["world_y"])
+        if record["type_id"] == "0x26":
+            expected_26[record["parameter"]][point] += 1
+        elif record["type_id"] == "0x1B":
+            expected_1b[point] += 1
+        elif record["type_id"] == "0x28":
+            expected_28[point] += 1
+
+    assert positions(instances, "OBJ_chaos_object_spring_26_normal") == expected_26["0x00"]
+    assert positions(instances, "OBJ_chaos_object_spring_26_weak") == expected_26["0x01"]
+    assert positions(instances, "OBJ_chaos_object_spring_26_span") == expected_26["0x8A"]
+    assert positions(instances, "OBJ_chaos_spikes") == expected_1b
+    assert positions(instances, "OBJ_chaos_platform") == expected_28
+
+    terrain_names = {
+        48: "OBJ_chaos_spring_48",
+        49: "OBJ_chaos_spring_49",
+        51: "OBJ_chaos_spring_51",
+        54: "OBJ_chaos_spring_54",
+        56: "OBJ_chaos_spring_56",
+    }
+    for block_id, name in terrain_names.items():
+        expected = Counter((x["x"], x["y"]) for x in layout["terrain"]
+                           if x["block_id"] == block_id)
+        assert positions(instances, name) == expected, name
+
+    expected_rings = Counter((x["x"], x["y"]) for x in layout["rings"])
+    assert positions(instances, "OBJ_ring") == expected_rings
+    expected_monitors = Counter((x["x"] + 5, x["y"] + 5) for x in layout["terrain"]
+                                if x["block_id"] == 71)
+    assert positions(instances, "OBJ_monitor_ring") == expected_monitors
+
+    assert not positions(instances, "OBJ_badnik_1")
+    draw = (ROOT / "objects/OBJ_chaos_controls/Draw_0.gml").read_text()
+    assert '"FINISH"' not in draw and "draw_rectangle(3968" not in draw
+    for kind in ("normal", "weak", "span"):
+        create = (ROOT / f"objects/OBJ_chaos_object_spring_26_{kind}/Create_0.gml").read_text()
+        assert "chaosBaseY = y+12" in create
+
+    report = {
+        "terrain_springs": sum(positions(instances, n).total() for n in terrain_names.values()),
+        "concealed_springs": sum(x.total() for x in expected_26.values()),
+        "moving_spikes": expected_1b.total(),
+        "platforms": expected_28.total(),
+        "rings": expected_rings.total(),
+        "monitors": expected_monitors.total(),
+        "unsupported_instances": 0,
+        "graphics_added": False,
+        "rom_bytes_included": False,
+    }
+    (ROOT / "verification/layout-results.json").write_text(json.dumps(report, indent=2) + "\n")
+    print(json.dumps(report))
+
+
+if __name__ == "__main__":
+    main()

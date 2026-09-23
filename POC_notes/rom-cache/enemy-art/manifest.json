@@ -1,0 +1,37 @@
+{
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "palette_offset": "0x3B79D",
+  "scope": "Native decompressed tiles only; frame mappings remain unclaimed.",
+  "assets": [
+    {
+      "name": "flying_enemy_right",
+      "rom_offset": "0x255A0",
+      "tile_count": 10,
+      "native_png": "flying_enemy_right-tiles.png",
+      "preview_png": "flying_enemy_right-preview.png",
+      "compressed_data_end": "0x25685",
+      "flags_end": "0x25688",
+      "object_linkage": "Object $21 uses the airborne patrol routine; THZ loads this labelled art."
+    },
+    {
+      "name": "flying_enemy_left",
+      "rom_offset": "0x25690",
+      "tile_count": 10,
+      "native_png": "flying_enemy_left-tiles.png",
+      "preview_png": "flying_enemy_left-preview.png",
+      "compressed_data_end": "0x2577C",
+      "flags_end": "0x2577F",
+      "object_linkage": "Opposite-facing tile set paired with the same object $21 routine."
+    },
+    {
+      "name": "motobug",
+      "rom_offset": "0x25AB0",
+      "tile_count": 18,
+      "native_png": "motobug-tiles.png",
+      "preview_png": "motobug-preview.png",
+      "compressed_data_end": "0x25CBD",
+      "flags_end": "0x25CC2",
+      "object_linkage": "Object $27 initializes with ground velocity and uses the THZ motobug art."
+    }
+  ]
+}

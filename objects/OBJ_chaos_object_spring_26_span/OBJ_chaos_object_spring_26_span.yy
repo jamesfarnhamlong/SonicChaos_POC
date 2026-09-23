@@ -1,6 +1,6 @@
 {
   "$GMObject": "",
-  "%Name": "OBJ_chaos_object_spring_26_weak",
+  "%Name": "OBJ_chaos_object_spring_26_span",
   "eventList": [
     {
       "$GMEvent": "v1",
@@ -37,7 +37,7 @@
     }
   ],
   "managed": true,
-  "name": "OBJ_chaos_object_spring_26_weak",
+  "name": "OBJ_chaos_object_spring_26_span",
   "overriddenProperties": [],
   "parent": {
     "name": "Collisions",

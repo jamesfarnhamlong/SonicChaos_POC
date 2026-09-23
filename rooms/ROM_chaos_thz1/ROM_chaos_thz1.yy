@@ -6991,26 +6991,6 @@
       "path": "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
     },
     {
-      "name": "inst_BC593762",
-      "path": "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
-    },
-    {
-      "name": "inst_2FD05D12",
-      "path": "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
-    },
-    {
-      "name": "inst_05CBF424",
-      "path": "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
-    },
-    {
-      "name": "inst_AFAC542C",
-      "path": "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
-    },
-    {
-      "name": "inst_0CA82F87",
-      "path": "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
-    },
-    {
       "name": "inst_D64C2AE7",
       "path": "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
     },
@@ -54192,10 +54172,10 @@
           "resourceType": "GMRInstance",
           "resourceVersion": "2.0",
           "rotation": 0.0,
-          "scaleX": 28.0,
-          "scaleY": 25.0,
-          "x": 1506.0,
-          "y": 837.0
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "x": 1344.0,
+          "y": 864.0
         },
         {
           "$GMRInstance": "v4",
@@ -54219,10 +54199,10 @@
           "resourceType": "GMRInstance",
           "resourceVersion": "2.0",
           "rotation": 0.0,
-          "scaleX": 28.0,
-          "scaleY": 25.0,
-          "x": 1538.0,
-          "y": 837.0
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "x": 1936.0,
+          "y": 864.0
         },
         {
           "$GMRInstance": "v4",
@@ -54246,10 +54226,10 @@
           "resourceType": "GMRInstance",
           "resourceVersion": "2.0",
           "rotation": 0.0,
-          "scaleX": 28.0,
-          "scaleY": 25.0,
-          "x": 2210.0,
-          "y": 837.0
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "x": 2464.0,
+          "y": 864.0
         },
         {
           "$GMRInstance": "v4",
@@ -54273,10 +54253,10 @@
           "resourceType": "GMRInstance",
           "resourceVersion": "2.0",
           "rotation": 0.0,
-          "scaleX": 28.0,
-          "scaleY": 25.0,
-          "x": 2242.0,
-          "y": 837.0
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "x": 2912.0,
+          "y": 864.0
         },
         {
           "$GMRInstance": "v4",
@@ -54412,141 +54392,6 @@
           "scaleY": 1.0,
           "x": 0.0,
           "y": 0.0
-        },
-        {
-          "$GMRInstance": "v4",
-          "%Name": "inst_BC593762",
-          "colour": 4294967295,
-          "frozen": false,
-          "hasCreationCode": false,
-          "ignore": false,
-          "imageIndex": 0,
-          "imageSpeed": 1.0,
-          "inheritCode": false,
-          "inheritedItemId": null,
-          "inheritItemSettings": false,
-          "isDnd": false,
-          "name": "inst_BC593762",
-          "objectId": {
-            "name": "OBJ_badnik_1",
-            "path": "objects/OBJ_badnik_1/OBJ_badnik_1.yy"
-          },
-          "properties": [],
-          "resourceType": "GMRInstance",
-          "resourceVersion": "2.0",
-          "rotation": 0.0,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "x": 704,
-          "y": 595.0
-        },
-        {
-          "$GMRInstance": "v4",
-          "%Name": "inst_2FD05D12",
-          "colour": 4294967295,
-          "frozen": false,
-          "hasCreationCode": false,
-          "ignore": false,
-          "imageIndex": 0,
-          "imageSpeed": 1.0,
-          "inheritCode": false,
-          "inheritedItemId": null,
-          "inheritItemSettings": false,
-          "isDnd": false,
-          "name": "inst_2FD05D12",
-          "objectId": {
-            "name": "OBJ_badnik_1",
-            "path": "objects/OBJ_badnik_1/OBJ_badnik_1.yy"
-          },
-          "properties": [],
-          "resourceType": "GMRInstance",
-          "resourceVersion": "2.0",
-          "rotation": 0.0,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "x": 1280,
-          "y": 371.0
-        },
-        {
-          "$GMRInstance": "v4",
-          "%Name": "inst_05CBF424",
-          "colour": 4294967295,
-          "frozen": false,
-          "hasCreationCode": false,
-          "ignore": false,
-          "imageIndex": 0,
-          "imageSpeed": 1.0,
-          "inheritCode": false,
-          "inheritedItemId": null,
-          "inheritItemSettings": false,
-          "isDnd": false,
-          "name": "inst_05CBF424",
-          "objectId": {
-            "name": "OBJ_badnik_1",
-            "path": "objects/OBJ_badnik_1/OBJ_badnik_1.yy"
-          },
-          "properties": [],
-          "resourceType": "GMRInstance",
-          "resourceVersion": "2.0",
-          "rotation": 0.0,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "x": 1856,
-          "y": 307.0
-        },
-        {
-          "$GMRInstance": "v4",
-          "%Name": "inst_AFAC542C",
-          "colour": 4294967295,
-          "frozen": false,
-          "hasCreationCode": false,
-          "ignore": false,
-          "imageIndex": 0,
-          "imageSpeed": 1.0,
-          "inheritCode": false,
-          "inheritedItemId": null,
-          "inheritItemSettings": false,
-          "isDnd": false,
-          "name": "inst_AFAC542C",
-          "objectId": {
-            "name": "OBJ_badnik_1",
-            "path": "objects/OBJ_badnik_1/OBJ_badnik_1.yy"
-          },
-          "properties": [],
-          "resourceType": "GMRInstance",
-          "resourceVersion": "2.0",
-          "rotation": 0.0,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "x": 2560,
-          "y": 435.0
-        },
-        {
-          "$GMRInstance": "v4",
-          "%Name": "inst_0CA82F87",
-          "colour": 4294967295,
-          "frozen": false,
-          "hasCreationCode": false,
-          "ignore": false,
-          "imageIndex": 0,
-          "imageSpeed": 1.0,
-          "inheritCode": false,
-          "inheritedItemId": null,
-          "inheritItemSettings": false,
-          "isDnd": false,
-          "name": "inst_0CA82F87",
-          "objectId": {
-            "name": "OBJ_badnik_1",
-            "path": "objects/OBJ_badnik_1/OBJ_badnik_1.yy"
-          },
-          "properties": [],
-          "resourceType": "GMRInstance",
-          "resourceVersion": "2.0",
-          "rotation": 0.0,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "x": 3760,
-          "y": 563.0
         },
         {
           "$GMRInstance": "v4",
@@ -56156,8 +56001,8 @@
           "isDnd": false,
           "name": "inst_2C4769EE",
           "objectId": {
-            "name": "OBJ_chaos_object_spring_26_weak",
-            "path": "objects/OBJ_chaos_object_spring_26_weak/OBJ_chaos_object_spring_26_weak.yy"
+            "name": "OBJ_chaos_object_spring_26_span",
+            "path": "objects/OBJ_chaos_object_spring_26_span/OBJ_chaos_object_spring_26_span.yy"
           },
           "properties": [],
           "resourceType": "GMRInstance",

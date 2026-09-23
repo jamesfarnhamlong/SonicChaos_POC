@@ -11,15 +11,9 @@ if (room == ROM_chaos_thz1) {
     draw_rectangle(vx, vy+vh-15, vx+camera_get_view_width(cam), vy+vh, false);
     draw_set_alpha(1);
     draw_set_color(c_white);
-    draw_text_transformed(vx+4, vy+vh-13, "THZ v14.5 | R: restart  F3: debug  F4: lift  F5/F6: loops  F7: reverse", 0.65, 0.65, 0);
+    draw_text_transformed(vx+4, vy+vh-13, "THZ v15 | R: restart  F3: debug  F4: lift  F5/F6: loops  F7: reverse", 0.65, 0.65, 0);
     if (global.chaosNotice > 0) draw_text_transformed(vx+4,vy+vh-40,"CHECKPOINT SAVED",0.75,0.75,0);
-    // Finish marker in world coordinates.
-    draw_set_color(c_yellow);
-    draw_rectangle(3968,510,3972,577,false);
-    draw_rectangle(3972,510,4015,535,false);
-    draw_set_color(c_black);
-    draw_text_transformed(3976,516,"FINISH",0.65,0.65,0);
-    draw_set_color(c_white);
+    // No fabricated finish object: type $18 at (3960,558) remains undecoded.
     if (global.chaosComplete) {
         draw_text_transformed(vx+4, vy+vh-27, "ACT 1 COMPLETE!  " + string(global.chaosFinishTime) + "s  /  " + string(global.chaosFinishRings) + " rings", 0.75, 0.75, 0);
     }
@@ -47,6 +41,18 @@ if (room == ROM_chaos_thz1 && global.chaosDebug && instance_exists(OBJ_player)) 
           " surface="+string(p.chaosPreviousFlags)+" modifier="+string(p.chaosModifier)+
           " state="+string(p.chaosMotionState)+(variable_instance_exists(p,"chaosCore") ? " ->"+string(p.chaosCore.next)+" flags="+string(p.chaosCore.contacts)+" unported="+string(p.chaosCore.unsupported) : ""));
     }
+    var cp_object = instance_nearest(p.x,p.y,OBJ_chaos_object_spring_26_normal);
+    var cp_weak = instance_nearest(p.x,p.y,OBJ_chaos_object_spring_26_weak);
+    var cp_span = instance_nearest(p.x,p.y,OBJ_chaos_object_spring_26_span);
+    if (!instance_exists(cp_object) || (instance_exists(cp_weak) &&
+        point_distance(p.x,p.y,cp_weak.x,cp_weak.y) < point_distance(p.x,p.y,cp_object.x,cp_object.y))) cp_object = cp_weak;
+    if (!instance_exists(cp_object) || (instance_exists(cp_span) &&
+        point_distance(p.x,p.y,cp_span.x,cp_span.y) < point_distance(p.x,p.y,cp_object.x,cp_object.y))) cp_object = cp_span;
+    var cp_spike = instance_nearest(p.x,p.y,OBJ_chaos_spikes);
+    if (instance_exists(cp_object)) draw_text(vx+5,vy+65,"$26 state="+string(cp_object.chaosState)+
+        " offset="+string(cp_object.chaosOffset)+" param="+string(cp_object.chaosParameter));
+    if (instance_exists(cp_spike)) draw_text(vx+5,vy+81,"$1B state="+string(cp_spike.chaosState)+
+        " offset="+string(cp_spike.chaosOffset));
 }
 
 if (room == ROM_chaos_thz1 && global.chaosDebug && instance_exists(OBJ_player)) {

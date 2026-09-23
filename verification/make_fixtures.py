@@ -12,11 +12,16 @@ r = load(sys.argv[1]); rng = random.Random(145)
 tables = [[[s16(int.from_bytes(r[a+i*4+j:a+i*4+j+2], 'little')) for j in (0,2)]
            for i in range(32)] for a in (0x429d,0x431d,0x439d,0x441d,0x449d,0x451d)]
 mods = [s16(int.from_bytes(r[a:a+2], 'little')) for a in range(0x459d,0x45b3,2)]
+angles = [b-256 if b >= 128 else b for b in r[0x200:0x300]]
+twist_handlers = [[int.from_bytes(r[0x314fd+variant*56+i*2:0x314ff+variant*56+i*2], 'little')
+                   for i in range(28)] for variant in range(4)]
 out = HERE.parent/'scripts/SCR_chaos_core_data/SCR_chaos_core_data.gml'
 out.parent.mkdir(exist_ok=True)
 out.write_text('// Exported from checked SMS 1.2 ROM; see verification/make_fixtures.py\n'
     'function SCR_chaos_core_data() {\n    global.chaosMovementTables = '+json.dumps(tables)+';\n'
-    '    global.chaosSurfaceDeltas = '+json.dumps(mods)+';\n}\n')
+    '    global.chaosSurfaceDeltas = '+json.dumps(mods)+';\n'
+    '    global.chaosAngleTable = '+json.dumps(angles)+';\n'
+    '    global.chaosTwistHandlers = '+json.dumps(twist_handlers)+';\n}\n')
 
 def put(o, c):
     for name,addr in [('xu',0xd510),('yu',0xd513)]:

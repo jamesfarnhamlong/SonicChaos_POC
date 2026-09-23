@@ -1,0 +1,124 @@
+{
+  "object_26_launches": [
+    {
+      "parameter": 0,
+      "vy": 63648,
+      "state": 1,
+      "timer": 28
+    },
+    {
+      "parameter": 1,
+      "vy": 64256,
+      "state": 3,
+      "timer": 28
+    }
+  ],
+  "strong_extension": [
+    [
+      773,
+      1,
+      21
+    ],
+    [
+      766,
+      1,
+      14
+    ],
+    [
+      759,
+      1,
+      7
+    ],
+    [
+      752,
+      1,
+      0
+    ],
+    [
+      752,
+      2,
+      32
+    ]
+  ],
+  "weak_extension": [
+    [
+      773,
+      3,
+      21
+    ],
+    [
+      766,
+      3,
+      14
+    ],
+    [
+      759,
+      3,
+      7
+    ],
+    [
+      752,
+      3,
+      0
+    ],
+    [
+      752,
+      4,
+      10
+    ]
+  ],
+  "spring_retraction": [
+    [
+      759,
+      5
+    ],
+    [
+      766,
+      5
+    ],
+    [
+      773,
+      5
+    ],
+    [
+      780,
+      7
+    ]
+  ],
+  "spike_rise": [
+    [
+      858,
+      1,
+      0
+    ],
+    [
+      852,
+      1,
+      0
+    ],
+    [
+      846,
+      2,
+      16
+    ]
+  ],
+  "spike_retraction": [
+    [
+      852,
+      3,
+      16
+    ],
+    [
+      858,
+      3,
+      16
+    ],
+    [
+      864,
+      4,
+      64
+    ]
+  ],
+  "comparisons": 30,
+  "limitation": "Selected original handlers; not full SMS scheduler or GameMaker runtime"
+}

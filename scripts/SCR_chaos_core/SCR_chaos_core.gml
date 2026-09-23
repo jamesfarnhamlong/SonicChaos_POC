@@ -7,7 +7,8 @@ function SCR_cc_new(cp_x, cp_y) {
         state:1, next:1, move:0, bg:0, contacts:0, objects:0, support:0,
         player_flags:0, plane:0, previous:0, tile:255, modifier:0,
         input_delta:0, surface_delta:0, maximum:1024, water:0,
-        held:0, pressed:0, jump_ticks:0, sound:0, unsupported:0};
+        held:0, pressed:0, jump_ticks:0, sound:0, unsupported:0,
+        angle:0, magnitude:0, twist_variant:0, level:0};
 }
 function SCR_cc_merge(cp_c) {
     cp_c.contacts = cp_c.bg;
@@ -164,6 +165,115 @@ function SCR_cc_spring(cp_c, cp_kind, cp_tile) {
     }
     cp_c.bg &= ~2; cp_c.sound = 2;
 }
+// $6E56: enter the angle-driven twist state from one of five actual gate tiles.
+function SCR_cc_twist_enter(cp_c, cp_tile) {
+    var cp_right = cp_tile == 89 || cp_tile == 92;
+    var cp_left = cp_tile == 115 || cp_tile == 114 || cp_tile == 107;
+    if (!cp_right && !cp_left) return false;
+    if (cp_right) {
+        if (cp_c.vx < 0) return false;
+        if (cp_c.level == 3) {
+            if (cp_c.vx < 1280) cp_c.vx = 1280;
+        } else if (cp_c.vx < 768) return false;
+    } else {
+        if (cp_c.vx >= -768) return false;
+    }
+    if (cp_c.state == 34 || (cp_c.state != 5 && cp_c.state != 6 && cp_c.state != 9 &&
+        cp_c.state != 16 && cp_c.state != 26)) return false;
+    cp_c.angle = cp_right ? 64 : 192;
+    cp_c.twist_variant = cp_c.level == 3 ? (cp_right ? 2 : 3) : (cp_right ? 0 : 1);
+    var cp_abs = abs(SCR_cc_s16(cp_c.vx)) & 65535;
+    cp_c.magnitude = ((cp_abs << 5) & 65535) >> 8;
+    cp_c.next = 34;
+    return true;
+}
+function SCR_cc_twist_set_y(cp_c, cp_sonic_offset) {
+    var cp_fraction = cp_c.yu & 255;
+    var cp_integer = floor(cp_c.yu/256) & 65535;
+    cp_integer = ((cp_integer-cp_sonic_offset) & 65504)+46;
+    cp_c.yu = ((cp_integer & 65535)*256+cp_fraction) & 16777215;
+}
+function SCR_cc_twist_x_f0(cp_c) {
+    var cp_fraction = cp_c.xu & 255;
+    var cp_integer = floor(cp_c.xu/256) & 65535;
+    cp_integer = ((cp_integer+6) & 65504)+10;
+    cp_c.xu = ((cp_integer & 65535)*256+cp_fraction) & 16777215;
+}
+function SCR_cc_twist_x_12(cp_c) {
+    var cp_fraction = cp_c.xu & 255;
+    var cp_integer = floor(cp_c.xu/256) & 65535;
+    cp_integer = (cp_integer & 65280) | (((cp_integer & 255) & 224)+22);
+    cp_c.xu = ((cp_integer & 65535)*256+cp_fraction) & 16777215;
+}
+function SCR_cc_twist_x_1d(cp_c) {
+    var cp_fraction = cp_c.xu & 255;
+    var cp_integer = floor(cp_c.xu/256) & 65535;
+    cp_integer = (cp_integer & 65280) | ((((cp_integer & 255)+16) & 224)+4);
+    cp_c.xu = ((cp_integer & 65535)*256+cp_fraction) & 16777215;
+}
+function SCR_cc_twist_inc(cp_c) { if (cp_c.magnitude < 160) cp_c.magnitude = (cp_c.magnitude+2)&255; }
+function SCR_cc_twist_dec(cp_c) {
+    cp_c.magnitude = (cp_c.magnitude-1)&255;
+    if (cp_c.magnitude < 16) cp_c.twist_variant = 2;
+}
+// Bank 12 $95F1..$974C. Addresses are retained so the exported 112-entry ROM
+// dispatch can be audited directly against data/twist-dispatch.csv.
+function SCR_cc_twist_handler(cp_c, cp_handler) {
+    switch (cp_handler) {
+        case 38385: case 38388: case 38433: case 38441:
+            cp_c.angle=64; SCR_cc_twist_set_y(cp_c,32); break;
+        case 38396: case 38404: cp_c.angle=40; break;
+        case 38412: cp_c.angle=64; break;
+        case 38417: case 38425: cp_c.angle=88; break;
+        case 38449: case 38452: case 38514:
+            cp_c.angle=192; SCR_cc_twist_set_y(cp_c,16); break;
+        case 38460: case 38476: case 38522:
+            cp_c.angle=192; SCR_cc_twist_set_y(cp_c,32); break;
+        case 38468: case 38484: cp_c.angle=168; break;
+        case 38492: break;
+        case 38493: cp_c.angle=192; break;
+        case 38498: case 38506: cp_c.angle=216; break;
+        case 38530: cp_c.angle=104; SCR_cc_twist_inc(cp_c); break;
+        case 38538: cp_c.angle=64; SCR_cc_twist_set_y(cp_c,32); SCR_cc_twist_inc(cp_c); break;
+        case 38549: cp_c.angle=120; SCR_cc_twist_inc(cp_c); break;
+        case 38557: SCR_cc_twist_x_12(cp_c); cp_c.angle=128; SCR_cc_twist_inc(cp_c); break;
+        case 38560: cp_c.angle=128; SCR_cc_twist_inc(cp_c); break;
+        case 38568: cp_c.angle=168; SCR_cc_twist_inc(cp_c); break;
+        case 38576: SCR_cc_twist_x_f0(cp_c); cp_c.angle=128; SCR_cc_twist_inc(cp_c); break;
+        case 38579: cp_c.angle=128; SCR_cc_twist_inc(cp_c); break;
+        case 38587: SCR_cc_twist_x_1d(cp_c); cp_c.angle=128; SCR_cc_twist_inc(cp_c); break;
+        case 38598: cp_c.angle=112; SCR_cc_twist_inc(cp_c); break;
+        case 38606: cp_c.angle=80; SCR_cc_twist_inc(cp_c); break;
+        case 38614: cp_c.angle=96; SCR_cc_twist_inc(cp_c); break;
+        case 38622: cp_c.angle=192; SCR_cc_twist_set_y(cp_c,32); SCR_cc_twist_dec(cp_c); break;
+        case 38633: cp_c.angle=220; SCR_cc_twist_dec(cp_c); break;
+        case 38641: cp_c.angle=240; SCR_cc_twist_dec(cp_c); break;
+        case 38649: SCR_cc_twist_x_f0(cp_c); SCR_cc_twist_x_1d(cp_c); cp_c.angle=0; SCR_cc_twist_dec(cp_c); break;
+        case 38652: SCR_cc_twist_x_1d(cp_c); cp_c.angle=0; SCR_cc_twist_dec(cp_c); break;
+        case 38663: cp_c.angle=40; SCR_cc_twist_dec(cp_c); break;
+        case 38671: cp_c.angle=4; SCR_cc_twist_dec(cp_c); break;
+        case 38679: cp_c.angle=0; SCR_cc_twist_dec(cp_c); break;
+        case 38687: SCR_cc_twist_x_12(cp_c); cp_c.angle=0; SCR_cc_twist_dec(cp_c); break;
+        case 38698: cp_c.angle=232; SCR_cc_twist_dec(cp_c); break;
+        case 38706: cp_c.angle=224; SCR_cc_twist_dec(cp_c); break;
+        case 38714: cp_c.angle=216; SCR_cc_twist_dec(cp_c); break;
+        case 38722: cp_c.angle=192; SCR_cc_twist_set_y(cp_c,32); SCR_cc_twist_dec(cp_c); break;
+    }
+}
+function SCR_cc_twist_vector(cp_c) {
+    var cp_x = global.chaosAngleTable[cp_c.angle&255]*cp_c.magnitude;
+    var cp_y = global.chaosAngleTable[(cp_c.angle+192)&255]*cp_c.magnitude;
+    cp_c.vx = SCR_cc_s16(floor(cp_x/16)); cp_c.vy = SCR_cc_s16(floor(cp_y/16));
+    cp_c.xu = (cp_c.xu+cp_c.vx)&16777215; cp_c.yu = (cp_c.yu+cp_c.vy)&16777215;
+}
+function SCR_cc_twist_tick(cp_c) {
+    SCR_cc_floor(cp_c);
+    if ((cp_c.previous&63) != 23 || cp_c.tile < 88 || cp_c.tile > 115) {
+        cp_c.angle=0; cp_c.magnitude=0; cp_c.next=9; return;
+    }
+    SCR_cc_twist_handler(cp_c,global.chaosTwistHandlers[cp_c.twist_variant&3][cp_c.tile-88]);
+    SCR_cc_twist_vector(cp_c);
+}
 function SCR_cc_floor(cp_c) {
     var cp_old_mod = cp_c.modifier; cp_c.modifier = 0;
     var cp_dy = cp_c.state == 33 ? -14 : (cp_c.state == 18 ? 8 : 0);
@@ -174,6 +284,7 @@ function SCR_cc_floor(cp_c) {
     var cp_kind = cp_s.flags & 31;
     if (cp_kind == 18) SCR_cc_ramp(cp_c,cp_old_mod,cp_s.tile);
     else if (cp_kind == 9 || cp_kind == 20) SCR_cc_spring(cp_c,cp_kind,cp_s.tile);
+    else if (cp_kind == 23) SCR_cc_twist_enter(cp_c,cp_s.tile);
     else if (cp_kind == 0 || cp_kind == 6 || cp_kind == 7) {
         // $6C45/$6C4D: empty floor can request falling even when projection returned early.
         if ((cp_c.objects & 32) == 0) cp_c.bg &= ~2;
@@ -252,6 +363,7 @@ function SCR_cc_shared(cp_c) {
 // Ordinary state wrappers. Animation-script scheduling and special states remain out of scope.
 function SCR_cc_tick(cp_c) {
     cp_c.state = cp_c.next; cp_c.sound = 0; cp_c.unsupported = 0;
+    if (cp_c.state == 34) { SCR_cc_twist_tick(cp_c); return; }
     if ((cp_c.state == 7 && (cp_c.contacts & 8) != 0) || (cp_c.state == 8 && (cp_c.contacts & 4) != 0)) {
         SCR_cc_walk(cp_c); return;
     }

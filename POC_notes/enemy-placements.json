@@ -1,0 +1,16 @@
+{
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "coordinate_rule": "world coordinate = stored coordinate - 256",
+  "enemies": [
+    {"type_id":"0x21","kind":"flying_enemy","rom_offset":"0x70698","x":800,"y":606,"parameter":"0x08"},
+    {"type_id":"0x21","kind":"flying_enemy","rom_offset":"0x706A1","x":1248,"y":862,"parameter":"0x06"},
+    {"type_id":"0x21","kind":"flying_enemy","rom_offset":"0x706AA","x":2048,"y":318,"parameter":"0x06"},
+    {"type_id":"0x21","kind":"flying_enemy","rom_offset":"0x706B3","x":3152,"y":894,"parameter":"0x03"},
+    {"type_id":"0x21","kind":"flying_enemy","rom_offset":"0x706BC","x":3296,"y":286,"parameter":"0x04"},
+    {"type_id":"0x21","kind":"flying_enemy","rom_offset":"0x706C5","x":2400,"y":254,"parameter":"0x02"},
+    {"type_id":"0x27","kind":"motobug_enemy","rom_offset":"0x7067D","x":3504,"y":224,"parameter":"0x00"},
+    {"type_id":"0x27","kind":"motobug_enemy","rom_offset":"0x70686","x":2288,"y":768,"parameter":"0x00"},
+    {"type_id":"0x27","kind":"motobug_enemy","rom_offset":"0x7068F","x":2240,"y":112,"parameter":"0x00"}
+  ],
+  "implementation_status": "Placement and type verified; object AI and composed frame mappings are not ported in POC 16."
+}

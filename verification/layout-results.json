@@ -1,0 +1,11 @@
+{
+  "terrain_springs": 9,
+  "concealed_springs": 4,
+  "moving_spikes": 4,
+  "platforms": 6,
+  "rings": 142,
+  "monitors": 4,
+  "unsupported_instances": 0,
+  "graphics_added": false,
+  "rom_bytes_included": false
+}

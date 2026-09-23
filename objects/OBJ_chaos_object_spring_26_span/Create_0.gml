@@ -1,4 +1,4 @@
-chaosParameter = 0; launch_y = -7.375;
+chaosParameter = 1; launch_y = -5;
 chaosBaseX = x; chaosLayoutY = y; chaosBaseY = y+12; chaosDrawX = x;
-chaosSpan = 0; chaosRestState = 7; chaosState = 7;
+chaosSpan = 160; chaosRestState = 8; chaosState = 8;
 chaosOffset = 0; chaosTimer = 0;

@@ -1,7 +1,41 @@
 {
   "$GMObject": "",
   "%Name": "OBJ_chaos_spikes",
-  "eventList": [],
+  "eventList": [
+    {
+      "$GMEvent": "v1",
+      "%Name": "",
+      "collisionObjectId": null,
+      "eventNum": 0,
+      "eventType": 0,
+      "isDnD": false,
+      "name": "",
+      "resourceType": "GMEvent",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMEvent": "v1",
+      "%Name": "",
+      "collisionObjectId": null,
+      "eventNum": 0,
+      "eventType": 3,
+      "isDnD": false,
+      "name": "",
+      "resourceType": "GMEvent",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMEvent": "v1",
+      "%Name": "",
+      "collisionObjectId": null,
+      "eventNum": 0,
+      "eventType": 8,
+      "isDnD": false,
+      "name": "",
+      "resourceType": "GMEvent",
+      "resourceVersion": "2.0"
+    }
+  ],
   "managed": true,
   "name": "OBJ_chaos_spikes",
   "overriddenProperties": [],
@@ -9,10 +43,7 @@
     "name": "Collisions",
     "path": "folders/Objects/Collisions.yy"
   },
-  "parentObjectId": {
-    "name": "OBJ_collision_death",
-    "path": "objects/OBJ_collision_death/OBJ_collision_death.yy"
-  },
+  "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -35,5 +66,5 @@
     "path": "sprites/SPR_chaos_pixel/SPR_chaos_pixel.yy"
   },
   "spriteMaskId": null,
-  "visible": false
+  "visible": true
 }

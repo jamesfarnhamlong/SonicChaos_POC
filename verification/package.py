@@ -1,4 +1,4 @@
-"""Validate project paths and package the 14.5 source tree. Does not compile GML."""
+"""Validate project paths and package the POC source tree. Does not compile GML."""
 import hashlib, json, re, sys, zipfile
 from pathlib import Path
 root=Path(__file__).resolve().parents[1]
@@ -13,6 +13,15 @@ for p in root.glob('*.yyp'):
     assert len(names)==len(set(names)),p
     projects[p.name]=len(names)
 report=json.loads((root/'verification/results.json').read_text())
+report['canon_layout']=json.loads((root/'verification/layout-results.json').read_text())
+report['twist_state_22']=json.loads((root/'verification/twist-results.json').read_text())
+enemy_manifest=json.loads((root/'POC_notes/rom-cache/enemy-art/manifest.json').read_text())
+report['enemy_research']={
+    'verified_placements':len(json.loads((root/'POC_notes/enemy-placements.json').read_text())['enemies']),
+    'cached_native_tiles':sum(asset['tile_count'] for asset in enemy_manifest['assets']),
+    'room_enemy_instances_added':0,
+    'scope':'research cache only; frame composition and AI deferred'
+}
 report['project_resource_counts']=projects
 report['resource_metadata_validated']=True
 report['source_sha256']={str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest()

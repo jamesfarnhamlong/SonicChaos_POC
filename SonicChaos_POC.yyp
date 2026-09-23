@@ -3559,6 +3559,12 @@
         "name": "OBJ_chaos_object_spring_26_weak",
         "path": "objects/OBJ_chaos_object_spring_26_weak/OBJ_chaos_object_spring_26_weak.yy"
       }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_spring_26_span",
+        "path": "objects/OBJ_chaos_object_spring_26_span/OBJ_chaos_object_spring_26_span.yy"
+      }
     }
   ],
   "resourceType": "GMProject",
