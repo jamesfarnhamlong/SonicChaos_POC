@@ -31,6 +31,48 @@
       "mapping_bounds": {"x": -12, "y": -16, "width": 24, "height": 16},
       "sprite_path": "sprites/SPR_chaos_object_27/27272727-2727-4272-8272-272727272702.png",
       "sha256": "e7abb61c05b07c3a66cfbd0cd187251894f4d8fbb9220f19bdbbd748964e844f"
+    },
+    {
+      "type_id": "0x21", "role": "numeric_ground_patrol", "mapping_frame": "0x01", "frame_record_cpu": "0x9121",
+      "mapping_bounds": {"x": -12, "y": -32, "width": 24, "height": 32},
+      "sprite_path": "sprites/SPR_chaos_object_21/21212121-2121-4212-8212-212121212101.png",
+      "sha256": "11eb7459493d64e9a2be18dd56d19b4a063e27d8c4661ba1c1846ff3c2a3b938"
+    },
+    {
+      "type_id": "0x21", "role": "numeric_ground_patrol", "mapping_frame": "0x02", "frame_record_cpu": "0x912C",
+      "mapping_bounds": {"x": -12, "y": -32, "width": 24, "height": 32},
+      "sprite_path": "sprites/SPR_chaos_object_21/21212121-2121-4212-8212-212121212102.png",
+      "sha256": "97becdf6d096540d1002e3a252c5a47d5aa66cf113f63f76585996da0a1ff240"
+    },
+    {
+      "type_id": "0x10", "role": "numeric_container_active", "mapping_frame": "0x0B", "frame_record_cpu": "0x8D0F",
+      "mapping_bounds": {"x": -12, "y": -24, "width": 24, "height": 32},
+      "sprite_path": "sprites/SPR_chaos_object_10/10101010-1010-4010-8010-101010101101.png",
+      "sha256": "7bfacb6543a3c5924f2faaad7caeef91cb85ef51eb722a45c27f5b450c772979"
+    },
+    {
+      "type_id": "0x10", "role": "numeric_container_active", "mapping_frame": "0x0C", "frame_record_cpu": "0x8D1A",
+      "mapping_bounds": {"x": -12, "y": -24, "width": 24, "height": 32},
+      "sprite_path": "sprites/SPR_chaos_object_10/10101010-1010-4010-8010-101010101102.png",
+      "sha256": "44b66053d631fc5b4e05c2742da6e72d2953c742036158bc30b03f3965594b67"
+    },
+    {
+      "type_id": "0x0F", "role": "direct_replacement", "mapping_frame": "0x07", "frame_record_cpu": "0x8CC2",
+      "mapping_bounds": {"x": -4, "y": -16, "width": 8, "height": 16},
+      "sprite_path": "sprites/SPR_chaos_object_0F/0f0f0f0f-0f0f-40f0-80f0-0f0f0f0f0107.png",
+      "sha256": "05fe9e8babb3c93aea0d674948a99a9a9cc2c73d5e3ba3ee6bb7f5194d9803a4"
+    },
+    {
+      "type_id": "0x0F", "role": "direct_replacement", "mapping_frame": "0x08", "frame_record_cpu": "0x8CCD",
+      "mapping_bounds": {"x": -8, "y": -16, "width": 16, "height": 16},
+      "sprite_path": "sprites/SPR_chaos_object_0F/0f0f0f0f-0f0f-40f0-80f0-0f0f0f0f0108.png",
+      "sha256": "8bc15b575f035860ee1ed1d292b81e0e43b8e088e4e9492349d124d186cb33bd"
+    },
+    {
+      "type_id": "0x0F", "role": "direct_replacement", "mapping_frame": "0x09", "frame_record_cpu": "0x8CD8",
+      "mapping_bounds": {"x": -8, "y": -16, "width": 16, "height": 16},
+      "sprite_path": "sprites/SPR_chaos_object_0F/0f0f0f0f-0f0f-40f0-80f0-0f0f0f0f0109.png",
+      "sha256": "b19fca4c53d138668e09906ba7dc6635aa84a140da8c72ad26fa1629a7f9fd6f"
     }
   ],
   "scope": "ROM-derived sprite pixels, mappings and THZ1 sprite palette only. No complete ROM image is included."

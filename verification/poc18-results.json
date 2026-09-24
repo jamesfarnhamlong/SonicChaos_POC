@@ -1,0 +1,45 @@
+{
+  "reference_metadata": {
+    "10": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+    "21": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+    "27": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607"
+  },
+  "placements": {
+    "type_10": 5,
+    "type_18": 1,
+    "type_21": 6,
+    "type_27": 3
+  },
+  "type_21_left_bounds": {
+    "800,606": 672,
+    "1248,862": 1152,
+    "2048,318": 1952,
+    "3152,894": 3104,
+    "3296,286": 3232,
+    "2400,254": 2368
+  },
+  "type_27_no_contact": {
+    "updates": 129,
+    "add_callbacks": 65,
+    "subtract_callbacks": 64,
+    "displacement_8_8": 3
+  },
+  "type_10_parameters": [
+    "0x06",
+    "0x06",
+    "0x04",
+    "0x04",
+    "0x02"
+  ],
+  "terrain_31_cell": {
+    "transparent_pixels": 0,
+    "context_backdrop_pixels": 856,
+    "spring_pixels": 168
+  },
+  "ring_frames_normalized": 6,
+  "ring_terrain_cells_removed": 72,
+  "ring_object_positions_preserved": 142,
+  "type_18_presentation_offset_y": 22,
+  "debug_warp_shortcuts_removed": true,
+  "legacy_layout_monitor_instances": 0
+}

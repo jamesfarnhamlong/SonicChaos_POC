@@ -29,6 +29,7 @@ tmp/
 __pycache__/
 *.py[cod]
 node_modules/
+verification/.deps/
 
 # OS and editor clutter
 .DS_Store

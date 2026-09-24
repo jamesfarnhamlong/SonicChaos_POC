@@ -4,12 +4,40 @@
   "policy": "metadata only; no ROM, graphics, or audio bytes",
   "files": {
     "object-records.json": {
-      "sha256": "51d69706f6348982dc5250eb02b4144a2a7d4abe948451be0742b2704065b535",
-      "bytes": 18929
+      "sha256": "1e166c3e3dbe002ddeb4dc0504e297966cb24eee04c3b467b08a75a8eb0612bd",
+      "bytes": 19732
     },
     "layout-interactions.json": {
-      "sha256": "91dd35a1c2a8d0beaa9f2ac4b899ce9c8434ccda5d9799805727fc21fa7356c9",
-      "bytes": 23264
+      "sha256": "2cdec17b0eb0ea8cada58e442074ebb1b3641cde09dfb9c8e959ceacea335628",
+      "bytes": 24388
+    },
+    "terrain-assets.json": {
+      "sha256": "ece9e41211d7968f3591ca2b4fe3ec07aa4b6f7d9f5b0367846b98f023ac6e8e",
+      "bytes": 27253
+    },
+    "thz1-object-sprites.json": {
+      "sha256": "e8b8de44529edaef64e5dbb04a38ac1532a0121f2bb9f0c24fe6a1cc5d87ccb2",
+      "bytes": 4190
+    },
+    "object-10.json": {
+      "sha256": "50d49f8191fa6c7d7c17c27571df8aa20dc106ae351df140f539a846954f02f7",
+      "bytes": 27850
+    },
+    "object-18-graphics.json": {
+      "sha256": "ea3ca49f645c84ea7644285858d5eec01c30b790aeb4362d4555bdb13c5972bc",
+      "bytes": 2472
+    },
+    "object-21.json": {
+      "sha256": "e4a5d55cf2e0a1d77634e553782508b6e20af253c90142ee7d2a9b62b8e02227",
+      "bytes": 9903
+    },
+    "object-27.json": {
+      "sha256": "2103543de3e784921e98172adf1ae9e25727770273a204cc8489d9d65f68b077",
+      "bytes": 15420
+    },
+    "object-census.json": {
+      "sha256": "758d5f4646ef977fa654995d0bf204d3d59aa69224e07d209f72784cf770493c",
+      "bytes": 72329
     }
   }
 }

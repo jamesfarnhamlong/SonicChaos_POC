@@ -8,9 +8,9 @@
     {"type_id":"0x21","kind":"unresolved_type_21","rom_offset":"0x706B3","x":3152,"y":894,"parameter":"0x03"},
     {"type_id":"0x21","kind":"unresolved_type_21","rom_offset":"0x706BC","x":3296,"y":286,"parameter":"0x04"},
     {"type_id":"0x21","kind":"unresolved_type_21","rom_offset":"0x706C5","x":2400,"y":254,"parameter":"0x02"},
-    {"type_id":"0x27","kind":"object_27_flying","rom_offset":"0x7067D","x":3504,"y":224,"parameter":"0x00"},
-    {"type_id":"0x27","kind":"object_27_flying","rom_offset":"0x70686","x":2288,"y":768,"parameter":"0x00"},
-    {"type_id":"0x27","kind":"object_27_flying","rom_offset":"0x7068F","x":2240,"y":112,"parameter":"0x00"}
+    {"type_id":"0x27","kind":"numeric_type_27","rom_offset":"0x7067D","x":3504,"y":224,"parameter":"0x00"},
+    {"type_id":"0x27","kind":"numeric_type_27","rom_offset":"0x70686","x":2288,"y":768,"parameter":"0x00"},
+    {"type_id":"0x27","kind":"numeric_type_27","rom_offset":"0x7068F","x":2240,"y":112,"parameter":"0x00"}
   ],
-  "implementation_status": "Type $27 placements, mapping frames and handler behavior are ported in POC 17. Type $21 remains intentionally deferred while its full behavior is independently reverse-engineered."
+  "implementation_status": "POC 18 ports the completed formal type $21 and $27 studies. Type $10 is tracked separately as a numeric placement-backed container and is not assigned an enemy identity."
 }

@@ -9,9 +9,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-REFERENCE = ROOT.parent / "sonic-chaos-reference" / "tools"
-Z80_BUNDLE = ROOT.parents[1] / "chaos-research" / "tool-deps"
-sys.path[:0] = [str(REFERENCE), str(Z80_BUNDLE)]
+REFERENCE = ROOT.parent / "sonic-chaos-reference-main" / "tools"
+sys.path[:0] = [str(ROOT / "verification" / ".deps"), str(REFERENCE)]
 
 from oracle import Oracle
 
@@ -92,8 +91,9 @@ for delta, removed in ((383, False), (384, True), (-383, False), (-384, True)):
     distance.append({"delta": delta, "removed": actual})
 
 source = (ROOT / "objects/OBJ_chaos_object_27/Step_0.gml").read_text()
-for required in ("chaosVX = -2.5", "abs(x-cp_p.x) < 64", "chaosTimer = 129",
-                 "chaosWaveAccel = 3/256", "abs(x-cp_p2.x) >= 384"):
+for required in ("chaosVX = -$0280", "abs(floor(x)-floor(cp_p.x)) < 64",
+                 "chaosCounter = $80", "chaosOscTick <= 32",
+                 "chaosOscTick >= 97", "abs(floor(x)-floor(cp_p.x)) >= 384"):
     assert required in source, required
 
 report = {

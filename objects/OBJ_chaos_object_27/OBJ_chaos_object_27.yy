@@ -7,7 +7,7 @@
   ],
   "managed":true,"name":"OBJ_chaos_object_27","overriddenProperties":[],
   "parent":{"name":"Badniks","path":"folders/Objects/Badniks.yy"},
-  "parentObjectId":{"name":"OBJ_badniks","path":"objects/OBJ_badniks/OBJ_badniks.yy"},
+  "parentObjectId":null,
   "persistent":false,"physicsAngularDamping":0.1,"physicsDensity":0.5,"physicsFriction":0.2,"physicsGroup":0,"physicsKinematic":false,"physicsLinearDamping":0.1,"physicsObject":false,"physicsRestitution":0.1,"physicsSensor":false,"physicsShape":0,"physicsShapePoints":[],"physicsStartAwake":true,"properties":[],
   "resourceType":"GMObject","resourceVersion":"2.0","solid":false,
   "spriteId":{"name":"SPR_chaos_object_27","path":"sprites/SPR_chaos_object_27/SPR_chaos_object_27.yy"},

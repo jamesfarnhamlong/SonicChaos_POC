@@ -1,0 +1,48 @@
+{
+  "format": 1,
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "source_tool": "sonic-chaos-reference/tools/thz1_type18_dynamic_graphics.py",
+  "dynamic_selector": "0x12",
+  "placement": {
+    "x": 3960,
+    "y": 558
+  },
+  "scope": "verified graphics and animation frames only; completion/lifetime behavior remains partial",
+  "assets": [
+    {
+      "frame_index": "0x01",
+      "frame_id": "18000001-0000-4000-8000-000000000001",
+      "root_png": "sprites/SPR_chaos_object_18/18000001-0000-4000-8000-000000000001.png",
+      "layer_png": "sprites/SPR_chaos_object_18/layers/18000001-0000-4000-8000-000000000001/18000000-0000-4000-8000-000000000000.png",
+      "sha256": "ba43503395a2a5ce864505e27940eab185421ae9325a60b1b4339145cd546b36"
+    },
+    {
+      "frame_index": "0x02",
+      "frame_id": "18000002-0000-4000-8000-000000000002",
+      "root_png": "sprites/SPR_chaos_object_18/18000002-0000-4000-8000-000000000002.png",
+      "layer_png": "sprites/SPR_chaos_object_18/layers/18000002-0000-4000-8000-000000000002/18000000-0000-4000-8000-000000000000.png",
+      "sha256": "fc530920d398db6d900a6274ee4ec107e695c221c89d2084af220b4d08e131fa"
+    },
+    {
+      "frame_index": "0x03",
+      "frame_id": "18000003-0000-4000-8000-000000000003",
+      "root_png": "sprites/SPR_chaos_object_18/18000003-0000-4000-8000-000000000003.png",
+      "layer_png": "sprites/SPR_chaos_object_18/layers/18000003-0000-4000-8000-000000000003/18000000-0000-4000-8000-000000000000.png",
+      "sha256": "802be9acb9feac9d63cc80ff9c90fbf6477b88cfcc4ba8ac7fb6f555a11a412e"
+    },
+    {
+      "frame_index": "0x04",
+      "frame_id": "18000004-0000-4000-8000-000000000004",
+      "root_png": "sprites/SPR_chaos_object_18/18000004-0000-4000-8000-000000000004.png",
+      "layer_png": "sprites/SPR_chaos_object_18/layers/18000004-0000-4000-8000-000000000004/18000000-0000-4000-8000-000000000000.png",
+      "sha256": "5244c4ab8448ea545f2f5096f27b6c5650f5376e6bd8bbbcb26a078103278b9c"
+    },
+    {
+      "frame_index": "0x05",
+      "frame_id": "18000005-0000-4000-8000-000000000005",
+      "root_png": "sprites/SPR_chaos_object_18/18000005-0000-4000-8000-000000000005.png",
+      "layer_png": "sprites/SPR_chaos_object_18/layers/18000005-0000-4000-8000-000000000005/18000000-0000-4000-8000-000000000000.png",
+      "sha256": "e5fd3c954d1e4ea21f91041f41c0ac1896bcf7e03aefa24f12eb4761d56e880b"
+    }
+  ]
+}

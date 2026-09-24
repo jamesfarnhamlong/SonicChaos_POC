@@ -14,6 +14,13 @@ if (room == ROM_chaos_thz1 && instance_exists(OBJ_player)) {
 }
 
 if (room == ROM_chaos_thz1) {
+ if (global.chaosPowerTimer > 0) {
+  global.chaosPowerTimer--;
+  if (global.chaosPowerTimer == 0) {
+   if (global.chaosPowerCode == $06) global.powerInv = false;
+   global.chaosPowerCode = 0;
+  }
+ }
  if (global.chaosNotice > 0) global.chaosNotice--;
  if (instance_exists(OBJ_player_char) && !global.chaosComplete) {
   var p = instance_find(OBJ_player_char,0);

@@ -200,67 +200,9 @@ function SCR_chaos_loop_tick(cp_p) {
         cp_p.chaosLoopDirection * cp_p.chaosLoopExitSpeed, 0);
 }
 
-function SCR_chaos_debug_place(cp_p, cp_px, cp_py, cp_vx) {
-    cp_p.x = cp_px;
-    cp_p.y = cp_py;
-    cp_p.hspeed = cp_vx;
-    cp_p.vspeed = 0;
-    cp_p.gravity = 0;
-    cp_p.image_angle = 0;
-    cp_p.image_xscale = (cp_vx < 0) ? -1 : 1;
-    cp_p.chaosLoopActive = false;
-    cp_p.chaosLoopCooldown = 0;
-    cp_p.chaosSupport = noone;
-    cp_p.chaosReleasePending = false;
-    cp_p.chaosSpringFrames = 0;
-    cp_p.chaosGrounded = false;
-    cp_p.chaosMotionState = 5;
-    cp_p.chaosModifier = 0;
-    cp_p.chaosPreviousFlags = SCR_cc_lookup(cp_px,cp_p.bbox_bottom,cp_p.chaosPlane).flags;
-    cp_p.releasedLeft = false;
-    cp_p.releasedRight = false;
-    global.playerJump = false;
-    global.playerJumpSpring = false;
-    global.playerFly = false;
-    global.playerSpinDash = false;
-    global.chaosComplete = false;
-    // Debug teleport is explicit placement: reset both fixed-point coordinates and contacts.
-    if (variable_instance_exists(cp_p,"chaosCore")) {
-        var cp_c = cp_p.chaosCore;
-        cp_c.xu = round(cp_px*256); cp_c.yu = round((cp_py-cp_p.chaosAnchorOffset)*256);
-        cp_c.vx = round(cp_vx*256); cp_c.vy = 0; cp_c.move = 0;
-        cp_c.state = 5; cp_c.next = 5; cp_c.bg = 0; cp_c.contacts = 0;
-        cp_c.modifier = 0; cp_c.plane = cp_p.chaosPlane;
-        cp_c.previous = SCR_cc_lookup(cp_px,cp_c.yu/256+18,cp_c.plane).flags;
-    }
-    var cp_cam = view_camera[0];
-    camera_set_view_pos(cp_cam,
-        clamp(cp_px - camera_get_view_width(cp_cam) / 2, 0, room_width - camera_get_view_width(cp_cam)),
-        clamp(cp_py - camera_get_view_height(cp_cam) / 2, 0, room_height - camera_get_view_height(cp_cam)));
-}
-
 function SCR_chaos_player_begin(cp_p) {
     if (!variable_instance_exists(cp_p, "chaosLoopActive")) SCR_chaos_player_init(cp_p);
     cp_p.chaosSkipEnd = false;
-    if (keyboard_check_pressed(vk_f4)) {
-        var cp_lift = instance_nearest(592,464,OBJ_chaos_platform);
-        if (instance_exists(cp_lift)) {
-            SCR_chaos_debug_place(cp_p, cp_lift.x, cp_lift.y - (cp_p.bbox_bottom - cp_p.y) - 1, 0);
-            SCR_chaos_land_on_platform(cp_p, cp_lift);
-        }
-    }
-    if (keyboard_check_pressed(vk_f5)) {
-        global.chaosLoopPlanes[0] = 0;
-        SCR_chaos_debug_place(cp_p,2288,434,6);
-    }
-    if (keyboard_check_pressed(vk_f6)) {
-        global.chaosLoopPlanes[1] = 0;
-        SCR_chaos_debug_place(cp_p,2800,530,6);
-    }
-    if (keyboard_check_pressed(vk_f7)) {
-        global.chaosLoopPlanes[1] = 1;
-        SCR_chaos_debug_place(cp_p,2960,530,-6);
-    }
     if (cp_p.chaosLoopCooldown > 0) cp_p.chaosLoopCooldown--;
     if (cp_p.chaosLoopActive || SCR_chaos_loop_try_enter(cp_p)) {
         SCR_chaos_loop_tick(cp_p);

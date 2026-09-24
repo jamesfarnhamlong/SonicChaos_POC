@@ -20,12 +20,21 @@ def main():
     layout = json.loads((CACHE / "layout-interactions.json").read_text())
 
     expected_26 = {"0x00": Counter(), "0x01": Counter(), "0x8A": Counter()}
+    expected_10 = Counter()
+    expected_18 = Counter()
+    expected_21 = Counter()
     expected_1b = Counter()
     expected_27 = Counter()
     expected_28 = Counter()
     for record in records:
         point = (record["world_x"], record["world_y"])
-        if record["type_id"] == "0x26":
+        if record["type_id"] == "0x10":
+            expected_10[point] += 1
+        elif record["type_id"] == "0x18":
+            expected_18[point] += 1
+        elif record["type_id"] == "0x21":
+            expected_21[point] += 1
+        elif record["type_id"] == "0x26":
             expected_26[record["parameter"]][point] += 1
         elif record["type_id"] == "0x1B":
             expected_1b[point] += 1
@@ -38,6 +47,9 @@ def main():
     assert positions(instances, "OBJ_chaos_object_spring_26_weak") == expected_26["0x01"]
     assert positions(instances, "OBJ_chaos_object_spring_26_span") == expected_26["0x8A"]
     assert positions(instances, "OBJ_chaos_spikes") == expected_1b
+    assert positions(instances, "OBJ_chaos_object_10") == expected_10
+    assert positions(instances, "OBJ_chaos_object_18") == expected_18
+    assert positions(instances, "OBJ_chaos_object_21") == expected_21
     assert positions(instances, "OBJ_chaos_object_27") == expected_27
     assert positions(instances, "OBJ_chaos_platform") == expected_28
 
@@ -59,9 +71,9 @@ def main():
 
     expected_rings = Counter((x["x"], x["y"]) for x in layout["rings"])
     assert positions(instances, "OBJ_ring") == expected_rings
-    expected_monitors = Counter((x["x"] + 5, x["y"] + 5) for x in layout["terrain"]
-                                if x["block_id"] == 71)
-    assert positions(instances, "OBJ_monitor_ring") == expected_monitors
+    # The old POC promoted four layout-art cells to sample monitor instances.
+    # Task 04 now supplies the five canonical type-$10 placement records.
+    assert not positions(instances, "OBJ_monitor_ring")
 
     assert not positions(instances, "OBJ_badnik_1")
     draw = (ROOT / "objects/OBJ_chaos_controls/Draw_0.gml").read_text()
@@ -75,10 +87,13 @@ def main():
         "concealed_springs": sum(x.total() for x in expected_26.values()),
         "moving_spikes": expected_1b.total(),
         "static_spikes": expected_static_spikes.total(),
+        "type_10_objects": expected_10.total(),
+        "type_18_objects": expected_18.total(),
+        "type_21_objects": expected_21.total(),
         "type_27_objects": expected_27.total(),
         "platforms": expected_28.total(),
         "rings": expected_rings.total(),
-        "monitors": expected_monitors.total(),
+        "legacy_layout_monitor_instances": 0,
         "unsupported_instances": 0,
         "rom_derived_object_graphics": True,
         "rom_bytes_included": False,

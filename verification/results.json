@@ -11,10 +11,13 @@
     "concealed_springs": 4,
     "moving_spikes": 4,
     "static_spikes": 4,
+    "type_10_objects": 5,
+    "type_18_objects": 1,
+    "type_21_objects": 6,
     "type_27_objects": 3,
     "platforms": 6,
     "rings": 142,
-    "monitors": 4,
+    "legacy_layout_monitor_instances": 0,
     "unsupported_instances": 0,
     "rom_derived_object_graphics": true,
     "rom_bytes_included": false
@@ -83,21 +86,92 @@
     "gml_contract_checked": true,
     "limitation": "Selected original callbacks and static GML contract; not full scheduler or GameMaker runtime"
   },
+  "poc_18_objects": {
+    "reference_metadata": {
+      "10": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+      "21": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+      "27": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607"
+    },
+    "placements": {
+      "type_10": 5,
+      "type_18": 1,
+      "type_21": 6,
+      "type_27": 3
+    },
+    "type_21_left_bounds": {
+      "800,606": 672,
+      "1248,862": 1152,
+      "2048,318": 1952,
+      "3152,894": 3104,
+      "3296,286": 3232,
+      "2400,254": 2368
+    },
+    "type_27_no_contact": {
+      "updates": 129,
+      "add_callbacks": 65,
+      "subtract_callbacks": 64,
+      "displacement_8_8": 3
+    },
+    "type_10_parameters": [
+      "0x06",
+      "0x06",
+      "0x04",
+      "0x04",
+      "0x02"
+    ],
+    "terrain_31_cell": {
+      "transparent_pixels": 0,
+      "context_backdrop_pixels": 856,
+      "spring_pixels": 168
+    },
+    "ring_frames_normalized": 6,
+    "ring_terrain_cells_removed": 72,
+    "ring_object_positions_preserved": 142,
+    "type_18_presentation_offset_y": 22,
+    "debug_warp_shortcuts_removed": true,
+    "legacy_layout_monitor_instances": 0
+  },
   "enemy_research": {
-    "verified_placements": 9,
-    "rom_derived_sprite_assets": 3,
+    "verified_placements": 15,
+    "rom_derived_sprite_assets": 10,
+    "type_18_presentation_instances_added": 1,
     "room_type_27_instances_added": 3,
-    "type_21_instances_added": 0,
-    "scope": "type $27 implemented from recovered handlers; type $21 deliberately deferred"
+    "type_21_instances_added": 6,
+    "type_10_instances_added": 5,
+    "scope": "numeric types $10/$21/$27 plus verified type-$18 presentation graphics"
   },
   "project_resource_counts": {
-    "SonicChaos_POC.yyp": 475,
-    "sms_project_backup.yyp": 319
+    "sms_project_backup.yyp": 319,
+    "SonicChaos_POC.yyp": 482
   },
   "resource_metadata_validated": true,
   "sprite_root_and_layer_pngs_validated": true,
   "data_card_draw_defaults_validated": true,
   "moving_spike_floor_anchor_validated": true,
+  "terrain_generation": {
+    "quadrants_validated": 4,
+    "root_layer_copies_match": true,
+    "spring_31_context_backdrop_pixels": 856,
+    "ring_frames_normalized": 6,
+    "ring_foreground_cells_removed": 72,
+    "generator": "POC_notes/extract_chaos.py"
+  },
+  "type_18_presentation": {
+    "placement": {
+      "x": 3960,
+      "y": 558
+    },
+    "frames_validated": 5,
+    "presentation_offset_y": 22,
+    "scope": "verified graphics and animation frames only; completion/lifetime behavior remains partial"
+  },
+  "windows_feedback_adapters": {
+    "ring_flat_terrain_duplicates_removed": 142,
+    "ring_foreground_cells_removed": 72,
+    "ring_original_animation_preserved": true,
+    "type_18_presentation_offset_y": 22
+  },
+  "rom_cache_manifest_files_validated": 9,
   "terrain_spring_transparency": {
     "48": {
       "transparent_pixels": 856,
@@ -121,8 +195,8 @@
     }
   },
   "source_sha256": {
-    "scripts/SCR_chaos_core/SCR_chaos_core.gml": "07cc1db29ca0f2b37b74ef4b017f3c8223f0ad0373b92fd0a4778336ef6b79cc",
-    "scripts/SCR_chaos_core_data/SCR_chaos_core_data.gml": "eb1dfddcb2930bf77299d827c02286f1d8490905af3ba690c9677d5d86bb1614",
-    "scripts/SCR_chaos_adapter/SCR_chaos_adapter.gml": "fe21c55071525be093db030e5ab3130d119754639dc65cbc50a898bf1c1c58b3"
+    "scripts\\SCR_chaos_core\\SCR_chaos_core.gml": "8dfffa548d1b9bd959def5f11542087ab1b68f809ba075465cc3a5b69d294c47",
+    "scripts\\SCR_chaos_core_data\\SCR_chaos_core_data.gml": "2cd1ccf1eb6b789e1f0d35284a576eaa8638cac0d82090fc4c63d889ee78ace0",
+    "scripts\\SCR_chaos_adapter\\SCR_chaos_adapter.gml": "17fd866af92110652234926c5f7bfe02e20b52f240ec0b3c872f9a3d6cb20ea5"
   }
 }

@@ -7,10 +7,9 @@ No ROM is copied into the report or POC archive.
 import json, sys
 from pathlib import Path
 
-reference=Path(__file__).resolve().parents[3]/'sonic-chaos-reference'/'tools'
-if reference.exists(): sys.path.insert(0,str(reference))
-z80_bundle=Path(__file__).resolve().parents[3]/'chaos-research'/'tool-deps'
-if z80_bundle.exists(): sys.path.insert(0,str(z80_bundle))
+here=Path(__file__).resolve().parent
+reference=here.parents[1]/'sonic-chaos-reference-main'/'tools'
+sys.path[:0]=[str(here/'.deps'),str(reference)]
 from oracle import Oracle
 
 rom_path=Path(sys.argv[1])

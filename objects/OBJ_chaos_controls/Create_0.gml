@@ -1,1 +1,12 @@
 depth = -10000;
+global.chaosPowerCode = 0;
+global.chaosPowerTimer = 0;
+global.chaosType10D299 = 0;
+global.chaosType10D29A = 0;
+global.chaosType10QueuedMask = 0;
+global.chaosType05Allocated = false;
+global.chaosType05Parameter = 0;
+global.chaosLastEnemyScore0 = 0;
+global.chaosLastEnemyScore1 = 0;
+global.chaosLastEnemyScore2 = 0;
+global.chaosLastSoundRequest = 0;

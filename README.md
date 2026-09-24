@@ -1,16 +1,17 @@
 # Sonic Chaos — Windows proof of concept
 
-A GameMaker proof of concept for recreating *Sonic Chaos* Master System behaviour on Windows. The current source baseline is **POC 17**.
+A GameMaker proof of concept for recreating *Sonic Chaos* Master System behaviour on Windows. The current test baseline is **POC 18.3**.
 
 This repository tracks the current working project rather than storing a new copy of the whole project for every test build. Git history and version tags preserve milestones.
 
 ## Start here
 
+- [POC 18 notes and test checklist](README_18.md)
 - [POC 17 notes and test checklist](README_17.md)
 - [Detailed historical prototype notes](README_POC.md)
 - [Original-engine research and partial disassembly](https://github.com/jamesfarnhamlong/sonic-chaos-reference)
 
-Open `SonicChaos_POC.yyp` in GameMaker LTS 2026 and run the first stage. Press **F3** for the Chaos movement/collision diagnostic overlay. See the 14.5 notes for the current test order and known limitations.
+Open `SonicChaos_POC.yyp` in GameMaker LTS 2026 and run the first stage. Press **F3** for the Chaos movement/collision diagnostic overlay. See the POC 18 notes for the focused Windows acceptance route and known limitations.
 
 ## Repository workflow
 

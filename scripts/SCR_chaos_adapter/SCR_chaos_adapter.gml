@@ -251,6 +251,86 @@ function SCR_chaos_apply_hazard_damage(cp_p) {
     }
 }
 
+// Bounded object-floor adapter using the same decoded THZ collision header and
+// vertical-profile arithmetic as the player core. The returned Y is the object
+// anchor used by the original ground-patrol callback.
+function SCR_chaos_object_floor_project(cp_x, cp_y) {
+    var cp_s = SCR_cc_lookup(floor(cp_x),floor(cp_y),0);
+    if ((cp_s.flags & 192) == 0) return {grounded:false,y:cp_y};
+    var cp_solid = (cp_s.flags & 128) != 0;
+    var cp_value = cp_s.vertical;
+    if (cp_solid) cp_value &= 63;
+    var cp_total = (cp_value+(cp_s.ay & 31)) & 255;
+    if (cp_total < 32) return {grounded:false,y:cp_y};
+    return {grounded:true,y:cp_y-(cp_total-32)};
+}
+
+// Type $21 top contact requests player state $0B with signed 8.8 velocity
+// $F940. This deliberately bypasses the stronger terrain-spring impulses.
+function SCR_chaos_type21_top_bounce(cp_p) {
+    if (!variable_instance_exists(cp_p,"chaosCore")) SCR_chaos_core_attach(cp_p);
+    var cp_c = cp_p.chaosCore;
+    cp_c.vy = -1728;
+    cp_c.next = 11;
+    cp_c.move = (cp_c.move|1)&~2;
+    cp_c.bg &= ~2; cp_c.contacts &= ~2;
+    cp_p.chaosSupport = noone;
+    cp_p.chaosGrounded = false;
+    cp_p.chaosSpringVisual = true;
+    global.playerJump = true;
+    global.playerJumpSpring = true;
+    if (global.music == 1) audio_play_sound(SFX_sonic_spring,10,false);
+}
+
+// Preserve the verified original three-byte award independently of the sample
+// engine's unrelated decimal score display.
+function SCR_chaos_enemy_score_100_bytes() {
+    global.chaosLastEnemyScore0 = $10;
+    global.chaosLastEnemyScore1 = $00;
+    global.chaosLastEnemyScore2 = $00;
+}
+
+function SCR_chaos_bcd_add(cp_value, cp_amount) {
+    var cp_decimal = ((cp_value >> 4) & 15)*10+(cp_value & 15)+cp_amount;
+    cp_decimal = clamp(cp_decimal,0,99);
+    return ((cp_decimal div 10) << 4) | (cp_decimal mod 10);
+}
+
+// Type $10 parameters retain numeric identities. These fields mirror the
+// verified RAM effects without assigning conventional item names.
+function SCR_chaos_type10_reward(cp_parameter, cp_p) {
+    global.chaosType10QueuedMask = 1 << (cp_parameter-1);
+    if (cp_parameter == $02) {
+        if (!variable_global_exists("chaosType10D299")) global.chaosType10D299 = 0;
+        global.chaosType10D299 = SCR_chaos_bcd_add(global.chaosType10D299,1);
+        global.chaosLastSoundRequest = $A9;
+    } else if (cp_parameter == $04) {
+        if (global.player == 1) {
+            global.chaosPowerCode = $04;
+            global.chaosPowerTimer = 300;
+            global.chaosLastSoundRequest = $85;
+            if (variable_instance_exists(cp_p,"chaosCore")) {
+                cp_p.chaosCore.vx = 0; cp_p.chaosCore.vy = 0;
+                cp_p.chaosCore.maximum = $0700;
+                cp_p.chaosCore.next = $11;
+            }
+        } else {
+            if (!variable_global_exists("chaosType10D29A")) global.chaosType10D29A = 0;
+            global.chaosType10D29A = SCR_chaos_bcd_add(global.chaosType10D29A,10);
+        }
+    } else if (cp_parameter == $06) {
+        global.chaosPowerCode = $06;
+        global.chaosPowerTimer = 600;
+        global.chaosLastSoundRequest = $84;
+        global.powerInv = true;
+        // The audited contract proves allocation of type $05 parameter zero;
+        // its complete behavior/presentation remains unresolved.
+        global.chaosType05Allocated = true;
+        global.chaosType05Parameter = 0;
+    }
+    global.chaosType10QueuedMask = 0;
+}
+
 function SCR_chaos_spike_step(cp_o) {
     var cp_cam = view_camera[0];
     var cp_left = camera_get_view_x(cp_cam)-64;

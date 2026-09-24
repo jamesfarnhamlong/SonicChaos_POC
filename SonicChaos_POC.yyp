@@ -2950,6 +2950,48 @@
     },
     {
       "id": {
+        "name": "SPR_chaos_object_21",
+        "path": "sprites/SPR_chaos_object_21/SPR_chaos_object_21.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_18",
+        "path": "sprites/SPR_chaos_object_18/SPR_chaos_object_18.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_10",
+        "path": "sprites/SPR_chaos_object_10/SPR_chaos_object_10.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_0F",
+        "path": "sprites/SPR_chaos_object_0F/SPR_chaos_object_0F.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_10",
+        "path": "objects/OBJ_chaos_object_10/OBJ_chaos_object_10.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_21",
+        "path": "objects/OBJ_chaos_object_21/OBJ_chaos_object_21.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_18",
+        "path": "objects/OBJ_chaos_object_18/OBJ_chaos_object_18.yy"
+      }
+    },
+    {
+      "id": {
         "name": "OBJ_chaos_object_27",
         "path": "objects/OBJ_chaos_object_27/OBJ_chaos_object_27.yy"
       }
