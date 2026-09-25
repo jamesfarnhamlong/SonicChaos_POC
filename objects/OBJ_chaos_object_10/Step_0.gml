@@ -39,7 +39,10 @@ var cp_overlap = cp_p.bbox_right >= x-10 && cp_p.bbox_left <= x+10 &&
 if (!cp_overlap) exit;
 
 // $D503.1 is mandatory. Power code $06 alone does not substitute.
-var cp_attack = cp_p.object_index == OBJ_player_char_spin || global.playerJump || global.playerSpinDash;
+var cp_state11 = variable_instance_exists(cp_p,"chaosCore") &&
+    (cp_p.chaosCore.state == $11 || cp_p.chaosCore.next == $11);
+var cp_attack = !cp_state11 &&
+    (cp_p.object_index == OBJ_player_char_spin || global.playerJump || global.playerSpinDash);
 if (!cp_attack) exit;
 if (!variable_instance_exists(cp_p,"chaosCore")) SCR_chaos_core_attach(cp_p);
 var cp_c = cp_p.chaosCore;

@@ -1,0 +1,32 @@
+{
+  "reference_main": "65670d29295d87d71109b1983206a74f2bbeeb6a",
+  "task_06_named_commit": "479990227e48543a853cdd36f52365cb5cc1536a",
+  "task_06_named_commit_is_main_ancestor": false,
+  "cache_sha256": "ff44a01015a78140031b1a31c52d89b50cc97540e90836d72917f49cd97f9e3f",
+  "player_state_11": "RESOLVED",
+  "state_11_presentation": "DOCUMENTED PRESENTATION ADAPTER: SPR_player_falling",
+  "static_3d_spike_collision": "RESOLVED",
+  "static_spike_cells": [
+    [
+      1504,
+      832
+    ],
+    [
+      1536,
+      832
+    ],
+    [
+      2208,
+      832
+    ],
+    [
+      2240,
+      832
+    ]
+  ],
+  "removed_full_cell_masks": 4,
+  "type_21_anchor_contact": "RESOLVED",
+  "type_10_floating": "CANONICAL - UNCHANGED",
+  "moving_type_1b_unchanged": true,
+  "candidate": "THZ1 POC READY WITH DOCUMENTED ADAPTERS"
+}

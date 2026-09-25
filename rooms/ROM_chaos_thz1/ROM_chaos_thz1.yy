@@ -3471,22 +3471,6 @@
       "path": "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
     },
     {
-      "name": "inst_9F5B97CE",
-      "path": "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
-    },
-    {
-      "name": "inst_3CC7F074",
-      "path": "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
-    },
-    {
-      "name": "inst_744ED4C1",
-      "path": "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
-    },
-    {
-      "name": "inst_D7A6BDDC",
-      "path": "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
-    },
-    {
       "name": "inst_4872312E",
       "path": "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
     },
@@ -30558,114 +30542,6 @@
           "scaleX": 1.0,
           "scaleY": 1.0,
           "x": 608.0,
-          "y": 832.0
-        },
-        {
-          "$GMRInstance": "v4",
-          "%Name": "inst_9F5B97CE",
-          "colour": 4294967295,
-          "frozen": false,
-          "hasCreationCode": false,
-          "ignore": false,
-          "imageIndex": 0,
-          "imageSpeed": 1.0,
-          "inheritCode": false,
-          "inheritedItemId": null,
-          "inheritItemSettings": false,
-          "isDnd": false,
-          "name": "inst_9F5B97CE",
-          "objectId": {
-            "name": "OBJ_CHAOS_mask_12",
-            "path": "objects/OBJ_CHAOS_mask_12/OBJ_CHAOS_mask_12.yy"
-          },
-          "properties": [],
-          "resourceType": "GMRInstance",
-          "resourceVersion": "2.0",
-          "rotation": 0.0,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "x": 1504.0,
-          "y": 832.0
-        },
-        {
-          "$GMRInstance": "v4",
-          "%Name": "inst_3CC7F074",
-          "colour": 4294967295,
-          "frozen": false,
-          "hasCreationCode": false,
-          "ignore": false,
-          "imageIndex": 0,
-          "imageSpeed": 1.0,
-          "inheritCode": false,
-          "inheritedItemId": null,
-          "inheritItemSettings": false,
-          "isDnd": false,
-          "name": "inst_3CC7F074",
-          "objectId": {
-            "name": "OBJ_CHAOS_mask_12",
-            "path": "objects/OBJ_CHAOS_mask_12/OBJ_CHAOS_mask_12.yy"
-          },
-          "properties": [],
-          "resourceType": "GMRInstance",
-          "resourceVersion": "2.0",
-          "rotation": 0.0,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "x": 1536.0,
-          "y": 832.0
-        },
-        {
-          "$GMRInstance": "v4",
-          "%Name": "inst_744ED4C1",
-          "colour": 4294967295,
-          "frozen": false,
-          "hasCreationCode": false,
-          "ignore": false,
-          "imageIndex": 0,
-          "imageSpeed": 1.0,
-          "inheritCode": false,
-          "inheritedItemId": null,
-          "inheritItemSettings": false,
-          "isDnd": false,
-          "name": "inst_744ED4C1",
-          "objectId": {
-            "name": "OBJ_CHAOS_mask_12",
-            "path": "objects/OBJ_CHAOS_mask_12/OBJ_CHAOS_mask_12.yy"
-          },
-          "properties": [],
-          "resourceType": "GMRInstance",
-          "resourceVersion": "2.0",
-          "rotation": 0.0,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "x": 2208.0,
-          "y": 832.0
-        },
-        {
-          "$GMRInstance": "v4",
-          "%Name": "inst_D7A6BDDC",
-          "colour": 4294967295,
-          "frozen": false,
-          "hasCreationCode": false,
-          "ignore": false,
-          "imageIndex": 0,
-          "imageSpeed": 1.0,
-          "inheritCode": false,
-          "inheritedItemId": null,
-          "inheritItemSettings": false,
-          "isDnd": false,
-          "name": "inst_D7A6BDDC",
-          "objectId": {
-            "name": "OBJ_CHAOS_mask_12",
-            "path": "objects/OBJ_CHAOS_mask_12/OBJ_CHAOS_mask_12.yy"
-          },
-          "properties": [],
-          "resourceType": "GMRInstance",
-          "resourceVersion": "2.0",
-          "rotation": 0.0,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "x": 2240.0,
           "y": 832.0
         },
         {

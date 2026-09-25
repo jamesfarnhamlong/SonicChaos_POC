@@ -49,18 +49,26 @@ if (chaosVX < 0 && floor(x) < chaosLeftBound) {
 
 var cp_p = instance_find(OBJ_player,0);
 if (!instance_exists(cp_p)) exit;
-var cp_overlap = cp_p.bbox_right >= x-11 && cp_p.bbox_left <= x+11 &&
-    cp_p.bbox_bottom >= y-26 && cp_p.bbox_top <= y;
+if (!variable_instance_exists(cp_p,"chaosCore")) SCR_chaos_core_attach(cp_p);
+// Task 06: original $6328 compares fixed integer anchors and extents, never
+// animated GameMaker sprite bounds.
+var cp_player_x = floor(cp_p.chaosCore.xu/256);
+var cp_player_y = floor(cp_p.chaosCore.yu/256);
+var cp_object_x = floor(chaosXU/256);
+var cp_object_y = floor(chaosYU/256);
+var cp_overlap = abs(cp_player_x-cp_object_x) <= 20 &&
+    cp_player_y >= cp_object_y-26 && cp_player_y <= cp_object_y+18;
 if (!cp_overlap) exit;
 
 // The top branch precedes attack checks in the original callback.
-if (cp_p.y <= y-4) {
+if (cp_player_y <= cp_object_y-4) {
     SCR_chaos_type21_top_bounce(cp_p);
     exit;
 }
 
-var cp_attack = cp_p.object_index == OBJ_player_char_spin || global.playerJump ||
-    global.playerSpinDash || global.playerSuper || global.powerInv;
+var cp_state11 = cp_p.chaosCore.state == $11 || cp_p.chaosCore.next == $11;
+var cp_attack = (!cp_state11 && (cp_p.object_index == OBJ_player_char_spin ||
+    global.playerJump || global.playerSpinDash)) || global.playerSuper || global.powerInv;
 if (cp_attack) {
     chaosDefeated = true;
     SCR_chaos_enemy_score_100_bytes();

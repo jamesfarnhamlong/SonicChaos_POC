@@ -26,9 +26,10 @@ function SCR_chaos_core_publish(cp_p) {
     if (cp_c.next == 11) cp_p.chaosSpringVisual = true;
     if (cp_p.chaosGrounded) cp_p.chaosSpringVisual = false;
     cp_p.hspeed = 0; cp_p.vspeed = 0; cp_p.gravity = 0;
-    global.playerJump = (cp_c.move & 3) != 0;
-    global.playerJumpSpring = cp_c.next == 11 || cp_c.next == 28;
-    global.playerSpinDash = cp_c.next == 15;
+    var cp_state11 = cp_c.state == $11 || cp_c.next == $11;
+    global.playerJump = !cp_state11 && (cp_c.move & 3) != 0;
+    global.playerJumpSpring = !cp_state11 && (cp_c.next == 11 || cp_c.next == 28);
+    global.playerSpinDash = !cp_state11 && cp_c.next == 15;
     global.playerFly = false;
 }
 function SCR_chaos_core_sprites(cp_p) {
@@ -38,7 +39,12 @@ function SCR_chaos_core_sprites(cp_p) {
         if (cp_c.vx != 0) image_xscale = sign(cp_c.vx);
         if (image_xscale < 0) cp_c.player_flags |= 16; else cp_c.player_flags &= ~16;
         var cp_sprite = SPR_player_walk;
-        if (cp_c.next == 15) cp_sprite = SPR_player_spin_dash;
+        var cp_state11_visual = cp_c.state == $11 || cp_c.next == $11;
+        // Exact ROM frames $38/$39/$3A are not present in the inherited
+        // openSonicSMS art. Use a non-rolling falling sprite as an explicit
+        // presentation adapter; cp_c.state11_frame retains the exact cadence.
+        if (cp_state11_visual) cp_sprite = SPR_player_falling;
+        else if (cp_c.next == 15) cp_sprite = SPR_player_spin_dash;
         else if (cp_c.state == 34 || cp_c.next == 9 || (cp_c.move & 2) != 0) cp_sprite = SPR_player_spin;
         else if (cp_p.chaosSpringVisual && cp_c.vy < 0) cp_sprite = SPR_player_jump;
         else if ((cp_c.move & 1) != 0) cp_sprite = SPR_player_falling;
@@ -50,7 +56,8 @@ function SCR_chaos_core_sprites(cp_p) {
         if (sprite_index != cp_sprite) { sprite_index = cp_sprite; image_index = 0; }
         // Chaos angle $40 is level rightward motion, so it is the sprite's zero.
         image_angle = cp_c.state == 34 ? (cp_c.angle-64)*360/256 : 0;
-        image_speed = (cp_p.chaosSpringVisual && cp_c.vy < 0) ? 0 :
+        if (cp_state11_visual) { image_index = 0; image_speed = 0; }
+        else image_speed = (cp_p.chaosSpringVisual && cp_c.vy < 0) ? 0 :
             (cp_c.vx == 0 ? 0.15 : clamp(abs(cp_c.vx)/4096,0.075,0.325));
     }
 }
@@ -95,6 +102,8 @@ function SCR_chaos_adapter_step(cp_p) {
     }
     SCR_cc_merge(cp_c);
     var cp_previous_foot = cp_c.yu/256+18;
+    cp_c.state11_active = global.chaosPowerCode == $04 && global.chaosPowerTimer > 0;
+    cp_c.state11_camera_y = floor(camera_get_view_y(view_camera[0]));
     SCR_cc_tick(cp_c);
     // Widescreen room boundary adapter. Original camera-relative 256px clipping is omitted.
     if (cp_c.xu < 16*256 || cp_c.xu > (room_width-9)*256) {
@@ -243,8 +252,21 @@ function SCR_chaos_object_spring_draw(cp_o) {
     draw_sprite(SPR_chaos_object_26,0,cp_o.chaosDrawX,cp_cap_y+17);
 }
 
+function SCR_chaos_cancel_state11(cp_p) {
+    if (!instance_exists(cp_p) || !variable_instance_exists(cp_p,"chaosCore")) return;
+    var cp_c = cp_p.chaosCore;
+    if (cp_c.state != $11 && cp_c.next != $11 && global.chaosPowerCode != $04) return;
+    global.chaosPowerCode = 0;
+    global.chaosPowerTimer = 0;
+    global.chaosLastSoundRequest = $81; // recovered level-music restore request
+    global.chaosMusicRestoreRequested = true;
+    cp_c.state = $1E; cp_c.next = $1E;
+    cp_c.state11_active = false;
+}
+
 function SCR_chaos_apply_hazard_damage(cp_p) {
     if (global.playerSuper || global.playerBlink || global.powerInv) return;
+    SCR_chaos_cancel_state11(cp_p);
     with (cp_p) {
         if (global.powerShield || global.ring > 0) instance_change(OBJ_player_lost_a,true);
         else instance_change(OBJ_player_death,true);
@@ -310,9 +332,7 @@ function SCR_chaos_type10_reward(cp_parameter, cp_p) {
             global.chaosPowerTimer = 300;
             global.chaosLastSoundRequest = $85;
             if (variable_instance_exists(cp_p,"chaosCore")) {
-                cp_p.chaosCore.vx = 0; cp_p.chaosCore.vy = 0;
-                cp_p.chaosCore.maximum = $0700;
-                cp_p.chaosCore.next = $11;
+                SCR_cc_state11_enter(cp_p.chaosCore);
             }
         } else {
             if (!variable_global_exists("chaosType10D29A")) global.chaosType10D29A = 0;
@@ -392,6 +412,7 @@ if (place_meeting(x,y,OBJ_collision_death) && global.playerSuper == false && glo
     // If not have invincibility
     if (global.powerInv == false) 
     {
+        SCR_chaos_cancel_state11(id);
         // If have a Shield
         if (global.powerShield == true) 
         {
@@ -427,6 +448,7 @@ if (place_meeting(x,y,OBJ_badniks) && global.playerSuper == false &&
     // If not have invincibility
     if (global.powerInv == false) 
     {
+        SCR_chaos_cancel_state11(id);
         // If have a Shield
         if (global.powerShield == true) 
         {

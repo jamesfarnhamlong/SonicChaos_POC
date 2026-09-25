@@ -8,7 +8,9 @@ function SCR_cc_new(cp_x, cp_y) {
         player_flags:0, plane:0, previous:0, tile:255, modifier:0,
         input_delta:0, surface_delta:0, maximum:1024, water:0,
         held:0, pressed:0, jump_ticks:0, sound:0, unsupported:0,
-        hazard:0, angle:0, magnitude:0, twist_variant:0, level:0};
+        hazard:0, angle:0, magnitude:0, twist_variant:0, level:0,
+        state11_active:false, state11_camera_y:0,
+        state11_anim_tick:0, state11_frame:56};
 }
 function SCR_cc_merge(cp_c) {
     cp_c.contacts = cp_c.bg;
@@ -333,7 +335,11 @@ function SCR_cc_sides(cp_c) {
         if (cp_right && cp_s.tile == 161 && cp_c.plane != 0) { cp_c.plane = 0; continue; }
         if (!cp_right && cp_s.tile == 162 && cp_c.plane == 0) { cp_c.plane = 1; continue; }
         var cp_kind = cp_s.flags & 31;
-        if (cp_kind == 5 || cp_kind == 13 || cp_kind == 19 || cp_kind == 22 || cp_kind == 30) {
+        // Task 06: THZ1 block $3D/type 5 has a decoded horizontal profile.
+        // Its upper half has extent zero and its lower half extent 32. Other
+        // type-5 tiles remain bounded as unsupported special dispatches.
+        if ((cp_kind == 5 && cp_s.tile != 61) || cp_kind == 13 ||
+            cp_kind == 19 || cp_kind == 22 || cp_kind == 30) {
             cp_c.unsupported = cp_kind; // special dispatch not falsely presented as ordinary ROM behaviour
             continue;
         }
@@ -366,10 +372,59 @@ function SCR_cc_shared(cp_c) {
     SCR_cc_floor(cp_c); SCR_cc_sides(cp_c); SCR_cc_ceiling(cp_c); SCR_cc_merge(cp_c);
     if ((cp_c.pressed & 48) != 0) SCR_cc_jump(cp_c);
 }
+function SCR_cc_state11_enter(cp_c) {
+    cp_c.vx = 0; cp_c.vy = 0; cp_c.maximum = 1792; cp_c.next = 17;
+    cp_c.move &= ~66;
+    cp_c.state11_anim_tick = 0; cp_c.state11_frame = 56;
+    cp_c.state11_active = true;
+}
+// Task 06: state $11 callback $3A7C. Coordinates and velocities retain the
+// core's integer 16.8 / signed 8.8 representation.
+function SCR_cc_state11_tick(cp_c) {
+    if ((cp_c.held & 1) != 0) {
+        cp_c.vy = SCR_cc_s16(cp_c.vy-64);
+        if (cp_c.vy < -768) cp_c.vy = -1024;
+    } else if ((cp_c.held & 2) != 0) {
+        cp_c.vy = SCR_cc_s16(cp_c.vy+64);
+        if (cp_c.vy > 768) cp_c.vy = 1024;
+    }
+    else if (cp_c.vy > 0) cp_c.vy = max(0,cp_c.vy-32);
+    else if (cp_c.vy < 0) cp_c.vy = min(0,cp_c.vy+32);
+
+    // Original 192-line gameplay viewport limits use the integer player
+    // anchor, not animated sprite bounds.
+    var cp_integer_y = floor(cp_c.yu/256);
+    if (cp_integer_y-cp_c.state11_camera_y < 25) {
+        cp_c.yu = (cp_c.state11_camera_y+25)*256; cp_c.vy = 0;
+    } else if (cp_integer_y-cp_c.state11_camera_y >= 192) {
+        cp_c.yu = (cp_c.state11_camera_y+191)*256; cp_c.vy = 0;
+    }
+
+    SCR_cc_shared(cp_c); // shared X input, terrain collision, no state-$11 gravity
+
+    // Shared empty-floor handling normally requests state $0E. State $11's
+    // own callback remains active until its timer ends and only adopts the
+    // grounded/airborne contact representation here.
+    if (cp_c.state11_active) {
+        cp_c.next = 17;
+        if ((cp_c.contacts & 2) != 0) {
+            cp_c.move &= ~1;
+            if (cp_c.vy > 0) cp_c.vy = 0;
+        } else cp_c.move |= 1;
+    }
+
+    var cp_phase = cp_c.state11_anim_tick % 24;
+    cp_c.state11_frame = cp_phase < 8 ? 56 : (cp_phase < 12 ? 57 :
+        (cp_phase < 20 ? 58 : 57));
+    cp_c.state11_anim_tick = (cp_c.state11_anim_tick+1) % 24;
+
+    if (!cp_c.state11_active) SCR_cc_fall(cp_c);
+}
 // Ordinary state wrappers. Animation-script scheduling and special states remain out of scope.
 function SCR_cc_tick(cp_c) {
     cp_c.state = cp_c.next; cp_c.sound = 0; cp_c.unsupported = 0; cp_c.hazard = 0;
     if (cp_c.state == 34) { SCR_cc_twist_tick(cp_c); return; }
+    if (cp_c.state == 17) { SCR_cc_state11_tick(cp_c); return; }
     if ((cp_c.state == 7 && (cp_c.contacts & 8) != 0) || (cp_c.state == 8 && (cp_c.contacts & 4) != 0)) {
         SCR_cc_walk(cp_c); return;
     }

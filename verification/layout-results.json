@@ -3,6 +3,7 @@
   "concealed_springs": 4,
   "moving_spikes": 4,
   "static_spikes": 4,
+  "static_spike_full_cell_masks": 0,
   "type_10_objects": 5,
   "type_18_objects": 1,
   "type_21_objects": 6,

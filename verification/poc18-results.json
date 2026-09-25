@@ -46,7 +46,8 @@
     "0x06": "3790c8bee0dd4f9d53a803616ac75123f346a55b11b7a80a87c1ab80247f24f0"
   },
   "type_10_fixed_frame_0C_shared": true,
-  "type_10_contact_source_unchanged": true,
+  "type_10_reward_path_unchanged": true,
+  "type_10_state_11_attack_suppression": true,
   "type_05_visible_frames": 32,
   "type_05_tiles": [
     "0x20",

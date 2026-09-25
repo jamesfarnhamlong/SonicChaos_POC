@@ -18,6 +18,10 @@ if (room == ROM_chaos_thz1) {
   global.chaosPowerTimer--;
   if (global.chaosPowerTimer == 0) {
    if (global.chaosPowerCode == $06) global.powerInv = false;
+   if (global.chaosPowerCode == $04) {
+    global.chaosLastSoundRequest = $81;
+    global.chaosMusicRestoreRequested = true;
+   }
    global.chaosPowerCode = 0;
   }
  }

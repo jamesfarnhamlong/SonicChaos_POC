@@ -67,7 +67,11 @@ def main():
 
     expected_static_spikes = Counter((x["x"], x["y"]) for x in layout["terrain"]
                                      if x["block_id"] == 61)
-    assert positions(instances, "OBJ_CHAOS_mask_12") == expected_static_spikes
+    assert expected_static_spikes == Counter({
+        (1504, 832): 1, (1536, 832): 1, (2208, 832): 1, (2240, 832): 1})
+    # Task 06: these cells are represented solely by the decoded terrain
+    # profile. The former full-cell mask made their upper half a false wall.
+    assert not positions(instances, "OBJ_CHAOS_mask_12")
 
     expected_rings = Counter((x["x"], x["y"]) for x in layout["rings"])
     assert positions(instances, "OBJ_ring") == expected_rings
@@ -87,6 +91,7 @@ def main():
         "concealed_springs": sum(x.total() for x in expected_26.values()),
         "moving_spikes": expected_1b.total(),
         "static_spikes": expected_static_spikes.total(),
+        "static_spike_full_cell_masks": 0,
         "type_10_objects": expected_10.total(),
         "type_18_objects": expected_18.total(),
         "type_21_objects": expected_21.total(),

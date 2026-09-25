@@ -46,6 +46,10 @@
     "object-10-poc-assets.json": {
       "sha256": "68031b7a4099e64da4fb69d26894b1200dfa71c606f8d3a1eb6028d7cc4dc16d",
       "bytes": 36139
+    },
+    "windows-discrepancies.json": {
+      "sha256": "ff44a01015a78140031b1a31c52d89b50cc97540e90836d72917f49cd97f9e3f",
+      "bytes": 32868
     }
   }
 }

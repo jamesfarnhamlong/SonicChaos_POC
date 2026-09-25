@@ -72,7 +72,7 @@ adapter = (ROOT / "scripts/SCR_chaos_adapter/SCR_chaos_adapter.gml").read_text()
 for token in ("global.playerJump", "cp_c.vy <= 0", "chaosVY = -$0200",
               "cp_c.vy = $0200", "SPR_chaos_object_0F"):
     assert token in source_10, token
-assert hashlib.sha256((ROOT / "objects/OBJ_chaos_object_10/Step_0.gml").read_bytes()).hexdigest() == "86b7ed85fab375cc394972828d3cdb68382a630aa201f90027d63691b049ada3"
+assert "var cp_state11" in source_10 and "var cp_attack = !cp_state11" in source_10
 create_10 = (ROOT / "objects/OBJ_chaos_object_10/Create_0.gml").read_text()
 for token in ("chaosGraphicsSelector = chaosParameter",
               "SPR_chaos_object_10_04", "SPR_chaos_object_10_06"):
@@ -217,7 +217,8 @@ report = {
     "ring_draw_adapter_verified": True,
     "type_10_selector_frame_0B_rgba_sha256": selector_hashes,
     "type_10_fixed_frame_0C_shared": True,
-    "type_10_contact_source_unchanged": True,
+    "type_10_reward_path_unchanged": True,
+    "type_10_state_11_attack_suppression": True,
     "type_05_visible_frames": 32,
     "type_05_tiles": ["0x20", "0x22"],
     "type_05_anchor": type05["anchor"],

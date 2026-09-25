@@ -42,6 +42,8 @@ report['canon_layout']=json.loads((root/'verification/layout-results.json').read
 report['twist_state_22']=json.loads((root/'verification/twist-results.json').read_text())
 report['type_27_handlers']=json.loads((root/'verification/type27-results.json').read_text())
 report['poc_18_objects']=json.loads((root/'verification/poc18-results.json').read_text())
+report['task_06_core']=json.loads((root/'verification/task06-results.json').read_text())
+report['task_06_integration']=json.loads((root/'verification/task06-integration-results.json').read_text())
 sprite_manifest=json.loads((root/'POC_notes/rom-cache/thz1-object-sprites.json').read_text())
 for asset in sprite_manifest['assets']:
     sprite_path=root/asset['sprite_path']

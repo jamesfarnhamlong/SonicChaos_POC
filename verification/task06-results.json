@@ -1,0 +1,46 @@
+{
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "state_11": {
+    "entry_verified": true,
+    "entry_timer": 300,
+    "vertical_cases": 6,
+    "shared_horizontal": true,
+    "action_suppressed": true,
+    "viewport_bounds": true,
+    "expiry_state": 14,
+    "expiry_vy_8_8": 256,
+    "animation_frames": [
+      56,
+      56,
+      56,
+      56,
+      56,
+      56,
+      56,
+      56,
+      57,
+      57,
+      57,
+      57,
+      58,
+      58,
+      58,
+      58,
+      58,
+      58,
+      58,
+      58,
+      57,
+      57,
+      57,
+      57
+    ]
+  },
+  "static_spikes": {
+    "cells": 4,
+    "profile_projection_cases": 128,
+    "upper_half_side_solid": false,
+    "lower_half_side_solid": true,
+    "floor_hazard": true
+  }
+}
