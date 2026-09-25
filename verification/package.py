@@ -4,8 +4,22 @@ from pathlib import Path
 from PIL import Image
 root=Path(__file__).resolve().parents[1]
 def json_gm(p):return json.loads(re.sub(r',\s*([}\]])',r'\1',p.read_text()))
+guid_re=re.compile(r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$')
+resource_guid_strings=0
 for p in root.rglob('*.yy'):
     data=json_gm(p)
+    pending=[data]
+    while pending:
+        value=pending.pop()
+        if isinstance(value,dict):
+            for key,item in value.items():
+                if key=='id' and isinstance(item,str):
+                    assert guid_re.fullmatch(item),(p,item,'invalid GUID')
+                    resource_guid_strings+=1
+                elif isinstance(item,(dict,list)):
+                    pending.append(item)
+        elif isinstance(value,list):
+            pending.extend(item for item in value if isinstance(item,(dict,list)))
     if data.get('resourceType')=='GMSprite':
         sprite_dir=p.parent
         frames=[frame['name'] for frame in data.get('frames',[])]
@@ -44,6 +58,7 @@ report['enemy_research']={
 }
 report['project_resource_counts']=projects
 report['resource_metadata_validated']=True
+report['resource_guid_strings_validated']=resource_guid_strings
 report['sprite_root_and_layer_pngs_validated']=True
 for slot in range(1,6):
     create=(root/f'objects/OBJ_menu_data_card_{slot}/Create_0.gml').read_text()
@@ -97,14 +112,51 @@ report['type_18_presentation']={'placement':type18_manifest['placement'],
     'scope':type18_manifest['scope']}
 ring_create=(root/'objects/OBJ_ring/Create_0.gml').read_text()
 assert 'image_speed = 0.25' in ring_create
-assert not (root/'objects/OBJ_ring/Draw_0.gml').exists()
+ring_draw=(root/'objects/OBJ_ring/Draw_0.gml').read_text()
+assert 'draw_sprite(SPR_ring, chaosTHZFrame, x, y)' in ring_draw
+assert 'else draw_self();' in ring_draw
 type18_draw=(root/'objects/OBJ_chaos_object_18/Draw_0.gml').read_text()
 assert 'y + 22' in type18_draw
 report['windows_feedback_adapters']={
     'ring_flat_terrain_duplicates_removed':142,
     'ring_foreground_cells_removed':72,
     'ring_original_animation_preserved':True,
+    'ring_integer_subimage_draw_adapter':True,
     'type_18_presentation_offset_y':22,
+}
+type10_assets=json.loads((root/'POC_notes/rom-cache/object-10-poc-assets.json').read_text())
+type10_reference=json.loads((root/'POC_notes/rom-cache/object-10-graphics.json').read_text())
+reference_variants={v['selector']:v for v in type10_reference['variants'] if v['player_type']=='0x01'}
+for variant in type10_assets['type_10']:
+    reference=reference_variants[variant['selector']]
+    assert len(variant['frames'])==2
+    for imported,canonical in zip(variant['frames'],reference['frames']):
+        root_png=root/imported['root_png'];layer_png=root/imported['layer_png']
+        assert root_png.read_bytes()==layer_png.read_bytes()
+        assert hashlib.sha256(root_png.read_bytes()).hexdigest()==imported['png_sha256']
+        image=Image.open(root_png).convert('RGBA')
+        expanded=image.resize((image.width*4,image.height*4),Image.Resampling.NEAREST)
+        assert hashlib.sha256(expanded.tobytes()).hexdigest()==canonical['rgba_sha256']
+assert type10_assets['type_05']['frame_count']==32
+assert type10_assets['type_05']['tile_offsets']==['0x20','0x22']
+assert len(json_gm(root/'sprites/SPR_chaos_object_05/SPR_chaos_object_05.yy')['frames'])==32
+for frame in type10_assets['type_05']['frames']:
+    root_png=root/frame['root_png'];layer_png=root/frame['layer_png']
+    assert root_png.read_bytes()==layer_png.read_bytes()
+    assert hashlib.sha256(root_png.read_bytes()).hexdigest()==frame['png_sha256']
+    canvas=Image.open(root_png).convert('RGBA');bounds=frame['bounds']
+    piece=canvas.crop((20+bounds['min_x'],42+bounds['min_y'],
+                       20+bounds['max_x'],42+bounds['max_y']))
+    source=Image.new('RGBA',(16,24),(0,0,0,0));source.alpha_composite(piece,(4,4))
+    expanded=source.resize((64,96),Image.Resampling.NEAREST)
+    assert hashlib.sha256(expanded.tobytes()).hexdigest()==frame['reference_rgba_sha256']
+report['task_05_closure']={
+    'type_10_selector_graphics':'RESOLVED',
+    'type_05_visible_effect':'RESOLVED',
+    'type_05_frames':32,
+    'type_05_anchor':type10_assets['type_05']['anchor'],
+    'ring_verifier_contradiction':'RESOLVED',
+    'candidate':'THZ1 POC READY WITH DOCUMENTED ADAPTERS',
 }
 cache_root=root/'POC_notes/rom-cache'
 cache_manifest=json.loads((cache_root/'manifest.json').read_text())

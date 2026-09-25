@@ -1,5 +1,5 @@
 """Verify POC 18 against committed canonical type-$10/$21/$27 metadata."""
-import json
+import hashlib, json
 from collections import Counter
 from pathlib import Path
 from PIL import Image
@@ -21,12 +21,19 @@ room = json.loads((ROOT / "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy").read_text())
 instances = [i for layer in room["layers"] for i in layer.get("instances", [])]
 metadata = {kind: json.loads((CACHE / f"object-{kind}.json").read_text())
             for kind in ("10", "21", "27")}
+graphics_10 = json.loads((CACHE / "object-10-graphics.json").read_text())
+poc_assets_10 = json.loads((CACHE / "object-10-poc-assets.json").read_text())
+layout_metadata = json.loads((CACHE / "layout-interactions.json").read_text())
 
 assert positions(instances, "OBJ_chaos_object_10") == placement_counter(metadata["10"])
 assert positions(instances, "OBJ_chaos_object_21") == placement_counter(metadata["21"])
 assert positions(instances, "OBJ_chaos_object_27") == placement_counter(metadata["27"])
 assert positions(instances, "OBJ_chaos_object_18") == Counter({(3960, 558): 1})
+assert positions(instances, "OBJ_ring") == Counter((p["x"], p["y"]) for p in layout_metadata["rings"])
 assert not positions(instances, "OBJ_monitor_ring")
+assert {(p["world_x"], p["world_y"]): p["parameter"] for p in metadata["10"]["placements"]} == {
+    (656, 846): "0x06", (1712, 494): "0x06", (336, 270): "0x04",
+    (1472, 110): "0x04", (2688, 686): "0x02"}
 
 # Independent fixed-point translation of the complete no-contact $27 state 2.
 vy = displacement = 0
@@ -65,6 +72,12 @@ adapter = (ROOT / "scripts/SCR_chaos_adapter/SCR_chaos_adapter.gml").read_text()
 for token in ("global.playerJump", "cp_c.vy <= 0", "chaosVY = -$0200",
               "cp_c.vy = $0200", "SPR_chaos_object_0F"):
     assert token in source_10, token
+assert hashlib.sha256((ROOT / "objects/OBJ_chaos_object_10/Step_0.gml").read_bytes()).hexdigest() == "86b7ed85fab375cc394972828d3cdb68382a630aa201f90027d63691b049ada3"
+create_10 = (ROOT / "objects/OBJ_chaos_object_10/Create_0.gml").read_text()
+for token in ("chaosGraphicsSelector = chaosParameter",
+              "SPR_chaos_object_10_04", "SPR_chaos_object_10_06"):
+    assert token in create_10, token
+assert "image_index = (chaosAnimTick div 5) & 1" in source_10
 for token in ("cp_parameter == $02", "cp_parameter == $04", "cp_parameter == $06",
               "global.chaosLastEnemyScore0 = $10"):
     assert token in adapter, token
@@ -113,7 +126,75 @@ draw_18 = (ROOT / "objects/OBJ_chaos_object_18/Draw_0.gml").read_text()
 assert "y + 22" in draw_18 and "floor(image_index)" in draw_18
 ring_create = (ROOT / "objects/OBJ_ring/Create_0.gml").read_text()
 assert "image_speed = 0.25" in ring_create
-assert not (ROOT / "objects/OBJ_ring/Draw_0.gml").exists()
+ring_draw_path = ROOT / "objects/OBJ_ring/Draw_0.gml"
+assert ring_draw_path.exists()
+ring_draw = ring_draw_path.read_text()
+assert "if (room == ROM_chaos_thz1) draw_sprite(SPR_ring, chaosTHZFrame, x, y);" in ring_draw
+assert "else draw_self();" in ring_draw
+
+# Task-05 type-$10 selector graphics. The reference audit PNGs are exact 4x
+# nearest-neighbour renders, so expanding each imported logical frame back to
+# 4x must reproduce the committed canonical RGBA hash byte-for-byte.
+reference_variants = {v["selector"]: v for v in graphics_10["variants"]
+                      if v["player_type"] == "0x01"}
+imported_variants = {v["selector"]: v for v in poc_assets_10["type_10"]}
+assert set(imported_variants) == {"0x02", "0x04", "0x06"}
+fixed_frames = []
+selector_hashes = {}
+for selector in ("0x02", "0x04", "0x06"):
+    imported = imported_variants[selector]
+    reference = reference_variants[selector]
+    sprite = json.loads((ROOT / f"sprites/{imported['resource']}/{imported['resource']}.yy").read_text())
+    assert len(sprite["frames"]) == 2
+    for imported_frame, reference_frame in zip(imported["frames"], reference["frames"]):
+        assert imported_frame["frame_index"] == reference_frame["frame_index"]
+        assert imported_frame["reference_rgba_sha256"] == reference_frame["rgba_sha256"]
+        root_png = ROOT / imported_frame["root_png"]
+        layer_png = ROOT / imported_frame["layer_png"]
+        assert root_png.read_bytes() == layer_png.read_bytes()
+        logical = Image.open(root_png).convert("RGBA")
+        assert logical.size == (32, 40)
+        expanded = logical.resize((128, 160), Image.Resampling.NEAREST)
+        assert hashlib.sha256(expanded.tobytes()).hexdigest() == reference_frame["rgba_sha256"]
+        if reference_frame["frame_index"] == "0x0B":
+            selector_hashes[selector] = reference_frame["rgba_sha256"]
+        else:
+            fixed_frames.append(logical.tobytes())
+assert len(set(selector_hashes.values())) == 3
+assert len(fixed_frames) == 3 and fixed_frames[0] == fixed_frames[1] == fixed_frames[2]
+assert graphics_10["palette"]["raw_sha256"] == "c6715cef80884efccdc74a30c6c85023858169524ded2be963e16badb1f677e2"
+
+# Type $05 presentation: 32 exact frames using only common tiles $20/$22.
+# Reconstruct each reference audit frame from the positioned GameMaker canvas
+# and compare its canonical 4x RGBA hash.
+type05 = poc_assets_10["type_05"]
+assert type05["frame_count"] == 32 and type05["tile_offsets"] == ["0x20", "0x22"]
+sprite05 = json.loads((ROOT / "sprites/SPR_chaos_object_05/SPR_chaos_object_05.yy").read_text())
+assert len(sprite05["frames"]) == 32
+assert sprite05["sequence"]["xorigin"] == 20 and sprite05["sequence"]["yorigin"] == 42
+assert {tile for frame in type05["frames"] for tile in frame["tile_offsets"]} == {"0x20", "0x22"}
+for frame in type05["frames"]:
+    canvas = Image.open(ROOT / frame["root_png"]).convert("RGBA")
+    assert canvas.size == (40, 48)
+    frame_bounds = frame["bounds"]
+    box = (20 + frame_bounds["min_x"], 42 + frame_bounds["min_y"],
+           20 + frame_bounds["max_x"], 42 + frame_bounds["max_y"])
+    piece = canvas.crop(box)
+    source_logical = Image.new("RGBA", (16, 24), (0, 0, 0, 0))
+    source_logical.alpha_composite(piece, (4, 4))
+    expanded = source_logical.resize((64, 96), Image.Resampling.NEAREST)
+    assert hashlib.sha256(expanded.tobytes()).hexdigest() == frame["reference_rgba_sha256"]
+create_05 = (ROOT / "objects/OBJ_chaos_object_05_effect/Create_0.gml").read_text()
+step_05 = (ROOT / "objects/OBJ_chaos_object_05_effect/Step_0.gml").read_text()
+assert "player-relative POC adapter" in create_05
+for token in ("global.chaosPowerCode != $06", "global.chaosPowerTimer <= 0",
+              "instance_find(OBJ_player, 0)", "x = cp_p.x", "y = cp_p.y",
+              "chaosFrame = (chaosFrame + 1) mod 32"):
+    assert token in step_05, token
+type05_use = adapter.index("OBJ_chaos_object_05_effect")
+assert type05_use > adapter.index("cp_parameter == $06")
+assert "instance_create(cp_p.x, cp_p.y, OBJ_chaos_object_05_effect)" in adapter
+assert "instance_exists(OBJ_chaos_object_05_effect)" in adapter
 motion = (ROOT / "scripts/SCR_chaos_motion/SCR_chaos_motion.gml").read_text()
 assert "SCR_chaos_debug_place" not in motion
 for key in ("vk_f4", "vk_f5", "vk_f6", "vk_f7"):
@@ -133,6 +214,17 @@ report = {
     "ring_frames_normalized": len(terrain_manifest["normalized_ring_frames"]),
     "ring_terrain_cells_removed": 72,
     "ring_object_positions_preserved": 142,
+    "ring_draw_adapter_verified": True,
+    "type_10_selector_frame_0B_rgba_sha256": selector_hashes,
+    "type_10_fixed_frame_0C_shared": True,
+    "type_10_contact_source_unchanged": True,
+    "type_05_visible_frames": 32,
+    "type_05_tiles": ["0x20", "0x22"],
+    "type_05_anchor": type05["anchor"],
+    "type_05_singleton_selector_06_only": True,
+    "closure_blockers": {"type_10_selector_graphics": "RESOLVED",
+                           "type_05_visible_effect": "RESOLVED"},
+    "closure_candidate": "THZ1 POC READY WITH DOCUMENTED ADAPTERS",
     "type_18_presentation_offset_y": 22,
     "debug_warp_shortcuts_removed": True,
     "legacy_layout_monitor_instances": 0,

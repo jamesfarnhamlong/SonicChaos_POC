@@ -2968,6 +2968,24 @@
     },
     {
       "id": {
+        "name": "SPR_chaos_object_10_04",
+        "path": "sprites/SPR_chaos_object_10_04/SPR_chaos_object_10_04.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_10_06",
+        "path": "sprites/SPR_chaos_object_10_06/SPR_chaos_object_10_06.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_05",
+        "path": "sprites/SPR_chaos_object_05/SPR_chaos_object_05.yy"
+      }
+    },
+    {
+      "id": {
         "name": "SPR_chaos_object_0F",
         "path": "sprites/SPR_chaos_object_0F/SPR_chaos_object_0F.yy"
       }
@@ -2976,6 +2994,12 @@
       "id": {
         "name": "OBJ_chaos_object_10",
         "path": "objects/OBJ_chaos_object_10/OBJ_chaos_object_10.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_05_effect",
+        "path": "objects/OBJ_chaos_object_05_effect/OBJ_chaos_object_05_effect.yy"
       }
     },
     {

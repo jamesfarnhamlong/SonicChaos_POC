@@ -16,8 +16,8 @@
       "bytes": 27253
     },
     "thz1-object-sprites.json": {
-      "sha256": "e8b8de44529edaef64e5dbb04a38ac1532a0121f2bb9f0c24fe6a1cc5d87ccb2",
-      "bytes": 4190
+      "sha256": "1a06457f15c99c37c8be772e72e577a282a484eb3b8c8d733305a946365fc976",
+      "bytes": 4833
     },
     "object-10.json": {
       "sha256": "50d49f8191fa6c7d7c17c27571df8aa20dc106ae351df140f539a846954f02f7",
@@ -38,6 +38,14 @@
     "object-census.json": {
       "sha256": "758d5f4646ef977fa654995d0bf204d3d59aa69224e07d209f72784cf770493c",
       "bytes": 72329
+    },
+    "object-10-graphics.json": {
+      "sha256": "aa9a6b7a14c21ca736be5a6b86f8819dcb5c14b1f376cc198b73df22b7c0a64a",
+      "bytes": 32114
+    },
+    "object-10-poc-assets.json": {
+      "sha256": "68031b7a4099e64da4fb69d26894b1200dfa71c606f8d3a1eb6028d7cc4dc16d",
+      "bytes": 36139
     }
   }
 }

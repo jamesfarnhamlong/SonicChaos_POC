@@ -1,0 +1,771 @@
+{
+  "format": 1,
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "source_tool": "sonic-chaos-reference/tools/thz1_object_10_graphics.py",
+  "palette_raw_sha256": "c6715cef80884efccdc74a30c6c85023858169524ded2be963e16badb1f677e2",
+  "type_10": [
+    {
+      "selector": "0x02",
+      "resource": "SPR_chaos_object_10",
+      "frames": [
+        {
+          "frame_index": "0x0B",
+          "frame_id": "10101010-1010-4010-8010-101010101101",
+          "reference_rgba_sha256": "2bb087b4bcc265ee2ba8b8ba038772b6615d7d5fe1f4aeb43625d694900b3b6d",
+          "logical_rgba_sha256": "f38115b6d65355b40364f341fb863ffc242f1d8ce45970fb5a6225bcc474beef",
+          "png_sha256": "cc2e40c7a6be09001fcc52696843abdecd446b80b69d9b8a7d350a0f0ac241ef",
+          "root_png": "sprites/SPR_chaos_object_10/10101010-1010-4010-8010-101010101101.png",
+          "layer_png": "sprites/SPR_chaos_object_10/layers/10101010-1010-4010-8010-101010101101/10101010-1010-4010-8010-101010101100.png"
+        },
+        {
+          "frame_index": "0x0C",
+          "frame_id": "10101010-1010-4010-8010-101010101102",
+          "reference_rgba_sha256": "9571cc57547acfb52bf993cea93cfece3a0c3b0a31ace0f79e71ffe5f795a3a7",
+          "logical_rgba_sha256": "2c499d9a02a682b97c1f3b60776ed6da7dfbbecdbcbbecf9e4cfd4c0b9a162a1",
+          "png_sha256": "44b66053d631fc5b4e05c2742da6e72d2953c742036158bc30b03f3965594b67",
+          "root_png": "sprites/SPR_chaos_object_10/10101010-1010-4010-8010-101010101102.png",
+          "layer_png": "sprites/SPR_chaos_object_10/layers/10101010-1010-4010-8010-101010101102/10101010-1010-4010-8010-101010101100.png"
+        }
+      ]
+    },
+    {
+      "selector": "0x04",
+      "resource": "SPR_chaos_object_10_04",
+      "frames": [
+        {
+          "frame_index": "0x0B",
+          "frame_id": "1004000b-0000-4000-8000-00000000000b",
+          "reference_rgba_sha256": "4e142bbe120b2f47d5f9dea69c1f414240ff4543d3796004cc933c66cf63abc4",
+          "logical_rgba_sha256": "7ff49b4aec5dc588a6027ab7187b74bc9c26928b14b446d2be081c0b09aec66e",
+          "png_sha256": "95aed5bcfcebb2b61d7114b01a65d773d1e007b9a236f833d49c019e82865945",
+          "root_png": "sprites/SPR_chaos_object_10_04/1004000b-0000-4000-8000-00000000000b.png",
+          "layer_png": "sprites/SPR_chaos_object_10_04/layers/1004000b-0000-4000-8000-00000000000b/10040000-0000-4000-8000-000000000000.png"
+        },
+        {
+          "frame_index": "0x0C",
+          "frame_id": "1004000c-0000-4000-8000-00000000000c",
+          "reference_rgba_sha256": "9571cc57547acfb52bf993cea93cfece3a0c3b0a31ace0f79e71ffe5f795a3a7",
+          "logical_rgba_sha256": "2c499d9a02a682b97c1f3b60776ed6da7dfbbecdbcbbecf9e4cfd4c0b9a162a1",
+          "png_sha256": "44b66053d631fc5b4e05c2742da6e72d2953c742036158bc30b03f3965594b67",
+          "root_png": "sprites/SPR_chaos_object_10_04/1004000c-0000-4000-8000-00000000000c.png",
+          "layer_png": "sprites/SPR_chaos_object_10_04/layers/1004000c-0000-4000-8000-00000000000c/10040000-0000-4000-8000-000000000000.png"
+        }
+      ]
+    },
+    {
+      "selector": "0x06",
+      "resource": "SPR_chaos_object_10_06",
+      "frames": [
+        {
+          "frame_index": "0x0B",
+          "frame_id": "1006000b-0000-4000-8000-00000000000b",
+          "reference_rgba_sha256": "3790c8bee0dd4f9d53a803616ac75123f346a55b11b7a80a87c1ab80247f24f0",
+          "logical_rgba_sha256": "95b24bb5629f305f8346ed024d4aae8437886684705145157f9dba0cef584b26",
+          "png_sha256": "5992ceaa300ad999bd4c1cf07d36bb3aabd2ffcbf800ae7ebae2492bb6e1e7ae",
+          "root_png": "sprites/SPR_chaos_object_10_06/1006000b-0000-4000-8000-00000000000b.png",
+          "layer_png": "sprites/SPR_chaos_object_10_06/layers/1006000b-0000-4000-8000-00000000000b/10060000-0000-4000-8000-000000000000.png"
+        },
+        {
+          "frame_index": "0x0C",
+          "frame_id": "1006000c-0000-4000-8000-00000000000c",
+          "reference_rgba_sha256": "9571cc57547acfb52bf993cea93cfece3a0c3b0a31ace0f79e71ffe5f795a3a7",
+          "logical_rgba_sha256": "2c499d9a02a682b97c1f3b60776ed6da7dfbbecdbcbbecf9e4cfd4c0b9a162a1",
+          "png_sha256": "44b66053d631fc5b4e05c2742da6e72d2953c742036158bc30b03f3965594b67",
+          "root_png": "sprites/SPR_chaos_object_10_06/1006000c-0000-4000-8000-00000000000c.png",
+          "layer_png": "sprites/SPR_chaos_object_10_06/layers/1006000c-0000-4000-8000-00000000000c/10060000-0000-4000-8000-000000000000.png"
+        }
+      ]
+    }
+  ],
+  "type_05": {
+    "resource": "SPR_chaos_object_05",
+    "frame_count": 32,
+    "tile_offsets": [
+      "0x20",
+      "0x22"
+    ],
+    "canvas": [
+      40,
+      48
+    ],
+    "origin": [
+      20,
+      42
+    ],
+    "anchor": "POC bounded presentation adapter: follows active player; exact original special-render anchor unresolved",
+    "frames": [
+      {
+        "frame_index": "0x01",
+        "frame_id": "05000001-0000-4000-8000-000000000001",
+        "tile_offsets": [
+          "0x20"
+        ],
+        "bounds": {
+          "min_x": -3,
+          "min_y": -41,
+          "max_x": 5,
+          "max_y": -25,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "5779c3191fb7bc354a5fc296e8668e8dd50b626c30597a4765cf7883616ccdd6",
+        "logical_piece_rgba_sha256": "fd86037df7156765b705b578b3b5626a20145f24ca69bf0b1bf8fc22b4678b72",
+        "canvas_rgba_sha256": "f8a7fe99d8a47bf3a9763fb914bf0ef14262fd6d616e8e22896de547fc8ab046",
+        "png_sha256": "baf25b4e85f3d1dd45ef12587fd0341071bb6169d29d45741e7cb86a0befc917",
+        "root_png": "sprites/SPR_chaos_object_05/05000001-0000-4000-8000-000000000001.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/05000001-0000-4000-8000-000000000001/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x02",
+        "frame_id": "05000002-0000-4000-8000-000000000002",
+        "tile_offsets": [
+          "0x22"
+        ],
+        "bounds": {
+          "min_x": 7,
+          "min_y": -37,
+          "max_x": 15,
+          "max_y": -21,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "384777533cc54d64a9ab33c2e557a62c7d933b8881d792aa976b0f4852baf5c5",
+        "logical_piece_rgba_sha256": "f014ca0ca5975e5501020b3c66c900252cd6554f05da450fc7024eed45588e4a",
+        "canvas_rgba_sha256": "713333fe15a4a1482933dc8acbf4c5e71c8291de92a89fb51cb5252667d5dd5d",
+        "png_sha256": "812110c851825caf1a01bb3005f0c9fe9a24a03ddbf5f3c6adf4548b7b32d27d",
+        "root_png": "sprites/SPR_chaos_object_05/05000002-0000-4000-8000-000000000002.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/05000002-0000-4000-8000-000000000002/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x03",
+        "frame_id": "05000003-0000-4000-8000-000000000003",
+        "tile_offsets": [
+          "0x20"
+        ],
+        "bounds": {
+          "min_x": 11,
+          "min_y": -26,
+          "max_x": 19,
+          "max_y": -10,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "5779c3191fb7bc354a5fc296e8668e8dd50b626c30597a4765cf7883616ccdd6",
+        "logical_piece_rgba_sha256": "fd86037df7156765b705b578b3b5626a20145f24ca69bf0b1bf8fc22b4678b72",
+        "canvas_rgba_sha256": "c83fba2e1bcd75e43710e1aea0f7761aa4a987638586cec9a99dcda12af648b9",
+        "png_sha256": "c8d74a5eea5ab6a096dfd96e7a1dc7573454bab21af1332e305bb96f587355ac",
+        "root_png": "sprites/SPR_chaos_object_05/05000003-0000-4000-8000-000000000003.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/05000003-0000-4000-8000-000000000003/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x04",
+        "frame_id": "05000004-0000-4000-8000-000000000004",
+        "tile_offsets": [
+          "0x22"
+        ],
+        "bounds": {
+          "min_x": 7,
+          "min_y": -15,
+          "max_x": 15,
+          "max_y": 1,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "384777533cc54d64a9ab33c2e557a62c7d933b8881d792aa976b0f4852baf5c5",
+        "logical_piece_rgba_sha256": "f014ca0ca5975e5501020b3c66c900252cd6554f05da450fc7024eed45588e4a",
+        "canvas_rgba_sha256": "0b098288c08b05e2a10ddb3407481a00cb2db39544a7a2aba444c8edd86832b7",
+        "png_sha256": "9c8df9b1d7deab8a1123ccddcb1f9c81fbebe5135e37991f7f01c45e74291057",
+        "root_png": "sprites/SPR_chaos_object_05/05000004-0000-4000-8000-000000000004.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/05000004-0000-4000-8000-000000000004/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x05",
+        "frame_id": "05000005-0000-4000-8000-000000000005",
+        "tile_offsets": [
+          "0x20"
+        ],
+        "bounds": {
+          "min_x": -4,
+          "min_y": -11,
+          "max_x": 4,
+          "max_y": 5,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "5779c3191fb7bc354a5fc296e8668e8dd50b626c30597a4765cf7883616ccdd6",
+        "logical_piece_rgba_sha256": "fd86037df7156765b705b578b3b5626a20145f24ca69bf0b1bf8fc22b4678b72",
+        "canvas_rgba_sha256": "d77e1fce1ce5de9042117c2ca88b62b28fc3c6157d9c33198ecb24e8d2b14fa6",
+        "png_sha256": "c679c59f5b5b89cda9953824191f268d3146de637d62bff91d05390211abec19",
+        "root_png": "sprites/SPR_chaos_object_05/05000005-0000-4000-8000-000000000005.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/05000005-0000-4000-8000-000000000005/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x06",
+        "frame_id": "05000006-0000-4000-8000-000000000006",
+        "tile_offsets": [
+          "0x22"
+        ],
+        "bounds": {
+          "min_x": -15,
+          "min_y": -16,
+          "max_x": -7,
+          "max_y": 0,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "384777533cc54d64a9ab33c2e557a62c7d933b8881d792aa976b0f4852baf5c5",
+        "logical_piece_rgba_sha256": "f014ca0ca5975e5501020b3c66c900252cd6554f05da450fc7024eed45588e4a",
+        "canvas_rgba_sha256": "9aa2b326b7baae24334ea243f8dd0a4473199b56d90d5b433071785294b9a6f0",
+        "png_sha256": "21e28c04bee006cef6bd64345332f2da5b7cae0ed4e5c0e16348cba021edc256",
+        "root_png": "sprites/SPR_chaos_object_05/05000006-0000-4000-8000-000000000006.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/05000006-0000-4000-8000-000000000006/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x07",
+        "frame_id": "05000007-0000-4000-8000-000000000007",
+        "tile_offsets": [
+          "0x20"
+        ],
+        "bounds": {
+          "min_x": -19,
+          "min_y": -26,
+          "max_x": -11,
+          "max_y": -10,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "5779c3191fb7bc354a5fc296e8668e8dd50b626c30597a4765cf7883616ccdd6",
+        "logical_piece_rgba_sha256": "fd86037df7156765b705b578b3b5626a20145f24ca69bf0b1bf8fc22b4678b72",
+        "canvas_rgba_sha256": "44dbc18628f6a68f62bbcbb1788cefff846c9b058b384f4f0601a35f7ab0f6cb",
+        "png_sha256": "d83ae8ab64d19d17ca6d0d772e0d82fce0236d662d531c5a2756c74fcf1236c7",
+        "root_png": "sprites/SPR_chaos_object_05/05000007-0000-4000-8000-000000000007.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/05000007-0000-4000-8000-000000000007/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x08",
+        "frame_id": "05000008-0000-4000-8000-000000000008",
+        "tile_offsets": [
+          "0x22"
+        ],
+        "bounds": {
+          "min_x": -14,
+          "min_y": -37,
+          "max_x": -6,
+          "max_y": -21,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "384777533cc54d64a9ab33c2e557a62c7d933b8881d792aa976b0f4852baf5c5",
+        "logical_piece_rgba_sha256": "f014ca0ca5975e5501020b3c66c900252cd6554f05da450fc7024eed45588e4a",
+        "canvas_rgba_sha256": "cbf65eeae74b58e6c0fa29395d98b491da46a7d25166c01ae5a0fe04b2bce7c6",
+        "png_sha256": "65792a82593c4e0b0f4940608ff25fa48a87d1f81daa8b057c6a24e27eba9e9b",
+        "root_png": "sprites/SPR_chaos_object_05/05000008-0000-4000-8000-000000000008.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/05000008-0000-4000-8000-000000000008/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x09",
+        "frame_id": "05000009-0000-4000-8000-000000000009",
+        "tile_offsets": [
+          "0x20"
+        ],
+        "bounds": {
+          "min_x": -1,
+          "min_y": -41,
+          "max_x": 7,
+          "max_y": -25,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "5779c3191fb7bc354a5fc296e8668e8dd50b626c30597a4765cf7883616ccdd6",
+        "logical_piece_rgba_sha256": "fd86037df7156765b705b578b3b5626a20145f24ca69bf0b1bf8fc22b4678b72",
+        "canvas_rgba_sha256": "8100a149114ef4190916cbebe60d6fc3ec7adedb82f25e6dd5a21133500f30fc",
+        "png_sha256": "5a8cf1f81ebbdc8c5d47fb91e5cf15af75afdfad91d6104036554b9805a5c522",
+        "root_png": "sprites/SPR_chaos_object_05/05000009-0000-4000-8000-000000000009.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/05000009-0000-4000-8000-000000000009/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x0A",
+        "frame_id": "0500000a-0000-4000-8000-00000000000a",
+        "tile_offsets": [
+          "0x22"
+        ],
+        "bounds": {
+          "min_x": 9,
+          "min_y": -35,
+          "max_x": 17,
+          "max_y": -19,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "384777533cc54d64a9ab33c2e557a62c7d933b8881d792aa976b0f4852baf5c5",
+        "logical_piece_rgba_sha256": "f014ca0ca5975e5501020b3c66c900252cd6554f05da450fc7024eed45588e4a",
+        "canvas_rgba_sha256": "20708e346f5be4a9dd73ad696118d9da22a9ac0ab6f3515d9de889de8ab679ab",
+        "png_sha256": "cf8f35e1272d8955436df42f967dbc75d90820491ecce923813116684fcf21ee",
+        "root_png": "sprites/SPR_chaos_object_05/0500000a-0000-4000-8000-00000000000a.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/0500000a-0000-4000-8000-00000000000a/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x0B",
+        "frame_id": "0500000b-0000-4000-8000-00000000000b",
+        "tile_offsets": [
+          "0x20"
+        ],
+        "bounds": {
+          "min_x": 11,
+          "min_y": -23,
+          "max_x": 19,
+          "max_y": -7,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "5779c3191fb7bc354a5fc296e8668e8dd50b626c30597a4765cf7883616ccdd6",
+        "logical_piece_rgba_sha256": "fd86037df7156765b705b578b3b5626a20145f24ca69bf0b1bf8fc22b4678b72",
+        "canvas_rgba_sha256": "c5d8c81e0d6ae6cd816b43cc04f03628199c7253a9e683decf55a98d243a626f",
+        "png_sha256": "8ef34301b06c4e777b20b8c956971bfa32adcd66616275eff20de1b19b88f24b",
+        "root_png": "sprites/SPR_chaos_object_05/0500000b-0000-4000-8000-00000000000b.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/0500000b-0000-4000-8000-00000000000b/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x0C",
+        "frame_id": "0500000c-0000-4000-8000-00000000000c",
+        "tile_offsets": [
+          "0x22"
+        ],
+        "bounds": {
+          "min_x": 5,
+          "min_y": -13,
+          "max_x": 13,
+          "max_y": 3,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "384777533cc54d64a9ab33c2e557a62c7d933b8881d792aa976b0f4852baf5c5",
+        "logical_piece_rgba_sha256": "f014ca0ca5975e5501020b3c66c900252cd6554f05da450fc7024eed45588e4a",
+        "canvas_rgba_sha256": "e2b9d0d5c120c539952fa3c4f6093d46f962e160b5310bba4fd95c1303414faf",
+        "png_sha256": "a11b9cfc663a33bdf0dbd372c0bbbdf64476d5ab31e5be2b2688d98adba8def4",
+        "root_png": "sprites/SPR_chaos_object_05/0500000c-0000-4000-8000-00000000000c.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/0500000c-0000-4000-8000-00000000000c/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x0D",
+        "frame_id": "0500000d-0000-4000-8000-00000000000d",
+        "tile_offsets": [
+          "0x20"
+        ],
+        "bounds": {
+          "min_x": -7,
+          "min_y": -11,
+          "max_x": 1,
+          "max_y": 5,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "5779c3191fb7bc354a5fc296e8668e8dd50b626c30597a4765cf7883616ccdd6",
+        "logical_piece_rgba_sha256": "fd86037df7156765b705b578b3b5626a20145f24ca69bf0b1bf8fc22b4678b72",
+        "canvas_rgba_sha256": "18a2c00152ec5c5569f44b0d8c96be9953fbdc7ba9d311057150c19fc0ab0fe3",
+        "png_sha256": "85560c898f88bd5cdd0692b26a3d39dbd4507b461e4300d247e3d4758aab14a2",
+        "root_png": "sprites/SPR_chaos_object_05/0500000d-0000-4000-8000-00000000000d.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/0500000d-0000-4000-8000-00000000000d/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x0E",
+        "frame_id": "0500000e-0000-4000-8000-00000000000e",
+        "tile_offsets": [
+          "0x22"
+        ],
+        "bounds": {
+          "min_x": -17,
+          "min_y": -18,
+          "max_x": -9,
+          "max_y": -2,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "384777533cc54d64a9ab33c2e557a62c7d933b8881d792aa976b0f4852baf5c5",
+        "logical_piece_rgba_sha256": "f014ca0ca5975e5501020b3c66c900252cd6554f05da450fc7024eed45588e4a",
+        "canvas_rgba_sha256": "bb0dc899c3ccf8c845971d34843e05826b872b57004a1d59b41a72c20d488f97",
+        "png_sha256": "26240fe86a3b3c8c01d7bebd2c3775ac02d9001a457d6c62c7892eef81bbf381",
+        "root_png": "sprites/SPR_chaos_object_05/0500000e-0000-4000-8000-00000000000e.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/0500000e-0000-4000-8000-00000000000e/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x0F",
+        "frame_id": "0500000f-0000-4000-8000-00000000000f",
+        "tile_offsets": [
+          "0x20"
+        ],
+        "bounds": {
+          "min_x": -19,
+          "min_y": -29,
+          "max_x": -11,
+          "max_y": -13,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "5779c3191fb7bc354a5fc296e8668e8dd50b626c30597a4765cf7883616ccdd6",
+        "logical_piece_rgba_sha256": "fd86037df7156765b705b578b3b5626a20145f24ca69bf0b1bf8fc22b4678b72",
+        "canvas_rgba_sha256": "090f0ddd6deffcad5822a8e036948738283f782d234e57fa96f75d031115b88a",
+        "png_sha256": "30d6a1f710bdd16bb48a2c6cb16443f68d4be4efab9460bf42874b4faeed818f",
+        "root_png": "sprites/SPR_chaos_object_05/0500000f-0000-4000-8000-00000000000f.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/0500000f-0000-4000-8000-00000000000f/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x10",
+        "frame_id": "05000010-0000-4000-8000-000000000010",
+        "tile_offsets": [
+          "0x22"
+        ],
+        "bounds": {
+          "min_x": -12,
+          "min_y": -39,
+          "max_x": -4,
+          "max_y": -23,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "384777533cc54d64a9ab33c2e557a62c7d933b8881d792aa976b0f4852baf5c5",
+        "logical_piece_rgba_sha256": "f014ca0ca5975e5501020b3c66c900252cd6554f05da450fc7024eed45588e4a",
+        "canvas_rgba_sha256": "1eb05d3d5f71c7f7c577358515cbf2d8e2886f79519a5441299ea6b9d7e2a804",
+        "png_sha256": "0b27f157c2dcc964d43a4cef32e273bb6e6bf6d6e46b61b7bede4b923d9b69c2",
+        "root_png": "sprites/SPR_chaos_object_05/05000010-0000-4000-8000-000000000010.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/05000010-0000-4000-8000-000000000010/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x11",
+        "frame_id": "05000011-0000-4000-8000-000000000011",
+        "tile_offsets": [
+          "0x20"
+        ],
+        "bounds": {
+          "min_x": 2,
+          "min_y": -40,
+          "max_x": 10,
+          "max_y": -24,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "5779c3191fb7bc354a5fc296e8668e8dd50b626c30597a4765cf7883616ccdd6",
+        "logical_piece_rgba_sha256": "fd86037df7156765b705b578b3b5626a20145f24ca69bf0b1bf8fc22b4678b72",
+        "canvas_rgba_sha256": "a857653e365e24256e7e28be77b0374914dde87efb0b7f8bad376d16b4b6f4de",
+        "png_sha256": "fe27e3da95925c9b9a3ef949d30e5bbe2dd117bd6381c010b379e0dcd53f4688",
+        "root_png": "sprites/SPR_chaos_object_05/05000011-0000-4000-8000-000000000011.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/05000011-0000-4000-8000-000000000011/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x12",
+        "frame_id": "05000012-0000-4000-8000-000000000012",
+        "tile_offsets": [
+          "0x22"
+        ],
+        "bounds": {
+          "min_x": 10,
+          "min_y": -31,
+          "max_x": 18,
+          "max_y": -15,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "384777533cc54d64a9ab33c2e557a62c7d933b8881d792aa976b0f4852baf5c5",
+        "logical_piece_rgba_sha256": "f014ca0ca5975e5501020b3c66c900252cd6554f05da450fc7024eed45588e4a",
+        "canvas_rgba_sha256": "66eb2bf66f39eedbfa427a8abd57198fb039ed7a09c2b45ba4148910da8bf3dd",
+        "png_sha256": "6f4ae4e980cdfa12931dbc4ac8c02dc670fcfe144a45a5a4071fcf0aeb324b85",
+        "root_png": "sprites/SPR_chaos_object_05/05000012-0000-4000-8000-000000000012.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/05000012-0000-4000-8000-000000000012/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x13",
+        "frame_id": "05000013-0000-4000-8000-000000000013",
+        "tile_offsets": [
+          "0x20"
+        ],
+        "bounds": {
+          "min_x": 10,
+          "min_y": -20,
+          "max_x": 18,
+          "max_y": -4,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "5779c3191fb7bc354a5fc296e8668e8dd50b626c30597a4765cf7883616ccdd6",
+        "logical_piece_rgba_sha256": "fd86037df7156765b705b578b3b5626a20145f24ca69bf0b1bf8fc22b4678b72",
+        "canvas_rgba_sha256": "fcca1458adc9dae7e73e3f9ec87ff731407f3a537124fae184721aebb04e5041",
+        "png_sha256": "327d27e7b42a68964c301de21ba4f04da221352e4c0a6239ea8aebefce868f9e",
+        "root_png": "sprites/SPR_chaos_object_05/05000013-0000-4000-8000-000000000013.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/05000013-0000-4000-8000-000000000013/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x14",
+        "frame_id": "05000014-0000-4000-8000-000000000014",
+        "tile_offsets": [
+          "0x22"
+        ],
+        "bounds": {
+          "min_x": 1,
+          "min_y": -12,
+          "max_x": 9,
+          "max_y": 4,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "384777533cc54d64a9ab33c2e557a62c7d933b8881d792aa976b0f4852baf5c5",
+        "logical_piece_rgba_sha256": "f014ca0ca5975e5501020b3c66c900252cd6554f05da450fc7024eed45588e4a",
+        "canvas_rgba_sha256": "9a7dce03ca04400149dd8a27f73886642c615c91ce84762f615cfb87eef6e65f",
+        "png_sha256": "296810510d0d024a5c68ed364ddb11509d2df3d6062a252e4a0fcf3bdd544674",
+        "root_png": "sprites/SPR_chaos_object_05/05000014-0000-4000-8000-000000000014.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/05000014-0000-4000-8000-000000000014/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x15",
+        "frame_id": "05000015-0000-4000-8000-000000000015",
+        "tile_offsets": [
+          "0x20"
+        ],
+        "bounds": {
+          "min_x": -10,
+          "min_y": -12,
+          "max_x": -2,
+          "max_y": 4,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "5779c3191fb7bc354a5fc296e8668e8dd50b626c30597a4765cf7883616ccdd6",
+        "logical_piece_rgba_sha256": "fd86037df7156765b705b578b3b5626a20145f24ca69bf0b1bf8fc22b4678b72",
+        "canvas_rgba_sha256": "0989f240be7cd0d62c76fc93ffa837cfd8dbbb54fa8c495ede6b3d75c236429d",
+        "png_sha256": "2ffbf0ad58a62421545f388fab2c478f8fc01d81846ede30a58eab0fe1261cb7",
+        "root_png": "sprites/SPR_chaos_object_05/05000015-0000-4000-8000-000000000015.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/05000015-0000-4000-8000-000000000015/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x16",
+        "frame_id": "05000016-0000-4000-8000-000000000016",
+        "tile_offsets": [
+          "0x22"
+        ],
+        "bounds": {
+          "min_x": -18,
+          "min_y": -21,
+          "max_x": -10,
+          "max_y": -5,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "384777533cc54d64a9ab33c2e557a62c7d933b8881d792aa976b0f4852baf5c5",
+        "logical_piece_rgba_sha256": "f014ca0ca5975e5501020b3c66c900252cd6554f05da450fc7024eed45588e4a",
+        "canvas_rgba_sha256": "723ff434c4214236532b609612e51c12828209b1c548f2cbfe32e3b9921ccb9b",
+        "png_sha256": "1a6968e97505ac1d0b6783a7c704b0e4fd0364f10d7e6dc9ca055be4e2bb678e",
+        "root_png": "sprites/SPR_chaos_object_05/05000016-0000-4000-8000-000000000016.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/05000016-0000-4000-8000-000000000016/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x17",
+        "frame_id": "05000017-0000-4000-8000-000000000017",
+        "tile_offsets": [
+          "0x20"
+        ],
+        "bounds": {
+          "min_x": -18,
+          "min_y": -32,
+          "max_x": -10,
+          "max_y": -16,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "5779c3191fb7bc354a5fc296e8668e8dd50b626c30597a4765cf7883616ccdd6",
+        "logical_piece_rgba_sha256": "fd86037df7156765b705b578b3b5626a20145f24ca69bf0b1bf8fc22b4678b72",
+        "canvas_rgba_sha256": "436a6e729c62e7c9ac663806228b4fe79d1db198bcd05bcaba87654a184cd959",
+        "png_sha256": "5ebded464f50c1b857c1163bc405e4bddab83c44065c0e634cf0dd0ac2859176",
+        "root_png": "sprites/SPR_chaos_object_05/05000017-0000-4000-8000-000000000017.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/05000017-0000-4000-8000-000000000017/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x18",
+        "frame_id": "05000018-0000-4000-8000-000000000018",
+        "tile_offsets": [
+          "0x22"
+        ],
+        "bounds": {
+          "min_x": -9,
+          "min_y": -40,
+          "max_x": -1,
+          "max_y": -24,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "384777533cc54d64a9ab33c2e557a62c7d933b8881d792aa976b0f4852baf5c5",
+        "logical_piece_rgba_sha256": "f014ca0ca5975e5501020b3c66c900252cd6554f05da450fc7024eed45588e4a",
+        "canvas_rgba_sha256": "0cedf5c0d95c42a3452438fddbc8c4a3677cd145856620c2d4ebed2c011586fc",
+        "png_sha256": "718fcdffe77eb1883e4d40c48ea8a4bd35478e1b8113246492820029063592bd",
+        "root_png": "sprites/SPR_chaos_object_05/05000018-0000-4000-8000-000000000018.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/05000018-0000-4000-8000-000000000018/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x19",
+        "frame_id": "05000019-0000-4000-8000-000000000019",
+        "tile_offsets": [
+          "0x20"
+        ],
+        "bounds": {
+          "min_x": 5,
+          "min_y": -38,
+          "max_x": 13,
+          "max_y": -22,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "5779c3191fb7bc354a5fc296e8668e8dd50b626c30597a4765cf7883616ccdd6",
+        "logical_piece_rgba_sha256": "fd86037df7156765b705b578b3b5626a20145f24ca69bf0b1bf8fc22b4678b72",
+        "canvas_rgba_sha256": "e7aea0f8d13b3f3d1c467d09f760c24b283f1896d744f84805e2b7c8c354a05c",
+        "png_sha256": "6ae9b5128e132c17f72c54f717dfc4311a3fa7ed4035466248d8c6a0cf5f9955",
+        "root_png": "sprites/SPR_chaos_object_05/05000019-0000-4000-8000-000000000019.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/05000019-0000-4000-8000-000000000019/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x1A",
+        "frame_id": "0500001a-0000-4000-8000-00000000001a",
+        "tile_offsets": [
+          "0x22"
+        ],
+        "bounds": {
+          "min_x": 11,
+          "min_y": -28,
+          "max_x": 19,
+          "max_y": -12,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "384777533cc54d64a9ab33c2e557a62c7d933b8881d792aa976b0f4852baf5c5",
+        "logical_piece_rgba_sha256": "f014ca0ca5975e5501020b3c66c900252cd6554f05da450fc7024eed45588e4a",
+        "canvas_rgba_sha256": "9901598ec431cbd340cc629ec0d4d6fa5fd7559eb934b687abc04659455cc6a4",
+        "png_sha256": "36dc6cd50b339f20337bd8cd73988925593b8a8346f531c273cd3b0598ddb835",
+        "root_png": "sprites/SPR_chaos_object_05/0500001a-0000-4000-8000-00000000001a.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/0500001a-0000-4000-8000-00000000001a/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x1B",
+        "frame_id": "0500001b-0000-4000-8000-00000000001b",
+        "tile_offsets": [
+          "0x20"
+        ],
+        "bounds": {
+          "min_x": 8,
+          "min_y": -17,
+          "max_x": 16,
+          "max_y": -1,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "5779c3191fb7bc354a5fc296e8668e8dd50b626c30597a4765cf7883616ccdd6",
+        "logical_piece_rgba_sha256": "fd86037df7156765b705b578b3b5626a20145f24ca69bf0b1bf8fc22b4678b72",
+        "canvas_rgba_sha256": "3713bf46f6e53e0f2488b3302efa00199dd789a49085c9c79b19d55fe71e14ee",
+        "png_sha256": "bbe26a4c3baaa429f818e05b30a9e5ebd17c95f23122236fb69c717f3c6d5c2c",
+        "root_png": "sprites/SPR_chaos_object_05/0500001b-0000-4000-8000-00000000001b.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/0500001b-0000-4000-8000-00000000001b/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x1C",
+        "frame_id": "0500001c-0000-4000-8000-00000000001c",
+        "tile_offsets": [
+          "0x22"
+        ],
+        "bounds": {
+          "min_x": -2,
+          "min_y": -11,
+          "max_x": 6,
+          "max_y": 5,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "384777533cc54d64a9ab33c2e557a62c7d933b8881d792aa976b0f4852baf5c5",
+        "logical_piece_rgba_sha256": "f014ca0ca5975e5501020b3c66c900252cd6554f05da450fc7024eed45588e4a",
+        "canvas_rgba_sha256": "4dece7ac44ac522b2e544780cc69bd9b509ce38e5c83f8dac85ded545afc9c1c",
+        "png_sha256": "02eab249fd7db75a9fe54b83ef463399a1f48542bef42c9ff69c59cc9dc1d655",
+        "root_png": "sprites/SPR_chaos_object_05/0500001c-0000-4000-8000-00000000001c.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/0500001c-0000-4000-8000-00000000001c/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x1D",
+        "frame_id": "0500001d-0000-4000-8000-00000000001d",
+        "tile_offsets": [
+          "0x20"
+        ],
+        "bounds": {
+          "min_x": -13,
+          "min_y": -14,
+          "max_x": -5,
+          "max_y": 2,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "5779c3191fb7bc354a5fc296e8668e8dd50b626c30597a4765cf7883616ccdd6",
+        "logical_piece_rgba_sha256": "fd86037df7156765b705b578b3b5626a20145f24ca69bf0b1bf8fc22b4678b72",
+        "canvas_rgba_sha256": "1f574a4ae4a4ef45828c4355f64f934859f30479b8b53a8d8165a041cac16a85",
+        "png_sha256": "af84f840e8a571153be96d5b095d101ad78830df131f628242e8da81669254ec",
+        "root_png": "sprites/SPR_chaos_object_05/0500001d-0000-4000-8000-00000000001d.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/0500001d-0000-4000-8000-00000000001d/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x1E",
+        "frame_id": "0500001e-0000-4000-8000-00000000001e",
+        "tile_offsets": [
+          "0x22"
+        ],
+        "bounds": {
+          "min_x": -19,
+          "min_y": -24,
+          "max_x": -11,
+          "max_y": -8,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "384777533cc54d64a9ab33c2e557a62c7d933b8881d792aa976b0f4852baf5c5",
+        "logical_piece_rgba_sha256": "f014ca0ca5975e5501020b3c66c900252cd6554f05da450fc7024eed45588e4a",
+        "canvas_rgba_sha256": "6d9a3cb2856deb17c3225d947ec1dda2c0027974772eabc079bc17c841f5882a",
+        "png_sha256": "aa459af6d33f1d01c3ade9a0e18239d9654acd06a18ab77b6a63e4627b82d66b",
+        "root_png": "sprites/SPR_chaos_object_05/0500001e-0000-4000-8000-00000000001e.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/0500001e-0000-4000-8000-00000000001e/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x1F",
+        "frame_id": "0500001f-0000-4000-8000-00000000001f",
+        "tile_offsets": [
+          "0x20"
+        ],
+        "bounds": {
+          "min_x": -16,
+          "min_y": -35,
+          "max_x": -8,
+          "max_y": -19,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "5779c3191fb7bc354a5fc296e8668e8dd50b626c30597a4765cf7883616ccdd6",
+        "logical_piece_rgba_sha256": "fd86037df7156765b705b578b3b5626a20145f24ca69bf0b1bf8fc22b4678b72",
+        "canvas_rgba_sha256": "84be689c37c71b8fa366ebdc4046e4fbe02535a0aba20da6e3ff818644cfa75e",
+        "png_sha256": "6f6380b6e07c1bc368f3885c1fd711fe43dcae3316a7cc6fb6c27291cbff5019",
+        "root_png": "sprites/SPR_chaos_object_05/0500001f-0000-4000-8000-00000000001f.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/0500001f-0000-4000-8000-00000000001f/05000000-0000-4000-8000-000000000000.png"
+      },
+      {
+        "frame_index": "0x20",
+        "frame_id": "05000020-0000-4000-8000-000000000020",
+        "tile_offsets": [
+          "0x22"
+        ],
+        "bounds": {
+          "min_x": -6,
+          "min_y": -41,
+          "max_x": 2,
+          "max_y": -25,
+          "width": 8,
+          "height": 16
+        },
+        "reference_rgba_sha256": "384777533cc54d64a9ab33c2e557a62c7d933b8881d792aa976b0f4852baf5c5",
+        "logical_piece_rgba_sha256": "f014ca0ca5975e5501020b3c66c900252cd6554f05da450fc7024eed45588e4a",
+        "canvas_rgba_sha256": "02f8fde5b7895547a34aef525195ee71303328e2eec128d222476f44a7fdca34",
+        "png_sha256": "1800a0c1e92dd38c2b811f91225cfcb32c4752aff56ec6c9eecfc8c15dda1a5a",
+        "root_png": "sprites/SPR_chaos_object_05/05000020-0000-4000-8000-000000000020.png",
+        "layer_png": "sprites/SPR_chaos_object_05/layers/05000020-0000-4000-8000-000000000020/05000000-0000-4000-8000-000000000000.png"
+      }
+    ]
+  }
+}

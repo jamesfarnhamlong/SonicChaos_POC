@@ -39,6 +39,26 @@
   "ring_frames_normalized": 6,
   "ring_terrain_cells_removed": 72,
   "ring_object_positions_preserved": 142,
+  "ring_draw_adapter_verified": true,
+  "type_10_selector_frame_0B_rgba_sha256": {
+    "0x02": "2bb087b4bcc265ee2ba8b8ba038772b6615d7d5fe1f4aeb43625d694900b3b6d",
+    "0x04": "4e142bbe120b2f47d5f9dea69c1f414240ff4543d3796004cc933c66cf63abc4",
+    "0x06": "3790c8bee0dd4f9d53a803616ac75123f346a55b11b7a80a87c1ab80247f24f0"
+  },
+  "type_10_fixed_frame_0C_shared": true,
+  "type_10_contact_source_unchanged": true,
+  "type_05_visible_frames": 32,
+  "type_05_tiles": [
+    "0x20",
+    "0x22"
+  ],
+  "type_05_anchor": "POC bounded presentation adapter: follows active player; exact original special-render anchor unresolved",
+  "type_05_singleton_selector_06_only": true,
+  "closure_blockers": {
+    "type_10_selector_graphics": "RESOLVED",
+    "type_05_visible_effect": "RESOLVED"
+  },
+  "closure_candidate": "THZ1 POC READY WITH DOCUMENTED ADAPTERS",
   "type_18_presentation_offset_y": 22,
   "debug_warp_shortcuts_removed": true,
   "legacy_layout_monitor_instances": 0

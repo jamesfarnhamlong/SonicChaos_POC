@@ -324,9 +324,13 @@ function SCR_chaos_type10_reward(cp_parameter, cp_p) {
         global.chaosLastSoundRequest = $84;
         global.powerInv = true;
         // The audited contract proves allocation of type $05 parameter zero;
-        // its complete behavior/presentation remains unresolved.
+        // POC 18.4 adds only its verified 32-frame presentation. The exact
+        // original special-render anchor remains unresolved, so this bounded
+        // adapter follows the active player and never uses the container X/Y.
         global.chaosType05Allocated = true;
         global.chaosType05Parameter = 0;
+        if (!instance_exists(OBJ_chaos_object_05_effect))
+            instance_create(cp_p.x, cp_p.y, OBJ_chaos_object_05_effect);
     }
     global.chaosType10QueuedMask = 0;
 }

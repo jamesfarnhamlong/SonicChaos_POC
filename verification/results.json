@@ -127,6 +127,26 @@
     "ring_frames_normalized": 6,
     "ring_terrain_cells_removed": 72,
     "ring_object_positions_preserved": 142,
+    "ring_draw_adapter_verified": true,
+    "type_10_selector_frame_0B_rgba_sha256": {
+      "0x02": "2bb087b4bcc265ee2ba8b8ba038772b6615d7d5fe1f4aeb43625d694900b3b6d",
+      "0x04": "4e142bbe120b2f47d5f9dea69c1f414240ff4543d3796004cc933c66cf63abc4",
+      "0x06": "3790c8bee0dd4f9d53a803616ac75123f346a55b11b7a80a87c1ab80247f24f0"
+    },
+    "type_10_fixed_frame_0C_shared": true,
+    "type_10_contact_source_unchanged": true,
+    "type_05_visible_frames": 32,
+    "type_05_tiles": [
+      "0x20",
+      "0x22"
+    ],
+    "type_05_anchor": "POC bounded presentation adapter: follows active player; exact original special-render anchor unresolved",
+    "type_05_singleton_selector_06_only": true,
+    "closure_blockers": {
+      "type_10_selector_graphics": "RESOLVED",
+      "type_05_visible_effect": "RESOLVED"
+    },
+    "closure_candidate": "THZ1 POC READY WITH DOCUMENTED ADAPTERS",
     "type_18_presentation_offset_y": 22,
     "debug_warp_shortcuts_removed": true,
     "legacy_layout_monitor_instances": 0
@@ -142,9 +162,10 @@
   },
   "project_resource_counts": {
     "sms_project_backup.yyp": 319,
-    "SonicChaos_POC.yyp": 482
+    "SonicChaos_POC.yyp": 486
   },
   "resource_metadata_validated": true,
+  "resource_guid_strings_validated": 642,
   "sprite_root_and_layer_pngs_validated": true,
   "data_card_draw_defaults_validated": true,
   "moving_spike_floor_anchor_validated": true,
@@ -169,9 +190,18 @@
     "ring_flat_terrain_duplicates_removed": 142,
     "ring_foreground_cells_removed": 72,
     "ring_original_animation_preserved": true,
+    "ring_integer_subimage_draw_adapter": true,
     "type_18_presentation_offset_y": 22
   },
-  "rom_cache_manifest_files_validated": 9,
+  "task_05_closure": {
+    "type_10_selector_graphics": "RESOLVED",
+    "type_05_visible_effect": "RESOLVED",
+    "type_05_frames": 32,
+    "type_05_anchor": "POC bounded presentation adapter: follows active player; exact original special-render anchor unresolved",
+    "ring_verifier_contradiction": "RESOLVED",
+    "candidate": "THZ1 POC READY WITH DOCUMENTED ADAPTERS"
+  },
+  "rom_cache_manifest_files_validated": 11,
   "terrain_spring_transparency": {
     "48": {
       "transparent_pixels": 856,
@@ -197,6 +227,6 @@
   "source_sha256": {
     "scripts\\SCR_chaos_core\\SCR_chaos_core.gml": "8dfffa548d1b9bd959def5f11542087ab1b68f809ba075465cc3a5b69d294c47",
     "scripts\\SCR_chaos_core_data\\SCR_chaos_core_data.gml": "2cd1ccf1eb6b789e1f0d35284a576eaa8638cac0d82090fc4c63d889ee78ace0",
-    "scripts\\SCR_chaos_adapter\\SCR_chaos_adapter.gml": "17fd866af92110652234926c5f7bfe02e20b52f240ec0b3c872f9a3d6cb20ea5"
+    "scripts\\SCR_chaos_adapter\\SCR_chaos_adapter.gml": "d0cc46cd364f522c671e9411ada00798b6fab18e3eaed9d3f2473a243f9bc15e"
   }
 }
