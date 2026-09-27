@@ -203,9 +203,9 @@
     "reference_main": "65670d29295d87d71109b1983206a74f2bbeeb6a",
     "task_06_named_commit": "479990227e48543a853cdd36f52365cb5cc1536a",
     "task_06_named_commit_is_main_ancestor": false,
-    "cache_sha256": "ff44a01015a78140031b1a31c52d89b50cc97540e90836d72917f49cd97f9e3f",
+    "cache_sha256": "42cb42605a0703615d706924f85efa9bb456297fc6044eba34e5052d3cf05ded",
     "player_state_11": "RESOLVED",
-    "state_11_presentation": "DOCUMENTED PRESENTATION ADAPTER: SPR_player_falling",
+    "state_11_presentation": "EXACT ROM-DERIVED: SPR_chaos_player_state_11",
     "static_3d_spike_collision": "RESOLVED",
     "static_spike_cells": [
       [
@@ -231,6 +231,88 @@
     "moving_type_1b_unchanged": true,
     "candidate": "THZ1 POC READY WITH DOCUMENTED ADAPTERS"
   },
+  "task_07_core": {
+    "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+    "actual_gml_helper_executed": true,
+    "lookup_y_offset": 18,
+    "projection_anchor": "unshifted",
+    "stable_type_21_anchors": [
+      {
+        "placement": [
+          800,
+          606
+        ],
+        "integrated_y": 608,
+        "stable_y": 590
+      },
+      {
+        "placement": [
+          1248,
+          862
+        ],
+        "integrated_y": 864,
+        "stable_y": 846
+      },
+      {
+        "placement": [
+          2048,
+          318
+        ],
+        "integrated_y": 320,
+        "stable_y": 302
+      },
+      {
+        "placement": [
+          3152,
+          894
+        ],
+        "integrated_y": 896,
+        "stable_y": 878
+      },
+      {
+        "placement": [
+          3296,
+          286
+        ],
+        "integrated_y": 288,
+        "stable_y": 270
+      },
+      {
+        "placement": [
+          2400,
+          254
+        ],
+        "integrated_y": 256,
+        "stable_y": 238
+      }
+    ]
+  },
+  "task_07_integration": {
+    "reference_main": "53f8e647aae72fd8886052d0c8fb63fbd738e0b3",
+    "type_21_floor_probe": "RESOLVED",
+    "type_21_stable_y": [
+      590,
+      846,
+      302,
+      878,
+      270,
+      238
+    ],
+    "type_21_contact": {
+      "ordinary_side": "DAMAGE",
+      "top": "BOUNCE",
+      "lower_attack": "DEFEAT",
+      "lower_selector_06": "DEFEAT"
+    },
+    "state_11_graphics": "EXACT ROM-DERIVED",
+    "state_11_resource": "SPR_chaos_player_state_11",
+    "state_11_rgba_sha256": {
+      "0x38": "39007e36a7ec3e9888df5919d824667da84a4c0fdbf79cca6971ba03b7976c41",
+      "0x39": "22364cea9bd4190b07c28aad386f011699577e3d6fd105e851ed6980be05fc45",
+      "0x3A": "da066dd9609909a66e41b12048eae0b361460a1deb1e11d2f2dd181c05f6029e"
+    },
+    "type_10_visual_appearance": "CANONICAL - UNCHANGED"
+  },
   "enemy_research": {
     "verified_placements": 15,
     "rom_derived_sprite_assets": 10,
@@ -242,10 +324,10 @@
   },
   "project_resource_counts": {
     "sms_project_backup.yyp": 319,
-    "SonicChaos_POC.yyp": 486
+    "SonicChaos_POC.yyp": 487
   },
   "resource_metadata_validated": true,
-  "resource_guid_strings_validated": 642,
+  "resource_guid_strings_validated": 645,
   "sprite_root_and_layer_pngs_validated": true,
   "data_card_draw_defaults_validated": true,
   "moving_spike_floor_anchor_validated": true,
@@ -281,7 +363,7 @@
     "ring_verifier_contradiction": "RESOLVED",
     "candidate": "THZ1 POC READY WITH DOCUMENTED ADAPTERS"
   },
-  "rom_cache_manifest_files_validated": 12,
+  "rom_cache_manifest_files_validated": 15,
   "terrain_spring_transparency": {
     "48": {
       "transparent_pixels": 856,
@@ -305,8 +387,8 @@
     }
   },
   "source_sha256": {
-    "scripts\\SCR_chaos_core\\SCR_chaos_core.gml": "c0e6fa576222a86fa6ab9d1bfd3a2fa1cbc5c2c1b19d46689b977664eac23669",
+    "scripts\\SCR_chaos_core\\SCR_chaos_core.gml": "a0df90cf68084ca00afbc3377b2edf7e90c229100cab0861d503967bb281caa3",
     "scripts\\SCR_chaos_core_data\\SCR_chaos_core_data.gml": "2cd1ccf1eb6b789e1f0d35284a576eaa8638cac0d82090fc4c63d889ee78ace0",
-    "scripts\\SCR_chaos_adapter\\SCR_chaos_adapter.gml": "9fc55d0131a82fc4c9c547c920b60bd2d2df1bb32c85d8d239bc1034c0dd9891"
+    "scripts\\SCR_chaos_adapter\\SCR_chaos_adapter.gml": "d016da9c7e7e094c5be344efb0146c5f808480bb499f83afa13ec086ef544687"
   }
 }

@@ -22,7 +22,7 @@ def positions(rows, object_name):
 cache_path = CACHE / "windows-discrepancies.json"
 raw_cache = cache_path.read_bytes()
 assert hashlib.sha256(raw_cache).hexdigest() == \
-    "ff44a01015a78140031b1a31c52d89b50cc97540e90836d72917f49cd97f9e3f"
+    "42cb42605a0703615d706924f85efa9bb456297fc6044eba34e5052d3cf05ded"
 cache = json.loads(raw_cache)
 assert cache["rom_sha256"] == \
     "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607"
@@ -54,8 +54,8 @@ for token in ("function SCR_cc_state11_enter", "function SCR_cc_state11_tick",
     assert token in core, token
 adapter = (ROOT / "scripts/SCR_chaos_adapter/SCR_chaos_adapter.gml").read_text()
 for token in ("global.chaosPowerTimer = 300", "SCR_cc_state11_enter(cp_p.chaosCore)",
-              "SPR_player_falling",
-              "explicit", "presentation adapter", "SCR_chaos_cancel_state11"):
+              "SPR_chaos_player_state_11", "image_speed = 0",
+              "SCR_chaos_cancel_state11"):
     assert token.lower() in adapter.lower(), token
 type10_step = (ROOT / "objects/OBJ_chaos_object_10/Step_0.gml").read_text()
 assert "var cp_attack = !cp_state11" in type10_step
@@ -109,7 +109,7 @@ report = {
     "task_06_named_commit_is_main_ancestor": False,
     "cache_sha256": hashlib.sha256(raw_cache).hexdigest(),
     "player_state_11": "RESOLVED",
-    "state_11_presentation": "DOCUMENTED PRESENTATION ADAPTER: SPR_player_falling",
+    "state_11_presentation": "EXACT ROM-DERIVED: SPR_chaos_player_state_11",
     "static_3d_spike_collision": "RESOLVED",
     "static_spike_cells": sorted([list(point) for point in SPIKE_POINTS]),
     "removed_full_cell_masks": 4,

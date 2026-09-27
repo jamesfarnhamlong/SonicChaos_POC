@@ -44,6 +44,8 @@ report['type_27_handlers']=json.loads((root/'verification/type27-results.json').
 report['poc_18_objects']=json.loads((root/'verification/poc18-results.json').read_text())
 report['task_06_core']=json.loads((root/'verification/task06-results.json').read_text())
 report['task_06_integration']=json.loads((root/'verification/task06-integration-results.json').read_text())
+report['task_07_core']=json.loads((root/'verification/task07-results.json').read_text())
+report['task_07_integration']=json.loads((root/'verification/task07-integration-results.json').read_text())
 sprite_manifest=json.loads((root/'POC_notes/rom-cache/thz1-object-sprites.json').read_text())
 for asset in sprite_manifest['assets']:
     sprite_path=root/asset['sprite_path']
@@ -152,6 +154,17 @@ for frame in type10_assets['type_05']['frames']:
     source=Image.new('RGBA',(16,24),(0,0,0,0));source.alpha_composite(piece,(4,4))
     expanded=source.resize((64,96),Image.Resampling.NEAREST)
     assert hashlib.sha256(expanded.tobytes()).hexdigest()==frame['reference_rgba_sha256']
+
+state11_assets=json.loads((root/'POC_notes/rom-cache/player-state-11-poc-assets.json').read_text())
+state11_sprite=json_gm(root/'sprites/SPR_chaos_player_state_11/SPR_chaos_player_state_11.yy')
+assert (state11_sprite['width'],state11_sprite['height'])==(24,32)
+assert (state11_sprite['sequence']['xorigin'],state11_sprite['sequence']['yorigin'])==(16,32)
+assert state11_sprite['sequence']['playbackSpeed']==0.0
+assert len(state11_sprite['frames'])==3
+for frame in state11_assets['frames']:
+    root_png=root/frame['root_png'];layer_png=root/frame['layer_png']
+    assert root_png.read_bytes()==layer_png.read_bytes()
+    assert hashlib.sha256(Image.open(root_png).convert('RGBA').tobytes()).hexdigest()==frame['rgba_sha256']
 report['task_05_closure']={
     'type_10_selector_graphics':'RESOLVED',
     'type_05_visible_effect':'RESOLVED',

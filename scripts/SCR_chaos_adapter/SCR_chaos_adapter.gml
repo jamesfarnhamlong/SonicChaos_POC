@@ -40,10 +40,9 @@ function SCR_chaos_core_sprites(cp_p) {
         if (image_xscale < 0) cp_c.player_flags |= 16; else cp_c.player_flags &= ~16;
         var cp_sprite = SPR_player_walk;
         var cp_state11_visual = cp_c.state == $11 || cp_c.next == $11;
-        // Exact ROM frames $38/$39/$3A are not present in the inherited
-        // openSonicSMS art. Use a non-rolling falling sprite as an explicit
-        // presentation adapter; cp_c.state11_frame retains the exact cadence.
-        if (cp_state11_visual) cp_sprite = SPR_player_falling;
+        // Task 07: exact ROM frames $38/$39/$3A. The core owns the canonical
+        // 8/4/8/4 timing; GameMaker animation timing is deliberately disabled.
+        if (cp_state11_visual) cp_sprite = SPR_chaos_player_state_11;
         else if (cp_c.next == 15) cp_sprite = SPR_player_spin_dash;
         else if (cp_c.state == 34 || cp_c.next == 9 || (cp_c.move & 2) != 0) cp_sprite = SPR_player_spin;
         else if (cp_p.chaosSpringVisual && cp_c.vy < 0) cp_sprite = SPR_player_jump;
@@ -56,7 +55,11 @@ function SCR_chaos_core_sprites(cp_p) {
         if (sprite_index != cp_sprite) { sprite_index = cp_sprite; image_index = 0; }
         // Chaos angle $40 is level rightward motion, so it is the sprite's zero.
         image_angle = cp_c.state == 34 ? (cp_c.angle-64)*360/256 : 0;
-        if (cp_state11_visual) { image_index = 0; image_speed = 0; }
+        if (cp_state11_visual) {
+            image_index = cp_c.state11_frame == $38 ? 0 :
+                (cp_c.state11_frame == $39 ? 1 : 2);
+            image_speed = 0;
+        }
         else image_speed = (cp_p.chaosSpringVisual && cp_c.vy < 0) ? 0 :
             (cp_c.vx == 0 ? 0.15 : clamp(abs(cp_c.vx)/4096,0.075,0.325));
     }
@@ -277,7 +280,9 @@ function SCR_chaos_apply_hazard_damage(cp_p) {
 // vertical-profile arithmetic as the player core. The returned Y is the object
 // anchor used by the original ground-patrol callback.
 function SCR_chaos_object_floor_project(cp_x, cp_y) {
-    var cp_s = SCR_cc_lookup(floor(cp_x),floor(cp_y),0);
+    // Probe 18 pixels below the object anchor, then apply the profile
+    // correction to the original, unshifted anchor Y.
+    var cp_s = SCR_cc_lookup(floor(cp_x),floor(cp_y)+18,0);
     if ((cp_s.flags & 192) == 0) return {grounded:false,y:cp_y};
     var cp_solid = (cp_s.flags & 128) != 0;
     var cp_value = cp_s.vertical;

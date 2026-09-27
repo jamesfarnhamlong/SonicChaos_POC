@@ -1,0 +1,56 @@
+{
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "actual_gml_helper_executed": true,
+  "lookup_y_offset": 18,
+  "projection_anchor": "unshifted",
+  "stable_type_21_anchors": [
+    {
+      "placement": [
+        800,
+        606
+      ],
+      "integrated_y": 608,
+      "stable_y": 590
+    },
+    {
+      "placement": [
+        1248,
+        862
+      ],
+      "integrated_y": 864,
+      "stable_y": 846
+    },
+    {
+      "placement": [
+        2048,
+        318
+      ],
+      "integrated_y": 320,
+      "stable_y": 302
+    },
+    {
+      "placement": [
+        3152,
+        894
+      ],
+      "integrated_y": 896,
+      "stable_y": 878
+    },
+    {
+      "placement": [
+        3296,
+        286
+      ],
+      "integrated_y": 288,
+      "stable_y": 270
+    },
+    {
+      "placement": [
+        2400,
+        254
+      ],
+      "integrated_y": 256,
+      "stable_y": 238
+    }
+  ]
+}

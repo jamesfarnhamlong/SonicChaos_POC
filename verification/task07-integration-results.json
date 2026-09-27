@@ -1,0 +1,26 @@
+{
+  "reference_main": "53f8e647aae72fd8886052d0c8fb63fbd738e0b3",
+  "type_21_floor_probe": "RESOLVED",
+  "type_21_stable_y": [
+    590,
+    846,
+    302,
+    878,
+    270,
+    238
+  ],
+  "type_21_contact": {
+    "ordinary_side": "DAMAGE",
+    "top": "BOUNCE",
+    "lower_attack": "DEFEAT",
+    "lower_selector_06": "DEFEAT"
+  },
+  "state_11_graphics": "EXACT ROM-DERIVED",
+  "state_11_resource": "SPR_chaos_player_state_11",
+  "state_11_rgba_sha256": {
+    "0x38": "39007e36a7ec3e9888df5919d824667da84a4c0fdbf79cca6971ba03b7976c41",
+    "0x39": "22364cea9bd4190b07c28aad386f011699577e3d6fd105e851ed6980be05fc45",
+    "0x3A": "da066dd9609909a66e41b12048eae0b361460a1deb1e11d2f2dd181c05f6029e"
+  },
+  "type_10_visual_appearance": "CANONICAL - UNCHANGED"
+}

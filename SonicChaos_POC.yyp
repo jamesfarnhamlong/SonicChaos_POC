@@ -2986,6 +2986,12 @@
     },
     {
       "id": {
+        "name": "SPR_chaos_player_state_11",
+        "path": "sprites/SPR_chaos_player_state_11/SPR_chaos_player_state_11.yy"
+      }
+    },
+    {
+      "id": {
         "name": "SPR_chaos_object_0F",
         "path": "sprites/SPR_chaos_object_0F/SPR_chaos_object_0F.yy"
       }

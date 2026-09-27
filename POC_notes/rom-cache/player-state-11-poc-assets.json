@@ -1,0 +1,46 @@
+{
+  "format": 1,
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "source_tool": "sonic-chaos-reference/tools/player_state_11_graphics.py",
+  "resource": "SPR_chaos_player_state_11",
+  "canvas": [
+    24,
+    32
+  ],
+  "origin": [
+    16,
+    32
+  ],
+  "image_speed": 0,
+  "frame_mapping": {
+    "0x38": 0,
+    "0x39": 1,
+    "0x3A": 2
+  },
+  "frames": [
+    {
+      "source_frame": "0x38",
+      "frame_id": "11380000-0000-4000-8000-000000000038",
+      "rgba_sha256": "39007e36a7ec3e9888df5919d824667da84a4c0fdbf79cca6971ba03b7976c41",
+      "png_sha256": "6bb76012a8692e82b8b60207c257e9940b70e85120108469994c52977cc49694",
+      "root_png": "sprites/SPR_chaos_player_state_11/11380000-0000-4000-8000-000000000038.png",
+      "layer_png": "sprites/SPR_chaos_player_state_11/layers/11380000-0000-4000-8000-000000000038/11000000-0000-4000-8000-000000000000.png"
+    },
+    {
+      "source_frame": "0x39",
+      "frame_id": "11390000-0000-4000-8000-000000000039",
+      "rgba_sha256": "22364cea9bd4190b07c28aad386f011699577e3d6fd105e851ed6980be05fc45",
+      "png_sha256": "7843cb8bd4e9c2a7161ca20c9a39f7c14f3e12c2b25de4c43ef3fc403589c0c6",
+      "root_png": "sprites/SPR_chaos_player_state_11/11390000-0000-4000-8000-000000000039.png",
+      "layer_png": "sprites/SPR_chaos_player_state_11/layers/11390000-0000-4000-8000-000000000039/11000000-0000-4000-8000-000000000000.png"
+    },
+    {
+      "source_frame": "0x3A",
+      "frame_id": "113a0000-0000-4000-8000-00000000003a",
+      "rgba_sha256": "da066dd9609909a66e41b12048eae0b361460a1deb1e11d2f2dd181c05f6029e",
+      "png_sha256": "d6332aea1ed7acce598162bcdd38e566b722f3ddb50a71ce59143e71a9645a1a",
+      "root_png": "sprites/SPR_chaos_player_state_11/113a0000-0000-4000-8000-00000000003a.png",
+      "layer_png": "sprites/SPR_chaos_player_state_11/layers/113a0000-0000-4000-8000-00000000003a/11000000-0000-4000-8000-000000000000.png"
+    }
+  ]
+}

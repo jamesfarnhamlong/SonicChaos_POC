@@ -28,8 +28,8 @@
       "bytes": 2472
     },
     "object-21.json": {
-      "sha256": "e4a5d55cf2e0a1d77634e553782508b6e20af253c90142ee7d2a9b62b8e02227",
-      "bytes": 9903
+      "sha256": "bd684d992f113df2d41e5b5bd334e0c5f5f85594cc37c7bc70e0099c6a90a780",
+      "bytes": 17200
     },
     "object-27.json": {
       "sha256": "2103543de3e784921e98172adf1ae9e25727770273a204cc8489d9d65f68b077",
@@ -48,8 +48,20 @@
       "bytes": 36139
     },
     "windows-discrepancies.json": {
-      "sha256": "ff44a01015a78140031b1a31c52d89b50cc97540e90836d72917f49cd97f9e3f",
-      "bytes": 32868
+      "sha256": "42cb42605a0703615d706924f85efa9bb456297fc6044eba34e5052d3cf05ded",
+      "bytes": 34514
+    },
+    "player-state-11-graphics.json": {
+      "sha256": "05c282c08ddae78dc97fd5bf7d49636f863e6fc2ac11536785861ea2f9b1c180",
+      "bytes": 12776
+    },
+    "player-state-11-poc-assets.json": {
+      "sha256": "ef043ad0a92ced002fe7caa440167506160088481d0d896549a6ca83762a1172",
+      "bytes": 1985
+    },
+    "background-registration.json": {
+      "sha256": "52ff19860a69a483d1747165184da6c572560ff3daa37cd58cb2c63e310a2797",
+      "bytes": 99970
     }
   }
 }

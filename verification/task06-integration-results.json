@@ -2,9 +2,9 @@
   "reference_main": "65670d29295d87d71109b1983206a74f2bbeeb6a",
   "task_06_named_commit": "479990227e48543a853cdd36f52365cb5cc1536a",
   "task_06_named_commit_is_main_ancestor": false,
-  "cache_sha256": "ff44a01015a78140031b1a31c52d89b50cc97540e90836d72917f49cd97f9e3f",
+  "cache_sha256": "42cb42605a0703615d706924f85efa9bb456297fc6044eba34e5052d3cf05ded",
   "player_state_11": "RESOLVED",
-  "state_11_presentation": "DOCUMENTED PRESENTATION ADAPTER: SPR_player_falling",
+  "state_11_presentation": "EXACT ROM-DERIVED: SPR_chaos_player_state_11",
   "static_3d_spike_collision": "RESOLVED",
   "static_spike_cells": [
     [
