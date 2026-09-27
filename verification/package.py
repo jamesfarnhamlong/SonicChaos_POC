@@ -46,6 +46,7 @@ report['task_06_core']=json.loads((root/'verification/task06-results.json').read
 report['task_06_integration']=json.loads((root/'verification/task06-integration-results.json').read_text())
 report['task_07_core']=json.loads((root/'verification/task07-results.json').read_text())
 report['task_07_integration']=json.loads((root/'verification/task07-integration-results.json').read_text())
+report['poc_19_task08']=json.loads((root/'verification/poc19-results.json').read_text())
 sprite_manifest=json.loads((root/'POC_notes/rom-cache/thz1-object-sprites.json').read_text())
 for asset in sprite_manifest['assets']:
     sprite_path=root/asset['sprite_path']
@@ -203,7 +204,7 @@ dest=Path(sys.argv[1]).resolve()
 with zipfile.ZipFile(dest,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
     for p in sorted(root.rglob('*')):
         rel=p.relative_to(root)
-        if not p.is_file() or any(part in ('.git','__pycache__','.deps','.video-deps','generated-poc18','generated-feedback') for part in rel.parts):continue
+        if not p.is_file() or any(part in ('.git','__pycache__','.deps','.video-deps','generated-poc18','generated-feedback','generated-poc19','generated-poc19-object-assets') for part in rel.parts):continue
         assert p.suffix.lower() not in ('.sms','.gg','.rom'),p
         z.write(p,rel.as_posix())
 with zipfile.ZipFile(dest) as z:assert z.testzip() is None

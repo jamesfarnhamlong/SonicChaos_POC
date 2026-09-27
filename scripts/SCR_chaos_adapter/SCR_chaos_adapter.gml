@@ -108,6 +108,16 @@ function SCR_chaos_adapter_step(cp_p) {
     cp_c.state11_active = global.chaosPowerCode == $04 && global.chaosPowerTimer > 0;
     cp_c.state11_camera_y = floor(camera_get_view_y(view_camera[0]));
     SCR_cc_tick(cp_c);
+    if (cp_c.break47_index >= 0) {
+        var cp_break_slot = cp_c.break47_index-(8*128+104);
+        if (cp_break_slot >= 0 && cp_break_slot < 4 && !global.chaosBlock47Broken[cp_break_slot]) {
+            global.chaosBlock47Broken[cp_break_slot] = true;
+            global.chaosType10D29A = SCR_chaos_bcd_add(global.chaosType10D29A,10);
+            global.ring += 10;
+            instance_create_depth(3328+cp_break_slot*32+16,264,-21,OBJ_chaos_object_0F_transient);
+        }
+        cp_c.break47_index = -1;
+    }
     // Widescreen room boundary adapter. Original camera-relative 256px clipping is omitted.
     if (cp_c.xu < 16*256 || cp_c.xu > (room_width-9)*256) {
         cp_c.xu = clamp(cp_c.xu,16*256,(room_width-9)*256); cp_c.vx = 0;

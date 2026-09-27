@@ -313,6 +313,50 @@
     },
     "type_10_visual_appearance": "CANONICAL - UNCHANGED"
   },
+  "poc_19_task08": {
+    "milestone": "POC 19.0",
+    "type_09": {
+      "placements": 24,
+      "parameter_00": 11,
+      "parameter_01": 13,
+      "strict_overlap": "11 succeeds; 12 fails",
+      "sparkle_updates": 32,
+      "hidden_even_frame_gate": true,
+      "sound_request": "0xBF"
+    },
+    "type_21": {
+      "physics_sha1_unchanged": true,
+      "render_y_delta": 1
+    },
+    "block_47": {
+      "cells": 4,
+      "rgba_sha256": "ec9e7afdafe3b1494082e1900e271643a651b19755cf23904211a3ecb42b4e3d",
+      "replacement": "0x47 -> 0x46",
+      "ring_award": 10,
+      "transient": {
+        "type": "0x0F",
+        "parameter": "0x40"
+      }
+    },
+    "type_27": {
+      "accepted": [
+        -96,
+        351
+      ],
+      "active": [
+        -32,
+        287
+      ],
+      "creation_to_nonempty_updates": 2
+    },
+    "coverage": {
+      "raw_records": 53,
+      "previously_represented": 29,
+      "type_09_added": 24,
+      "represented": 53,
+      "separate_layout_rings": 142
+    }
+  },
   "enemy_research": {
     "verified_placements": 15,
     "rom_derived_sprite_assets": 10,
@@ -324,10 +368,10 @@
   },
   "project_resource_counts": {
     "sms_project_backup.yyp": 319,
-    "SonicChaos_POC.yyp": 487
+    "SonicChaos_POC.yyp": 492
   },
   "resource_metadata_validated": true,
-  "resource_guid_strings_validated": 645,
+  "resource_guid_strings_validated": 652,
   "sprite_root_and_layer_pngs_validated": true,
   "data_card_draw_defaults_validated": true,
   "moving_spike_floor_anchor_validated": true,
@@ -363,7 +407,7 @@
     "ring_verifier_contradiction": "RESOLVED",
     "candidate": "THZ1 POC READY WITH DOCUMENTED ADAPTERS"
   },
-  "rom_cache_manifest_files_validated": 15,
+  "rom_cache_manifest_files_validated": 19,
   "terrain_spring_transparency": {
     "48": {
       "transparent_pixels": 856,
@@ -387,8 +431,8 @@
     }
   },
   "source_sha256": {
-    "scripts\\SCR_chaos_core\\SCR_chaos_core.gml": "a0df90cf68084ca00afbc3377b2edf7e90c229100cab0861d503967bb281caa3",
+    "scripts\\SCR_chaos_core\\SCR_chaos_core.gml": "d84d478654b6468ba309eba1d4d6a4b84bbc0cd5390f891f088ad4bfb5c05e6e",
     "scripts\\SCR_chaos_core_data\\SCR_chaos_core_data.gml": "2cd1ccf1eb6b789e1f0d35284a576eaa8638cac0d82090fc4c63d889ee78ace0",
-    "scripts\\SCR_chaos_adapter\\SCR_chaos_adapter.gml": "d016da9c7e7e094c5be344efb0146c5f808480bb499f83afa13ec086ef544687"
+    "scripts\\SCR_chaos_adapter\\SCR_chaos_adapter.gml": "ef2514df9a6101f341f72ee7bcb04df4a9ec1ea14d261bdaf6f5f6016e8a1717"
   }
 }

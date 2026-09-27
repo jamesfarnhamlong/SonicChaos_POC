@@ -1,0 +1,44 @@
+{
+  "milestone": "POC 19.0",
+  "type_09": {
+    "placements": 24,
+    "parameter_00": 11,
+    "parameter_01": 13,
+    "strict_overlap": "11 succeeds; 12 fails",
+    "sparkle_updates": 32,
+    "hidden_even_frame_gate": true,
+    "sound_request": "0xBF"
+  },
+  "type_21": {
+    "physics_sha1_unchanged": true,
+    "render_y_delta": 1
+  },
+  "block_47": {
+    "cells": 4,
+    "rgba_sha256": "ec9e7afdafe3b1494082e1900e271643a651b19755cf23904211a3ecb42b4e3d",
+    "replacement": "0x47 -> 0x46",
+    "ring_award": 10,
+    "transient": {
+      "type": "0x0F",
+      "parameter": "0x40"
+    }
+  },
+  "type_27": {
+    "accepted": [
+      -96,
+      351
+    ],
+    "active": [
+      -32,
+      287
+    ],
+    "creation_to_nonempty_updates": 2
+  },
+  "coverage": {
+    "raw_records": 53,
+    "previously_represented": 29,
+    "type_09_added": 24,
+    "represented": 53,
+    "separate_layout_rings": 142
+  }
+}

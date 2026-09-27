@@ -10,7 +10,7 @@ function SCR_cc_new(cp_x, cp_y) {
         held:0, pressed:0, jump_ticks:0, sound:0, unsupported:0,
         hazard:0, angle:0, magnitude:0, twist_variant:0, level:0,
         state11_active:false, state11_camera_y:0,
-        state11_anim_tick:0, state11_frame:56};
+        state11_anim_tick:0, state11_frame:56, break47_index:-1};
 }
 function SCR_cc_merge(cp_c) {
     cp_c.contacts = cp_c.bg;
@@ -293,6 +293,22 @@ function SCR_cc_floor(cp_c) {
     }
     else if (cp_kind == 9 || cp_kind == 20) SCR_cc_spring(cp_c,cp_kind,cp_s.tile);
     else if (cp_kind == 23) SCR_cc_twist_enter(cp_c,cp_s.tile);
+    else if (cp_kind == 22 && cp_s.tile == 71) {
+        // Task 08, original $6AE3 -> $7857 contract. This is terrain
+        // dispatch, not generic touch collision and not a type-$10 object.
+        if ((cp_c.move & 2) != 0 && cp_c.state != 15 && cp_c.state != 16 &&
+            cp_c.state != 21 && cp_c.state != 26 &&
+            (((cp_c.contacts & 12) != 0) || cp_c.vx >= 0)) {
+            cp_c.vx = -1088;
+            cp_c.bg &= ~2;
+            cp_c.contacts &= ~2;
+            cp_c.move |= 1;
+            if (cp_s.index >= 0) {
+                global.chaosTileIds[cp_s.index] = 70;
+                cp_c.break47_index = cp_s.index;
+            }
+        }
+    }
     else if (cp_kind == 0 || cp_kind == 6 || cp_kind == 7) {
         // $6C45/$6C4D: empty floor can request falling even when projection returned early.
         if ((cp_c.objects & 32) == 0) cp_c.bg &= ~2;
@@ -303,7 +319,7 @@ function SCR_cc_floor(cp_c) {
         }
     } else if (cp_kind != 1 && cp_kind != 2 && cp_kind != 3 && cp_kind != 4 &&
                cp_kind != 10 && cp_kind != 15 && cp_kind != 17 && cp_kind != 21 &&
-               cp_kind != 24 && cp_kind != 26 && cp_kind != 28 && cp_kind != 29 && cp_kind != 30) {
+               cp_kind != 22 && cp_kind != 24 && cp_kind != 26 && cp_kind != 28 && cp_kind != 29 && cp_kind != 30) {
         cp_c.unsupported = cp_kind; // recorded, never substituted by coordinate-specific fixes
     }
 }

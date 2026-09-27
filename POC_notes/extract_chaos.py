@@ -31,11 +31,19 @@ def decompress(p):
   tiles.append(bytes(b))
  print('decompressed',hex(p),'tiles',n,'data end',hex(src),'flags end',hex(flags+(n+3)//4))
  return tiles
-pal=[((v&3)*85,((v>>2)&3)*85,((v>>4)&3)*85,255) for v in ROM[0x3b79d:0x3b79d+16]]
+def palette(selector):
+ start=0x3b64d+selector*16
+ return [((v&3)*85,((v>>2)&3)*85,((v>>4)&3)*85,255) for v in ROM[start:start+16]]
+pal=palette(0x15)
+alt_pal=palette(0x06)
 tiles=decompress(0x40f9e)
-imgs=[]
+imgs=[];alt_imgs=[]
 for t in tiles:
- im=Image.new('RGBA',(8,8));im.putdata([pal[sum(((t[y*4+b]>>(7-x))&1)<<b for b in range(4))] for y in range(8) for x in range(8)]);imgs.append(im)
+ indices=[sum(((t[y*4+b]>>(7-x))&1)<<b for b in range(4)) for y in range(8) for x in range(8)]
+ im=Image.new('RGBA',(8,8));im.putdata([pal[v] for v in indices]);imgs.append(im)
+ # Mode-4 colour zero exposes the ordinary flattened backdrop. Attribute bit
+ # 11 selects THZ1 palette $06 only for nonzero piece artwork.
+ alt=Image.new('RGBA',(8,8));alt.putdata([pal[0] if v==0 else alt_pal[v] for v in indices]);alt_imgs.append(alt)
 # Read tile mappings as standard little-endian VDP tile attributes.
 blocks=[]
 for i in range(256):
@@ -43,7 +51,7 @@ for i in range(256):
  for j in range(16):
   attr=word(0x44000+(word(0x44000+i*2)-0x8000)+j*2);idx=(attr&511)-192
   if idx<0 or idx>=len(imgs):continue
-  tile=imgs[idx]
+  tile=alt_imgs[idx] if attr&2048 else imgs[idx]
   if attr&512:tile=tile.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
   if attr&1024:tile=tile.transpose(Image.Transpose.FLIP_TOP_BOTTOM)
   im.paste(tile,((j%4)*8,(j//4)*8))
@@ -154,6 +162,9 @@ if args.project_root:
  cache=project/'POC_notes/rom-cache'
  terrain_manifest={'format':1,'rom_sha256':hashlib.sha256(ROM).hexdigest(),
      'generator':'POC_notes/extract_chaos.py',
+     'piece_palette_selectors':{'palette_0':'0x15','palette_1':'0x06'},
+     'block_47_cells':[{'world_x':x,'world_y':256} for x in (3328,3360,3392,3424)],
+     'block_47_rgba_sha256':hashlib.sha256(blocks[0x47].tobytes()).hexdigest(),
      'context_composited_spring_block_ids':[f'0x{x:02X}' for x in sorted(SPRING_BLOCK_IDS)],
      'object_only_ring_block_ids':[f'0x{x:02X}' for x in sorted(RING_BLOCK_IDS)],
      'spring_placements':spring_context,'ring_cells_removed':ring_cell_context,'assets':assets,

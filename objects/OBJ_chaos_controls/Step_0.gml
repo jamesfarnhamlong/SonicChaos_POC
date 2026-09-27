@@ -1,3 +1,5 @@
+global.chaosGlobalFrame = (global.chaosGlobalFrame+1) & $FF;
+
 // R restarts the Chaos test. F2 switches between Chaos and the engine sample.
 if (keyboard_check_pressed(vk_f2)) {
     game_set_speed(30, gamespeed_fps); // Chaos zone Create restores its own test clock.

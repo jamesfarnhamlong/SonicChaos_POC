@@ -12,8 +12,8 @@
       "bytes": 24388
     },
     "terrain-assets.json": {
-      "sha256": "ece9e41211d7968f3591ca2b4fe3ec07aa4b6f7d9f5b0367846b98f023ac6e8e",
-      "bytes": 27253
+      "sha256": "f274aff12fa17793443c5ff69057732cf9799d8056fc13d2b610f7a528831c46",
+      "bytes": 27709
     },
     "thz1-object-sprites.json": {
       "sha256": "1a06457f15c99c37c8be772e72e577a282a484eb3b8c8d733305a946365fc976",
@@ -62,6 +62,22 @@
     "background-registration.json": {
       "sha256": "52ff19860a69a483d1747165184da6c572560ff3daa37cd58cb2c63e310a2797",
       "bytes": 99970
+    },
+    "object-09.json": {
+      "bytes": 17587,
+      "sha256": "827b11bedfc0e4a8dfe3039288ace6db8cf5ddf8fb969e0b61ffaba82a1acdb3"
+    },
+    "poc-coverage.json": {
+      "bytes": 28376,
+      "sha256": "dd15d27d9fe9f3f736ec2bd19c688339a97eca2e4b69151a9a997deb8c32acdb"
+    },
+    "final-runtime-closure.json": {
+      "bytes": 18888,
+      "sha256": "93597f2e06b332ac9937d14730edd54a25d15eef1afc978f08b62b73828af2d7"
+    },
+    "poc19-task08-assets.json": {
+      "bytes": 4905,
+      "sha256": "3f465f4aa40a48086866258999252c5b0b615a20d40b1067cc4127bd0f9b1ad1"
     }
   }
 }
