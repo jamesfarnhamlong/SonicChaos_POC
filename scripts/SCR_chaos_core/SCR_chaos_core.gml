@@ -299,7 +299,9 @@ function SCR_cc_floor(cp_c) {
         if ((cp_c.move & 2) != 0 && cp_c.state != 15 && cp_c.state != 16 &&
             cp_c.state != 21 && cp_c.state != 26 &&
             (((cp_c.contacts & 12) != 0) || cp_c.vx >= 0)) {
-            cp_c.vx = -1088;
+            // Original $6AE3 writes $FBC0 to D518: vertical velocity only.
+            // Horizontal velocity and the numeric player state are preserved.
+            cp_c.vy = -1088;
             cp_c.bg &= ~2;
             cp_c.contacts &= ~2;
             cp_c.move |= 1;

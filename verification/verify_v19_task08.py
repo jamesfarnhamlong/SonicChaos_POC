@@ -1,4 +1,4 @@
-"""Deterministic POC 19 verification for reviewed THZ1 Task 08 closure."""
+"""Deterministic POC 19.1 verification for reviewed THZ1 Task 08 closure."""
 from __future__ import annotations
 
 import hashlib
@@ -55,13 +55,16 @@ for item in assets["type_09"]["assets"]:
     image = Image.open(ROOT / item["root_png"]).convert("RGBA")
     assert hashlib.sha256(image.tobytes()).hexdigest() == item["rgba_sha256"]
 
-# Type $21: physics GML is byte-identical to POC 18.6; only sprite origin moves.
+# Type $21: physics GML stays byte-identical to POC 18.6. Windows integration
+# now uses an explicit draw-only +18 while restoring the baseline sprite origin.
 source21 = ROOT / "objects/OBJ_chaos_object_21/Step_0.gml"
 assert hashlib.sha1(source21.read_bytes()).hexdigest() == "2ae7304ccea9f75b8d4d8a96fa824f82016b2f76"
 sprite21 = json.loads((ROOT / "sprites/SPR_chaos_object_21/SPR_chaos_object_21.yy").read_text())
-assert sprite21["sequence"]["yorigin"] == 35
+assert sprite21["sequence"]["yorigin"] == 36
 assert closure["type_21"]["poc_18_5"]["sprite_yorigin"] == 36
-assert closure["type_21"]["poc_18_5"]["render_only_correction"].endswith("yorigin from 36 to 35")
+draw21 = (ROOT / "objects/OBJ_chaos_object_21/Draw_0.gml").read_text()
+assert "draw_sprite_ext" in draw21 and "x,y+18" in draw21
+assert all(token not in draw21 for token in ("y =", "chaosYU", "chaosOriginY"))
 
 # Block $47: exact cells and palette-aware artwork, then terrain replacement.
 cells47 = closure["block_47"]["cells"]
@@ -77,15 +80,34 @@ core = (ROOT / "scripts/SCR_chaos_core/SCR_chaos_core.gml").read_text()
 adapter = (ROOT / "scripts/SCR_chaos_adapter/SCR_chaos_adapter.gml").read_text()
 for token in ("cp_kind == 22 && cp_s.tile == 71", "cp_c.move & 2", "cp_c.state != 15",
               "cp_c.state != 16", "cp_c.state != 21", "cp_c.state != 26",
-              "global.chaosTileIds[cp_s.index] = 70", "cp_c.vx = -1088"):
+              "global.chaosTileIds[cp_s.index] = 70", "cp_c.vy = -1088"):
     assert token in core, token
+block47_core = core[core.index("cp_kind == 22"):core.index("cp_kind == 22") + 1000]
+assert "cp_c.vx = -1088" not in block47_core
+assert "cp_c.state =" not in block47_core and "cp_c.next =" not in block47_core
 for token in ("SCR_chaos_bcd_add(global.chaosType10D29A,10)", "global.ring += 10",
               "OBJ_chaos_object_0F_transient"):
     assert token in adapter, token
 transient = (ROOT / "objects/OBJ_chaos_object_0F_transient/Create_0.gml").read_text()
 assert "chaosType = $0F" in transient and "chaosParameter = $40" in transient
+transient_yy = json.loads((ROOT / "objects/OBJ_chaos_object_0F_transient/OBJ_chaos_object_0F_transient.yy").read_text())
+assert transient_yy["solid"] is False and transient_yy["spriteMaskId"] is None
+assert all(event["eventType"] != 4 for event in transient_yy["eventList"])
 assert "OBJ_chaos_object_10" not in core[core.index("cp_kind == 22"):core.index("cp_kind == 22") + 900]
 assert bcd_add(0x09, 10) == 0x19 and bcd_add(0x90, 10) == 0x99
+
+# The $46 refresh must cover the flattened $47 art at terrain depth, never in
+# the frontmost controls Draw event where it can occlude Sonic.
+terrain3_create = (ROOT / "objects/OBJ_chaos_terrain_3/Create_0.gml").read_text()
+terrain3_draw = (ROOT / "objects/OBJ_chaos_terrain_3/Draw_0.gml").read_text()
+controls_draw = (ROOT / "objects/OBJ_chaos_controls/Draw_0.gml").read_text()
+assert "depth = 100" in terrain3_create
+assert "draw_self()" in terrain3_draw and "SPR_chaos_block_46" in terrain3_draw
+assert "global.chaosBlock47Broken" in terrain3_draw
+assert "SPR_chaos_block_46" not in controls_draw
+block46 = Image.open(ROOT / assets["block_46_assets"][0]["root_png"]).convert("RGBA")
+assert hashlib.sha256(block46.tobytes()).hexdigest() == assets["block_46_rgba_sha256"]
+assert set(block46.getdata()) == {(0, 170, 255, 255)}
 
 def block47_eligible(rolling: bool, state: int, contacts: int, vx: int) -> bool:
     return rolling and state not in (0x0F, 0x10, 0x15, 0x1A) and ((contacts & 12) != 0 or vx >= 0)
@@ -127,13 +149,17 @@ assert len(layout["rings"]) == coverage["separate_populations"]["layout_derived_
 assert len(placements) == 24 and len(cells47) == 4
 
 report = {
-    "milestone": "POC 19.0",
+    "milestone": "POC 19.1",
     "type_09": {"placements": 24, "parameter_00": 11, "parameter_01": 13,
                 "strict_overlap": "11 succeeds; 12 fails", "sparkle_updates": 32,
                 "hidden_even_frame_gate": True, "sound_request": "0xBF"},
-    "type_21": {"physics_sha1_unchanged": True, "render_y_delta": 1},
+    "type_21": {"physics_sha1_unchanged": True, "render_y_delta": 18,
+                "explicit_draw_offset": True, "sprite_yorigin": 36},
     "block_47": {"cells": 4, "rgba_sha256": CANONICAL_BLOCK47,
                  "replacement": "0x47 -> 0x46", "ring_award": 10,
+                 "replacement_draw_depth": 100,
+                 "player_velocity": {"x": "preserved", "y_8_8": -1088},
+                 "player_state": "preserved",
                  "transient": {"type": "0x0F", "parameter": "0x40"}},
     "type_27": {"accepted": [-96, 351], "active": [-32, 287],
                 "creation_to_nonempty_updates": 2},

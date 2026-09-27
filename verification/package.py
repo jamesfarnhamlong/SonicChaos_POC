@@ -47,6 +47,7 @@ report['task_06_integration']=json.loads((root/'verification/task06-integration-
 report['task_07_core']=json.loads((root/'verification/task07-results.json').read_text())
 report['task_07_integration']=json.loads((root/'verification/task07-integration-results.json').read_text())
 report['poc_19_task08']=json.loads((root/'verification/poc19-results.json').read_text())
+report['poc_19_1_windows']=json.loads((root/'verification/poc191-results.json').read_text())
 sprite_manifest=json.loads((root/'POC_notes/rom-cache/thz1-object-sprites.json').read_text())
 for asset in sprite_manifest['assets']:
     sprite_path=root/asset['sprite_path']

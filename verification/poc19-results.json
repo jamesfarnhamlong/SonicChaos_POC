@@ -1,5 +1,5 @@
 {
-  "milestone": "POC 19.0",
+  "milestone": "POC 19.1",
   "type_09": {
     "placements": 24,
     "parameter_00": 11,
@@ -11,13 +11,21 @@
   },
   "type_21": {
     "physics_sha1_unchanged": true,
-    "render_y_delta": 1
+    "render_y_delta": 18,
+    "explicit_draw_offset": true,
+    "sprite_yorigin": 36
   },
   "block_47": {
     "cells": 4,
     "rgba_sha256": "ec9e7afdafe3b1494082e1900e271643a651b19755cf23904211a3ecb42b4e3d",
     "replacement": "0x47 -> 0x46",
     "ring_award": 10,
+    "replacement_draw_depth": 100,
+    "player_velocity": {
+      "x": "preserved",
+      "y_8_8": -1088
+    },
+    "player_state": "preserved",
     "transient": {
       "type": "0x0F",
       "parameter": "0x40"

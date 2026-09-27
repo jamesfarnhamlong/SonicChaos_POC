@@ -1,8 +1,4 @@
 if (room == ROM_chaos_thz1) {
-    for (var cp_block47 = 0; cp_block47 < 4; cp_block47++) {
-        if (global.chaosBlock47Broken[cp_block47])
-            draw_sprite(SPR_chaos_block_46,0,3328+cp_block47*32,256);
-    }
     var cam = view_camera[0];
     var vx = camera_get_view_x(cam);
     var vy = camera_get_view_y(cam);
@@ -15,7 +11,7 @@ if (room == ROM_chaos_thz1) {
     draw_rectangle(vx, vy+vh-15, vx+camera_get_view_width(cam), vy+vh, false);
     draw_set_alpha(1);
     draw_set_color(c_white);
-    draw_text_transformed(vx+4, vy+vh-13, "THZ POC 19.0 | R: restart  F3: debug", 0.65, 0.65, 0);
+    draw_text_transformed(vx+4, vy+vh-13, "THZ POC 19.1 | R: restart  F3: debug", 0.65, 0.65, 0);
     if (global.chaosNotice > 0) draw_text_transformed(vx+4,vy+vh-40,"CHECKPOINT SAVED",0.75,0.75,0);
     // Type $18 presentation is ROM-derived; the completion trigger remains the bounded POC adapter.
     if (global.chaosComplete) {

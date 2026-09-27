@@ -1,6 +1,6 @@
 # Sonic Chaos — Windows proof of concept
 
-A GameMaker proof of concept for recreating *Sonic Chaos* Master System behaviour on Windows. The current test baseline is **POC 19.0**.
+A GameMaker proof of concept for recreating *Sonic Chaos* Master System behaviour on Windows. The current test baseline is **POC 19.1**.
 
 This repository tracks the current working project rather than storing a new copy of the whole project for every test build. Git history and version tags preserve milestones.
 

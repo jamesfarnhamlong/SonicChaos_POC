@@ -1,0 +1,17 @@
+{
+  "milestone": "POC 19.1",
+  "actual_gml_executed": true,
+  "block_47": {
+    "index": 1128,
+    "replacement": "0x47 -> 0x46",
+    "horizontal_velocity_preserved": true,
+    "vertical_velocity_8_8": -1088,
+    "state_preserved": true,
+    "replacement_draw_depth": 100,
+    "transient_noncollidable": true
+  },
+  "type_21": {
+    "physics_source_unchanged": true,
+    "explicit_render_y_delta": 18
+  }
+}
