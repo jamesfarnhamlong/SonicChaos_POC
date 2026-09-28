@@ -3,6 +3,9 @@
 global.chaosTickRate = 60;
 game_set_speed(global.chaosTickRate, gamespeed_fps);
 SCR_chaos_motion_data();
+// The break transient is non-persistent and room_restart destroys it. Clear
+// its only global request marker along with the freshly copied terrain state.
+global.chaosLastSoundRequest = 0;
 // Turquoise Hill Act 1 opening, extracted from Sonic Chaos SMS.
 global.ring = 0;
 global.seconds = 0;

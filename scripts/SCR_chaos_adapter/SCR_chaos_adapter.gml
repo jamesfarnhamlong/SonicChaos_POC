@@ -109,6 +109,9 @@ function SCR_chaos_adapter_step(cp_p) {
     var cp_previous_foot = cp_c.yu/256+18;
     cp_c.state11_active = global.chaosPowerCode == $04 && global.chaosPowerTimer > 0;
     cp_c.state11_camera_y = floor(camera_get_view_y(view_camera[0]));
+    // Dedicated GameMaker adapter resolves breakable $47 before the ordinary
+    // terrain sensors. A successful attack therefore cannot become damage.
+    SCR_chaos_block47_step(cp_p);
     SCR_cc_tick(cp_c);
     // Widescreen room boundary adapter. Original camera-relative 256px clipping is omitted.
     if (cp_c.xu < 16*256 || cp_c.xu > (room_width-9)*256) {
@@ -292,6 +295,52 @@ function SCR_chaos_apply_hazard_damage(cp_p) {
     cp_p.chaosGrounded = false;
     cp_p.chaosSpringVisual = false;
     if (global.music == 1) audio_play_sound(SFX_sonic_lost_rings,10,false);
+}
+
+// Four canonical THZ1 terrain cells only. This adapter does not reinterpret
+// type $10 objects or move the source cells; it changes $47 to empty $46.
+function SCR_chaos_block47_step(cp_p) {
+    if (!variable_instance_exists(cp_p,"chaosCore")) return false;
+    var cp_c = cp_p.chaosCore;
+    var cp_attack = (cp_c.move & 2) != 0 || cp_p.object_index == OBJ_player_char_spin ||
+        global.playerJump || global.playerSpinDash;
+    if (!cp_attack) return false;
+
+    var cp_x = cp_c.xu/256;
+    var cp_y = cp_c.yu/256;
+    var cp_next_x = cp_x+cp_c.vx/256;
+    var cp_next_y = cp_y+cp_c.vy/256;
+    var cp_swept_left = min(cp_x-9,cp_next_x-9);
+    var cp_swept_right = max(cp_x+9,cp_next_x+9);
+    var cp_swept_top = min(cp_y-6,cp_next_y-6);
+    var cp_swept_bottom = max(cp_y+18,cp_next_y+18);
+    if (cp_swept_bottom < 256 || cp_swept_top >= 288) return false;
+
+    var cp_first = cp_c.vx < 0 ? 3 : 0;
+    var cp_last = cp_c.vx < 0 ? -1 : 4;
+    var cp_delta = cp_c.vx < 0 ? -1 : 1;
+    for (var cp_slot = cp_first; cp_slot != cp_last; cp_slot += cp_delta) {
+        if (global.chaosTileIds[1128+cp_slot] != 71) continue;
+        var cp_left = 3328+cp_slot*32;
+        var cp_right = cp_left+32;
+        if (cp_swept_right < cp_left || cp_swept_left >= cp_right) continue;
+
+        // GameMaker contact adapter: a descending attack that crosses the top
+        // plane rebounds; a pure horizontal entry keeps its existing motion.
+        var cp_top_impact = cp_c.vy > 0 && cp_y+18 <= 256 && cp_next_y+18 >= 256;
+        global.chaosTileIds[1128+cp_slot] = 70;
+        global.ring += 10;
+        if (cp_top_impact) {
+            cp_c.vy = -1088; // $FBC0 = -4.25 px/update; cp_c.vx is preserved.
+            cp_c.move |= 1;
+            cp_c.bg &= ~2; cp_c.contacts &= ~2;
+            cp_p.chaosSupport = noone;
+            cp_p.chaosGrounded = false;
+        }
+        instance_create_depth(cp_left+16,264,-21,OBJ_chaos_object_0F_transient);
+        return true;
+    }
+    return false;
 }
 
 // Bounded object-floor adapter using the same decoded THZ collision header and

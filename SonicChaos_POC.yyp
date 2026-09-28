@@ -2866,6 +2866,24 @@
     },
     {
       "id": {
+        "name": "SPR_chaos_block_46",
+        "path": "sprites/SPR_chaos_block_46/SPR_chaos_block_46.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_block_47",
+        "path": "sprites/SPR_chaos_block_47/SPR_chaos_block_47.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_0F_transient",
+        "path": "objects/OBJ_chaos_object_0F_transient/OBJ_chaos_object_0F_transient.yy"
+      }
+    },
+    {
+      "id": {
         "name": "SPR_chaos_pixel",
         "path": "sprites/SPR_chaos_pixel/SPR_chaos_pixel.yy"
       }

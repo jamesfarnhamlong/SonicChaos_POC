@@ -7,6 +7,7 @@ def json_gm(p):return json.loads(re.sub(r',\s*([}\]])',r'\1',p.read_text()))
 guid_re=re.compile(r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$')
 resource_guid_strings=0
 for p in root.rglob('*.yy'):
+    if '.codex-build' in p.relative_to(root).parts:continue
     data=json_gm(p)
     pending=[data]
     while pending:
@@ -37,6 +38,9 @@ for p in root.glob('*.yyp'):
         names.append(row['id']['name'])
     assert len(names)==len(set(names)),p
     projects[p.name]=len(names)
+primary=json_gm(root/'SonicChaos_POC.yyp')
+assert any(row['id']['name']=='ROM_chaos_thz1' for row in primary['resources'])
+assert any(row['roomId']['name']=='ROM_chaos_thz1' for row in primary['RoomOrderNodes'])
 report=json.loads((root/'verification/results.json').read_text())
 report['canon_layout']=json.loads((root/'verification/layout-results.json').read_text())
 report['twist_state_22']=json.loads((root/'verification/twist-results.json').read_text())
@@ -200,11 +204,16 @@ report['source_sha256']={str(p.relative_to(root)):hashlib.sha256(p.read_bytes())
     for p in (root/'scripts'/name).glob('*.gml')}
 (root/'verification/results.json').write_text(json.dumps(report,indent=2)+'\n')
 dest=Path(sys.argv[1]).resolve()
+archive_root=Path(dest.stem)
 with zipfile.ZipFile(dest,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
     for p in sorted(root.rglob('*')):
         rel=p.relative_to(root)
-        if not p.is_file() or any(part in ('.git','__pycache__','.deps','.video-deps','generated-poc18','generated-feedback') for part in rel.parts):continue
+        if not p.is_file() or any(part in ('.git','.codex-build','__pycache__','.deps','.video-deps','generated-poc18','generated-feedback') for part in rel.parts):continue
+        # The legacy backup project does not register ROM_chaos_thz1. Shipping
+        # it beside the POC project makes it possible to open a project that
+        # compiles SCR_zone_goto without the THZ1 room asset constant.
+        if rel.as_posix()=='sms_project_backup.yyp':continue
         assert p.suffix.lower() not in ('.sms','.gg','.rom'),p
-        z.write(p,rel.as_posix())
+        z.write(p,(archive_root/rel).as_posix())
 with zipfile.ZipFile(dest) as z:assert z.testzip() is None
 print(json.dumps(dict(zip=str(dest),bytes=dest.stat().st_size,sha256=hashlib.sha256(dest.read_bytes()).hexdigest(),validation=report),indent=2))

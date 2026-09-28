@@ -339,7 +339,7 @@ function SCR_cc_sides(cp_c) {
         // Its upper half has extent zero and its lower half extent 32. Other
         // type-5 tiles remain bounded as unsupported special dispatches.
         if ((cp_kind == 5 && cp_s.tile != 61) || cp_kind == 13 ||
-            cp_kind == 19 || cp_kind == 22 || cp_kind == 30) {
+            cp_kind == 19 || (cp_kind == 22 && cp_s.tile != 71) || cp_kind == 30) {
             cp_c.unsupported = cp_kind; // special dispatch not falsely presented as ordinary ROM behaviour
             continue;
         }
