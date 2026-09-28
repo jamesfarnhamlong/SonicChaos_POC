@@ -227,7 +227,7 @@
     ],
     "removed_full_cell_masks": 4,
     "type_21_anchor_contact": "RESOLVED",
-    "type_10_floating": "CANONICAL - UNCHANGED",
+    "type_10_floating": "PLACEMENTS UNCHANGED; FINAL VISUAL REGISTRATION UNRESOLVED",
     "moving_type_1b_unchanged": true,
     "candidate": "THZ1 POC READY WITH DOCUMENTED ADAPTERS"
   },
@@ -311,7 +311,7 @@
       "0x39": "22364cea9bd4190b07c28aad386f011699577e3d6fd105e851ed6980be05fc45",
       "0x3A": "da066dd9609909a66e41b12048eae0b361460a1deb1e11d2f2dd181c05f6029e"
     },
-    "type_10_visual_appearance": "CANONICAL - UNCHANGED"
+    "type_10_visual_appearance": "PLACEMENTS UNCHANGED; FINAL VISUAL REGISTRATION UNRESOLVED"
   },
   "poc_19_task08": {
     "milestone": "POC 19.1",
@@ -381,6 +381,203 @@
       "physics_source_unchanged": true,
       "explicit_render_y_delta": 18
     }
+  },
+  "poc_20_cleanup": {
+    "milestone": "POC 20.0",
+    "focused_checks": 47,
+    "player": {
+      "same_instance_hurt": true,
+      "terrain_in_hurt": true,
+      "immunity_geometry_gate": false
+    },
+    "type_10": {
+      "placements_unchanged": 5,
+      "measurements": [
+        {
+          "parameter": "0x06",
+          "canonical_anchor_y": 846,
+          "draw_y": 847,
+          "sprite_yorigin": 28,
+          "first_visible_pixel": 823,
+          "last_visible_pixel": 846,
+          "terrain_reference": 864,
+          "visual_gap": 17
+        },
+        {
+          "parameter": "0x06",
+          "canonical_anchor_y": 494,
+          "draw_y": 495,
+          "sprite_yorigin": 28,
+          "first_visible_pixel": 471,
+          "last_visible_pixel": 494,
+          "terrain_reference": 512,
+          "visual_gap": 17
+        },
+        {
+          "parameter": "0x04",
+          "canonical_anchor_y": 270,
+          "draw_y": 271,
+          "sprite_yorigin": 28,
+          "first_visible_pixel": 247,
+          "last_visible_pixel": 270,
+          "terrain_reference": 288,
+          "visual_gap": 17
+        },
+        {
+          "parameter": "0x04",
+          "canonical_anchor_y": 110,
+          "draw_y": 111,
+          "sprite_yorigin": 28,
+          "first_visible_pixel": 87,
+          "last_visible_pixel": 110,
+          "terrain_reference": 128,
+          "visual_gap": 17
+        },
+        {
+          "parameter": "0x02",
+          "canonical_anchor_y": 686,
+          "draw_y": 687,
+          "sprite_yorigin": 28,
+          "first_visible_pixel": 663,
+          "last_visible_pixel": 686,
+          "terrain_reference": 864,
+          "visual_gap": 177
+        }
+      ],
+      "visual_registration": "WINDOWS COMPARISON REQUIRED"
+    },
+    "rings": {
+      "count": 142,
+      "source_coordinates_unchanged": true,
+      "rectangle": [
+        16,
+        16
+      ],
+      "origin": [
+        8,
+        8
+      ]
+    },
+    "block_47": {
+      "post_sensor_dispatch": true,
+      "side_paths": [
+        "left",
+        "right"
+      ],
+      "vertical_velocity_8_8": -1088,
+      "horizontal_velocity": "preserved",
+      "replacement": "0x47 -> 0x46",
+      "ring_award": 10,
+      "transient": "0x0F/0x40"
+    },
+    "type_27": {
+      "phases": [
+        "allocated",
+        "sleeping",
+        "update_awake",
+        "sat_visible"
+      ],
+      "scan_cadence": 4,
+      "creation_empty_updates": 2,
+      "steady_scroll_fixture": true,
+      "camera_jump_fixture": true
+    }
+  },
+  "poc_20_0a_runtime_audit": {
+    "build": "POC 20.0A",
+    "project": "SonicChaos_POC.yyp",
+    "resources": {
+      "SCR_chaos_core": "scripts/SCR_chaos_core/SCR_chaos_core.yy",
+      "SCR_chaos_adapter": "scripts/SCR_chaos_adapter/SCR_chaos_adapter.yy",
+      "OBJ_chaos_controls": "objects/OBJ_chaos_controls/OBJ_chaos_controls.yy",
+      "OBJ_chaos_object_10": "objects/OBJ_chaos_object_10/OBJ_chaos_object_10.yy",
+      "OBJ_chaos_object_21": "objects/OBJ_chaos_object_21/OBJ_chaos_object_21.yy",
+      "OBJ_chaos_object_27": "objects/OBJ_chaos_object_27/OBJ_chaos_object_27.yy",
+      "OBJ_ring": "objects/OBJ_ring/OBJ_ring.yy"
+    },
+    "event_wiring": {
+      "OBJ_chaos_controls": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          8,
+          0
+        ]
+      ],
+      "OBJ_chaos_object_10": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          8,
+          0
+        ]
+      ],
+      "OBJ_chaos_object_21": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          8,
+          0
+        ]
+      ],
+      "OBJ_chaos_object_27": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "OBJ_ring": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          8,
+          0
+        ]
+      ]
+    },
+    "duplicate_active_resources": false,
+    "ordinary_chaos_damage_uses_lost_a": false,
+    "ring_draw_event_was_missing_before_20.0A": true
   },
   "enemy_research": {
     "verified_placements": 15,
@@ -456,8 +653,8 @@
     }
   },
   "source_sha256": {
-    "scripts\\SCR_chaos_core\\SCR_chaos_core.gml": "de2489879ee18bda4cec73184850a3f3fe823c30af3830a1e78edf731736d3f1",
+    "scripts\\SCR_chaos_core\\SCR_chaos_core.gml": "89274569d79cb8e7395080ae1b182ec8337c27bd302078b6a49d05df51026a37",
     "scripts\\SCR_chaos_core_data\\SCR_chaos_core_data.gml": "2cd1ccf1eb6b789e1f0d35284a576eaa8638cac0d82090fc4c63d889ee78ace0",
-    "scripts\\SCR_chaos_adapter\\SCR_chaos_adapter.gml": "ef2514df9a6101f341f72ee7bcb04df4a9ec1ea14d261bdaf6f5f6016e8a1717"
+    "scripts\\SCR_chaos_adapter\\SCR_chaos_adapter.gml": "10b83d2564f5ac797c5b0da9a470f0c7ae45c75d068636e48f5d9c68ecb95690"
   }
 }

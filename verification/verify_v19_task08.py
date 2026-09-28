@@ -63,8 +63,8 @@ sprite21 = json.loads((ROOT / "sprites/SPR_chaos_object_21/SPR_chaos_object_21.y
 assert sprite21["sequence"]["yorigin"] == 36
 assert closure["type_21"]["poc_18_5"]["sprite_yorigin"] == 36
 draw21 = (ROOT / "objects/OBJ_chaos_object_21/Draw_0.gml").read_text()
-assert "draw_sprite_ext" in draw21 and "x,y+18" in draw21
-assert all(token not in draw21 for token in ("y =", "chaosYU", "chaosOriginY"))
+assert "draw_sprite_ext" in draw21 and "SCR_chaos_mapped_render_y(y,17)" in draw21
+assert all(token not in draw21 for token in ("chaosYU", "chaosOriginY"))
 
 # Block $47: exact cells and palette-aware artwork, then terrain replacement.
 cells47 = closure["block_47"]["cells"]
@@ -80,9 +80,10 @@ core = (ROOT / "scripts/SCR_chaos_core/SCR_chaos_core.gml").read_text()
 adapter = (ROOT / "scripts/SCR_chaos_adapter/SCR_chaos_adapter.gml").read_text()
 for token in ("cp_kind == 22 && cp_s.tile == 71", "cp_c.move & 2", "cp_c.state != 15",
               "cp_c.state != 16", "cp_c.state != 21", "cp_c.state != 26",
-              "global.chaosTileIds[cp_s.index] = 70", "cp_c.vy = -1088"):
+              "global.chaosTileIds[cp_index] = 70", "cp_c.vy = -1088"):
     assert token in core, token
-block47_core = core[core.index("cp_kind == 22"):core.index("cp_kind == 22") + 1000]
+block47_core = core[core.index("function SCR_cc_terrain_response"):
+    core.index("function SCR_cc_shared")]
 assert "cp_c.vx = -1088" not in block47_core
 assert "cp_c.state =" not in block47_core and "cp_c.next =" not in block47_core
 for token in ("SCR_chaos_bcd_add(global.chaosType10D29A,10)", "global.ring += 10",
@@ -93,7 +94,7 @@ assert "chaosType = $0F" in transient and "chaosParameter = $40" in transient
 transient_yy = json.loads((ROOT / "objects/OBJ_chaos_object_0F_transient/OBJ_chaos_object_0F_transient.yy").read_text())
 assert transient_yy["solid"] is False and transient_yy["spriteMaskId"] is None
 assert all(event["eventType"] != 4 for event in transient_yy["eventList"])
-assert "OBJ_chaos_object_10" not in core[core.index("cp_kind == 22"):core.index("cp_kind == 22") + 900]
+assert "OBJ_chaos_object_10" not in block47_core
 assert bcd_add(0x09, 10) == 0x19 and bcd_add(0x90, 10) == 0x99
 
 # The $46 refresh must cover the flattened $47 art at terrain depth, never in
@@ -109,8 +110,8 @@ block46 = Image.open(ROOT / assets["block_46_assets"][0]["root_png"]).convert("R
 assert hashlib.sha256(block46.tobytes()).hexdigest() == assets["block_46_rgba_sha256"]
 assert set(block46.getdata()) == {(0, 170, 255, 255)}
 
-def block47_eligible(rolling: bool, state: int, contacts: int, vx: int) -> bool:
-    return rolling and state not in (0x0F, 0x10, 0x15, 0x1A) and ((contacts & 12) != 0 or vx >= 0)
+def block47_eligible(rolling: bool, state: int, contacts: int, vy: int) -> bool:
+    return rolling and state not in (0x0F, 0x10, 0x15, 0x1A) and ((contacts & 13) != 0 or vy >= 0)
 
 assert block47_eligible(True, 9, 0, 256)
 assert block47_eligible(True, 9, 4, -256)

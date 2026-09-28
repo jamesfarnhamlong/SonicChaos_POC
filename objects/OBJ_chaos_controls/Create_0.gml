@@ -12,5 +12,7 @@ global.chaosLastEnemyScore2 = 0;
 global.chaosLastSoundRequest = 0;
 global.chaosMusicRestoreRequested = false;
 global.chaosGlobalFrame = 0;
+global.chaosDamageBlinkTimer = 0;
+global.chaos47BreakNotice = 0;
 global.chaosBlock47Broken = [false,false,false,false];
 SCR_chaos_type09_create_all();

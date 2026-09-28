@@ -129,7 +129,7 @@ assert "image_speed = 0.25" in ring_create
 ring_draw_path = ROOT / "objects/OBJ_ring/Draw_0.gml"
 assert ring_draw_path.exists()
 ring_draw = ring_draw_path.read_text()
-assert "if (room == ROM_chaos_thz1) draw_sprite(SPR_ring, chaosTHZFrame, x, y);" in ring_draw
+assert "draw_sprite_part(SPR_ring,floor(chaosTHZFrame),0,1,16,16" in ring_draw
 assert "else draw_self();" in ring_draw
 
 # Task-05 type-$10 selector graphics. The reference audit PNGs are exact 4x

@@ -1,0 +1,101 @@
+{
+  "milestone": "POC 20.0",
+  "focused_checks": 47,
+  "player": {
+    "same_instance_hurt": true,
+    "terrain_in_hurt": true,
+    "immunity_geometry_gate": false
+  },
+  "type_10": {
+    "placements_unchanged": 5,
+    "measurements": [
+      {
+        "parameter": "0x06",
+        "canonical_anchor_y": 846,
+        "draw_y": 847,
+        "sprite_yorigin": 28,
+        "first_visible_pixel": 823,
+        "last_visible_pixel": 846,
+        "terrain_reference": 864,
+        "visual_gap": 17
+      },
+      {
+        "parameter": "0x06",
+        "canonical_anchor_y": 494,
+        "draw_y": 495,
+        "sprite_yorigin": 28,
+        "first_visible_pixel": 471,
+        "last_visible_pixel": 494,
+        "terrain_reference": 512,
+        "visual_gap": 17
+      },
+      {
+        "parameter": "0x04",
+        "canonical_anchor_y": 270,
+        "draw_y": 271,
+        "sprite_yorigin": 28,
+        "first_visible_pixel": 247,
+        "last_visible_pixel": 270,
+        "terrain_reference": 288,
+        "visual_gap": 17
+      },
+      {
+        "parameter": "0x04",
+        "canonical_anchor_y": 110,
+        "draw_y": 111,
+        "sprite_yorigin": 28,
+        "first_visible_pixel": 87,
+        "last_visible_pixel": 110,
+        "terrain_reference": 128,
+        "visual_gap": 17
+      },
+      {
+        "parameter": "0x02",
+        "canonical_anchor_y": 686,
+        "draw_y": 687,
+        "sprite_yorigin": 28,
+        "first_visible_pixel": 663,
+        "last_visible_pixel": 686,
+        "terrain_reference": 864,
+        "visual_gap": 177
+      }
+    ],
+    "visual_registration": "WINDOWS COMPARISON REQUIRED"
+  },
+  "rings": {
+    "count": 142,
+    "source_coordinates_unchanged": true,
+    "rectangle": [
+      16,
+      16
+    ],
+    "origin": [
+      8,
+      8
+    ]
+  },
+  "block_47": {
+    "post_sensor_dispatch": true,
+    "side_paths": [
+      "left",
+      "right"
+    ],
+    "vertical_velocity_8_8": -1088,
+    "horizontal_velocity": "preserved",
+    "replacement": "0x47 -> 0x46",
+    "ring_award": 10,
+    "transient": "0x0F/0x40"
+  },
+  "type_27": {
+    "phases": [
+      "allocated",
+      "sleeping",
+      "update_awake",
+      "sat_visible"
+    ],
+    "scan_cadence": 4,
+    "creation_empty_updates": 2,
+    "steady_scroll_fixture": true,
+    "camera_jump_fixture": true
+  }
+}

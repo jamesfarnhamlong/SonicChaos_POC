@@ -1,0 +1,96 @@
+{
+  "build": "POC 20.0A",
+  "project": "SonicChaos_POC.yyp",
+  "resources": {
+    "SCR_chaos_core": "scripts/SCR_chaos_core/SCR_chaos_core.yy",
+    "SCR_chaos_adapter": "scripts/SCR_chaos_adapter/SCR_chaos_adapter.yy",
+    "OBJ_chaos_controls": "objects/OBJ_chaos_controls/OBJ_chaos_controls.yy",
+    "OBJ_chaos_object_10": "objects/OBJ_chaos_object_10/OBJ_chaos_object_10.yy",
+    "OBJ_chaos_object_21": "objects/OBJ_chaos_object_21/OBJ_chaos_object_21.yy",
+    "OBJ_chaos_object_27": "objects/OBJ_chaos_object_27/OBJ_chaos_object_27.yy",
+    "OBJ_ring": "objects/OBJ_ring/OBJ_ring.yy"
+  },
+  "event_wiring": {
+    "OBJ_chaos_controls": [
+      [
+        0,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        8,
+        0
+      ]
+    ],
+    "OBJ_chaos_object_10": [
+      [
+        0,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        8,
+        0
+      ]
+    ],
+    "OBJ_chaos_object_21": [
+      [
+        0,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        8,
+        0
+      ]
+    ],
+    "OBJ_chaos_object_27": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    "OBJ_ring": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        8,
+        0
+      ]
+    ]
+  },
+  "duplicate_active_resources": false,
+  "ordinary_chaos_damage_uses_lost_a": false,
+  "ring_draw_event_was_missing_before_20.0A": true
+}

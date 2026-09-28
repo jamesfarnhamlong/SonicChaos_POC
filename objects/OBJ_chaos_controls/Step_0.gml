@@ -1,4 +1,9 @@
 global.chaosGlobalFrame = (global.chaosGlobalFrame+1) & $FF;
+if (global.chaosDamageBlinkTimer > 0) {
+    global.chaosDamageBlinkTimer--;
+    global.playerBlink = global.chaosDamageBlinkTimer > 0;
+}
+if (global.chaos47BreakNotice > 0) global.chaos47BreakNotice--;
 
 // R restarts the Chaos test. F2 switches between Chaos and the engine sample.
 if (keyboard_check_pressed(vk_f2)) {

@@ -11,7 +11,7 @@ if (room == ROM_chaos_thz1) {
     draw_rectangle(vx, vy+vh-15, vx+camera_get_view_width(cam), vy+vh, false);
     draw_set_alpha(1);
     draw_set_color(c_white);
-    draw_text_transformed(vx+4, vy+vh-13, "THZ POC 19.1 | R: restart  F3: debug", 0.65, 0.65, 0);
+    draw_text_transformed(vx+4, vy+vh-13, "THZ POC 20.0A | R: restart  F3: debug", 0.65, 0.65, 0);
     if (global.chaosNotice > 0) draw_text_transformed(vx+4,vy+vh-40,"CHECKPOINT SAVED",0.75,0.75,0);
     // Type $18 presentation is ROM-derived; the completion trigger remains the bounded POC adapter.
     if (global.chaosComplete) {
@@ -53,6 +53,28 @@ if (room == ROM_chaos_thz1 && global.chaosDebug && instance_exists(OBJ_player)) 
         " offset="+string(cp_object.chaosOffset)+" param="+string(cp_object.chaosParameter));
     if (instance_exists(cp_spike)) draw_text(vx+5,vy+81,"$1B state="+string(cp_spike.chaosState)+
         " offset="+string(cp_spike.chaosOffset));
+    draw_text(vx+5,vy+97,"BUILD: POC20-A TASK09");
+    if (variable_instance_exists(p,"chaosCore")) {
+        var cp_debug_core = p.chaosCore;
+        draw_text(vx+5,vy+113,"contact_floor="+string(cp_debug_core.debug_contact_floor)+
+            " contact_left="+string(cp_debug_core.debug_contact_left)+
+            " contact_right="+string(cp_debug_core.debug_contact_right)+
+            " contact_ceiling="+string(cp_debug_core.debug_contact_ceiling));
+        draw_text(vx+5,vy+129,"terrain_block_id="+string(cp_debug_core.debug_terrain_block_id)+
+            " terrain_response="+string(cp_debug_core.debug_terrain_response)+
+            " player_state="+string(cp_debug_core.state)+
+            " rolling_flag="+string((cp_debug_core.move & 2) != 0));
+    }
+    var cp_27 = instance_nearest(p.x,p.y,OBJ_chaos_object_27);
+    if (instance_exists(cp_27)) draw_text(vx+5,vy+145,"$27 allocated="+string(cp_27.chaosAllocated)+
+        " sleeping="+string(cp_27.chaosSleeping)+" awake="+string(cp_27.chaosUpdateAwake)+
+        " sat_visible="+string(cp_27.chaosSATVisible)+" state="+string(cp_27.chaosState)+
+        " placement_scan_phase="+string(global.chaosGlobalFrame & 3));
+    if (global.chaos47BreakNotice > 0) {
+        draw_set_color(c_yellow);
+        draw_text(vx+5,vy+161,"$47 BREAK");
+        draw_set_color(c_white);
+    }
 }
 
 if (room == ROM_chaos_thz1 && global.chaosDebug && instance_exists(OBJ_player)) {

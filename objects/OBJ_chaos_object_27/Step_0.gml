@@ -24,6 +24,10 @@ if (!chaosActive) {
     chaosAnimTick = 0;
     chaosPresentation = 0;
     chaosActive = true;
+    chaosAllocated = true;
+    chaosSleeping = true;
+    chaosUpdateAwake = false;
+    chaosSATVisible = false;
     visible = false;
     exit;
 }
@@ -34,16 +38,22 @@ var cp_accepted = cp_rx >= -96 && cp_rx <= 351 && cp_ry >= -96 && cp_ry <= 351;
 if ((chaosState == 0 || chaosState == 1) && !cp_accepted) {
     // Pre-trigger generic cleanup releases occupancy for later recreation.
     chaosActive = false;
+    chaosAllocated = false;
+    chaosSleeping = false;
+    chaosUpdateAwake = false;
+    chaosSATVisible = false;
     chaosPresentation = 0;
     visible = false;
     exit;
 }
 
 var cp_sat_active = cp_rx >= -32 && cp_rx <= 287 && cp_ry >= -32 && cp_ry <= 287;
-if (!cp_sat_active) {
-    visible = false;
-    exit;
+chaosSATVisible = cp_sat_active;
+if (!chaosUpdateAwake && !cp_sat_active) {
+    chaosSleeping = true; visible = false; exit;
 }
+chaosSleeping = false;
+chaosUpdateAwake = true;
 
 if (chaosState == 0) {
     // First update: empty state 0 requests state 1; piece count remains zero.
@@ -58,7 +68,7 @@ if (chaosPresentation == 1) {
     chaosVX = -$0280;
     image_index = 0;
 }
-visible = true;
+visible = chaosSATVisible && chaosPresentation >= 2;
 
 chaosAnimTick++;
 image_index = (chaosAnimTick div 2) & 1;
@@ -67,6 +77,10 @@ var cp_p = instance_find(OBJ_player,0);
 // State 3 tests the strict removal boundary before overlap or movement.
 if (chaosState == 3 && instance_exists(cp_p) && abs(floor(x)-floor(cp_p.x)) >= 384) {
     chaosActive = false;
+    chaosAllocated = false;
+    chaosSleeping = false;
+    chaosUpdateAwake = false;
+    chaosSATVisible = false;
     chaosPresentation = 0;
     visible = false;
     exit;
