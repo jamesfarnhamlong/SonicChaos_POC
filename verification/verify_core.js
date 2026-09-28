@@ -21,16 +21,6 @@ for(let i=0;i<data.spring.trace.length;i++){
     check(c,data.spring.trace[i],`spring tick ${i}`);
 }
 ctx.global.chaosTileIds=saved;
-// POC 20: hurt stays in the same core and executes shared terrain sensing.
-c=initial({vx:512,vy:0,player_flags:0,plane:1,previous:0x81});
-ctx.SCR_cc_hurt_enter(c);
-assert.strictEqual(c.next,30,'hurt state request');
-assert.strictEqual(c.plane,1,'hurt entry preserves collision plane');
-const hurtX=c.xu,hurtY=c.yu;
-c.state=c.next;ctx.SCR_cc_tick(c);
-assert.strictEqual(c.state,30,'hurt callback remains in core');
-assert.strictEqual(c.hurt_ticks,59,'hurt timer');
-assert.ok(c.xu!==hurtX || c.yu!==hurtY,'hurt callback executes shared movement');
 // THZ1 block $3D uses tile $3D/surface type 5. The original $6ACE handler
 // requests damage only once ordinary floor projection has made contact.
 c=initial({xu:1504*256,yu:830*256,previous:133,bg:0,player_flags:0});

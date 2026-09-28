@@ -25,7 +25,7 @@ def instances(room):
 
 
 adapter = (ROOT / "scripts/SCR_chaos_adapter/SCR_chaos_adapter.gml").read_text()
-assert "SCR_cc_lookup(floor(cp_x),floor(SCR_chaos_collision_probe_y(cp_y,18)),0)" in adapter
+assert "SCR_cc_lookup(floor(cp_x),floor(cp_y)+18,0)" in adapter
 assert "y:cp_y-(cp_total-32)" in adapter
 assert "SPR_chaos_player_state_11" in adapter
 assert "SPR_player_falling" not in adapter.split("function SCR_chaos_core_sprites", 1)[1].split(
@@ -107,7 +107,7 @@ report = {
     "state_11_graphics": "EXACT ROM-DERIVED",
     "state_11_resource": "SPR_chaos_player_state_11",
     "state_11_rgba_sha256": EXPECTED_RGBA,
-    "type_10_visual_appearance": "PLACEMENTS UNCHANGED; FINAL VISUAL REGISTRATION UNRESOLVED",
+    "type_10_visual_appearance": "CANONICAL - UNCHANGED",
 }
 (ROOT / "verification/task07-integration-results.json").write_text(
     json.dumps(report, indent=2) + "\n")

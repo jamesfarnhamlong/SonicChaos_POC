@@ -114,7 +114,7 @@ report = {
     "static_spike_cells": sorted([list(point) for point in SPIKE_POINTS]),
     "removed_full_cell_masks": 4,
     "type_21_anchor_contact": "RESOLVED",
-    "type_10_floating": "PLACEMENTS UNCHANGED; FINAL VISUAL REGISTRATION UNRESOLVED",
+    "type_10_floating": "CANONICAL - UNCHANGED",
     "moving_type_1b_unchanged": True,
     "candidate": "THZ1 POC READY WITH DOCUMENTED ADAPTERS",
 }

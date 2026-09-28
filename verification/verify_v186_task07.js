@@ -8,7 +8,6 @@ for(const n of ['SCR_chaos_motion_data','SCR_chaos_core_data','SCR_chaos_core'])
 ctx.SCR_chaos_motion_data();ctx.SCR_chaos_core_data();
 
 const adapter=fs.readFileSync(path.join(root,'scripts','SCR_chaos_adapter','SCR_chaos_adapter.gml'),'utf8');
-ctx.SCR_chaos_collision_probe_y=(canonicalY,probeOffset)=>canonicalY+probeOffset;
 const helper=adapter.match(/function SCR_chaos_object_floor_project\(cp_x, cp_y\) \{[\s\S]*?\r?\n\}\r?\n\r?\n\/\/ Type \$21/);
 assert(helper,'object-floor helper not found');
 vm.runInContext(helper[0].replace(/\r?\n\r?\n\/\/ Type \$21[\s\S]*$/,''),ctx,{filename:'SCR_chaos_object_floor_project.gml'});

@@ -14,14 +14,6 @@ function SCR_chaos_core_attach(cp_p) {
     cp_p.chaosAdapterLoop = false;
     cp_p.chaosSpringVisual = false;
 }
-// Explicit adapter vocabulary: canonical/data anchors, render anchors, canvas
-// origins and collision probes are intentionally independent concepts.
-function SCR_chaos_mapped_render_y(cp_canonical_anchor_y, cp_policy_y) {
-    return cp_canonical_anchor_y + 1 + cp_policy_y; // recovered SMS SAT Y+1
-}
-function SCR_chaos_collision_probe_y(cp_canonical_anchor_y, cp_probe_y) {
-    return cp_canonical_anchor_y + cp_probe_y;
-}
 function SCR_chaos_core_publish(cp_p) {
     var cp_c = cp_p.chaosCore;
     cp_p.x = cp_c.xu/256;
@@ -118,16 +110,6 @@ function SCR_chaos_adapter_step(cp_p) {
     cp_c.state11_active = global.chaosPowerCode == $04 && global.chaosPowerTimer > 0;
     cp_c.state11_camera_y = floor(camera_get_view_y(view_camera[0]));
     SCR_cc_tick(cp_c);
-    if (cp_c.break47_index >= 0) {
-        var cp_break_slot = cp_c.break47_index-(8*128+104);
-        if (cp_break_slot >= 0 && cp_break_slot < 4 && !global.chaosBlock47Broken[cp_break_slot]) {
-            global.chaosBlock47Broken[cp_break_slot] = true;
-            global.chaosType10D29A = SCR_chaos_bcd_add(global.chaosType10D29A,10);
-            global.ring += 10;
-            instance_create_depth(3328+cp_break_slot*32+16,264,-21,OBJ_chaos_object_0F_transient);
-        }
-        cp_c.break47_index = -1;
-    }
     // Widescreen room boundary adapter. Original camera-relative 256px clipping is omitted.
     if (cp_c.xu < 16*256 || cp_c.xu > (room_width-9)*256) {
         cp_c.xu = clamp(cp_c.xu,16*256,(room_width-9)*256); cp_c.vx = 0;
@@ -301,10 +283,14 @@ function SCR_chaos_apply_hazard_damage(cp_p) {
         instance_create(cp_p.x,cp_p.y,OBJ_player_lost_b);
     }
     global.playerBlink = true;
-    global.chaosDamageBlinkTimer = 60;
+    // Immunity intentionally outlasts the bounded hurt state so recovered
+    // movement can occur while blinking without disabling terrain sensing.
+    global.chaosDamageBlinkTimer = 90;
+    with (cp_p) alarm[2] = 1;
     SCR_cc_hurt_enter(cp_p.chaosCore);
     cp_p.chaosSupport = noone;
     cp_p.chaosGrounded = false;
+    cp_p.chaosSpringVisual = false;
     if (global.music == 1) audio_play_sound(SFX_sonic_lost_rings,10,false);
 }
 
@@ -314,7 +300,7 @@ function SCR_chaos_apply_hazard_damage(cp_p) {
 function SCR_chaos_object_floor_project(cp_x, cp_y) {
     // Probe 18 pixels below the object anchor, then apply the profile
     // correction to the original, unshifted anchor Y.
-    var cp_s = SCR_cc_lookup(floor(cp_x),floor(SCR_chaos_collision_probe_y(cp_y,18)),0);
+    var cp_s = SCR_cc_lookup(floor(cp_x),floor(cp_y)+18,0);
     if ((cp_s.flags & 192) == 0) return {grounded:false,y:cp_y};
     var cp_solid = (cp_s.flags & 128) != 0;
     var cp_value = cp_s.vertical;

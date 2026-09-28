@@ -10,12 +10,7 @@ function SCR_cc_new(cp_x, cp_y) {
         held:0, pressed:0, jump_ticks:0, sound:0, unsupported:0,
         hazard:0, angle:0, magnitude:0, twist_variant:0, level:0,
         state11_active:false, state11_camera_y:0,
-        state11_anim_tick:0, state11_frame:56, break47_index:-1,
-        terrain_response_index:-1, terrain_response_contacts:0,
-        terrain_response_vy:0, hurt_ticks:0,
-        debug_contact_floor:false, debug_contact_left:false,
-        debug_contact_right:false, debug_contact_ceiling:false,
-        debug_terrain_block_id:-1, debug_terrain_response:0};
+        state11_anim_tick:0, state11_frame:56, hurt_ticks:0};
 }
 function SCR_cc_merge(cp_c) {
     cp_c.contacts = cp_c.bg;
@@ -287,10 +282,6 @@ function SCR_cc_floor(cp_c) {
     var cp_s = SCR_cc_lookup(floor(cp_c.xu/256),floor(cp_c.yu/256)+18+cp_dy,cp_c.plane);
     cp_c.tile = cp_s.tile;
     SCR_cc_project_floor(cp_c,cp_s);
-    if ((cp_c.bg & 2) != 0) {
-        cp_c.debug_contact_floor = true;
-        cp_c.debug_terrain_block_id = cp_s.tile;
-    }
     cp_c.previous = cp_s.flags;
     var cp_kind = cp_s.flags & 31;
     if (cp_kind == 18) SCR_cc_ramp(cp_c,cp_old_mod,cp_s.tile);
@@ -302,10 +293,6 @@ function SCR_cc_floor(cp_c) {
     }
     else if (cp_kind == 9 || cp_kind == 20) SCR_cc_spring(cp_c,cp_kind,cp_s.tile);
     else if (cp_kind == 23) SCR_cc_twist_enter(cp_c,cp_s.tile);
-    else if (cp_kind == 22 && cp_s.tile == 71 && (cp_c.bg & 2) != 0) {
-        cp_c.terrain_response_index = cp_s.index;
-        cp_c.terrain_response_contacts |= 2;
-    }
     else if (cp_kind == 0 || cp_kind == 6 || cp_kind == 7) {
         // $6C45/$6C4D: empty floor can request falling even when projection returned early.
         if ((cp_c.objects & 32) == 0) cp_c.bg &= ~2;
@@ -316,7 +303,7 @@ function SCR_cc_floor(cp_c) {
         }
     } else if (cp_kind != 1 && cp_kind != 2 && cp_kind != 3 && cp_kind != 4 &&
                cp_kind != 10 && cp_kind != 15 && cp_kind != 17 && cp_kind != 21 &&
-               cp_kind != 22 && cp_kind != 24 && cp_kind != 26 && cp_kind != 28 && cp_kind != 29 && cp_kind != 30) {
+               cp_kind != 24 && cp_kind != 26 && cp_kind != 28 && cp_kind != 29 && cp_kind != 30) {
         cp_c.unsupported = cp_kind; // recorded, never substituted by coordinate-specific fixes
     }
 }
@@ -352,20 +339,12 @@ function SCR_cc_sides(cp_c) {
         // Its upper half has extent zero and its lower half extent 32. Other
         // type-5 tiles remain bounded as unsupported special dispatches.
         if ((cp_kind == 5 && cp_s.tile != 61) || cp_kind == 13 ||
-            cp_kind == 19 || (cp_kind == 22 && cp_s.tile != 71) || cp_kind == 30) {
+            cp_kind == 19 || cp_kind == 22 || cp_kind == 30) {
             cp_c.unsupported = cp_kind; // special dispatch not falsely presented as ordinary ROM behaviour
             continue;
         }
-        if (SCR_cc_project_side(cp_c,cp_s,cp_right)) {
-            if (cp_right) cp_c.debug_contact_right = true;
-            else cp_c.debug_contact_left = true;
-            cp_c.debug_terrain_block_id = cp_s.tile;
-            if (cp_kind == 10) SCR_cc_spring(cp_c,cp_right ? -1 : 1,cp_s.tile);
-            if (cp_kind == 22 && cp_s.tile == 71) {
-                cp_c.terrain_response_index = cp_s.index;
-                cp_c.terrain_response_contacts |= cp_right ? 4 : 8;
-            }
-        }
+        if (SCR_cc_project_side(cp_c,cp_s,cp_right) && cp_kind == 10)
+            SCR_cc_spring(cp_c,cp_right ? -1 : 1,cp_s.tile);
     }
 }
 function SCR_cc_ceiling(cp_c) {
@@ -384,50 +363,13 @@ function SCR_cc_ceiling(cp_c) {
     var cp_local = cp_s.ay & 31;
     if (cp_value < cp_local) return;
     cp_c.yu = (cp_c.yu+(cp_value-cp_local)*256)&16777215;
-    cp_c.bg |= 1; SCR_cc_merge(cp_c);
-    cp_c.debug_contact_ceiling = true;
-    cp_c.debug_terrain_block_id = cp_s.tile;
-    if (cp_kind == 22 && cp_s.tile == 71) {
-        cp_c.terrain_response_index = cp_s.index;
-        cp_c.terrain_response_contacts |= 1;
-    }
-    cp_c.vy = 256; cp_c.bg &= ~1;
-}
-// Task 09: terrain surface responses run once after all sensors have merged.
-// $47/$16 accepts rolling side/ceiling contact regardless of velocity direction;
-// pure floor/top contact additionally requires nonnegative entry Y velocity.
-function SCR_cc_terrain_response(cp_c) {
-    var cp_index = cp_c.terrain_response_index;
-    var cp_hits = cp_c.terrain_response_contacts;
-    if (cp_index < 0) return;
-    cp_c.debug_terrain_response = 1;
-    var cp_state_ok = cp_c.state != 15 && cp_c.state != 16 &&
-        cp_c.state != 21 && cp_c.state != 26;
-    var cp_direction_ok = (cp_hits & 13) != 0 || cp_c.terrain_response_vy >= 0;
-    if ((cp_c.move & 2) != 0 && cp_state_ok && cp_direction_ok) {
-        cp_c.vy = -1088; // $FBC0; horizontal velocity/state are preserved.
-        cp_c.bg &= ~2; cp_c.contacts &= ~2; cp_c.move |= 1;
-        global.chaosTileIds[cp_index] = 70;
-        cp_c.break47_index = cp_index;
-        cp_c.debug_terrain_response = 2;
-        global.chaos47BreakNotice = 60;
-    }
+    cp_c.bg |= 1; SCR_cc_merge(cp_c); cp_c.vy = 256; cp_c.bg &= ~1;
 }
 function SCR_cc_shared(cp_c) {
-    cp_c.terrain_response_index = -1;
-    cp_c.terrain_response_contacts = 0;
-    cp_c.terrain_response_vy = cp_c.vy;
-    cp_c.debug_contact_floor = false;
-    cp_c.debug_contact_left = false;
-    cp_c.debug_contact_right = false;
-    cp_c.debug_contact_ceiling = false;
-    cp_c.debug_terrain_block_id = -1;
-    cp_c.debug_terrain_response = 0;
     SCR_cc_input(cp_c);
     if (cp_c.state < 5) cp_c.surface_delta = 0;
     SCR_cc_x(cp_c); SCR_cc_y(cp_c);
     SCR_cc_floor(cp_c); SCR_cc_sides(cp_c); SCR_cc_ceiling(cp_c); SCR_cc_merge(cp_c);
-    SCR_cc_terrain_response(cp_c);
     if ((cp_c.pressed & 48) != 0) SCR_cc_jump(cp_c);
 }
 function SCR_cc_state11_enter(cp_c) {
@@ -436,20 +378,27 @@ function SCR_cc_state11_enter(cp_c) {
     cp_c.state11_anim_tick = 0; cp_c.state11_frame = 56;
     cp_c.state11_active = true;
 }
-// Bounded state-$1E hurt adapter. It stays in the same core and therefore uses
-// the ordinary floor/side/ceiling/plane pipeline on every update.
+// GameMaker hurt adapter: state $1E remains in this core and deliberately
+// reuses the ordinary terrain pipeline instead of changing player objects.
 function SCR_cc_hurt_enter(cp_c) {
-    cp_c.next = 30; cp_c.hurt_ticks = 60;
+    cp_c.state = 30; cp_c.next = 30; cp_c.hurt_ticks = 30;
     cp_c.vx = (cp_c.player_flags & 16) != 0 ? 288 : -288;
     cp_c.vy = -1024;
+    cp_c.input_delta = 0; cp_c.surface_delta = 0;
     cp_c.move = (cp_c.move | 1) & ~2;
     cp_c.bg &= ~2; cp_c.contacts &= ~2;
 }
 function SCR_cc_hurt_tick(cp_c) {
     SCR_cc_shared(cp_c);
-    cp_c.next = 30;
+    var cp_grounded = (cp_c.contacts & 2) != 0;
+    if (cp_grounded && cp_c.vy >= 0) {
+        cp_c.vy = 0;
+        cp_c.move &= ~1;
+    } else cp_c.move |= 1;
     cp_c.hurt_ticks = max(0,cp_c.hurt_ticks-1);
-    if (cp_c.hurt_ticks == 0) { cp_c.next = 14; cp_c.move |= 1; }
+    if (cp_c.hurt_ticks > 0) cp_c.next = 30;
+    else if (cp_grounded) SCR_cc_walk(cp_c);
+    else { cp_c.next = 14; cp_c.move |= 1; }
 }
 // Task 06: state $11 callback $3A7C. Coordinates and velocities retain the
 // core's integer 16.8 / signed 8.8 representation.

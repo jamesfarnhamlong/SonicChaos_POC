@@ -1,89 +1,31 @@
-// THZ1 numeric object type $27. Task 08 replaces only generic lifetime and
-// presentation timing; proximity, oscillation, contact and removal stay intact.
+// THZ1 numeric object type $27, reconciled with the completed formal audit.
 var cp_cam = view_camera[0];
-var cp_cam_x = camera_get_view_x(cp_cam);
-var cp_cam_y = camera_get_view_y(cp_cam);
+var cp_left = camera_get_view_x(cp_cam)-128;
+var cp_right = camera_get_view_x(cp_cam)+camera_get_view_width(cp_cam)+384;
 
 if (!chaosActive) {
-    // The placement scan runs every four object updates and creates after the
-    // current scheduler pass with an empty frame.
-    if ((global.chaosGlobalFrame & 3) != 0) exit;
-    var cp_origin_rx = chaosOriginX-cp_cam_x;
-    var cp_origin_ry = chaosOriginY-cp_cam_y;
-    if (cp_origin_rx < -96 || cp_origin_rx > 351 ||
-        cp_origin_ry < -96 || cp_origin_ry > 351) exit;
-    x = chaosOriginX;
-    y = chaosOriginY;
-    chaosXU = round(x*256);
-    chaosYU = round(y*256);
-    chaosState = 0;
-    chaosVX = 0;
-    chaosVY = 0;
-    chaosCounter = 0;
-    chaosOscTick = 0;
-    chaosAnimTick = 0;
-    chaosPresentation = 0;
-    chaosActive = true;
-    chaosAllocated = true;
-    chaosSleeping = true;
-    chaosUpdateAwake = false;
-    chaosSATVisible = false;
-    visible = false;
-    exit;
+    if (chaosOriginX < cp_left || chaosOriginX >= cp_right) exit;
+    x = chaosOriginX; y = chaosOriginY;
+    chaosXU = round(x*256); chaosYU = round(y*256);
+    chaosState = 1; chaosVX = -$0280; chaosVY = 0;
+    chaosCounter = 0; chaosOscTick = 0; chaosAnimTick = 0;
+    chaosActive = true; visible = true;
 }
 
-var cp_rx = x-cp_cam_x;
-var cp_ry = y-cp_cam_y;
-var cp_accepted = cp_rx >= -96 && cp_rx <= 351 && cp_ry >= -96 && cp_ry <= 351;
-if ((chaosState == 0 || chaosState == 1) && !cp_accepted) {
-    // Pre-trigger generic cleanup releases occupancy for later recreation.
-    chaosActive = false;
-    chaosAllocated = false;
-    chaosSleeping = false;
-    chaosUpdateAwake = false;
-    chaosSATVisible = false;
-    chaosPresentation = 0;
-    visible = false;
-    exit;
+// Before the proximity trigger, generic off-range deletion releases occupancy
+// and a later camera return recreates the original placement.
+if (chaosState == 1 && (x < cp_left || x >= cp_right)) {
+    chaosActive = false; visible = false; exit;
 }
-
-var cp_sat_active = cp_rx >= -32 && cp_rx <= 287 && cp_ry >= -32 && cp_ry <= 287;
-chaosSATVisible = cp_sat_active;
-if (!chaosUpdateAwake && !cp_sat_active) {
-    chaosSleeping = true; visible = false; exit;
-}
-chaosSleeping = false;
-chaosUpdateAwake = true;
-
-if (chaosState == 0) {
-    // First update: empty state 0 requests state 1; piece count remains zero.
-    chaosState = 1;
-    chaosPresentation = 1;
-    visible = false;
-    exit;
-}
-if (chaosPresentation == 1) {
-    // Second update: state 1 loads nonempty frame 1 and can enter SAT output.
-    chaosPresentation = 2;
-    chaosVX = -$0280;
-    image_index = 0;
-}
-visible = chaosSATVisible && chaosPresentation >= 2;
 
 chaosAnimTick++;
 image_index = (chaosAnimTick div 2) & 1;
+
 var cp_p = instance_find(OBJ_player,0);
 
 // State 3 tests the strict removal boundary before overlap or movement.
 if (chaosState == 3 && instance_exists(cp_p) && abs(floor(x)-floor(cp_p.x)) >= 384) {
-    chaosActive = false;
-    chaosAllocated = false;
-    chaosSleeping = false;
-    chaosUpdateAwake = false;
-    chaosSATVisible = false;
-    chaosPresentation = 0;
-    visible = false;
-    exit;
+    chaosActive = false; visible = false; exit;
 }
 
 var cp_overlap = false;
@@ -108,11 +50,8 @@ if (chaosState == 1) {
     x = chaosXU/256;
     // Activation compares post-movement integer X and is strictly less than 64.
     if (instance_exists(cp_p) && abs(floor(x)-floor(cp_p.x)) < 64) {
-        chaosState = 2;
-        chaosVX = 0;
-        chaosVY = 0;
-        chaosCounter = $80;
-        chaosOscTick = 0;
+        chaosState = 2; chaosVX = 0; chaosVY = 0;
+        chaosCounter = $80; chaosOscTick = 0;
     }
 } else if (chaosState == 2) {
     chaosOscTick++;
@@ -123,9 +62,7 @@ if (chaosState == 1) {
     y = chaosYU/256;
     chaosCounter = (chaosCounter-1) & $FF;
     if (chaosCounter == $FF) {
-        chaosState = 3;
-        chaosVX = -$0280;
-        chaosVY = 0;
+        chaosState = 3; chaosVX = -$0280; chaosVY = 0;
     }
 } else if (chaosState == 3) {
     // Horizontal travel resumes on update 130, one update after underflow.

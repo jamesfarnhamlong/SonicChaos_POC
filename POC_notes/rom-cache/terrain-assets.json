@@ -2,29 +2,6 @@
   "format": 1,
   "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
   "generator": "POC_notes/extract_chaos.py",
-  "piece_palette_selectors": {
-    "palette_0": "0x15",
-    "palette_1": "0x06"
-  },
-  "block_47_cells": [
-    {
-      "world_x": 3328,
-      "world_y": 256
-    },
-    {
-      "world_x": 3360,
-      "world_y": 256
-    },
-    {
-      "world_x": 3392,
-      "world_y": 256
-    },
-    {
-      "world_x": 3424,
-      "world_y": 256
-    }
-  ],
-  "block_47_rgba_sha256": "ec9e7afdafe3b1494082e1900e271643a651b19755cf23904211a3ecb42b4e3d",
   "context_composited_spring_block_ids": [
     "0x30",
     "0x31",
@@ -1454,7 +1431,7 @@
       "height": 1024,
       "root_png": "sprites/SPR_chaos_terrain_3/dd57e33b-ad36-48d4-8c15-56334af88da0.png",
       "layer_png": "sprites/SPR_chaos_terrain_3/layers/dd57e33b-ad36-48d4-8c15-56334af88da0/e709c2e0-3605-444b-a80c-bd98349d6001.png",
-      "sha256": "974ffc48a4e8a78a317818766d5b9fce7efb73bfdcdf32e072b47622e2338b83"
+      "sha256": "65fc38745e2160667f500f9a596432d0860945e22de81badc47cd6674b33cc5b"
     }
   ],
   "normalized_ring_frames": [

@@ -46,10 +46,6 @@ report['task_06_core']=json.loads((root/'verification/task06-results.json').read
 report['task_06_integration']=json.loads((root/'verification/task06-integration-results.json').read_text())
 report['task_07_core']=json.loads((root/'verification/task07-results.json').read_text())
 report['task_07_integration']=json.loads((root/'verification/task07-integration-results.json').read_text())
-report['poc_19_task08']=json.loads((root/'verification/poc19-results.json').read_text())
-report['poc_19_1_windows']=json.loads((root/'verification/poc191-results.json').read_text())
-report['poc_20_cleanup']=json.loads((root/'verification/poc20-results.json').read_text())
-report['poc_20_0a_runtime_audit']=json.loads((root/'verification/poc200a-results.json').read_text())
 sprite_manifest=json.loads((root/'POC_notes/rom-cache/thz1-object-sprites.json').read_text())
 for asset in sprite_manifest['assets']:
     sprite_path=root/asset['sprite_path']
@@ -121,7 +117,7 @@ report['type_18_presentation']={'placement':type18_manifest['placement'],
 ring_create=(root/'objects/OBJ_ring/Create_0.gml').read_text()
 assert 'image_speed = 0.25' in ring_create
 ring_draw=(root/'objects/OBJ_ring/Draw_0.gml').read_text()
-assert 'draw_sprite_part(SPR_ring,floor(chaosTHZFrame),0,1,16,16' in ring_draw
+assert 'draw_sprite(SPR_ring, chaosTHZFrame, x, y)' in ring_draw
 assert 'else draw_self();' in ring_draw
 type18_draw=(root/'objects/OBJ_chaos_object_18/Draw_0.gml').read_text()
 assert 'y + 22' in type18_draw
@@ -207,7 +203,7 @@ dest=Path(sys.argv[1]).resolve()
 with zipfile.ZipFile(dest,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
     for p in sorted(root.rglob('*')):
         rel=p.relative_to(root)
-        if not p.is_file() or any(part in ('.git','__pycache__','.deps','.video-deps','generated-poc18','generated-feedback','generated-poc19','generated-poc19-object-assets') for part in rel.parts):continue
+        if not p.is_file() or any(part in ('.git','__pycache__','.deps','.video-deps','generated-poc18','generated-feedback') for part in rel.parts):continue
         assert p.suffix.lower() not in ('.sms','.gg','.rom'),p
         z.write(p,rel.as_posix())
 with zipfile.ZipFile(dest) as z:assert z.testzip() is None
