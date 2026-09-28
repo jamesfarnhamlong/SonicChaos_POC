@@ -10,7 +10,7 @@ function SCR_cc_new(cp_x, cp_y) {
         held:0, pressed:0, jump_ticks:0, sound:0, unsupported:0,
         hazard:0, angle:0, magnitude:0, twist_variant:0, level:0,
         state11_active:false, state11_camera_y:0,
-        state11_anim_tick:0, state11_frame:56};
+        state11_anim_tick:0, state11_frame:56, hurt_ticks:0};
 }
 function SCR_cc_merge(cp_c) {
     cp_c.contacts = cp_c.bg;
@@ -378,6 +378,28 @@ function SCR_cc_state11_enter(cp_c) {
     cp_c.state11_anim_tick = 0; cp_c.state11_frame = 56;
     cp_c.state11_active = true;
 }
+// GameMaker hurt adapter: state $1E remains in this core and deliberately
+// reuses the ordinary terrain pipeline instead of changing player objects.
+function SCR_cc_hurt_enter(cp_c) {
+    cp_c.state = 30; cp_c.next = 30; cp_c.hurt_ticks = 30;
+    cp_c.vx = (cp_c.player_flags & 16) != 0 ? 288 : -288;
+    cp_c.vy = -1024;
+    cp_c.input_delta = 0; cp_c.surface_delta = 0;
+    cp_c.move = (cp_c.move | 1) & ~2;
+    cp_c.bg &= ~2; cp_c.contacts &= ~2;
+}
+function SCR_cc_hurt_tick(cp_c) {
+    SCR_cc_shared(cp_c);
+    var cp_grounded = (cp_c.contacts & 2) != 0;
+    if (cp_grounded && cp_c.vy >= 0) {
+        cp_c.vy = 0;
+        cp_c.move &= ~1;
+    } else cp_c.move |= 1;
+    cp_c.hurt_ticks = max(0,cp_c.hurt_ticks-1);
+    if (cp_c.hurt_ticks > 0) cp_c.next = 30;
+    else if (cp_grounded) SCR_cc_walk(cp_c);
+    else { cp_c.next = 14; cp_c.move |= 1; }
+}
 // Task 06: state $11 callback $3A7C. Coordinates and velocities retain the
 // core's integer 16.8 / signed 8.8 representation.
 function SCR_cc_state11_tick(cp_c) {
@@ -425,6 +447,7 @@ function SCR_cc_tick(cp_c) {
     cp_c.state = cp_c.next; cp_c.sound = 0; cp_c.unsupported = 0; cp_c.hazard = 0;
     if (cp_c.state == 34) { SCR_cc_twist_tick(cp_c); return; }
     if (cp_c.state == 17) { SCR_cc_state11_tick(cp_c); return; }
+    if (cp_c.state == 30) { SCR_cc_hurt_tick(cp_c); return; }
     if ((cp_c.state == 7 && (cp_c.contacts & 8) != 0) || (cp_c.state == 8 && (cp_c.contacts & 4) != 0)) {
         SCR_cc_walk(cp_c); return;
     }

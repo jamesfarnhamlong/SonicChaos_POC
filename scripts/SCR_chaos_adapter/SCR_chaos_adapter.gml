@@ -40,9 +40,11 @@ function SCR_chaos_core_sprites(cp_p) {
         if (image_xscale < 0) cp_c.player_flags |= 16; else cp_c.player_flags &= ~16;
         var cp_sprite = SPR_player_walk;
         var cp_state11_visual = cp_c.state == $11 || cp_c.next == $11;
+        var cp_hurt_visual = cp_c.state == $1E || cp_c.next == $1E;
         // Task 07: exact ROM frames $38/$39/$3A. The core owns the canonical
         // 8/4/8/4 timing; GameMaker animation timing is deliberately disabled.
         if (cp_state11_visual) cp_sprite = SPR_chaos_player_state_11;
+        else if (cp_hurt_visual) cp_sprite = SPR_player_falling;
         else if (cp_c.next == 15) cp_sprite = SPR_player_spin_dash;
         else if (cp_c.state == 34 || cp_c.next == 9 || (cp_c.move & 2) != 0) cp_sprite = SPR_player_spin;
         else if (cp_p.chaosSpringVisual && cp_c.vy < 0) cp_sprite = SPR_player_jump;
@@ -270,10 +272,26 @@ function SCR_chaos_cancel_state11(cp_p) {
 function SCR_chaos_apply_hazard_damage(cp_p) {
     if (global.playerSuper || global.playerBlink || global.powerInv) return;
     SCR_chaos_cancel_state11(cp_p);
-    with (cp_p) {
-        if (global.powerShield || global.ring > 0) instance_change(OBJ_player_lost_a,true);
-        else instance_change(OBJ_player_death,true);
+    if (!variable_instance_exists(cp_p,"chaosCore")) SCR_chaos_core_attach(cp_p);
+    if (!global.powerShield && global.ring <= 0) {
+        with (cp_p) instance_change(OBJ_player_death,true);
+        return;
     }
+    if (global.powerShield) global.powerShield = false;
+    else {
+        global.ring = 0;
+        instance_create(cp_p.x,cp_p.y,OBJ_player_lost_b);
+    }
+    global.playerBlink = true;
+    // Immunity intentionally outlasts the bounded hurt state so recovered
+    // movement can occur while blinking without disabling terrain sensing.
+    global.chaosDamageBlinkTimer = 90;
+    with (cp_p) alarm[2] = 1;
+    SCR_cc_hurt_enter(cp_p.chaosCore);
+    cp_p.chaosSupport = noone;
+    cp_p.chaosGrounded = false;
+    cp_p.chaosSpringVisual = false;
+    if (global.music == 1) audio_play_sound(SFX_sonic_lost_rings,10,false);
 }
 
 // Bounded object-floor adapter using the same decoded THZ collision header and
@@ -410,67 +428,8 @@ function SCR_chaos_spike_draw(cp_o) {
 }
 
 function SCR_chaos_sample_damage() {
-/// Deaths
-
-if (place_meeting(x,y,OBJ_collision_death) && global.playerSuper == false && global.playerBlink == false)
-{
-    // If not have invincibility
-    if (global.powerInv == false) 
-    {
-        SCR_chaos_cancel_state11(id);
-        // If have a Shield
-        if (global.powerShield == true) 
-        {
-            instance_change(OBJ_player_lost_a, true);
-        }
-        else
-        {
-            if (global.ring > 0) 
-            {
-                instance_change(OBJ_player_lost_a, true);
-            }
-            else
-            {
-                instance_change(OBJ_player_death, true);
-            }
-        }
-    }
-}
-
-// Outside Room
-if (y > room_height) 
-{
-    instance_change(OBJ_player_death, true);
-}
-
-
-/// Deaths Badniks
-
-if (place_meeting(x,y,OBJ_badniks) && global.playerSuper == false && 
-    global.playerJump == false && global.playerSpinDash == false &&
-    global.playerBlink == false)
-{
-    // If not have invincibility
-    if (global.powerInv == false) 
-    {
-        SCR_chaos_cancel_state11(id);
-        // If have a Shield
-        if (global.powerShield == true) 
-        {
-            instance_change(OBJ_player_lost_a, true);
-        }
-        else
-        {
-            if (global.ring > 0) 
-            {
-                instance_change(OBJ_player_lost_a, true);
-            }
-            else
-            {
-                instance_change(OBJ_player_death, true);
-            }
-        }
-    }
-}
-
+    if (place_meeting(x,y,OBJ_collision_death)) SCR_chaos_apply_hazard_damage(id);
+    if (y > room_height) { instance_change(OBJ_player_death,true); return; }
+    if (place_meeting(x,y,OBJ_badniks) && !global.playerJump && !global.playerSpinDash)
+        SCR_chaos_apply_hazard_damage(id);
 }

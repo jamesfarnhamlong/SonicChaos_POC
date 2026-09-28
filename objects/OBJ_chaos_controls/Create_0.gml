@@ -11,3 +11,4 @@ global.chaosLastEnemyScore1 = 0;
 global.chaosLastEnemyScore2 = 0;
 global.chaosLastSoundRequest = 0;
 global.chaosMusicRestoreRequested = false;
+global.chaosDamageBlinkTimer = 0;
