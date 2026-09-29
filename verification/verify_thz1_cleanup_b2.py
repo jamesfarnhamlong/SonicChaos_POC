@@ -14,7 +14,7 @@ assert hashlib.sha256((OBJECT / "Step_0.gml").read_bytes()).hexdigest() == \
 
 draw = (OBJECT / "Draw_0.gml").read_text()
 assert "if (chaosConsumed) { draw_self(); exit; }" in draw
-assert "draw_sprite_ext(sprite_index,image_index,x,y+18" in draw
+assert "chaos_render_offset_y($10)" in draw
 assert "y =" not in draw and "y +=" not in draw
 obj = json.loads((OBJECT / "OBJ_chaos_object_10.yy").read_text())
 assert any(event["eventType"] == 8 and event["eventNum"] == 0 for event in obj["eventList"])
@@ -30,11 +30,11 @@ assert actual_xy == Counter((x, y) for x, y, _ in expected.elements())
 assert {parameter for _, _, parameter in expected} == {"0x02", "0x04", "0x06"}
 
 type21_draw = (ROOT / "objects/OBJ_chaos_object_21/Draw_0.gml").read_text()
-assert "draw_sprite_ext(sprite_index,image_index,x,y+18" in type21_draw
+assert "chaos_render_offset_y($21)" in type21_draw
 adapter = (ROOT / "scripts/SCR_chaos_adapter/SCR_chaos_adapter.gml").read_text()
 assert "SCR_cc_hurt_enter(cp_p.chaosCore)" in adapter
 assert "OBJ_player_lost_a" not in adapter
 hud = (ROOT / "objects/OBJ_chaos_controls/Draw_0.gml").read_text()
-assert '"THZ1 CLEANUP B2"' in hud
+assert '"THZ1 CLEANUP RING LAYER"' not in hud
 
 print("THZ1 Cleanup B2 presentation checks passed")

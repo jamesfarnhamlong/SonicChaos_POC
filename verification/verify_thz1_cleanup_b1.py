@@ -13,7 +13,7 @@ assert hashlib.sha256(create).hexdigest() == "4fb1d383cdeab56a1755ba9c0adfb5b3f2
 assert hashlib.sha256(step).hexdigest() == "62e2169d0295b8ede8bc6a9f4674994166591b1f05d9fe51c9b14fb29ea340c1"
 
 draw = (OBJECT / "Draw_0.gml").read_text()
-assert "draw_sprite_ext(sprite_index,image_index,x,y+18" in draw
+assert "chaos_render_offset_y($21)" in draw
 assert "y =" not in draw and "y +=" not in draw
 obj = json.loads((OBJECT / "OBJ_chaos_object_21.yy").read_text())
 assert any(event["eventType"] == 8 and event["eventNum"] == 0 for event in obj["eventList"])

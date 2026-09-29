@@ -1,7 +1,9 @@
 {
-  "format": 1,
+  "format": 3,
   "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
   "generator": "POC_notes/extract_chaos.py",
+  "canonical_layout_sha256": "0d2bba656d1a2cbaf8d5545d47c1c42b40235b8f3f67f015e324c10ec92f719b",
+  "ring_source_sha256": "2cdec17b0eb0ea8cada58e442074ebb1b3641cde09dfb9c8e959ceacea335628",
   "context_composited_spring_block_ids": [
     "0x30",
     "0x31",

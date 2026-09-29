@@ -40,5 +40,5 @@ resources = {row["id"]["name"] for row in project["resources"]}
 for name in ("SPR_chaos_block_46", "SPR_chaos_block_47", "OBJ_chaos_object_0F_transient"):
     assert name in resources
 hud = (ROOT / "objects/OBJ_chaos_controls/Draw_0.gml").read_text()
-assert '"THZ1 CLEANUP C1.2"' in hud
+assert '"THZ1 CLEANUP RING LAYER"' not in hud
 print("THZ1 Cleanup C1 block-$47 checks passed")

@@ -2,7 +2,8 @@
 const fs=require('fs'),vm=require('vm'),path=require('path'),assert=require('assert');
 const root=path.resolve(__dirname,'..');
 const ctx=vm.createContext({global:{},floor:Math.floor,round:Math.round,abs:Math.abs,
-    min:Math.min,max:Math.max,array_create:(n,v)=>Array(n).fill(v),is_array:Array.isArray});
+    min:Math.min,max:Math.max,array_create:(n,v)=>Array(n).fill(v),array_length:a=>a.length,
+    array_copy:(dst,di,src,si,n)=>{for(let i=0;i<n;i++)dst[di+i]=src[si+i];},is_array:Array.isArray});
 for(const n of ['SCR_chaos_motion_data','SCR_chaos_core_data','SCR_chaos_core'])
     vm.runInContext(fs.readFileSync(path.join(root,'scripts',n,n+'.gml'),'utf8'),ctx,{filename:n+'.gml'});
 ctx.SCR_chaos_motion_data();ctx.SCR_chaos_core_data();

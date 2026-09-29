@@ -50,6 +50,7 @@ report['task_06_core']=json.loads((root/'verification/task06-results.json').read
 report['task_06_integration']=json.loads((root/'verification/task06-integration-results.json').read_text())
 report['task_07_core']=json.loads((root/'verification/task07-results.json').read_text())
 report['task_07_integration']=json.loads((root/'verification/task07-integration-results.json').read_text())
+report['thz1_ring_layer']=json.loads((root/'verification/ring-layer-results.json').read_text())
 sprite_manifest=json.loads((root/'POC_notes/rom-cache/thz1-object-sprites.json').read_text())
 for asset in sprite_manifest['assets']:
     sprite_path=root/asset['sprite_path']
@@ -92,7 +93,7 @@ for frame in terrain_manifest['normalized_ring_frames']:
     assert hashlib.sha256(root_png.read_bytes()).hexdigest()==frame['sha256'],frame
     transparent=[p for p in Image.open(root_png).convert('RGBA').getdata() if p[3]==0]
     assert set(transparent)=={(0,0,0,0)},frame
-assert terrain_manifest['object_only_ring_block_ids']==['0x40','0x41','0x42','0x43']
+assert terrain_manifest['object_only_ring_block_ids']==[f'0x{x:02X}' for x in range(0x40,0x44)]
 assert len(terrain_manifest['ring_cells_removed'])==72
 terrain_quadrants={asset['world_x']:Image.open(root/asset['root_png']).convert('RGBA')
     for asset in terrain_manifest['assets']}
@@ -106,7 +107,8 @@ report['terrain_generation']={
     'root_layer_copies_match':True,
     'spring_31_context_backdrop_pixels':spring_31.count((0,0,255,255)),
     'ring_frames_normalized':len(terrain_manifest['normalized_ring_frames']),
-    'ring_foreground_cells_removed':len(terrain_manifest['ring_cells_removed']),
+    'terrain_ring_cells_stripped':len(terrain_manifest['ring_cells_removed']),
+    'canonical_layout_sha256':terrain_manifest['canonical_layout_sha256'],
     'generator':terrain_manifest['generator'],
 }
 type18_manifest=json.loads((root/'POC_notes/rom-cache/object-18-graphics.json').read_text())
@@ -120,18 +122,48 @@ report['type_18_presentation']={'placement':type18_manifest['placement'],
     'scope':type18_manifest['scope']}
 ring_create=(root/'objects/OBJ_ring/Create_0.gml').read_text()
 assert 'image_speed = 0.25' in ring_create
-ring_draw=(root/'objects/OBJ_ring/Draw_0.gml').read_text()
-assert 'draw_sprite(SPR_ring, chaosTHZFrame, x, y)' in ring_draw
-assert 'else draw_self();' in ring_draw
+assert 'depth = -10' not in ring_create
+ring_object=json_gm(root/'objects/OBJ_ring/OBJ_ring.yy')
+assert not any(event['eventType']==8 for event in ring_object['eventList'])
+ring_runtime=(root/'objects/OBJ_chaos_ring_manager/Draw_0.gml').read_text()
+ring_collect=(root/'objects/OBJ_chaos_ring_manager/Step_2.gml').read_text()
+ring_create_manager=(root/'objects/OBJ_chaos_ring_manager/Create_0.gml').read_text()
+assert 'surface_set_target' in ring_runtime and ring_runtime.count('draw_sprite(SPR_ring')==1
+assert ring_runtime.count('draw_sprite(SPR_chaos_object_09')==1
+assert 'SCR_chaos_ring_data()' in ring_create_manager and 'SCR_chaos_type09_data()' in ring_create_manager
+assert 'global.ring += 1' in ring_collect
+type09_assets=json.loads((root/'POC_notes/rom-cache/object-09-poc-assets.json').read_text())
+type09_sprite=json_gm(root/'sprites/SPR_chaos_object_09/SPR_chaos_object_09.yy')
+assert type09_assets['mapping_cpu']=='0x8C71' and type09_assets['mapping_rom']=='0x3CC71'
+assert type09_assets['origin']==[8,15] and type09_assets['canvas']==[16,16]
+assert type09_assets['state_1_sequence']==[1,2,4,3]
+assert type09_assets['state_2_sequence']==[5,6,5,6,5,6,5,6]
+assert (type09_sprite['sequence']['xorigin'],type09_sprite['sequence']['yorigin'])==(8,15)
+for asset in type09_assets['assets']:
+    root_png=root/asset['root_png'];layer_png=root/asset['layer_png']
+    assert root_png.read_bytes()==layer_png.read_bytes()
+    assert hashlib.sha256(root_png.read_bytes()).hexdigest()==asset['png_sha256']
 type18_draw=(root/'objects/OBJ_chaos_object_18/Draw_0.gml').read_text()
-assert 'y + 22' in type18_draw
+assert 'chaos_render_offset_y($18)' in type18_draw
 report['windows_feedback_adapters']={
-    'ring_flat_terrain_duplicates_removed':142,
-    'ring_foreground_cells_removed':72,
-    'ring_original_animation_preserved':True,
-    'ring_integer_subimage_draw_adapter':True,
+    'terrain_ring_surface_count':142,
+    'type_09_visible_surface_count':11,
+    'initial_visible_ring_population':153,
+    'type_09_hidden_count':13,
+    'type_09_mapping':'0x8C71 / 0x3CC71',
+    'type_09_canvas_origin':[8,15],
+    'terrain_ring_source_cells':72,
+    'ring_runtime_manager':True,
+    'ring_layout_sha256':terrain_manifest['canonical_layout_sha256'],
     'type_18_presentation_offset_y':22,
 }
+render_adapter=(root/'scripts/SCR_chaos_render_adapter/SCR_chaos_render_adapter.gml').read_text()
+for token in ('#macro TYPE09_RENDER_Y 0','#macro TYPE10_RENDER_Y_ADAPTER 18',
+              '#macro TYPE18_RENDER_Y_ADAPTER 22','#macro TYPE21_RENDER_Y_ADAPTER 18'):
+    assert token in render_adapter,token
+assert any(row['id']['name']=='SCR_chaos_render_adapter' for row in primary['resources'])
+report['presentation_adapter_audit']=json.loads(
+    (root/'verification/presentation-audit-results.json').read_text())
 type10_assets=json.loads((root/'POC_notes/rom-cache/object-10-poc-assets.json').read_text())
 type10_reference=json.loads((root/'POC_notes/rom-cache/object-10-graphics.json').read_text())
 reference_variants={v['selector']:v for v in type10_reference['variants'] if v['player_type']=='0x01'}

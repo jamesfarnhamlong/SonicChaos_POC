@@ -29,7 +29,8 @@ assert positions(instances, "OBJ_chaos_object_10") == placement_counter(metadata
 assert positions(instances, "OBJ_chaos_object_21") == placement_counter(metadata["21"])
 assert positions(instances, "OBJ_chaos_object_27") == placement_counter(metadata["27"])
 assert positions(instances, "OBJ_chaos_object_18") == Counter({(3960, 558): 1})
-assert positions(instances, "OBJ_ring") == Counter((p["x"], p["y"]) for p in layout_metadata["rings"])
+assert len(layout_metadata["rings"]) == 142
+assert not positions(instances, "OBJ_ring")
 assert not positions(instances, "OBJ_monitor_ring")
 assert {(p["world_x"], p["world_y"]): p["parameter"] for p in metadata["10"]["placements"]} == {
     (656, 846): "0x06", (1712, 494): "0x06", (336, 270): "0x04",
@@ -104,10 +105,9 @@ for frame in terrain_manifest["normalized_ring_frames"]:
     ring_pixels = list(Image.open(root_png).convert("RGBA").getdata())
     assert set(p for p in ring_pixels if p[3] == 0) == {(0, 0, 0, 0)}
 
-# Layout blocks $40-$43 carry the same ring pixels as the separately decoded
-# collectible objects. They must contribute only their background plane to the
-# flattened terrain, or every animated ring has a permanent flat duplicate.
-assert terrain_manifest["object_only_ring_block_ids"] == ["0x40", "0x41", "0x42", "0x43"]
+# Ring blocks $40-$43 are stripped from terrain; the dedicated manager owns
+# presentation and collection from the generated 142-record dataset.
+assert terrain_manifest["object_only_ring_block_ids"] == [f"0x{x:02X}" for x in range(0x40, 0x44)]
 assert len(terrain_manifest["ring_cells_removed"]) == 72
 terrain_quadrants = {
     asset["world_x"]: Image.open(ROOT / asset["root_png"]).convert("RGBA")
@@ -123,14 +123,16 @@ for cell_info in terrain_manifest["ring_cells_removed"]:
 source_18 = (ROOT / "objects/OBJ_chaos_object_18/Step_0.gml").read_text()
 assert "chaosSpinFrames" in source_18 and "global.chaosComplete" in source_18
 draw_18 = (ROOT / "objects/OBJ_chaos_object_18/Draw_0.gml").read_text()
-assert "y + 22" in draw_18 and "floor(image_index)" in draw_18
+assert "chaos_render_offset_y($18)" in draw_18 and "floor(image_index)" in draw_18
 ring_create = (ROOT / "objects/OBJ_ring/Create_0.gml").read_text()
 assert "image_speed = 0.25" in ring_create
-ring_draw_path = ROOT / "objects/OBJ_ring/Draw_0.gml"
-assert ring_draw_path.exists()
-ring_draw = ring_draw_path.read_text()
-assert "if (room == ROM_chaos_thz1) draw_sprite(SPR_ring, chaosTHZFrame, x, y);" in ring_draw
-assert "else draw_self();" in ring_draw
+ring_object = (ROOT / "objects/OBJ_ring/OBJ_ring.yy").read_text().replace(" ", "")
+assert '"eventType":8' not in ring_object
+ring_manager = (ROOT / "objects/OBJ_chaos_ring_manager/Draw_0.gml").read_text()
+ring_manager_create = (ROOT / "objects/OBJ_chaos_ring_manager/Create_0.gml").read_text()
+assert "surface_set_target" in ring_manager and ring_manager.count("draw_sprite(SPR_ring") == 1
+assert ring_manager.count("draw_sprite(SPR_chaos_object_09") == 1
+assert "SCR_chaos_type09_data()" in ring_manager_create
 
 # Task-05 type-$10 selector graphics. The reference audit PNGs are exact 4x
 # nearest-neighbour renders, so expanding each imported logical frame back to
@@ -212,9 +214,11 @@ report = {
                          "context_backdrop_pixels": 856,
                          "spring_pixels": 168},
     "ring_frames_normalized": len(terrain_manifest["normalized_ring_frames"]),
-    "ring_terrain_cells_removed": 72,
-    "ring_object_positions_preserved": 142,
-    "ring_draw_adapter_verified": True,
+    "terrain_ring_cells_stripped": 72,
+    "terrain_ring_surface_count": 142,
+    "type_09_visible_surface_count": 11,
+    "initial_visible_ring_population": 153,
+    "ring_manager_runtime_verified": True,
     "type_10_selector_frame_0B_rgba_sha256": selector_hashes,
     "type_10_fixed_frame_0C_shared": True,
     "type_10_reward_path_unchanged": True,

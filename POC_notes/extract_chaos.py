@@ -63,10 +63,9 @@ print('layout',len(out),'end',hex(p),'max',max(out))
 # than retaining the block's CRAM colour or exposing the runner's black clear
 # plane. This is a block-class composition rule, not a placement repaint.
 SPRING_BLOCK_IDS={48,49,51,54,56}
-# Blocks $40-$43 are foreground-only ring arrangements. The 142 collectible
-# positions are decoded separately from these cells and instantiated as
-# OBJ_ring. Leaving these block pixels in the flattened terrain duplicates
-# every ring as a permanent, non-collectible image behind the real object.
+# Blocks $40-$43 are foreground-only ring arrangements. The canonical 142
+# positions are rendered by the dedicated manager, so terrain keeps only the
+# sampled local backdrop and cannot leave collectible ghosts.
 RING_BLOCK_IDS={64,65,66,67}
 # Determine origin/stride visually. First render the ordinary opaque map so
 # each spring placement can sample its immediate cardinal boundary.
@@ -100,10 +99,6 @@ for i,v in enumerate(out):
  if y+32<im.height:boundary.extend(im.crop((x,y+32,x+32,y+33)).getdata())
  if x>0:boundary.extend(im.crop((x-1,y,x,y+32)).getdata())
  if x+32<im.width:boundary.extend(im.crop((x+32,y,x+33,y+32)).getdata())
- # The dominant colour in the block is its original transparent/background
- # plane. Prefer the matching boundary colour; otherwise use the dominant
- # opaque boundary colour. The entire cell is foreground-only once the rings
- # become objects, so no ring-coloured pixels are retained in terrain.
  transparent_colour=Counter(blocks[v].getdata()).most_common(1)[0][0]
  matching=[pixel for pixel in boundary if pixel==transparent_colour]
  backdrop=transparent_colour if matching else Counter(pixel for pixel in boundary if pixel[3]).most_common(1)[0][0]
@@ -152,11 +147,14 @@ if args.project_root:
   ring_frames.append({'frame':frame,'root_png':root_png.relative_to(project).as_posix(),
       'layer_png':layer_png.relative_to(project).as_posix(),'sha256':hashlib.sha256(raw).hexdigest()})
  cache=project/'POC_notes/rom-cache'
- terrain_manifest={'format':1,'rom_sha256':hashlib.sha256(ROM).hexdigest(),
+ terrain_manifest={'format':3,'rom_sha256':hashlib.sha256(ROM).hexdigest(),
      'generator':'POC_notes/extract_chaos.py',
+     'canonical_layout_sha256':hashlib.sha256(bytes(out)).hexdigest(),
+     'ring_source_sha256':'2cdec17b0eb0ea8cada58e442074ebb1b3641cde09dfb9c8e959ceacea335628',
      'context_composited_spring_block_ids':[f'0x{x:02X}' for x in sorted(SPRING_BLOCK_IDS)],
      'object_only_ring_block_ids':[f'0x{x:02X}' for x in sorted(RING_BLOCK_IDS)],
-     'spring_placements':spring_context,'ring_cells_removed':ring_cell_context,'assets':assets,
+     'spring_placements':spring_context,'ring_cells_removed':ring_cell_context,
+     'assets':assets,
      'normalized_ring_frames':ring_frames}
  terrain_path=cache/'terrain-assets.json'
  terrain_path.write_text(json.dumps(terrain_manifest,indent=2)+'\n')

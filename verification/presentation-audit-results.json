@@ -1,0 +1,41 @@
+{
+  "object_coordinate_hashes": {
+    "0x09": "64c12ac542c4151a83d55d2a411299e08df60aa870a50dd06c8609ec7d39c261",
+    "0x10": "9df1d95ccc05b18f46e7b03100e2b23d09fbe4d3803742b035938a709956f81d",
+    "0x18": "7a0c38e155b8ee99249278db1590431a2939d6546b798e7a9e73f7aae2e4fa23",
+    "0x1B": "c851c2d8550e8c72a7931094d6fb45cceb089257a80f8497dc4f752d4f9c3473",
+    "0x21": "4343eb48dc5453b4405f437d074f4696df809a488ed7b97d9b5c69de56807525",
+    "0x26": "b0996be231a58f4b0d4adfb140390cf5152b2cc0ab35112cce78c5553210c358",
+    "0x27": "5cfcf8996ffbc901fcb206a99929ce6136a4d038e4418c8fa0ef58a39efeda2f",
+    "0x28": "9ec59ab1535c75efb46db8682638a84fdb0d1d3e7da987de1c7de83b6de6f812"
+  },
+  "terrain_ring_coordinate_hash": "f6bea411d58267a028ff0cfdc93ac37c1b3b32e6221b31e11dfe75f668db652a",
+  "terrain_ring_count": 142,
+  "type09_visible": 11,
+  "type09_hidden": 13,
+  "adapters": {
+    "0x09": [
+      0,
+      0
+    ],
+    "0x10": [
+      0,
+      18
+    ],
+    "0x18": [
+      0,
+      22
+    ],
+    "0x21": [
+      0,
+      18
+    ]
+  },
+  "unchanged_zero_offset_types": [
+    "0x1B",
+    "0x26",
+    "0x27",
+    "0x28"
+  ],
+  "collision_uses_render_adapter": false
+}

@@ -1,5 +1,6 @@
 """Verify that every displayed THZ1 interaction has a canonical placement."""
 import json
+import re
 from collections import Counter
 from pathlib import Path
 
@@ -74,7 +75,13 @@ def main():
     assert not positions(instances, "OBJ_CHAOS_mask_12")
 
     expected_rings = Counter((x["x"], x["y"]) for x in layout["rings"])
-    assert positions(instances, "OBJ_ring") == expected_rings
+    # THZ1 Cleanup Ring Layer: terrain-derived rings are no longer authored as
+    # room instances. One generated script owns the canonical 142 records.
+    assert not positions(instances, "OBJ_ring")
+    ring_data = (ROOT / "scripts/SCR_chaos_ring_data/SCR_chaos_ring_data.gml").read_text()
+    generated_rings = Counter((int(x), int(y)) for x, y in
+                              re.findall(r'\[\d+,(\d+),(\d+),\$[0-9A-F]{2},\d+,\d+\]', ring_data))
+    assert generated_rings == expected_rings
     # The old POC promoted four layout-art cells to sample monitor instances.
     # Task 04 now supplies the five canonical type-$10 placement records.
     assert not positions(instances, "OBJ_monitor_ring")
@@ -98,6 +105,8 @@ def main():
         "type_27_objects": expected_27.total(),
         "platforms": expected_28.total(),
         "rings": expected_rings.total(),
+        "room_ring_instances": 0,
+        "ring_presentation": "single canonical runtime manager and view-sized surface",
         "legacy_layout_monitor_instances": 0,
         "unsupported_instances": 0,
         "rom_derived_object_graphics": True,

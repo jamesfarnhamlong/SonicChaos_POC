@@ -37,9 +37,11 @@
     "spring_pixels": 168
   },
   "ring_frames_normalized": 6,
-  "ring_terrain_cells_removed": 72,
-  "ring_object_positions_preserved": 142,
-  "ring_draw_adapter_verified": true,
+  "terrain_ring_cells_stripped": 72,
+  "terrain_ring_surface_count": 142,
+  "type_09_visible_surface_count": 11,
+  "initial_visible_ring_population": 153,
+  "ring_manager_runtime_verified": true,
   "type_10_selector_frame_0B_rgba_sha256": {
     "0x02": "2bb087b4bcc265ee2ba8b8ba038772b6615d7d5fe1f4aeb43625d694900b3b6d",
     "0x04": "4e142bbe120b2f47d5f9dea69c1f414240ff4543d3796004cc933c66cf63abc4",

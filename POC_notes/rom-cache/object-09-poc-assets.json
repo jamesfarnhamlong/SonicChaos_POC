@@ -1,0 +1,367 @@
+{
+  "format": 1,
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "source_tool": "sonic-chaos-reference/tools/thz1_object_assets.py",
+  "mapping_cpu": "0x8C71",
+  "mapping_rom": "0x3CC71",
+  "canvas": [
+    16,
+    16
+  ],
+  "origin": [
+    8,
+    15
+  ],
+  "sat_y_plus_one": true,
+  "state_1_sequence": [
+    1,
+    2,
+    4,
+    3
+  ],
+  "state_1_duration": 8,
+  "state_2_sequence": [
+    5,
+    6,
+    5,
+    6,
+    5,
+    6,
+    5,
+    6
+  ],
+  "state_2_duration": 4,
+  "state_2_updates": 32,
+  "assets": [
+    {
+      "mapping_frame": 1,
+      "frame_id": "09000001-0000-4000-8000-000000000001",
+      "frame_cpu": "0x8CE3",
+      "frame_rom": "0x3CCE3",
+      "x_origin": 0,
+      "y_origin": 0,
+      "pieces": [
+        {
+          "index": 0,
+          "y_offset": -16,
+          "x_offset": -8,
+          "relative_y": -16,
+          "relative_x": -8,
+          "tile_offset": "0x10"
+        },
+        {
+          "index": 1,
+          "y_offset": -16,
+          "x_offset": 0,
+          "relative_y": -16,
+          "relative_x": 0,
+          "tile_offset": "0x12"
+        }
+      ],
+      "tile_offsets": [
+        "0x10",
+        "0x12"
+      ],
+      "mapping_bounds": {
+        "min_x": -8,
+        "min_y": -16,
+        "max_x": 8,
+        "max_y": 0,
+        "width": 16,
+        "height": 16
+      },
+      "canvas_position": [
+        0,
+        0
+      ],
+      "nontransparent_canvas_bounds": [
+        1,
+        0,
+        14,
+        15
+      ],
+      "displayed_relative_bounds": [
+        -7,
+        -15,
+        6,
+        0
+      ],
+      "png_sha256": "9dbb4a0d4ad7120937651dfd6723ccaf66f272da87c33f8c56feb2364a19d3a6",
+      "rgba_sha256": "4800ff23c70e20ffa39db4b3194f1a84092bba45ae7608fb379c31753acbb628",
+      "root_png": "sprites/SPR_chaos_object_09/09000001-0000-4000-8000-000000000001.png",
+      "layer_png": "sprites/SPR_chaos_object_09/layers/09000001-0000-4000-8000-000000000001/09000000-0000-4000-8000-000000000000.png"
+    },
+    {
+      "mapping_frame": 2,
+      "frame_id": "09000002-0000-4000-8000-000000000002",
+      "frame_cpu": "0x8CEE",
+      "frame_rom": "0x3CCEE",
+      "x_origin": 0,
+      "y_origin": 0,
+      "pieces": [
+        {
+          "index": 0,
+          "y_offset": -16,
+          "x_offset": -8,
+          "relative_y": -16,
+          "relative_x": -8,
+          "tile_offset": "0x14"
+        },
+        {
+          "index": 1,
+          "y_offset": -16,
+          "x_offset": 0,
+          "relative_y": -16,
+          "relative_x": 0,
+          "tile_offset": "0x16"
+        }
+      ],
+      "tile_offsets": [
+        "0x14",
+        "0x16"
+      ],
+      "mapping_bounds": {
+        "min_x": -8,
+        "min_y": -16,
+        "max_x": 8,
+        "max_y": 0,
+        "width": 16,
+        "height": 16
+      },
+      "canvas_position": [
+        0,
+        0
+      ],
+      "nontransparent_canvas_bounds": [
+        3,
+        0,
+        13,
+        15
+      ],
+      "displayed_relative_bounds": [
+        -5,
+        -15,
+        5,
+        0
+      ],
+      "png_sha256": "7b97abcc94a492e397ca8ad80577dfe9c15d612bcd5af7996a98d05e97c14af9",
+      "rgba_sha256": "888a7948a4858c4a39aa324ed5594a707d8dce2905e486bc5259a12083f5d337",
+      "root_png": "sprites/SPR_chaos_object_09/09000002-0000-4000-8000-000000000002.png",
+      "layer_png": "sprites/SPR_chaos_object_09/layers/09000002-0000-4000-8000-000000000002/09000000-0000-4000-8000-000000000000.png"
+    },
+    {
+      "mapping_frame": 3,
+      "frame_id": "09000003-0000-4000-8000-000000000003",
+      "frame_cpu": "0x8CF9",
+      "frame_rom": "0x3CCF9",
+      "x_origin": 0,
+      "y_origin": 0,
+      "pieces": [
+        {
+          "index": 0,
+          "y_offset": -16,
+          "x_offset": -8,
+          "relative_y": -16,
+          "relative_x": -8,
+          "tile_offset": "0x18"
+        },
+        {
+          "index": 1,
+          "y_offset": -16,
+          "x_offset": 0,
+          "relative_y": -16,
+          "relative_x": 0,
+          "tile_offset": "0x1A"
+        }
+      ],
+      "tile_offsets": [
+        "0x18",
+        "0x1A"
+      ],
+      "mapping_bounds": {
+        "min_x": -8,
+        "min_y": -16,
+        "max_x": 8,
+        "max_y": 0,
+        "width": 16,
+        "height": 16
+      },
+      "canvas_position": [
+        0,
+        0
+      ],
+      "nontransparent_canvas_bounds": [
+        2,
+        0,
+        12,
+        15
+      ],
+      "displayed_relative_bounds": [
+        -6,
+        -15,
+        4,
+        0
+      ],
+      "png_sha256": "685064042bee5e4fc587f4225ea90912c0130796e7026c4e5cc514c269471969",
+      "rgba_sha256": "fe6a46239b98ed3c16273ed0e2e34d93046beb48144a2c9d0a05106206686b27",
+      "root_png": "sprites/SPR_chaos_object_09/09000003-0000-4000-8000-000000000003.png",
+      "layer_png": "sprites/SPR_chaos_object_09/layers/09000003-0000-4000-8000-000000000003/09000000-0000-4000-8000-000000000000.png"
+    },
+    {
+      "mapping_frame": 4,
+      "frame_id": "09000004-0000-4000-8000-000000000004",
+      "frame_cpu": "0x8D04",
+      "frame_rom": "0x3CD04",
+      "x_origin": 0,
+      "y_origin": 0,
+      "pieces": [
+        {
+          "index": 0,
+          "y_offset": -16,
+          "x_offset": -8,
+          "relative_y": -16,
+          "relative_x": -8,
+          "tile_offset": "0x1C"
+        },
+        {
+          "index": 1,
+          "y_offset": -16,
+          "x_offset": 0,
+          "relative_y": -16,
+          "relative_x": 0,
+          "tile_offset": "0x1E"
+        }
+      ],
+      "tile_offsets": [
+        "0x1C",
+        "0x1E"
+      ],
+      "mapping_bounds": {
+        "min_x": -8,
+        "min_y": -16,
+        "max_x": 8,
+        "max_y": 0,
+        "width": 16,
+        "height": 16
+      },
+      "canvas_position": [
+        0,
+        0
+      ],
+      "nontransparent_canvas_bounds": [
+        6,
+        0,
+        9,
+        15
+      ],
+      "displayed_relative_bounds": [
+        -2,
+        -15,
+        1,
+        0
+      ],
+      "png_sha256": "3b981d0d1a014194ad4ad437b6b10498921f47b57ebdbb3303f69dfb389d9a4f",
+      "rgba_sha256": "4433456c41e88a1c7bf8d861c5b6e0c12f5ce71e5d8a06a023f52499d7d17ac3",
+      "root_png": "sprites/SPR_chaos_object_09/09000004-0000-4000-8000-000000000004.png",
+      "layer_png": "sprites/SPR_chaos_object_09/layers/09000004-0000-4000-8000-000000000004/09000000-0000-4000-8000-000000000000.png"
+    },
+    {
+      "mapping_frame": 5,
+      "frame_id": "09000005-0000-4000-8000-000000000005",
+      "frame_cpu": "0x8CAC",
+      "frame_rom": "0x3CCAC",
+      "x_origin": 0,
+      "y_origin": 0,
+      "pieces": [
+        {
+          "index": 0,
+          "y_offset": -16,
+          "x_offset": -4,
+          "relative_y": -16,
+          "relative_x": -4,
+          "tile_offset": "0x20"
+        }
+      ],
+      "tile_offsets": [
+        "0x20"
+      ],
+      "mapping_bounds": {
+        "min_x": -4,
+        "min_y": -16,
+        "max_x": 4,
+        "max_y": 0,
+        "width": 8,
+        "height": 16
+      },
+      "canvas_position": [
+        4,
+        0
+      ],
+      "nontransparent_canvas_bounds": [
+        4,
+        6,
+        10,
+        14
+      ],
+      "displayed_relative_bounds": [
+        -4,
+        -9,
+        2,
+        -1
+      ],
+      "png_sha256": "6b29456ab1ce2cc528613f5467ed5925e9303b3bb738c5d8dd1ea7129ac17084",
+      "rgba_sha256": "e2c1e7eafcd14cbe8a6719f35c5207adf41b7aadff009044c0fd0762ed9c1b74",
+      "root_png": "sprites/SPR_chaos_object_09/09000005-0000-4000-8000-000000000005.png",
+      "layer_png": "sprites/SPR_chaos_object_09/layers/09000005-0000-4000-8000-000000000005/09000000-0000-4000-8000-000000000000.png"
+    },
+    {
+      "mapping_frame": 6,
+      "frame_id": "09000006-0000-4000-8000-000000000006",
+      "frame_cpu": "0x8CB7",
+      "frame_rom": "0x3CCB7",
+      "x_origin": 0,
+      "y_origin": 0,
+      "pieces": [
+        {
+          "index": 0,
+          "y_offset": -16,
+          "x_offset": -4,
+          "relative_y": -16,
+          "relative_x": -4,
+          "tile_offset": "0x22"
+        }
+      ],
+      "tile_offsets": [
+        "0x22"
+      ],
+      "mapping_bounds": {
+        "min_x": -4,
+        "min_y": -16,
+        "max_x": 4,
+        "max_y": 0,
+        "width": 8,
+        "height": 16
+      },
+      "canvas_position": [
+        4,
+        0
+      ],
+      "nontransparent_canvas_bounds": [
+        5,
+        1,
+        9,
+        11
+      ],
+      "displayed_relative_bounds": [
+        -3,
+        -14,
+        1,
+        -4
+      ],
+      "png_sha256": "3c720ec0ebf3b145eaa861e3566713bfa2ca7a319963e35d516fe21b5c1782e4",
+      "rgba_sha256": "7ada550252c37381d52d9d6afddc15b69b36fbefd91d2c09254ed1f02158d186",
+      "root_png": "sprites/SPR_chaos_object_09/09000006-0000-4000-8000-000000000006.png",
+      "layer_png": "sprites/SPR_chaos_object_09/layers/09000006-0000-4000-8000-000000000006/09000000-0000-4000-8000-000000000000.png"
+    }
+  ]
+}

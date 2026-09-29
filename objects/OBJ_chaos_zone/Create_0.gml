@@ -73,6 +73,7 @@ __view_set(e__VW.VBorder, 0, round(__view_get(e__VW.HView, 0) / 2));
 __view_set(e__VW.XView, 0, 0);
 __view_set(e__VW.YView, 0, 550);
 if (!instance_exists(OBJ_chaos_controls)) instance_create(0, 0, OBJ_chaos_controls);
+if (!instance_exists(OBJ_chaos_ring_manager)) instance_create_depth(0,0,0,OBJ_chaos_ring_manager);
 
 global.chaosComplete = false;
 global.chaosNotice = 0;

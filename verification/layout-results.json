@@ -10,6 +10,8 @@
   "type_27_objects": 3,
   "platforms": 6,
   "rings": 142,
+  "room_ring_instances": 0,
+  "ring_presentation": "single canonical runtime manager and view-sized surface",
   "legacy_layout_monitor_instances": 0,
   "unsupported_instances": 0,
   "rom_derived_object_graphics": true,

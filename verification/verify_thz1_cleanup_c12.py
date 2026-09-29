@@ -20,5 +20,5 @@ motion = (ROOT / "scripts/SCR_chaos_motion_data/SCR_chaos_motion_data.gml").read
 assert "global.chaosSourceTileIds = global.chaosTileIds" in motion
 assert "array_copy(global.chaosTileIds" in motion
 hud = (ROOT / "objects/OBJ_chaos_controls/Draw_0.gml").read_text()
-assert '"THZ1 CLEANUP C1.2"' in hud
+assert '"THZ1 CLEANUP RING LAYER"' not in hud
 print("THZ1 Cleanup C1.2 contact-response checks passed")
