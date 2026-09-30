@@ -158,7 +158,7 @@ report['windows_feedback_adapters']={
     'type_18_presentation_offset_y':22,
 }
 render_adapter=(root/'scripts/SCR_chaos_render_adapter/SCR_chaos_render_adapter.gml').read_text()
-for token in ('#macro TYPE09_RENDER_Y 0','#macro TYPE10_RENDER_Y_ADAPTER 18',
+for token in ('#macro TYPE09_RENDER_X 1','#macro TYPE09_RENDER_Y 17','#macro TYPE10_RENDER_Y_ADAPTER 18',
               '#macro TYPE18_RENDER_Y_ADAPTER 22','#macro TYPE21_RENDER_Y_ADAPTER 18'):
     assert token in render_adapter,token
 assert any(row['id']['name']=='SCR_chaos_render_adapter' for row in primary['resources'])

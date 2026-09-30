@@ -54,8 +54,9 @@ for (var cp_t09=0; cp_t09<chaosType09SourceCount; cp_t09++) {
     var cp_t09_canonical_x = cp_t09_record[1];
     var cp_t09_canonical_y = cp_t09_record[2];
     // These are the only coordinates supplied to the sole type-$09 sprite
-    // draw. The Windows-rejected +8 experiment is reverted to the shared zero
-    // policy; collection continues to use the canonical record directly.
+    // draw: canonical + (TYPE09_RENDER_X, TYPE09_RENDER_Y) = (+1,+17), the
+    // recovered SMS background registration. Collection continues to use the
+    // canonical record directly.
     var cp_t09_draw_x = cp_t09_canonical_x+TYPE09_RENDER_X;
     var cp_t09_draw_y = cp_t09_canonical_y+TYPE09_RENDER_Y;
     // Dedicated mapped-object canvas: 16x16, origin (8,15). The origin folds

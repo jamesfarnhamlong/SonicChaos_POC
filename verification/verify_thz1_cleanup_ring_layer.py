@@ -88,6 +88,12 @@ assert 'cp_t09_draw_x = cp_t09_canonical_x+TYPE09_RENDER_X' in draw
 assert 'cp_t09_draw_y = cp_t09_canonical_y+TYPE09_RENDER_Y' in draw
 assert 'cp_t09_draw_x-cp_cam_x,cp_t09_draw_y-cp_cam_y' in draw
 assert 'draw_world_y=' in draw and 'adapter_y=' in draw
+_adapter=(ROOT/'scripts/SCR_chaos_render_adapter/SCR_chaos_render_adapter.gml').read_text()
+assert '#macro TYPE09_RENDER_X 1' in _adapter and '#macro TYPE09_RENDER_Y 17' in _adapter
+# Idle frames 1-4 have asset rows -15..0; with the +17 background term they must land on +2..+17.
+assert (-15+17,0+17)==(2,17)
+_collect=(ROOT/'objects/OBJ_chaos_ring_manager/Step_2.gml').read_text()
+assert 'TYPE09_RENDER' not in _collect and 'chaos_render_offset' not in _collect
 assert all(token in draw for token in ('c_aqua','draw_line','cp_t09_mx-11','cp_t09_mx+11'))
 assert all(abs(delta)<12 for delta in (-11,0,11))
 assert not any(abs(delta)<12 for delta in (-12,12))
@@ -158,7 +164,7 @@ report={'terrain_source_count':142,'terrain_generated_count':142,'terrain_source
  'type_09_state_1_sequence':[1,2,4,3],'type_09_state_1_duration':8,
  'type_09_state_2_sequence':[5,6,5,6,5,6,5,6],'type_09_state_2_updates':32,
  'strict_overlap':{'11':True,'12':False},
- 'terrain_render_offsets':[0,0],'type_09_render_offsets':[0,0],
+ 'terrain_render_offsets':[0,0],'type_09_render_offsets':[1,17],
  'surface':'view-sized','modes':['NORMAL','SOLO','COVERAGE'],
  'normal_mode_debug_text':False,'f8_tiny_labels_only':True,'f9_audit_retained':True}
 (ROOT/'verification/ring-layer-results.json').write_text(json.dumps(report,indent=2)+'\n')

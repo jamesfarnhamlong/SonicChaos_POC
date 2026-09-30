@@ -38,7 +38,7 @@ assert digest(terrain_rows) == EXPECTED_TERRAIN_RING_HASH
 
 adapter_path = ROOT / "scripts" / "SCR_chaos_render_adapter" / "SCR_chaos_render_adapter.gml"
 adapter = adapter_path.read_text()
-for token in ("#macro TYPE09_RENDER_Y 0", "#macro TYPE10_RENDER_Y_ADAPTER 18",
+for token in ("#macro TYPE09_RENDER_X 1", "#macro TYPE09_RENDER_Y 17", "#macro TYPE10_RENDER_Y_ADAPTER 18",
               "#macro TYPE18_RENDER_Y_ADAPTER 22", "#macro TYPE21_RENDER_Y_ADAPTER 18",
               "function chaos_render_offset_x", "function chaos_render_offset_y"):
     assert token in adapter, token
@@ -84,7 +84,7 @@ report = {
     "terrain_ring_count": 142,
     "type09_visible": 11,
     "type09_hidden": 13,
-    "adapters": {"0x09": [0, 0], "0x10": [0, 18], "0x18": [0, 22], "0x21": [0, 18]},
+    "adapters": {"0x09": [1, 17], "0x10": [0, 18], "0x18": [0, 22], "0x21": [0, 18]},
     "unchanged_zero_offset_types": ["0x1B", "0x26", "0x27", "0x28"],
     "collision_uses_render_adapter": False,
 }

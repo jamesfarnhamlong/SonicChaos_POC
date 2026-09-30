@@ -5,5 +5,584 @@
   "first_ramp_updates": 48,
   "vertical_spring_updates": 160,
   "game_maker_compiled": false,
-  "limitation": "Numerical ROM fixtures, not GameMaker gameplay or full scheduler emulation"
+  "limitation": "Numerical ROM fixtures, not GameMaker gameplay or full scheduler emulation",
+  "canon_layout": {
+    "terrain_springs": 9,
+    "concealed_springs": 4,
+    "moving_spikes": 4,
+    "static_spikes": 4,
+    "static_spike_full_cell_masks": 0,
+    "type_10_objects": 5,
+    "type_18_objects": 1,
+    "type_21_objects": 6,
+    "type_27_objects": 3,
+    "platforms": 6,
+    "rings": 142,
+    "room_ring_instances": 0,
+    "ring_presentation": "single canonical runtime manager and view-sized surface",
+    "legacy_layout_monitor_instances": 0,
+    "unsupported_instances": 0,
+    "rom_derived_object_graphics": true,
+    "rom_bytes_included": false
+  },
+  "twist_state_22": {
+    "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+    "actual_gml_executed": true,
+    "dispatch_entries": 112,
+    "entry_boundary_cases": 1078,
+    "both_directions": true,
+    "traversal_updates": {
+      "right": 83,
+      "left": 75
+    },
+    "rolling_exit": true,
+    "game_maker_compiled": false
+  },
+  "type_27_handlers": {
+    "initial": {
+      "state": 1,
+      "vx_8_8": 64896,
+      "vy_8_8": 0
+    },
+    "state_two_entry": {
+      "state": 2,
+      "vx_8_8": 0,
+      "vy_8_8": 0,
+      "counter": 128,
+      "flag": 1
+    },
+    "acceleration_callbacks": [
+      {
+        "handler": "0x89DF",
+        "vy_8_8": 3,
+        "counter": 127
+      },
+      {
+        "handler": "0x89F3",
+        "vy_8_8": 65533,
+        "counter": 127
+      }
+    ],
+    "counter_underflow": {
+      "state": 3,
+      "vx_8_8": 64896,
+      "vy_8_8": 0
+    },
+    "distance_boundaries": [
+      {
+        "delta": 383,
+        "removed": false
+      },
+      {
+        "delta": 384,
+        "removed": true
+      },
+      {
+        "delta": -383,
+        "removed": false
+      },
+      {
+        "delta": -384,
+        "removed": true
+      }
+    ],
+    "gml_contract_checked": true,
+    "limitation": "Selected original callbacks and static GML contract; not full scheduler or GameMaker runtime"
+  },
+  "poc_18_objects": {
+    "reference_metadata": {
+      "10": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+      "21": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+      "27": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607"
+    },
+    "placements": {
+      "type_10": 5,
+      "type_18": 1,
+      "type_21": 6,
+      "type_27": 3
+    },
+    "type_21_left_bounds": {
+      "800,606": 672,
+      "1248,862": 1152,
+      "2048,318": 1952,
+      "3152,894": 3104,
+      "3296,286": 3232,
+      "2400,254": 2368
+    },
+    "type_27_no_contact": {
+      "updates": 129,
+      "add_callbacks": 65,
+      "subtract_callbacks": 64,
+      "displacement_8_8": 3
+    },
+    "type_10_parameters": [
+      "0x06",
+      "0x06",
+      "0x04",
+      "0x04",
+      "0x02"
+    ],
+    "terrain_31_cell": {
+      "transparent_pixels": 0,
+      "context_backdrop_pixels": 856,
+      "spring_pixels": 168
+    },
+    "ring_frames_normalized": 6,
+    "terrain_ring_cells_stripped": 72,
+    "terrain_ring_surface_count": 142,
+    "type_09_visible_surface_count": 11,
+    "initial_visible_ring_population": 153,
+    "ring_manager_runtime_verified": true,
+    "type_10_selector_frame_0B_rgba_sha256": {
+      "0x02": "2bb087b4bcc265ee2ba8b8ba038772b6615d7d5fe1f4aeb43625d694900b3b6d",
+      "0x04": "4e142bbe120b2f47d5f9dea69c1f414240ff4543d3796004cc933c66cf63abc4",
+      "0x06": "3790c8bee0dd4f9d53a803616ac75123f346a55b11b7a80a87c1ab80247f24f0"
+    },
+    "type_10_fixed_frame_0C_shared": true,
+    "type_10_reward_path_unchanged": true,
+    "type_10_state_11_attack_suppression": true,
+    "type_05_visible_frames": 32,
+    "type_05_tiles": [
+      "0x20",
+      "0x22"
+    ],
+    "type_05_anchor": "POC bounded presentation adapter: follows active player; exact original special-render anchor unresolved",
+    "type_05_singleton_selector_06_only": true,
+    "closure_blockers": {
+      "type_10_selector_graphics": "RESOLVED",
+      "type_05_visible_effect": "RESOLVED"
+    },
+    "closure_candidate": "THZ1 POC READY WITH DOCUMENTED ADAPTERS",
+    "type_18_presentation_offset_y": 22,
+    "debug_warp_shortcuts_removed": true,
+    "legacy_layout_monitor_instances": 0
+  },
+  "task_06_core": {
+    "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+    "state_11": {
+      "entry_verified": true,
+      "entry_timer": 300,
+      "vertical_cases": 6,
+      "shared_horizontal": true,
+      "action_suppressed": true,
+      "viewport_bounds": true,
+      "expiry_state": 14,
+      "expiry_vy_8_8": 256,
+      "animation_frames": [
+        56,
+        56,
+        56,
+        56,
+        56,
+        56,
+        56,
+        56,
+        57,
+        57,
+        57,
+        57,
+        58,
+        58,
+        58,
+        58,
+        58,
+        58,
+        58,
+        58,
+        57,
+        57,
+        57,
+        57
+      ]
+    },
+    "static_spikes": {
+      "cells": 4,
+      "profile_projection_cases": 128,
+      "upper_half_side_solid": false,
+      "lower_half_side_solid": true,
+      "floor_hazard": true
+    }
+  },
+  "task_06_integration": {
+    "reference_main": "65670d29295d87d71109b1983206a74f2bbeeb6a",
+    "task_06_named_commit": "479990227e48543a853cdd36f52365cb5cc1536a",
+    "task_06_named_commit_is_main_ancestor": false,
+    "cache_sha256": "42cb42605a0703615d706924f85efa9bb456297fc6044eba34e5052d3cf05ded",
+    "player_state_11": "RESOLVED",
+    "state_11_presentation": "EXACT ROM-DERIVED: SPR_chaos_player_state_11",
+    "static_3d_spike_collision": "RESOLVED",
+    "static_spike_cells": [
+      [
+        1504,
+        832
+      ],
+      [
+        1536,
+        832
+      ],
+      [
+        2208,
+        832
+      ],
+      [
+        2240,
+        832
+      ]
+    ],
+    "removed_full_cell_masks": 4,
+    "type_21_anchor_contact": "RESOLVED",
+    "type_10_floating": "CANONICAL - UNCHANGED",
+    "moving_type_1b_unchanged": true,
+    "candidate": "THZ1 POC READY WITH DOCUMENTED ADAPTERS"
+  },
+  "task_07_core": {
+    "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+    "actual_gml_helper_executed": true,
+    "lookup_y_offset": 18,
+    "projection_anchor": "unshifted",
+    "stable_type_21_anchors": [
+      {
+        "placement": [
+          800,
+          606
+        ],
+        "integrated_y": 608,
+        "stable_y": 590
+      },
+      {
+        "placement": [
+          1248,
+          862
+        ],
+        "integrated_y": 864,
+        "stable_y": 846
+      },
+      {
+        "placement": [
+          2048,
+          318
+        ],
+        "integrated_y": 320,
+        "stable_y": 302
+      },
+      {
+        "placement": [
+          3152,
+          894
+        ],
+        "integrated_y": 896,
+        "stable_y": 878
+      },
+      {
+        "placement": [
+          3296,
+          286
+        ],
+        "integrated_y": 288,
+        "stable_y": 270
+      },
+      {
+        "placement": [
+          2400,
+          254
+        ],
+        "integrated_y": 256,
+        "stable_y": 238
+      }
+    ]
+  },
+  "task_07_integration": {
+    "reference_main": "53f8e647aae72fd8886052d0c8fb63fbd738e0b3",
+    "type_21_floor_probe": "RESOLVED",
+    "type_21_stable_y": [
+      590,
+      846,
+      302,
+      878,
+      270,
+      238
+    ],
+    "type_21_contact": {
+      "ordinary_side": "DAMAGE",
+      "top": "BOUNCE",
+      "lower_attack": "DEFEAT",
+      "lower_selector_06": "DEFEAT"
+    },
+    "state_11_graphics": "EXACT ROM-DERIVED",
+    "state_11_resource": "SPR_chaos_player_state_11",
+    "state_11_rgba_sha256": {
+      "0x38": "39007e36a7ec3e9888df5919d824667da84a4c0fdbf79cca6971ba03b7976c41",
+      "0x39": "22364cea9bd4190b07c28aad386f011699577e3d6fd105e851ed6980be05fc45",
+      "0x3A": "da066dd9609909a66e41b12048eae0b361460a1deb1e11d2f2dd181c05f6029e"
+    },
+    "type_10_visual_appearance": "CANONICAL - UNCHANGED"
+  },
+  "thz1_ring_layer": {
+    "terrain_source_count": 142,
+    "terrain_generated_count": 142,
+    "terrain_source_sha256": "2cdec17b0eb0ea8cada58e442074ebb1b3641cde09dfb9c8e959ceacea335628",
+    "layout_sha256": "0d2bba656d1a2cbaf8d5545d47c1c42b40235b8f3f67f015e324c10ec92f719b",
+    "room_OBJ_ring_count": 0,
+    "type_09_raw_count": 24,
+    "type_09_visible_count": 11,
+    "type_09_hidden_count": 13,
+    "initial_visible_population": 153,
+    "type_09_source_sha256": "827b11bedfc0e4a8dfe3039288ace6db8cf5ddf8fb969e0b61ffaba82a1acdb3",
+    "known_loop_type09": [
+      [
+        2832,
+        448
+      ],
+      [
+        2840,
+        408
+      ],
+      [
+        2880,
+        384
+      ],
+      [
+        2920,
+        408
+      ],
+      [
+        2928,
+        448
+      ]
+    ],
+    "known_twist_type09": [
+      [
+        3124,
+        548
+      ],
+      [
+        3160,
+        522
+      ],
+      [
+        3208,
+        512
+      ]
+    ],
+    "ring_cells_stripped": 72,
+    "shared_surface_draw_loops": 2,
+    "restart_terrain_active_count": 142,
+    "restart_type09_visible_active_count": 11,
+    "type_09_mapping_cpu": "0x8C71",
+    "type_09_mapping_rom": "0x3CC71",
+    "type_09_canvas": [
+      16,
+      16
+    ],
+    "type_09_origin": [
+      8,
+      15
+    ],
+    "type_09_sat_y_plus_one": true,
+    "type_09_visible_pixel_bounds": [
+      [
+        -7,
+        -15,
+        6,
+        0
+      ],
+      [
+        -5,
+        -15,
+        5,
+        0
+      ],
+      [
+        -6,
+        -15,
+        4,
+        0
+      ],
+      [
+        -2,
+        -15,
+        1,
+        0
+      ],
+      [
+        -4,
+        -9,
+        2,
+        -1
+      ],
+      [
+        -3,
+        -14,
+        1,
+        -4
+      ]
+    ],
+    "type_09_state_1_sequence": [
+      1,
+      2,
+      4,
+      3
+    ],
+    "type_09_state_1_duration": 8,
+    "type_09_state_2_sequence": [
+      5,
+      6,
+      5,
+      6,
+      5,
+      6,
+      5,
+      6
+    ],
+    "type_09_state_2_updates": 32,
+    "strict_overlap": {
+      "11": true,
+      "12": false
+    },
+    "terrain_render_offsets": [
+      0,
+      0
+    ],
+    "type_09_render_offsets": [
+      1,
+      17
+    ],
+    "surface": "view-sized",
+    "modes": [
+      "NORMAL",
+      "SOLO",
+      "COVERAGE"
+    ],
+    "normal_mode_debug_text": false,
+    "f8_tiny_labels_only": true,
+    "f9_audit_retained": true
+  },
+  "enemy_research": {
+    "verified_placements": 15,
+    "rom_derived_sprite_assets": 10,
+    "type_18_presentation_instances_added": 1,
+    "room_type_27_instances_added": 3,
+    "type_21_instances_added": 6,
+    "type_10_instances_added": 5,
+    "scope": "numeric types $10/$21/$27 plus verified type-$18 presentation graphics"
+  },
+  "project_resource_counts": {
+    "SonicChaos_POC.yyp": 495,
+    "sms_project_backup.yyp": 319
+  },
+  "resource_metadata_validated": true,
+  "resource_guid_strings_validated": 653,
+  "sprite_root_and_layer_pngs_validated": true,
+  "data_card_draw_defaults_validated": true,
+  "moving_spike_floor_anchor_validated": true,
+  "terrain_generation": {
+    "quadrants_validated": 4,
+    "root_layer_copies_match": true,
+    "spring_31_context_backdrop_pixels": 856,
+    "ring_frames_normalized": 6,
+    "terrain_ring_cells_stripped": 72,
+    "canonical_layout_sha256": "0d2bba656d1a2cbaf8d5545d47c1c42b40235b8f3f67f015e324c10ec92f719b",
+    "generator": "POC_notes/extract_chaos.py"
+  },
+  "type_18_presentation": {
+    "placement": {
+      "x": 3960,
+      "y": 558
+    },
+    "frames_validated": 5,
+    "presentation_offset_y": 22,
+    "scope": "verified graphics and animation frames only; completion/lifetime behavior remains partial"
+  },
+  "windows_feedback_adapters": {
+    "terrain_ring_surface_count": 142,
+    "type_09_visible_surface_count": 11,
+    "initial_visible_ring_population": 153,
+    "type_09_hidden_count": 13,
+    "type_09_mapping": "0x8C71 / 0x3CC71",
+    "type_09_canvas_origin": [
+      8,
+      15
+    ],
+    "terrain_ring_source_cells": 72,
+    "ring_runtime_manager": true,
+    "ring_layout_sha256": "0d2bba656d1a2cbaf8d5545d47c1c42b40235b8f3f67f015e324c10ec92f719b",
+    "type_18_presentation_offset_y": 22
+  },
+  "presentation_adapter_audit": {
+    "object_coordinate_hashes": {
+      "0x09": "64c12ac542c4151a83d55d2a411299e08df60aa870a50dd06c8609ec7d39c261",
+      "0x10": "9df1d95ccc05b18f46e7b03100e2b23d09fbe4d3803742b035938a709956f81d",
+      "0x18": "7a0c38e155b8ee99249278db1590431a2939d6546b798e7a9e73f7aae2e4fa23",
+      "0x1B": "c851c2d8550e8c72a7931094d6fb45cceb089257a80f8497dc4f752d4f9c3473",
+      "0x21": "4343eb48dc5453b4405f437d074f4696df809a488ed7b97d9b5c69de56807525",
+      "0x26": "b0996be231a58f4b0d4adfb140390cf5152b2cc0ab35112cce78c5553210c358",
+      "0x27": "5cfcf8996ffbc901fcb206a99929ce6136a4d038e4418c8fa0ef58a39efeda2f",
+      "0x28": "9ec59ab1535c75efb46db8682638a84fdb0d1d3e7da987de1c7de83b6de6f812"
+    },
+    "terrain_ring_coordinate_hash": "f6bea411d58267a028ff0cfdc93ac37c1b3b32e6221b31e11dfe75f668db652a",
+    "terrain_ring_count": 142,
+    "type09_visible": 11,
+    "type09_hidden": 13,
+    "adapters": {
+      "0x09": [
+        1,
+        17
+      ],
+      "0x10": [
+        0,
+        18
+      ],
+      "0x18": [
+        0,
+        22
+      ],
+      "0x21": [
+        0,
+        18
+      ]
+    },
+    "unchanged_zero_offset_types": [
+      "0x1B",
+      "0x26",
+      "0x27",
+      "0x28"
+    ],
+    "collision_uses_render_adapter": false
+  },
+  "task_05_closure": {
+    "type_10_selector_graphics": "RESOLVED",
+    "type_05_visible_effect": "RESOLVED",
+    "type_05_frames": 32,
+    "type_05_anchor": "POC bounded presentation adapter: follows active player; exact original special-render anchor unresolved",
+    "ring_verifier_contradiction": "RESOLVED",
+    "candidate": "THZ1 POC READY WITH DOCUMENTED ADAPTERS"
+  },
+  "rom_cache_manifest_files_validated": 17,
+  "terrain_spring_transparency": {
+    "48": {
+      "transparent_pixels": 856,
+      "opaque_pixels": 168
+    },
+    "49": {
+      "transparent_pixels": 856,
+      "opaque_pixels": 168
+    },
+    "51": {
+      "transparent_pixels": 856,
+      "opaque_pixels": 168
+    },
+    "54": {
+      "transparent_pixels": 854,
+      "opaque_pixels": 170
+    },
+    "56": {
+      "transparent_pixels": 854,
+      "opaque_pixels": 170
+    }
+  },
+  "source_sha256": {
+    "scripts/SCR_chaos_core/SCR_chaos_core.gml": "03c42083fdef74b0db21a304bbb0f3a2113cc4888c7da41e3a388a025de6953f",
+    "scripts/SCR_chaos_core_data/SCR_chaos_core_data.gml": "2cd1ccf1eb6b789e1f0d35284a576eaa8638cac0d82090fc4c63d889ee78ace0",
+    "scripts/SCR_chaos_adapter/SCR_chaos_adapter.gml": "22498a62cda404228c92f7f543cdea23c0576ba8af4eb8ab87162d8280e55836"
+  }
 }
