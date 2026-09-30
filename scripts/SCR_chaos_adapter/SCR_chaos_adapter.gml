@@ -98,6 +98,8 @@ function SCR_chaos_adapter_step(cp_p) {
     cp_c.support = instance_exists(cp_p.chaosSupport) ? 1 : 0;
     cp_c.objects = cp_c.support ? 32 : 0;
     if (cp_c.support) { cp_c.move &= ~1; cp_c.bg &= ~2; cp_c.vy = 0; SCR_cc_merge(cp_c); }
+    // Solid type-$10 boxes report side contacts here (see OBJ_chaos_object_10); consumed once.
+    if (variable_instance_exists(cp_p,"chaosBoxContacts")) { cp_c.objects |= cp_p.chaosBoxContacts; cp_p.chaosBoxContacts = 0; }
     // Sample monitor collision supplies object-side flags; never rewrites terrain profiles.
     if ((cp_c.move & 3) == 0) {
         with (cp_p) {
@@ -112,6 +114,9 @@ function SCR_chaos_adapter_step(cp_p) {
     // Dedicated GameMaker adapter resolves breakable $47 before the ordinary
     // terrain sensors. A successful attack therefore cannot become damage.
     SCR_chaos_block47_step(cp_p);
+    // ROM $4A74: while power code 3 is active the maximum-X-speed field $D373 is written $0600 every update (walking
+    // states otherwise store $0400). Written before the tick so the horizontal integration uses it.
+    if (global.chaosPowerCode == $03) cp_c.maximum = $0600;
     SCR_cc_tick(cp_c);
     // Widescreen room boundary adapter. Original camera-relative 256px clipping is omitted.
     if (cp_c.xu < 16*256 || cp_c.xu > (room_width-9)*256) {
@@ -410,6 +415,11 @@ function SCR_chaos_type10_reward(cp_parameter, cp_p) {
             if (!variable_global_exists("chaosType10D29A")) global.chaosType10D29A = 0;
             global.chaosType10D29A = SCR_chaos_bcd_add(global.chaosType10D29A,10);
         }
+    } else if (cp_parameter == $03) {
+        // THZ2 parameter $03 (dispatch branch $4B0F): power code 3 and a 900-update timer. No sound, no player state
+        // request, no velocity change. The effect is the per-update maximum-X-speed field below.
+        global.chaosPowerCode = $03;
+        global.chaosPowerTimer = 900;
     } else if (cp_parameter == $06) {
         global.chaosPowerCode = $06;
         global.chaosPowerTimer = 600;

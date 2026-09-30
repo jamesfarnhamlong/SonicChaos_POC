@@ -49,6 +49,47 @@
     ]
   },
   "loops": "centres/rows from ROM entry tiles $51/$52 (SCR_chaos_loop_layout); see verify_thz2_loops_twist.js",
+  "objects": {
+    "census": {
+      "0x09": 13,
+      "0x10": 5,
+      "0x18": 1,
+      "0x21": 5,
+      "0x26": 10,
+      "0x27": 4,
+      "0x28": 3
+    },
+    "supported_instantiated_by_loader": {
+      "0x10": 5,
+      "0x18": 1,
+      "0x21": 5,
+      "0x26": 10,
+      "0x27": 4,
+      "0x28": 3
+    },
+    "type10_param03": [
+      [
+        336,
+        302
+      ],
+      [
+        2784,
+        270
+      ]
+    ],
+    "coordinate_hash": "4bf4f2c47a98383edbf89fa1f02585bfeb111dcab9a1ed0bb651b28366ac4ae6",
+    "thz1_room_authored_counts": {
+      "0x10": 5,
+      "0x18": 1,
+      "0x21": 6,
+      "0x27": 3
+    }
+  },
+  "type10_contact": "one shared ROM-derived classification ($6328) and projection ($5FA0) for every variant; see verify_type10_contact.js / verify_type10_step.js",
+  "type27": {
+    "render_adapter": "TYPE27_RENDER_X 0, TYPE27_RENDER_Y 18 (central; mapped-object registration + Windows)",
+    "lifecycle": "ROM placement scan (spawn map $8146, every 4 updates, occupancy, initial fill) and lifetime $61E1"
+  },
   "breakable_type13": {
     "block": "0x9C",
     "cells": [

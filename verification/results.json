@@ -468,10 +468,10 @@
   },
   "project_resource_counts": {
     "sms_project_backup.yyp": 319,
-    "SonicChaos_POC.yyp": 505
+    "SonicChaos_POC.yyp": 508
   },
   "resource_metadata_validated": true,
-  "resource_guid_strings_validated": 658,
+  "resource_guid_strings_validated": 660,
   "sprite_root_and_layer_pngs_validated": true,
   "data_card_draw_defaults_validated": true,
   "moving_spike_floor_anchor_validated": true,
@@ -583,6 +583,6 @@
   "source_sha256": {
     "scripts\\SCR_chaos_core\\SCR_chaos_core.gml": "d9e16d92beab4f0f2bf25db8f5486a63aa08cf9389b689e8be642cfeb93fb0c3",
     "scripts\\SCR_chaos_core_data\\SCR_chaos_core_data.gml": "2cd1ccf1eb6b789e1f0d35284a576eaa8638cac0d82090fc4c63d889ee78ace0",
-    "scripts\\SCR_chaos_adapter\\SCR_chaos_adapter.gml": "05ce143635305a4c6e59a72b6fccafd012f35ee84045cee754df6102d798e447"
+    "scripts\\SCR_chaos_adapter\\SCR_chaos_adapter.gml": "b12c7ecd4c3ce51cfd601013d5c6341a0f9e2f713ad3b22c1ed08fe85885d339"
   }
 }

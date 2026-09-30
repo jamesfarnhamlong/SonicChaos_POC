@@ -6,7 +6,7 @@ This repository tracks the current working project rather than storing a new cop
 
 ## Start here
 
-- [THZ2 foundation / traversal (Windows accepted)](README_THZ2_FOUNDATION.md)
+- [THZ2 foundation, traversal and object population (Windows accepted)](README_THZ2_FOUNDATION.md)
 - [POC 18 notes and test checklist](README_18.md)
 - [POC 17 notes and test checklist](README_17.md)
 - [Detailed historical prototype notes](README_POC.md)

@@ -10,7 +10,7 @@ OBJECT = ROOT / "objects/OBJ_chaos_object_10"
 assert hashlib.sha256((OBJECT / "Create_0.gml").read_bytes()).hexdigest() == \
     "fdd9824295fe9ce916b51be35cdc7b707f453582c8505c85df1fd92023961c0d"
 assert hashlib.sha256((OBJECT / "Step_0.gml").read_bytes()).hexdigest() == \
-    "13d03485f4bbe3e7a00c9f6187f81f77e23655a14d094b8449a663a2b92df426"
+    "6056a53a1bb4e97e04fb8ddd56813e8dc4294a393538e49fdd5ba5233ce1d542"  # updated for the shared type-$10 contact fix (README_THZ2_FOUNDATION.md); previously 13d03485...
 
 draw = (OBJECT / "Draw_0.gml").read_text()
 assert "if (chaosConsumed) { draw_self(); exit; }" in draw

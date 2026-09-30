@@ -27,7 +27,8 @@ if (chaos_in_level()) {
     global.chaosLastSoundRequest = $81;
     global.chaosMusicRestoreRequested = true;
    }
-   global.chaosPowerCode = 0;
+   // ROM $4A74 clears only codes 4 and 6 at timer zero; code 3 is not cleared (see docs/thz2-thz3-object-deltas.md).
+   if (global.chaosPowerCode != $03) global.chaosPowerCode = 0;
   }
  }
  if (global.chaosNotice > 0) global.chaosNotice--;

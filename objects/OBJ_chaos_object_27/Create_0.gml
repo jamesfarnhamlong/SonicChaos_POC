@@ -1,5 +1,6 @@
 // THZ1 object $27. The ROM placement flag has bit 4 set on all three records.
 chaosActive = false;
+chaosAsleep = true; chaosAge = 0; chaosScanTick = 0; chaosInitialFillDone = false; // placement occupancy/lifecycle
 chaosState = 0;
 chaosVX = 0;
 chaosVY = 0;

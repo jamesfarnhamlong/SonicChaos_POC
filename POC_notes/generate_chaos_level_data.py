@@ -43,14 +43,14 @@ assert sorted(r["parameter"] for r in type26) == ["0x00"] * 8 + ["0x01", "0x88"]
 type28 = [r for r in objects["records"] if r["type_id"] == "0x28"]
 assert len(type28) == 3 and objects["type_counts"]["0x28"] == 3
 assert sorted((r["parameter"], r["aux1"]) for r in type28) == [("0x0A", "0x13"), ("0x0A", "0x19"), ("0x84", "0x00")]
-type28_rows = [
-    f'    [{r["index"]},{r["world_x"]},{r["world_y"]},${int(r["parameter"], 16):02X},'
-    f'${int(r["aux0"], 16):02X},${int(r["aux1"], 16):02X},${int(r["rom_offset"], 16):05X},"object-$28"]'
-    for r in type28]
-type26_rows = [
-    f'    [{r["index"]},{r["world_x"]},{r["world_y"]},${int(r["parameter"], 16):02X},'
-    f'${int(r["aux0"], 16):02X},${int(r["aux1"], 16):02X},${int(r["rom_offset"], 16):05X},"object-$26"]'
-    for r in type26]
+assert len(objects["records"]) == 41 and objects["type_counts"] == {
+    "0x09": 13, "0x10": 5, "0x18": 1, "0x21": 5, "0x26": 10, "0x27": 4, "0x28": 3}
+assert [r["index"] for r in objects["records"]] == list(range(1, 42))
+object_rows = [
+    f'    [{r["index"]},{r["world_x"]},{r["world_y"]},${int(r["type_id"], 16):02X},${int(r["flags"], 16):02X},'
+    f'${int(r["parameter"], 16):02X},${int(r["aux0"], 16):02X},${int(r["aux1"], 16):02X},'
+    f'${int(r["rom_offset"], 16):05X},"object-${int(r["type_id"], 16):02X}"]'
+    for r in objects["records"]]
 
 dims = layout["dimensions"]
 assert (dims["width_cells"], dims["height_cells"]) == (128, 32)
@@ -124,17 +124,12 @@ function SCR_chaos_thz2_type09() {{
     ];
 }}
 
-/// Canonical type-$26 records (raw parameter/aux). Record: [object_index, canonical_x, canonical_y, parameter, aux0, aux1, ROM_offset, source_class]
-function SCR_chaos_thz2_type26() {{
+/// Canonical THZ2 object census: all 41 raw records in package order. The generic loader (chaos_level_spawn_objects)
+/// dispatches the supported types; type $09 is owned by the ring manager (SCR_chaos_thz2_type09).
+/// Record: [object_index, canonical_x, canonical_y, type, flags, parameter, aux0, aux1, ROM_offset, source_class]
+function SCR_chaos_thz2_objects() {{
     return [
-{(","+chr(10)).join(type26_rows)}
-    ];
-}}
-
-/// Canonical type-$28 records (raw parameter/aux). Record: [object_index, canonical_x, canonical_y, parameter, aux0, aux1, ROM_offset, source_class]
-function SCR_chaos_thz2_type28() {{
-    return [
-{(","+chr(10)).join(type28_rows)}
+{(","+chr(10)).join(object_rows)}
     ];
 }}
 

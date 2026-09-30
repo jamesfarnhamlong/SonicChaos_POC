@@ -89,6 +89,5 @@ global.chaosLoopLast = -1;
 
 global.chaosDebug = false;
 
-// THZ2: canonical type-$26 springs are created from package data, not from room instances.
-chaos_level_spawn_type26();
-chaos_level_spawn_type28();
+// THZ2: every supported canonical object type is created from package data, not from room instances.
+chaos_level_spawn_objects();

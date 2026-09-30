@@ -34,28 +34,48 @@ if (chaosState == 3) {
 
 var cp_p = instance_find(OBJ_player,0);
 if (!instance_exists(cp_p)) exit;
-var cp_overlap = cp_p.bbox_right >= x-10 && cp_p.bbox_left <= x+10 &&
-    cp_p.bbox_bottom >= y-24 && cp_p.bbox_top <= y;
-if (!cp_overlap) exit;
-
-// $D503.1 is mandatory. Power code $06 alone does not substitute.
-var cp_state11 = variable_instance_exists(cp_p,"chaosCore") &&
-    (cp_p.chaosCore.state == $11 || cp_p.chaosCore.next == $11);
-var cp_attack = !cp_state11 &&
-    (cp_p.object_index == OBJ_player_char_spin || global.playerJump || global.playerSpinDash);
-if (!cp_attack) exit;
 if (!variable_instance_exists(cp_p,"chaosCore")) SCR_chaos_core_attach(cp_p);
 var cp_c = cp_p.chaosCore;
 
-var cp_bottom = cp_p.y > y;
-if (cp_bottom) {
+// One shared contact classification for EVERY type-$10 variant (the reward parameter is never consulted here). This is the
+// original overlap helper $6328 with the player's and the box's fixed integer anchors: exactly one of top (1), bottom (2),
+// right (4) or left (8) is kept, chosen by the smaller penetration, never by comparing the player's Y with the box's Y.
+var cp_bits = SCR_chaos_box_contact(floor(cp_c.xu/256),floor(cp_c.yu/256),floor(x),floor(y),9,18,10,24);
+if (cp_bits == 0) exit;
+
+// $5FA0 solid-object projection (bottom and side contacts): Sonic is moved out of the box and cannot pass through it.
+// Top-of-box standing is not projected here (unchanged from the accepted behaviour; see README_THZ2_FOUNDATION.md).
+if (cp_bits != 1) {
+    var cp_proj = SCR_chaos_box_projection(cp_bits,floor(cp_c.xu/256),floor(cp_c.yu/256),floor(x),floor(y),9,18,10,24);
+    if (cp_bits == 2 && (cp_c.contacts & 2) != 0) {
+        // D523 bit 1: already blocked from below, so the original does not push down.
+    } else {
+        cp_c.xu = cp_proj[0]*256 + (cp_c.xu & 255);
+        cp_c.yu = cp_proj[1]*256 + (cp_c.yu & 255);
+        cp_p.x = cp_c.xu/256; cp_p.y = cp_c.yu/256+cp_p.chaosAnchorOffset;
+        cp_p.chaosCoreLastX = cp_p.x; cp_p.chaosCoreLastY = cp_p.y;
+    }
+    // Object-contact flags for the next player update ($63E3): a box to Sonic's right blocks rightward motion (64 -> contact 4),
+    // a box to his left blocks leftward motion (128 -> contact 8).
+    if (cp_bits == 8) cp_p.chaosBoxContacts = 64;
+    if (cp_bits == 4) cp_p.chaosBoxContacts = 128;
+}
+
+// $D503.1 is mandatory. Power code $06 alone does not substitute.
+var cp_state11 = cp_c.state == $11 || cp_c.next == $11;
+var cp_attack = !cp_state11 &&
+    (cp_p.object_index == OBJ_player_char_spin || global.playerJump || global.playerSpinDash);
+if (!cp_attack) exit;
+
+// Bottom contact: neither direction nor requested state is tested.
+if (cp_bits == 2) {
     cp_c.vy = $0200;
     chaosVY = -$0200; chaosState = 3;
     exit;
 }
 
-var cp_top = cp_p.y <= y-4;
-if (cp_top && (cp_c.next == $0F || cp_c.next == $10 || cp_c.next == $15 || cp_c.next == $1A)) exit;
+// Top contact rejects the requested states $0F/$10/$15/$1A; every remaining top or side contact needs a nonzero, downward Y velocity.
+if (cp_bits == 1 && (cp_c.next == $0F || cp_c.next == $10 || cp_c.next == $15 || cp_c.next == $1A)) exit;
 if (cp_c.vy <= 0) exit;
 
 if (cp_c.state != 9) cp_c.vy = -$0400;

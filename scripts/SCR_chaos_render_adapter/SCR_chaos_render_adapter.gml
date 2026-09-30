@@ -11,6 +11,11 @@
 #macro TYPE18_RENDER_Y_ADAPTER 22
 #macro TYPE21_RENDER_X 0
 #macro TYPE21_RENDER_Y_ADAPTER 18
+// Type $27: ROM-derived mapped-object registration (visible rows +3..+17 below the anchor; the plain draw was 18 px too high,
+// docs/mapped-object-screen-registration.md) and confirmed against the SMS emulator in Windows testing. A class-wide GameMaker
+// presentation correction, NOT a canonical placement offset; collision, trigger and movement keep the canonical anchor.
+#macro TYPE27_RENDER_X 0
+#macro TYPE27_RENDER_Y 18
 
 function chaos_render_offset_x(cp_type) {
     switch (cp_type) {
@@ -18,6 +23,7 @@ function chaos_render_offset_x(cp_type) {
         case $10: return TYPE10_RENDER_X;
         case $18: return TYPE18_RENDER_X;
         case $21: return TYPE21_RENDER_X;
+        case $27: return TYPE27_RENDER_X;
     }
     return 0;
 }
@@ -31,6 +37,7 @@ function chaos_render_offset_y(cp_type) {
         case $10: return TYPE10_RENDER_Y_ADAPTER;
         case $18: return TYPE18_RENDER_Y_ADAPTER;
         case $21: return TYPE21_RENDER_Y_ADAPTER;
+        case $27: return TYPE27_RENDER_Y;
     }
     return 0;
 }
