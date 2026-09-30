@@ -1,4 +1,4 @@
-if (room == ROM_chaos_thz1) { SCR_chaos_adapter_step(id); exit; }
+if (chaos_in_level()) { SCR_chaos_adapter_step(id); exit; }
 
 /// @description  Controls
 
@@ -9,7 +9,7 @@ SCR_buttons();
 
 SCR_physics();
 
-if (room == ROM_chaos_thz1) {
+if (chaos_in_level()) {
     gravity = (chaosGrounded || instance_exists(chaosSupport)) ? 0 : global.valGravity;
 } else if (place_free(x, y+1))
 {
@@ -64,7 +64,7 @@ image_speed = spriteSpeed;
 /// Moves
 
 // -->
-if ((room == ROM_chaos_thz1 && hspeed > 0) || (room != ROM_chaos_thz1 && image_xscale == 1)) 
+if ((chaos_in_level() && hspeed > 0) || (!chaos_in_level() && image_xscale == 1)) 
 {   
     // Moves
     hspeed -= global.valSpeed;
@@ -81,7 +81,7 @@ if ((room == ROM_chaos_thz1 && hspeed > 0) || (room != ROM_chaos_thz1 && image_x
 }
 
 // <--
-if ((room == ROM_chaos_thz1 && hspeed < 0) || (room != ROM_chaos_thz1 && image_xscale == -1)) 
+if ((chaos_in_level() && hspeed < 0) || (!chaos_in_level() && image_xscale == -1)) 
 {
     // Moves
     hspeed += global.valSpeed;
@@ -99,16 +99,16 @@ if ((room == ROM_chaos_thz1 && hspeed < 0) || (room != ROM_chaos_thz1 && image_x
 
 // Back to normal
 
-if (hspeed == 0 && ((room == ROM_chaos_thz1 && SCR_chaos_floor_contact(id)) ||
-    (room != ROM_chaos_thz1 && !place_free(x, y+2))))
+if (hspeed == 0 && ((chaos_in_level() && SCR_chaos_floor_contact(id)) ||
+    (!chaos_in_level() && !place_free(x, y+2))))
 {
     instance_change(OBJ_player_char,true);
 }
 
 /// Jump
 
-if ((room == ROM_chaos_thz1 && SCR_chaos_floor_contact(id)) ||
-    (room != ROM_chaos_thz1 && !place_free(x, y+1)))
+if ((chaos_in_level() && SCR_chaos_floor_contact(id)) ||
+    (!chaos_in_level() && !place_free(x, y+1)))
 {
     if (global.btSpaceRel && vspeed < 0) 
     {
@@ -154,7 +154,7 @@ if (y > y+1)
     hspeed += abs(hspeed)*2;
 }
 
-if (room == ROM_chaos_thz1) {
+if (chaos_in_level()) {
     SCR_physics_ramp_spin();
 }
 
@@ -162,7 +162,7 @@ if (room == ROM_chaos_thz1) {
 
 // ----------- Floor ---------------
 
-if (room != ROM_chaos_thz1 &&
+if (!chaos_in_level() &&
     ((!place_free(x+hspeed, y+vspeed) && !place_meeting(x+hspeed, y, OBJ_collision_wall)) || // Floor
     (!place_free(x, y+vspeed) && place_meeting(x+hspeed, y, OBJ_collision_wall)))) // Floor + Wall
 {

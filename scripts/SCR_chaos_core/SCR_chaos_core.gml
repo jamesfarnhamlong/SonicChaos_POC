@@ -276,6 +276,29 @@ function SCR_cc_twist_tick(cp_c) {
     SCR_cc_twist_handler(cp_c,global.chaosTwistHandlers[cp_c.twist_variant&3][cp_c.tile-88]);
     SCR_cc_twist_vector(cp_c);
 }
+// Surface type 13 (THZ2 block $9C): breakable terrain. Every entry ends in $7898, which replaces the collided
+// map cell with $9D. The break itself is delegated to SCR_chaos_break_block (GameMaker adapter).
+function SCR_cc_break13(cp_index) { SCR_chaos_break_block(cp_index); }
+// $72B6 (right probe) / $72DD (left probe): requires the rolling flag (+3 bit 1) and |X-velocity high byte| >= 3;
+// a right-side hit with high byte < 7 adds +$40, a left-side hit with negated high byte < 7 adds -$40; then breaks.
+function SCR_cc_break13_side(cp_c, cp_s, cp_right) {
+    if ((cp_c.move & 2) == 0) return false;
+    var cp_hi = (cp_c.vx >> 8) & 255;
+    var cp_magnitude = (cp_hi & 128) != 0 ? ((256 - cp_hi) & 255) : cp_hi;
+    if (cp_magnitude < 3) return false;
+    if (cp_right) { if (cp_hi < 7) cp_c.vx = SCR_cc_s16(cp_c.vx + 64); }
+    else if (((256 - cp_hi) & 255) < 7) cp_c.vx = SCR_cc_s16(cp_c.vx - 64);
+    SCR_cc_break13(cp_s.index);
+    return true;
+}
+// $6B2C: current state not $0F/$10/$15/$1A and rolling flag set -> Y velocity $FBC0, airborne, break.
+function SCR_cc_break13_floor(cp_c, cp_s) {
+    if (cp_c.state == 15 || cp_c.state == 16 || cp_c.state == 21 || cp_c.state == 26) return;
+    if ((cp_c.move & 2) == 0) return;
+    cp_c.vy = -1088;
+    cp_c.bg &= ~2; cp_c.contacts &= ~2; cp_c.move |= 1;
+    SCR_cc_break13(cp_s.index);
+}
 function SCR_cc_floor(cp_c) {
     var cp_old_mod = cp_c.modifier; cp_c.modifier = 0;
     var cp_dy = cp_c.state == 33 ? -14 : (cp_c.state == 18 ? 8 : 0);
@@ -293,6 +316,7 @@ function SCR_cc_floor(cp_c) {
     }
     else if (cp_kind == 9 || cp_kind == 20) SCR_cc_spring(cp_c,cp_kind,cp_s.tile);
     else if (cp_kind == 23) SCR_cc_twist_enter(cp_c,cp_s.tile);
+    else if (cp_kind == 13) SCR_cc_break13_floor(cp_c,cp_s); // $6B2C
     else if (cp_kind == 0 || cp_kind == 6 || cp_kind == 7) {
         // $6C45/$6C4D: empty floor can request falling even when projection returned early.
         if ((cp_c.objects & 32) == 0) cp_c.bg &= ~2;
@@ -338,7 +362,8 @@ function SCR_cc_sides(cp_c) {
         // Task 06: THZ1 block $3D/type 5 has a decoded horizontal profile.
         // Its upper half has extent zero and its lower half extent 32. Other
         // type-5 tiles remain bounded as unsupported special dispatches.
-        if ((cp_kind == 5 && cp_s.tile != 61) || cp_kind == 13 ||
+        if (cp_kind == 13 && SCR_cc_break13_side(cp_c,cp_s,cp_right)) continue; // $72B6/$72DD; else ordinary projection
+        if ((cp_kind == 5 && cp_s.tile != 61) ||
             cp_kind == 19 || (cp_kind == 22 && cp_s.tile != 71) || cp_kind == 30) {
             cp_c.unsupported = cp_kind; // special dispatch not falsely presented as ordinary ROM behaviour
             continue;
@@ -353,6 +378,7 @@ function SCR_cc_ceiling(cp_c) {
     var cp_y = floor(cp_c.yu/256);
     var cp_s = SCR_cc_lookup(floor(cp_c.xu/256),cp_y-6,cp_c.plane);
     var cp_kind = cp_s.flags & 31;
+    if (cp_kind == 13 && cp_c.support == 0) { SCR_cc_break13(cp_s.index); return; } // $7464 -> $7898
     if (cp_kind == 5 || cp_kind == 13 || cp_kind == 19 || cp_kind == 20 || cp_kind == 21 || cp_kind == 28) {
         cp_c.unsupported = cp_kind; return;
     }

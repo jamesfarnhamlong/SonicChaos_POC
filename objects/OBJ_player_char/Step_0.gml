@@ -1,4 +1,4 @@
-if (room == ROM_chaos_thz1) { SCR_chaos_adapter_step(id); exit; }
+if (chaos_in_level()) { SCR_chaos_adapter_step(id); exit; }
 
 /// @description  Controls and Gravity
 
@@ -9,7 +9,7 @@ SCR_buttons();
 SCR_physics();
 SCR_physics_ramp();
 
-if (room == ROM_chaos_thz1) {
+if (chaos_in_level()) {
     gravity = (chaosGrounded || instance_exists(chaosSupport)) ? 0 : global.valGravity;
 } else if (place_free(x, y+1))
 {
@@ -145,7 +145,7 @@ if (global.btRightRel && playerBreakR == false )
 // Speed Control
 SCR_physics_speed();
 // Apply the same terrain ramp resolution after speed and direction are known.
-if (room == ROM_chaos_thz1) SCR_physics_ramp();
+if (chaos_in_level()) SCR_physics_ramp();
 // Break Control
 if (global.playerJump == true) 
 {
@@ -457,7 +457,7 @@ if (global.btSpacePress && global.playerJump == false && global.playerJumpSpring
 
 // ----------- Floor ---------------
 
-if (room != ROM_chaos_thz1 &&
+if (!chaos_in_level() &&
     ((!place_free(x+hspeed, y+vspeed) && !place_meeting(x+hspeed, y, OBJ_collision_wall)) || // Floor
     (!place_free(x, y+vspeed) && place_meeting(x+hspeed, y, OBJ_collision_wall)))) // Floor + Wall
 {

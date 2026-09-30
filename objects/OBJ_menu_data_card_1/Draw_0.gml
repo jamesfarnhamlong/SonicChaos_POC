@@ -11,6 +11,8 @@ if (global.saveGame == slot)
     draw_set_halign(fa_center);
     draw_set_colour(c_yellow_dark);
     draw_text(x,y+15,string_hash_to_newline(loadZone));
+    draw_set_colour(make_colour_rgb(150,160,170));
+    draw_text(x,y+50,string_hash_to_newline("UP/DOWN: ACT")); // small navigation hint
     draw_set_colour(c_white);
     draw_set_halign(fa_left);
     

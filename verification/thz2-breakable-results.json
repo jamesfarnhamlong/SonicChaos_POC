@@ -1,0 +1,19 @@
+{
+  "actual_gml_executed": true,
+  "cells": 6,
+  "layout": "THZ2 canonical",
+  "cases": {
+    "right_side": {
+      "vx_before": 1024,
+      "vx_after": 1088,
+      "cell": 2820
+    },
+    "left_side": {
+      "vx_before": -1024,
+      "vx_after": -1088,
+      "cell": 2827
+    }
+  },
+  "fragments": "UNRESOLVED: four type-$07 objects are not presented",
+  "d3b2_timer": "UNRESOLVED: set to $10 by the floor entry only"
+}

@@ -1,5 +1,5 @@
 /// Centralized collection executes after ordinary movement updates.
-if (room != ROM_chaos_thz1 || !instance_exists(OBJ_player)) exit;
+if (!chaos_in_level() || !instance_exists(OBJ_player)) exit;
 var cp_player = instance_find(OBJ_player,0);
 for (var cp_i=0; cp_i<chaosRingSourceCount; cp_i++) {
     if (!chaosRingActive[cp_i]) continue;

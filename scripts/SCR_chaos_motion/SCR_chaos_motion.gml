@@ -95,7 +95,7 @@ function SCR_chaos_world_begin() {
         }
     }
     if (cp_playable && !cp_on_loop) {
-        for (var cp_loop = 0; cp_loop < 2; cp_loop++) {
+        for (var cp_loop = 0; cp_loop < array_length(global.chaosLoopCenters); cp_loop++) {
             var cp_center = global.chaosLoopCenters[cp_loop];
             if (cp_p.x < cp_center - 96) global.chaosLoopPlanes[cp_loop] = 0;
             if (cp_p.x >= cp_center + 96) global.chaosLoopPlanes[cp_loop] = 1;
@@ -116,7 +116,7 @@ function SCR_chaos_world_begin() {
 function SCR_chaos_loop_try_enter(cp_p) {
     if (cp_p.chaosLoopCooldown > 0 || cp_p.vspeed < -0.5 || global.playerFly) return false;
     if (abs(cp_p.hspeed) < 0.25) return false;
-    for (var cp_i = 0; cp_i < 2; cp_i++) {
+    for (var cp_i = 0; cp_i < array_length(global.chaosLoopCenters); cp_i++) {
         var cp_center = global.chaosLoopCenters[cp_i];
         var cp_row = global.chaosLoopRows[cp_i];
         var cp_dir = sign(cp_p.hspeed);

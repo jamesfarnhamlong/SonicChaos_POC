@@ -1,0 +1,98 @@
+{
+  "dimensions": "128x32 blocks / 4096x1024 px (room + 4 terrain sprites)",
+  "layout_runtime_cells_sha256": "4acc0e68ff9478769214e06f16a3a8b09ca7f813e5d53e566c06a7fa0f6fa975",
+  "rings": {
+    "terrain": 133,
+    "type09_visible": 9,
+    "type09_hidden": 4,
+    "initial_visible": 142,
+    "terrain_hash": "58c06312aec331d99fc0f6bf6b9133418cd0ee0449c2c64ee07d0558cbc5cebf",
+    "type09_hash": "7c99666287d0afa56247d6a8682fcdf207b008ddcb091cbcb8ed39040def31ea",
+    "all_hash": "adf48eb1ef0c446c76b31888f5a996dfa6960e9d87404eee9a5def200d362022"
+  },
+  "thz2_room_instances": [
+    "OBJ_chaos_thz2_terrain",
+    "OBJ_chaos_zone"
+  ],
+  "thz1_unchanged": {
+    "terrain": 142,
+    "type09": 24,
+    "visible": 11,
+    "hidden": 13,
+    "initial_visible": 153,
+    "room_and_data_files_identical_to_HEAD": true
+  },
+  "type26": {
+    "records": 10,
+    "strong_00": 8,
+    "weak_01": 1,
+    "span_88": 1,
+    "span_width": 128,
+    "span_position": [
+      1504,
+      896
+    ]
+  },
+  "type28": {
+    "records": 3,
+    "lift_400": [
+      552,
+      720
+    ],
+    "lift_304": [
+      3672,
+      608
+    ],
+    "sag_84": [
+      1552,
+      304
+    ]
+  },
+  "loops": "centres/rows from ROM entry tiles $51/$52 (SCR_chaos_loop_layout); see verify_thz2_loops_twist.js",
+  "breakable_type13": {
+    "block": "0x9C",
+    "cells": [
+      [
+        128,
+        704
+      ],
+      [
+        160,
+        704
+      ],
+      [
+        192,
+        704
+      ],
+      [
+        288,
+        704
+      ],
+      [
+        320,
+        704
+      ],
+      [
+        352,
+        704
+      ]
+    ],
+    "replacement": "0x9D"
+  },
+  "type09_adapter": "X+1 Y+17 shared with THZ1; strict <12 collection; even-frame hidden gate; 32-update sparkle",
+  "terrain_sprites": [
+    "b35abf3a8faa2e46f85c91b97e0594fa1a0b4a7134ef6e3a3264836373172f92",
+    "362cc491cfbcad75bd71ca6d7ce6c4f667370179e0d6710870c7f0046fd2509a",
+    "c268d61ddb43170c27655b872aa0bcaf06d920d663dc00a0d519106f30701860",
+    "6d71c4aed613547d93b7b1b91609fb926e0e6f86d1a8337a55ad17ad2e647f49"
+  ],
+  "level_select": {
+    "mechanism": "saved zoneGoto = progression; global.selectedAct = temporary highlight; both index chaos_acts(), clamped; START resolves entry.room",
+    "entries": [
+      "Turquoise Hill 1",
+      "Turquoise Hill 2"
+    ],
+    "dev_shortcuts": "F10 toggle, -thz2"
+  },
+  "project_wiring": "resources, room order and helper functions present"
+}

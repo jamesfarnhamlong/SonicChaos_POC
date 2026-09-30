@@ -43,7 +43,7 @@ function SCR_physics() {
 
     // Compatibility values for legacy damage/effect objects at the Chaos test clock.
     // The playable Chaos controller uses SCR_chaos_core, not this routine.
-    if (room == ROM_chaos_thz1) {
+    if (chaos_in_level()) {
         global.valGravity = 48/256;
         global.valVspeed = 7;
         global.valJumpMax = 4.25;

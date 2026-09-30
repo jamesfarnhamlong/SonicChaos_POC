@@ -1,0 +1,61 @@
+{
+  "loops": {
+    "thz1": {
+      "centers": [
+        2368,
+        2880
+      ],
+      "rows": [
+        416,
+        512
+      ]
+    },
+    "thz2": {
+      "centers": [
+        1088,
+        2528
+      ],
+      "rows": [
+        384,
+        672
+      ]
+    }
+  },
+  "twist": {
+    "thz1_control": {
+      "right_updates": 83,
+      "left_updates": 75
+    },
+    "thz2": [
+      {
+        "strip": 0,
+        "gate": [
+          2080,
+          256
+        ],
+        "right_updates": 83,
+        "left_updates": 75
+      },
+      {
+        "strip": 1,
+        "gate": [
+          2464,
+          288
+        ],
+        "right_updates": 83,
+        "left_updates": 75
+      },
+      {
+        "strip": 2,
+        "gate": [
+          2816,
+          288
+        ],
+        "right_updates": 83,
+        "left_updates": 75
+      }
+    ]
+  },
+  "actual_gml_executed": true,
+  "loop_adapter_note": "loop path following is a GameMaker instance adapter (OBJ_player based); only its layout-derived inputs are executed here"
+}

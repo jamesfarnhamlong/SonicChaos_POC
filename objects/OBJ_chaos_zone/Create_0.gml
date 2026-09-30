@@ -3,6 +3,8 @@
 global.chaosTickRate = 60;
 game_set_speed(global.chaosTickRate, gamespeed_fps);
 SCR_chaos_motion_data();
+chaos_level_install_layout(); // THZ2: canonical package layout replaces the THZ1 collision map.
+chaos_level_apply_loops(); // loop centres/rows come from the layout's $51/$52 entry tiles (ROM $6CBA/$6CCD)
 // The break transient is non-persistent and room_restart destroys it. Clear
 // its only global request marker along with the freshly copied terrain state.
 global.chaosLastSoundRequest = 0;
@@ -46,7 +48,10 @@ if (global.checkPoint == true)
 }
 else
 {
-    instance_create(142, 658, OBJ_player_char);
+    if (chaos_is_thz2()) {
+        // DEV_SPAWN / UNVERIFIED: player-start word semantics are unresolved in the package.
+        instance_create(CHAOS_THZ2_DEV_SPAWN_X, CHAOS_THZ2_DEV_SPAWN_Y, OBJ_player_char);
+    } else instance_create(142, 658, OBJ_player_char);
 }
 
 // If Shield is true
@@ -83,3 +88,7 @@ global.chaosLoopFrames = 0;
 global.chaosLoopLast = -1;
 
 global.chaosDebug = false;
+
+// THZ2: canonical type-$26 springs are created from package data, not from room instances.
+chaos_level_spawn_type26();
+chaos_level_spawn_type28();

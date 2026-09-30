@@ -1,5 +1,5 @@
 function SCR_physics_jump_objects() {
-    if (room == ROM_chaos_thz1 && variable_instance_exists(id,"chaosCore")) { chaosQueuedBounce = true; return; }
+    if (chaos_in_level() && variable_instance_exists(id,"chaosCore")) { chaosQueuedBounce = true; return; }
 	if (global.playerFly == true) exit;
 
 	SCR_physics();

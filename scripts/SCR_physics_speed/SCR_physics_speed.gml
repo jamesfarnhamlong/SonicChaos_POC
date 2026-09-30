@@ -2,12 +2,12 @@ function SCR_physics_speed() {
 	// Actions
     // Loops, moving platforms and springs can set hspeed without a key release.
     // Restore the same ground friction the sample already uses for key releases.
-    if (room == ROM_chaos_thz1 && !global.btLeft && !global.btRight &&
+    if (chaos_in_level() && !global.btLeft && !global.btRight &&
         !global.playerJump && SCR_chaos_floor_contact(id)) {
         if (hspeed < 0) { releasedLeft = true; releasedRight = false; }
         else if (hspeed > 0) { releasedRight = true; releasedLeft = false; }
     }
-    if (room == ROM_chaos_thz1 && releasedLeft && releasedRight) {
+    if (chaos_in_level() && releasedLeft && releasedRight) {
         if (hspeed < 0) releasedRight = false;
         else if (hspeed > 0) releasedLeft = false;
         else {
@@ -132,7 +132,7 @@ function SCR_physics_speed() {
 
     // The sample selects idle earlier in Step, before the friction above
     // reaches zero. Choose it on the frame movement actually stops.
-    if (room == ROM_chaos_thz1 && hspeed == 0 && !global.playerJump &&
+    if (chaos_in_level() && hspeed == 0 && !global.playerJump &&
         !global.playerSpinDash && !global.btUp && !global.btDown &&
         SCR_chaos_floor_contact(id)) {
         sprite_index = SPR_player_stop;

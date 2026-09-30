@@ -482,3 +482,12 @@ function SCR_chaos_sample_damage() {
     if (place_meeting(x,y,OBJ_badniks) && !global.playerJump && !global.playerSpinDash)
         SCR_chaos_apply_hazard_damage(id);
 }
+
+// $7898: the collided map cell becomes $9D (empty, collision flags $00). Fragments (four type-$07 objects) and
+// the $D3B2 timer set by the floor entry are UNRESOLVED and deliberately not presented.
+function SCR_chaos_break_block(cp_index) {
+    if (!variable_global_exists("chaosBrokenCells")) global.chaosBrokenCells = [];
+    if (global.chaosTileIds[cp_index] == 157) return;
+    global.chaosTileIds[cp_index] = 157;
+    array_push(global.chaosBrokenCells, cp_index);
+}

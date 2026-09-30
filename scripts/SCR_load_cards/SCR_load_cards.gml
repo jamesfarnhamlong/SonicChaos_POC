@@ -3,12 +3,10 @@ function SCR_load_cards() {
 
 	if (global.allZones == false || instance_exists(OBJ_pause))
 	{
-	    switch(global.zoneGoto)
-	    {
-	        case 1: loadIcon = 0; loadZone = "Green Hill 1"; break; 
-	        case 2: loadIcon = 1; loadZone = "Green Hill 2"; break;
-	        default: loadIcon = 0; loadZone = "zone"; break;
-	    }
+	    // The card title and icon come from the act table; the saved zone code is the entry.
+	    var cp_entry = chaos_act_entry(global.selectedAct);
+	    loadIcon = cp_entry.icon;
+	    loadZone = cp_entry.name;
 	}
 	else // Clear all game
 	{

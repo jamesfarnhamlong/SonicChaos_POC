@@ -42,4 +42,4 @@ if (global.playerBlink == true)
 }
 
 
-if (room == ROM_chaos_thz1) { SCR_chaos_player_init(id); SCR_chaos_core_attach(id); }
+if (chaos_in_level()) { SCR_chaos_player_init(id); SCR_chaos_core_attach(id); }

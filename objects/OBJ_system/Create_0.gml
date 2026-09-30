@@ -9,7 +9,8 @@ global.saveGame = 1; //Memory Card Slot
 global.memoryCards = 5; //How many cards?
 
 // Rotes
-global.zoneGoto = 1; // Zone code
+global.zoneGoto = 1; // Zone code: saved progression (index into chaos_acts())
+global.selectedAct = 1; // Highlighted / played act (index into chaos_acts()); never saved
 global.specialStageGoto = 1; // Special Stage code
 
 // Unlocks

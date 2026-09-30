@@ -1,4 +1,4 @@
-if (room == ROM_chaos_thz1) {
+if (chaos_in_level()) {
     var cam = view_camera[0];
     var vx = camera_get_view_x(cam);
     var vy = camera_get_view_y(cam);

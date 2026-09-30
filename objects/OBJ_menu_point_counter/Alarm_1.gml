@@ -13,7 +13,8 @@
 
 /// Next Zone
 
-global.zoneGoto++;
+// Progress never goes backwards or past the last implemented act.
+global.zoneGoto = chaos_act_progress(global.zoneGoto, global.selectedAct);
 
 /// Save Game
 

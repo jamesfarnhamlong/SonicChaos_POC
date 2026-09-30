@@ -1,12 +1,7 @@
-function SCR_zone_goto() {
-	switch (global.zoneGoto)
-	{
-	    case 1: room_goto(ROM_chaos_thz1); break;
-	    case 2: room_goto(ROM_zone_2); break;
-    
-	    default: game_restart(); break; // Error
-	}
-
-
-
+function SCR_zone_goto(cp_act = global.selectedAct) {
+	// Sonic Chaos acts: cp_act indexes chaos_acts(). -thz2 is a developer shortcut only.
+	var cp_entry = chaos_act_entry(cp_act);
+	global.selectedAct = chaos_act_clamp(cp_act);
+	if (chaos_dev_thz2_requested()) room_goto(ROM_chaos_thz2);
+	else room_goto(cp_entry.room);
 }

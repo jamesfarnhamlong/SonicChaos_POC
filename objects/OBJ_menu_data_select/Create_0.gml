@@ -14,6 +14,7 @@ instance_create(0,0,OBJ_effect_fade_in);
 ///Variables
 
 press = false;
+slotShown = -1; // slot whose saved progression last initialised the highlighted act
 
 /// Colors
 

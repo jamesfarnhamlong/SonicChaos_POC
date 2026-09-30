@@ -1,3 +1,3 @@
-if (room == ROM_chaos_thz1) {
+if (chaos_in_level()) {
     SCR_chaos_world_begin();
 }

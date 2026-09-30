@@ -1,7 +1,7 @@
 function SCR_physics_ramp_spin() {
     // Chaos surfaces are resolved from the ROM height profiles in
     // SCR_chaos_rom_floor. The sample's mask-only step-up climbs walls.
-    if (room == ROM_chaos_thz1) {
+    if (chaos_in_level()) {
         return;
     }
 

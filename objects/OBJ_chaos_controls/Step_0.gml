@@ -13,12 +13,12 @@ if (keyboard_check_pressed(vk_f2)) {
     if (room == ROM_chaos_thz1) room_goto(ROM_zone_1);
     else room_goto(ROM_chaos_thz1);
 }
-if (room == ROM_chaos_thz1 && keyboard_check_pressed(ord("R"))) { global.checkPoint = false; room_restart(); }
-if (room == ROM_chaos_thz1 && instance_exists(OBJ_player)) {
+if (chaos_in_level() && keyboard_check_pressed(ord("R"))) { global.checkPoint = false; room_restart(); }
+if (chaos_in_level() && instance_exists(OBJ_player)) {
     if (OBJ_player.y > room_height + 32) room_restart();
 }
 
-if (room == ROM_chaos_thz1) {
+if (chaos_in_level()) {
  if (global.chaosPowerTimer > 0) {
   global.chaosPowerTimer--;
   if (global.chaosPowerTimer == 0) {
@@ -31,7 +31,7 @@ if (room == ROM_chaos_thz1) {
   }
  }
  if (global.chaosNotice > 0) global.chaosNotice--;
- if (instance_exists(OBJ_player_char) && !global.chaosComplete) {
+ if (room == ROM_chaos_thz1 && instance_exists(OBJ_player_char) && !global.chaosComplete) {
   var p = instance_find(OBJ_player_char,0);
   // Save a safe ground position after each section, whichever route was chosen.
   var section = min(3,floor(p.x/1024));
@@ -54,6 +54,13 @@ if (room == ROM_chaos_thz1) {
  }
 }
 
-if (room == ROM_chaos_thz1 && keyboard_check_pressed(vk_f3)) {
+if (chaos_in_level() && keyboard_check_pressed(vk_f3)) {
     global.chaosDebug = !global.chaosDebug;
+}
+
+// Developer shortcut (F10): toggle THZ1 <-> THZ2 in-level. Normal selection is the data-select act table (chaos_acts()).
+if (chaos_in_level() && keyboard_check_pressed(vk_f10)) {
+    global.checkPoint = false;
+    global.ring = 0;
+    room_goto(chaos_is_thz2() ? ROM_chaos_thz1 : ROM_chaos_thz2);
 }
