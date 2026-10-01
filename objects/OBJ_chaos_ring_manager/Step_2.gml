@@ -1,16 +1,17 @@
 /// Centralized collection executes after ordinary movement updates.
 if (!chaos_in_level() || !instance_exists(OBJ_player)) exit;
 var cp_player = instance_find(OBJ_player,0);
-for (var cp_i=0; cp_i<chaosRingSourceCount; cp_i++) {
-    if (!chaosRingActive[cp_i]) continue;
-    var cp_record = chaosRingRecords[cp_i];
-    var cp_x = cp_record[1];
-    var cp_y = cp_record[2];
-    if (cp_player.bbox_right < cp_x-6 || cp_player.bbox_left > cp_x+7 ||
-        cp_player.bbox_bottom < cp_y-8 || cp_player.bbox_top > cp_y+7) continue;
-    chaosRingActive[cp_i] = false;
-    global.ring += 1;
-    instance_create(cp_x,cp_y,OBJ_ring_stars);
+// Ordinary (layout/terrain) rings: the ROM $753E point probe, not a mask or box overlap. The player update (SCR_chaos_adapter) publishes one integer
+// probe point per update (anchor X, anchor Y -8 / +2 by the parity of the shadow +$07 counter) only for ring-probing states; the quadrant containing the
+// point is the ring (extracted per-quadrant records stand in for the ROM's terrain-block replacement). The effect appears at the probe point.
+var cp_have_core = variable_instance_exists(cp_player,"chaosCore");
+if (cp_have_core && variable_struct_exists(cp_player.chaosCore,"ring_probe_valid") && cp_player.chaosCore.ring_probe_valid) {
+    var cp_ring = chaos_terrain_ring_at(chaosRingQuadIndex, cp_player.chaosCore.ring_probe_x, cp_player.chaosCore.ring_probe_y);
+    if (cp_ring >= 0 && chaosRingActive[cp_ring]) {
+        chaosRingActive[cp_ring] = false;
+        global.ring += 1;
+        instance_create(cp_player.chaosCore.ring_probe_x,cp_player.chaosCore.ring_probe_y,OBJ_ring_stars);
+    }
 }
 
 // Raw type-$09 behavior remains separate from terrain-ring collection.

@@ -1,0 +1,421 @@
+{
+ "source": "sonic-chaos-reference-work data/rom-cache/terrain-ring-collection.json @ 90b4b05",
+ "source_sha256": "4afbcce266e05a6087d5b9a9bbcd3e21151018d9aeaffac75affb502fcaa6a76",
+ "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+ "trimmed": "routines, probe_callers, state_reach, timer/emulated tables omitted; the model, fixtures and tables the POC uses are kept (probing states: see player-animation-counter.json eligible_states)",
+ "model": {
+  "probe_dy_by_bit0": {
+   "0": -26,
+   "1": -16
+  },
+  "anchor_bias": 18,
+  "effective_probe_y_from_anchor": {
+   "0": -8,
+   "1": 2
+  },
+  "probe_x": "anchor X",
+  "cell": "32x32 layout block",
+  "quadrant": "16x16, index ((x>>4)&1) + 2*((y>>4)&1)"
+ },
+ "quadrant_tables": {
+  "evidence": "DECODED DATA + BYTE-VERIFIED ASSEMBLY",
+  "presence_rom": "0x075DC",
+  "replacement_rom": "0x075F4",
+  "index": "(block-$40)*4 + ((probeX>>4)&1) + 2*((probeY>>4)&1)",
+  "rows": [
+   {
+    "block": "0x40",
+    "quadrants_with_ring": [
+     "top_left",
+     "top_right"
+    ],
+    "replacement_after_collect": {
+     "top_left": "0x43",
+     "top_right": "0x42"
+    }
+   },
+   {
+    "block": "0x41",
+    "quadrants_with_ring": [
+     "bottom_left",
+     "bottom_right"
+    ],
+    "replacement_after_collect": {
+     "bottom_left": "0x45",
+     "bottom_right": "0x44"
+    }
+   },
+   {
+    "block": "0x42",
+    "quadrants_with_ring": [
+     "top_left"
+    ],
+    "replacement_after_collect": {
+     "top_left": "0x46"
+    }
+   },
+   {
+    "block": "0x43",
+    "quadrants_with_ring": [
+     "top_right"
+    ],
+    "replacement_after_collect": {
+     "top_right": "0x46"
+    }
+   },
+   {
+    "block": "0x44",
+    "quadrants_with_ring": [
+     "bottom_left"
+    ],
+    "replacement_after_collect": {
+     "bottom_left": "0x46"
+    }
+   },
+   {
+    "block": "0x45",
+    "quadrants_with_ring": [
+     "bottom_right"
+    ],
+    "replacement_after_collect": {
+     "bottom_right": "0x46"
+    }
+   }
+  ],
+  "presence_values": [
+   0,
+   255
+  ],
+  "replacement_values": [
+   "0x42",
+   "0x43",
+   "0x44",
+   "0x45",
+   "0x46"
+  ]
+ },
+ "act_rings": {
+  "thz1": {
+   "width_cells": 128,
+   "ring_quadrants": 142,
+   "cache_terrain_ring_count": 142,
+   "equal": true,
+   "blocks": [
+    "0x40",
+    "0x41",
+    "0x42",
+    "0x43"
+   ]
+  },
+  "thz2": {
+   "width_cells": 128,
+   "ring_quadrants": 133,
+   "cache_terrain_ring_count": 133,
+   "equal": true,
+   "blocks": [
+    "0x40",
+    "0x41",
+    "0x42",
+    "0x43"
+   ]
+  },
+  "thz3": {
+   "width_cells": 80,
+   "ring_quadrants": 6,
+   "cache_terrain_ring_count": 6,
+   "equal": true,
+   "blocks": [
+    "0x40"
+   ]
+  }
+ },
+ "probe_coordinate_fixture": {
+  "evidence": "CONTROLLED ROUTINE RESULT",
+  "routine": "$7725 as called by $753E (BC=0)",
+  "cases": 814,
+  "mismatches": 0,
+  "first_mismatch": null,
+  "rule": "probeX = anchorX (BC=0); probeY = anchorY + (-26 | -16) + 18, negative -> 0; column = probeX >> 5, row = probeY >> 5 (32x32 layout cells)",
+  "effective_probe_offsets_from_anchor_y": {
+   "bit0_clear": -8,
+   "bit0_set": 2
+  }
+ },
+ "collection_fixture": {
+  "thz1": {
+   "evidence": "CONTROLLED ROUTINE RESULT",
+   "act": "thz1",
+   "ring_quadrants": 142,
+   "cases": 113600,
+   "mismatches": 0,
+   "first_mismatch": null,
+   "collected_cases": 91552,
+   "accepted_anchor_x_span_over_all_rings": [
+    176,
+    3455
+   ],
+   "model": "collect iff block(probe cell) in $40..$45, presence[block][quadrant(probe)] != 0; quadrant = ((probeX>>4)&1) + 2*((probeY>>4)&1)"
+  },
+  "thz2": {
+   "evidence": "CONTROLLED ROUTINE RESULT",
+   "act": "thz2",
+   "ring_quadrants": 133,
+   "cases": 106400,
+   "mismatches": 0,
+   "first_mismatch": null,
+   "collected_cases": 82608,
+   "accepted_anchor_x_span_over_all_rings": [
+    192,
+    3679
+   ],
+   "model": "collect iff block(probe cell) in $40..$45, presence[block][quadrant(probe)] != 0; quadrant = ((probeX>>4)&1) + 2*((probeY>>4)&1)"
+  },
+  "thz3": {
+   "evidence": "CONTROLLED ROUTINE RESULT",
+   "act": "thz3",
+   "ring_quadrants": 6,
+   "cases": 4800,
+   "mismatches": 0,
+   "first_mismatch": null,
+   "collected_cases": 3712,
+   "accepted_anchor_x_span_over_all_rings": [
+    160,
+    255
+   ],
+   "model": "collect iff block(probe cell) in $40..$45, presence[block][quadrant(probe)] != 0; quadrant = ((probeX>>4)&1) + 2*((probeY>>4)&1)"
+  }
+ },
+ "region_fixture": {
+  "evidence": "CONTROLLED ROUTINE RESULT",
+  "quadrant_pixels": {
+   "left": 1408,
+   "top": 64,
+   "right_inclusive": 1423,
+   "bottom_inclusive": 79
+  },
+  "rows": [
+   {
+    "bit0": 0,
+    "anchor_x_accepted": [
+     1408,
+     1423
+    ],
+    "anchor_y_accepted": [
+     72,
+     87
+    ],
+    "width": 16,
+    "height": 16,
+    "expected": {
+     "x": [
+      1408,
+      1423
+     ],
+     "y": [
+      72,
+      87
+     ]
+    }
+   },
+   {
+    "bit0": 1,
+    "anchor_x_accepted": [
+     1408,
+     1423
+    ],
+    "anchor_y_accepted": [
+     62,
+     77
+    ],
+    "width": 16,
+    "height": 16,
+    "expected": {
+     "x": [
+      1408,
+      1423
+     ],
+     "y": [
+      62,
+      77
+     ]
+    }
+   }
+  ],
+  "union_anchor_y_either_parity": [
+   62,
+   87
+  ],
+  "overlap_anchor_y_both_parities": [
+   72,
+   77
+  ],
+  "edges": "all four edges inclusive at integer-pixel resolution; the fractional position bytes (+$10, +$13) are not used"
+ },
+ "direction_fixture": {
+  "evidence": "CONTROLLED ROUTINE RESULT",
+  "cases": 1600,
+  "not_collected": 0,
+  "conclusion": "the routine reads only +$07 bit 0, X, Y (and +$22 for type $1A): velocity direction, requested state and contact flags do not matter; 'from below' or 'from the side' collects exactly when the single probe point lies in the quadrant"
+ },
+ "effects_fixture": {
+  "evidence": "CONTROLLED ROUTINE RESULT",
+  "samples": [
+   {
+    "d29a_before": "00",
+    "d29a_after": "01",
+    "d299_after": 0,
+    "cell_after": "0x45",
+    "slot0_type": 3,
+    "effect_xy": [
+     1416,
+     88
+    ],
+    "sound": "0xBF"
+   },
+   {
+    "d29a_before": "09",
+    "d29a_after": "10",
+    "d299_after": 0,
+    "cell_after": "0x45",
+    "slot0_type": 3,
+    "effect_xy": [
+     1416,
+     88
+    ],
+    "sound": "0xBF"
+   },
+   {
+    "d29a_before": "19",
+    "d29a_after": "20",
+    "d299_after": 0,
+    "cell_after": "0x45",
+    "slot0_type": 3,
+    "effect_xy": [
+     1416,
+     88
+    ],
+    "sound": "0xBF"
+   },
+   {
+    "d29a_before": "98",
+    "d29a_after": "99",
+    "d299_after": 0,
+    "cell_after": "0x45",
+    "slot0_type": 3,
+    "effect_xy": [
+     1416,
+     88
+    ],
+    "sound": "0xBF"
+   },
+   {
+    "d29a_before": "99",
+    "d29a_after": "00",
+    "d299_after": 1,
+    "cell_after": "0x45",
+    "slot0_type": 3,
+    "effect_xy": [
+     1416,
+     88
+    ],
+    "sound": "0xA9"
+   }
+  ],
+  "replacement_chain": [
+   {
+    "block": "0x40",
+    "quadrant": 0,
+    "collected": true,
+    "cell_after": "0x43",
+    "expected_cell_after": "0x43"
+   },
+   {
+    "block": "0x40",
+    "quadrant": 1,
+    "collected": true,
+    "cell_after": "0x42",
+    "expected_cell_after": "0x42"
+   },
+   {
+    "block": "0x41",
+    "quadrant": 2,
+    "collected": true,
+    "cell_after": "0x45",
+    "expected_cell_after": "0x45"
+   },
+   {
+    "block": "0x41",
+    "quadrant": 3,
+    "collected": true,
+    "cell_after": "0x44",
+    "expected_cell_after": "0x44"
+   },
+   {
+    "block": "0x42",
+    "quadrant": 0,
+    "collected": true,
+    "cell_after": "0x46",
+    "expected_cell_after": "0x46"
+   },
+   {
+    "block": "0x43",
+    "quadrant": 1,
+    "collected": true,
+    "cell_after": "0x46",
+    "expected_cell_after": "0x46"
+   },
+   {
+    "block": "0x44",
+    "quadrant": 2,
+    "collected": true,
+    "cell_after": "0x46",
+    "expected_cell_after": "0x46"
+   },
+   {
+    "block": "0x45",
+    "quadrant": 3,
+    "collected": true,
+    "cell_after": "0x46",
+    "expected_cell_after": "0x46"
+   }
+  ],
+  "side_effects": "BCD +1 on $D29A (carry past $99 runs $3104 + $178F), block write to the layout cell (D354), tile redraw $23F9, type $03 effect via $5E9C at the probe point (D35C/D35E = probeX, probeY), sound $BF, $3138"
+ },
+ "header_types": {
+  "evidence": "DECODED DATA",
+  "table_rom": "0x38000 (bank 14 $8000, selected by $D2E0)",
+  "all_zones_use_table_cpu": [
+   "8000"
+  ],
+  "blocks_of_type_7": [
+   "0x40",
+   "0x41",
+   "0x42",
+   "0x43",
+   "0x44",
+   "0x45"
+  ],
+  "blocks_of_type_1d": [
+   "0xB8"
+  ],
+  "blocks_of_type_1a": [
+   "0xA7"
+  ],
+  "blocks_of_type_14": [
+   "0x36",
+   "0x37",
+   "0x38",
+   "0x39",
+   "0x3A",
+   "0x3B"
+  ]
+ },
+ "unresolved": [
+  "Why the original alternates the probe height: the code only reads +$07 bit 0; whether this is intended dithering or an accident of reusing the animation counter is not established.",
+  "Semantic names of surface types $1D, $1A and $14 (the same probe handles them).",
+  "Exact per-frame +$07 values for states whose durations are set by frame-selector routines (e.g. run/jump speed-dependent animation) were only measured statistically in play.",
+  "A complete census of which player states call the probe at runtime: static reachability is complete but may over-approximate (conditional paths); only states reached in play were observed dynamically.",
+  "Rings are removed by writing the layout cell; no ROM evidence was gathered on respawn after re-entering the zone (outside this study).",
+  "Pixel-exact visual position of the collected-ring effect (type $03) was not measured; only its logical position (probe point) is established."
+ ]
+}

@@ -3,6 +3,7 @@ depth = 0; // Explicit order: terrain 100 -> ring manager 0 -> player -50.
 // Population A: terrain-derived blocks $40-$43.
 chaosRingRecords = chaos_is_thz2() ? SCR_chaos_thz2_terrain_rings() : SCR_chaos_ring_data();
 chaosRingSourceCount = array_length(chaosRingRecords);
+chaosRingQuadIndex = chaos_terrain_ring_index(chaosRingRecords); // $753E probe point -> record
 chaosRingActive = array_create(chaosRingSourceCount,true);
 chaosRingExpectedThisFrame = array_create(chaosRingSourceCount,false);
 chaosRingDrawnThisFrame = array_create(chaosRingSourceCount,false);

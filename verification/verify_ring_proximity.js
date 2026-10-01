@@ -47,7 +47,7 @@ function world(records, W, bbox, gmOffset) {
     w.mgr = {chaosRingSourceCount: 0, chaosRingRecords: [], chaosRingActive: [], chaosType09SourceCount: records.length, chaosType09Records: records,
         chaosType09Collected: records.map(() => false), chaosType09State: records.map(r => r[3] === 0 ? 1 : 3), chaosType09SparkleTimer: records.map(() => 0), chaosRingGlobalFrame: 0};
     w.ctx = vm.createContext({global: {ring: 0, music: 0}, floor: Math.floor, abs: Math.abs, max: Math.max, chaos_in_level: () => true, instance_exists: o => o === 1 || o === w.player, instance_find: () => w.player,
-        OBJ_player: 1, OBJ_player_char: 'char', OBJ_player_char_spin: 'spin', variable_instance_exists: (o, k) => k in o, SCR_chaos_core_attach: () => {}, instance_create: () => { w.stars++; },
+        OBJ_player: 1, OBJ_player_char: 'char', OBJ_player_char_spin: 'spin', variable_instance_exists: (o, k) => k in o, variable_struct_exists: (o, k) => k in o, SCR_chaos_core_attach: () => {}, instance_create: () => { w.stars++; },
         audio_is_playing: () => false, audio_stop_sound: () => {}, audio_play_sound: () => {}, SFX_ring: 0, OBJ_ring_stars: 0, camera_get_view_width: () => W});
     vm.runInContext(hex(rd('scripts/SCR_chaos_box_contact/SCR_chaos_box_contact.gml')), w.ctx);
     w.ctx.b = w.mgr; w.script = new vm.Script(`(function(){ with (b) { ${stepSrc} } })()`);
@@ -87,8 +87,8 @@ ok(/chaos_ring_proximity\(cp_anchor_x,cp_anchor_y,cp_t09_record\[1\],cp_t09_reco
 ok(/cp_t09_parameter == 1 && \(chaosRingGlobalFrame mod 2\) != 0/.test(t09), '$09 hidden-frame parity unchanged');
 // terrain (layout) rings are a different ROM population and are deliberately unchanged
 const terr = step.slice(0, step.indexOf('var cp_have_anchor'));
-ok(/cp_player\.bbox_right < cp_x-6/.test(terr) && /bbox_bottom < cp_y-8/.test(terr), 'terrain-ring path untouched (separate ROM mechanism: $753E terrain probe)');
+ok(/chaos_terrain_ring_at\(/.test(terr) && !/bbox_/.test(terr), 'terrain rings use the separate $753E point probe (verify_terrain_ring_probe.js), not this proximity test');
 // canonical placements unchanged
-const dirty = cp.spawnSync('git', ['diff', '--quiet', 'HEAD', '--', 'scripts/SCR_chaos_type09_data', 'scripts/SCR_chaos_ring_data', 'scripts/SCR_chaos_level_thz2_data', 'objects/OBJ_chaos_ring_manager/Draw_0.gml', 'objects/OBJ_chaos_ring_manager/Create_0.gml'], {cwd: root}).status;
-eq(dirty, 0, 'ring placements, ring data and ring drawing/creation are byte-identical to HEAD');
+const dirty = cp.spawnSync('git', ['diff', '--quiet', 'HEAD', '--', 'scripts/SCR_chaos_type09_data', 'scripts/SCR_chaos_ring_data', 'scripts/SCR_chaos_level_thz2_data', 'objects/OBJ_chaos_ring_manager/Draw_0.gml'], {cwd: root}).status;
+eq(dirty, 0, 'ring placements, ring data and ring drawing are byte-identical to HEAD');
 console.log(`RING PROXIMITY CHECKS PASSED (${checks} assertions, ${runs} Step_2 runs, THZ1+THZ2 records, widths 256/290/348/400/640, 4 mask shapes, 3 GM offsets)`);

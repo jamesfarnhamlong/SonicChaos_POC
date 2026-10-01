@@ -90,6 +90,7 @@ function SCR_chaos_adapter_step(cp_p) {
     global.valGravity = 48/256;
     cp_p.chaosAdapterLoop = SCR_chaos_player_begin(cp_p);
     cp_c.xu = round(cp_p.x*256); cp_c.yu = round((cp_p.y-cp_p.chaosAnchorOffset)*256);
+    cp_c.ring_probe_valid = false; // ordinary terrain-ring probe ($753E): set below only for an update that reaches it
     if (cp_p.chaosAdapterLoop) {
         cp_p.hspeed = 0; cp_p.vspeed = 0; cp_p.gravity = 0;
         cp_p.chaosCoreLastX = cp_p.x; cp_p.chaosCoreLastY = cp_p.y;
@@ -119,6 +120,9 @@ function SCR_chaos_adapter_step(cp_p) {
     // ROM $4A74: while power code 3 is active the maximum-X-speed field $D373 is written $0600 every update (walking
     // states otherwise store $0400). Written before the tick so the horizontal integration uses it.
     if (global.chaosPowerCode == $03) cp_c.maximum = $0600;
+    // Shadow +$07 animation counter (ROM engine $64FA, runs BEFORE the state callback). Inputs are what the previous update left behind: the requested
+    // state, the X speed high byte, floor contact ($D522 bit 1) and side contacts ($D523 & $0C). Never driven by GameMaker image_index/image_speed.
+    var cp_anim_t = SCR_cc_anim_update(cp_c);
     SCR_cc_tick(cp_c);
     // Widescreen room boundary adapter. Original camera-relative 256px clipping is omitted.
     // State $20 runs past the map edge exactly as the ROM does (shared terrain lookup), so the boundary adapter yields to it.
@@ -150,6 +154,9 @@ function SCR_chaos_adapter_step(cp_p) {
     if ((cp_c.move & 1) != 0 && cp_c.vy < 0) {
         cp_p.chaosSupport = noone; cp_c.support = 0; cp_c.objects = 0;
     }
+    // Terrain-ring probe ($753E): one integer point from the update's FINAL anchor (after movement, projection, the room/clamp adapters and moving-platform support) using the
+    // current +$07 counter. States outside the recovered 26-state list (loop, twist, act-clear, ...) never probe. The ring manager consumes it.
+    chaos_ring_probe_update(cp_c, cp_anim_t);
     SCR_chaos_core_sprites(cp_p);
     if (global.music == 1) {
         if (cp_c.sound == 1) audio_play_sound(SFX_sonic_jump,10,false);
