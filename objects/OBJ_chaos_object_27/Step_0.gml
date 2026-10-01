@@ -46,10 +46,13 @@ if (chaosState == 3 && instance_exists(cp_p) && chaos_vp_dist_ge(floor(x),floor(
     chaosActive = false; visible = false; chaosAsleep = true; exit;
 }
 
+// Contact is the recovered ROM box ($6328: Sonic 8x24 vs object 9x14 -> dx -17..+17, dy -14..+24) on the fixed integer anchors, tested before this
+// update's movement. GameMaker sprite/mask bounds and the +18 render adapter play no part in it.
 var cp_overlap = false;
 if (instance_exists(cp_p)) {
-    cp_overlap = cp_p.bbox_right >= x-9 && cp_p.bbox_left <= x+9 &&
-        cp_p.bbox_bottom >= y-14 && cp_p.bbox_top <= y;
+    if (!variable_instance_exists(cp_p,"chaosCore")) SCR_chaos_core_attach(cp_p);
+    var cp_c = cp_p.chaosCore;
+    cp_overlap = chaos_type27_contact(floor(cp_c.xu/256),floor(cp_c.yu/256),floor(x),floor(y));
 }
 if (cp_overlap) {
     var cp_attack = cp_p.object_index == OBJ_player_char_spin || global.playerJump ||

@@ -180,12 +180,13 @@ const step27 = rd('objects/OBJ_chaos_object_27/Step_0.gml');
 const body27 = hex(step27).replace('chaosAnimTick div 2', 'Math.floor(chaosAnimTick / 2)').replace(/\bexit;/g, 'return;').replace(/\bmod\b/g, '%');
 function makeBee(originX, originY, W) {
     const w = {camX: 0, camY: 0, camW: W, frame: 0, destroyed: false, activations: 0, removals: 0};
-    w.player = {x: 0, bbox_left: 0, bbox_right: 0, bbox_top: 0, bbox_bottom: 0, object_index: 'char'};
-    w.ctx = vm.createContext({global: {playerJump: false, playerSpinDash: false, playerSuper: false, powerInv: false}, floor: Math.floor, round: Math.round,
+    w.player = {x: 0, y: 5000, bbox_left: 0, bbox_right: 0, bbox_top: 0, bbox_bottom: 0, object_index: 'char'};
+    Object.defineProperty(w.player, 'chaosCore', {value: {get xu() { return w.player.x * 256; }, get yu() { return w.player.y * 256; }}});
+    w.ctx = vm.createContext({variable_instance_exists: (o, k) => k in o, SCR_chaos_core_attach: () => {}, global: {playerJump: false, playerSpinDash: false, playerSuper: false, powerInv: false}, floor: Math.floor, round: Math.round,
         abs: Math.abs, min: Math.min, max: Math.max, clamp: ctx.clamp, view_camera: [0], camera_get_view_x: () => w.camX, camera_get_view_y: () => w.camY,
         camera_get_view_width: () => w.camW, camera_get_view_height: () => 196, instance_find: () => w.player, instance_exists: o => o === w.player, OBJ_player: 1,
         OBJ_player_char_spin: 'spin', SCR_chaos_enemy_score_100_bytes: () => {}, instance_destroy: () => { w.destroyed = true; }});
-    for (const n of ['SCR_chaos_viewport', 'SCR_chaos_placement']) vm.runInContext(hex(rd(`scripts/${n}/${n}.gml`)), w.ctx);
+    for (const n of ['SCR_chaos_viewport', 'SCR_chaos_placement', 'SCR_chaos_box_contact']) vm.runInContext(hex(rd(`scripts/${n}/${n}.gml`)), w.ctx);
     w.box = {x: originX, y: originY, chaosOriginX: originX, chaosOriginY: originY, chaosActive: false, chaosAsleep: true, chaosAge: 0, chaosScanTick: 0,
         chaosInitialFillDone: false, chaosWoken: false, chaosState: 0, chaosVX: 0, chaosVY: 0, chaosCounter: 0, chaosOscTick: 0, chaosAnimTick: 0, chaosSilentDestroy: false,
         chaosXU: originX * 256, chaosYU: originY * 256, image_index: 0, visible: false};

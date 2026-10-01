@@ -46,3 +46,11 @@ function SCR_chaos_box_projection(cp_bits, cp_px, cp_py, cp_ox, cp_oy, cp_pex, c
     if (cp_bits == 8) return [cp_ox - cp_pex - cp_oex, cp_py];
     return [cp_px, cp_py];
 }
+
+// Type $27 (flying bee) contact. The active callbacks ($89AC/$89DF/$8A06) call the shared overlap helper $6328 with Sonic 8 x 24 against the
+// object's mapping extents 9 x 14 (+$2C/+$2D from frames 1/2), which gives dx -17..+17 and dy -14..+24 inclusive (collision-geometry audit,
+// POC_notes/rom-cache/object-27-contact.json). Fixed integer anchors only: no sprite or mask bounds. Returns true on overlap; what an overlap
+// DOES (no damage request; attack/power-up converts to $0F) is decided by the caller.
+function chaos_type27_contact(cp_px, cp_py, cp_ox, cp_oy) {
+    return SCR_chaos_box_contact(cp_px, cp_py, cp_ox, cp_oy, 8, 24, 9, 14) != 0;
+}
