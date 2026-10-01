@@ -10,5 +10,6 @@ if (chaosGraphicsSelector == $04) sprite_index = SPR_chaos_object_10_04;
 else if (chaosGraphicsSelector == $06) sprite_index = SPR_chaos_object_10_06;
 else sprite_index = SPR_chaos_object_10;
 chaosState = 0; chaosActive = false; chaosConsumed = false;
+chaosWoken = false; chaosAsleep = true; chaosScanTick = 0; chaosInitialFillDone = false; // generic placement lifecycle (SCR_chaos_placement)
 chaosYU = round(y*256); chaosVY = 0; chaosAnimTick = 0; chaosReplaceTick = 0;
 image_speed = 0; image_index = 0; visible = false;

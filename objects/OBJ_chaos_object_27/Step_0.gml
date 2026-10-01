@@ -6,19 +6,14 @@
 //   - after the 64-pixel trigger bit 1 keeps it alive until state 3's >=384 separation test releases occupancy;
 //   - a defeated object detaches its token (instance_destroy), so it never returns in this level session.
 // Removal therefore does NOT make the same placement reappear while Sonic stays where the placement is an interior cell.
-var cp_cam = view_camera[0];
-var cp_cam_x = floor(camera_get_view_x(cp_cam));
-var cp_cam_y = floor(camera_get_view_y(cp_cam));
-var cp_scan_now = (chaosScanTick mod 4) == 0;
-chaosScanTick++;
+// Wake/sleep/create/delete are the GENERIC viewport lifecycle bands (SCR_chaos_viewport): EDGE(LEFT/RIGHT, 32/96) of the live view,
+// so a wider view changes WHEN the bee wakes, never WHERE it is. The anchor stays WORLD(origin); the 64 px trigger and the 384 px
+// removal below are PLAYER_DIST rules and are deliberately independent of the view.
+var cp_vp = chaos_vp_current();
 
 if (!chaosActive) {
-    // Placement scan: only while the occupancy byte is clear.
-    if (!cp_scan_now) exit;
-    var cp_cell = SCR_chaos_spawn_cell(chaosOriginX-cp_cam_x,chaosOriginY-cp_cam_y);
-    var cp_fill = !chaosInitialFillDone;
-    chaosInitialFillDone = true; // $D440 is set once the first pass completes
-    if (!(cp_cell == 2 || (cp_cell < 2 && cp_fill))) exit;
+    // Placement scan: only while the occupancy byte is clear (shared with the other generic-lifecycle types).
+    if (!SCR_chaos_placement_scan(id,cp_vp,chaosOriginX,chaosOriginY)) exit;
     x = chaosOriginX; y = chaosOriginY;
     chaosXU = round(x*256); chaosYU = round(y*256);
     chaosState = 1; chaosVX = -$0280; chaosVY = 0;
@@ -35,7 +30,7 @@ var cp_run_state1 = chaosState == 1 && chaosAge >= 2 && !chaosAsleep;
 if (chaosState == 1 && !cp_run_state1) {
     // no callback this update; the lifetime routine below still runs from the second update
     if (chaosAge >= 2) {
-        var cp_cell_s = SCR_chaos_spawn_cell(floor(x)-cp_cam_x,floor(y)-cp_cam_y);
+        var cp_cell_s = SCR_chaos_lifetime_cell(id,cp_vp,floor(x),floor(y));
         if (cp_cell_s == 3) { chaosActive = false; visible = false; chaosAsleep = true; exit; } // $FE: occupancy released
         chaosAsleep = (cp_cell_s >= 2);
         visible = !chaosAsleep;
@@ -47,7 +42,7 @@ chaosAnimTick++;
 image_index = (chaosAnimTick div 2) & 1;
 
 // State 3 tests the strict removal boundary before overlap or movement ($8A29: type $FE, occupancy released).
-if (chaosState == 3 && instance_exists(cp_p) && abs(floor(x)-floor(cp_p.x)) >= 384) {
+if (chaosState == 3 && instance_exists(cp_p) && chaos_vp_dist_ge(floor(x),floor(cp_p.x),384)) {
     chaosActive = false; visible = false; chaosAsleep = true; exit;
 }
 
@@ -72,7 +67,7 @@ if (chaosState == 1) {
     chaosXU += chaosVX;
     x = chaosXU/256;
     // Activation compares post-movement integer X and is strictly less than 64.
-    if (instance_exists(cp_p) && abs(floor(x)-floor(cp_p.x)) < 64) {
+    if (instance_exists(cp_p) && chaos_vp_dist_lt(floor(x),floor(cp_p.x),64)) {
         chaosState = 2; chaosVX = 0; chaosVY = 0;
         chaosCounter = $80; chaosOscTick = 0;
     }
@@ -95,7 +90,7 @@ if (chaosState == 1) {
 
 // Post-update lifetime routine ($61E1): cell 3 = off range (only removes a not-yet-triggered object; bit 1 keeps a triggered one),
 // cell 2 = asleep (not displayed), cells 0/1 = awake.
-var cp_cell_l = SCR_chaos_spawn_cell(floor(x)-cp_cam_x,floor(y)-cp_cam_y);
+var cp_cell_l = SCR_chaos_lifetime_cell(id,cp_vp,floor(x),floor(y));
 if (cp_cell_l == 3 && chaosState == 1) { chaosActive = false; visible = false; chaosAsleep = true; exit; }
 chaosAsleep = (cp_cell_l >= 2);
 visible = !chaosAsleep;

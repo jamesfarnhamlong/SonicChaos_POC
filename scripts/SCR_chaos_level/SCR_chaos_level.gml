@@ -171,45 +171,49 @@ function chaos_act_complete() {
     }
 }
 
-/// Type $18 contact (sign state 3 -> 4): the level timer stops immediately and the camera pan target is set. Progression is NOT
-/// touched here and the player is not locked (docs/object-18-act-clear.md section 7).
+/// Type $18 contact (sign state 3 -> 4): the level timer stops immediately and sign-pan mode starts. Progression is NOT touched here
+/// and the player is not locked (docs/object-18-act-clear.md section 7). The sign anchor is the canonical object record.
 function chaos_goal_begin(cp_sign) {
     global.chaosGoalContact = true;
     global.chaosFinishTime = global.minutes*60+global.seconds;
     with (OBJ_count_time) alarm[0] = -1;
-    // The ROM pans to (signX-$80, signY-$99). Pan speed is unrecovered; X is moved at a labelled POC speed, Y keeps the POC follow.
-    global.chaosCamLockX = cp_sign.x - CHAOS_GOAL_CAMERA_DX;
+    chaos_goal_pan_begin(global.chaosPan, cp_sign.x, cp_sign.y);
 }
 
-/// Camera adapter for the act-clear chain, applied from the zone's end step (rules: chaos_goal_camera_next).
+/// Camera for the act-clear chain, applied from the zone's end step: the recovered pan/freeze (chaos_goal_pan_step) driven by the
+/// live view. While pan mode is active the follow camera is off on BOTH axes, like the ROM ($5832 is skipped in pan mode).
 function chaos_goal_camera_step() {
-    if (global.chaosCamLockX == noone || !instance_exists(OBJ_player_char)) return;
+    if (!global.chaosPan.active || !instance_exists(OBJ_player_char)) return;
     var cp_p = instance_find(OBJ_player_char,0);
     if (!variable_instance_exists(cp_p,"chaosCore")) return;
     var cp_core = cp_p.chaosCore;
+    var cp_vp = chaos_vp_current();
     __view_set(e__VW.Object, 0, noone);
-    var cp_x = __view_get(e__VW.XView, 0);
-    var cp_n = chaos_goal_camera_next(cp_x, floor(cp_core.xu/256), __view_get(e__VW.WView, 0), room_width,
-        global.chaosCamLockX, cp_core.state == 32 || cp_core.next == 32);
-    if (cp_n != cp_x) __view_set(e__VW.XView, 0, cp_n);
+    chaos_goal_pan_step(global.chaosPan, cp_vp.left, cp_vp.top, cp_vp.w, cp_vp.h, room_width, room_height,
+        floor(cp_core.xu/256), cp_core.state == 32 || cp_core.next == 32);
+    if (global.chaosPan.x != cp_vp.left) __view_set(e__VW.XView, 0, global.chaosPan.x);
+    if (global.chaosPan.y != cp_vp.top) __view_set(e__VW.YView, 0, global.chaosPan.y);
 }
 
 /// Diagnostic trace of the act-clear sequence (one CSV row per update from contact until the clear), written to
-/// <working_directory>/act_clear_trace.csv for Windows retests. Logging only: it never feeds gameplay.
+/// <working_directory>/act_clear_trace.csv for Windows retests. Logging only: it never feeds gameplay. Developer-gated: it writes
+/// nothing unless the F3 diagnostic toggle (global.chaosDebug) is on, so normal play never touches the disk.
 function chaos_goal_trace(cp_core, cp_sign_x) {
+    if (!global.chaosDebug) return;
     var cp_path = working_directory + "act_clear_trace.csv";
     var cp_new = !file_exists(cp_path);
     var cp_f = file_text_open_append(cp_path);
-    if (cp_new) file_text_write_string(cp_f, "room,frame_since_contact,player_x,view_x,view_w,sign_x,camera_target_x,player_screen_x,state,next,vx,clear_dx,clear_d,state20_started,camera_moved,act_clear" + chr(10));
-    var cp_cam = floor(__view_get(e__VW.XView, 0));
-    var cp_target = clamp(global.chaosCamLockX, 0, max(0, room_width - __view_get(e__VW.WView, 0)));
+    if (cp_new) file_text_write_string(cp_f, "room,frame_since_contact,player_x,view_x,view_y,view_w,sign_x,pan_target_x,pan_target_y,player_screen_x,state,next,vx,clear_dx,clear_d,state20_started,camera_moved,camera_frozen,act_clear" + chr(10));
+    var cp_vp = chaos_vp_current();
+    var cp_pan = global.chaosPan;
     global.chaosTraceFrame++;
-    var cp_row = room_get_name(room) + "," + string(global.chaosTraceFrame) + "," + string(floor(cp_core.xu/256)) + "," + string(cp_cam) + "," +
-        string(__view_get(e__VW.WView, 0)) + "," + string(cp_sign_x) + "," + string(cp_target) + "," + string(floor(cp_core.xu/256) - cp_cam) + "," +
+    var cp_row = room_get_name(room) + "," + string(global.chaosTraceFrame) + "," + string(floor(cp_core.xu/256)) + "," + string(cp_vp.left) + "," + string(cp_vp.top) + "," +
+        string(cp_vp.w) + "," + string(cp_sign_x) + "," + string(chaos_goal_pan_target_x(cp_pan, cp_vp.w)) + "," + string(chaos_goal_pan_target_y(cp_pan)) + "," +
+        string(floor(cp_core.xu/256) - cp_vp.left) + "," +
         string(cp_core.state) + "," + string(cp_core.next) + "," + string(cp_core.vx) + "," + string(cp_core.clear_dx) + "," +
         string(floor(cp_core.xu/256) - cp_core.camera_x) + "," + string(cp_core.state == 32 || cp_core.next == 32) + "," +
-        string(cp_cam != global.chaosTraceLastCam) + "," + string(cp_core.act_clear) + chr(10);
+        string(cp_vp.left != global.chaosTraceLastCam) + "," + string(cp_pan.frozen) + "," + string(cp_core.act_clear) + chr(10);
     file_text_write_string(cp_f, cp_row);
     file_text_close(cp_f);
-    global.chaosTraceLastCam = cp_cam;
+    global.chaosTraceLastCam = cp_vp.left;
 }

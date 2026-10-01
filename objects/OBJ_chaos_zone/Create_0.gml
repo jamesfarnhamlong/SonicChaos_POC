@@ -1,3 +1,4 @@
+global.chaosBeyondMapOpen = false; // GameMaker adapter flag: set only while player state $20 runs (SCR_cc_lookup)
 // Native fixed-point updates, not the old velocity*2 / acceleration*4 approximation.
 // 60Hz is the prototype test clock; PAL/NTSC scheduler fidelity is still unverified.
 global.chaosTickRate = 60;
@@ -82,7 +83,7 @@ if (!instance_exists(OBJ_chaos_ring_manager)) instance_create_depth(0,0,0,OBJ_ch
 
 global.chaosComplete = false;
 global.chaosGoalContact = false;
-global.chaosCamLockX = noone;
+global.chaosPan = chaos_goal_pan_new();
 global.chaosTraceFrame = 0;
 global.chaosTraceLastCam = -1;
 global.chaosNotice = 0;

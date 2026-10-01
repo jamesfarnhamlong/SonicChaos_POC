@@ -2,16 +2,36 @@
 // lifetime routine ($61E1). Plain numbers only, so verification/verify_placement_lifecycle.js executes this shipped code
 // against the ROM's 32x32 spawn map (verification/placement-spawn-map.json).
 //
-// Positions are relative to the camera's top-left corner. The map has 16-pixel cells over [-128, 384) on each axis:
+// The ROM map has 16-pixel cells over [-128, 384) on each axis, relative to a 256 px window. Those bands are viewport-relative
+// (class D), so they are expressed through the shared adapter (SCR_chaos_viewport) against the REAL view width: the left bands
+// hang off LEFT, the right bands off RIGHT. Canonical object anchors are never moved. On a 256 px view this equals the ROM map
+// cell for cell (proved by verification/verify_placement_lifecycle.js and verify_viewport_adapter.js).
 //   3 = outside the accepted window (never created; a live placement-backed object out here is removed),
 //   2 = outer ring: created on any scan and kept, but asleep (creation bit 6 stays set),
 //   1 / 0 = interior: created only during the initial fill ($D440 == 0); an existing object is awake.
-function SCR_chaos_spawn_cell(cp_rel_x, cp_rel_y) {
-    var cp_cx = floor((cp_rel_x + 128) / 16);
-    var cp_cy = floor((cp_rel_y + 128) / 16);
-    if (cp_rel_x + 128 < 0 || cp_rel_y + 128 < 0 || cp_cx > 31 || cp_cy > 31) return 3;
-    if (cp_cx < 2 || cp_cx > 29 || cp_cy < 2 || cp_cy > 29) return 3;
-    if (cp_cx < 6 || cp_cx > 25 || cp_cy < 6 || cp_cy > 25) return 2;
-    if (cp_cx < 8 || cp_cx > 23 || cp_cy < 8 || cp_cy > 23) return 1;
-    return 0;
+function SCR_chaos_spawn_cell(cp_vp, cp_world_x, cp_world_y) {
+    return chaos_vp_lifecycle_cell(cp_vp, cp_world_x, cp_world_y);
+}
+
+/// Placement scan ($8000, once per 4th update) for a record whose occupancy byte is clear. cp_o carries chaosScanTick and
+/// chaosInitialFillDone. Returns true when the record is created this update: cell 2 (outer ring) on any scan, cells 0/1 only during the
+/// initial fill. Shared by every mapped-object type that uses the generic lifecycle ($10, $21, $27).
+function SCR_chaos_placement_scan(cp_o, cp_vp, cp_world_x, cp_world_y) {
+    var cp_due = (cp_o.chaosScanTick mod 4) == 0;
+    cp_o.chaosScanTick++;
+    if (!cp_due) return false;
+    var cp_cell = SCR_chaos_spawn_cell(cp_vp, cp_world_x, cp_world_y);
+    var cp_fill = !cp_o.chaosInitialFillDone;
+    cp_o.chaosInitialFillDone = true; // $D440 is set once the first pass completes
+    var cp_create = (cp_cell == 2 || (cp_cell < 2 && cp_fill));
+    if (cp_create) cp_o.chaosWoken = false; // a (re)created object has not been awake yet: entry stays canonical
+    return cp_create;
+}
+
+/// Lifetime cell of an existing object ($61E1) with the widescreen retention adapter (chaos_vp_retained_cell). Marks the object as woken as
+/// soon as it is awake, which is what arms the extended retention. Used by every migrated mapped-object type ($10, $21, $27).
+function SCR_chaos_lifetime_cell(cp_o, cp_vp, cp_world_x, cp_world_y) {
+    var cp_cell = chaos_vp_retained_cell(cp_vp, cp_world_x, cp_world_y, !cp_o.chaosAsleep, cp_o.chaosWoken);
+    if (cp_cell <= 1) cp_o.chaosWoken = true;
+    return cp_cell;
 }

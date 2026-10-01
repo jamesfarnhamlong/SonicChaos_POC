@@ -8,7 +8,7 @@ const gml = n => rd(`scripts/${n}/${n}.gml`);
 const hex = s => s.replace(/\$([0-9A-Fa-f]+)/g, '0x$1').replace(/#macro (\w+) (\S+)/g, 'var $1 = $2;');
 const g = {zoneGoto: 1, minutes: 1, seconds: 5, ring: 12, chaosComplete: false, chaosGoalContact: false};
 let saved = 0, alarms = 0, room = 'thz1';
-const ctx = vm.createContext({global: g, floor: Math.floor, round: Math.round, abs: Math.abs, min: Math.min, max: Math.max,
+const ctx = vm.createContext({global: g, floor: Math.floor, round: Math.round, abs: Math.abs, min: Math.min, max: Math.max, sign: Math.sign,
     clamp: (v, a, b) => Math.min(Math.max(v, a), b), array_create: (n, v) => Array(n).fill(v), array_length: a => a.length,
     array_push: (a, v) => a.push(v), array_copy: (d, di, s, si, n) => { for (let i = 0; i < n; i++) d[di + i] = s[si + i]; },
     variable_global_exists: k => k in ctx.global, is_array: Array.isArray,
@@ -17,6 +17,7 @@ const ctx = vm.createContext({global: g, floor: Math.floor, round: Math.round, a
     get room() { return room; }});
 for (const n of ['SCR_chaos_motion_data', 'SCR_chaos_core_data', 'SCR_chaos_core', 'SCR_chaos_level_thz2_data', 'SCR_chaos_box_contact'])
     vm.runInContext(gml(n), ctx, {filename: n + '.gml'});
+vm.runInContext(hex(gml('SCR_chaos_viewport')), ctx, {filename: 'SCR_chaos_viewport.gml'});
 vm.runInContext(hex(gml('SCR_chaos_goal')), ctx, {filename: 'SCR_chaos_goal.gml'});
 ctx.SCR_chaos_motion_data(); ctx.SCR_chaos_core_data();
 const thz1Ids = ctx.global.chaosTileIds.slice();
@@ -25,9 +26,9 @@ const level = gml('SCR_chaos_level');
 const tail = level.slice(level.indexOf('function chaos_acts()'));
 const pure = tail.slice(0, tail.indexOf('/// Type $18 contact'));   // act table, progress, index_for_room, chaos_act_complete
 vm.runInContext(pure.replace(/\bmod\b/g, '%'), ctx, {filename: 'SCR_chaos_level.gml'});
-const beginSrc = tail.slice(tail.indexOf('function chaos_goal_begin'), tail.indexOf('/// Camera adapter'));
+const beginSrc = tail.slice(tail.indexOf('function chaos_goal_begin'), tail.indexOf('/// Camera for the act-clear chain'));
 assert.ok(beginSrc.includes('with (OBJ_count_time) alarm[0] = -1;'));
-vm.runInContext(beginSrc.replace('with (OBJ_count_time) alarm[0] = -1;', 'ctx_alarm();').replace(/CHAOS_GOAL_CAMERA_DX/g, '0x80'), ctx);
+vm.runInContext(beginSrc.replace('with (OBJ_count_time) alarm[0] = -1;', 'ctx_alarm();'), ctx);
 
 // ---------- 1. contact geometry: shared overlap, Sonic 8 x 24 vs sign 12 x 42, inclusive, both directions ----------
 const SX = 3960, SY = 558;
@@ -53,11 +54,14 @@ assert.strictEqual(ctx.chaos_goal_contact(SX + 5, SY, -0x0400, 5, SX, SY), true,
 assert.strictEqual(ctx.chaos_goal_contact(SX + 5, SY, 1, 9, SX, SY), true, 'any non-zero X speed, rolling');
 assert.strictEqual(ctx.chaos_goal_contact(SX + 25, SY, 0x0400, 5, SX, SY), false, 'moving but outside the box');
 
-// ---------- 2. contact begins the sequence: timer stops, progression untouched ----------
-g.zoneGoto = 1; saved = 0; alarms = 0;
-ctx.chaos_goal_begin({x: SX});
+// ---------- 2. contact begins the sequence: timer stops, progression untouched, sign-pan mode starts ----------
+g.zoneGoto = 1; saved = 0; alarms = 0; g.chaosPan = ctx.chaos_goal_pan_new();
+ctx.chaos_goal_begin({x: SX, y: 558});
 assert.strictEqual(g.chaosGoalContact, true); assert.strictEqual(alarms, 1, 'timer stopped at contact');
-assert.strictEqual(g.chaosFinishTime, 65); assert.strictEqual(g.chaosCamLockX, SX - 0x80, 'pan target signX-$80');
+assert.strictEqual(g.chaosFinishTime, 65);
+assert.strictEqual(g.chaosPan.active, true, 'pan mode starts at contact');
+assert.strictEqual(ctx.chaos_goal_pan_target_x(g.chaosPan, 256), SX - 0x80, 'pan target signX-$80 on the 256 px view (sign at CENTER(0))');
+assert.strictEqual(ctx.chaos_goal_pan_target_y(g.chaosPan), 558 - 0x99, 'pan target signY-$99');
 assert.strictEqual(g.zoneGoto, 1, 'progression unchanged at contact'); assert.strictEqual(saved, 0, 'nothing saved at contact');
 assert.strictEqual(g.chaosComplete, false, 'contact is not act completion');
 
@@ -99,26 +103,37 @@ function settle(ids, x, y) {
     for (let i = 0; i < 200 && !((c.contacts & 2) && !(c.move & 1)); i++) ctx.SCR_cc_tick(c);
     return c;
 }
-// Shared widescreen camera/clear adapter (SCR_chaos_goal): before contact the POC view follows Sonic (modelled as a fixed offset), after
-// contact chaos_goal_camera_next drives it, frozen from the state-$20 request. clear_dx = view width + 33.
-const ROOM_W = 4096;
-function chain(name, ids, signY, roomName, W = 348, camOff = 197, leftWalk = 0) {
-    room = roomName; g.zoneGoto = 1; g.chaosComplete = false; g.chaosGoalContact = false; g.chaosCamLockX = -4; saved = 0; alarms = 0;
+// Shared act-clear camera (SCR_chaos_goal + SCR_chaos_viewport): before contact the POC view follows Sonic (modelled as a fixed offset); from
+// contact the recovered 1 px/update X+Y pan runs, the player edge clamp is EDGE(LEFT,+16)..EDGE(RIGHT,-9), the camera freezes at EDGE(RIGHT,-7)
+// once state $20 runs, and the clear threshold is EDGE(RIGHT,+33) of the frozen camera.
+const ROOM_W = 4096, ROOM_H = 1024, exposed = {};
+function chain(name, ids, signY, roomName, W = 348, camOff = 197, leftWalk = 0, holdRight = false) {
+    room = roomName; g.zoneGoto = 1; g.chaosComplete = false; g.chaosGoalContact = false; g.chaosPan = ctx.chaos_goal_pan_new(); saved = 0; alarms = 0;
     const c = settle(ids, SX - 60, signY);
     assert.ok((c.contacts & 2) !== 0, `${name}: player settles on floor`);
     assert.strictEqual(Math.floor(c.yu / 256), signY, `${name}: standing anchor Y equals canonical sign Y`);
     c.state = c.next = 5; c.vx = 0x0400; c.held = 8; c.maximum = 1024;
-    const px = () => Math.floor(c.xu / 256), maxCam = ROOM_W - W;
-    let cam = Math.min(Math.max(px() - camOff, 0), maxCam);
-    const sign = ctx.chaos_goal_sign_new(); let child = null, t0 = -1, req = -1, clear = -1, progAtReq = null, freezeCam = null, minScreen = 1e9, maxScreenBefore20 = -1e9;
+    const px = () => Math.floor(c.xu / 256), maxCam = ROOM_W - W, H = 196;
+    let cam = Math.min(Math.max(px() - camOff, 0), maxCam), camY = Math.min(Math.max(signY - 120, 0), ROOM_H - H);
+    const sign = ctx.chaos_goal_sign_new(); let child = null, t0 = -1, req = -1, clear = -1, progAtReq = null, frozenAt = -1, panDoneX = -1, panDoneY = -1;
+    let frozenScreen = -1, minScreen = 1e9, maxScreenBefore20 = -1e9, camStart = null, camYStart = null, maxStepX = 0, maxStepY = 0, simultaneous = true;
     for (let t = 0; t < 1500; t++) {
         const in20 = c.state === 32 || c.next === 32;
-        if (g.chaosCamLockX === -4) cam = Math.min(Math.max(px() - camOff, 0), maxCam);
-        else { cam = ctx.chaos_goal_camera_next(cam, px(), W, ROOM_W, g.chaosCamLockX, in20); if (in20 && freezeCam === null) freezeCam = cam; }
+        if (!g.chaosPan.active) cam = Math.min(Math.max(px() - camOff, 0), maxCam);
+        else {
+            if (camStart === null) { camStart = cam; camYStart = camY; }
+            const before = [cam, camY];
+            ctx.chaos_goal_pan_step(g.chaosPan, cam, camY, W, H, ROOM_W, ROOM_H, px(), in20);
+            cam = g.chaosPan.x; camY = g.chaosPan.y;
+            maxStepX = Math.max(maxStepX, Math.abs(cam - before[0])); maxStepY = Math.max(maxStepY, Math.abs(camY - before[1]));
+            if (panDoneX < 0 && cam === before[0] && !g.chaosPan.frozen && t > t0) panDoneX = t - t0;
+            if (panDoneY < 0 && camY === before[1] && !g.chaosPan.frozen && t > t0) panDoneY = t - t0;
+            if (g.chaosPan.frozen && frozenAt < 0) { frozenAt = t - t0; frozenScreen = px() - Math.floor(cam); }
+        }
         c.camera_x = Math.floor(cam); c.clear_dx = ctx.chaos_goal_clear_dx(W);
         const contact = sign.state === 3 && ctx.chaos_goal_contact(px(), Math.floor(c.yu / 256), c.vx, c.next, SX, signY);
         ctx.chaos_goal_sign_step(sign, contact);
-        if (sign.contact) { ctx.chaos_goal_begin({x: SX}); t0 = t; c.vx = 0; c.next = 1; c.state = 1; c.held = leftWalk ? 4 : 0; }
+        if (sign.contact) { ctx.chaos_goal_begin({x: SX, y: signY}); t0 = t; c.vx = 0; c.next = 1; c.state = 1; c.held = leftWalk ? 4 : (holdRight ? 8 : 0); }
         if (t0 >= 0 && leftWalk && t - t0 > leftWalk) c.held = 0;
         const born = child === null && sign.spawn_child;   // the child's first Step is the update after its creation
         if (sign.spawn_child) child = ctx.chaos_goal_child_new();
@@ -127,8 +142,11 @@ function chain(name, ids, signY, roomName, W = 348, camOff = 197, leftWalk = 0) 
             c.held = 1 | 2 | 4 | 16; c.pressed = 16; // hostile input must be ignored
         }
         ctx.SCR_cc_tick(c);
-        // adapter: left lock between contact and state $20 (mirrors SCR_chaos_adapter)
-        if (g.chaosGoalContact && c.state !== 32 && c.next !== 32 && c.xu < ctx.chaos_goal_left_limit_xu(cam)) { c.xu = ctx.chaos_goal_left_limit_xu(cam); if (c.vx < 0) c.vx = 0; }
+        // adapter: GameMaker room boundary for the player (not applied to state $20), then the player edge clamp between contact and state $20
+        if (c.state !== 32 && (c.xu < 16 * 256 || c.xu > (ROOM_W - 9) * 256)) { c.xu = Math.min(Math.max(c.xu, 16 * 256), (ROOM_W - 9) * 256); c.vx = 0; }
+        if (g.chaosGoalContact && c.state !== 32 && c.next !== 32) {
+            const k = ctx.chaos_goal_clamp_player(ctx.chaos_vp_new(Math.floor(cam), Math.floor(camY), W, H), c.xu, c.vx); c.xu = k.xu; c.vx = k.vx;
+        }
         if (t0 >= 0 && c.state !== 32 && c.next !== 32) { const sx = px() - Math.floor(cam); minScreen = Math.min(minScreen, sx); maxScreenBefore20 = Math.max(maxScreenBefore20, sx); }
         if (c.act_clear && clear < 0) { clear = t - t0; ctx.chaos_act_complete(); }
         if (t0 >= 0 && clear < 0) assert.strictEqual(g.zoneGoto, 1, 'progression never moves before the final clear');
@@ -137,16 +155,28 @@ function chain(name, ids, signY, roomName, W = 348, camOff = 197, leftWalk = 0) 
     assert.ok(t0 >= 0, `${name}: contact happened`);
     assert.strictEqual(req, 279, `${name}: $20 requested 279 updates after contact`);
     assert.deepStrictEqual(progAtReq, [1, 0, false], `${name}: no progression at $20 request`);
-    assert.ok(clear > req, `${name}: act clear after $20 starts (${clear})`);
+    assert.ok(clear > req, `${name} W${W} off${camOff}: act clear after $20 starts (${clear}) x=${px()} cam=${c.camera_x} vx=${c.vx}`);
     assert.strictEqual(g.chaosComplete, true);
     assert.strictEqual(g.zoneGoto, 2); assert.strictEqual(saved, 1, `${name}: saved exactly once, at the final clear`);
-    // framing: Sonic is never off the left edge, nor off the right, while he is player-controlled after contact
-    assert.ok(minScreen >= 8 - 1 && maxScreenBefore20 <= W, `${name} W${W}: framed through the sign sequence (screen x ${minScreen}..${maxScreenBefore20})`);
+    // recovered pan: never faster than 1 px/update per axis; the sign ends at CENTER(0)-1 unless the room edge limits it
+    assert.ok(maxStepX <= 1 && maxStepY <= 1, `${name} W${W}: pan is 1 px/update per axis (${maxStepX},${maxStepY})`);
+    const wantX = Math.max(camStart, Math.min(SX - W / 2 - 1, ROOM_W - W)), wantY = Math.min(Math.max(signY - 0x99, 0), ROOM_H - H);
+    assert.strictEqual(c.camera_x, wantX, `${name} W${W}: camera X settles at min(signX-W/2-1, worldRight-W) (${c.camera_x} vs ${wantX})`);
+    assert.strictEqual(Math.floor(camY), wantY, `${name} W${W}: camera Y settles at signY-153`);
+    exposed[W] = Math.max(exposed[W] || 0, c.camera_x + W - 1);
+    assert.ok(c.camera_x + W - 1 <= ROOM_W - 1 || camStart + W - 1 > ROOM_W - 1, `${name} W${W}: no visible column beyond the canonical map (${c.camera_x + W - 1})`);
+    if (W === 256 && camStart <= SX - 129) assert.strictEqual(c.camera_x, SX - 129, `${name}: 256 px view reproduces the recovered camera signX-129`);
+    // framing: controllable the whole wait, kept inside the displayed view by the EDGE(LEFT,+16)..EDGE(RIGHT,-9) clamp
+    assert.ok(minScreen >= 16 && maxScreenBefore20 <= W - 9, `${name} W${W}: clamped to LEFT+16..RIGHT-9 through the sign sequence (screen x ${minScreen}..${maxScreenBefore20})`);
+    // freeze: only after $20 runs and once Sonic is at EDGE(RIGHT,-7) or beyond; the camera never moves afterwards. Holding RIGHT through the
+    // wait parks Sonic at RIGHT-9, so the freeze lands within a few updates (original: about +3).
+    assert.ok(frozenAt > req && frozenScreen >= W - 7, `${name} W${W}: camera freezes after $20 starts at screen x ${frozenScreen} >= RIGHT-7`);
+    if (holdRight && cam + W <= ROOM_W) assert.ok(frozenAt - req <= 8, `${name} W${W}: RIGHT held, freeze +${frozenAt - req} updates after $20 starts`);
     // clear only once Sonic is 33 px beyond the visible right edge of the frozen camera, i.e. fully off screen
     const screenAtClear = px() - c.camera_x;
     assert.ok(screenAtClear >= W + 33 && screenAtClear < W + 33 + 8, `${name} W${W}: clears at view right edge + 33 (screen x ${screenAtClear})`);
-    assert.strictEqual(c.camera_x, Math.floor(freezeCam), 'camera frozen from the $20 request');
-    return {contact: t0, request: req, clear, finalX: px(), cameraX: c.camera_x, W, screenAtClear};
+    assert.strictEqual(c.camera_x, Math.floor(cam), 'camera frozen until the clear');
+    return {contact: t0, request: req, frozen: frozenAt - req, clear, finalX: px(), cameraX: c.camera_x, W, screenAtClear};
 }
 const results = [];
 for (const [name, ids, y, rm] of [['THZ1', thz1Ids, 558, 'thz1'], ['THZ2', thz2Ids, 654, 'thz2']])
@@ -155,19 +185,18 @@ for (const [name, ids, y, rm] of [['THZ1', thz1Ids, 558, 'thz1'], ['THZ2', thz2I
 // Sonic walking LEFT while still player-controlled (the reported "disappears off the left" failure mode)
 for (const [name, ids, y, rm] of [['THZ1', thz1Ids, 558, 'thz1'], ['THZ2', thz2Ids, 654, 'thz2']])
     for (const W of [290, 348]) results.push(chain(name, ids, y, rm, W, 120, 200));
+// RIGHT held through the whole wait (the emulated original run): Sonic parks at RIGHT-9 and state $20 freezes the camera within a few updates
+for (const [name, ids, y, rm] of [['THZ1', thz1Ids, 558, 'thz1'], ['THZ2', thz2Ids, 654, 'thz2']])
+    for (const W of [256, 290, 348, 400, 640]) results.push(chain(name, ids, y, rm, W, 197, 0, true));
+console.log('last visible world column at act clear (canonical map edge 4095):', JSON.stringify(exposed));
 console.log('chain cases', results.length, 'sample', JSON.stringify(results.find(r => r.W === 348)), JSON.stringify(results.filter(r => r.W === 256)[0]));
 // widescreen threshold derives from the live view width; canonical SMS relationship stays documented
-assert.strictEqual(ctx.CHAOS_ACT_CLEAR_DX_SMS, 0x121); assert.strictEqual(ctx.CHAOS_SMS_VIEW_W, 256);
+assert.strictEqual(ctx.CHAOS_ACT_CLEAR_DX_SMS, 0x121); assert.strictEqual(ctx.CHAOS_VP_SMS_W, 256);
+assert.strictEqual(ctx.CHAOS_ACT_CLEAR_EDGE, 0x121 - 256); assert.strictEqual(ctx.CHAOS_ACT_FREEZE_EDGE, 0xF9 - 256);
 assert.strictEqual(ctx.chaos_goal_clear_dx(256), 0x121, 'on the 256 px SMS screen the adapter equals the canonical $121');
 for (const W of [256, 290, 348, 400, 1024]) assert.strictEqual(ctx.chaos_goal_clear_dx(W), W + 33, `view ${W}`);
 assert.strictEqual(ctx.SCR_cc_new(0, 0).clear_dx, 0x121, 'core default stays canonical $121');
 assert.ok(/clear_dx\s*=\s*chaos_goal_clear_dx\(camera_get_view_width\(view_camera\[0\]\)\)/.test(gml('SCR_chaos_adapter')), 'adapter feeds the live view width');
-// camera rules in isolation
-assert.strictEqual(ctx.chaos_goal_camera_next(3700, 3960, 348, 4096, 3832, true), 3700, 'frozen');
-assert.ok(ctx.chaos_goal_camera_next(3700, 3960, 348, 4096, 3832, false) - 3700 <= 4 + 1e-9 || ctx.chaos_goal_camera_next(3700, 3960, 348, 4096, 3832, false) <= 3960 - 24, 'pan limited unless dragged to keep Sonic framed');
-assert.ok(ctx.chaos_goal_camera_next(3700, 3960, 348, 4096, 3000, false) >= 3700, 'never scrolls left');
-assert.ok(ctx.chaos_goal_camera_next(3000, 3960, 348, 4096, 3748, false) >= 3960 - (348 - 24), 'camera far behind is dragged up so Sonic stays framed');
-assert.ok(ctx.chaos_goal_camera_next(3900, 3960, 348, 4096, 3748, false) <= 3960 - 24 || ctx.chaos_goal_camera_next(3900, 3960, 348, 4096, 3748, false) === 3900, 'camera never runs ahead of Sonic');
 
 // ---------- 6. state $20 core details ----------
 {
@@ -217,6 +246,29 @@ assert.ok(ctx.chaos_goal_camera_next(3900, 3960, 348, 4096, 3748, false) <= 3960
     assert.ok(/cp_c\.state != 32 && \(cp_c\.xu < 16\*256 \|\| cp_c\.xu > \(room_width-9\)\*256\)/.test(adapter), 'room-edge clamp yields to state $20');
     assert.ok(gml('SCR_chaos_core').includes('index:-1'), 'out-of-map lookups return the guarded empty cell');
     assert.strictEqual(ctx.SCR_cc_lookup(5000, 654, 0).tile === undefined, false);
+    // presentation adapter: columns past the canonical 4096 px map are open ONLY while the state $20 tick runs; inside the map nothing changes
+    ctx.global.chaosBeyondMapOpen = false; const wrapped = ctx.SCR_cc_lookup(4200, 654, 0), inside = ctx.SCR_cc_lookup(4000, 654, 0);
+    ctx.global.chaosBeyondMapOpen = true; const open = ctx.SCR_cc_lookup(4200, 654, 0), insideOpen = ctx.SCR_cc_lookup(4000, 654, 0);
+    ctx.global.chaosBeyondMapOpen = false;
+    assert.strictEqual(open.index, -1, 'state $20: past-the-map column is open'); assert.notStrictEqual(wrapped.index, -1, 'normal play keeps the ROM lookup');
+    assert.deepStrictEqual(insideOpen, inside, 'inside the canonical map the flag changes nothing');
+    // the flag is hermetic: true only inside the state $20 tick, false before/after every tick (any state), at room start and after the clear
+    const seen = []; let flag = false;
+    Object.defineProperty(ctx.global, 'chaosBeyondMapOpen', {configurable: true, get: () => flag, set: v => { seen.push(v); flag = v; }});
+    for (const [stateNext, wantTrue] of [[32, true], [1, false], [5, false], [30, false], [34, false], [32, true]]) {
+        const cc = settle(thz2Ids, 3960, 654); seen.length = 0; cc.next = stateNext; cc.camera_x = 3800; cc.clear_dx = 0x121; ctx.SCR_cc_tick(cc);
+        assert.strictEqual(flag, false, `flag is false after a state ${stateNext} tick`);
+        assert.strictEqual(seen.includes(true), wantTrue, `flag raised only by the state $20 tick (state ${stateNext})`);
+    }
+    { const cc = settle(thz2Ids, 3960, 654); cc.next = 32; cc.camera_x = 3960 - 100; cc.clear_dx = 20; ctx.SCR_cc_tick(cc); ctx.SCR_cc_tick(cc); assert.strictEqual(cc.act_clear, true); assert.strictEqual(flag, false, 'false after the clearing tick too'); }
+    assert.ok(/global\.chaosBeyondMapOpen = false;/.test(rd('objects/OBJ_chaos_zone/Create_0.gml')), 'reset at every room start / restart / act transition (zone Create)');
+    // vertical position is held explicitly while the run is beyond the canonical map
+    for (const [name, ids, y] of [['THZ1', thz1Ids, 558], ['THZ2', thz2Ids, 654]]) {
+        const cc = settle(ids, 4080, y); cc.next = 32; let heldY = null;
+        for (let i = 0; i < 200 && !cc.act_clear; i++) { cc.camera_x = 3748; cc.clear_dx = 348 + 33; const before = Math.floor(cc.xu / 256); ctx.SCR_cc_tick(cc); if (before >= 4096) { if (heldY === null) heldY = cc.yu; assert.strictEqual(cc.yu, heldY, `${name}: Y held beyond the map`); } }
+        assert.ok(cc.act_clear && heldY !== null, `${name}: ran beyond the map and cleared with Y held`);
+    }
+    delete ctx.global.chaosBeyondMapOpen; ctx.global.chaosBeyondMapOpen = false;
     console.log('state $20 beyond-edge safety:', outcomes.join(' '));
 }
 

@@ -5,19 +5,21 @@ if (chaosConsumed) {
     exit;
 }
 
-var cp_cam = view_camera[0];
-var cp_left = camera_get_view_x(cp_cam)-128;
-var cp_right = camera_get_view_x(cp_cam)+camera_get_view_width(cp_cam)+384;
+// Generic mapped-object lifecycle (placement scan $8000 + lifetime routine $61E1) through the shared viewport adapter: created in the
+// outer ring (or in the initial fill), asleep beyond EDGE(+-32), removed beyond EDGE(+-96). The anchor stays the canonical record.
+var cp_vp = chaos_vp_current();
 if (!chaosActive) {
-    if (chaosOriginX < cp_left || chaosOriginX >= cp_right) exit;
+    if (!SCR_chaos_placement_scan(id,cp_vp,chaosOriginX,chaosOriginY)) exit;
+    chaosAsleep = true;
     x = chaosOriginX; y = chaosOriginY; chaosYU = round(y*256); chaosVY = 0;
     if (global.player != 1 && chaosParameter == $04) chaosParameter = $01;
-    chaosState = 2; chaosAnimTick = 0; chaosActive = true; visible = true;
+    chaosState = 2; chaosAnimTick = 0; chaosActive = true; visible = false;
     global.chaosType10GraphicsSelector = chaosParameter;
 }
-if (x < cp_left || x >= cp_right) {
-    chaosActive = false; visible = false; exit;
-}
+var cp_cell = SCR_chaos_lifetime_cell(id,cp_vp,floor(x),floor(y));
+if (cp_cell == 3) { chaosActive = false; chaosAsleep = true; visible = false; exit; } // $FE: occupancy released
+chaosAsleep = (cp_cell >= 2); visible = !chaosAsleep;
+if (chaosAsleep) exit; // callbacks do not run while asleep
 
 chaosAnimTick++;
 image_index = (chaosAnimTick div 5) & 1;

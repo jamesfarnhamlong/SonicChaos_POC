@@ -74,6 +74,11 @@ function SCR_cc_lookup(cp_x, cp_y, cp_plane) {
     if ((cp_ay & 32768) != 0) cp_ay = 0;
     var cp_index = (((cp_ay >> 5) & 127)*128 + ((cp_ax >> 5) & 255));
     var cp_address = (49153 + cp_index) & 65535;
+    // GAMEMAKER PRESENTATION ADAPTER: a widescreen act-clear camera may expose world X beyond the canonical 4096 px map (128 columns of 32 px). The
+    // ROM's lookup would wrap those columns into the NEXT map row (solid tiles can stop the state $20 run). While state $20 runs, columns past the
+    // canonical map edge are open (empty) instead; canonical terrain data is untouched and normal play never sets the flag.
+    if (global.chaosBeyondMapOpen && cp_ax >= 4096) return {tile:255, flags:0, modifier:0,
+        vertical:0, horizontal:0, ax:cp_ax, ay:cp_ay, index:-1};
     if ((cp_address & 61440) != 49152) return {tile:255, flags:0, modifier:0,
         vertical:0, horizontal:0, ax:cp_ax, ay:cp_ay, index:-1};
     var cp_tile = global.chaosTileIds[cp_index];
@@ -475,14 +480,21 @@ function SCR_cc_state11_tick(cp_c) {
 // The GameMaker widescreen adapter overrides clear_dx per update with viewWidth + 33 (SCR_chaos_goal: chaos_goal_clear_dx), keeping
 // the original relationship "33 px beyond the visible right edge". The canonical $121 is never edited here.
 function SCR_cc_state32_tick(cp_c) {
+    // The beyond-map adapter (SCR_cc_lookup) is open ONLY for the duration of this state-$20 tick, so no other state, object or frame can see it.
+    global.chaosBeyondMapOpen = true; SCR_cc_state32_body(cp_c); global.chaosBeyondMapOpen = false;
+}
+function SCR_cc_state32_body(cp_c) {
     if (cp_c.act_clear) { cp_c.vx = 0; cp_c.next = 32; return; }
     cp_c.vy = 0; cp_c.player_flags &= ~16; // never mirrored
     var cp_d = floor(cp_c.xu/256) - cp_c.camera_x;
+    var cp_hold_y = cp_c.yu; // beyond the canonical map (invisible final pixels) the vertical position is held explicitly
+    var cp_beyond = floor(cp_c.xu/256) >= 4096;
     if (cp_d < 0 || cp_d >= cp_c.clear_dx) { cp_c.vx = 0; cp_c.act_clear = true; cp_c.next = 32; return; } // negative d compares as a huge 16-bit value
     if (cp_c.vx < 0) cp_c.vx = 0;
     cp_c.input_delta = (cp_c.vx >> 8) < 6 ? 16 : 0; cp_c.surface_delta = 0; cp_c.maximum = 1536;
     SCR_cc_x(cp_c); SCR_cc_y(cp_c);
     SCR_cc_floor(cp_c); SCR_cc_sides(cp_c); SCR_cc_ceiling(cp_c); SCR_cc_merge(cp_c);
+    if (cp_beyond) cp_c.yu = cp_hold_y;
     cp_c.vy = 0; cp_c.next = 32;
 }
 // Ordinary state wrappers. Animation-script scheduling and special states remain out of scope.

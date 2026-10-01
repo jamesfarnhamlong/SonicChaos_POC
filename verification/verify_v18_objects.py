@@ -61,8 +61,8 @@ for token in ("chaosVX = -$0080", "chaosVY = $0200", "floor(x) < chaosLeftBound"
     assert token in source_21, token
 
 source_27 = (ROOT / "objects/OBJ_chaos_object_27/Step_0.gml").read_text()
-for token in ("chaosVX = -$0280", "abs(floor(x)-floor(cp_p.x)) < 64",
-              "abs(floor(x)-floor(cp_p.x)) >= 384", "chaosOscTick <= 32",
+for token in ("chaosVX = -$0280", "chaos_vp_dist_lt(floor(x),floor(cp_p.x),64)",
+              "chaos_vp_dist_ge(floor(x),floor(cp_p.x),384)", "chaosOscTick <= 32",
               "chaosOscTick >= 97", "ordinary overlap requests no damage"):
     assert token.lower() in source_27.lower(), token
 object_27 = json.loads((ROOT / "objects/OBJ_chaos_object_27/OBJ_chaos_object_27.yy").read_text())

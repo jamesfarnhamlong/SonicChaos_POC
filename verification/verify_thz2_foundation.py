@@ -213,7 +213,7 @@ assert "case $27: return TYPE27_RENDER_Y;" in adapter27 and "case $27: return TY
 draw27 = (root / "objects/OBJ_chaos_object_27/Draw_0.gml").read_text()
 assert "chaos_render_offset_x($27)" in draw27 and "chaos_render_offset_y($27)" in draw27 and "+18" not in draw27
 step27 = (root / "objects/OBJ_chaos_object_27/Step_0.gml").read_text()
-assert "SCR_chaos_spawn_cell(" in step27 and "chaosOriginX < cp_left" not in step27 and "chaosInitialFillDone" in step27
+assert "SCR_chaos_lifetime_cell(" in step27 and "chaosOriginX < cp_left" not in step27 and "SCR_chaos_placement_scan(" in step27 and "chaosInitialFillDone" in (root / "scripts/SCR_chaos_placement/SCR_chaos_placement.gml").read_text()
 assert "y + 18" not in step27 and "y+18" not in step27, "render offset must not leak into logic"
 map27 = json.loads((root / "verification/placement-spawn-map.json").read_text())
 assert len(map27["table"]) == 1024 and map27["rom_offset"] == "0x70146"

@@ -125,9 +125,11 @@ function SCR_chaos_adapter_step(cp_p) {
     if (cp_c.state != 32 && (cp_c.xu < 16*256 || cp_c.xu > (room_width-9)*256)) {
         cp_c.xu = clamp(cp_c.xu,16*256,(room_width-9)*256); cp_c.vx = 0;
     }
-    // POC adapter paired with the act-clear camera's left lock: between sign contact and state $20 Sonic cannot be left behind off the left edge.
-    if (global.chaosGoalContact && cp_c.state != 32 && cp_c.next != 32 && cp_c.xu < chaos_goal_left_limit_xu(camera_get_view_x(view_camera[0]))) {
-        cp_c.xu = chaos_goal_left_limit_xu(camera_get_view_x(view_camera[0])); if (cp_c.vx < 0) cp_c.vx = 0;
+    // Original player edge clamp, active between sign contact and state $20: EDGE(LEFT,+16)..EDGE(RIGHT,-9) of the live view as
+    // full-width integers (GameMaker adapter; the ROM's 8-bit low-byte clamp is not reproduced, see chaos_goal_clamp_player).
+    if (global.chaosGoalContact && cp_c.state != 32 && cp_c.next != 32) {
+        var cp_clamp = chaos_goal_clamp_player(chaos_vp_current(), cp_c.xu, cp_c.vx);
+        cp_c.xu = cp_clamp.xu; cp_c.vx = cp_clamp.vx;
     }
     SCR_chaos_core_publish(cp_p);
     // Moving object surfaces remain separate from the ROM terrain map.

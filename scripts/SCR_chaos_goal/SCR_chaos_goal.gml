@@ -5,8 +5,10 @@
 //
 // Implemented: $18 contact (shared overlap $6328 via SCR_chaos_box_contact), timer stop, hop/spin/landing, $19 spawn timing,
 // $19 floor wait and player-state-$20 request, $20 run (SCR_cc_state32_tick) and the act-clear flag.
+// The camera is the recovered one (1 px/update X+Y pan to the sign, freeze at EDGE(RIGHT,-7), clear at EDGE(RIGHT,+33)), expressed
+// through SCR_chaos_viewport.
 // Deferred (documented, not guessed): ring-count prize and retry/retouch (state 6), $19 panel graphics/digits/sounds, the bonus
-// value, the results screen/tally, camera-follow release at d > $F8, object freeze after the flag, sounds $F8/$AA/$AB/$BC/$89.
+// value, the results screen/tally, object freeze after the flag, sounds $F8/$AA/$AB/$BC/$89.
 #macro CHAOS_SONIC_EXT_X 8
 #macro CHAOS_SONIC_EXT_Y 24
 #macro CHAOS_GOAL_EXT_X 12
@@ -15,12 +17,16 @@
 #macro CHAOS_GOAL_HOP_START 3
 #macro CHAOS_GOAL_CHILD_TICK 131
 #macro CHAOS_GOAL_CHILD_REQUEST_AGE 148
-#macro CHAOS_GOAL_CAMERA_DX $80
-#macro CHAOS_GOAL_CAMERA_PAN_SPEED 4
-#macro CHAOS_SMS_VIEW_W 256
+// Sign pan ($AA22.., vector $0359): camera target (signX-$80, signY-$99) = sign at CENTER(0) horizontally, 153 px below the view top.
+#macro CHAOS_GOAL_PAN_TOP_OFFSET $99
+// State $20 handler $83A6 compares d = playerX - cameraX: freeze at d > $F8 (= RIGHT - 7), act clear at d > $120 (= RIGHT + 33).
+#macro CHAOS_ACT_FREEZE_DX_SMS $F9
 #macro CHAOS_ACT_CLEAR_DX_SMS $121
-#macro CHAOS_GOAL_FRAME_MARGIN 24
-#macro CHAOS_GOAL_LEFT_MARGIN 8
+#macro CHAOS_ACT_FREEZE_EDGE -7
+#macro CHAOS_ACT_CLEAR_EDGE 33
+// Player edge clamp ($4141/$4281, active until state $20): anchor kept within LEFT+16 .. RIGHT-9 (original cam+$10 .. cam+$F7).
+#macro CHAOS_GOAL_CLAMP_LEFT 16
+#macro CHAOS_GOAL_CLAMP_RIGHT -9
 
 /// $A88E gate + shared overlap. Runs only while X speed != 0 or the requested player state is $18; nothing else
 /// (direction, rolling, jumping, Y speed) matters. Sonic's extents are 8 x 24 and the sign's frame-1 extents 12 x 42.
@@ -70,32 +76,67 @@ function chaos_goal_request_state20(cp_core) {
     cp_core.next = 32;
 }
 
-/// Act-clear threshold, camera-relative. Two explicit concepts:
+/// Act-clear threshold, camera-relative: EDGE(RIGHT, +33) of the live view.
 ///   canonical SMS:        playerX - cameraX >= CHAOS_ACT_CLEAR_DX_SMS ($121 = 289) on the 256 px screen, i.e. 33 px beyond the right edge;
 ///   GameMaker widescreen: the same 33 px beyond the CURRENT visible right edge = viewWidth + ($121 - 256).
 /// chaos_goal_clear_dx(256) reproduces the canonical value exactly; the view width is read from the live camera, never from an act.
 function chaos_goal_clear_dx(cp_view_w) {
-    return cp_view_w + (CHAOS_ACT_CLEAR_DX_SMS - CHAOS_SMS_VIEW_W);
+    return chaos_vp_edge(chaos_vp_new(0, 0, cp_view_w, 0), CHAOS_VP_RIGHT, CHAOS_ACT_CLEAR_EDGE);
 }
 
-/// POC camera adapter for the act-clear chain (NOT canonical; the ROM pans to (signX-$80, signY-$99) at an unrecovered speed and
-/// releases at d > $F8, none of which is reproduced). Rules, identical for every act:
-///   1. from contact until state $20 is requested the camera pans toward the sign target at CHAOS_GOAL_CAMERA_PAN_SPEED, but is
-///      always dragged so Sonic stays framed (CHAOS_GOAL_FRAME_MARGIN px from either edge) - it can never leave him behind or
-///      run ahead of him;
-///   2. it never scrolls left (the ROM's left scroll limit $D280 is raised to the camera X);
-///   3. from the update state $20 is requested the camera is frozen, so the canonical run off the right edge is measurable.
-function chaos_goal_camera_next(cp_cam, cp_px, cp_view_w, cp_room_w, cp_target, cp_frozen) {
-    if (cp_frozen) return cp_cam;
-    var cp_max = max(0, cp_room_w - cp_view_w);
-    var cp_t = clamp(cp_target, 0, cp_max);
-    var cp_n = cp_cam + clamp(cp_t - cp_cam, -CHAOS_GOAL_CAMERA_PAN_SPEED, CHAOS_GOAL_CAMERA_PAN_SPEED);
-    cp_n = clamp(cp_n, cp_px - (cp_view_w - CHAOS_GOAL_FRAME_MARGIN), cp_px - CHAOS_GOAL_FRAME_MARGIN);
-    cp_n = max(cp_n, cp_cam);
-    return clamp(cp_n, 0, cp_max);
+/// Sign-pan state (pan mode, $D15F bit 0). One per level session; the sign anchor is the canonical object record (WORLD).
+///   x / y   : camera position after the last step (outputs of chaos_goal_pan_step)
+///   frozen  : camera frozen by $0407 (stays frozen for the rest of the act)
+function chaos_goal_pan_new() {
+    return {active: false, sign_x: 0, sign_y: 0, frozen: false, x: 0, y: 0};
 }
 
-/// POC adapter paired with the camera's left lock: while the sequence runs before state $20, Sonic is kept inside the view's left edge.
-function chaos_goal_left_limit_xu(cp_cam) {
-    return (floor(cp_cam) + CHAOS_GOAL_LEFT_MARGIN) * 256;
+/// Sign contact: pan mode starts and the follow camera is disabled (original: vector $0359 at the $18 state 3 -> 4 update).
+function chaos_goal_pan_begin(cp_pan, cp_sign_x, cp_sign_y) {
+    cp_pan.active = true; cp_pan.frozen = false; cp_pan.sign_x = cp_sign_x; cp_pan.sign_y = cp_sign_y;
+}
+
+/// Nominal pan targets for the CURRENT view: X puts the sign at CENTER(0) (original signX-$80 on 256 px), Y puts it
+/// CHAOS_GOAL_PAN_TOP_OFFSET below the view top (original signY-$99).
+function chaos_goal_pan_target_x(cp_pan, cp_view_w) {
+    return chaos_vp_left_for_center(cp_view_w, cp_pan.sign_x, 0);
+}
+function chaos_goal_pan_target_y(cp_pan) {
+    return cp_pan.sign_y - CHAOS_GOAL_PAN_TOP_OFFSET;
+}
+
+/// One camera update of the recovered pan ($5956) plus the state-$20 freeze ($83A6 -> $0407). Writes cp_pan.x / cp_pan.y.
+///   X: +1 px/update toward the nominal target. The ROM's right limit ($D282 := target) is EXCLUSIVE, so the camera stops one pixel
+///      short: signX - W/2 - 1 (3831 for the 256 px THZ sign). The left lock ($0353) is raised to the camera every update, so X never
+///      scrolls left even when the follow camera was already ahead of the target.
+///   Y: +/-1 px/update, simultaneously with X, to the exact target (no limit quirk).
+///   WORLD takes precedence over CENTER: the camera never exposes non-world space. The effective right limit is
+///   min(desiredCameraX - 1, canonicalWorldRight - viewWidth) with desiredCameraX = signX - viewWidth/2, so the sign sits at CENTER(0) (+1) when the
+///   world has room and right of centre when the canonical map edge is reached first (GameMaker presentation compromise; the last visible column
+///   is then the last world column). cp_world_w is the canonical world width (both THZ rooms are the 4096 px map).
+///   Y keeps a [0, room_height - viewHeight] bound (vertical is not widened; the sign target is always inside it on THZ).
+///   Freeze: once player state $20 runs and playerX >= EDGE(RIGHT,-7) of the view the camera is frozen (original d > $F8);
+///           from then on cp_pan.x / cp_pan.y never change. EDGE(RIGHT,+33) of this frozen camera is the act-clear threshold.
+function chaos_goal_pan_step(cp_pan, cp_cam_x, cp_cam_y, cp_view_w, cp_view_h, cp_world_w, cp_room_h, cp_player_x, cp_in_state20) {
+    cp_pan.x = cp_cam_x; cp_pan.y = cp_cam_y;
+    if (!cp_pan.active || cp_pan.frozen) return;
+    var cp_limit_x = min(chaos_goal_pan_target_x(cp_pan, cp_view_w) - 1, max(0, cp_world_w - cp_view_w));
+    if (cp_cam_x < cp_limit_x) cp_pan.x = cp_cam_x + 1;
+    var cp_target_y = clamp(chaos_goal_pan_target_y(cp_pan), 0, max(0, cp_room_h - cp_view_h));
+    cp_pan.y = cp_cam_y + sign(cp_target_y - cp_cam_y);
+    if (cp_in_state20 && cp_player_x >= chaos_vp_edge(chaos_vp_new(cp_pan.x, 0, cp_view_w, 0), CHAOS_VP_RIGHT, CHAOS_ACT_FREEZE_EDGE))
+        cp_pan.frozen = true;
+}
+
+/// Player edge clamp while the sign sequence runs (contact until state $20). Original: low byte of (playerX - cam) < $10 -> cam+$10,
+/// >= $F8 -> cam+$F7, X speed zeroed. GAMEMAKER ADAPTER (deliberate deviation): the same relationship is applied to the live view as
+/// full-width integers, EDGE(LEFT,+16) .. EDGE(RIGHT,-9), so Sonic stays inside the displayed view. The 8-bit low-byte test (which
+/// teleports a player at d >= 256 to the left edge) and the per-update speed compensation are NOT reproduced.
+/// Returns {xu, vx, hit}: xu is 8.8 fixed point like the core, vx unchanged unless the clamp fired.
+function chaos_goal_clamp_player(cp_vp, cp_xu, cp_vx) {
+    var cp_lo = chaos_vp_edge(cp_vp, CHAOS_VP_LEFT, CHAOS_GOAL_CLAMP_LEFT) * 256;
+    var cp_hi = chaos_vp_edge(cp_vp, CHAOS_VP_RIGHT, CHAOS_GOAL_CLAMP_RIGHT) * 256;
+    if (cp_xu < cp_lo) return {xu: cp_lo, vx: 0, hit: true};
+    if (cp_xu > cp_hi) return {xu: cp_hi, vx: 0, hit: true};
+    return {xu: cp_xu, vx: cp_vx, hit: false};
 }

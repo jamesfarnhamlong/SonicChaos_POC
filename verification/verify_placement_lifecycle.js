@@ -3,33 +3,40 @@
 const fs = require('fs'), vm = require('vm'), path = require('path'), assert = require('assert');
 const root = path.resolve(__dirname, '..');
 const hex = t => t.replace(/(?<![\w"])\$([0-9A-Fa-f]+)/g, '0x$1');
-const placementSrc = fs.readFileSync(path.join(root, 'scripts/SCR_chaos_placement/SCR_chaos_placement.gml'), 'utf8');
+const macros = t => t.replace(/#macro (\w+) (\S+)/g, 'var $1 = $2;').replace(/\bmod\b/g, '%');
+// the spawn cell is the shared viewport adapter's lifecycle band (SCR_chaos_viewport) applied to the real view
+const placementSrc = macros(fs.readFileSync(path.join(root, 'scripts/SCR_chaos_viewport/SCR_chaos_viewport.gml'), 'utf8')) + String.fromCharCode(10) +
+    macros(fs.readFileSync(path.join(root, 'scripts/SCR_chaos_placement/SCR_chaos_placement.gml'), 'utf8'));
 const map = JSON.parse(fs.readFileSync(path.join(__dirname, 'placement-spawn-map.json'), 'utf8'));
-const base = vm.createContext({floor: Math.floor});
+const base = vm.createContext({floor: Math.floor, abs: Math.abs, min: Math.min, max: Math.max});
 vm.runInContext(placementSrc, base);
-// --- spawn map equals the ROM for every cell (and outside the window) ---------------------------------------------------
-for (let cy = 0; cy < 32; cy++) for (let cx = 0; cx < 32; cx++) {
-    const romValue = map.table[cy * 32 + cx];
-    for (const [ox, oy] of [[0, 0], [15, 15], [7, 3]]) {
-        assert.strictEqual(base.SCR_chaos_spawn_cell(-128 + cx * 16 + ox, -128 + cy * 16 + oy), romValue, `cell ${cx},${cy}`);
+// --- spawn map equals the ROM for every cell (and outside the window) on the 256 px view, for several camera origins -------
+for (const [camX, camY] of [[0, 0], [1000, 520], [3831, 405], [12345, 777]]) {
+    const vp256 = base.chaos_vp_new(camX, camY, 256, 192);
+    for (let cy = 0; cy < 32; cy++) for (let cx = 0; cx < 32; cx++) {
+        const romValue = map.table[cy * 32 + cx];
+        for (const [ox, oy] of [[0, 0], [15, 15], [7, 3]]) {
+            assert.strictEqual(base.SCR_chaos_spawn_cell(vp256, camX - 128 + cx * 16 + ox, camY - 128 + cy * 16 + oy), romValue, `cell ${cx},${cy} cam ${camX},${camY}`);
+        }
     }
+    for (const [x, y] of [[-129, 0], [0, -129], [384, 0], [0, 384], [-1000, 5], [4000, 5]]) assert.strictEqual(base.SCR_chaos_spawn_cell(vp256, camX + x, camY + y), 3);
 }
-for (const [x, y] of [[-129, 0], [0, -129], [384, 0], [0, 384], [-1000, 5], [4000, 5]]) assert.strictEqual(base.SCR_chaos_spawn_cell(x, y), 3);
 // --- lifecycle simulation ---------------------------------------------------------------------------------------------
 const stepSrc = fs.readFileSync(path.join(root, 'objects/OBJ_chaos_object_27/Step_0.gml'), 'utf8');
 const body = hex(stepSrc).replace('chaosAnimTick div 2', 'Math.floor(chaosAnimTick / 2)').replace(/\bexit;/g, 'return;').replace(/\bmod\b/g, '%');
 function makeWorld(originX, originY) {
-    const w = {frame: 0, camX: 0, camY: 0, destroyed: false, activations: 0, trace: []};
+    const w = {frame: 0, camX: 0, camY: 0, camW: 256, destroyed: false, activations: 0, trace: []};
     w.player = {x: 0, bbox_left: 0, bbox_right: 0, bbox_top: 0, bbox_bottom: 0, object_index: 'char'};
     w.ctx = vm.createContext({global: {playerJump: false, playerSpinDash: false, playerSuper: false, powerInv: false},
-        floor: Math.floor, round: Math.round, abs: Math.abs, view_camera: [0], camera_get_view_x: () => w.camX, camera_get_view_y: () => w.camY,
+        floor: Math.floor, round: Math.round, abs: Math.abs, min: Math.min, max: Math.max, view_camera: [0], camera_get_view_x: () => w.camX, camera_get_view_y: () => w.camY,
+        camera_get_view_width: () => w.camW, camera_get_view_height: () => 196,
         instance_find: () => w.player, instance_exists: o => o === w.player, OBJ_player: 1, OBJ_player_char_spin: 'spin',
         SCR_chaos_enemy_score_100_bytes: () => {}, instance_destroy: () => { w.destroyed = true; }});
     vm.runInContext(placementSrc, w.ctx);
     w.box = {x: originX, y: originY, chaosOriginX: originX, chaosOriginY: originY, chaosActive: false, chaosAsleep: true, chaosAge: 0, chaosScanTick: 0,
              chaosInitialFillDone: false, chaosState: 0, chaosVX: 0, chaosVY: 0, chaosCounter: 0, chaosOscTick: 0, chaosAnimTick: 0, chaosSilentDestroy: false,
              chaosXU: originX * 256, chaosYU: originY * 256, image_index: 0, visible: false};
-    w.ctx.box = box => box; w.ctx.b = w.box;
+    w.ctx.box = box => box; w.ctx.b = w.box; w.ctx.id = w.box;
     w.step = () => {
         const was = w.box.chaosActive;
         vm.runInContext(`(function(){ with (b) { ${body} } })()`, w.ctx);

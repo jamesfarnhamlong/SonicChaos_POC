@@ -12,6 +12,8 @@ if (x == 2400 && y == 254) chaosParameter = $02;
 chaosLeftBound = chaosOriginX-(chaosParameter << 4);
 chaosState = 0;
 chaosActive = false;
+chaosWoken = false; // widescreen retention adapter: has been awake since (re)creation
+chaosAsleep = true; chaosScanTick = 0; chaosInitialFillDone = false; // generic placement lifecycle (SCR_chaos_placement)
 chaosXU = round(x*256);
 chaosYU = round(y*256);
 chaosVX = -$0080;

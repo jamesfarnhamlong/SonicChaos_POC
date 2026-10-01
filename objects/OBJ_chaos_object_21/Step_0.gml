@@ -1,21 +1,22 @@
-var cp_cam = view_camera[0];
-var cp_left = camera_get_view_x(cp_cam)-128;
-var cp_right = camera_get_view_x(cp_cam)+camera_get_view_width(cp_cam)+384;
-
-// Generic off-range cleanup releases placement occupancy. A room instance is
-// retained as the POC's bounded placement adapter, then recreated from origin.
+// Generic mapped-object lifecycle (placement scan $8000 + lifetime routine $61E1) through the shared viewport adapter. A room instance is
+// retained as the POC's bounded placement adapter. ROM semantics: asleep = callbacks do not run (movement pauses); removal = the object ceases to
+// exist; recreation rebuilds it from the canonical placement record (origin X/Y, patrol restarts). Entry (create/wake) is canonical; the
+// widescreen retention adapter (SCR_chaos_lifetime_cell) only delays sleep/removal of an object that has already been awake.
+var cp_vp = chaos_vp_current();
 if (!chaosActive) {
-    if (chaosOriginX < cp_left || chaosOriginX >= cp_right) exit;
+    if (!SCR_chaos_placement_scan(id,cp_vp,chaosOriginX,chaosOriginY)) exit;
+    chaosAsleep = true;
     x = chaosOriginX; y = chaosOriginY;
     chaosXU = round(x*256); chaosYU = round(y*256);
     chaosLeftBound = chaosOriginX-(chaosParameter << 4);
     chaosVX = -$0080; chaosVY = $0200;
     chaosState = 3; chaosAnimTick = 0;
-    chaosActive = true; visible = true; image_xscale = -1;
+    chaosActive = true; visible = false; image_xscale = -1;
 }
-if (x < cp_left || x >= cp_right) {
-    chaosActive = false; visible = false; exit;
-}
+var cp_cell = SCR_chaos_lifetime_cell(id,cp_vp,floor(x),floor(y));
+if (cp_cell == 3) { chaosActive = false; chaosAsleep = true; visible = false; exit; } // $FE: occupancy released
+chaosAsleep = (cp_cell >= 2); visible = !chaosAsleep;
+if (chaosAsleep) exit; // callbacks do not run while asleep
 
 chaosAnimTick++;
 image_index = (chaosAnimTick div 8) & 1;
