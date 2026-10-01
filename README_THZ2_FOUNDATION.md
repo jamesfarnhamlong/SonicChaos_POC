@@ -75,7 +75,7 @@ the accepted counts); the same row format can feed a future THZ1 table.
   Parameter `$03`: power code 3, 900-update timer, no sound/state request; while code 3 is set the movement cap is `$0600`
   (written before each tick, ROM `$4A74`). The ROM routine does not clear code 3 at timer zero, so the cap persists until restart.
 * `$18`, `$21`, `$27`: existing THZ1 objects and presentation adapters unchanged; `$21` patrol span = parameter * 16 from the record.
-* Type `$18` completion is still the THZ1-only adapter, so the THZ2 sign is presentation-only.
+* Type `$18` act clear is now shared by THZ1 and THZ2 (`SCR_chaos_goal`): `$18` contact (shared overlap, Sonic 8x24 vs sign 12x42) stops the timer and starts the sign hop; after landing a `$19` child waits for the floor and requests player state `$20`, which runs right and sets the act-clear flag at `playerX - cameraX >= $121`; saved progression advances (`chaos_act_progress`) only then. Deferred: ring-count prize/retry, `$19` panel graphics and bonus, results screen, camera-follow release at d > `$F8`, sounds. See `verification/verify_act_completion.js`.
 
 ## Type $10 contact fix (shared physical handler)
 
@@ -83,7 +83,7 @@ Root cause: the container decided "bottom contact" from `cp_p.y > y`, i.e. the p
 two unrelated coordinate frames and never any horizontal overlap; a side hit level with or below the box anchor was classified
 as a bottom hit (box bounced, no break) and, with no projection, Sonic could also pass through a side hit. Now every variant runs
 the same ROM-derived path (`SCR_chaos_box_contact` = original overlap helper `$6328`, `SCR_chaos_box_projection` = `$5FA0`
-targets): fixed integer anchors, player extents 9x18 vs box 10x24, exactly one of top/bottom/right/left kept by smaller
+targets): fixed integer anchors, player extents 8x24 (Sonic) vs box 10x24, exactly one of top/bottom/right/left kept by smaller
 penetration. Bottom and side contacts push Sonic out of the box; then, only if Sonic is attacking (rolling/jumping/spin dash):
 bottom = box bounce (no break), top = break unless requested state is `$0F/$10/$15/$1A` and Y velocity is downward, side = break with
 downward Y velocity. Reward code runs only after the break decision and never influences contact. Not projected: standing on

@@ -81,6 +81,10 @@ if (!instance_exists(OBJ_chaos_controls)) instance_create(0, 0, OBJ_chaos_contro
 if (!instance_exists(OBJ_chaos_ring_manager)) instance_create_depth(0,0,0,OBJ_chaos_ring_manager);
 
 global.chaosComplete = false;
+global.chaosGoalContact = false;
+global.chaosCamLockX = noone;
+global.chaosTraceFrame = 0;
+global.chaosTraceLastCam = -1;
 global.chaosNotice = 0;
 if (!global.checkPoint) global.chaosCheckpointIndex = 0;
 

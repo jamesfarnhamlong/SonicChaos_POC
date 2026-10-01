@@ -36,14 +36,14 @@ for token in ("cp_c.state11_frame == $38 ? 0", "cp_c.state11_frame == $39 ? 1 : 
 
 # Task-06 contact inequalities and ordering must remain exact.
 type21 = (ROOT / "objects/OBJ_chaos_object_21/Step_0.gml").read_text()
-for token in ("abs(cp_player_x-cp_object_x) <= 20",
-              "cp_player_y >= cp_object_y-26", "cp_player_y <= cp_object_y+18",
+for token in ("abs(cp_player_x-cp_object_x) <= 19",
+              "cp_player_y >= cp_object_y-26", "cp_player_y <= cp_object_y+24",
               "if (cp_player_y <= cp_object_y-4)"):
     assert token in type21, token
 
 
 def classify(dx, dy, attack=False, selector06=False):
-    if not (abs(dx) <= 20 and -26 <= dy <= 18):
+    if not (abs(dx) <= 19 and -26 <= dy <= 24):
         return "NONE"
     if dy <= -4:
         return "BOUNCE"

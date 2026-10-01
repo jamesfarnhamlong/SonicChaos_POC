@@ -10,7 +10,7 @@ OBJECT = ROOT / "objects/OBJ_chaos_object_21"
 create = (OBJECT / "Create_0.gml").read_bytes()
 step = (OBJECT / "Step_0.gml").read_bytes()
 assert hashlib.sha256(create).hexdigest() == "4fb1d383cdeab56a1755ba9c0adfb5b3f2aa882d4d265a94e16cfb34d77bd7e6"
-assert hashlib.sha256(step).hexdigest() == "62e2169d0295b8ede8bc6a9f4674994166591b1f05d9fe51c9b14fb29ea340c1"
+assert hashlib.sha256(step).hexdigest() == "ddc90c850f9cbc8d400bb02ad12ae0fa596b2ae9c30b8e891f50933232643d04"  # pin updated: Sonic 8x24 extents ($21 reach dx +-19, dy -26..+24)
 
 draw = (OBJECT / "Draw_0.gml").read_text()
 assert "chaos_render_offset_y($21)" in draw

@@ -106,6 +106,8 @@ assert not any(b["collision_surface_type"] == 13 for b in jload(pkg / "thz1/layo
 core_diff = subprocess.run(["git", "diff", "-U0", "HEAD", "--", "scripts/SCR_chaos_core"], cwd=root,
                            capture_output=True, text=True).stdout
 removed = [l[1:].strip() for l in core_diff.splitlines() if l.startswith("-") and not l.startswith("---")]
+# Act-clear task: SCR_cc_new gained two additive fields (camera_x, act_clear) on its last line; nothing else was removed.
+removed = [l for l in removed if l != "state11_anim_tick:0, state11_frame:56, hurt_ticks:0};"]
 assert removed == ["cp_kind == 13 ||", "if ((cp_kind == 5 && cp_s.tile != 61) || cp_kind == 13 ||",
                    "if (cp_kind == 5 || cp_kind == 13 || cp_kind == 19 || cp_kind == 20 || cp_kind == 21 || cp_kind == 28) {"] or     all("cp_kind == 13" in l for l in removed), removed
 

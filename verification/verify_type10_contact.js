@@ -26,4 +26,20 @@ assert.strictEqual(ctx.SCR_chaos_box_contact(ox + 17, oy + 6, ox, oy, pex, pey, 
 assert.strictEqual(ctx.SCR_chaos_box_contact(ox - 17, oy + 6, ox, oy, pex, pey, oex, oey), 8);
 assert.strictEqual(ctx.SCR_chaos_box_contact(ox + 2, oy + 10, ox, oy, pex, pey, oex, oey), 2, 'directly underneath is a bottom contact');
 assert.strictEqual(ctx.SCR_chaos_box_contact(ox + 2, oy - 10, ox, oy, pex, pey, oex, oey), 1, 'directly above is a top contact');
+// Corrected Sonic extents (8 x 24): contact reach dx +-18, dy -24..+24; the superseded 9 x 18 reached dx +-19, dy +18 only.
+assert.deepStrictEqual([pex, pey], [8, 24]);
+const hit = (dx, dy) => ctx.SCR_chaos_box_contact(ox + dx, oy + dy, ox, oy, pex, pey, oex, oey) !== 0;
+for (const [dx, dy, want] of [[18, 0, true], [19, 0, false], [-18, 0, true], [-19, 0, false], [0, 24, true], [0, 25, false], [0, -24, true], [0, -25, false]])
+    assert.strictEqual(hit(dx, dy), want, `reach ${dx},${dy}`);
+// Cross-check against canonical Research (object-10.json controlled $6328/$5FA0 boundaries, Research 5ae1a96): compare actual
+// contact results from the shipped function and from the fixture grid, not file bytes.
+const canon = JSON.parse(fs.readFileSync(path.join(root, 'POC_notes/rom-cache/object-10.json'), 'utf8')).controlled_original_routine_fixtures.contact.overlap_boundaries;
+const gridBits = (dx, dy) => fx.grid.find(g => g[0] === dx && g[1] === dy)[2];
+assert.strictEqual(canon.length, 9);
+for (const b of canon) {
+    const [dx, dy] = b.axis === 'horizontal_right' ? [b.delta, 0] : [0, b.delta];
+    const want = parseInt(b.translated_contact, 16);
+    assert.strictEqual(ctx.SCR_chaos_box_contact(ox + dx, oy + dy, ox, oy, pex, pey, oex, oey), want, `canonical ${b.axis} ${b.delta} (shipped)`);
+    assert.strictEqual(gridBits(dx, dy), want, `canonical ${b.axis} ${b.delta} (fixture grid)`);
+}
 console.log(`TYPE-10 CONTACT CHECKS PASSED (${fx.grid.length} ROM grid cells, ${fx.projection.length} projections)`);

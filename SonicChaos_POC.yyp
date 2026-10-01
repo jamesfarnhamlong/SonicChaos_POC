@@ -757,6 +757,7 @@
     {"id": {"name": "SCR_chaos_level", "path": "scripts/SCR_chaos_level/SCR_chaos_level.yy"}},
     {"id": {"name": "SCR_chaos_loop_layout", "path": "scripts/SCR_chaos_loop_layout/SCR_chaos_loop_layout.yy"}},
     {"id": {"name": "SCR_chaos_box_contact", "path": "scripts/SCR_chaos_box_contact/SCR_chaos_box_contact.yy"}},
+    {"id": {"name": "SCR_chaos_goal", "path": "scripts/SCR_chaos_goal/SCR_chaos_goal.yy"}},
     {"id": {"name": "SCR_chaos_placement", "path": "scripts/SCR_chaos_placement/SCR_chaos_placement.yy"}},
     {"id": {"name": "SCR_chaos_level_thz2_data", "path": "scripts/SCR_chaos_level_thz2_data/SCR_chaos_level_thz2_data.yy"}},
     {"id": {"name": "SPR_chaos_thz2_terrain_0", "path": "sprites/SPR_chaos_thz2_terrain_0/SPR_chaos_thz2_terrain_0.yy"}},
@@ -2890,6 +2891,12 @@
       "id": {
         "name": "OBJ_chaos_object_0F_transient",
         "path": "objects/OBJ_chaos_object_0F_transient/OBJ_chaos_object_0F_transient.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_19",
+        "path": "objects/OBJ_chaos_object_19/OBJ_chaos_object_19.yy"
       }
     },
     {

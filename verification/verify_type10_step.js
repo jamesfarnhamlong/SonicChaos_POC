@@ -29,13 +29,13 @@ for (const p of VARIANTS) {
         assert.strictEqual(r.box.chaosConsumed, true, `param ${p} side ${px},${py} breaks`);
         assert.strictEqual(r.box.chaosState, 2, 'box must not jump on a side hit');
         assert.deepStrictEqual(r.rewards, [p], 'reward runs once, after the break decision');
-        assert.strictEqual(r.player.chaosCore.xu / 256, px > 500 ? 519 : 481, 'Sonic is pushed out, never through');
+        assert.strictEqual(r.player.chaosCore.xu / 256, px > 500 ? 518 : 482, 'Sonic is pushed out, never through');
         assert.strictEqual(r.player.chaosCore.vy, 1792, 'rolling (state 9) keeps its Y velocity');
     }
     // non-attacking side contact: solid, no break, no box motion
     const w = scenario(p, {px: 512, py: 500, spin: false, jump: false, state: 5});
     assert.strictEqual(w.box.chaosConsumed, false); assert.strictEqual(w.box.chaosState, 2); assert.deepStrictEqual(w.rewards, []);
-    assert.strictEqual(w.player.chaosCore.xu / 256, 519, 'non-attacking Sonic is blocked, not phased through');
+    assert.strictEqual(w.player.chaosCore.xu / 256, 518, 'non-attacking Sonic is blocked, not phased through');
     assert.strictEqual(w.player.chaosBoxContacts, 128, 'blocked-leftwards flag for the next update');
     // top attack
     const t = scenario(p, {px: 500, py: 490, spin: true, jump: true, state: 10, vy: 512});

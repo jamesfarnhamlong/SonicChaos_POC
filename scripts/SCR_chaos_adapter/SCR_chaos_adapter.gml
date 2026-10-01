@@ -111,6 +111,8 @@ function SCR_chaos_adapter_step(cp_p) {
     var cp_previous_foot = cp_c.yu/256+18;
     cp_c.state11_active = global.chaosPowerCode == $04 && global.chaosPowerTimer > 0;
     cp_c.state11_camera_y = floor(camera_get_view_y(view_camera[0]));
+    cp_c.camera_x = floor(camera_get_view_x(view_camera[0])); // state $20 act-clear threshold input
+    cp_c.clear_dx = chaos_goal_clear_dx(camera_get_view_width(view_camera[0])); // widescreen adapter: view right edge + 33 (canonical $121 on the 256 px screen)
     // Dedicated GameMaker adapter resolves breakable $47 before the ordinary
     // terrain sensors. A successful attack therefore cannot become damage.
     SCR_chaos_block47_step(cp_p);
@@ -119,8 +121,13 @@ function SCR_chaos_adapter_step(cp_p) {
     if (global.chaosPowerCode == $03) cp_c.maximum = $0600;
     SCR_cc_tick(cp_c);
     // Widescreen room boundary adapter. Original camera-relative 256px clipping is omitted.
-    if (cp_c.xu < 16*256 || cp_c.xu > (room_width-9)*256) {
+    // State $20 runs past the map edge exactly as the ROM does (shared terrain lookup), so the boundary adapter yields to it.
+    if (cp_c.state != 32 && (cp_c.xu < 16*256 || cp_c.xu > (room_width-9)*256)) {
         cp_c.xu = clamp(cp_c.xu,16*256,(room_width-9)*256); cp_c.vx = 0;
+    }
+    // POC adapter paired with the act-clear camera's left lock: between sign contact and state $20 Sonic cannot be left behind off the left edge.
+    if (global.chaosGoalContact && cp_c.state != 32 && cp_c.next != 32 && cp_c.xu < chaos_goal_left_limit_xu(camera_get_view_x(view_camera[0]))) {
+        cp_c.xu = chaos_goal_left_limit_xu(camera_get_view_x(view_camera[0])); if (cp_c.vx < 0) cp_c.vx = 0;
     }
     SCR_chaos_core_publish(cp_p);
     // Moving object surfaces remain separate from the ROM terrain map.

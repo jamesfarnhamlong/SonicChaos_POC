@@ -6,7 +6,7 @@ const start = src.indexOf('function chaos_acts()');
 const ctx = vm.createContext({ROM_chaos_thz1: 'thz1', ROM_chaos_thz2: 'thz2', clamp: (v, a, b) => Math.min(Math.max(v, a), b),
     max: Math.max, array_length: a => a.length});
 const acts = src.slice(start).replace(/\bmod\b/g, '%');
-vm.runInContext(acts.slice(0, acts.indexOf('/// THZ2 type-$26')) , ctx);
+vm.runInContext(acts.slice(0, acts.indexOf('/// 1-based chaos_acts() index')), ctx);
 const count = ctx.chaos_act_count();
 assert.strictEqual(count, 2);
 assert.deepStrictEqual([1, 2].map(i => ctx.chaos_act_entry(i).room), ['thz1', 'thz2']);

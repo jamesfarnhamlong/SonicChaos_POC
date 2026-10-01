@@ -146,3 +146,70 @@ function chaos_act_step(cp_code, cp_delta) {
 function chaos_act_progress(cp_saved, cp_played) {
     return chaos_act_clamp(max(chaos_act_clamp(cp_saved), chaos_act_clamp(cp_played) + 1));
 }
+
+/// 1-based chaos_acts() index of a room, or 0 when the room is not an act (developer rooms never advance progression).
+function chaos_act_index_for_room(cp_room) {
+    var cp_acts = chaos_acts();
+    for (var cp_i = 0; cp_i < array_length(cp_acts); cp_i++) {
+        if (cp_acts[cp_i].room == cp_room) return cp_i + 1;
+    }
+    return 0;
+}
+
+/// Final act-clear handoff, shared by every act. Called once, when player state $20 sets the act-clear flag
+/// (SCR_cc_state32_tick, ROM $83A6 -> $D293). The timer already stopped at type $18 contact (chaos_goal_begin).
+/// POC adaptation: the ROM runs its 198-frame clear sequence and results screen before it increments the next-act index
+/// ($152F..$153E); those systems are not implemented, so saved progression advances here, through chaos_act_progress(),
+/// and never earlier.
+function chaos_act_complete() {
+    global.chaosComplete = true;
+    global.chaosFinishRings = global.ring;
+    var cp_act = chaos_act_index_for_room(room);
+    if (cp_act > 0) {
+        global.zoneGoto = chaos_act_progress(global.zoneGoto, cp_act);
+        SCR_save_game();
+    }
+}
+
+/// Type $18 contact (sign state 3 -> 4): the level timer stops immediately and the camera pan target is set. Progression is NOT
+/// touched here and the player is not locked (docs/object-18-act-clear.md section 7).
+function chaos_goal_begin(cp_sign) {
+    global.chaosGoalContact = true;
+    global.chaosFinishTime = global.minutes*60+global.seconds;
+    with (OBJ_count_time) alarm[0] = -1;
+    // The ROM pans to (signX-$80, signY-$99). Pan speed is unrecovered; X is moved at a labelled POC speed, Y keeps the POC follow.
+    global.chaosCamLockX = cp_sign.x - CHAOS_GOAL_CAMERA_DX;
+}
+
+/// Camera adapter for the act-clear chain, applied from the zone's end step (rules: chaos_goal_camera_next).
+function chaos_goal_camera_step() {
+    if (global.chaosCamLockX == noone || !instance_exists(OBJ_player_char)) return;
+    var cp_p = instance_find(OBJ_player_char,0);
+    if (!variable_instance_exists(cp_p,"chaosCore")) return;
+    var cp_core = cp_p.chaosCore;
+    __view_set(e__VW.Object, 0, noone);
+    var cp_x = __view_get(e__VW.XView, 0);
+    var cp_n = chaos_goal_camera_next(cp_x, floor(cp_core.xu/256), __view_get(e__VW.WView, 0), room_width,
+        global.chaosCamLockX, cp_core.state == 32 || cp_core.next == 32);
+    if (cp_n != cp_x) __view_set(e__VW.XView, 0, cp_n);
+}
+
+/// Diagnostic trace of the act-clear sequence (one CSV row per update from contact until the clear), written to
+/// <working_directory>/act_clear_trace.csv for Windows retests. Logging only: it never feeds gameplay.
+function chaos_goal_trace(cp_core, cp_sign_x) {
+    var cp_path = working_directory + "act_clear_trace.csv";
+    var cp_new = !file_exists(cp_path);
+    var cp_f = file_text_open_append(cp_path);
+    if (cp_new) file_text_write_string(cp_f, "room,frame_since_contact,player_x,view_x,view_w,sign_x,camera_target_x,player_screen_x,state,next,vx,clear_dx,clear_d,state20_started,camera_moved,act_clear" + chr(10));
+    var cp_cam = floor(__view_get(e__VW.XView, 0));
+    var cp_target = clamp(global.chaosCamLockX, 0, max(0, room_width - __view_get(e__VW.WView, 0)));
+    global.chaosTraceFrame++;
+    var cp_row = room_get_name(room) + "," + string(global.chaosTraceFrame) + "," + string(floor(cp_core.xu/256)) + "," + string(cp_cam) + "," +
+        string(__view_get(e__VW.WView, 0)) + "," + string(cp_sign_x) + "," + string(cp_target) + "," + string(floor(cp_core.xu/256) - cp_cam) + "," +
+        string(cp_core.state) + "," + string(cp_core.next) + "," + string(cp_core.vx) + "," + string(cp_core.clear_dx) + "," +
+        string(floor(cp_core.xu/256) - cp_core.camera_x) + "," + string(cp_core.state == 32 || cp_core.next == 32) + "," +
+        string(cp_cam != global.chaosTraceLastCam) + "," + string(cp_core.act_clear) + chr(10);
+    file_text_write_string(cp_f, cp_row);
+    file_text_close(cp_f);
+    global.chaosTraceLastCam = cp_cam;
+}

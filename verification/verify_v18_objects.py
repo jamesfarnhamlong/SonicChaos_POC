@@ -121,7 +121,8 @@ for cell_info in terrain_manifest["ring_cells_removed"]:
     assert set(cell.getdata()) == {tuple(cell_info["context_backdrop_rgba"])}
 
 source_18 = (ROOT / "objects/OBJ_chaos_object_18/Step_0.gml").read_text()
-assert "chaosSpinFrames" in source_18 and "global.chaosComplete" in source_18
+create_18 = (ROOT / "objects/OBJ_chaos_object_18/Create_0.gml").read_text()
+assert "chaosSpinFrames" in create_18 + source_18 and "chaosSign.state == 4" in source_18  # presentation now follows the sign state machine, not a coordinate adapter
 draw_18 = (ROOT / "objects/OBJ_chaos_object_18/Draw_0.gml").read_text()
 assert "chaos_render_offset_y($18)" in draw_18 and "floor(image_index)" in draw_18
 ring_create = (ROOT / "objects/OBJ_ring/Create_0.gml").read_text()

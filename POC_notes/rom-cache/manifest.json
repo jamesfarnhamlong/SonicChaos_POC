@@ -20,7 +20,7 @@
       "bytes": 4833
     },
     "object-10.json": {
-      "sha256": "50d49f8191fa6c7d7c17c27571df8aa20dc106ae351df140f539a846954f02f7",
+      "sha256": "2bc7091c6d1dcae1c8f7d34e5bc8920b506ec44ea34d067c28adbf694f7272ec",
       "bytes": 27850
     },
     "object-18-graphics.json": {
@@ -32,7 +32,7 @@
       "bytes": 17200
     },
     "object-27.json": {
-      "sha256": "2103543de3e784921e98172adf1ae9e25727770273a204cc8489d9d65f68b077",
+      "sha256": "51424f099b5ab20fbecc8beffc219c0f688a33dec5063bd668737aa2f708739a",
       "bytes": 15420
     },
     "object-census.json": {
@@ -48,8 +48,8 @@
       "bytes": 36139
     },
     "windows-discrepancies.json": {
-      "sha256": "42cb42605a0703615d706924f85efa9bb456297fc6044eba34e5052d3cf05ded",
-      "bytes": 34514
+      "sha256": "2803a816680fbfbb50884f4a0664603f541dc217efa90bcfdba003a1bbe78bf1",
+      "bytes": 34535
     },
     "player-state-11-graphics.json": {
       "sha256": "05c282c08ddae78dc97fd5bf7d49636f863e6fc2ac11536785861ea2f9b1c180",

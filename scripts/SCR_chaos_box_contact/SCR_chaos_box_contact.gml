@@ -2,7 +2,7 @@
 // table reached through $5FA0. Plain numbers only, so verification/verify_type10_contact.js executes this shipped code
 // against ROM ground truth (verification/type10-contact-fixtures.json).
 // All positions are the fixed integer anchors of the player core and of the object; extents are the ROM fields:
-// player 9 x 18 ($D52C/$D52D), type $10 object 10 x 24 (+$2C/+$2D).
+// Sonic 8 x 24 ($D52C/$D52D; 9 x 24 only in state $0F), type $10 object 10 x 24 (+$2C/+$2D).
 // Result bits (low nibble of object +$21): 1 = player above the box, 2 = player below, 4 = player right of it,
 // 8 = player left of it, 0 = no contact. Exactly one bit is kept: the axis with the smaller penetration
 // (a horizontal win needs strictly smaller penetration; ties go to the vertical axis).

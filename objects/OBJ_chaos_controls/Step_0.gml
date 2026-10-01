@@ -43,15 +43,16 @@ if (chaos_in_level()) {
    global.checkPointY = p.y;
    global.chaosNotice = 120;
   }
-  if (p.x >= 3970 && p.y > 450) {
-   global.chaosComplete = true;
-   global.chaosFinishTime = global.minutes*60+global.seconds;
-   global.chaosFinishRings = global.ring;
-   with(OBJ_count_time) alarm[0] = -1;
-  }
  }
- if (global.chaosComplete) {
+ // Act clear arrives only from player state $20 (type $18 -> $19 -> $20); contact alone never completes the act.
+ if (!global.chaosComplete && instance_exists(OBJ_player_char) && variable_instance_exists(instance_find(OBJ_player_char,0),"chaosCore") && instance_find(OBJ_player_char,0).chaosCore.act_clear) {
+  chaos_act_complete();
+ }
+ if (global.chaosGoalContact || global.chaosComplete) {
   with(OBJ_count_time) alarm[0] = -1;
+ }
+ if (global.chaosGoalContact && !global.chaosComplete && instance_exists(OBJ_player_char) && instance_exists(OBJ_chaos_object_18) && variable_instance_exists(instance_find(OBJ_player_char,0),"chaosCore")) {
+  chaos_goal_trace(instance_find(OBJ_player_char,0).chaosCore, instance_find(OBJ_chaos_object_18,0).x);
  }
 }
 

@@ -2,7 +2,7 @@
   "reference_main": "65670d29295d87d71109b1983206a74f2bbeeb6a",
   "task_06_named_commit": "479990227e48543a853cdd36f52365cb5cc1536a",
   "task_06_named_commit_is_main_ancestor": false,
-  "cache_sha256": "42cb42605a0703615d706924f85efa9bb456297fc6044eba34e5052d3cf05ded",
+  "cache_sha256": "2803a816680fbfbb50884f4a0664603f541dc217efa90bcfdba003a1bbe78bf1",
   "player_state_11": "RESOLVED",
   "state_11_presentation": "EXACT ROM-DERIVED: SPR_chaos_player_state_11",
   "static_3d_spike_collision": "RESOLVED",

@@ -40,13 +40,13 @@ var cp_c = cp_p.chaosCore;
 // One shared contact classification for EVERY type-$10 variant (the reward parameter is never consulted here). This is the
 // original overlap helper $6328 with the player's and the box's fixed integer anchors: exactly one of top (1), bottom (2),
 // right (4) or left (8) is kept, chosen by the smaller penetration, never by comparing the player's Y with the box's Y.
-var cp_bits = SCR_chaos_box_contact(floor(cp_c.xu/256),floor(cp_c.yu/256),floor(x),floor(y),9,18,10,24);
+var cp_bits = SCR_chaos_box_contact(floor(cp_c.xu/256),floor(cp_c.yu/256),floor(x),floor(y),8,24,10,24);
 if (cp_bits == 0) exit;
 
 // $5FA0 solid-object projection (bottom and side contacts): Sonic is moved out of the box and cannot pass through it.
 // Top-of-box standing is not projected here (unchanged from the accepted behaviour; see README_THZ2_FOUNDATION.md).
 if (cp_bits != 1) {
-    var cp_proj = SCR_chaos_box_projection(cp_bits,floor(cp_c.xu/256),floor(cp_c.yu/256),floor(x),floor(y),9,18,10,24);
+    var cp_proj = SCR_chaos_box_projection(cp_bits,floor(cp_c.xu/256),floor(cp_c.yu/256),floor(x),floor(y),8,24,10,24);
     if (cp_bits == 2 && (cp_c.contacts & 2) != 0) {
         // D523 bit 1: already blocked from below, so the original does not push down.
     } else {

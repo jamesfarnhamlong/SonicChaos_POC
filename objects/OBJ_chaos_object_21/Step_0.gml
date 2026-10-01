@@ -56,8 +56,9 @@ var cp_player_x = floor(cp_p.chaosCore.xu/256);
 var cp_player_y = floor(cp_p.chaosCore.yu/256);
 var cp_object_x = floor(chaosXU/256);
 var cp_object_y = floor(chaosYU/256);
-var cp_overlap = abs(cp_player_x-cp_object_x) <= 20 &&
-    cp_player_y >= cp_object_y-26 && cp_player_y <= cp_object_y+18;
+// Shared $6328 box for Sonic (8 x 24) vs this object (11 x 26): dx +-19, dy -26..+24 (docs/collision-geometry-audit.md).
+var cp_overlap = abs(cp_player_x-cp_object_x) <= 19 &&
+    cp_player_y >= cp_object_y-26 && cp_player_y <= cp_object_y+24;
 if (!cp_overlap) exit;
 
 // The top branch precedes attack checks in the original callback.

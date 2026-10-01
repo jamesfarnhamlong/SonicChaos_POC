@@ -10,7 +10,8 @@ function SCR_cc_new(cp_x, cp_y) {
         held:0, pressed:0, jump_ticks:0, sound:0, unsupported:0,
         hazard:0, angle:0, magnitude:0, twist_variant:0, level:0,
         state11_active:false, state11_camera_y:0,
-        state11_anim_tick:0, state11_frame:56, hurt_ticks:0};
+        state11_anim_tick:0, state11_frame:56, hurt_ticks:0,
+        camera_x:0, act_clear:false, clear_dx:289};
 }
 function SCR_cc_merge(cp_c) {
     cp_c.contacts = cp_c.bg;
@@ -468,11 +469,28 @@ function SCR_cc_state11_tick(cp_c) {
 
     if (!cp_c.state11_active) SCR_cc_fall(cp_c);
 }
+// Player state $20 (act-clear run), handler $83A6. Input is never read. Y speed is cleared, X speed is raised by $10 per update to
+// the $0600 cap, and movement uses the shared terrain pipeline. With d = playerX - cameraX the act-clear flag is set when d reaches
+// clear_dx. CANONICAL (SMS, 256 px screen): clear_dx = $121 = 289 (the ROM tests d > $120), which is the default in SCR_cc_new.
+// The GameMaker widescreen adapter overrides clear_dx per update with viewWidth + 33 (SCR_chaos_goal: chaos_goal_clear_dx), keeping
+// the original relationship "33 px beyond the visible right edge". The canonical $121 is never edited here.
+function SCR_cc_state32_tick(cp_c) {
+    if (cp_c.act_clear) { cp_c.vx = 0; cp_c.next = 32; return; }
+    cp_c.vy = 0; cp_c.player_flags &= ~16; // never mirrored
+    var cp_d = floor(cp_c.xu/256) - cp_c.camera_x;
+    if (cp_d < 0 || cp_d >= cp_c.clear_dx) { cp_c.vx = 0; cp_c.act_clear = true; cp_c.next = 32; return; } // negative d compares as a huge 16-bit value
+    if (cp_c.vx < 0) cp_c.vx = 0;
+    cp_c.input_delta = (cp_c.vx >> 8) < 6 ? 16 : 0; cp_c.surface_delta = 0; cp_c.maximum = 1536;
+    SCR_cc_x(cp_c); SCR_cc_y(cp_c);
+    SCR_cc_floor(cp_c); SCR_cc_sides(cp_c); SCR_cc_ceiling(cp_c); SCR_cc_merge(cp_c);
+    cp_c.vy = 0; cp_c.next = 32;
+}
 // Ordinary state wrappers. Animation-script scheduling and special states remain out of scope.
 function SCR_cc_tick(cp_c) {
     cp_c.state = cp_c.next; cp_c.sound = 0; cp_c.unsupported = 0; cp_c.hazard = 0;
     if (cp_c.state == 34) { SCR_cc_twist_tick(cp_c); return; }
     if (cp_c.state == 17) { SCR_cc_state11_tick(cp_c); return; }
+    if (cp_c.state == 32) { SCR_cc_state32_tick(cp_c); return; }
     if (cp_c.state == 30) { SCR_cc_hurt_tick(cp_c); return; }
     if ((cp_c.state == 7 && (cp_c.contacts & 8) != 0) || (cp_c.state == 8 && (cp_c.contacts & 4) != 0)) {
         SCR_cc_walk(cp_c); return;

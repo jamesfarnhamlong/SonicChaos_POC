@@ -22,7 +22,7 @@ def positions(rows, object_name):
 cache_path = CACHE / "windows-discrepancies.json"
 raw_cache = cache_path.read_bytes()
 assert hashlib.sha256(raw_cache).hexdigest() == \
-    "42cb42605a0703615d706924f85efa9bb456297fc6044eba34e5052d3cf05ded"
+    "2803a816680fbfbb50884f4a0664603f541dc217efa90bcfdba003a1bbe78bf1"  # canonical Research 5ae1a96 (Sonic 8x24)
 cache = json.loads(raw_cache)
 assert cache["rom_sha256"] == \
     "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607"
@@ -68,14 +68,15 @@ type21_source = (ROOT / "objects/OBJ_chaos_object_21/Step_0.gml").read_text()
 assert "bbox_" not in type21_source
 for token in ("floor(cp_p.chaosCore.xu/256)", "floor(cp_p.chaosCore.yu/256)",
               "floor(chaosXU/256)", "floor(chaosYU/256)",
-              "abs(cp_player_x-cp_object_x) <= 20",
-              "cp_player_y >= cp_object_y-26", "cp_player_y <= cp_object_y+18",
+              "abs(cp_player_x-cp_object_x) <= 19",
+              "cp_player_y >= cp_object_y-26", "cp_player_y <= cp_object_y+24",
               "cp_player_y <= cp_object_y-4"):
     assert token in type21_source, token
 
 
 def overlaps(dx, dy):
-    return abs(dx) <= 20 and -26 <= dy <= 18
+    # Sonic 8 x 24 vs object 11 x 26 (canonical Research cache): dx +-19, dy -26..+24.
+    return abs(dx) <= 19 and -26 <= dy <= 24
 
 
 def classify(dx, dy, attack=False, selector06=False):
@@ -88,10 +89,14 @@ def classify(dx, dy, attack=False, selector06=False):
     return "damage"
 
 
+assert cache["type_21_contact"]["player_extents"] == {"x": 8, "y": 24}
+assert cache["type_21_contact"]["object_extents"] == {"x": 11, "y": 26}
 for row in cache["type_21_contact"]["boundaries"]:
     assert overlaps(row["dx"], row["dy"]) == row["overlap"], row
-assert classify(20, -4) == "bounce"
-assert classify(20, -3) == "damage"
+assert classify(19, -4) == "bounce"
+assert classify(20, -4) == "none"
+assert classify(19, -3) == "damage"
+assert classify(0, 24) == "damage"
 assert classify(0, -3, attack=True) == "defeat"
 assert classify(0, -3, selector06=True) == "defeat"
 assert classify(0, -4, attack=True) == "bounce"
