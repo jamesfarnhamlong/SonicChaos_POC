@@ -1,0 +1,6851 @@
+{
+ "source": "sonic-chaos-reference-work data/rom-cache/spring-interaction.json @ 198b959",
+ "source_sha256": "5ef9a40de16af3a98ac6d9c5ead1ff9b003610978b683c13fdac1e9aa3ba7ef8",
+ "trimmed": "routines, terrain_handler_table, state_reach and evidence_classes omitted; every fixture the POC checks is kept",
+ "format": 1,
+ "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+ "research_only": true,
+ "poc_untouched": true,
+ "machine_facing_label": "spring_interaction",
+ "terrain_blocks": {
+  "0x30": {
+   "flags": "0x49",
+   "type": "0x09",
+   "modifier": 0,
+   "vertical_profile_runs_[first,last,value]": [
+    [
+     0,
+     31,
+     16
+    ]
+   ],
+   "horizontal_profile_runs_[first,last,value]": [
+    [
+     0,
+     31,
+     0
+    ]
+   ]
+  },
+  "0x31": {
+   "flags": "0x49",
+   "type": "0x09",
+   "modifier": 0,
+   "vertical_profile_runs_[first,last,value]": [
+    [
+     0,
+     31,
+     16
+    ]
+   ],
+   "horizontal_profile_runs_[first,last,value]": [
+    [
+     0,
+     31,
+     0
+    ]
+   ]
+  },
+  "0x32": {
+   "flags": "0x8A",
+   "type": "0x0A",
+   "modifier": 0,
+   "vertical_profile_runs_[first,last,value]": [
+    [
+     0,
+     15,
+     24
+    ],
+    [
+     16,
+     31,
+     0
+    ]
+   ],
+   "horizontal_profile_runs_[first,last,value]": [
+    [
+     0,
+     7,
+     0
+    ],
+    [
+     8,
+     27,
+     16
+    ],
+    [
+     28,
+     31,
+     0
+    ]
+   ]
+  },
+  "0x33": {
+   "flags": "0x8A",
+   "type": "0x0A",
+   "modifier": 0,
+   "vertical_profile_runs_[first,last,value]": [
+    [
+     0,
+     15,
+     24
+    ],
+    [
+     16,
+     31,
+     0
+    ]
+   ],
+   "horizontal_profile_runs_[first,last,value]": [
+    [
+     0,
+     7,
+     0
+    ],
+    [
+     8,
+     27,
+     16
+    ],
+    [
+     28,
+     31,
+     0
+    ]
+   ]
+  },
+  "0x34": {
+   "flags": "0x8A",
+   "type": "0x0A",
+   "modifier": 0,
+   "vertical_profile_runs_[first,last,value]": [
+    [
+     0,
+     15,
+     0
+    ],
+    [
+     16,
+     31,
+     24
+    ]
+   ],
+   "horizontal_profile_runs_[first,last,value]": [
+    [
+     0,
+     7,
+     64
+    ],
+    [
+     8,
+     27,
+     80
+    ],
+    [
+     28,
+     31,
+     64
+    ]
+   ]
+  },
+  "0x35": {
+   "flags": "0x8A",
+   "type": "0x0A",
+   "modifier": 0,
+   "vertical_profile_runs_[first,last,value]": [
+    [
+     0,
+     15,
+     0
+    ],
+    [
+     16,
+     31,
+     24
+    ]
+   ],
+   "horizontal_profile_runs_[first,last,value]": [
+    [
+     0,
+     7,
+     64
+    ],
+    [
+     8,
+     27,
+     80
+    ],
+    [
+     28,
+     31,
+     64
+    ]
+   ]
+  },
+  "0x36": {
+   "flags": "0x54",
+   "type": "0x14",
+   "modifier": 0,
+   "vertical_profile_runs_[first,last,value]": [
+    [
+     0,
+     15,
+     16
+    ],
+    [
+     16,
+     31,
+     0
+    ]
+   ],
+   "horizontal_profile_runs_[first,last,value]": [
+    [
+     0,
+     7,
+     0
+    ],
+    [
+     8,
+     8,
+     7
+    ],
+    [
+     9,
+     9,
+     8
+    ],
+    [
+     10,
+     10,
+     9
+    ],
+    [
+     11,
+     11,
+     10
+    ],
+    [
+     12,
+     12,
+     11
+    ],
+    [
+     13,
+     13,
+     12
+    ],
+    [
+     14,
+     14,
+     13
+    ],
+    [
+     15,
+     15,
+     14
+    ],
+    [
+     16,
+     16,
+     15
+    ],
+    [
+     17,
+     18,
+     16
+    ],
+    [
+     19,
+     31,
+     0
+    ]
+   ]
+  },
+  "0x37": {
+   "flags": "0x54",
+   "type": "0x14",
+   "modifier": 0,
+   "vertical_profile_runs_[first,last,value]": [
+    [
+     0,
+     15,
+     16
+    ],
+    [
+     16,
+     31,
+     0
+    ]
+   ],
+   "horizontal_profile_runs_[first,last,value]": [
+    [
+     0,
+     7,
+     0
+    ],
+    [
+     8,
+     8,
+     7
+    ],
+    [
+     9,
+     9,
+     8
+    ],
+    [
+     10,
+     10,
+     9
+    ],
+    [
+     11,
+     11,
+     10
+    ],
+    [
+     12,
+     12,
+     11
+    ],
+    [
+     13,
+     13,
+     12
+    ],
+    [
+     14,
+     14,
+     13
+    ],
+    [
+     15,
+     15,
+     14
+    ],
+    [
+     16,
+     16,
+     15
+    ],
+    [
+     17,
+     18,
+     16
+    ],
+    [
+     19,
+     31,
+     0
+    ]
+   ]
+  },
+  "0x38": {
+   "flags": "0x54",
+   "type": "0x14",
+   "modifier": 0,
+   "vertical_profile_runs_[first,last,value]": [
+    [
+     0,
+     15,
+     0
+    ],
+    [
+     16,
+     31,
+     16
+    ]
+   ],
+   "horizontal_profile_runs_[first,last,value]": [
+    [
+     0,
+     7,
+     64
+    ],
+    [
+     8,
+     8,
+     71
+    ],
+    [
+     9,
+     9,
+     72
+    ],
+    [
+     10,
+     10,
+     73
+    ],
+    [
+     11,
+     11,
+     74
+    ],
+    [
+     12,
+     12,
+     75
+    ],
+    [
+     13,
+     13,
+     76
+    ],
+    [
+     14,
+     14,
+     77
+    ],
+    [
+     15,
+     15,
+     78
+    ],
+    [
+     16,
+     16,
+     79
+    ],
+    [
+     17,
+     18,
+     80
+    ],
+    [
+     19,
+     31,
+     64
+    ]
+   ]
+  },
+  "0x39": {
+   "flags": "0x54",
+   "type": "0x14",
+   "modifier": 0,
+   "vertical_profile_runs_[first,last,value]": [
+    [
+     0,
+     15,
+     0
+    ],
+    [
+     16,
+     31,
+     16
+    ]
+   ],
+   "horizontal_profile_runs_[first,last,value]": [
+    [
+     0,
+     7,
+     64
+    ],
+    [
+     8,
+     8,
+     71
+    ],
+    [
+     9,
+     9,
+     72
+    ],
+    [
+     10,
+     10,
+     73
+    ],
+    [
+     11,
+     11,
+     74
+    ],
+    [
+     12,
+     12,
+     75
+    ],
+    [
+     13,
+     13,
+     76
+    ],
+    [
+     14,
+     14,
+     77
+    ],
+    [
+     15,
+     15,
+     78
+    ],
+    [
+     16,
+     16,
+     79
+    ],
+    [
+     17,
+     18,
+     80
+    ],
+    [
+     19,
+     31,
+     64
+    ]
+   ]
+  },
+  "0x3A": {
+   "flags": "0x54",
+   "type": "0x14",
+   "modifier": 0,
+   "vertical_profile_runs_[first,last,value]": [
+    [
+     0,
+     31,
+     80
+    ]
+   ],
+   "horizontal_profile_runs_[first,last,value]": [
+    [
+     0,
+     31,
+     0
+    ]
+   ]
+  },
+  "0x3B": {
+   "flags": "0x54",
+   "type": "0x14",
+   "modifier": 0,
+   "vertical_profile_runs_[first,last,value]": [
+    [
+     0,
+     31,
+     80
+    ]
+   ],
+   "horizontal_profile_runs_[first,last,value]": [
+    [
+     0,
+     31,
+     0
+    ]
+   ]
+  },
+  "0x47": {
+   "flags": "0x96",
+   "type": "0x16",
+   "modifier": 0,
+   "vertical_profile_runs_[first,last,value]": [
+    [
+     0,
+     1,
+     23
+    ],
+    [
+     2,
+     29,
+     24
+    ],
+    [
+     30,
+     31,
+     23
+    ]
+   ],
+   "horizontal_profile_runs_[first,last,value]": [
+    [
+     0,
+     7,
+     0
+    ],
+    [
+     8,
+     31,
+     28
+    ]
+   ]
+  },
+  "0x9B": {
+   "flags": "0x8D",
+   "type": "0x0D",
+   "modifier": 0,
+   "vertical_profile_runs_[first,last,value]": [
+    [
+     0,
+     31,
+     32
+    ]
+   ],
+   "horizontal_profile_runs_[first,last,value]": [
+    [
+     0,
+     31,
+     96
+    ]
+   ]
+  },
+  "0x9C": {
+   "flags": "0x8D",
+   "type": "0x0D",
+   "modifier": 0,
+   "vertical_profile_runs_[first,last,value]": [
+    [
+     0,
+     31,
+     32
+    ]
+   ],
+   "horizontal_profile_runs_[first,last,value]": [
+    [
+     0,
+     31,
+     96
+    ]
+   ]
+  }
+ },
+ "terrain_spring_cells": {
+  "thz1": [
+   {
+    "act": "thz1",
+    "block": "0x36",
+    "world_x": 2464,
+    "world_y": 256,
+    "kind": "diagonal_right_launch"
+   },
+   {
+    "act": "thz1",
+    "block": "0x36",
+    "world_x": 2976,
+    "world_y": 352,
+    "kind": "diagonal_right_launch"
+   },
+   {
+    "act": "thz1",
+    "block": "0x36",
+    "world_x": 1536,
+    "world_y": 416,
+    "kind": "diagonal_right_launch"
+   },
+   {
+    "act": "thz1",
+    "block": "0x38",
+    "world_x": 1664,
+    "world_y": 512,
+    "kind": "diagonal_left_launch"
+   },
+   {
+    "act": "thz1",
+    "block": "0x30",
+    "world_x": 928,
+    "world_y": 640,
+    "kind": "upright"
+   },
+   {
+    "act": "thz1",
+    "block": "0x38",
+    "world_x": 1152,
+    "world_y": 704,
+    "kind": "diagonal_left_launch"
+   },
+   {
+    "act": "thz1",
+    "block": "0x36",
+    "world_x": 1056,
+    "world_y": 768,
+    "kind": "diagonal_right_launch"
+   },
+   {
+    "act": "thz1",
+    "block": "0x31",
+    "world_x": 2112,
+    "world_y": 832,
+    "kind": "upright"
+   },
+   {
+    "act": "thz1",
+    "block": "0x33",
+    "world_x": 3200,
+    "world_y": 832,
+    "kind": "horizontal_left_half"
+   }
+  ],
+  "thz2": [
+   {
+    "act": "thz2",
+    "block": "0x36",
+    "world_x": 1184,
+    "world_y": 224,
+    "kind": "diagonal_right_launch"
+   },
+   {
+    "act": "thz2",
+    "block": "0x34",
+    "world_x": 3264,
+    "world_y": 256,
+    "kind": "horizontal_right_half"
+   },
+   {
+    "act": "thz2",
+    "block": "0x34",
+    "world_x": 1856,
+    "world_y": 512,
+    "kind": "horizontal_right_half"
+   },
+   {
+    "act": "thz2",
+    "block": "0x36",
+    "world_x": 2656,
+    "world_y": 512,
+    "kind": "diagonal_right_launch"
+   },
+   {
+    "act": "thz2",
+    "block": "0x30",
+    "world_x": 2368,
+    "world_y": 672,
+    "kind": "upright"
+   },
+   {
+    "act": "thz2",
+    "block": "0x30",
+    "world_x": 3040,
+    "world_y": 704,
+    "kind": "upright"
+   },
+   {
+    "act": "thz2",
+    "block": "0x35",
+    "world_x": 3040,
+    "world_y": 864,
+    "kind": "horizontal_right_half"
+   }
+  ],
+  "thz3": [
+   {
+    "act": "thz3",
+    "block": "0x36",
+    "world_x": 1344,
+    "world_y": 160,
+    "kind": "diagonal_right_launch"
+   },
+   {
+    "act": "thz3",
+    "block": "0x31",
+    "world_x": 544,
+    "world_y": 352,
+    "kind": "upright"
+   },
+   {
+    "act": "thz3",
+    "block": "0x31",
+    "world_x": 1152,
+    "world_y": 352,
+    "kind": "upright"
+   }
+  ]
+ },
+ "type26_placements": {
+  "thz1": [
+   {
+    "act": "thz1",
+    "record_index": 7,
+    "raw_bytes": "26 B0 03 60 04 00 00 72 72",
+    "world_x": 688,
+    "world_y": 864,
+    "parameter": "0x00",
+    "aux1": "0x72",
+    "form": "fixed",
+    "span_width_px": null,
+    "span_x_interval_inclusive_exclusive": null,
+    "strong": true,
+    "rest_y": 876,
+    "contact_player_y_window_inclusive": [
+     843,
+     848
+    ],
+    "contact_player_y_window_relative_to_placement": [
+     -21,
+     -16
+    ],
+    "contact_player_x_window": [
+     677,
+     699
+    ],
+    "launch_y_velocity": "$F8A0 (-7.375)",
+    "d448": "$FF"
+   },
+   {
+    "act": "thz1",
+    "record_index": 8,
+    "raw_bytes": "26 F0 0E 00 04 00 00 72 72",
+    "world_x": 3568,
+    "world_y": 768,
+    "parameter": "0x00",
+    "aux1": "0x72",
+    "form": "fixed",
+    "span_width_px": null,
+    "span_x_interval_inclusive_exclusive": null,
+    "strong": true,
+    "rest_y": 780,
+    "contact_player_y_window_inclusive": [
+     747,
+     752
+    ],
+    "contact_player_y_window_relative_to_placement": [
+     -21,
+     -16
+    ],
+    "contact_player_x_window": [
+     3557,
+     3579
+    ],
+    "launch_y_velocity": "$F8A0 (-7.375)",
+    "d448": "$FF"
+   },
+   {
+    "act": "thz1",
+    "record_index": 22,
+    "raw_bytes": "26 10 06 60 03 00 8A 72 72",
+    "world_x": 1296,
+    "world_y": 608,
+    "parameter": "0x8A",
+    "aux1": "0x72",
+    "form": "span",
+    "span_width_px": 160,
+    "span_x_interval_inclusive_exclusive": [
+     1296,
+     1456
+    ],
+    "strong": false,
+    "rest_y": 620,
+    "contact_player_y_window_inclusive": [
+     587,
+     592
+    ],
+    "contact_player_y_window_relative_to_placement": [
+     -21,
+     -16
+    ],
+    "contact_player_x_window": null,
+    "launch_y_velocity": "$FB00 (-5.0)",
+    "d448": "$00"
+   },
+   {
+    "act": "thz1",
+    "record_index": 23,
+    "raw_bytes": "26 78 08 60 04 00 01 72 72",
+    "world_x": 1912,
+    "world_y": 864,
+    "parameter": "0x01",
+    "aux1": "0x72",
+    "form": "fixed",
+    "span_width_px": null,
+    "span_x_interval_inclusive_exclusive": null,
+    "strong": false,
+    "rest_y": 876,
+    "contact_player_y_window_inclusive": [
+     843,
+     848
+    ],
+    "contact_player_y_window_relative_to_placement": [
+     -21,
+     -16
+    ],
+    "contact_player_x_window": [
+     1901,
+     1923
+    ],
+    "launch_y_velocity": "$FB00 (-5.0)",
+    "d448": "$00"
+   }
+  ],
+  "thz2": [
+   {
+    "act": "thz2",
+    "record_index": 4,
+    "raw_bytes": "26 60 04 80 04 00 00 72 72",
+    "world_x": 864,
+    "world_y": 896,
+    "parameter": "0x00",
+    "aux1": "0x72",
+    "form": "fixed",
+    "span_width_px": null,
+    "span_x_interval_inclusive_exclusive": null,
+    "strong": true,
+    "rest_y": 908,
+    "contact_player_y_window_inclusive": [
+     875,
+     880
+    ],
+    "contact_player_y_window_relative_to_placement": [
+     -21,
+     -16
+    ],
+    "contact_player_x_window": [
+     853,
+     875
+    ],
+    "launch_y_velocity": "$F8A0 (-7.375)",
+    "d448": "$FF"
+   },
+   {
+    "act": "thz2",
+    "record_index": 5,
+    "raw_bytes": "26 C0 04 80 04 00 00 72 72",
+    "world_x": 960,
+    "world_y": 896,
+    "parameter": "0x00",
+    "aux1": "0x72",
+    "form": "fixed",
+    "span_width_px": null,
+    "span_x_interval_inclusive_exclusive": null,
+    "strong": true,
+    "rest_y": 908,
+    "contact_player_y_window_inclusive": [
+     875,
+     880
+    ],
+    "contact_player_y_window_relative_to_placement": [
+     -21,
+     -16
+    ],
+    "contact_player_x_window": [
+     949,
+     971
+    ],
+    "launch_y_velocity": "$F8A0 (-7.375)",
+    "d448": "$FF"
+   },
+   {
+    "act": "thz2",
+    "record_index": 6,
+    "raw_bytes": "26 20 05 80 04 00 00 72 72",
+    "world_x": 1056,
+    "world_y": 896,
+    "parameter": "0x00",
+    "aux1": "0x72",
+    "form": "fixed",
+    "span_width_px": null,
+    "span_x_interval_inclusive_exclusive": null,
+    "strong": true,
+    "rest_y": 908,
+    "contact_player_y_window_inclusive": [
+     875,
+     880
+    ],
+    "contact_player_y_window_relative_to_placement": [
+     -21,
+     -16
+    ],
+    "contact_player_x_window": [
+     1045,
+     1067
+    ],
+    "launch_y_velocity": "$F8A0 (-7.375)",
+    "d448": "$FF"
+   },
+   {
+    "act": "thz2",
+    "record_index": 7,
+    "raw_bytes": "26 10 09 20 03 00 00 72 72",
+    "world_x": 2064,
+    "world_y": 544,
+    "parameter": "0x00",
+    "aux1": "0x72",
+    "form": "fixed",
+    "span_width_px": null,
+    "span_x_interval_inclusive_exclusive": null,
+    "strong": true,
+    "rest_y": 556,
+    "contact_player_y_window_inclusive": [
+     523,
+     528
+    ],
+    "contact_player_y_window_relative_to_placement": [
+     -21,
+     -16
+    ],
+    "contact_player_x_window": [
+     2053,
+     2075
+    ],
+    "launch_y_velocity": "$F8A0 (-7.375)",
+    "d448": "$FF"
+   },
+   {
+    "act": "thz2",
+    "record_index": 8,
+    "raw_bytes": "26 80 0D 80 04 00 00 72 72",
+    "world_x": 3200,
+    "world_y": 896,
+    "parameter": "0x00",
+    "aux1": "0x72",
+    "form": "fixed",
+    "span_width_px": null,
+    "span_x_interval_inclusive_exclusive": null,
+    "strong": true,
+    "rest_y": 908,
+    "contact_player_y_window_inclusive": [
+     875,
+     880
+    ],
+    "contact_player_y_window_relative_to_placement": [
+     -21,
+     -16
+    ],
+    "contact_player_x_window": [
+     3189,
+     3211
+    ],
+    "launch_y_velocity": "$F8A0 (-7.375)",
+    "d448": "$FF"
+   },
+   {
+    "act": "thz2",
+    "record_index": 9,
+    "raw_bytes": "26 E0 0D 80 04 00 00 72 72",
+    "world_x": 3296,
+    "world_y": 896,
+    "parameter": "0x00",
+    "aux1": "0x72",
+    "form": "fixed",
+    "span_width_px": null,
+    "span_x_interval_inclusive_exclusive": null,
+    "strong": true,
+    "rest_y": 908,
+    "contact_player_y_window_inclusive": [
+     875,
+     880
+    ],
+    "contact_player_y_window_relative_to_placement": [
+     -21,
+     -16
+    ],
+    "contact_player_x_window": [
+     3285,
+     3307
+    ],
+    "launch_y_velocity": "$F8A0 (-7.375)",
+    "d448": "$FF"
+   },
+   {
+    "act": "thz2",
+    "record_index": 10,
+    "raw_bytes": "26 40 0E 80 04 00 00 72 72",
+    "world_x": 3392,
+    "world_y": 896,
+    "parameter": "0x00",
+    "aux1": "0x72",
+    "form": "fixed",
+    "span_width_px": null,
+    "span_x_interval_inclusive_exclusive": null,
+    "strong": true,
+    "rest_y": 908,
+    "contact_player_y_window_inclusive": [
+     875,
+     880
+    ],
+    "contact_player_y_window_relative_to_placement": [
+     -21,
+     -16
+    ],
+    "contact_player_x_window": [
+     3381,
+     3403
+    ],
+    "launch_y_velocity": "$F8A0 (-7.375)",
+    "d448": "$FF"
+   },
+   {
+    "act": "thz2",
+    "record_index": 11,
+    "raw_bytes": "26 F0 0E 80 04 00 00 72 72",
+    "world_x": 3568,
+    "world_y": 896,
+    "parameter": "0x00",
+    "aux1": "0x72",
+    "form": "fixed",
+    "span_width_px": null,
+    "span_x_interval_inclusive_exclusive": null,
+    "strong": true,
+    "rest_y": 908,
+    "contact_player_y_window_inclusive": [
+     875,
+     880
+    ],
+    "contact_player_y_window_relative_to_placement": [
+     -21,
+     -16
+    ],
+    "contact_player_x_window": [
+     3557,
+     3579
+    ],
+    "launch_y_velocity": "$F8A0 (-7.375)",
+    "d448": "$FF"
+   },
+   {
+    "act": "thz2",
+    "record_index": 26,
+    "raw_bytes": "26 E0 06 80 04 00 88 72 72",
+    "world_x": 1504,
+    "world_y": 896,
+    "parameter": "0x88",
+    "aux1": "0x72",
+    "form": "span",
+    "span_width_px": 128,
+    "span_x_interval_inclusive_exclusive": [
+     1504,
+     1632
+    ],
+    "strong": false,
+    "rest_y": 908,
+    "contact_player_y_window_inclusive": [
+     875,
+     880
+    ],
+    "contact_player_y_window_relative_to_placement": [
+     -21,
+     -16
+    ],
+    "contact_player_x_window": null,
+    "launch_y_velocity": "$FB00 (-5.0)",
+    "d448": "$00"
+   },
+   {
+    "act": "thz2",
+    "record_index": 27,
+    "raw_bytes": "26 90 0E 20 02 00 01 72 72",
+    "world_x": 3472,
+    "world_y": 288,
+    "parameter": "0x01",
+    "aux1": "0x72",
+    "form": "fixed",
+    "span_width_px": null,
+    "span_x_interval_inclusive_exclusive": null,
+    "strong": false,
+    "rest_y": 300,
+    "contact_player_y_window_inclusive": [
+     267,
+     272
+    ],
+    "contact_player_y_window_relative_to_placement": [
+     -21,
+     -16
+    ],
+    "contact_player_x_window": [
+     3461,
+     3483
+    ],
+    "launch_y_velocity": "$FB00 (-5.0)",
+    "d448": "$00"
+   }
+  ],
+  "thz3": [
+   {
+    "act": "thz3",
+    "record_index": 2,
+    "raw_bytes": "26 90 03 80 02 00 00 72 72",
+    "world_x": 656,
+    "world_y": 384,
+    "parameter": "0x00",
+    "aux1": "0x72",
+    "form": "fixed",
+    "span_width_px": null,
+    "span_x_interval_inclusive_exclusive": null,
+    "strong": true,
+    "rest_y": 396,
+    "contact_player_y_window_inclusive": [
+     363,
+     368
+    ],
+    "contact_player_y_window_relative_to_placement": [
+     -21,
+     -16
+    ],
+    "contact_player_x_window": [
+     645,
+     667
+    ],
+    "launch_y_velocity": "$F8A0 (-7.375)",
+    "d448": "$FF"
+   },
+   {
+    "act": "thz3",
+    "record_index": 3,
+    "raw_bytes": "26 D0 03 80 02 00 00 72 72",
+    "world_x": 720,
+    "world_y": 384,
+    "parameter": "0x00",
+    "aux1": "0x72",
+    "form": "fixed",
+    "span_width_px": null,
+    "span_x_interval_inclusive_exclusive": null,
+    "strong": true,
+    "rest_y": 396,
+    "contact_player_y_window_inclusive": [
+     363,
+     368
+    ],
+    "contact_player_y_window_relative_to_placement": [
+     -21,
+     -16
+    ],
+    "contact_player_x_window": [
+     709,
+     731
+    ],
+    "launch_y_velocity": "$F8A0 (-7.375)",
+    "d448": "$FF"
+   },
+   {
+    "act": "thz3",
+    "record_index": 4,
+    "raw_bytes": "26 10 04 80 02 00 00 72 72",
+    "world_x": 784,
+    "world_y": 384,
+    "parameter": "0x00",
+    "aux1": "0x72",
+    "form": "fixed",
+    "span_width_px": null,
+    "span_x_interval_inclusive_exclusive": null,
+    "strong": true,
+    "rest_y": 396,
+    "contact_player_y_window_inclusive": [
+     363,
+     368
+    ],
+    "contact_player_y_window_relative_to_placement": [
+     -21,
+     -16
+    ],
+    "contact_player_x_window": [
+     773,
+     795
+    ],
+    "launch_y_velocity": "$F8A0 (-7.375)",
+    "d448": "$FF"
+   },
+   {
+    "act": "thz3",
+    "record_index": 5,
+    "raw_bytes": "26 B0 06 80 02 00 00 72 72",
+    "world_x": 1456,
+    "world_y": 384,
+    "parameter": "0x00",
+    "aux1": "0x72",
+    "form": "fixed",
+    "span_width_px": null,
+    "span_x_interval_inclusive_exclusive": null,
+    "strong": true,
+    "rest_y": 396,
+    "contact_player_y_window_inclusive": [
+     363,
+     368
+    ],
+    "contact_player_y_window_relative_to_placement": [
+     -21,
+     -16
+    ],
+    "contact_player_x_window": [
+     1445,
+     1467
+    ],
+    "launch_y_velocity": "$F8A0 (-7.375)",
+    "d448": "$FF"
+   }
+  ]
+ },
+ "type26_script_table": {
+  "evidence": "DECODED DATA",
+  "states": [
+   {
+    "state": 0,
+    "script": "0x8226",
+    "records": [
+     {
+      "duration": 224,
+      "frame": 0,
+      "callback": "0x825A"
+     },
+     {
+      "cmd": "FF 00"
+     }
+    ]
+   },
+   {
+    "state": 1,
+    "script": "0x822C",
+    "records": [
+     {
+      "duration": 8,
+      "frame": 2,
+      "callback": "0x8312"
+     },
+     {
+      "cmd": "FF 00"
+     }
+    ]
+   },
+   {
+    "state": 2,
+    "script": "0x8232",
+    "records": [
+     {
+      "duration": 4,
+      "frame": 1,
+      "callback": "0x833A"
+     },
+     {
+      "duration": 4,
+      "frame": 2,
+      "callback": "0x833A"
+     },
+     {
+      "cmd": "FF 00"
+     }
+    ]
+   },
+   {
+    "state": 3,
+    "script": "0x823C",
+    "records": [
+     {
+      "duration": 8,
+      "frame": 3,
+      "callback": "0x837C"
+     },
+     {
+      "cmd": "FF 00"
+     }
+    ]
+   },
+   {
+    "state": 4,
+    "script": "0x8242",
+    "records": [
+     {
+      "duration": 8,
+      "frame": 3,
+      "callback": "0x83A4"
+     },
+     {
+      "cmd": "FF 00"
+     }
+    ]
+   },
+   {
+    "state": 5,
+    "script": "0x8248",
+    "records": [
+     {
+      "duration": 8,
+      "frame": 2,
+      "callback": "0x8349"
+     },
+     {
+      "cmd": "FF 00"
+     }
+    ]
+   },
+   {
+    "state": 6,
+    "script": "0x824E",
+    "records": [
+     {
+      "duration": 8,
+      "frame": 3,
+      "callback": "0x8349"
+     },
+     {
+      "cmd": "FF 00"
+     }
+    ]
+   },
+   {
+    "state": 7,
+    "script": "0x8254",
+    "records": [
+     {
+      "duration": 224,
+      "frame": 0,
+      "callback": "0x82AF"
+     },
+     {
+      "cmd": "FF 00"
+     }
+    ]
+   },
+   {
+    "state": 8,
+    "script": "0x83B3",
+    "records": [
+     {
+      "duration": 224,
+      "frame": 0,
+      "callback": "0x83BF"
+     },
+     {
+      "cmd": "FF 00"
+     }
+    ]
+   },
+   {
+    "state": 9,
+    "script": "0x83B9",
+    "records": [
+     {
+      "duration": 224,
+      "frame": 0,
+      "callback": "0x8401"
+     },
+     {
+      "cmd": "FF 00"
+     }
+    ]
+   }
+  ],
+  "roles": {
+   "0": "init request ($825A)",
+   "1": "strong extension ($8312)",
+   "2": "strong hold ($833A)",
+   "3": "weak extension ($837C)",
+   "4": "weak hold ($83A4)",
+   "5": "strong retract ($8349)",
+   "6": "weak retract ($8349)",
+   "7": "fixed contact ($82AF)",
+   "8": "span trigger ($83BF)",
+   "9": "span launch ($8401)"
+  }
+ },
+ "anchors": {
+  "type_26": {
+   "gameplay_anchor": "object +$11/+$12 (X) and +$14/+$15 (Y); placement X is used unchanged; Y is placement Y + 12 after $825A (rest position)",
+   "contact_window": "player anchor Y in [restY - 33, restY - 28] = [placementY - 21, placementY - 16]; |dx| < 12; floor-standing Sonic has anchor Y = floorSurface - 18 which is placementY - 18 when the floor surface is at the placement Y (verified for the THZ1 control placements)",
+   "mapping_anchor": "mapping $91C0 frame records are drawn relative to the same object coordinates (docs/mapped-object-screen-registration.md: rows -6..+17 for frame 2); at rest the object sits 12 px below the placement Y, so the dormant frame is mostly below the floor line",
+   "animation": "the extension raises the OBJECT Y 7 px per update (+$14), 4 updates = 28 px (rest -> placementY - 16); contact is not evaluated in states 1..6, so the moving art never feeds back into collision",
+   "poc_guidance": "keep the contact window and X rule on the placement-derived rest anchor; do not derive them from the sprite's visible top (it changes with the frame and extension) or the GameMaker mask"
+  },
+  "terrain_springs": {
+   "gameplay_anchor": "layout cell + collision header profile only; the visible spring art is ordinary background tiles with no separate object",
+   "probe": "upright/diagonal: (X, Y+18); horizontal: (X+-9, Y+6); ceiling: (X, Y-6)"
+  }
+ },
+ "special_states": {
+  "type_26": {
+   "gate": "requested state == $21 only",
+   "loop_states_0C_0D_13": "contact evaluated (not read)",
+   "twist_22": "evaluated",
+   "act_clear_20": "evaluated",
+   "rolling_jump_fall": "evaluated",
+   "spring_flight_0B_1C": "evaluated; Y speed must be non-negative so a launch cannot restart during the rise",
+   "forced_transition": "$480C requests $0B from ANY state whenever the gates pass (it only checks the Y-speed sign), overriding loop/twist/act-clear requests; velocity is overwritten (vy only)"
+  },
+  "terrain_upright_diagonal_horizontal_ceiling": {
+   "gate": "current state $11 blocks upright/diagonal/horizontal; the ceiling bounce has no state gate",
+   "loop_states_0C_0D_13_and_twist_22_and_20": "not evaluated: these states never call $690B (terrain-ring state reach)",
+   "evaluated_states": "see state_reach",
+   "forced_transition": "yes: $0B / $1C / 9 / $1B override the current state"
+  }
+ },
+ "d448": {
+  "evidence": "BYTE-VERIFIED ASSEMBLY + CONTROLLED ROUTINE RESULT",
+  "occurrences_of_address_bytes": [
+   "0x06A87",
+   "0x06AC8",
+   "0x3018F",
+   "0x332CC",
+   "0x782F8",
+   "0x78420",
+   "0x799CA"
+  ],
+  "reader": "ROM $3018F (bank $0C, CPU $818F): LD A,($D448); RRCA; RET - used only by the FF 08 condition at the head of the state $0B animation script",
+  "writers": {
+   "$06A87": [
+    "terrain upright spring",
+    "$FF"
+   ],
+   "$06AC8": [
+    "terrain diagonal spring",
+    "$00"
+   ],
+   "$332CC": [
+    "type $21 stomp",
+    "$FF"
+   ],
+   "$782F8": [
+    "type $26 fixed contact",
+    "$FF if parameter 0 else $00"
+   ],
+   "$78420": [
+    "type $26 span launch",
+    "$FF if +$3F == 0 else $00"
+   ],
+   "$799CA": [
+    "type $50 top bounce",
+    "$00"
+   ]
+  },
+  "state_0b_entry_guarantee": "$480C is the only code that requests state $0B and every caller ($6A8D, $5F21 through vector $035F from $82FB/$8423/$99D0/$B2D2) writes $D448 first; a stale value is therefore never observed",
+  "meaning": "bit 0 only chooses the animation fragment of state $0B when the script is (re)started: set -> hold frame $61 (duration 4, repeating); clear -> frames $1C..$21 cycle. It affects presentation and the animation counter values, nothing else",
+  "does_not_affect": "velocity, gravity, apex/landing decisions, controls, collision, attack posture ($D503), damage, terrain-ring parity (docs/player-animation-counter.md sect. 10)",
+  "distinction": "strong ($FF): terrain upright, type $26 parameter 0 / aux1 = 0 span, type $21 stomp; weak ($00): type $26 nonzero parameter, boss bounce; diagonal writes 0 but enters $1C which has no D448 reader",
+  "persistence": "never cleared by landing, act start or the diagonal spring ($1C does not read it); zeroed only by the boot/reset RAM clears; persistence across acts is irrelevant because of the guarantee above",
+  "consistent_with_previous_audit": true
+ },
+ "unresolved": [
+  "Names of the terrain flag types ($09, $14, $0A, $16, $0D) are numeric only; 'spring' follows from the launches, not from a ROM label.",
+  "The identity of player state $21 (requested-state gate of type $26, probe dy -14): numeric only.",
+  "Exact camera Y scroll speed limits during the rise (the emulated flights stay inside the view; no formal bound was derived).",
+  "Which POC mechanism produces the reported top-of-screen death was not reproduced (POC untouched); the ROM facts it must be compared against are in death_and_top_of_screen.",
+  "Type $26 states 1..6 art/frame timing was recorded from the script table but not pixel-validated against the SMS frame.",
+  "Whether a spring launch can interact with the badnik lifecycle beyond the $D503 gate (e.g. type $27 contact above) was not traced end to end in the emulator.",
+  "Behavior outside THZ (other zones' diagonal Y speed $FA80 for $D297 != 0 was verified only as an immediate value, not on a zone layout)."
+ ],
+ "static_only": false,
+ "type26_geometry": {
+  "evidence": "CONTROLLED ROUTINE RESULT",
+  "handler": "$82AF (bank $1E)",
+  "cases": 1630,
+  "model_mismatches": 0,
+  "horizontal_pass_dx_ranges": [
+   [
+    -11,
+    11
+   ]
+  ],
+  "horizontal_rule": "abs(playerX - objectX) < 12 (strict; $0383 -> $61A5 compares |dx| < BC with BC=12)",
+  "vertical_pass_ranges_relative_to_object_y": [
+   [
+    -33,
+    -28
+   ]
+  ],
+  "vertical_rule": "0 <= (objectY - 28) - playerY < 6, i.e. playerY in [objectY-33, objectY-28] inclusive (unsigned 16-bit subtracts at $82DD/$82E4)",
+  "coordinates": "player anchor (D511/D514) versus the object's current +$11/+$14; object rest Y = placement Y + 12 (init $825A); no extents, mask or sprite edge involved",
+  "horizontal_edges": [
+   {
+    "dx": -13,
+    "launch": false
+   },
+   {
+    "dx": -12,
+    "launch": false
+   },
+   {
+    "dx": -11,
+    "launch": true
+   },
+   {
+    "dx": -10,
+    "launch": true
+   },
+   {
+    "dx": 10,
+    "launch": true
+   },
+   {
+    "dx": 11,
+    "launch": true
+   },
+   {
+    "dx": 12,
+    "launch": false
+   },
+   {
+    "dx": 13,
+    "launch": false
+   }
+  ],
+  "vertical_edges": [
+   {
+    "player_y_minus_object_y": -35,
+    "launch": false
+   },
+   {
+    "player_y_minus_object_y": -34,
+    "launch": false
+   },
+   {
+    "player_y_minus_object_y": -33,
+    "launch": true
+   },
+   {
+    "player_y_minus_object_y": -32,
+    "launch": true
+   },
+   {
+    "player_y_minus_object_y": -29,
+    "launch": true
+   },
+   {
+    "player_y_minus_object_y": -28,
+    "launch": true
+   },
+   {
+    "player_y_minus_object_y": -27,
+    "launch": false
+   },
+   {
+    "player_y_minus_object_y": -26,
+    "launch": false
+   }
+  ]
+ },
+ "type26_gates": {
+  "evidence": "CONTROLLED ROUTINE RESULT",
+  "vy_raw_to_launch": {
+   "0x0000": true,
+   "0x0001": true,
+   "0x00FF": true,
+   "0x0100": true,
+   "0x7FFF": true,
+   "0x8000": false,
+   "0xFF00": false,
+   "0xFFFF": false
+  },
+  "vy_rule": "Y speed high byte bit 7 set (negative) rejects; zero and every positive value pass; low byte irrelevant ($D519 bit 7 tested at $82B4)",
+  "floor_flag_$D522": {
+   "0x00": false,
+   "0x01": false,
+   "0x02": true,
+   "0x03": true,
+   "0xFD": false,
+   "0xFF": true
+  },
+  "floor_rule": "$D522 bit 1 must be set (floor/object contact flag of the previous player update); other bits irrelevant",
+  "requested_state_$D502_blocking": [
+   "0x21"
+  ],
+  "current_state_$D501_blocking": [],
+  "state_rule": "ONLY the requested state $D502 == $21 blocks; the current state $D501 is not read. All 64 values of each swept",
+  "object_flags_+4": {
+   "0x00": true,
+   "0x40": false,
+   "0x80": true,
+   "0xBF": true,
+   "0xC0": false,
+   "0xFF": false
+  },
+  "object_flags_rule": "+$04 bit 6 set (object inactive: created with $40 ORed in by $80EB, cleared when the object is awake) rejects; other bits irrelevant",
+  "player_f3_+3": {
+   "0x00": true,
+   "0x01": true,
+   "0x02": true,
+   "0x03": true,
+   "0x41": true,
+   "0xC3": true
+  },
+  "cases": 154
+ },
+ "type26_span": {
+  "evidence": "CONTROLLED ROUTINE RESULT",
+  "handler_state8": "$83BF",
+  "x_pass_ranges_relative_to_x0": [
+   [
+    0,
+    159
+   ]
+  ],
+  "x_rule": "x0 <= playerX < x0 + span (x0 = placement X restored from +$3A/+$3B each update; span = (parameter & $7F) * 16); no |dx|<12 rule",
+  "y_pass_ranges_relative_to_object_y": [
+   [
+    -47,
+    47
+   ]
+  ],
+  "y_rule": "abs(objectY - playerY) < $30 (strict; $0386 -> $61B1 with BC=$30), objectY = placement Y + 12",
+  "gates": {
+   "vy_negative": false,
+   "vy_zero": true,
+   "no_floor_flag": false,
+   "requested_21": false,
+   "current_21": true
+  },
+  "gate_rule": "same as state 7: Y speed not negative, floor flag, requested state != $21",
+  "next_state": 9,
+  "object_x_after_trigger": 1296,
+  "model_mismatches": 0,
+  "state9_launch": [
+   {
+    "p3f": 0,
+    "aux1": "0x00",
+    "vy": "0xF8A0",
+    "d448": "0xFF",
+    "next_object_state": 1,
+    "object_x": 1344,
+    "requested_player_state": "0x0B"
+   },
+   {
+    "p3f": 0,
+    "aux1": "0x72",
+    "vy": "0xF8A0",
+    "d448": "0xFF",
+    "next_object_state": 3,
+    "object_x": 1344,
+    "requested_player_state": "0x0B"
+   },
+   {
+    "p3f": 1,
+    "aux1": "0x00",
+    "vy": "0xFB00",
+    "d448": "0x00",
+    "next_object_state": 1,
+    "object_x": 1344,
+    "requested_player_state": "0x0B"
+   },
+   {
+    "p3f": 1,
+    "aux1": "0x72",
+    "vy": "0xFB00",
+    "d448": "0x00",
+    "next_object_state": 3,
+    "object_x": 1344,
+    "requested_player_state": "0x0B"
+   }
+  ],
+  "state9_note": "playerX & $FFF0 becomes the spring X; launch values are selected by +$3F; D448 and the extension state are written even when $480C then rejects a negative Y speed (checked below)",
+  "state9_with_negative_vy": {
+   "requested_player_state": "0x05",
+   "player_vy": "0xFF00",
+   "d448": "0x00",
+   "next_object_state": 3
+  },
+  "cases": 35415
+ },
+ "type26_parameters": {
+  "evidence": "CONTROLLED ROUTINE RESULT",
+  "rows": [
+   {
+    "parameter": "0x00",
+    "aux1": "0x00",
+    "after_init": {
+     "state": 7,
+     "rest_state": 7,
+     "y": 712,
+     "saved_y": 712,
+     "p3f": 0,
+     "span": 0
+    },
+    "triggered": true,
+    "launch_vy": "0xF8A0",
+    "launch_vy_signed": -7.375,
+    "d448": "0xFF",
+    "extension_state": 1,
+    "player_requested_state": "0x0B",
+    "player_f3_after": 1
+   },
+   {
+    "parameter": "0x00",
+    "aux1": "0x72",
+    "after_init": {
+     "state": 7,
+     "rest_state": 7,
+     "y": 712,
+     "saved_y": 712,
+     "p3f": 0,
+     "span": 0
+    },
+    "triggered": true,
+    "launch_vy": "0xF8A0",
+    "launch_vy_signed": -7.375,
+    "d448": "0xFF",
+    "extension_state": 1,
+    "player_requested_state": "0x0B",
+    "player_f3_after": 1
+   },
+   {
+    "parameter": "0x01",
+    "aux1": "0x00",
+    "after_init": {
+     "state": 7,
+     "rest_state": 7,
+     "y": 712,
+     "saved_y": 712,
+     "p3f": 1,
+     "span": 0
+    },
+    "triggered": true,
+    "launch_vy": "0xFB00",
+    "launch_vy_signed": -5.0,
+    "d448": "0x00",
+    "extension_state": 3,
+    "player_requested_state": "0x0B",
+    "player_f3_after": 1
+   },
+   {
+    "parameter": "0x01",
+    "aux1": "0x72",
+    "after_init": {
+     "state": 7,
+     "rest_state": 7,
+     "y": 712,
+     "saved_y": 712,
+     "p3f": 1,
+     "span": 0
+    },
+    "triggered": true,
+    "launch_vy": "0xFB00",
+    "launch_vy_signed": -5.0,
+    "d448": "0x00",
+    "extension_state": 3,
+    "player_requested_state": "0x0B",
+    "player_f3_after": 1
+   },
+   {
+    "parameter": "0x02",
+    "aux1": "0x00",
+    "after_init": {
+     "state": 7,
+     "rest_state": 7,
+     "y": 712,
+     "saved_y": 712,
+     "p3f": 2,
+     "span": 0
+    },
+    "triggered": true,
+    "launch_vy": "0xFB00",
+    "launch_vy_signed": -5.0,
+    "d448": "0x00",
+    "extension_state": 1,
+    "player_requested_state": "0x0B",
+    "player_f3_after": 1
+   },
+   {
+    "parameter": "0x02",
+    "aux1": "0x72",
+    "after_init": {
+     "state": 7,
+     "rest_state": 7,
+     "y": 712,
+     "saved_y": 712,
+     "p3f": 2,
+     "span": 0
+    },
+    "triggered": true,
+    "launch_vy": "0xFB00",
+    "launch_vy_signed": -5.0,
+    "d448": "0x00",
+    "extension_state": 1,
+    "player_requested_state": "0x0B",
+    "player_f3_after": 1
+   },
+   {
+    "parameter": "0x7F",
+    "aux1": "0x00",
+    "after_init": {
+     "state": 7,
+     "rest_state": 7,
+     "y": 712,
+     "saved_y": 712,
+     "p3f": 127,
+     "span": 0
+    },
+    "triggered": true,
+    "launch_vy": "0xFB00",
+    "launch_vy_signed": -5.0,
+    "d448": "0x00",
+    "extension_state": 1,
+    "player_requested_state": "0x0B",
+    "player_f3_after": 1
+   },
+   {
+    "parameter": "0x7F",
+    "aux1": "0x72",
+    "after_init": {
+     "state": 7,
+     "rest_state": 7,
+     "y": 712,
+     "saved_y": 712,
+     "p3f": 127,
+     "span": 0
+    },
+    "triggered": true,
+    "launch_vy": "0xFB00",
+    "launch_vy_signed": -5.0,
+    "d448": "0x00",
+    "extension_state": 1,
+    "player_requested_state": "0x0B",
+    "player_f3_after": 1
+   },
+   {
+    "parameter": "0x80",
+    "aux1": "0x00",
+    "after_init": {
+     "state": 8,
+     "rest_state": 8,
+     "y": 712,
+     "saved_y": 712,
+     "p3f": 0,
+     "span": 0
+    },
+    "triggered": false,
+    "launch_vy": "0xF8A0",
+    "launch_vy_signed": -7.375,
+    "d448": "0xFF",
+    "extension_state": 1,
+    "player_requested_state": "0x0B",
+    "player_f3_after": 1
+   },
+   {
+    "parameter": "0x80",
+    "aux1": "0x72",
+    "after_init": {
+     "state": 8,
+     "rest_state": 8,
+     "y": 712,
+     "saved_y": 712,
+     "p3f": 1,
+     "span": 0
+    },
+    "triggered": false,
+    "launch_vy": "0xFB00",
+    "launch_vy_signed": -5.0,
+    "d448": "0x00",
+    "extension_state": 3,
+    "player_requested_state": "0x0B",
+    "player_f3_after": 1
+   },
+   {
+    "parameter": "0x81",
+    "aux1": "0x00",
+    "after_init": {
+     "state": 8,
+     "rest_state": 8,
+     "y": 712,
+     "saved_y": 712,
+     "p3f": 0,
+     "span": 16
+    },
+    "triggered": true,
+    "launch_vy": "0xF8A0",
+    "launch_vy_signed": -7.375,
+    "d448": "0xFF",
+    "extension_state": 1,
+    "player_requested_state": "0x0B",
+    "player_f3_after": 1
+   },
+   {
+    "parameter": "0x81",
+    "aux1": "0x72",
+    "after_init": {
+     "state": 8,
+     "rest_state": 8,
+     "y": 712,
+     "saved_y": 712,
+     "p3f": 1,
+     "span": 16
+    },
+    "triggered": true,
+    "launch_vy": "0xFB00",
+    "launch_vy_signed": -5.0,
+    "d448": "0x00",
+    "extension_state": 3,
+    "player_requested_state": "0x0B",
+    "player_f3_after": 1
+   },
+   {
+    "parameter": "0x88",
+    "aux1": "0x00",
+    "after_init": {
+     "state": 8,
+     "rest_state": 8,
+     "y": 712,
+     "saved_y": 712,
+     "p3f": 0,
+     "span": 128
+    },
+    "triggered": true,
+    "launch_vy": "0xF8A0",
+    "launch_vy_signed": -7.375,
+    "d448": "0xFF",
+    "extension_state": 1,
+    "player_requested_state": "0x0B",
+    "player_f3_after": 1
+   },
+   {
+    "parameter": "0x88",
+    "aux1": "0x72",
+    "after_init": {
+     "state": 8,
+     "rest_state": 8,
+     "y": 712,
+     "saved_y": 712,
+     "p3f": 1,
+     "span": 128
+    },
+    "triggered": true,
+    "launch_vy": "0xFB00",
+    "launch_vy_signed": -5.0,
+    "d448": "0x00",
+    "extension_state": 3,
+    "player_requested_state": "0x0B",
+    "player_f3_after": 1
+   },
+   {
+    "parameter": "0x8A",
+    "aux1": "0x00",
+    "after_init": {
+     "state": 8,
+     "rest_state": 8,
+     "y": 712,
+     "saved_y": 712,
+     "p3f": 0,
+     "span": 160
+    },
+    "triggered": true,
+    "launch_vy": "0xF8A0",
+    "launch_vy_signed": -7.375,
+    "d448": "0xFF",
+    "extension_state": 1,
+    "player_requested_state": "0x0B",
+    "player_f3_after": 1
+   },
+   {
+    "parameter": "0x8A",
+    "aux1": "0x72",
+    "after_init": {
+     "state": 8,
+     "rest_state": 8,
+     "y": 712,
+     "saved_y": 712,
+     "p3f": 1,
+     "span": 160
+    },
+    "triggered": true,
+    "launch_vy": "0xFB00",
+    "launch_vy_signed": -5.0,
+    "d448": "0x00",
+    "extension_state": 3,
+    "player_requested_state": "0x0B",
+    "player_f3_after": 1
+   },
+   {
+    "parameter": "0xFF",
+    "aux1": "0x00",
+    "after_init": {
+     "state": 8,
+     "rest_state": 8,
+     "y": 712,
+     "saved_y": 712,
+     "p3f": 0,
+     "span": 2032
+    },
+    "triggered": true,
+    "launch_vy": "0xF8A0",
+    "launch_vy_signed": -7.375,
+    "d448": "0xFF",
+    "extension_state": 1,
+    "player_requested_state": "0x0B",
+    "player_f3_after": 1
+   },
+   {
+    "parameter": "0xFF",
+    "aux1": "0x72",
+    "after_init": {
+     "state": 8,
+     "rest_state": 8,
+     "y": 712,
+     "saved_y": 712,
+     "p3f": 1,
+     "span": 2032
+    },
+    "triggered": true,
+    "launch_vy": "0xFB00",
+    "launch_vy_signed": -5.0,
+    "d448": "0x00",
+    "extension_state": 3,
+    "player_requested_state": "0x0B",
+    "player_f3_after": 1
+   }
+  ],
+  "cases": 54,
+  "semantics": {
+   "bit7_clear": "fixed spring; +$3F is the raw parameter: 0 -> strong (-7.375, D448=$FF, extension state 1); nonzero -> weak (-5.0, D448=0); extension state 3 only when the parameter is exactly 1, otherwise state 1 (animation only); the low seven bits are otherwise not read",
+   "bit7_set": "concealed span: span = (parameter & $7F) * 16 px starting at the placement X; +$3F is overwritten with 1 (weak) when aux1 (+$09) is nonzero, 0 (strong) when aux1 is zero; every canonical record has aux1 = $72, so span springs are always weak",
+   "other": "aux1 only matters for span springs (strength) and for the post-launch extension state of state-9 launches (3 when nonzero, 1 when zero); no parameter changes orientation: type $26 is upright only"
+  }
+ },
+ "type26_state_matrix": {
+  "evidence": "CONTROLLED ROUTINE RESULT",
+  "requested_state_launches": {
+   "0x00": true,
+   "0x01": true,
+   "0x02": true,
+   "0x03": true,
+   "0x04": true,
+   "0x05": true,
+   "0x06": true,
+   "0x07": true,
+   "0x08": true,
+   "0x09": true,
+   "0x0A": true,
+   "0x0B": true,
+   "0x0C": true,
+   "0x0D": true,
+   "0x0E": true,
+   "0x0F": true,
+   "0x10": true,
+   "0x11": true,
+   "0x12": true,
+   "0x13": true,
+   "0x14": true,
+   "0x15": true,
+   "0x16": true,
+   "0x17": true,
+   "0x18": true,
+   "0x19": true,
+   "0x1A": true,
+   "0x1B": true,
+   "0x1C": true,
+   "0x1D": true,
+   "0x1E": true,
+   "0x1F": true,
+   "0x20": true,
+   "0x21": false,
+   "0x22": true,
+   "0x23": true,
+   "0x24": true,
+   "0x25": true,
+   "0x26": true,
+   "0x27": true,
+   "0x28": true,
+   "0x29": true,
+   "0x2A": true,
+   "0x2B": true,
+   "0x2C": true,
+   "0x2D": true,
+   "0x2E": true,
+   "0x2F": true,
+   "0x30": true,
+   "0x31": true,
+   "0x32": true,
+   "0x33": true,
+   "0x34": true,
+   "0x35": true,
+   "0x36": true,
+   "0x37": true,
+   "0x38": true,
+   "0x39": true,
+   "0x3A": true,
+   "0x3B": true,
+   "0x3C": true,
+   "0x3D": true,
+   "0x3E": true,
+   "0x3F": true
+  },
+  "blocked": [
+   "0x21"
+  ],
+  "meaning": "type $26 contact is player-state agnostic except requested state $21; loop states $0C/$0D/$13, twist $22, act-clear $20, rolling, jumping and falling all pass the gate"
+ },
+ "terrain_upright": {
+  "block": "0x30",
+  "cell": [
+   928,
+   640
+  ],
+  "launch_state": "0x0B",
+  "vertical_profile_height_by_x": [
+   [
+    0,
+    31,
+    16
+   ]
+  ],
+  "cases": 46656,
+  "model_mismatches": 0,
+  "rows": [
+   {
+    "previous_surface": "none",
+    "previous_flags": "0x00",
+    "floor_flag": 1,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "none",
+    "previous_flags": "0x00",
+    "floor_flag": 1,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "none",
+    "previous_flags": "0x00",
+    "floor_flag": 1,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "none",
+    "previous_flags": "0x00",
+    "floor_flag": 0,
+    "vy_hi": 0,
+    "cell_x_ranges": [],
+    "probe_y_ranges_relative_to_cell": []
+   },
+   {
+    "previous_surface": "none",
+    "previous_flags": "0x00",
+    "floor_flag": 0,
+    "vy_hi": 1,
+    "cell_x_ranges": [],
+    "probe_y_ranges_relative_to_cell": []
+   },
+   {
+    "previous_surface": "none",
+    "previous_flags": "0x00",
+    "floor_flag": 0,
+    "vy_hi": 3,
+    "cell_x_ranges": [],
+    "probe_y_ranges_relative_to_cell": []
+   },
+   {
+    "previous_surface": "solid",
+    "previous_flags": "0x81",
+    "floor_flag": 1,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid",
+    "previous_flags": "0x81",
+    "floor_flag": 1,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid",
+    "previous_flags": "0x81",
+    "floor_flag": 1,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid",
+    "previous_flags": "0x81",
+    "floor_flag": 0,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid",
+    "previous_flags": "0x81",
+    "floor_flag": 0,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid",
+    "previous_flags": "0x81",
+    "floor_flag": 0,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "one_way",
+    "previous_flags": "0x41",
+    "floor_flag": 1,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      24
+     ]
+    ]
+   },
+   {
+    "previous_surface": "one_way",
+    "previous_flags": "0x41",
+    "floor_flag": 1,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      25
+     ]
+    ]
+   },
+   {
+    "previous_surface": "one_way",
+    "previous_flags": "0x41",
+    "floor_flag": 1,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      27
+     ]
+    ]
+   },
+   {
+    "previous_surface": "one_way",
+    "previous_flags": "0x41",
+    "floor_flag": 0,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      24
+     ]
+    ]
+   },
+   {
+    "previous_surface": "one_way",
+    "previous_flags": "0x41",
+    "floor_flag": 0,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      25
+     ]
+    ]
+   },
+   {
+    "previous_surface": "one_way",
+    "previous_flags": "0x41",
+    "floor_flag": 0,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      27
+     ]
+    ]
+   },
+   {
+    "previous_surface": "upright_spring_self",
+    "previous_flags": "0x49",
+    "floor_flag": 1,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      24
+     ]
+    ]
+   },
+   {
+    "previous_surface": "upright_spring_self",
+    "previous_flags": "0x49",
+    "floor_flag": 1,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      25
+     ]
+    ]
+   },
+   {
+    "previous_surface": "upright_spring_self",
+    "previous_flags": "0x49",
+    "floor_flag": 1,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      27
+     ]
+    ]
+   },
+   {
+    "previous_surface": "upright_spring_self",
+    "previous_flags": "0x49",
+    "floor_flag": 0,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      24
+     ]
+    ]
+   },
+   {
+    "previous_surface": "upright_spring_self",
+    "previous_flags": "0x49",
+    "floor_flag": 0,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      25
+     ]
+    ]
+   },
+   {
+    "previous_surface": "upright_spring_self",
+    "previous_flags": "0x49",
+    "floor_flag": 0,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      27
+     ]
+    ]
+   },
+   {
+    "previous_surface": "diagonal_spring_self",
+    "previous_flags": "0x54",
+    "floor_flag": 1,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      24
+     ]
+    ]
+   },
+   {
+    "previous_surface": "diagonal_spring_self",
+    "previous_flags": "0x54",
+    "floor_flag": 1,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      25
+     ]
+    ]
+   },
+   {
+    "previous_surface": "diagonal_spring_self",
+    "previous_flags": "0x54",
+    "floor_flag": 1,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      27
+     ]
+    ]
+   },
+   {
+    "previous_surface": "diagonal_spring_self",
+    "previous_flags": "0x54",
+    "floor_flag": 0,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      24
+     ]
+    ]
+   },
+   {
+    "previous_surface": "diagonal_spring_self",
+    "previous_flags": "0x54",
+    "floor_flag": 0,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      25
+     ]
+    ]
+   },
+   {
+    "previous_surface": "diagonal_spring_self",
+    "previous_flags": "0x54",
+    "floor_flag": 0,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      27
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid_and_one_way",
+    "previous_flags": "0xC1",
+    "floor_flag": 1,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid_and_one_way",
+    "previous_flags": "0xC1",
+    "floor_flag": 1,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid_and_one_way",
+    "previous_flags": "0xC1",
+    "floor_flag": 1,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid_and_one_way",
+    "previous_flags": "0xC1",
+    "floor_flag": 0,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid_and_one_way",
+    "previous_flags": "0xC1",
+    "floor_flag": 0,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid_and_one_way",
+    "previous_flags": "0xC1",
+    "floor_flag": 0,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      31
+     ]
+    ]
+   }
+  ]
+ },
+ "terrain_diagonal_right_launch": {
+  "block": "0x36",
+  "cell": [
+   2464,
+   256
+  ],
+  "launch_state": "0x1C",
+  "vertical_profile_height_by_x": [
+   [
+    0,
+    15,
+    16
+   ],
+   [
+    16,
+    31,
+    0
+   ]
+  ],
+  "cases": 46656,
+  "model_mismatches": 0,
+  "rows": [
+   {
+    "previous_surface": "none",
+    "previous_flags": "0x00",
+    "floor_flag": 1,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "none",
+    "previous_flags": "0x00",
+    "floor_flag": 1,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "none",
+    "previous_flags": "0x00",
+    "floor_flag": 1,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "none",
+    "previous_flags": "0x00",
+    "floor_flag": 0,
+    "vy_hi": 0,
+    "cell_x_ranges": [],
+    "probe_y_ranges_relative_to_cell": []
+   },
+   {
+    "previous_surface": "none",
+    "previous_flags": "0x00",
+    "floor_flag": 0,
+    "vy_hi": 1,
+    "cell_x_ranges": [],
+    "probe_y_ranges_relative_to_cell": []
+   },
+   {
+    "previous_surface": "none",
+    "previous_flags": "0x00",
+    "floor_flag": 0,
+    "vy_hi": 3,
+    "cell_x_ranges": [],
+    "probe_y_ranges_relative_to_cell": []
+   },
+   {
+    "previous_surface": "solid",
+    "previous_flags": "0x81",
+    "floor_flag": 1,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid",
+    "previous_flags": "0x81",
+    "floor_flag": 1,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid",
+    "previous_flags": "0x81",
+    "floor_flag": 1,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid",
+    "previous_flags": "0x81",
+    "floor_flag": 0,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid",
+    "previous_flags": "0x81",
+    "floor_flag": 0,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid",
+    "previous_flags": "0x81",
+    "floor_flag": 0,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "one_way",
+    "previous_flags": "0x41",
+    "floor_flag": 1,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      24
+     ]
+    ]
+   },
+   {
+    "previous_surface": "one_way",
+    "previous_flags": "0x41",
+    "floor_flag": 1,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      25
+     ]
+    ]
+   },
+   {
+    "previous_surface": "one_way",
+    "previous_flags": "0x41",
+    "floor_flag": 1,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      27
+     ]
+    ]
+   },
+   {
+    "previous_surface": "one_way",
+    "previous_flags": "0x41",
+    "floor_flag": 0,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      24
+     ]
+    ]
+   },
+   {
+    "previous_surface": "one_way",
+    "previous_flags": "0x41",
+    "floor_flag": 0,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      25
+     ]
+    ]
+   },
+   {
+    "previous_surface": "one_way",
+    "previous_flags": "0x41",
+    "floor_flag": 0,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      27
+     ]
+    ]
+   },
+   {
+    "previous_surface": "upright_spring_self",
+    "previous_flags": "0x49",
+    "floor_flag": 1,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      24
+     ]
+    ]
+   },
+   {
+    "previous_surface": "upright_spring_self",
+    "previous_flags": "0x49",
+    "floor_flag": 1,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      25
+     ]
+    ]
+   },
+   {
+    "previous_surface": "upright_spring_self",
+    "previous_flags": "0x49",
+    "floor_flag": 1,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      27
+     ]
+    ]
+   },
+   {
+    "previous_surface": "upright_spring_self",
+    "previous_flags": "0x49",
+    "floor_flag": 0,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      24
+     ]
+    ]
+   },
+   {
+    "previous_surface": "upright_spring_self",
+    "previous_flags": "0x49",
+    "floor_flag": 0,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      25
+     ]
+    ]
+   },
+   {
+    "previous_surface": "upright_spring_self",
+    "previous_flags": "0x49",
+    "floor_flag": 0,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      27
+     ]
+    ]
+   },
+   {
+    "previous_surface": "diagonal_spring_self",
+    "previous_flags": "0x54",
+    "floor_flag": 1,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      24
+     ]
+    ]
+   },
+   {
+    "previous_surface": "diagonal_spring_self",
+    "previous_flags": "0x54",
+    "floor_flag": 1,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      25
+     ]
+    ]
+   },
+   {
+    "previous_surface": "diagonal_spring_self",
+    "previous_flags": "0x54",
+    "floor_flag": 1,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      27
+     ]
+    ]
+   },
+   {
+    "previous_surface": "diagonal_spring_self",
+    "previous_flags": "0x54",
+    "floor_flag": 0,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      24
+     ]
+    ]
+   },
+   {
+    "previous_surface": "diagonal_spring_self",
+    "previous_flags": "0x54",
+    "floor_flag": 0,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      25
+     ]
+    ]
+   },
+   {
+    "previous_surface": "diagonal_spring_self",
+    "previous_flags": "0x54",
+    "floor_flag": 0,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      27
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid_and_one_way",
+    "previous_flags": "0xC1",
+    "floor_flag": 1,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid_and_one_way",
+    "previous_flags": "0xC1",
+    "floor_flag": 1,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid_and_one_way",
+    "previous_flags": "0xC1",
+    "floor_flag": 1,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid_and_one_way",
+    "previous_flags": "0xC1",
+    "floor_flag": 0,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid_and_one_way",
+    "previous_flags": "0xC1",
+    "floor_flag": 0,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid_and_one_way",
+    "previous_flags": "0xC1",
+    "floor_flag": 0,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      15
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      31
+     ]
+    ]
+   }
+  ]
+ },
+ "terrain_diagonal_left_launch": {
+  "block": "0x38",
+  "cell": [
+   1664,
+   512
+  ],
+  "launch_state": "0x1C",
+  "vertical_profile_height_by_x": [
+   [
+    0,
+    15,
+    0
+   ],
+   [
+    16,
+    31,
+    16
+   ]
+  ],
+  "cases": 46656,
+  "model_mismatches": 0,
+  "rows": [
+   {
+    "previous_surface": "none",
+    "previous_flags": "0x00",
+    "floor_flag": 1,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "none",
+    "previous_flags": "0x00",
+    "floor_flag": 1,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "none",
+    "previous_flags": "0x00",
+    "floor_flag": 1,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "none",
+    "previous_flags": "0x00",
+    "floor_flag": 0,
+    "vy_hi": 0,
+    "cell_x_ranges": [],
+    "probe_y_ranges_relative_to_cell": []
+   },
+   {
+    "previous_surface": "none",
+    "previous_flags": "0x00",
+    "floor_flag": 0,
+    "vy_hi": 1,
+    "cell_x_ranges": [],
+    "probe_y_ranges_relative_to_cell": []
+   },
+   {
+    "previous_surface": "none",
+    "previous_flags": "0x00",
+    "floor_flag": 0,
+    "vy_hi": 3,
+    "cell_x_ranges": [],
+    "probe_y_ranges_relative_to_cell": []
+   },
+   {
+    "previous_surface": "solid",
+    "previous_flags": "0x81",
+    "floor_flag": 1,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid",
+    "previous_flags": "0x81",
+    "floor_flag": 1,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid",
+    "previous_flags": "0x81",
+    "floor_flag": 1,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid",
+    "previous_flags": "0x81",
+    "floor_flag": 0,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid",
+    "previous_flags": "0x81",
+    "floor_flag": 0,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid",
+    "previous_flags": "0x81",
+    "floor_flag": 0,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "one_way",
+    "previous_flags": "0x41",
+    "floor_flag": 1,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      24
+     ]
+    ]
+   },
+   {
+    "previous_surface": "one_way",
+    "previous_flags": "0x41",
+    "floor_flag": 1,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      25
+     ]
+    ]
+   },
+   {
+    "previous_surface": "one_way",
+    "previous_flags": "0x41",
+    "floor_flag": 1,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      27
+     ]
+    ]
+   },
+   {
+    "previous_surface": "one_way",
+    "previous_flags": "0x41",
+    "floor_flag": 0,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      24
+     ]
+    ]
+   },
+   {
+    "previous_surface": "one_way",
+    "previous_flags": "0x41",
+    "floor_flag": 0,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      25
+     ]
+    ]
+   },
+   {
+    "previous_surface": "one_way",
+    "previous_flags": "0x41",
+    "floor_flag": 0,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      27
+     ]
+    ]
+   },
+   {
+    "previous_surface": "upright_spring_self",
+    "previous_flags": "0x49",
+    "floor_flag": 1,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      24
+     ]
+    ]
+   },
+   {
+    "previous_surface": "upright_spring_self",
+    "previous_flags": "0x49",
+    "floor_flag": 1,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      25
+     ]
+    ]
+   },
+   {
+    "previous_surface": "upright_spring_self",
+    "previous_flags": "0x49",
+    "floor_flag": 1,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      27
+     ]
+    ]
+   },
+   {
+    "previous_surface": "upright_spring_self",
+    "previous_flags": "0x49",
+    "floor_flag": 0,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      24
+     ]
+    ]
+   },
+   {
+    "previous_surface": "upright_spring_self",
+    "previous_flags": "0x49",
+    "floor_flag": 0,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      25
+     ]
+    ]
+   },
+   {
+    "previous_surface": "upright_spring_self",
+    "previous_flags": "0x49",
+    "floor_flag": 0,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      27
+     ]
+    ]
+   },
+   {
+    "previous_surface": "diagonal_spring_self",
+    "previous_flags": "0x54",
+    "floor_flag": 1,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      24
+     ]
+    ]
+   },
+   {
+    "previous_surface": "diagonal_spring_self",
+    "previous_flags": "0x54",
+    "floor_flag": 1,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      25
+     ]
+    ]
+   },
+   {
+    "previous_surface": "diagonal_spring_self",
+    "previous_flags": "0x54",
+    "floor_flag": 1,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      27
+     ]
+    ]
+   },
+   {
+    "previous_surface": "diagonal_spring_self",
+    "previous_flags": "0x54",
+    "floor_flag": 0,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      24
+     ]
+    ]
+   },
+   {
+    "previous_surface": "diagonal_spring_self",
+    "previous_flags": "0x54",
+    "floor_flag": 0,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      25
+     ]
+    ]
+   },
+   {
+    "previous_surface": "diagonal_spring_self",
+    "previous_flags": "0x54",
+    "floor_flag": 0,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      27
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid_and_one_way",
+    "previous_flags": "0xC1",
+    "floor_flag": 1,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid_and_one_way",
+    "previous_flags": "0xC1",
+    "floor_flag": 1,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid_and_one_way",
+    "previous_flags": "0xC1",
+    "floor_flag": 1,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      0,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      0,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid_and_one_way",
+    "previous_flags": "0xC1",
+    "floor_flag": 0,
+    "vy_hi": 0,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid_and_one_way",
+    "previous_flags": "0xC1",
+    "floor_flag": 0,
+    "vy_hi": 1,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      31
+     ]
+    ]
+   },
+   {
+    "previous_surface": "solid_and_one_way",
+    "previous_flags": "0xC1",
+    "floor_flag": 0,
+    "vy_hi": 3,
+    "cell_x_ranges": [
+     [
+      16,
+      31
+     ]
+    ],
+    "probe_y_ranges_relative_to_cell": [
+     [
+      16,
+      31
+     ]
+    ]
+   }
+  ]
+ },
+ "terrain_gates": {
+  "upright_blk30": {
+   "vy_8000": {
+    "launched": false,
+    "f4": 0,
+    "vx": "0x0000",
+    "vy": "0x8000",
+    "d448": 85,
+    "snd": 0
+   },
+   "vy_FF00": {
+    "launched": false,
+    "f4": 0,
+    "vx": "0x0000",
+    "vy": "0xFF00",
+    "d448": 85,
+    "snd": 0
+   },
+   "vy_FFFF": {
+    "launched": false,
+    "f4": 0,
+    "vx": "0x0000",
+    "vy": "0xFFFF",
+    "d448": 85,
+    "snd": 0
+   },
+   "vy_0000": {
+    "launched": true,
+    "f4": 0,
+    "vx": "0x0000",
+    "vy": "0xF880",
+    "d448": 255,
+    "snd": 166
+   },
+   "vy_0001": {
+    "launched": true,
+    "f4": 0,
+    "vx": "0x0000",
+    "vy": "0xF880",
+    "d448": 255,
+    "snd": 166
+   },
+   "vy_0100": {
+    "launched": true,
+    "f4": 0,
+    "vx": "0x0000",
+    "vy": "0xF880",
+    "d448": 255,
+    "snd": 166
+   },
+   "current_state_launches": {
+    "0x00": true,
+    "0x05": true,
+    "0x09": true,
+    "0x0A": true,
+    "0x0B": true,
+    "0x0E": true,
+    "0x11": false,
+    "0x1B": true,
+    "0x1C": true
+   },
+   "requested_state_launches": {
+    "0x05": true,
+    "0x0A": true,
+    "0x11": true,
+    "0x21": true
+   }
+  },
+  "diagonal_right_blk36": {
+   "vy_8000": {
+    "launched": false,
+    "f4": 0,
+    "vx": "0x0400",
+    "vy": "0x8000",
+    "d448": 0,
+    "snd": 166
+   },
+   "vy_FF00": {
+    "launched": false,
+    "f4": 0,
+    "vx": "0x0400",
+    "vy": "0xFF00",
+    "d448": 0,
+    "snd": 166
+   },
+   "vy_FFFF": {
+    "launched": false,
+    "f4": 0,
+    "vx": "0x0400",
+    "vy": "0xFFFF",
+    "d448": 0,
+    "snd": 166
+   },
+   "vy_0000": {
+    "launched": true,
+    "f4": 0,
+    "vx": "0x0400",
+    "vy": "0xF900",
+    "d448": 0,
+    "snd": 166
+   },
+   "vy_0001": {
+    "launched": true,
+    "f4": 0,
+    "vx": "0x0400",
+    "vy": "0xF900",
+    "d448": 0,
+    "snd": 166
+   },
+   "vy_0100": {
+    "launched": true,
+    "f4": 0,
+    "vx": "0x0400",
+    "vy": "0xF900",
+    "d448": 0,
+    "snd": 166
+   },
+   "current_state_launches": {
+    "0x00": true,
+    "0x05": true,
+    "0x09": true,
+    "0x0A": true,
+    "0x0B": true,
+    "0x0E": true,
+    "0x11": false,
+    "0x1B": true,
+    "0x1C": true
+   },
+   "requested_state_launches": {
+    "0x05": true,
+    "0x0A": true,
+    "0x11": true,
+    "0x21": true
+   }
+  },
+  "diagonal_left_blk38": {
+   "vy_8000": {
+    "launched": false,
+    "f4": 16,
+    "vx": "0xFC00",
+    "vy": "0x8000",
+    "d448": 0,
+    "snd": 166
+   },
+   "vy_FF00": {
+    "launched": false,
+    "f4": 16,
+    "vx": "0xFC00",
+    "vy": "0xFF00",
+    "d448": 0,
+    "snd": 166
+   },
+   "vy_FFFF": {
+    "launched": false,
+    "f4": 16,
+    "vx": "0xFC00",
+    "vy": "0xFFFF",
+    "d448": 0,
+    "snd": 166
+   },
+   "vy_0000": {
+    "launched": true,
+    "f4": 16,
+    "vx": "0xFC00",
+    "vy": "0xF900",
+    "d448": 0,
+    "snd": 166
+   },
+   "vy_0001": {
+    "launched": true,
+    "f4": 16,
+    "vx": "0xFC00",
+    "vy": "0xF900",
+    "d448": 0,
+    "snd": 166
+   },
+   "vy_0100": {
+    "launched": true,
+    "f4": 16,
+    "vx": "0xFC00",
+    "vy": "0xF900",
+    "d448": 0,
+    "snd": 166
+   },
+   "current_state_launches": {
+    "0x00": true,
+    "0x05": true,
+    "0x09": true,
+    "0x0A": true,
+    "0x0B": true,
+    "0x0E": true,
+    "0x11": false,
+    "0x1B": true,
+    "0x1C": true
+   },
+   "requested_state_launches": {
+    "0x05": true,
+    "0x0A": true,
+    "0x11": true,
+    "0x21": true
+   }
+  },
+  "diagonal_y_speed_by_$D297": {
+   "0": "0xF900",
+   "1": "0xFA80",
+   "2": "0xFA80",
+   "3": "0xFA80",
+   "4": "0xFA80",
+   "5": "0xFA80",
+   "6": "0xFA80",
+   "7": "0xFA80"
+  },
+  "cases": 68,
+  "rules": [
+   "current state $D501 == $11 rejects; every other current state passes (including $0B and $1C: a spring can re-trigger inside its own flight once vy >= 0)",
+   "requested state is not read by the terrain handlers",
+   "Y speed high byte negative rejects; zero passes ($6A80: LD A,(IX+$19); AND A; RET M)",
+   "upright: floor flag required by the handler ($6A7B); diagonal: same ($6A9A)",
+   "diagonal: X speed, facing bit (+4 bit 4) and $D448 are written BEFORE the Y-speed gate of $482D, so a negative Y speed leaves state and Y unchanged but still sets X speed, facing, D448 and sound"
+  ]
+ },
+ "terrain_horizontal": {
+  "blocks": {
+   "thz1:0x33@(3200,832)": {
+    "right_probe_$716B": {
+     "player_x_ranges_relative_to_cell": [
+      [
+       -9,
+       6
+      ]
+     ],
+     "player_y_ranges_relative_to_cell": [
+      [
+       2,
+       21
+      ]
+     ],
+     "vx": [
+      "0xFA00"
+     ],
+     "cap_D373": [
+      "0x0600"
+     ],
+     "f3_after": [
+      2
+     ],
+     "fl22_after": [
+      "0x04"
+     ],
+     "model_mismatches": 0
+    },
+    "left_probe_$7210": {
+     "player_x_ranges_relative_to_cell": [
+      [
+       9,
+       24
+      ]
+     ],
+     "player_y_ranges_relative_to_cell": [
+      [
+       2,
+       21
+      ]
+     ],
+     "vx": [
+      "0x0600"
+     ],
+     "cap_D373": [
+      "0x0600"
+     ],
+     "f3_after": [
+      2
+     ],
+     "fl22_after": [
+      "0x08"
+     ],
+     "model_mismatches": 0
+    }
+   },
+   "thz2:0x34@(3264,256)": {
+    "right_probe_$716B": {
+     "player_x_ranges_relative_to_cell": [
+      [
+       7,
+       22
+      ]
+     ],
+     "player_y_ranges_relative_to_cell": [
+      [
+       2,
+       21
+      ]
+     ],
+     "vx": [
+      "0xFA00"
+     ],
+     "cap_D373": [
+      "0x0600"
+     ],
+     "f3_after": [
+      2
+     ],
+     "fl22_after": [
+      "0x04"
+     ],
+     "model_mismatches": 0
+    },
+    "left_probe_$7210": {
+     "player_x_ranges_relative_to_cell": [
+      [
+       25,
+       40
+      ]
+     ],
+     "player_y_ranges_relative_to_cell": [
+      [
+       2,
+       21
+      ]
+     ],
+     "vx": [
+      "0x0600"
+     ],
+     "cap_D373": [
+      "0x0600"
+     ],
+     "f3_after": [
+      2
+     ],
+     "fl22_after": [
+      "0x08"
+     ],
+     "model_mismatches": 0
+    }
+   },
+   "thz2:0x34@(1856,512)": {
+    "right_probe_$716B": {
+     "player_x_ranges_relative_to_cell": [
+      [
+       7,
+       22
+      ]
+     ],
+     "player_y_ranges_relative_to_cell": [
+      [
+       2,
+       21
+      ]
+     ],
+     "vx": [
+      "0xFA00"
+     ],
+     "cap_D373": [
+      "0x0600"
+     ],
+     "f3_after": [
+      2
+     ],
+     "fl22_after": [
+      "0x04"
+     ],
+     "model_mismatches": 0
+    },
+    "left_probe_$7210": {
+     "player_x_ranges_relative_to_cell": [
+      [
+       25,
+       40
+      ]
+     ],
+     "player_y_ranges_relative_to_cell": [
+      [
+       2,
+       21
+      ]
+     ],
+     "vx": [
+      "0x0600"
+     ],
+     "cap_D373": [
+      "0x0600"
+     ],
+     "f3_after": [
+      2
+     ],
+     "fl22_after": [
+      "0x08"
+     ],
+     "model_mismatches": 0
+    }
+   },
+   "thz2:0x35@(3040,864)": {
+    "right_probe_$716B": {
+     "player_x_ranges_relative_to_cell": [
+      [
+       7,
+       22
+      ]
+     ],
+     "player_y_ranges_relative_to_cell": [
+      [
+       2,
+       21
+      ]
+     ],
+     "vx": [
+      "0xFA00"
+     ],
+     "cap_D373": [
+      "0x0600"
+     ],
+     "f3_after": [
+      2
+     ],
+     "fl22_after": [
+      "0x04"
+     ],
+     "model_mismatches": 0
+    },
+    "left_probe_$7210": {
+     "player_x_ranges_relative_to_cell": [
+      [
+       25,
+       40
+      ]
+     ],
+     "player_y_ranges_relative_to_cell": [
+      [
+       2,
+       21
+      ]
+     ],
+     "vx": [
+      "0x0600"
+     ],
+     "cap_D373": [
+      "0x0600"
+     ],
+     "f3_after": [
+      2
+     ],
+     "fl22_after": [
+      "0x08"
+     ],
+     "model_mismatches": 0
+    }
+   }
+  },
+  "cases": 40967,
+  "gates": {
+   "baseline": {
+    "launched": true,
+    "f3": 2,
+    "vx": "0xFA00",
+    "vy": "0x0000",
+    "fl22": 4,
+    "d448": 85,
+    "cap": 1536
+   },
+   "current_state_11": {
+    "launched": false,
+    "f3": 0,
+    "vx": "0x0000",
+    "vy": "0x0000",
+    "fl22": 6,
+    "d448": 85,
+    "cap": 1024
+   },
+   "requested_state_11": {
+    "launched": true,
+    "f3": 2,
+    "vx": "0xFA00",
+    "vy": "0x0000",
+    "fl22": 4,
+    "d448": 85,
+    "cap": 1536
+   },
+   "airborne_no_floor_flag": {
+    "launched": true,
+    "f3": 2,
+    "vx": "0xFA00",
+    "vy": "0x0000",
+    "fl22": 4,
+    "d448": 85,
+    "cap": 1536
+   },
+   "vy_negative": {
+    "launched": true,
+    "f3": 2,
+    "vx": "0xFA00",
+    "vy": "0xFF00",
+    "fl22": 4,
+    "d448": 85,
+    "cap": 1536
+   },
+   "vy_positive": {
+    "launched": true,
+    "f3": 2,
+    "vx": "0xFA00",
+    "vy": "0x0300",
+    "fl22": 4,
+    "d448": 85,
+    "cap": 1536
+   },
+   "f3_airborne": {
+    "launched": true,
+    "f3": 2,
+    "vx": "0xFA00",
+    "vy": "0x0000",
+    "fl22": 4,
+    "d448": 85,
+    "cap": 1536
+   }
+  },
+  "rules": [
+   "no floor-flag, Y-speed or requested-state gate; only current state != $11 (the spring tail tests $D501 == $11 at $7204/$72AA)",
+   "activation is the ordinary side projection: the side probe point (X +- 9, Y + 6) must lie inside the block's solid horizontal profile and the projection must be non-zero; the launch is applied after the projection moved Sonic out of the wall",
+   "left-half blocks $32/$33: solid columns 0..15 of the cell, rows 8..27; right-half $34/$35: columns 16..31, rows 8..27 (profile bit 6 flips the side)",
+   "right probe launches X = -6.0 ($FA00) via $4868; left probe launches X = +6.0 ($0600) via $4849; Y speed untouched; $D448 untouched; speed cap $D373 = $0600"
+  ]
+ },
+ "terrain_ceiling": {
+  "0x3A": {
+   "cells_hit": 544,
+   "cell_x_ranges": [
+    [
+     0,
+     31
+    ]
+   ],
+   "probe_y_ranges_relative_to_cell": [
+    [
+     0,
+     16
+    ]
+   ],
+   "model_mismatches": 0
+  },
+  "0x3B": {
+   "cells_hit": 544,
+   "cell_x_ranges": [
+    [
+     0,
+     31
+    ]
+   ],
+   "probe_y_ranges_relative_to_cell": [
+    [
+     0,
+     16
+    ]
+   ],
+   "model_mismatches": 0
+  },
+  "0x36": {
+   "cells_hit": 0,
+   "cell_x_ranges": [],
+   "probe_y_ranges_relative_to_cell": [],
+   "model_mismatches": 0
+  },
+  "0x38": {
+   "cells_hit": 0,
+   "cell_x_ranges": [],
+   "probe_y_ranges_relative_to_cell": [],
+   "model_mismatches": 0
+  },
+  "launch_0x3A": {
+   "state": "0x1B",
+   "vx": "0x0400",
+   "vy": "0x0580",
+   "f3": 3,
+   "fl22": "0x01",
+   "sound": "0xA6"
+  },
+  "gates": {
+   "vy_zero": false,
+   "vy_positive": false,
+   "vy_negative": true,
+   "floor_flag": false,
+   "underwater_flag_D3C0_vy0": true
+  },
+  "cases": 6406,
+  "note": "blocks $3A/$3B appear in no THZ1/THZ2/THZ3 layout cell (layout scan); type $15 ($748F: Y +7.5 down, no X) has no THZ block either"
+ },
+ "bounce_blocks": {
+  "evidence": "CONTROLLED ROUTINE RESULT",
+  "cases": 8,
+  "rows": {
+   "type_16_6AE3": {
+    "f3=0": {
+     "vy": "0x0100",
+     "f3_after": 0
+    },
+    "f3=1": {
+     "vy": "0x0100",
+     "f3_after": 1
+    },
+    "f3=2": {
+     "vy": "0xFBC0",
+     "f3_after": 3
+    },
+    "f3=3": {
+     "vy": "0xFBC0",
+     "f3_after": 3
+    }
+   },
+   "type_0D_6B2C": {
+    "f3=0": {
+     "vy": "0x0100",
+     "f3_after": 0
+    },
+    "f3=1": {
+     "vy": "0x0100",
+     "f3_after": 1
+    },
+    "f3=2": {
+     "vy": "0xFBC0",
+     "f3_after": 3
+    },
+    "f3=3": {
+     "vy": "0xFBC0",
+     "f3_after": 3
+    }
+   }
+  },
+  "gate": "BIT 1,(IX+3) must be set (the rolling/attack flag $D503 bit 1) and the current state must not be $0F/$10/$15/$1A; then vy = $FBC0 (-4.25), airborne set, floor cleared and the block is replaced ($7857 -> $46, $7898 -> $9D)",
+  "relevance": "upright-spring flight has $D503 bit 1 clear (cannot break these); the diagonal spring ($1C) and horizontal spring (state 9) have it set"
+ },
+ "launch_table": {
+  "evidence": "CONTROLLED ROUTINE RESULT",
+  "rows": [
+   {
+    "mechanism": "terrain upright (type 9) $6A75",
+    "before": {
+     "cur": 10,
+     "req": 10,
+     "f3": 3,
+     "vx": "0x0123",
+     "vy": "0x0100",
+     "fl22": 2,
+     "d448": 85,
+     "cap": "0x0555"
+    },
+    "after": {
+     "cur": 10,
+     "req": 11,
+     "f3": 1,
+     "f4": 0,
+     "vx": "0x0123",
+     "vy": "0xF880",
+     "fl22": 0,
+     "d448": 255,
+     "snd": 166,
+     "cap": "0x0555"
+    },
+    "note": "vx and cap untouched; state $0B; D448=$FF"
+   },
+   {
+    "mechanism": "terrain diagonal, block < $38 $6A90",
+    "before": {
+     "cur": 10,
+     "req": 10,
+     "f3": 3,
+     "vx": "0x0123",
+     "vy": "0x0100",
+     "fl22": 2,
+     "d448": 85,
+     "cap": "0x0555"
+    },
+    "after": {
+     "cur": 10,
+     "req": 28,
+     "f3": 3,
+     "f4": 0,
+     "vx": "0x0400",
+     "vy": "0xF900",
+     "fl22": 0,
+     "d448": 0,
+     "snd": 166,
+     "cap": "0x0555"
+    },
+    "note": "vx=+4.0; facing bit +4.4 cleared; D448=0; sound $A6; Y = $F900 (-7.0) because $D297 == 0"
+   },
+   {
+    "mechanism": "terrain diagonal, block >= $38 $6A90",
+    "before": {
+     "cur": 10,
+     "req": 10,
+     "f3": 3,
+     "vx": "0x0123",
+     "vy": "0x0100",
+     "fl22": 2,
+     "d448": 85,
+     "cap": "0x0555"
+    },
+    "after": {
+     "cur": 10,
+     "req": 28,
+     "f3": 3,
+     "f4": 16,
+     "vx": "0xFC00",
+     "vy": "0xF900",
+     "fl22": 0,
+     "d448": 0,
+     "snd": 166,
+     "cap": "0x0555"
+    },
+    "note": "vx=-4.0; facing bit +4.4 set"
+   },
+   {
+    "mechanism": "terrain diagonal, $D297 != 0",
+    "before": {
+     "cur": 10,
+     "req": 10,
+     "f3": 3,
+     "vx": "0x0123",
+     "vy": "0x0100",
+     "fl22": 2,
+     "d448": 85,
+     "cap": "0x0555"
+    },
+    "after": {
+     "cur": 10,
+     "req": 28,
+     "f3": 3,
+     "f4": 0,
+     "vx": "0x0400",
+     "vy": "0xFA80",
+     "fl22": 0,
+     "d448": 0,
+     "snd": 166,
+     "cap": "0x0555"
+    },
+    "note": "Y = $FA80 (-5.5)"
+   },
+   {
+    "mechanism": "setter $480C, HL=$F880",
+    "before": {
+     "cur": 10,
+     "req": 10,
+     "f3": 3,
+     "vx": "0x0123",
+     "vy": "0x0100",
+     "fl22": 2,
+     "d448": 85,
+     "cap": "0x0555"
+    },
+    "after": {
+     "cur": 10,
+     "req": 11,
+     "f3": 1,
+     "f4": 0,
+     "vx": "0x0123",
+     "vy": "0xF880",
+     "fl22": 0,
+     "d448": 85,
+     "snd": 166,
+     "cap": "0x0555"
+    },
+    "note": "state $0B; vy=HL; vx/cap untouched"
+   },
+   {
+    "mechanism": "setter $482D, HL=$F900",
+    "before": {
+     "cur": 10,
+     "req": 10,
+     "f3": 3,
+     "vx": "0x0123",
+     "vy": "0x0100",
+     "fl22": 2,
+     "d448": 85,
+     "cap": "0x0555"
+    },
+    "after": {
+     "cur": 10,
+     "req": 28,
+     "f3": 3,
+     "f4": 0,
+     "vx": "0x0123",
+     "vy": "0xF900",
+     "fl22": 0,
+     "d448": 85,
+     "snd": 0,
+     "cap": "0x0555"
+    },
+    "note": "state $1C; vy=HL; +3 bits 0 and 1 set"
+   },
+   {
+    "mechanism": "setter $4868 (right probe), HL=$FA00",
+    "before": {
+     "cur": 10,
+     "req": 10,
+     "f3": 3,
+     "vx": "0x0123",
+     "vy": "0x0100",
+     "fl22": 2,
+     "d448": 85,
+     "cap": "0x0555"
+    },
+    "after": {
+     "cur": 10,
+     "req": 9,
+     "f3": 2,
+     "f4": 0,
+     "vx": "0xFA00",
+     "vy": "0x0100",
+     "fl22": 0,
+     "d448": 85,
+     "snd": 166,
+     "cap": "0x0600"
+    },
+    "note": "state 9; vx=-6.0; cap=$0600; +3 bit 0 clear, bit 1 set; Y speed untouched"
+   },
+   {
+    "mechanism": "setter $4849 (left probe), HL=$0600",
+    "before": {
+     "cur": 10,
+     "req": 10,
+     "f3": 3,
+     "vx": "0x0123",
+     "vy": "0x0100",
+     "fl22": 2,
+     "d448": 85,
+     "cap": "0x0555"
+    },
+    "after": {
+     "cur": 10,
+     "req": 9,
+     "f3": 2,
+     "f4": 0,
+     "vx": "0x0600",
+     "vy": "0x0100",
+     "fl22": 0,
+     "d448": 85,
+     "snd": 166,
+     "cap": "0x0600"
+    },
+    "note": "state 9; vx=+6.0; cap=$0600"
+   },
+   {
+    "mechanism": "type $26 fixed strong (parameter $00) $82AF",
+    "before": {
+     "cur": 10,
+     "req": 10,
+     "f3": 3,
+     "vx": "0x0123",
+     "vy": "0x0100",
+     "fl22": 2,
+     "d448": 85,
+     "cap": "0x0555"
+    },
+    "after": {
+     "cur": 10,
+     "req": 11,
+     "f3": 1,
+     "f4": 0,
+     "vx": "0x0123",
+     "vy": "0xF8A0",
+     "fl22": 0,
+     "d448": 255,
+     "snd": 166,
+     "cap": "0x0555"
+    },
+    "note": "vx and cap untouched; state $0B; vy -7.375 / -5.0; D448 $FF / 0"
+   },
+   {
+    "mechanism": "type $26 fixed weak (parameter $01) $82AF",
+    "before": {
+     "cur": 10,
+     "req": 10,
+     "f3": 3,
+     "vx": "0x0123",
+     "vy": "0x0100",
+     "fl22": 2,
+     "d448": 85,
+     "cap": "0x0555"
+    },
+    "after": {
+     "cur": 10,
+     "req": 11,
+     "f3": 1,
+     "f4": 0,
+     "vx": "0x0123",
+     "vy": "0xFB00",
+     "fl22": 0,
+     "d448": 0,
+     "snd": 166,
+     "cap": "0x0555"
+    },
+    "note": "vx and cap untouched; state $0B; vy -7.375 / -5.0; D448 $FF / 0"
+   },
+   {
+    "mechanism": "setter $480C with negative Y speed",
+    "before": {
+     "cur": 10,
+     "req": 10,
+     "f3": 3,
+     "vx": "0x0123",
+     "vy": "0xFF00",
+     "fl22": 2,
+     "d448": 85,
+     "cap": "0x0555"
+    },
+    "after": {
+     "cur": 10,
+     "req": 10,
+     "f3": 3,
+     "f4": 0,
+     "vx": "0x0123",
+     "vy": "0xFF00",
+     "fl22": 2,
+     "d448": 85,
+     "snd": 0,
+     "cap": "0x0555"
+    },
+    "note": "rejected: no field changes"
+   },
+   {
+    "mechanism": "setter $482D with negative Y speed",
+    "before": {
+     "cur": 10,
+     "req": 10,
+     "f3": 3,
+     "vx": "0x0123",
+     "vy": "0xFF00",
+     "fl22": 2,
+     "d448": 85,
+     "cap": "0x0555"
+    },
+    "after": {
+     "cur": 10,
+     "req": 10,
+     "f3": 3,
+     "f4": 0,
+     "vx": "0x0123",
+     "vy": "0xFF00",
+     "fl22": 2,
+     "d448": 85,
+     "snd": 0,
+     "cap": "0x0555"
+    },
+    "note": "rejected: no field changes"
+   },
+   {
+    "mechanism": "setter $4868 with negative Y speed",
+    "before": {
+     "cur": 10,
+     "req": 10,
+     "f3": 3,
+     "vx": "0x0123",
+     "vy": "0xFF00",
+     "fl22": 2,
+     "d448": 85,
+     "cap": "0x0555"
+    },
+    "after": {
+     "cur": 10,
+     "req": 9,
+     "f3": 2,
+     "f4": 0,
+     "vx": "0xFA00",
+     "vy": "0xFF00",
+     "fl22": 0,
+     "d448": 85,
+     "snd": 166,
+     "cap": "0x0600"
+    },
+    "note": "NOT gated: horizontal springs launch regardless of Y speed"
+   }
+  ],
+  "summary": {
+   "$480C": "request $0B; vy = HL (unconditional: not additive, not clamped, independent of incoming speed and of the spring strength path); +3 bit 0 set, bit 1 CLEAR; +$22 bit 1 (floor) cleared; vx, facing, speed cap untouched; rejected (nothing written) when the Y speed is negative",
+   "$482D": "request $1C; vy = HL; +3 bits 0 AND 1 set (airborne + rolling/attack); floor cleared; vx and facing are written by the caller $6A90 before the gate; rejected when the Y speed is negative",
+   "$4849/$4868": "request 9 (rolling); vx = +-6.0 and speed cap $D373 = $0600; +3 bit 0 CLEAR, bit 1 set (grounded roll); floor flag cleared; Y speed untouched; no Y-speed gate",
+   "position": "no spring snaps Sonic's position beyond the ordinary terrain projection that precedes it; the type $26 span form moves the OBJECT X to playerX & $FFF0"
+  }
+ },
+ "attack_state": {
+  "evidence": "CONTROLLED ROUTINE RESULT",
+  "cases": 17,
+  "type_27_$5F3D_converts_by_D503": {
+   "0x00": false,
+   "0x01": false,
+   "0x02": true,
+   "0x03": true,
+   "0x41": false,
+   "0x81": false,
+   "0x83": true,
+   "0xC3": true
+  },
+  "type_27_converts_with_D532_6": true,
+  "type_21_$B2B2_tail": {
+   "D503=0_above": {
+    "object_type_after": "0x21",
+    "converted_to_0F": false,
+    "damage_request_D3B0": 0,
+    "player_requested_state": "0x0B",
+    "vy": "0xF940",
+    "d448": "0xFF"
+   },
+   "D503=0_beside": {
+    "object_type_after": "0x21",
+    "converted_to_0F": false,
+    "damage_request_D3B0": 255,
+    "player_requested_state": "0x05",
+    "vy": "0x0000",
+    "d448": "0x55"
+   },
+   "D503=1_above": {
+    "object_type_after": "0x21",
+    "converted_to_0F": false,
+    "damage_request_D3B0": 0,
+    "player_requested_state": "0x0B",
+    "vy": "0xF940",
+    "d448": "0xFF"
+   },
+   "D503=1_beside": {
+    "object_type_after": "0x21",
+    "converted_to_0F": false,
+    "damage_request_D3B0": 255,
+    "player_requested_state": "0x05",
+    "vy": "0x0000",
+    "d448": "0x55"
+   },
+   "D503=2_above": {
+    "object_type_after": "0x21",
+    "converted_to_0F": false,
+    "damage_request_D3B0": 0,
+    "player_requested_state": "0x0B",
+    "vy": "0xF940",
+    "d448": "0xFF"
+   },
+   "D503=2_beside": {
+    "object_type_after": "0x0F",
+    "converted_to_0F": true,
+    "damage_request_D3B0": 0,
+    "player_requested_state": "0x05",
+    "vy": "0x0000",
+    "d448": "0x55"
+   },
+   "D503=3_above": {
+    "object_type_after": "0x21",
+    "converted_to_0F": false,
+    "damage_request_D3B0": 0,
+    "player_requested_state": "0x0B",
+    "vy": "0xF940",
+    "d448": "0xFF"
+   },
+   "D503=3_beside": {
+    "object_type_after": "0x0F",
+    "converted_to_0F": true,
+    "damage_request_D3B0": 0,
+    "player_requested_state": "0x05",
+    "vy": "0x0000",
+    "d448": "0x55"
+   }
+  },
+  "rule": "badnik callbacks test the player's movement flag $D503 bit 1 (the rolling/attack posture) - and for types $27/$21/$50 also power-up $D532 == 6 - never the player state number and never 'airborne' ($D503 bit 0); type $21 additionally resolves top contact (objectY - 4 >= playerY) as a stomp bounce BEFORE the attack test"
+ },
+ "death_boundary": {
+  "evidence": "CONTROLLED ROUTINE RESULT",
+  "routine": "$401A (called from $3FEF every shared-movement update)",
+  "rows": [
+   {
+    "screen_y_$D51C": -300,
+    "died": false
+   },
+   {
+    "screen_y_$D51C": -1,
+    "died": false
+   },
+   {
+    "screen_y_$D51C": 0,
+    "died": false
+   },
+   {
+    "screen_y_$D51C": 192,
+    "died": false
+   },
+   {
+    "screen_y_$D51C": 207,
+    "died": false
+   },
+   {
+    "screen_y_$D51C": 208,
+    "died": true
+   },
+   {
+    "screen_y_$D51C": 209,
+    "died": true
+   },
+   {
+    "screen_y_$D51C": 215,
+    "died": true
+   },
+   {
+    "screen_y_$D51C": 216,
+    "died": true
+   },
+   {
+    "screen_y_$D51C": 400,
+    "died": true
+   },
+   {
+    "screen_y_$D51C": 32767,
+    "died": true
+   }
+  ],
+  "first_fatal_screen_y_in_sample": 208,
+  "rule": "death ($4984: state $1F, vy -5.0, $D293 bit 2) iff signed screen Y ($D51C = playerY - cameraY, computed by $3FC8) is non-negative and >= $D0 (208); negative values (above the camera) are never fatal; the dying-state check at $3C09 uses $D8"
+ },
+ "emulated_flights": {
+  "evidence": "EMULATED ORIGINAL FRAME",
+  "method": "THZ1 booted in tools/sms_frame_harness.py, Sonic teleported with the camera, spring objects force-created ($D440 = 0); PC hook at the player callback entry $5E91 records +$01,+$02,+$03,speeds,flags,$D448,$D373",
+  "rows": [
+   {
+    "case": "type26_strong_(688,864)",
+    "start": [
+     688,
+     846
+    ],
+    "segments": [
+     {
+      "update": 0,
+      "state": "0x01",
+      "f3": 0,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 688,
+      "y": 846,
+      "vx": 0,
+      "vy": 256,
+      "floor_flag": true,
+      "updates": 4
+     },
+     {
+      "update": 4,
+      "state": "0x0B",
+      "f3": 1,
+      "d448": "0xFF",
+      "cap": "0x0400",
+      "x": 688,
+      "y": 846,
+      "vx": 0,
+      "vy": -1888,
+      "floor_flag": false,
+      "updates": 79
+     },
+     {
+      "update": 83,
+      "state": "0x0E",
+      "f3": 1,
+      "d448": "0xFF",
+      "cap": "0x0400",
+      "x": 688,
+      "y": 559,
+      "vx": 0,
+      "vy": 256,
+      "floor_flag": false,
+      "updates": 15
+     },
+     {
+      "update": 98,
+      "state": "0x05",
+      "f3": 0,
+      "d448": "0xFF",
+      "cap": "0x0400",
+      "x": 688,
+      "y": 590,
+      "vx": 0,
+      "vy": 976,
+      "floor_flag": true,
+      "updates": 1
+     },
+     {
+      "update": 99,
+      "state": "0x01",
+      "f3": 0,
+      "d448": "0xFF",
+      "cap": "0x0400",
+      "x": 688,
+      "y": 590,
+      "vx": 0,
+      "vy": 1792,
+      "floor_flag": true,
+      "updates": 21
+     }
+    ]
+   },
+   {
+    "case": "type26_weak_(1912,864)",
+    "start": [
+     1912,
+     846
+    ],
+    "segments": [
+     {
+      "update": 0,
+      "state": "0x01",
+      "f3": 0,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 1912,
+      "y": 846,
+      "vx": 0,
+      "vy": 256,
+      "floor_flag": true,
+      "updates": 4
+     },
+     {
+      "update": 4,
+      "state": "0x0B",
+      "f3": 1,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 1912,
+      "y": 846,
+      "vx": 0,
+      "vy": -1280,
+      "floor_flag": false,
+      "updates": 29
+     },
+     {
+      "update": 33,
+      "state": "0x0E",
+      "f3": 1,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 1912,
+      "y": 742,
+      "vx": 0,
+      "vy": 256,
+      "floor_flag": false,
+      "updates": 29
+     },
+     {
+      "update": 62,
+      "state": "0x0B",
+      "f3": 1,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 1912,
+      "y": 846,
+      "vx": 0,
+      "vy": -1280,
+      "floor_flag": false,
+      "updates": 7
+     }
+    ]
+   },
+   {
+    "case": "type26_span_8A_(1296,608)",
+    "start": [
+     1300,
+     590
+    ],
+    "segments": [
+     {
+      "update": 0,
+      "state": "0x01",
+      "f3": 0,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 1300,
+      "y": 590,
+      "vx": 0,
+      "vy": 256,
+      "floor_flag": true,
+      "updates": 4
+     },
+     {
+      "update": 4,
+      "state": "0x0B",
+      "f3": 1,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 1300,
+      "y": 590,
+      "vx": 0,
+      "vy": -1280,
+      "floor_flag": false,
+      "updates": 29
+     },
+     {
+      "update": 33,
+      "state": "0x0E",
+      "f3": 1,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 1300,
+      "y": 486,
+      "vx": 0,
+      "vy": 256,
+      "floor_flag": false,
+      "updates": 29
+     },
+     {
+      "update": 62,
+      "state": "0x05",
+      "f3": 0,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 1300,
+      "y": 590,
+      "vx": 0,
+      "vy": 1648,
+      "floor_flag": true,
+      "updates": 1
+     },
+     {
+      "update": 63,
+      "state": "0x0B",
+      "f3": 1,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 1300,
+      "y": 590,
+      "vx": 0,
+      "vy": -1280,
+      "floor_flag": false,
+      "updates": 7
+     }
+    ]
+   },
+   {
+    "case": "terrain_upright_(928,640)",
+    "start": [
+     944,
+     596
+    ],
+    "segments": [
+     {
+      "update": 0,
+      "state": "0x01",
+      "f3": 0,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 944,
+      "y": 596,
+      "vx": 0,
+      "vy": 256,
+      "floor_flag": true,
+      "updates": 1
+     },
+     {
+      "update": 1,
+      "state": "0x0E",
+      "f3": 1,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 944,
+      "y": 603,
+      "vx": 0,
+      "vy": 256,
+      "floor_flag": false,
+      "updates": 15
+     },
+     {
+      "update": 16,
+      "state": "0x0B",
+      "f3": 1,
+      "d448": "0xFF",
+      "cap": "0x0400",
+      "x": 944,
+      "y": 638,
+      "vx": 0,
+      "vy": -1920,
+      "floor_flag": false,
+      "updates": 80
+     },
+     {
+      "update": 96,
+      "state": "0x0E",
+      "f3": 1,
+      "d448": "0xFF",
+      "cap": "0x0400",
+      "x": 944,
+      "y": 342,
+      "vx": 0,
+      "vy": 256,
+      "floor_flag": false,
+      "updates": 24
+     }
+    ]
+   },
+   {
+    "case": "terrain_diagonal_right_(2464,256)",
+    "start": [
+     2470,
+     222
+    ],
+    "segments": [
+     {
+      "update": 0,
+      "state": "0x01",
+      "f3": 0,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 2470,
+      "y": 222,
+      "vx": 0,
+      "vy": 256,
+      "floor_flag": true,
+      "updates": 1
+     },
+     {
+      "update": 1,
+      "state": "0x0E",
+      "f3": 1,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 2470,
+      "y": 229,
+      "vx": 0,
+      "vy": 256,
+      "floor_flag": false,
+      "updates": 12
+     },
+     {
+      "update": 13,
+      "state": "0x1C",
+      "f3": 3,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 2472,
+      "y": 254,
+      "vx": 1024,
+      "vy": -1792,
+      "floor_flag": false,
+      "updates": 38
+     },
+     {
+      "update": 51,
+      "state": "0x0E",
+      "f3": 1,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 2624,
+      "y": 127,
+      "vx": 1024,
+      "vy": 256,
+      "floor_flag": false,
+      "updates": 67
+     }
+    ]
+   },
+   {
+    "case": "terrain_diagonal_left_(1664,512)",
+    "start": [
+     1688,
+     478
+    ],
+    "segments": [
+     {
+      "update": 0,
+      "state": "0x01",
+      "f3": 0,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 1688,
+      "y": 478,
+      "vx": 0,
+      "vy": 256,
+      "floor_flag": true,
+      "updates": 1
+     },
+     {
+      "update": 1,
+      "state": "0x0E",
+      "f3": 1,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 1688,
+      "y": 485,
+      "vx": 0,
+      "vy": 256,
+      "floor_flag": false,
+      "updates": 12
+     },
+     {
+      "update": 13,
+      "state": "0x1C",
+      "f3": 3,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 1687,
+      "y": 510,
+      "vx": -1024,
+      "vy": -1792,
+      "floor_flag": false,
+      "updates": 38
+     },
+     {
+      "update": 51,
+      "state": "0x0E",
+      "f3": 1,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 1544,
+      "y": 383,
+      "vx": 0,
+      "vy": 256,
+      "floor_flag": false,
+      "updates": 14
+     },
+     {
+      "update": 65,
+      "state": "0x1C",
+      "f3": 3,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 1544,
+      "y": 414,
+      "vx": 1024,
+      "vy": -1792,
+      "floor_flag": false,
+      "updates": 5
+     }
+    ]
+   },
+   {
+    "case": "terrain_horizontal_(3200,832)_run_left",
+    "start": [
+     3262,
+     790
+    ],
+    "segments": [
+     {
+      "update": 0,
+      "state": "0x01",
+      "f3": 0,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 3262,
+      "y": 790,
+      "vx": 0,
+      "vy": 256,
+      "floor_flag": true,
+      "updates": 1
+     },
+     {
+      "update": 1,
+      "state": "0x0E",
+      "f3": 1,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 3262,
+      "y": 797,
+      "vx": 0,
+      "vy": 256,
+      "floor_flag": false,
+      "updates": 19
+     },
+     {
+      "update": 20,
+      "state": "0x05",
+      "f3": 0,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 3245,
+      "y": 846,
+      "vx": -368,
+      "vy": 1168,
+      "floor_flag": true,
+      "updates": 12
+     },
+     {
+      "update": 32,
+      "state": "0x09",
+      "f3": 2,
+      "d448": "0x00",
+      "cap": "0x0600",
+      "x": 3224,
+      "y": 846,
+      "vx": 1536,
+      "vy": 1792,
+      "floor_flag": false,
+      "updates": 1
+     },
+     {
+      "update": 33,
+      "state": "0x07",
+      "f3": 0,
+      "d448": "0x00",
+      "cap": "0x0600",
+      "x": 3230,
+      "y": 846,
+      "vx": 1520,
+      "vy": 1792,
+      "floor_flag": true,
+      "updates": 42
+     },
+     {
+      "update": 75,
+      "state": "0x05",
+      "f3": 0,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 3364,
+      "y": 839,
+      "vx": -74,
+      "vy": 2304,
+      "floor_flag": true,
+      "updates": 12
+     }
+    ]
+   },
+   {
+    "case": "normal_jump_run_then_jump",
+    "start": [
+     600,
+     600
+    ],
+    "segments": [
+     {
+      "update": 0,
+      "state": "0x01",
+      "f3": 0,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 600,
+      "y": 600,
+      "vx": 0,
+      "vy": 256,
+      "floor_flag": true,
+      "updates": 2
+     },
+     {
+      "update": 2,
+      "state": "0x05",
+      "f3": 0,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 600,
+      "y": 590,
+      "vx": 0,
+      "vy": 1792,
+      "floor_flag": true,
+      "updates": 59
+     },
+     {
+      "update": 61,
+      "state": "0x0A",
+      "f3": 3,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 725,
+      "y": 589,
+      "vx": 1008,
+      "vy": -1088,
+      "floor_flag": false,
+      "updates": 41
+     }
+    ]
+   },
+   {
+    "case": "roll_run_then_down",
+    "start": [
+     600,
+     600
+    ],
+    "segments": [
+     {
+      "update": 0,
+      "state": "0x01",
+      "f3": 0,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 600,
+      "y": 600,
+      "vx": 0,
+      "vy": 256,
+      "floor_flag": true,
+      "updates": 2
+     },
+     {
+      "update": 2,
+      "state": "0x05",
+      "f3": 0,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 600,
+      "y": 590,
+      "vx": 0,
+      "vy": 1792,
+      "floor_flag": true,
+      "updates": 59
+     },
+     {
+      "update": 61,
+      "state": "0x09",
+      "f3": 2,
+      "d448": "0x00",
+      "cap": "0x0600",
+      "x": 725,
+      "y": 590,
+      "vx": 1008,
+      "vy": 1792,
+      "floor_flag": true,
+      "updates": 39
+     },
+     {
+      "update": 100,
+      "state": "0x0A",
+      "f3": 3,
+      "d448": "0x00",
+      "cap": "0x0600",
+      "x": 866,
+      "y": 597,
+      "vx": 852,
+      "vy": 0,
+      "floor_flag": false,
+      "updates": 8
+     }
+    ]
+   },
+   {
+    "case": "jump_into_terrain_upright_(928,640)",
+    "start": [
+     600,
+     600
+    ],
+    "segments": [
+     {
+      "update": 0,
+      "state": "0x01",
+      "f3": 0,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 600,
+      "y": 600,
+      "vx": 0,
+      "vy": 256,
+      "floor_flag": true,
+      "updates": 2
+     },
+     {
+      "update": 2,
+      "state": "0x05",
+      "f3": 0,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 600,
+      "y": 590,
+      "vx": 0,
+      "vy": 1792,
+      "floor_flag": true,
+      "updates": 59
+     },
+     {
+      "update": 61,
+      "state": "0x0A",
+      "f3": 3,
+      "d448": "0x00",
+      "cap": "0x0400",
+      "x": 725,
+      "y": 589,
+      "vx": 1008,
+      "vy": -1088,
+      "floor_flag": false,
+      "updates": 55
+     },
+     {
+      "update": 116,
+      "state": "0x0B",
+      "f3": 1,
+      "d448": "0xFF",
+      "cap": "0x0400",
+      "x": 945,
+      "y": 638,
+      "vx": 1024,
+      "vy": -1920,
+      "floor_flag": false,
+      "updates": 15
+     }
+    ]
+   }
+  ],
+  "flag_reading": "f3 = $D503: bit0 airborne, bit1 rolling/attack posture. Spring flights: upright ($0B/$0E) f3=1 (NOT attacking); diagonal $1C f3=3 (attacking) until the apex request $0E clears bit 1; horizontal state 9 f3=2 (attacking, grounded roll); normal jump $0A f3=3; roll 9 f3=2; a jump (f3=3) that lands on the upright spring becomes $0B with f3=1 (the spring clears the attack posture)"
+ },
+ "emulated_placements": {
+  "evidence": "EMULATED ORIGINAL FRAME",
+  "rows": [
+   {
+    "act": "thz1",
+    "kind": "type26",
+    "world": [
+     688,
+     864
+    ],
+    "parameter": "0x00",
+    "launched": true,
+    "d448": "0xFF",
+    "vy": -7.375,
+    "updates_in_state_0b": 79,
+    "start_y": 846,
+    "apex_y": 559,
+    "rise": 287,
+    "f3_in_flight": [
+     1
+    ]
+   },
+   {
+    "act": "thz1",
+    "kind": "type26",
+    "world": [
+     3568,
+     768
+    ],
+    "parameter": "0x00",
+    "launched": true,
+    "d448": "0xFF",
+    "vy": -7.375,
+    "updates_in_state_0b": 79,
+    "start_y": 750,
+    "apex_y": 463,
+    "rise": 287,
+    "f3_in_flight": [
+     1
+    ]
+   },
+   {
+    "act": "thz1",
+    "kind": "type26",
+    "world": [
+     1296,
+     608
+    ],
+    "parameter": "0x8A",
+    "launched": true,
+    "d448": "0x00",
+    "vy": -5.0,
+    "updates_in_state_0b": 29,
+    "start_y": 590,
+    "apex_y": 486,
+    "rise": 104,
+    "f3_in_flight": [
+     1
+    ]
+   },
+   {
+    "act": "thz1",
+    "kind": "type26",
+    "world": [
+     1912,
+     864
+    ],
+    "parameter": "0x01",
+    "launched": true,
+    "d448": "0x00",
+    "vy": -5.0,
+    "updates_in_state_0b": 29,
+    "start_y": 846,
+    "apex_y": 742,
+    "rise": 104,
+    "f3_in_flight": [
+     1
+    ]
+   },
+   {
+    "act": "thz1",
+    "kind": "diagonal_right_launch",
+    "block": "0x36",
+    "world": [
+     2464,
+     256
+    ],
+    "launched": true,
+    "state": "0x1C",
+    "d448": "0x00",
+    "vx": 4.0,
+    "vy": -7.0,
+    "updates_in_state": 38,
+    "start_y": 254,
+    "apex_y_within_flight": 127,
+    "min_screen_y": 74,
+    "died": false
+   },
+   {
+    "act": "thz1",
+    "kind": "diagonal_right_launch",
+    "block": "0x36",
+    "world": [
+     2976,
+     352
+    ],
+    "launched": true,
+    "state": "0x1C",
+    "d448": "0x00",
+    "vx": 4.0,
+    "vy": -7.0,
+    "updates_in_state": 38,
+    "start_y": 350,
+    "apex_y_within_flight": 223,
+    "min_screen_y": 74,
+    "died": false
+   },
+   {
+    "act": "thz1",
+    "kind": "diagonal_right_launch",
+    "block": "0x36",
+    "world": [
+     1536,
+     416
+    ],
+    "launched": true,
+    "state": "0x1C",
+    "d448": "0x00",
+    "vx": 4.0,
+    "vy": -7.0,
+    "updates_in_state": 38,
+    "start_y": 414,
+    "apex_y_within_flight": 287,
+    "min_screen_y": 74,
+    "died": false
+   },
+   {
+    "act": "thz1",
+    "kind": "diagonal_left_launch",
+    "block": "0x38",
+    "world": [
+     1664,
+     512
+    ],
+    "launched": true,
+    "state": "0x1C",
+    "d448": "0x00",
+    "vx": -4.0,
+    "vy": -7.0,
+    "updates_in_state": 38,
+    "start_y": 510,
+    "apex_y_within_flight": 300,
+    "min_screen_y": 74,
+    "died": false
+   },
+   {
+    "act": "thz1",
+    "kind": "upright",
+    "block": "0x30",
+    "world": [
+     928,
+     640
+    ],
+    "launched": true,
+    "state": "0x0B",
+    "d448": "0xFF",
+    "vx": 0.0,
+    "vy": -7.5,
+    "updates_in_state": 80,
+    "start_y": 638,
+    "apex_y_within_flight": 342,
+    "min_screen_y": 73,
+    "died": false
+   },
+   {
+    "act": "thz1",
+    "kind": "diagonal_left_launch",
+    "block": "0x38",
+    "world": [
+     1152,
+     704
+    ],
+    "launched": true,
+    "state": "0x1C",
+    "d448": "0x00",
+    "vx": -4.0,
+    "vy": -7.0,
+    "updates_in_state": 38,
+    "start_y": 702,
+    "apex_y_within_flight": 519,
+    "min_screen_y": 73,
+    "died": false
+   },
+   {
+    "act": "thz1",
+    "kind": "diagonal_right_launch",
+    "block": "0x36",
+    "world": [
+     1056,
+     768
+    ],
+    "launched": true,
+    "state": "0x1C",
+    "d448": "0x00",
+    "vx": 4.0,
+    "vy": -7.0,
+    "updates_in_state": 38,
+    "start_y": 766,
+    "apex_y_within_flight": 608,
+    "min_screen_y": 74,
+    "died": false
+   },
+   {
+    "act": "thz1",
+    "kind": "upright",
+    "block": "0x31",
+    "world": [
+     2112,
+     832
+    ],
+    "launched": true,
+    "state": "0x0B",
+    "d448": "0xFF",
+    "vx": 0.0,
+    "vy": -7.5,
+    "updates_in_state": 62,
+    "start_y": 830,
+    "apex_y_within_flight": 550,
+    "min_screen_y": 73,
+    "died": false
+   },
+   {
+    "act": "thz2",
+    "kind": "type26",
+    "world": [
+     864,
+     896
+    ],
+    "parameter": "0x00",
+    "launched": true,
+    "d448": "0xFF",
+    "vy": -7.375,
+    "updates_in_state_0b": 79,
+    "start_y": 878,
+    "apex_y": 591,
+    "rise": 287,
+    "f3_in_flight": [
+     1
+    ]
+   },
+   {
+    "act": "thz2",
+    "kind": "type26",
+    "world": [
+     960,
+     896
+    ],
+    "parameter": "0x00",
+    "launched": true,
+    "d448": "0xFF",
+    "vy": -7.375,
+    "updates_in_state_0b": 79,
+    "start_y": 878,
+    "apex_y": 591,
+    "rise": 287,
+    "f3_in_flight": [
+     1
+    ]
+   },
+   {
+    "act": "thz2",
+    "kind": "type26",
+    "world": [
+     1056,
+     896
+    ],
+    "parameter": "0x00",
+    "launched": true,
+    "d448": "0xFF",
+    "vy": -7.375,
+    "updates_in_state_0b": 79,
+    "start_y": 878,
+    "apex_y": 591,
+    "rise": 287,
+    "f3_in_flight": [
+     1
+    ]
+   },
+   {
+    "act": "thz2",
+    "kind": "type26",
+    "world": [
+     2064,
+     544
+    ],
+    "parameter": "0x00",
+    "launched": true,
+    "d448": "0xFF",
+    "vy": -7.375,
+    "updates_in_state_0b": 36,
+    "start_y": 526,
+    "apex_y": 326,
+    "rise": 200,
+    "f3_in_flight": [
+     1
+    ]
+   },
+   {
+    "act": "thz2",
+    "kind": "type26",
+    "world": [
+     3200,
+     896
+    ],
+    "parameter": "0x00",
+    "launched": true,
+    "d448": "0xFF",
+    "vy": -7.375,
+    "updates_in_state_0b": 79,
+    "start_y": 878,
+    "apex_y": 591,
+    "rise": 287,
+    "f3_in_flight": [
+     1
+    ]
+   },
+   {
+    "act": "thz2",
+    "kind": "type26",
+    "world": [
+     3296,
+     896
+    ],
+    "parameter": "0x00",
+    "launched": true,
+    "d448": "0xFF",
+    "vy": -7.375,
+    "updates_in_state_0b": 79,
+    "start_y": 878,
+    "apex_y": 591,
+    "rise": 287,
+    "f3_in_flight": [
+     1
+    ]
+   },
+   {
+    "act": "thz2",
+    "kind": "type26",
+    "world": [
+     3392,
+     896
+    ],
+    "parameter": "0x00",
+    "launched": true,
+    "d448": "0xFF",
+    "vy": -7.375,
+    "updates_in_state_0b": 79,
+    "start_y": 878,
+    "apex_y": 591,
+    "rise": 287,
+    "f3_in_flight": [
+     1
+    ]
+   },
+   {
+    "act": "thz2",
+    "kind": "type26",
+    "world": [
+     3568,
+     896
+    ],
+    "parameter": "0x00",
+    "launched": true,
+    "d448": "0xFF",
+    "vy": -7.375,
+    "updates_in_state_0b": 79,
+    "start_y": 878,
+    "apex_y": 591,
+    "rise": 287,
+    "f3_in_flight": [
+     1
+    ]
+   },
+   {
+    "act": "thz2",
+    "kind": "type26",
+    "world": [
+     1504,
+     896
+    ],
+    "parameter": "0x88",
+    "launched": true,
+    "d448": "0x00",
+    "vy": -5.0,
+    "updates_in_state_0b": 54,
+    "start_y": 878,
+    "apex_y": 747,
+    "rise": 131,
+    "f3_in_flight": [
+     1
+    ]
+   },
+   {
+    "act": "thz2",
+    "kind": "type26",
+    "world": [
+     3472,
+     288
+    ],
+    "parameter": "0x01",
+    "launched": true,
+    "d448": "0x00",
+    "vy": -5.0,
+    "updates_in_state_0b": 54,
+    "start_y": 270,
+    "apex_y": 139,
+    "rise": 131,
+    "f3_in_flight": [
+     1
+    ]
+   },
+   {
+    "act": "thz2",
+    "kind": "diagonal_right_launch",
+    "block": "0x36",
+    "world": [
+     1184,
+     224
+    ],
+    "launched": true,
+    "state": "0x1C",
+    "d448": "0x00",
+    "vx": 4.0,
+    "vy": -7.0,
+    "updates_in_state": 38,
+    "start_y": 222,
+    "apex_y_within_flight": 95,
+    "min_screen_y": 74,
+    "died": false
+   },
+   {
+    "act": "thz2",
+    "kind": "diagonal_right_launch",
+    "block": "0x36",
+    "world": [
+     2656,
+     512
+    ],
+    "launched": true,
+    "state": "0x1C",
+    "d448": "0x00",
+    "vx": 4.0,
+    "vy": -7.0,
+    "updates_in_state": 38,
+    "start_y": 510,
+    "apex_y_within_flight": 383,
+    "min_screen_y": 74,
+    "died": false
+   },
+   {
+    "act": "thz2",
+    "kind": "upright",
+    "block": "0x30",
+    "world": [
+     2368,
+     672
+    ],
+    "launched": true,
+    "state": "0x0B",
+    "d448": "0xFF",
+    "vx": 0.0,
+    "vy": -7.5,
+    "updates_in_state": 80,
+    "start_y": 670,
+    "apex_y_within_flight": 374,
+    "min_screen_y": 73,
+    "died": false
+   },
+   {
+    "act": "thz2",
+    "kind": "upright",
+    "block": "0x30",
+    "world": [
+     3040,
+     704
+    ],
+    "launched": true,
+    "state": "0x0B",
+    "d448": "0xFF",
+    "vx": 0.0,
+    "vy": -7.5,
+    "updates_in_state": 80,
+    "start_y": 702,
+    "apex_y_within_flight": 406,
+    "min_screen_y": 73,
+    "died": false
+   },
+   {
+    "act": "thz3",
+    "kind": "type26",
+    "world": [
+     656,
+     384
+    ],
+    "parameter": "0x00",
+    "launched": true,
+    "d448": "0xFF",
+    "vy": -7.375,
+    "updates_in_state_0b": 29,
+    "start_y": 366,
+    "apex_y": 198,
+    "rise": 168,
+    "f3_in_flight": [
+     1
+    ]
+   },
+   {
+    "act": "thz3",
+    "kind": "type26",
+    "world": [
+     720,
+     384
+    ],
+    "parameter": "0x00",
+    "launched": true,
+    "d448": "0xFF",
+    "vy": -7.375,
+    "updates_in_state_0b": 29,
+    "start_y": 366,
+    "apex_y": 198,
+    "rise": 168,
+    "f3_in_flight": [
+     1
+    ]
+   },
+   {
+    "act": "thz3",
+    "kind": "type26",
+    "world": [
+     784,
+     384
+    ],
+    "parameter": "0x00",
+    "launched": true,
+    "d448": "0xFF",
+    "vy": -7.375,
+    "updates_in_state_0b": 29,
+    "start_y": 366,
+    "apex_y": 198,
+    "rise": 168,
+    "f3_in_flight": [
+     1
+    ]
+   },
+   {
+    "act": "thz3",
+    "kind": "type26",
+    "world": [
+     1456,
+     384
+    ],
+    "parameter": "0x00",
+    "launched": true,
+    "d448": "0xFF",
+    "vy": -7.375,
+    "updates_in_state_0b": 3,
+    "start_y": 366,
+    "apex_y": 335,
+    "rise": 31,
+    "f3_in_flight": [
+     1
+    ]
+   },
+   {
+    "act": "thz3",
+    "kind": "diagonal_right_launch",
+    "block": "0x36",
+    "world": [
+     1344,
+     160
+    ],
+    "launched": true,
+    "state": "0x1C",
+    "d448": "0x00",
+    "vx": 4.0,
+    "vy": -7.0,
+    "updates_in_state": 38,
+    "start_y": 158,
+    "apex_y_within_flight": 31,
+    "min_screen_y": 22,
+    "died": false
+   },
+   {
+    "act": "thz3",
+    "kind": "upright",
+    "block": "0x31",
+    "world": [
+     544,
+     352
+    ],
+    "launched": true,
+    "state": "0x0B",
+    "d448": "0xFF",
+    "vx": 0.0,
+    "vy": -7.5,
+    "updates_in_state": 80,
+    "start_y": 350,
+    "apex_y_within_flight": 54,
+    "min_screen_y": 44,
+    "died": false
+   },
+   {
+    "act": "thz3",
+    "kind": "upright",
+    "block": "0x31",
+    "world": [
+     1152,
+     352
+    ],
+    "launched": true,
+    "state": "0x0B",
+    "d448": "0xFF",
+    "vx": 0.0,
+    "vy": -7.5,
+    "updates_in_state": 80,
+    "start_y": 350,
+    "apex_y_within_flight": 54,
+    "min_screen_y": 44,
+    "died": false
+   }
+  ],
+  "note": "apex_y is the lowest world Y within the launch state plus 40 updates; a chain onto another spring can lift a later apex, so the first-launch apex is the comparable figure"
+ },
+ "emulated_horizontal": {
+  "evidence": "EMULATED ORIGINAL FRAME",
+  "rows": [
+   {
+    "act": "thz1",
+    "block": "0x33",
+    "cell": [
+     3200,
+     832
+    ],
+    "launched": true,
+    "start": [
+     3262,
+     792
+    ],
+    "vx": 6.0,
+    "cap": "0x0600",
+    "f3_low_bits": 2,
+    "d448_unchanged": true
+   },
+   {
+    "act": "thz2",
+    "block": "0x34",
+    "cell": [
+     3264,
+     256
+    ],
+    "launched": true,
+    "start": [
+     3202,
+     216
+    ],
+    "vx": -6.0,
+    "cap": "0x0600",
+    "f3_low_bits": 2,
+    "d448_unchanged": true
+   },
+   {
+    "act": "thz2",
+    "block": "0x34",
+    "cell": [
+     1856,
+     512
+    ],
+    "launched": true,
+    "start": [
+     1794,
+     472
+    ],
+    "vx": -6.0,
+    "cap": "0x0600",
+    "f3_low_bits": 2,
+    "d448_unchanged": true
+   },
+   {
+    "act": "thz2",
+    "block": "0x35",
+    "cell": [
+     3040,
+     864
+    ],
+    "launched": true,
+    "start": [
+     2978,
+     824
+    ],
+    "vx": -6.0,
+    "cap": "0x0600",
+    "f3_low_bits": 2,
+    "d448_unchanged": true
+   }
+  ]
+ },
+ "emulated_type26_cycle": {
+  "evidence": "EMULATED ORIGINAL FRAME",
+  "rows": {
+   "strong_(688,864)": {
+    "timeline": [
+     {
+      "frame": 0,
+      "requested_state": 0,
+      "object_y": 864,
+      "counter_1E": 0
+     },
+     {
+      "frame": 1,
+      "requested_state": 7,
+      "object_y": 876,
+      "counter_1E": 0
+     },
+     {
+      "frame": 3,
+      "requested_state": 1,
+      "object_y": 876,
+      "counter_1E": 28
+     },
+     {
+      "frame": 4,
+      "requested_state": 1,
+      "object_y": 869,
+      "counter_1E": 21
+     },
+     {
+      "frame": 5,
+      "requested_state": 1,
+      "object_y": 862,
+      "counter_1E": 14
+     },
+     {
+      "frame": 6,
+      "requested_state": 1,
+      "object_y": 855,
+      "counter_1E": 7
+     },
+     {
+      "frame": 7,
+      "requested_state": 1,
+      "object_y": 848,
+      "counter_1E": 0
+     },
+     {
+      "frame": 8,
+      "requested_state": 2,
+      "object_y": 848,
+      "counter_1E": 32
+     },
+     {
+      "frame": 41,
+      "requested_state": 5,
+      "object_y": 848,
+      "counter_1E": 255
+     },
+     {
+      "frame": 42,
+      "requested_state": 5,
+      "object_y": 855,
+      "counter_1E": 255
+     },
+     {
+      "frame": 43,
+      "requested_state": 5,
+      "object_y": 862,
+      "counter_1E": 255
+     },
+     {
+      "frame": 44,
+      "requested_state": 5,
+      "object_y": 869,
+      "counter_1E": 255
+     },
+     {
+      "frame": 45,
+      "requested_state": 7,
+      "object_y": 876,
+      "counter_1E": 255
+     },
+     {
+      "frame": 56,
+      "requested_state": 0,
+      "object_y": 864,
+      "counter_1E": 0
+     },
+     {
+      "frame": 57,
+      "requested_state": 7,
+      "object_y": 876,
+      "counter_1E": 0
+     }
+    ],
+    "launch_frame": 3,
+    "back_to_contact_state_frame": 45,
+    "retrigger_free_updates": 42
+   },
+   "weak_(1912,864)": {
+    "timeline": [
+     {
+      "frame": 0,
+      "requested_state": 0,
+      "object_y": 864,
+      "counter_1E": 0
+     },
+     {
+      "frame": 1,
+      "requested_state": 7,
+      "object_y": 876,
+      "counter_1E": 0
+     },
+     {
+      "frame": 3,
+      "requested_state": 3,
+      "object_y": 876,
+      "counter_1E": 28
+     },
+     {
+      "frame": 4,
+      "requested_state": 3,
+      "object_y": 869,
+      "counter_1E": 21
+     },
+     {
+      "frame": 5,
+      "requested_state": 3,
+      "object_y": 862,
+      "counter_1E": 14
+     },
+     {
+      "frame": 6,
+      "requested_state": 3,
+      "object_y": 855,
+      "counter_1E": 7
+     },
+     {
+      "frame": 7,
+      "requested_state": 3,
+      "object_y": 848,
+      "counter_1E": 0
+     },
+     {
+      "frame": 8,
+      "requested_state": 4,
+      "object_y": 848,
+      "counter_1E": 10
+     },
+     {
+      "frame": 19,
+      "requested_state": 6,
+      "object_y": 848,
+      "counter_1E": 255
+     },
+     {
+      "frame": 20,
+      "requested_state": 6,
+      "object_y": 855,
+      "counter_1E": 255
+     },
+     {
+      "frame": 21,
+      "requested_state": 6,
+      "object_y": 862,
+      "counter_1E": 255
+     },
+     {
+      "frame": 22,
+      "requested_state": 6,
+      "object_y": 869,
+      "counter_1E": 255
+     },
+     {
+      "frame": 23,
+      "requested_state": 7,
+      "object_y": 876,
+      "counter_1E": 255
+     },
+     {
+      "frame": 62,
+      "requested_state": 3,
+      "object_y": 876,
+      "counter_1E": 28
+     },
+     {
+      "frame": 63,
+      "requested_state": 3,
+      "object_y": 869,
+      "counter_1E": 21
+     },
+     {
+      "frame": 64,
+      "requested_state": 3,
+      "object_y": 862,
+      "counter_1E": 14
+     }
+    ],
+    "launch_frame": 3,
+    "back_to_contact_state_frame": 23,
+    "retrigger_free_updates": 20
+   }
+  }
+ },
+ "emulated_top_of_screen": {
+  "evidence": "EMULATED ORIGINAL FRAME",
+  "method": "THZ1, Sonic at (2470,120); Y speed forced to -8.0 on every player update for 200 updates (an artificial thrust far beyond any spring; the engine moves him to $0E)",
+  "rows": [
+   {
+    "update": 0,
+    "state": "0x0B",
+    "world_y_raw": 120,
+    "world_y_signed": 120,
+    "screen_y_signed": 112,
+    "camera_y": 20,
+    "life_lost_flag_D293_bit2": false
+   },
+   {
+    "update": 24,
+    "state": "0x0E",
+    "world_y_raw": 65483,
+    "world_y_signed": -53,
+    "screen_y_signed": -61,
+    "camera_y": 8,
+    "life_lost_flag_D293_bit2": false
+   },
+   {
+    "update": 48,
+    "state": "0x0E",
+    "world_y_raw": 65295,
+    "world_y_signed": -241,
+    "screen_y_signed": -249,
+    "camera_y": 8,
+    "life_lost_flag_D293_bit2": false
+   },
+   {
+    "update": 72,
+    "state": "0x0E",
+    "world_y_raw": 65108,
+    "world_y_signed": -428,
+    "screen_y_signed": -436,
+    "camera_y": 8,
+    "life_lost_flag_D293_bit2": false
+   },
+   {
+    "update": 96,
+    "state": "0x0E",
+    "world_y_raw": 64920,
+    "world_y_signed": -616,
+    "screen_y_signed": -624,
+    "camera_y": 8,
+    "life_lost_flag_D293_bit2": false
+   },
+   {
+    "update": 120,
+    "state": "0x0E",
+    "world_y_raw": 64733,
+    "world_y_signed": -803,
+    "screen_y_signed": -811,
+    "camera_y": 8,
+    "life_lost_flag_D293_bit2": false
+   },
+   {
+    "update": 144,
+    "state": "0x0E",
+    "world_y_raw": 64545,
+    "world_y_signed": -991,
+    "screen_y_signed": -999,
+    "camera_y": 8,
+    "life_lost_flag_D293_bit2": false
+   },
+   {
+    "update": 168,
+    "state": "0x0E",
+    "world_y_raw": 64358,
+    "world_y_signed": -1178,
+    "screen_y_signed": -1186,
+    "camera_y": 8,
+    "life_lost_flag_D293_bit2": false
+   },
+   {
+    "update": 192,
+    "state": "0x0E",
+    "world_y_raw": 64170,
+    "world_y_signed": -1366,
+    "screen_y_signed": -1374,
+    "camera_y": 8,
+    "life_lost_flag_D293_bit2": false
+   }
+  ],
+  "min_signed_world_y": -1420,
+  "died": false,
+  "camera_y_final": 8,
+  "reading": "the camera stops at its top limit (8); world Y wraps below zero as an unsigned 16-bit value; screen Y goes arbitrarily negative; no death, no clamp, no state change"
+ }
+}

@@ -158,15 +158,29 @@ function SCR_cc_ramp(cp_c, cp_previous_mod, cp_tile) {
         SCR_cc_roll(cp_c);
     }
 }
+// Terrain springs live in the terrain dispatch ($690B). The ROM never evaluates them in the loop states $0C/$0D/$13, the twist $22 or act-clear $20, and
+// state $11 blocks them (docs/spring-interaction-audit.md section 9; verification/verify_spring_interaction.js).
+function SCR_cc_terrain_spring_state(cp_state) {
+    return cp_state != 12 && cp_state != 13 && cp_state != 19 && cp_state != 32 && cp_state != 34;
+}
+// Upright (type 9, $6A75 -> $480C): floor flag, Y speed not negative (zero passes); X speed untouched, vy := -7.5, state $0B, attack posture CLEAR (D503 bit 1), D448 := $FF.
+// Diagonal (type $14, $6A90 -> $482D): floor flag; X speed, facing, D448 := 0 and the sound are written BEFORE the Y-speed gate; then vy := -7.0 (THZ, D297 = 0),
+//   state $1C, attack posture SET (bits 0 and 1).
+// Horizontal (type 10, side cores): no Y-speed or floor gate; vx := +-6.0, cap $0600, state 9, attack posture SET (bit 1), airborne bit clear; Y speed untouched.
 function SCR_cc_spring(cp_c, cp_kind, cp_tile) {
-    if (cp_c.state == 17) return;
+    if (cp_c.state == 17 || !SCR_cc_terrain_spring_state(cp_c.state)) return;
     if (cp_kind == 9 || cp_kind == 20) {
         if ((cp_c.bg & 2) == 0) return;
-        if (cp_kind == 20) cp_c.vx = cp_tile >= 56 ? -1024 : 1024;
+        if (cp_kind == 20) {
+            cp_c.vx = cp_tile >= 56 ? -1024 : 1024;
+            if (cp_tile >= 56) cp_c.player_flags |= 16; else cp_c.player_flags &= ~16; // facing bit (+$04 bit 4), set for left launches
+            cp_c.d448 = 0; cp_c.sound = 2;
+        }
         if (cp_c.vy < 0) return;
         cp_c.vy = cp_kind == 9 ? -1920 : -1792; // THZ, D297=0
         cp_c.next = cp_kind == 9 ? 11 : 28;
         cp_c.move = cp_kind == 9 ? ((cp_c.move | 1) & ~2) : (cp_c.move | 3);
+        if (cp_kind == 9) cp_c.d448 = 255;
     } else {
         cp_c.next = 9; cp_c.vx = cp_kind == 1 ? 1536 : -1536;
         cp_c.maximum = 1536; cp_c.move = (cp_c.move | 2) & ~1;

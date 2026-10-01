@@ -17,7 +17,7 @@ function SCR_chaos_core_attach(cp_p) {
 function SCR_chaos_core_publish(cp_p) {
     var cp_c = cp_p.chaosCore;
     cp_p.x = cp_c.xu/256;
-    cp_p.y = cp_c.yu/256+cp_p.chaosAnchorOffset;
+    cp_p.y = chaos_signed_yu(cp_c.yu)/256+cp_p.chaosAnchorOffset; // SIGNED: the core keeps Y as an unsigned 24-bit value; above world Y 0 it must not publish ~65535
     cp_p.chaosCoreLastX = cp_p.x; cp_p.chaosCoreLastY = cp_p.y;
     cp_p.chaosGrounded = (cp_c.contacts & 2) != 0 && (cp_c.move & 1) == 0;
     cp_p.chaosModifier = cp_c.modifier; cp_p.chaosPreviousFlags = cp_c.previous;
@@ -31,6 +31,9 @@ function SCR_chaos_core_publish(cp_p) {
     global.playerJumpSpring = !cp_state11 && (cp_c.next == 11 || cp_c.next == 28);
     global.playerSpinDash = !cp_state11 && cp_c.next == 15;
     global.playerFly = false;
+    // ROM attack posture ($D503 bit 1): the ONLY thing badnik routines read (never 'airborne'). global.playerJump above is the legacy (move & 3) approximation.
+    global.chaosAttackPosture = !cp_state11 && (cp_c.move & 2) != 0;
+    cp_p.chaosAttack = global.chaosAttackPosture;
 }
 function SCR_chaos_core_sprites(cp_p) {
     var cp_c = cp_p.chaosCore;
@@ -180,95 +183,7 @@ function SCR_chaos_adapter_end(cp_p) {
     cp_p.hspeed = 0; cp_p.vspeed = 0; cp_p.gravity = 0;
     cp_p.chaosCoreLastX = cp_p.x; cp_p.chaosCoreLastY = cp_p.y;
 }
-function SCR_chaos_object_spring(cp_p, cp_launch_y) {
-    if (!variable_instance_exists(cp_p,"chaosCore")) SCR_chaos_core_attach(cp_p);
-    var cp_c = cp_p.chaosCore;
-    if (cp_c.vy < 0 || cp_p.chaosLoopActive) return false;
-    // Bank 30 $82E7/$8410 supplies original signed 8.8 impulses.
-    // Terrain spring types DO NOT use this object adapter.
-    cp_c.vy = round(cp_launch_y*256); cp_c.next = 11; cp_c.move = (cp_c.move|1)&~2;
-    cp_c.bg &= ~2; cp_c.contacts &= ~2;
-    cp_p.chaosSupport = noone; cp_p.chaosGrounded = false;
-    cp_p.chaosSpringVisual = true;
-    with (cp_p) {
-        SCR_player_sprites(); sprite_index = SPR_player_jump;
-        image_index = 0; image_speed = 0; image_angle = 0;
-    }
-    return true;
-}
-
-function SCR_chaos_object_spring_contact(cp_o, cp_p, cp_trigger_x) {
-    if (!variable_instance_exists(cp_p,"chaosCore") || cp_p.chaosLoopActive) return false;
-    var cp_c = cp_p.chaosCore;
-    if (cp_c.vy < 0 || cp_c.next == 33) return false;
-    var cp_foot = cp_c.yu/256 + 18;
-    // $7825A first moves the object anchor down 12. State 7 then compares the
-    // player anchor with object Y-28, a six-pixel window. In foot coordinates
-    // that is layout Y-3 through layout Y+2, not the retraction base itself.
-    return abs(cp_p.x-cp_trigger_x) <= 12 &&
-        cp_foot >= cp_o.chaosLayoutY-3 && cp_foot <= cp_o.chaosLayoutY+2;
-}
-
-function SCR_chaos_object_spring_step(cp_o) {
-    var cp_p = instance_find(OBJ_player,0);
-    if (!instance_exists(cp_p) ||
-        (cp_p.object_index != OBJ_player_char && cp_p.object_index != OBJ_player_char_spin)) return;
-    var cp_trigger_x = cp_o.chaosBaseX;
-
-    // Parameter $8A: bit 7 selects state 8; low seven bits form a 16-pixel span.
-    // State 8 aligns the concealed spring beneath Sonic before requesting state 9.
-    if (cp_o.chaosState == 8) {
-        cp_o.chaosOffset = 0;
-        cp_o.chaosDrawX = cp_o.chaosBaseX;
-        if (cp_p.x >= cp_o.chaosBaseX && cp_p.x < cp_o.chaosBaseX+cp_o.chaosSpan) {
-            cp_trigger_x = floor(cp_p.x/16)*16;
-            if (SCR_chaos_object_spring_contact(cp_o,cp_p,cp_trigger_x)) {
-                cp_o.chaosDrawX = cp_trigger_x;
-                if (SCR_chaos_object_spring(cp_p,cp_o.launch_y)) {
-                    cp_o.chaosState = 3; cp_o.chaosTimer = 28;
-                    if (global.music == 1) audio_play_sound(SFX_sonic_spring,10,false);
-                }
-            }
-        }
-        return;
-    }
-
-    // State 7 is the fixed concealed/contact state used by parameters $00/$01.
-    if (cp_o.chaosState == 7) {
-        cp_o.chaosOffset = 0; cp_o.chaosDrawX = cp_o.chaosBaseX;
-        if (SCR_chaos_object_spring_contact(cp_o,cp_p,cp_o.chaosBaseX) &&
-            SCR_chaos_object_spring(cp_p,cp_o.launch_y)) {
-            cp_o.chaosState = (cp_o.chaosParameter == 1) ? 3 : 1;
-            cp_o.chaosTimer = 28;
-            if (global.music == 1) audio_play_sound(SFX_sonic_spring,10,false);
-        }
-        return;
-    }
-
-    // States 1/3 extend by seven pixels while subtracting seven from counter $1E.
-    if (cp_o.chaosState == 1 || cp_o.chaosState == 3) {
-        cp_o.chaosTimer -= 7;
-        if (cp_o.chaosTimer < 0) {
-            cp_o.chaosState = (cp_o.chaosState == 1) ? 2 : 4;
-            cp_o.chaosTimer = (cp_o.chaosState == 2) ? 32 : 10;
-        } else cp_o.chaosOffset += 7;
-        return;
-    }
-
-    // States 2/4 hold extended; state-script duration then selects retract 5/6.
-    if (cp_o.chaosState == 2 || cp_o.chaosState == 4) {
-        cp_o.chaosTimer--;
-        if (cp_o.chaosTimer < 0) cp_o.chaosState = (cp_o.chaosState == 2) ? 5 : 6;
-        return;
-    }
-
-    // States 5/6 retract in four seven-pixel steps and return to the saved state.
-    if (cp_o.chaosState == 5 || cp_o.chaosState == 6) {
-        cp_o.chaosOffset = max(0,cp_o.chaosOffset-7);
-        if (cp_o.chaosOffset == 0) cp_o.chaosState = cp_o.chaosRestState;
-    }
-}
-
+// Mapped type $26 spring logic lives in SCR_chaos_spring (recovered ROM model); only its drawing remains here.
 function SCR_chaos_object_spring_draw(cp_o) {
     if (cp_o.chaosOffset <= 0) return; // Original frame zero is concealed.
     var cp_cap_y = cp_o.chaosBaseY-cp_o.chaosOffset;
@@ -504,7 +419,9 @@ function SCR_chaos_spike_draw(cp_o) {
 
 function SCR_chaos_sample_damage() {
     if (place_meeting(x,y,OBJ_collision_death)) SCR_chaos_apply_hazard_damage(id);
-    if (y > room_height) { instance_change(OBJ_player_death,true); return; }
+    // Recovered death rule ($401A): fatal iff the SIGNED screen Y (anchor Y - camera Y) is >= $D0. Above the camera is never fatal. (Non-core objects keep the room test.)
+    var cp_fatal = variable_instance_exists(id,"chaosCore") ? chaos_vertical_death(chaosCore.yu, camera_get_view_y(view_camera[0])) : (y > room_height);
+    if (cp_fatal) { instance_change(OBJ_player_death,true); return; }
     if (place_meeting(x,y,OBJ_badniks) && !global.playerJump && !global.playerSpinDash)
         SCR_chaos_apply_hazard_damage(id);
 }

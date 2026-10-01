@@ -108,6 +108,8 @@ core_diff = subprocess.run(["git", "diff", "-U0", "HEAD", "--", "scripts/SCR_cha
 removed = [l[1:].strip() for l in core_diff.splitlines() if l.startswith("-") and not l.startswith("---")]
 # Act-clear task: SCR_cc_new gained two additive fields (camera_x, act_clear) on its last line; nothing else was removed.
 removed = [l for l in removed if l != "state11_anim_tick:0, state11_frame:56, hurt_ticks:0};"]
+# Spring milestone (docs/spring-interaction-audit.md): SCR_cc_spring gained the terrain-state gate; the diagonal vx write moved into a block that also writes facing/D448/sound before the Y-speed gate.
+removed = [l for l in removed if l not in ("if (cp_c.state == 17) return;", "if (cp_kind == 20) cp_c.vx = cp_tile >= 56 ? -1024 : 1024;")]
 assert removed == ["cp_kind == 13 ||", "if ((cp_kind == 5 && cp_s.tile != 61) || cp_kind == 13 ||",
                    "if (cp_kind == 5 || cp_kind == 13 || cp_kind == 19 || cp_kind == 20 || cp_kind == 21 || cp_kind == 28) {"] or     all("cp_kind == 13" in l for l in removed), removed
 
