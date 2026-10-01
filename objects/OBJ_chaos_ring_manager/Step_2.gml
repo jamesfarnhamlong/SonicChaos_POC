@@ -17,12 +17,19 @@ for (var cp_i=0; cp_i<chaosRingSourceCount; cp_i++) {
 // A collected placement remains occupied for the act. An uncollected record
 // may leave and re-enter the camera without losing availability, which is the
 // manager equivalent of original offscreen cleanup followed by recreation.
+// $617E strict proximity is measured between the ROM anchors (the player core's fixed integer X/Y and the record's canonical X/Y), never
+// the GameMaker instance position, sprite or mask.
+var cp_have_anchor = variable_instance_exists(cp_player,"chaosCore");
+if (!cp_have_anchor && (cp_player.object_index == OBJ_player_char || cp_player.object_index == OBJ_player_char_spin)) { SCR_chaos_core_attach(cp_player); cp_have_anchor = true; }
+var cp_anchor_x = cp_have_anchor ? floor(cp_player.chaosCore.xu/256) : 0;
+var cp_anchor_y = cp_have_anchor ? floor(cp_player.chaosCore.yu/256) : 0;
 for (var cp_t09=0; cp_t09<chaosType09SourceCount; cp_t09++) {
+    if (!cp_have_anchor) break;
     if (chaosType09Collected[cp_t09]) continue;
     var cp_t09_record = chaosType09Records[cp_t09];
     var cp_t09_parameter = cp_t09_record[3];
     if (cp_t09_parameter == 1 && (chaosRingGlobalFrame mod 2) != 0) continue;
-    if (abs(cp_player.x-cp_t09_record[1]) >= 12 || abs(cp_player.y-cp_t09_record[2]) >= 12) continue;
+    if (!chaos_ring_proximity(cp_anchor_x,cp_anchor_y,cp_t09_record[1],cp_t09_record[2])) continue;
 
     chaosType09Collected[cp_t09] = true;
     global.ring += 1;

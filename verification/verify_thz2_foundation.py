@@ -239,7 +239,7 @@ assert "#macro TYPE09_RENDER_X 1" in adapter and "#macro TYPE09_RENDER_Y 17" in 
 mgr_draw = (root / "objects/OBJ_chaos_ring_manager/Draw_0.gml").read_text()
 assert mgr_draw.count("TYPE09_RENDER_X") >= 1 and "chaos_is_thz2" not in mgr_draw
 mgr_step = (root / "objects/OBJ_chaos_ring_manager/Step_2.gml").read_text()
-assert "abs(cp_player.x-cp_t09_record[1]) >= 12" in mgr_step and "cp_t09_parameter == 1 && (chaosRingGlobalFrame mod 2) != 0" in mgr_step
+assert "chaos_ring_proximity(cp_anchor_x,cp_anchor_y,cp_t09_record[1],cp_t09_record[2])" in mgr_step and "cp_t09_parameter == 1 && (chaosRingGlobalFrame mod 2) != 0" in mgr_step
 assert "chaosType09SparkleTimer[cp_t09] > 32" in (root / "objects/OBJ_chaos_ring_manager/Step_0.gml").read_text()
 mgr_create = (root / "objects/OBJ_chaos_ring_manager/Create_0.gml").read_text()
 assert "SCR_chaos_thz2_terrain_rings()" in mgr_create and "SCR_chaos_thz2_type09()" in mgr_create

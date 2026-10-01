@@ -76,8 +76,7 @@ assert 'cp_t09_state != 1 && cp_t09_state != 2' in draw
 assert not re.search(r'cp_(world_)?[xy]\s*[+\-]=',draw)
 assert 'keyboard_check_pressed(vk_f8)' in step and 'keyboard_check_pressed(vk_f9)' in step
 assert 'global.ring += 1' in collect and 'OBJ_ring_stars' in collect
-assert 'abs(cp_player.x-cp_t09_record[1]) >= 12' in collect
-assert 'abs(cp_player.y-cp_t09_record[2]) >= 12' in collect
+assert 'chaos_ring_proximity(cp_anchor_x,cp_anchor_y,cp_t09_record[1],cp_t09_record[2])' in collect  # strict <12 on both ROM anchors (verify_ring_proximity.js)
 assert '(chaosRingGlobalFrame mod 2) != 0' in collect
 assert 'chaosType09State[cp_t09] = 2' in collect and 'chaosType09State[cp_t09] = -1' in collect
 assert 'chaosType09SparkleTimer[cp_t09] > 32' in step

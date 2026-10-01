@@ -1,0 +1,110 @@
+{
+ "source": "sonic-chaos-reference-work data/rom-cache/thz1/object-09.json (interaction, controlled_original_routine_fixtures.overlap_boundaries, layout_ring_relationship) @ 0f73ec0",
+ "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+ "interaction": {
+  "helper_cpu": "0x617E",
+  "boundary": "11 succeeds; 12 fails on either axis",
+  "sound_request": "0xBF",
+  "ring_counter": "$D29A packed BCD +1",
+  "score_effect": "none",
+  "placement_token_after_collection": 0
+ },
+ "overlap_boundaries": [
+  {
+   "parameter": "0x00",
+   "dx": 11,
+   "dy": 0,
+   "global_frame": 0,
+   "collected": true,
+   "requested_state": 2,
+   "object_type_after": "0x09",
+   "ring_counter_d29a_bcd": "0x10",
+   "sound_request": "0xBF"
+  },
+  {
+   "parameter": "0x00",
+   "dx": 12,
+   "dy": 0,
+   "global_frame": 0,
+   "collected": false,
+   "requested_state": 0,
+   "object_type_after": "0x09",
+   "ring_counter_d29a_bcd": "0x09",
+   "sound_request": "0x00"
+  },
+  {
+   "parameter": "0x00",
+   "dx": -11,
+   "dy": 0,
+   "global_frame": 0,
+   "collected": true,
+   "requested_state": 2,
+   "object_type_after": "0x09",
+   "ring_counter_d29a_bcd": "0x10",
+   "sound_request": "0xBF"
+  },
+  {
+   "parameter": "0x00",
+   "dx": -12,
+   "dy": 0,
+   "global_frame": 0,
+   "collected": false,
+   "requested_state": 0,
+   "object_type_after": "0x09",
+   "ring_counter_d29a_bcd": "0x09",
+   "sound_request": "0x00"
+  },
+  {
+   "parameter": "0x00",
+   "dx": 0,
+   "dy": 11,
+   "global_frame": 0,
+   "collected": true,
+   "requested_state": 2,
+   "object_type_after": "0x09",
+   "ring_counter_d29a_bcd": "0x10",
+   "sound_request": "0xBF"
+  },
+  {
+   "parameter": "0x00",
+   "dx": 0,
+   "dy": 12,
+   "global_frame": 0,
+   "collected": false,
+   "requested_state": 0,
+   "object_type_after": "0x09",
+   "ring_counter_d29a_bcd": "0x09",
+   "sound_request": "0x00"
+  },
+  {
+   "parameter": "0x00",
+   "dx": 0,
+   "dy": -11,
+   "global_frame": 0,
+   "collected": true,
+   "requested_state": 2,
+   "object_type_after": "0x09",
+   "ring_counter_d29a_bcd": "0x10",
+   "sound_request": "0xBF"
+  },
+  {
+   "parameter": "0x00",
+   "dx": 0,
+   "dy": -12,
+   "global_frame": 0,
+   "collected": false,
+   "requested_state": 0,
+   "object_type_after": "0x09",
+   "ring_counter_d29a_bcd": "0x09",
+   "sound_request": "0x00"
+  }
+ ],
+ "layout_ring_relationship": {
+  "same_resource_counter": true,
+  "same_source_population": false,
+  "type_09_generates_layout_rings": false,
+  "layout_population_count": 142,
+  "evidence": "separate surface-type-7 handler at $753E recognizes block IDs $40-$43; type-$09 callbacks never read layout cells"
+ },
+ "note": "Type $09 uses helper $617E: abs(objectX-playerX) < 12 AND abs(objectY-playerY) < 12 on the fixed integer anchors; no extents. Layout (terrain) rings are a separate population collected by the terrain top-probe handler $753E, NOT by this test."
+}

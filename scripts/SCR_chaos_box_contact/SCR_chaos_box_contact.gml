@@ -54,3 +54,10 @@ function SCR_chaos_box_projection(cp_bits, cp_px, cp_py, cp_ox, cp_oy, cp_pex, c
 function chaos_type27_contact(cp_px, cp_py, cp_ox, cp_oy) {
     return SCR_chaos_box_contact(cp_px, cp_py, cp_ox, cp_oy, 8, 24, 9, 14) != 0;
 }
+
+// Type $09 placed-ring collection ($617E, vectors $0380/$0383): strict proximity on the fixed integer anchors, no player or object extents:
+// abs(objectX - playerX) < 12 AND abs(objectY - playerY) < 12 (dx/dy 0..11 collect, 12 fails on either signed axis; POC_notes/rom-cache/object-09-proximity.json).
+// Layout (terrain) rings are a different source population ($753E terrain top probe) and do NOT use this test.
+function chaos_ring_proximity(cp_px, cp_py, cp_rx, cp_ry) {
+    return abs(cp_rx - cp_px) < 12 && abs(cp_ry - cp_py) < 12;
+}
