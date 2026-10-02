@@ -1,0 +1,905 @@
+{
+  "startingCamera": [
+    1600,
+    125
+  ],
+  "playerAnchor": [
+    1800,
+    238
+  ],
+  "firstVisibleUpdate": 99,
+  "firstHistoricalInvisibleUpdate": 165,
+  "firstHistoricalInvisibleState": 6,
+  "aroundEntry": [
+    {
+      "update": 94,
+      "state": 2,
+      "stateAge": 93,
+      "gameplayAnchor": [
+        1936,
+        238
+      ],
+      "instance": [
+        1936,
+        256
+      ],
+      "mappingFrame": 0,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": -1,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1936,
+        256
+      ],
+      "visible": false,
+      "imageAlpha": 1,
+      "oldAdapterVisible": false,
+      "camera": [
+        1672,
+        125
+      ]
+    },
+    {
+      "update": 95,
+      "state": 2,
+      "stateAge": 94,
+      "gameplayAnchor": [
+        1936,
+        238
+      ],
+      "instance": [
+        1936,
+        256
+      ],
+      "mappingFrame": 0,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": -1,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1936,
+        256
+      ],
+      "visible": false,
+      "imageAlpha": 1,
+      "oldAdapterVisible": false,
+      "camera": [
+        1672,
+        125
+      ]
+    },
+    {
+      "update": 96,
+      "state": 2,
+      "stateAge": 95,
+      "gameplayAnchor": [
+        1936,
+        238
+      ],
+      "instance": [
+        1936,
+        256
+      ],
+      "mappingFrame": 0,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": -1,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1936,
+        256
+      ],
+      "visible": false,
+      "imageAlpha": 1,
+      "oldAdapterVisible": false,
+      "camera": [
+        1672,
+        125
+      ]
+    },
+    {
+      "update": 97,
+      "state": 3,
+      "stateAge": 0,
+      "gameplayAnchor": [
+        1936,
+        238
+      ],
+      "instance": [
+        1936,
+        256
+      ],
+      "mappingFrame": 0,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": -1,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1936,
+        256
+      ],
+      "visible": false,
+      "imageAlpha": 1,
+      "oldAdapterVisible": false,
+      "camera": [
+        1673,
+        124
+      ]
+    },
+    {
+      "update": 98,
+      "state": 18,
+      "stateAge": 0,
+      "gameplayAnchor": [
+        1936,
+        238
+      ],
+      "instance": [
+        1936,
+        256
+      ],
+      "mappingFrame": 1,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": -1,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1936,
+        256
+      ],
+      "visible": false,
+      "imageAlpha": 1,
+      "oldAdapterVisible": false,
+      "camera": [
+        1674,
+        123
+      ]
+    },
+    {
+      "update": 99,
+      "state": 18,
+      "stateAge": 1,
+      "gameplayAnchor": [
+        1935,
+        238
+      ],
+      "instance": [
+        1935.5,
+        256
+      ],
+      "mappingFrame": 1,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": 0,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1935.5,
+        256
+      ],
+      "visible": true,
+      "imageAlpha": 1,
+      "oldAdapterVisible": true,
+      "camera": [
+        1675,
+        122
+      ]
+    },
+    {
+      "update": 100,
+      "state": 18,
+      "stateAge": 2,
+      "gameplayAnchor": [
+        1935,
+        238
+      ],
+      "instance": [
+        1935,
+        256
+      ],
+      "mappingFrame": 1,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": 0,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1935,
+        256
+      ],
+      "visible": true,
+      "imageAlpha": 1,
+      "oldAdapterVisible": true,
+      "camera": [
+        1676,
+        121
+      ]
+    },
+    {
+      "update": 101,
+      "state": 18,
+      "stateAge": 3,
+      "gameplayAnchor": [
+        1934,
+        238
+      ],
+      "instance": [
+        1934.5,
+        256
+      ],
+      "mappingFrame": 1,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": 0,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1934.5,
+        256
+      ],
+      "visible": true,
+      "imageAlpha": 1,
+      "oldAdapterVisible": true,
+      "camera": [
+        1677,
+        120
+      ]
+    },
+    {
+      "update": 102,
+      "state": 18,
+      "stateAge": 4,
+      "gameplayAnchor": [
+        1934,
+        238
+      ],
+      "instance": [
+        1934,
+        256
+      ],
+      "mappingFrame": 1,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": 0,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1934,
+        256
+      ],
+      "visible": true,
+      "imageAlpha": 1,
+      "oldAdapterVisible": true,
+      "camera": [
+        1678,
+        119
+      ]
+    },
+    {
+      "update": 103,
+      "state": 18,
+      "stateAge": 5,
+      "gameplayAnchor": [
+        1933,
+        238
+      ],
+      "instance": [
+        1933.5,
+        256
+      ],
+      "mappingFrame": 1,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": 0,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1933.5,
+        256
+      ],
+      "visible": true,
+      "imageAlpha": 1,
+      "oldAdapterVisible": true,
+      "camera": [
+        1679,
+        118
+      ]
+    },
+    {
+      "update": 104,
+      "state": 18,
+      "stateAge": 6,
+      "gameplayAnchor": [
+        1933,
+        238
+      ],
+      "instance": [
+        1933,
+        256
+      ],
+      "mappingFrame": 1,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": 0,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1933,
+        256
+      ],
+      "visible": true,
+      "imageAlpha": 1,
+      "oldAdapterVisible": true,
+      "camera": [
+        1679,
+        117
+      ]
+    },
+    {
+      "update": 105,
+      "state": 18,
+      "stateAge": 7,
+      "gameplayAnchor": [
+        1932,
+        238
+      ],
+      "instance": [
+        1932.5,
+        256
+      ],
+      "mappingFrame": 1,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": 0,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1932.5,
+        256
+      ],
+      "visible": true,
+      "imageAlpha": 1,
+      "oldAdapterVisible": true,
+      "camera": [
+        1679,
+        116
+      ]
+    },
+    {
+      "update": 106,
+      "state": 18,
+      "stateAge": 8,
+      "gameplayAnchor": [
+        1932,
+        238
+      ],
+      "instance": [
+        1932,
+        256
+      ],
+      "mappingFrame": 1,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": 0,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1932,
+        256
+      ],
+      "visible": true,
+      "imageAlpha": 1,
+      "oldAdapterVisible": true,
+      "camera": [
+        1679,
+        115
+      ]
+    }
+  ],
+  "aroundTransition": [
+    {
+      "update": 160,
+      "state": 18,
+      "stateAge": 62,
+      "gameplayAnchor": [
+        1905,
+        238
+      ],
+      "instance": [
+        1905,
+        256
+      ],
+      "mappingFrame": 2,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": 1,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1905,
+        256
+      ],
+      "visible": true,
+      "imageAlpha": 1,
+      "oldAdapterVisible": true,
+      "camera": [
+        1679,
+        78
+      ]
+    },
+    {
+      "update": 161,
+      "state": 18,
+      "stateAge": 63,
+      "gameplayAnchor": [
+        1904,
+        238
+      ],
+      "instance": [
+        1904.5,
+        256
+      ],
+      "mappingFrame": 2,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": 1,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1904.5,
+        256
+      ],
+      "visible": true,
+      "imageAlpha": 1,
+      "oldAdapterVisible": true,
+      "camera": [
+        1679,
+        78
+      ]
+    },
+    {
+      "update": 162,
+      "state": 18,
+      "stateAge": 64,
+      "gameplayAnchor": [
+        1904,
+        238
+      ],
+      "instance": [
+        1904,
+        256
+      ],
+      "mappingFrame": 1,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": 0,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1904,
+        256
+      ],
+      "visible": true,
+      "imageAlpha": 1,
+      "oldAdapterVisible": true,
+      "camera": [
+        1679,
+        78
+      ]
+    },
+    {
+      "update": 163,
+      "state": 18,
+      "stateAge": 65,
+      "gameplayAnchor": [
+        1903,
+        238
+      ],
+      "instance": [
+        1903.5,
+        256
+      ],
+      "mappingFrame": 1,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": 0,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1903.5,
+        256
+      ],
+      "visible": true,
+      "imageAlpha": 1,
+      "oldAdapterVisible": true,
+      "camera": [
+        1679,
+        78
+      ]
+    },
+    {
+      "update": 164,
+      "state": 18,
+      "stateAge": 66,
+      "gameplayAnchor": [
+        1903,
+        238
+      ],
+      "instance": [
+        1903,
+        256
+      ],
+      "mappingFrame": 1,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": 0,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1903,
+        256
+      ],
+      "visible": true,
+      "imageAlpha": 1,
+      "oldAdapterVisible": true,
+      "camera": [
+        1679,
+        78
+      ]
+    },
+    {
+      "update": 165,
+      "state": 6,
+      "stateAge": 0,
+      "gameplayAnchor": [
+        1902,
+        238
+      ],
+      "instance": [
+        1902.5,
+        256
+      ],
+      "mappingFrame": 1,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": 0,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1902.5,
+        256
+      ],
+      "visible": true,
+      "imageAlpha": 1,
+      "oldAdapterVisible": false,
+      "camera": [
+        1679,
+        78
+      ]
+    },
+    {
+      "update": 166,
+      "state": 6,
+      "stateAge": 1,
+      "gameplayAnchor": [
+        1902,
+        238
+      ],
+      "instance": [
+        1902,
+        256
+      ],
+      "mappingFrame": 1,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": 0,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1902,
+        256
+      ],
+      "visible": true,
+      "imageAlpha": 1,
+      "oldAdapterVisible": false,
+      "camera": [
+        1679,
+        78
+      ]
+    },
+    {
+      "update": 167,
+      "state": 6,
+      "stateAge": 2,
+      "gameplayAnchor": [
+        1901,
+        238
+      ],
+      "instance": [
+        1901.5,
+        256
+      ],
+      "mappingFrame": 1,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": 0,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1901.5,
+        256
+      ],
+      "visible": true,
+      "imageAlpha": 1,
+      "oldAdapterVisible": false,
+      "camera": [
+        1679,
+        78
+      ]
+    },
+    {
+      "update": 168,
+      "state": 6,
+      "stateAge": 3,
+      "gameplayAnchor": [
+        1901,
+        238
+      ],
+      "instance": [
+        1901,
+        256
+      ],
+      "mappingFrame": 1,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": 0,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1901,
+        256
+      ],
+      "visible": true,
+      "imageAlpha": 1,
+      "oldAdapterVisible": false,
+      "camera": [
+        1679,
+        78
+      ]
+    },
+    {
+      "update": 169,
+      "state": 6,
+      "stateAge": 4,
+      "gameplayAnchor": [
+        1900,
+        238
+      ],
+      "instance": [
+        1900.5,
+        256
+      ],
+      "mappingFrame": 1,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": 0,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1900.5,
+        256
+      ],
+      "visible": true,
+      "imageAlpha": 1,
+      "oldAdapterVisible": false,
+      "camera": [
+        1679,
+        78
+      ]
+    },
+    {
+      "update": 170,
+      "state": 6,
+      "stateAge": 5,
+      "gameplayAnchor": [
+        1900,
+        238
+      ],
+      "instance": [
+        1900,
+        256
+      ],
+      "mappingFrame": 1,
+      "orientation": "normal",
+      "sprite": "SPR_chaos_boss_50",
+      "imageIndex": 0,
+      "resourceExists": true,
+      "dimensions": [
+        40,
+        48
+      ],
+      "origin": [
+        20,
+        48
+      ],
+      "draw": [
+        1900,
+        256
+      ],
+      "visible": true,
+      "imageAlpha": 1,
+      "oldAdapterVisible": false,
+      "camera": [
+        1679,
+        78
+      ]
+    }
+  ]
+}

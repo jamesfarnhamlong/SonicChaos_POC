@@ -1,5 +1,6 @@
 vx = __view_get( e__VW.XView, 0 ) + 22;
 vy = __view_get( e__VW.YView, 0 ) + 25;
+if (chaos_is_thz3()) vy += global.chaosHudSlide;
 
 font = font_add_sprite(SPR_font_numbers, 48, false, 1);
 draw_set_font(font);

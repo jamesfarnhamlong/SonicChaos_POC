@@ -48,6 +48,11 @@ function SCR_chaos_core_sprites(cp_p) {
         // 8/4/8/4 timing; GameMaker animation timing is deliberately disabled.
         if (cp_state11_visual) cp_sprite = SPR_chaos_player_state_11;
         else if (cp_hurt_visual) cp_sprite = SPR_player_falling;
+        // State $20 owns the run-off animation. The ROM handoff can retain
+        // attack/airborne bits for this first update; they must not select the
+        // GameMaker spin/fall sprites while the clear handler is running.
+        else if (cp_c.state == $20) cp_sprite = cp_c.vx == 0 ? SPR_player_stop :
+            (abs(cp_c.vx) >= 1024 ? SPR_player_run : SPR_player_walk);
         else if (cp_c.next == 15) cp_sprite = SPR_player_spin_dash;
         else if (cp_c.state == 34 || cp_c.next == 9 || (cp_c.move & 2) != 0) cp_sprite = SPR_player_spin;
         else if (cp_p.chaosSpringVisual && cp_c.vy < 0) cp_sprite = SPR_player_jump;
@@ -143,6 +148,13 @@ function SCR_chaos_adapter_step(cp_p) {
     if (global.chaosGoalContact && cp_c.state != 32 && cp_c.next != 32) {
         var cp_clamp = chaos_goal_clamp_player(chaos_vp_current(), cp_c.xu, cp_c.vx);
         cp_c.xu = cp_clamp.xu; cp_c.vx = cp_clamp.vx;
+    }
+    if (chaos_is_thz3() && instance_exists(OBJ_chaos_object_50) && cp_c.state != 32 && cp_c.next != 32) {
+        var cp_boss=instance_find(OBJ_chaos_object_50,0).chaosBoss;
+        if (cp_boss.camera_mode == 3) {
+            var cp_arena=chaos_boss_clamp(cp_c.xu,cp_c.vx,chaos_vp_current().w);
+            cp_c.xu=cp_arena.xu; cp_c.vx=cp_arena.vx;
+        }
     }
     SCR_chaos_core_publish(cp_p);
     // Terrain-ring probe ($753E): one integer point from the update's FINAL anchor (after movement, projection and the room/clamp adapters; the platform phase runs later, as in the ROM) using the

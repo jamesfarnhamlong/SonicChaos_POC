@@ -80,10 +80,10 @@ function SCR_cc_lookup(cp_x, cp_y, cp_plane) {
     if (variable_global_exists("chaosMapWidth")) cp_w = global.chaosMapWidth; // set by chaos_level_install_layout (128 in THZ1/THZ2, 80 in THZ3)
     var cp_index = (((cp_ay >> 5) & 127)*cp_w + ((cp_ax >> 5) & 255));
     var cp_address = (49153 + cp_index) & 65535;
-    // GAMEMAKER PRESENTATION ADAPTER: a widescreen act-clear camera may expose world X beyond the canonical 4096 px map (128 columns of 32 px). The
-    // ROM's lookup would wrap those columns into the NEXT map row (solid tiles can stop the state $20 run). While state $20 runs, columns past the
-    // canonical map edge are open (empty) instead; canonical terrain data is untouched and normal play never sets the flag.
-    if (global.chaosBeyondMapOpen && cp_ax >= 4096) return {tile:255, flags:0, modifier:0,
+    // GAMEMAKER PRESENTATION ADAPTER: the ROM lookup wraps columns beyond the current act's map width into the next row.
+    // Only during state $20, keep those beyond-map columns open so the recovered EDGE(RIGHT,+33) run can finish.
+    // THZ1/2 have 128 columns (4096 px); THZ3 has 80 (2560 px).
+    if (global.chaosBeyondMapOpen && cp_ax >= cp_w*32) return {tile:255, flags:0, modifier:0,
         vertical:0, horizontal:0, ax:cp_ax, ay:cp_ay, index:-1};
     if ((cp_address & 61440) != 49152) return {tile:255, flags:0, modifier:0,
         vertical:0, horizontal:0, ax:cp_ax, ay:cp_ay, index:-1};
@@ -574,7 +574,7 @@ function SCR_cc_state32_body(cp_c) {
     cp_c.vy = 0; cp_c.player_flags &= ~16; // never mirrored
     var cp_d = floor(cp_c.xu/256) - cp_c.camera_x;
     var cp_hold_y = cp_c.yu; // beyond the canonical map (invisible final pixels) the vertical position is held explicitly
-    var cp_beyond = floor(cp_c.xu/256) >= 4096;
+    var cp_beyond = floor(cp_c.xu/256) >= (variable_global_exists("chaosMapWidth") ? global.chaosMapWidth : 128)*32;
     if (cp_d < 0 || cp_d >= cp_c.clear_dx) { cp_c.vx = 0; cp_c.act_clear = true; cp_c.next = 32; return; } // negative d compares as a huge 16-bit value
     if (cp_c.vx < 0) cp_c.vx = 0;
     cp_c.input_delta = (cp_c.vx >> 8) < 6 ? 16 : 0; cp_c.surface_delta = 0; cp_c.maximum = 1536;

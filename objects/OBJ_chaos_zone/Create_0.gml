@@ -87,6 +87,7 @@ if (!instance_exists(OBJ_chaos_ring_manager)) instance_create_depth(0,0,0,OBJ_ch
 global.chaosComplete = false;
 global.chaosGoalContact = false;
 global.chaosPan = chaos_goal_pan_new();
+global.chaosHudSlide = 0;
 global.chaosTraceFrame = 0;
 global.chaosTraceLastCam = -1;
 global.chaosNotice = 0;

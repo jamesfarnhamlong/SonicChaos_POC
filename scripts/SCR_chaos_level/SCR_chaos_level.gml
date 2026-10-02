@@ -60,6 +60,7 @@ function chaos_level_spawn_objects() {
             case $26: cp_inst = chaos_spawn_type26(cp_r); break;
             case $27: cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_object_27); break;
             case $28: cp_inst = chaos_spawn_type28(cp_r); break;
+            case $50: if (chaos_is_thz3()) cp_inst = instance_create(cp_r[1],cp_r[2],OBJ_chaos_object_50); break;
             default: global.chaosSkippedByType[cp_type]++; break;
         }
         if (cp_inst != noone) {
@@ -136,7 +137,7 @@ function chaos_acts() {
     return [
         {zone: "THZ", act: 1, room: ROM_chaos_thz1, name: "Turquoise Hill 1", icon: 1},
         {zone: "THZ", act: 2, room: ROM_chaos_thz2, name: "Turquoise Hill 2", icon: 1},
-        {zone: "THZ", act: 3, room: ROM_chaos_thz3, name: "Turquoise Hill 3", icon: 1}   // non-boss foundation: no act clear (the type $50 boss is not implemented)
+        {zone: "THZ", act: 3, room: ROM_chaos_thz3, name: "Turquoise Hill 3", icon: 1}
     ];
 }
 function chaos_act_count() { return array_length(chaos_acts()); }
@@ -164,7 +165,7 @@ function chaos_act_index_for_room(cp_room) {
 }
 
 /// Final act-clear handoff, shared by every act. Called once, when player state $20 sets the act-clear flag
-/// (SCR_cc_state32_tick, ROM $83A6 -> $D293). The timer already stopped at type $18 contact (chaos_goal_begin).
+/// (SCR_cc_state32_tick, ROM $83A6 -> $D293). Sign acts stop at $18 contact; THZ3's boss does not stop it.
 /// POC adaptation: the ROM runs its 198-frame clear sequence and results screen before it increments the next-act index
 /// ($152F..$153E); those systems are not implemented, so saved progression advances here, through chaos_act_progress(),
 /// and never earlier.

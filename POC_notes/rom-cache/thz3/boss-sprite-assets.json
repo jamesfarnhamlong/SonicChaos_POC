@@ -1,0 +1,208 @@
+{
+  "source_tool": "tools/thz3_boss_support.py --png",
+  "assets": [
+    {
+      "sprite": "SPR_chaos_boss_50",
+      "source": "boss_frame1.png",
+      "frame": "96735fa3-3598-551e-8f29-6070a89435f1",
+      "palette_flash": false,
+      "sha256": "2c09aaf71a76425a1673db746ac6fcbe0cc062b09c442e685a3c891a73d08ef2"
+    },
+    {
+      "sprite": "SPR_chaos_boss_50",
+      "source": "boss_frame2.png",
+      "frame": "47ae2d6b-2ceb-5614-825a-11626b6fa38c",
+      "palette_flash": false,
+      "sha256": "8becede4964085816d85f9780d4378f58084f92fdbe83755758b8c522b2d0118"
+    },
+    {
+      "sprite": "SPR_chaos_boss_50",
+      "source": "boss_frame3.png",
+      "frame": "efbfc495-549b-56b9-a9af-43582450d222",
+      "palette_flash": false,
+      "sha256": "efe345d10e9ad4a4f4d22097e83d97eaa25ab7a345a4531d39184cea5f14711a"
+    },
+    {
+      "sprite": "SPR_chaos_boss_50",
+      "source": "boss_frame4.png",
+      "frame": "3ace8be6-86ea-5e0b-8bb4-360ed430ac0d",
+      "palette_flash": false,
+      "sha256": "cfbc538e3422e42119148a256e1a5a77cd7b79a3d2c48d445ec1963dbdb303a9"
+    },
+    {
+      "sprite": "SPR_chaos_boss_50",
+      "source": "boss_frame5.png",
+      "frame": "71194315-3fe7-5e7f-8340-0a23f6453f39",
+      "palette_flash": false,
+      "sha256": "c769a9659a2145d76cd27dbeb032d6e44018481ef09213d5f6108d88f8c91068"
+    },
+    {
+      "sprite": "SPR_chaos_boss_50",
+      "source": "boss_frame6.png",
+      "frame": "2c2a0f40-bbcc-51ae-ae0d-7f5ef2a8c4d8",
+      "palette_flash": false,
+      "sha256": "d0db99d2471765773d07fb9296f1fef9b65984a03d23a956b3e3083528761c14"
+    },
+    {
+      "sprite": "SPR_chaos_boss_50_mirror",
+      "source": "boss_mirrored_frame1.png",
+      "frame": "5f509416-0a54-5ae2-8fd5-1e0da486e56e",
+      "palette_flash": false,
+      "sha256": "a500eace9a202dc91116faf8bb027817d2163ee33ac6202fd75a4ab2414d7216"
+    },
+    {
+      "sprite": "SPR_chaos_boss_50_mirror",
+      "source": "boss_mirrored_frame2.png",
+      "frame": "9e60f3c1-cbba-52a1-822e-0669fbbca118",
+      "palette_flash": false,
+      "sha256": "1451f5e018ac603e1da78eb0728e4e12fa79e66044ee6104dea7955bfdef8cd2"
+    },
+    {
+      "sprite": "SPR_chaos_boss_50_mirror",
+      "source": "boss_mirrored_frame3.png",
+      "frame": "3b386b8d-ed1c-5db8-8484-a0400ddaeef4",
+      "palette_flash": false,
+      "sha256": "a0340cd62fc268a76f1abb871f5ac7f8abb766ee007ef923808d6403d8769663"
+    },
+    {
+      "sprite": "SPR_chaos_boss_50_mirror",
+      "source": "boss_mirrored_frame4.png",
+      "frame": "5171c9ce-2921-5274-b099-0cd1a76075b6",
+      "palette_flash": false,
+      "sha256": "95bec618d9cfa5336ebd674b6b7f4c17a2c4a98bd36f29179414e6567acaa49a"
+    },
+    {
+      "sprite": "SPR_chaos_boss_50_flash",
+      "source": "boss_frame1.png",
+      "frame": "de9243c3-bb8a-505c-82ec-dbeef8d646ba",
+      "palette_flash": true,
+      "sha256": "1cec64cc0c760999a4e341a2c16373b18cbde5ef492afae8b91d6c21f4f1e203"
+    },
+    {
+      "sprite": "SPR_chaos_boss_50_flash",
+      "source": "boss_frame2.png",
+      "frame": "60368c70-e031-51db-813b-6cda5a29c32a",
+      "palette_flash": true,
+      "sha256": "461fa90974a39dae8621c75d67e5dc4e1782a9629759f6b07c60aa7b58462db1"
+    },
+    {
+      "sprite": "SPR_chaos_boss_50_flash",
+      "source": "boss_frame3.png",
+      "frame": "18af4024-c34f-5547-aa18-6809aee21041",
+      "palette_flash": true,
+      "sha256": "222b8b46b28c9828bcec6813e607fc1e470f5871d0066c86c8d1e7729ca4ca41"
+    },
+    {
+      "sprite": "SPR_chaos_boss_50_flash",
+      "source": "boss_frame4.png",
+      "frame": "c3431618-b782-5529-b421-5732fc5e127a",
+      "palette_flash": true,
+      "sha256": "4ec05a22a61db9a1ed6fcfc18a90cb52833f8a8978e544d394f6006ca9cfba29"
+    },
+    {
+      "sprite": "SPR_chaos_boss_50_flash",
+      "source": "boss_frame5.png",
+      "frame": "46bf5943-16f0-5780-a5bd-9edcfcb530d9",
+      "palette_flash": true,
+      "sha256": "98f906a4d36ac0e96c509a7c4b3ebb29ca982b63fd08179cb1f9e74c429bceb1"
+    },
+    {
+      "sprite": "SPR_chaos_boss_50_flash",
+      "source": "boss_frame6.png",
+      "frame": "11cce0e0-7eb4-5536-8990-60329f3185be",
+      "palette_flash": true,
+      "sha256": "411c9f93e74d9328cafa14056af049b131b3434b1daf67b24290097ef23de8de"
+    },
+    {
+      "sprite": "SPR_chaos_boss_50_mirror_flash",
+      "source": "boss_mirrored_frame1.png",
+      "frame": "f1ae687c-33c8-560b-8fb4-706ec6bec8e8",
+      "palette_flash": true,
+      "sha256": "96d6a4380a17e2294b78c5ee926bb87ca6f8ad16f37cbc968f5b4dc5ef169f03"
+    },
+    {
+      "sprite": "SPR_chaos_boss_50_mirror_flash",
+      "source": "boss_mirrored_frame2.png",
+      "frame": "34962975-0793-59f9-88cd-5849425dbb72",
+      "palette_flash": true,
+      "sha256": "e421a84c1ae2d67673a72068342d72da269c9a4e6bb9962f402f2b534cd68163"
+    },
+    {
+      "sprite": "SPR_chaos_boss_50_mirror_flash",
+      "source": "boss_mirrored_frame3.png",
+      "frame": "02363689-5457-5dbf-a8af-7b9ff1224add",
+      "palette_flash": true,
+      "sha256": "8d99ca741b56c6c7314559076448ca435364232c04a47c43ffb516fb23054cdc"
+    },
+    {
+      "sprite": "SPR_chaos_boss_50_mirror_flash",
+      "source": "boss_mirrored_frame4.png",
+      "frame": "67570984-04c7-50f6-ae9a-aec1073d2683",
+      "palette_flash": true,
+      "sha256": "01676b31eff85f8097539ac3056ffe3126fd2a7ff81f241b288889eb5c01800b"
+    },
+    {
+      "sprite": "SPR_chaos_boss_puff_34",
+      "source": "puff34_frame1.png",
+      "frame": "086fb9cc-49d2-5a29-8ab6-5dc25578214b",
+      "palette_flash": false,
+      "sha256": "4032a479c4f85b789bd10d2f21a005b862a8cb17ffae850cb2f159908b712f74"
+    },
+    {
+      "sprite": "SPR_chaos_boss_puff_34",
+      "source": "puff34_frame2.png",
+      "frame": "83188254-d445-5865-abf0-7043bbeac2ed",
+      "palette_flash": false,
+      "sha256": "eb888a65968415f91f5026ebfaad4e008c489d20a792046322c907fd4a343de7"
+    },
+    {
+      "sprite": "SPR_chaos_boss_puff_34",
+      "source": "puff34_frame3.png",
+      "frame": "4f18f19f-df55-58ce-82b3-c1c61fe33e34",
+      "palette_flash": false,
+      "sha256": "29c833f8739cf0efb74b92769baa744086b591f2903ca339ca115946ce3f4b44"
+    },
+    {
+      "sprite": "SPR_chaos_boss_puff_34",
+      "source": "puff34_frame4.png",
+      "frame": "5be85133-dc52-512b-8092-f1b008d69ead",
+      "palette_flash": false,
+      "sha256": "3914319a0ff4ac840679ce87b4d7c41bd5ee69a9d465e7dc3880448b5342f2e1"
+    },
+    {
+      "sprite": "SPR_chaos_boss_sparkle_0A",
+      "source": "sparkle0a_frame5.png",
+      "frame": "ca6d7a9b-7b4f-5e35-bdaa-d2af609562f7",
+      "palette_flash": false,
+      "sha256": "0a7c47d19596b05b70228b677f110624cdf4b23c06db4927c9cab9a64edf9ae5"
+    },
+    {
+      "sprite": "SPR_chaos_boss_sparkle_0A",
+      "source": "sparkle0a_frame6.png",
+      "frame": "235c2d04-dd46-5f92-a727-7123f3b5a73e",
+      "palette_flash": false,
+      "sha256": "ecaf9991bf94271ba7d0fe6d78cb404113794dbd995f317aaed5f75f0dd327cd"
+    },
+    {
+      "sprite": "SPR_chaos_boss_poof_0F",
+      "source": "poof0f_frame7.png",
+      "frame": "48d96257-5ab8-5af6-8296-ce36531d9e15",
+      "palette_flash": false,
+      "sha256": "e6f4abed7efdeed4b80037baf7c0cc9a84956b50597291936206377d5b7cf0c5"
+    },
+    {
+      "sprite": "SPR_chaos_boss_poof_0F",
+      "source": "poof0f_frame8.png",
+      "frame": "38986a5a-0f6c-5b29-a3da-741bc02ef52e",
+      "palette_flash": false,
+      "sha256": "e30daee76da289246256ea6119799f2d521415f00c970737877fcb078e7f6df1"
+    },
+    {
+      "sprite": "SPR_chaos_boss_poof_0F",
+      "source": "poof0f_frame9.png",
+      "frame": "229213ff-37c0-5071-8aa8-568085f2720a",
+      "palette_flash": false,
+      "sha256": "1ba532becb7b150d6517049f663c2d263486a8ca5959a9288871036c74469d30"
+    }
+  ]
+}

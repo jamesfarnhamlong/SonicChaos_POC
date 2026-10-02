@@ -14,6 +14,8 @@ function SCR_chaos_objects_phase() {
         cp_present = !(variable_instance_exists(cp_p,"chaosLoopActive") && cp_p.chaosLoopActive);
     }
     // $D520 / $D3B0 written by badnik Step events (and the sample-damage path) during this update become visible to the player's NEXT $48BC.
+    // Boss contact runs in this object phase so its staged request reaches the next player update.
+    chaos_boss_runtime_phase();
     if (cp_have) chaos_contact_promote(cp_c);
     var cp_changed = false;
     var cp_count = instance_number(OBJ_chaos_platform);

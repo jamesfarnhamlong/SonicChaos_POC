@@ -1,4 +1,4 @@
-// THZ3 non-boss foundation: canonical data, the ROM row stride (80), terrain-block resolution, rings, the generic object loader, type $10 parameter 1, the moving spike at its canonical anchor.
+// THZ3 foundation regression: canonical data, ROM row stride (80), terrain blocks, rings and ordinary objects. Type $50 is now loaded by the boss package.
 // Executes the SHIPPED GML (generated data script, SCR_cc_lookup / terrain pipeline, loader, ring probe helpers, spike rules) against the vendored Research level package.
 // Usage: node verification/verify_thz3_foundation.js
 const fs = require('fs'), path = require('path'), assert = require('assert'), crypto = require('crypto'), cp = require('child_process');
@@ -15,7 +15,7 @@ const research = path.resolve(root, '..', 'sonic-chaos-reference-work', 'data', 
 if (fs.existsSync(research)) { for (const n of ['layout', 'rings', 'manifest', 'objects', 'assets']) eq(sha(fs.readFileSync(path.join(research, n + '.json'))), sha(fs.readFileSync(path.join(root, `POC_notes/rom-cache/levels/thz3/${n}.json`))), `vendored ${n}.json is byte-identical to Research`); console.log('level package cross-checked against', research); }
 {
     const before = fs.readFileSync(path.join(root, 'scripts/SCR_chaos_level_thz3_data/SCR_chaos_level_thz3_data.gml'));
-    const r = cp.spawnSync('python', ['POC_notes/generate_chaos_level_data_thz3.py'], {cwd: root}); eq(r.status, 0, 'generator runs (all pinned hashes hold)');
+    const r = cp.spawnSync(process.env.PYTHON || 'python', ['POC_notes/generate_chaos_level_data_thz3.py'], {cwd: root}); eq(r.status, 0, 'generator runs (all pinned hashes hold)');
     eq(sha(fs.readFileSync(path.join(root, 'scripts/SCR_chaos_level_thz3_data/SCR_chaos_level_thz3_data.gml'))), sha(before), 'generated data script is reproducible');
 }
 const host = loadHost(null), ctx = host.ctx, g = host.g;
@@ -78,18 +78,19 @@ g.chaosMapWidth = 128; g.chaosTileIds = host.ids1; eq(ctx.SCR_cc_lookup(40 * 32,
     eq(ctx.SCR_chaos_thz3_terrain_hash(), rings.hashes.terrain_coordinates_sha256); eq(ctx.SCR_chaos_thz3_all_rings_hash(), rings.hashes.all_rings_sha256);
 }
 
-// ---------- 5. the generic loader: supported types only, boss counted not created ----------
+// ---------- 5. the generic loader: canonical placements, including the dormant boss ----------
 {
     ctx.room = host.ids.ROM_chaos_thz3; host.reset(); g.chaosMapWidth = 80;
     const rows = ctx.SCR_chaos_thz3_objects(); eq(rows.length, 10);
     deep(Array.from(rows.map(r => r[3])), objects.records.map(r => parseInt(r.type_id, 16)), 'package order and types');
     ctx.chaos_level_spawn_objects();
     const spawned = Array.from(g.chaosSpawnedByType), skipped = Array.from(g.chaosSkippedByType);
-    eq(spawned[0x26], 4); eq(spawned[0x10], 1); eq(spawned[0x1B], 1); eq(spawned[0x09], 0, 'type $09 belongs to the ring manager'); eq(skipped[0x50], 1, 'the boss is counted as unsupported, never created'); eq(skipped.reduce((a, b) => a + b, 0), 1);
+    eq(spawned[0x26], 4); eq(spawned[0x10], 1); eq(spawned[0x1B], 1); eq(spawned[0x09], 0, 'type $09 belongs to the ring manager'); eq(spawned[0x50], 1, 'canonical boss record is loaded'); eq(skipped.reduce((a, b) => a + b, 0), 0);
+    eq(host.world.bosses.length, 1); deep([host.world.bosses[0].x,host.world.bosses[0].y],[1936,238]); eq(host.world.bosses[0].chaosBoss.state,-1,'boss waits for right-edge creation band');
     eq(host.world.spikes.length, 1); const sp = host.world.spikes[0]; eq(sp.x, 752); eq(sp.y, 128); eq(sp.chaosBaseY, 128, 'canonical anchor is the cycle base');
     const t10 = host.world.created.filter(c => c[0] === host.ids.OBJ_chaos_object_10); eq(t10.length, 1); deep([t10[0][1], t10[0][2]], [1456, 366]);
     eq(host.world.created.filter(c => c[0] === host.ids.OBJ_chaos_object_spring_26_normal).length, 4, 'four strong springs (parameter $00)');
-    ok(!rd('scripts/SCR_chaos_level/SCR_chaos_level.gml').includes('OBJ_chaos_object_50'), 'no boss object exists');
+    ok(rd('scripts/SCR_chaos_level/SCR_chaos_level.gml').includes('OBJ_chaos_object_50'), 'boss comes from the generic canonical loader');
     g.chaosMapWidth = 128; ctx.room = host.ids.ROM_chaos_thz1;
 }
 

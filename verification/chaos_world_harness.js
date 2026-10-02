@@ -14,7 +14,7 @@ function source(ref, rel) {
 }
 const SCRIPTS = ['SCR_chaos_motion_data', 'SCR_chaos_core_data', 'SCR_chaos_core', 'SCR_chaos_level_thz2_data', 'SCR_chaos_level_thz3_data', 'SCR_chaos_anim_counter_data', 'SCR_chaos_anim_counter',
     'SCR_chaos_terrain_ring', 'SCR_chaos_viewport', 'SCR_chaos_placement', 'SCR_chaos_goal', 'SCR_chaos_box_contact', 'SCR_chaos_attack', 'SCR_chaos_spring', 'SCR_chaos_platform', 'SCR_chaos_damage', 'SCR_chaos_spike1b',
-    'SCR_chaos_motion', 'SCR_chaos_adapter', 'SCR_chaos_objects', 'SCR_chaos_level'];
+    'SCR_chaos_motion', 'SCR_chaos_adapter', 'SCR_chaos_objects', 'SCR_chaos_level', 'SCR_chaos_boss_data', 'SCR_chaos_boss'];
 
 /// ref = null -> working tree; otherwise a git ref. Returns a host with .ctx (the VM), .g (globals) and helpers to build worlds.
 function loadHost(ref) {
@@ -23,10 +23,10 @@ function loadHost(ref) {
     for (const n of SCRIPTS) { const t = source(ref, `scripts/${n}/${n}.gml`); if (t !== null) texts[n] = t; }
     const consts = new Set();
     for (const t of Object.values(texts)) for (const m of t.matchAll(/\b(OBJ|SPR|SFX|ROM|TIME|MUS)_\w+/g)) consts.add(m[0]);
-    const world = {player: null, platforms: [], spikes: [], cam: {x: 0, y: 0, w: 256, h: 192}, events: [], audio: 0, created: [], badniks: [], input: {}, roomWidth: 4096, roomHeight: 1024};
+    const world = {player: null, platforms: [], spikes: [], bosses: [], cam: {x: 0, y: 0, w: 256, h: 192}, events: [], audio: 0, created: [], badniks: [], input: {}, roomWidth: 4096, roomHeight: 1024};
     for (const c of ['OBJ_chaos_spikes', 'OBJ_chaos_platform', 'OBJ_player', 'OBJ_player_char', 'OBJ_player_char_spin', 'ROM_chaos_thz1', 'ROM_chaos_thz2', 'ROM_chaos_thz3']) consts.add(c);
     const ids = {}; let n = 1000; for (const c of consts) ids[c] = n++;
-    const objectsByType = () => ({[ids.OBJ_player]: world.player ? [world.player] : [], [ids.OBJ_chaos_platform]: world.platforms, [ids.OBJ_chaos_spikes]: world.spikes});
+    const objectsByType = () => ({[ids.OBJ_player]: world.player ? [world.player] : [], [ids.OBJ_player_char]: world.player ? [world.player] : [], [ids.OBJ_chaos_platform]: world.platforms, [ids.OBJ_chaos_spikes]: world.spikes, [ids.OBJ_chaos_object_50]: world.bosses});
     const sandbox = Object.assign({}, ids, {
         global: g, floor: Math.floor, round: Math.round, abs: Math.abs, min: Math.min, max: Math.max, sign: Math.sign, clamp: (v, a, b) => Math.min(Math.max(v, a), b),
         array_create: (k, v) => Array(k).fill(v), array_length: a => a.length, array_push: (a, v) => a.push(v), array_copy: (d, di, s, si, k) => { for (let i = 0; i < k; i++) d[di + i] = s[si + i]; },
@@ -35,11 +35,12 @@ function loadHost(ref) {
         instance_find: (o, i) => (objectsByType()[o] || [])[i] ?? -4,
         instance_number: o => (objectsByType()[o] || []).length,
         instance_create: (x, y, o) => host.create(o, x, y),
-        instance_create_depth: (x, y, d, o) => { world.created.push([o, x, y]); return {x, y, object_index: o}; },
+        instance_create_depth: (x, y, d, o) => { const i={x,y,object_index:o,chaosAge:0}; world.created.push([o, x, y, i]); return i; },
         instance_destroy: () => { if (host.self) host.self.destroyed = true; },
         instance_change: (o, p) => { world.events.push(['instance_change', o]); if (world.player) world.player.dead = true; }, audio_play_sound: () => { world.audio++; }, place_meeting: () => false,
-        sprite_get_bbox_bottom: () => 33, sprite_get_yoffset: () => 20,
+        sprite_get_bbox_bottom: () => 33, sprite_get_yoffset: () => 20, sprite_get_number: () => 6,
         view_camera: [0], camera_get_view_x: () => world.cam.x, camera_get_view_y: () => world.cam.y, camera_get_view_width: () => world.cam.w, camera_get_view_height: () => world.cam.h,
+        e__VW: {Object:0,XView:1,YView:2}, __view_set: (field,view,value) => { if(field===1) world.cam.x=value; if(field===2) world.cam.y=value; },
         SCR_buttons: () => { const i = world.input; g.btUp = !!i.up; g.btDown = !!i.down; g.btLeft = !!i.left; g.btRight = !!i.right; g.btSpace = !!i.jump; g.btSpacePress = !!i.jumpPress; },
         SCR_player_sprites: () => {}, draw_sprite: () => {}, draw_sprite_part: () => {}, draw_set_color: () => {}, draw_line_width: () => {}, make_color_rgb: () => 0, c_white: 0,
         keyboard_check_pressed: () => false, ord: () => 0, vk_f2: 0, parameter_count: () => 0, parameter_string: () => '',
@@ -54,14 +55,14 @@ function loadHost(ref) {
     ctx.SCR_chaos_motion_data(); ctx.SCR_chaos_core_data();
     Object.assign(g, {ring: 0, playerSuper: false, playerBlink: false, powerInv: false, powerShield: false, chaosPowerCode: 0, chaosPowerTimer: 0, chaosDamageBlinkTimer: 0, chaosGoalContact: false,
         chaosLoopCenters: [], chaosLoopRows: [], chaosLoopPlanes: [], valGravity: 48 / 256, playerJump: false, playerJumpSpring: false, playerSpinDash: false, playerFly: false,
-        chaosBeyondMapOpen: false, chaosBrokenCells: [], player: 1, chaosLastSoundRequest: 0});
+        chaosBeyondMapOpen: false, chaosBrokenCells: [], player: 1, chaosLastSoundRequest: 0, chaosBossSparkleOn: false, chaosHudSlide: 0});
     const ids1 = g.chaosTileIds.slice(), ids2 = ctx.SCR_chaos_thz2_tile_ids ? ctx.SCR_chaos_thz2_tile_ids().slice() : null;
     const host = {ref, ctx, g, world, ids, ids1, ids2, texts, has: nm => nm in texts};
     const nameOf = Object.fromEntries(Object.entries(ids).map(([k, v]) => [v, k]));
     /// instance_create for the objects this harness hosts (runs the shipped Create_0); anything else is only recorded.
     host.create = (o, x, y) => {
         const nm = nameOf[o];
-        if (nm === 'OBJ_chaos_platform' || nm === 'OBJ_chaos_spikes') { const i = host.newInstance(nm, x, y); (nm === 'OBJ_chaos_platform' ? world.platforms : world.spikes).push(i); return i; }
+        if (nm === 'OBJ_chaos_platform' || nm === 'OBJ_chaos_spikes' || nm === 'OBJ_chaos_object_50') { const i = host.newInstance(nm, x, y); (nm === 'OBJ_chaos_platform' ? world.platforms : nm === 'OBJ_chaos_spikes' ? world.spikes : world.bosses).push(i); return i; }
         world.created.push([o, x, y]); return {x, y, object_index: o};
     };
 
@@ -111,7 +112,7 @@ function loadHost(ref) {
         for (const [cx, cy] of keep) { const i = cy * 128 + cx; iso[i] = ids1[i]; }
         g.chaosTileIds = iso; g.chaosBrokenCells = [];
     };
-    host.reset = () => { world.badniks.length = 0; world.platforms.length = 0; world.spikes.length = 0; world.events.length = 0; world.created.length = 0; world.player = null; world.frameNo = 0;
+    host.reset = () => { world.badniks.length = 0; world.platforms.length = 0; world.spikes.length = 0; world.bosses.length = 0; world.events.length = 0; world.created.length = 0; world.player = null; world.frameNo = 0;
         g.ring = 0; g.playerBlink = false; g.chaosDamageBlinkTimer = 0; g.powerShield = false; g.powerInv = false; g.playerSuper = false; g.chaosAttackPosture = false; };
     return host;
 }

@@ -1,5 +1,6 @@
 vx = __view_get( e__VW.XView, 0 ) + 20;
 vy = __view_get( e__VW.YView, 0 ) + 6;
+if (chaos_is_thz3()) vy += global.chaosHudSlide; // type $12: visible HUD slide, 0.5 px/update
 
 // Icon
 draw_sprite(SPR_icon_ring, -1, vx, vy);
