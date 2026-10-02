@@ -27,13 +27,14 @@ const body = hex(stepSrc).replace('chaosAnimTick div 2', 'Math.floor(chaosAnimTi
 function makeWorld(originX, originY) {
     const w = {frame: 0, camX: 0, camY: 0, camW: 256, destroyed: false, activations: 0, trace: []};
     w.player = {x: 0, y: 5000, bbox_left: 0, bbox_right: 0, bbox_top: 0, bbox_bottom: 0, object_index: 'char'};
-    Object.defineProperty(w.player, 'chaosCore', {value: {get xu() { return w.player.x * 256; }, get yu() { return w.player.y * 256; }}});
+    w.core = {get xu() { return w.player.x * 256; }, get yu() { return w.player.y * 256; }, move: 0, stage_contact: 0, stage_nib: 0, stage_request: 0};
+    Object.defineProperty(w.player, 'chaosCore', {value: w.core});
     w.ctx = vm.createContext({global: {playerJump: false, playerSpinDash: false, playerSuper: false, powerInv: false},
         floor: Math.floor, round: Math.round, abs: Math.abs, min: Math.min, max: Math.max, view_camera: [0], camera_get_view_x: () => w.camX, camera_get_view_y: () => w.camY,
         camera_get_view_width: () => w.camW, camera_get_view_height: () => 196,
         instance_find: () => w.player, instance_exists: o => o === w.player, OBJ_player: 1, OBJ_player_char_spin: 'spin', variable_instance_exists: (o, k) => k in o, SCR_chaos_core_attach: () => {},
         SCR_chaos_enemy_score_100_bytes: () => {}, instance_destroy: () => { w.destroyed = true; }});
-    vm.runInContext(placementSrc, w.ctx); vm.runInContext(macros(fs.readFileSync(path.join(root, 'scripts/SCR_chaos_box_contact/SCR_chaos_box_contact.gml'), 'utf8')), w.ctx);
+    vm.runInContext(placementSrc, w.ctx); vm.runInContext(macros(fs.readFileSync(path.join(root, 'scripts/SCR_chaos_box_contact/SCR_chaos_box_contact.gml'), 'utf8')), w.ctx); vm.runInContext(macros(fs.readFileSync(path.join(root, 'scripts/SCR_chaos_attack/SCR_chaos_attack.gml'), 'utf8')), w.ctx);
     w.box = {x: originX, y: originY, chaosOriginX: originX, chaosOriginY: originY, chaosActive: false, chaosAsleep: true, chaosAge: 0, chaosScanTick: 0,
              chaosInitialFillDone: false, chaosState: 0, chaosVX: 0, chaosVY: 0, chaosCounter: 0, chaosOscTick: 0, chaosAnimTick: 0, chaosSilentDestroy: false,
              chaosXU: originX * 256, chaosYU: originY * 256, image_index: 0, visible: false};
@@ -92,7 +93,7 @@ const ORIGIN = [1152, 640];
 // D. A defeated object detaches its token: it is destroyed and the placement never returns in this level session.
 {
     const w = makeWorld(...ORIGIN); w.camX = 1000; w.camY = 520; w.player.x = 1140; w.player.y = 640; w.player.bbox_left = 1085; w.player.bbox_right = 1170; w.player.bbox_top = 620; w.player.bbox_bottom = 660;
-    w.ctx.global.playerJump = true;
+    w.core.move = 2; // canonical attack posture (+$03 bit 1)
     for (let i = 0; i < 40 && !w.destroyed; i++) w.step();
     assert.strictEqual(w.destroyed, true, 'attack contact destroys the instance (token detached)');
 }

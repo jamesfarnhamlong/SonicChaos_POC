@@ -49,7 +49,10 @@ if (global.checkPoint == true)
 }
 else
 {
-    if (chaos_is_thz2()) {
+    if (chaos_is_thz3()) {
+        // DEV_SPAWN / UNVERIFIED: player-start word semantics are unresolved in the package.
+        instance_create(CHAOS_THZ3_DEV_SPAWN_X, CHAOS_THZ3_DEV_SPAWN_Y, OBJ_player_char);
+    } else if (chaos_is_thz2()) {
         // DEV_SPAWN / UNVERIFIED: player-start word semantics are unresolved in the package.
         instance_create(CHAOS_THZ2_DEV_SPAWN_X, CHAOS_THZ2_DEV_SPAWN_Y, OBJ_player_char);
     } else instance_create(142, 658, OBJ_player_char);

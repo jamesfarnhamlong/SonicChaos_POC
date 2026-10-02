@@ -9,12 +9,13 @@ function scenario(param, opts) {
     const rewards = [];
     const player = {x: 0, y: 0, chaosAnchorOffset: 0, object_index: opts.spin ? 'spin' : 'char', chaosBoxContacts: 0,
         chaosCore: {xu: opts.px * 256, yu: opts.py * 256, vx: opts.vx || 0, vy: opts.vy === undefined ? 1792 : opts.vy,
-                    state: opts.state || 9, next: opts.next || opts.state || 9, contacts: 0}};
-    const ctx = vm.createContext({global: {playerJump: !!opts.jump, playerSpinDash: false}, floor: Math.floor,
+                    state: opts.state || 9, next: opts.next || opts.state || 9, contacts: 0, move: (opts.jump || opts.spin) ? 2 : 0}};   // attack posture = +$03 bit 1
+    const ctx = vm.createContext({global: {playerJump: false, playerSpinDash: false}, floor: Math.floor,
         instance_find: () => player, instance_exists: () => true, OBJ_player: 1, OBJ_player_char_spin: 'spin',
         SCR_chaos_core_attach: () => {}, variable_instance_exists: (o, k) => k in o, SCR_chaos_type10_reward: (p) => rewards.push(p), SCR_chaos_enemy_score_100_bytes: () => {},
         SPR_chaos_object_0F: 'spr0f'});
     vm.runInContext(contactSrc, ctx);
+    vm.runInContext(fs.readFileSync(path.join(root, 'scripts/SCR_chaos_attack/SCR_chaos_attack.gml'), 'utf8'), ctx);
     const box = {x: 500, y: 500, chaosParameter: param, chaosState: 2, chaosVY: 0, chaosConsumed: false, chaosActive: true,
                  chaosReplaceTick: 0, sprite_index: 'x', image_index: 0, visible: true};
     ctx.box = box; ctx.player = player;

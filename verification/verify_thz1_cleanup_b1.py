@@ -10,7 +10,7 @@ OBJECT = ROOT / "objects/OBJ_chaos_object_21"
 create = (OBJECT / "Create_0.gml").read_bytes()
 step = (OBJECT / "Step_0.gml").read_bytes()
 assert hashlib.sha256(create).hexdigest() == "15773bc129ad344a1bc58a967754e2fbe14236c964553783a420de96e1103f17"
-assert hashlib.sha256(step).hexdigest() == "b9c60548f9f465d9a9f566c46637da673385522eddfc8af5b6cf94f2e026ba12"  # pin updated: shared viewport lifecycle (placement scan + bands); earlier ddc90c85...; Sonic 8x24 extents: Sonic 8x24 extents ($21 reach dx +-19, dy -26..+24)
+assert hashlib.sha256(step).hexdigest() == "a13f7c59c3565c2ec76790571c33ebd9422763da1fb89e96f6a69b796cb417fb"  # pin updated: canonical attack posture / shared damage path (attack-posture migration); earlier b9c60548...; shared viewport lifecycle (placement scan + bands); earlier ddc90c85...; Sonic 8x24 extents: Sonic 8x24 extents ($21 reach dx +-19, dy -26..+24)
 
 draw = (OBJECT / "Draw_0.gml").read_text()
 assert "chaos_render_offset_y($21)" in draw

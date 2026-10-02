@@ -1,0 +1,1034 @@
+{
+ "source": "sonic-chaos-reference-work data/rom-cache/player-attack-badnik.json @ 28485aa",
+ "source_sha256": "2b08e9f61b761d25e3f9f36f2a55147edc7a6d3db282cf7ce1dd1a51e4988b27",
+ "trimmed": "routines, sites, evidence_classes, natural_timelines, contact_trials, setter_effects, d503_model, d532_model, power_up_controlled, update_order and frame_event_order omitted",
+ "attack_matrix": {
+  "columns": [
+   "situation",
+   "state",
+   "set/clear by",
+   "bit1_effect_of_setter",
+   "badnik_sees_attacking",
+   "note"
+  ],
+  "emulated_state_vs_bit_windows": {
+   "current_state 0x04 requested 0x0F D503 0x02": 1,
+   "current_state 0x05 requested 0x09 D503 0x02": 3,
+   "current_state 0x05 requested 0x0A D503 0x03": 1,
+   "current_state 0x05 requested 0x1B D503 0x03": 2,
+   "current_state 0x06 requested 0x09 D503 0x02": 1,
+   "current_state 0x06 requested 0x0A D503 0x03": 2,
+   "current_state 0x09 requested 0x01 D503 0x00": 2,
+   "current_state 0x09 requested 0x07 D503 0x00": 1,
+   "current_state 0x09 requested 0x08 D503 0x00": 2,
+   "current_state 0x0A requested 0x05 D503 0x00": 1,
+   "current_state 0x0A requested 0x0B D503 0x01": 1,
+   "current_state 0x0E requested 0x1C D503 0x03": 1,
+   "current_state 0x1A requested 0x1B D503 0x03": 1,
+   "current_state 0x1C requested 0x0E D503 0x01": 1
+  },
+  "evidence": "CONTROLLED ROUTINE RESULT (setter column) + EMULATED (natural_timelines) + BYTE-VERIFIED (kept/inherits rows)",
+  "rows": [
+   [
+    "standing",
+    "$01",
+    "$45B3 stand / $45CE land",
+    "cleared",
+    false,
+    "standing callbacks write no bit 1"
+   ],
+   [
+    "walking",
+    "$05",
+    "$45CE land",
+    "cleared",
+    false,
+    ""
+   ],
+   [
+    "running",
+    "$06",
+    "$47A9 state-6 setter",
+    "cleared",
+    false,
+    ""
+   ],
+   [
+    "crouch",
+    "$04",
+    "$46BB",
+    "cleared",
+    false,
+    ""
+   ],
+   [
+    "look-up",
+    "$03",
+    "$46B0",
+    "kept",
+    false,
+    ""
+   ],
+   [
+    "skid",
+    "$07/$08",
+    "$47B6/$47C9 (gated on bit 0 clear)",
+    "conditional",
+    false,
+    "both setters return early while bit 0 is set (airborne); when they fire they clear bit 1"
+   ],
+   [
+    "ordinary jump ascending",
+    "$0A",
+    "$45ED",
+    "conditional",
+    true,
+    "bit 1 set when the jump starts (needs bit 0 clear)"
+   ],
+   [
+    "jump apex",
+    "$0A",
+    "none: $0A never calls $463C",
+    "kept",
+    true,
+    "no apex transition for the normal jump"
+   ],
+   [
+    "jump falling",
+    "$0A",
+    "none",
+    "kept",
+    true,
+    ""
+   ],
+   [
+    "jump landing request",
+    "$0A -> $05",
+    "$45CE",
+    "cleared",
+    false,
+    "cleared at the request; $D501 still $0A for one more update (ball state, not attacking)"
+   ],
+   [
+    "rolling",
+    "$09",
+    "$47DC / ramp contact $6A02",
+    "set",
+    true,
+    ""
+   ],
+   [
+    "spin-dash charge",
+    "$0F",
+    "$4701",
+    "set",
+    true,
+    "attacking while charging"
+   ],
+   [
+    "spin-dash roll",
+    "$10",
+    "$4719 / terrain $7654",
+    "set",
+    true,
+    ""
+   ],
+   [
+    "peel-out charge",
+    "$15",
+    "$46CE",
+    "kept",
+    false,
+    "kept; aura object (bits 1|7) only after a very long charge"
+   ],
+   [
+    "peel-out run",
+    "$1A",
+    "$46E2",
+    "kept",
+    false,
+    "kept; bit 7 for 12 updates"
+   ],
+   [
+    "ramp launch",
+    "$1B",
+    "$47FB",
+    "set",
+    true,
+    ""
+   ],
+   [
+    "upright spring",
+    "$0B",
+    "$480C",
+    "cleared",
+    false,
+    "bit 0 set, bit 1 cleared"
+   ],
+   [
+    "spring apex / ledge fall",
+    "$0E",
+    "$463C",
+    "kept",
+    false,
+    "bit 0 set, bit 1 cleared"
+   ],
+   [
+    "diagonal spring",
+    "$1C",
+    "$482D",
+    "set",
+    true,
+    "attacking until the apex request $463C"
+   ],
+   [
+    "horizontal spring",
+    "9",
+    "$4849/$4868",
+    "set",
+    true,
+    "grounded roll"
+   ],
+   [
+    "loop",
+    "$0C/$0D/$13",
+    "entry $3EAB/$3EE1/$3EF7 (no D503 write)",
+    "kept",
+    "inherits",
+    "exit: bit 1 -> state 9 else 6 ($3CAB); $0D launch -> $0A with bits 0|1"
+   ],
+   [
+    "twist",
+    "$22",
+    "entry/exit $95EC (no D503 write)",
+    "kept",
+    "inherits",
+    "exit requests state 9 / $0A WITHOUT setting bit 1: ball state, possibly not attacking"
+   ],
+   [
+    "hurt",
+    "$1E",
+    "$4942",
+    "kept",
+    "ignored",
+    "bit 1 kept but bit 6 disables all contact"
+   ],
+   [
+    "death",
+    "$1F",
+    "$4984",
+    "kept",
+    "ignored",
+    "bit 6 set by the callbacks"
+   ],
+   [
+    "act clear",
+    "$20",
+    "$4892",
+    "kept",
+    "inherits",
+    "no D503 write"
+   ],
+   [
+    "state $11",
+    "$11",
+    "$4775",
+    "n/a",
+    false,
+    ""
+   ],
+   [
+    "invincible (D532 6)",
+    "any",
+    "$4B1D pickup",
+    "set",
+    true,
+    "stars aura keeps bit 7; D532 6 substitutes for bit 1"
+   ]
+  ]
+ },
+ "badnik_census": {
+  "enemy_types": [
+   "0x21",
+   "0x27"
+  ],
+  "evidence": "DECODED DATA (placement census) + CONTROLLED ROUTINE RESULT (sweeps) + EMULATED",
+  "no_other_enemy": "the census (data/rom-cache/levels/object-census.json) has no other THZ1/THZ2 type that converts to $0F: $09 ring, $10 monitor, $18 sign, $1B spike, $26 spring, $28 platform. THZ3 adds only boss $50",
+  "shared_vs_per_object": "ONE shared player-side rule ($48BC: D532 == 6 immune; D3B0 damages regardless of attack; D520 + bit 1 -> rebound else damage) and ONE shared defeat gate ($5F3D, used by $27 only in THZ). $21, the monitor and the boss own their tests (each reads $D503 directly). The predicates agree for $27/$21 (bit 1 or D532 == 6) and differ for the monitor/boss (bit 1 only)",
+  "thz1": {
+   "0x10_monitors": 5,
+   "0x1B_moving_spikes": 4,
+   "0x21": 6,
+   "0x27": 3
+  },
+  "thz2": {
+   "0x10_monitors": 5,
+   "0x1B_moving_spikes": 0,
+   "0x21": 5,
+   "0x27": 4
+  },
+  "types": {
+   "0x10": {
+    "attack_test": "D503 bit 1 only (D532 == 6 does not break it)",
+    "collision_routine": "$034D ($5FA0 -> $6328)",
+    "damage": "none (solid, bit 7 set)",
+    "defeat": "reward + type $0F (not an enemy)"
+   },
+   "0x1B": {
+    "attack_test": "side bump reads bit 1 + floor flag; top damage ignores it",
+    "collision_routine": "$ACFD -> $033B",
+    "damage": "D3B0 := $FF on top contact"
+   },
+   "0x21": {
+    "attack_test": "D532 == 6 or D503 bit 1, read at object-update time (after the player update of the same frame)",
+    "bottom": "no separate case: dy -3..+24 is the 'low' branch",
+    "box": "|dx| <= 19, dy -26..+24",
+    "collision_routine": "$B2AF -> $033B ($6328), tail $B2B2",
+    "damage": "D3B0 := $FF",
+    "defeat": "$5F54 conversion to $0F (+score)",
+    "reads_attack_before_or_after_movement": "after the player movement of that frame; the object moves (patrol) before the contact tail in the same callback",
+    "rebound_after_defeat": "none",
+    "top_vs_side": "top (playerY <= objY-4) = stomp bounce BEFORE the attack test, badnik survives; side/low = attack/damage"
+   },
+   "0x27": {
+    "attack_test": "$5F3D: D532 == 6 or D503 bit 1 (same predicate as $21)",
+    "box": "|dx| <= 17, dy -14..+24",
+    "collision_routine": "$033B ($6328) at the start of every state callback, then $0323 ($5F3D) on overlap",
+    "contact_movement": "on overlap the callback returns before moving",
+    "damage": "none from the callback; generic D520 -> $48BC damage on the next player update",
+    "defeat": "$5F54",
+    "rebound_after_defeat": "-3.0 from above (next update), +0.5 from below, none from the side",
+    "top_vs_side": "no difference for the badnik; the rebound differs (above -3.0, below +0.5, side none)"
+   },
+   "0x50_thz3": {
+    "attack_test": "D503 bit 1 only",
+    "damage": "D3B0 := $FF + 2-update cooldown",
+    "note": "docs/object-50.md; D532 == 6 not tested"
+   }
+  }
+ },
+ "contact_handler_48bc": {
+  "cases": 6144,
+  "evidence": "CONTROLLED ROUTINE RESULT",
+  "inputs": "D503 bits 0,1,6,7 (16 combos), D532 in {0,3,4,6}, D520 in {0,9}, D3B0 in {0,FF}, D521 high nibble in {0..3}, rings {0,>0}, current state in {5,9,$11}",
+  "model_function": "model_48bc",
+  "model_mismatches": 0,
+  "rules_in_priority_order": [
+   "D503 bit 7 set -> invulnerable path ($49F7): no contact or damage processing",
+   "D503 bit 6 set -> hurt/dying path ($4A2E): D520 cleared, nothing else",
+   "D532 == 6 -> D3B0 and D520 cleared, no damage, no rebound",
+   "D3B0 != 0 -> damage whatever D503 bit 1 is (state $11: clears D532, hurt without ring test; else rings == 0 -> death $1F, else scatter rings + hurt $1E)",
+   "D520 == 0 -> nothing",
+   "D520 != 0 and D503 bit 1 set (attacking): D521 bit 4 -> vy := +0.5 unless current state is 9; else D521 bit 5 -> vy := -3.0 (floor flag cleared, airborne set); else nothing; D520 cleared",
+   "D520 != 0 and D503 bit 1 clear -> damage exactly as for D3B0 != 0"
+  ]
+ },
+ "counts": {
+  "controlled_cases": 76422,
+  "emulated_contact_trials": 14,
+  "emulated_updates_recorded": 2144,
+  "model_mismatches": 0
+ },
+ "format": "player-attack-badnik/1",
+ "gate_5f3d": {
+  "by_d532": {
+   "0x00": {
+    "converts_when_bit1_clear": [
+     false
+    ],
+    "converts_when_bit1_set": [
+     true
+    ]
+   },
+   "0x01": {
+    "converts_when_bit1_clear": [
+     false
+    ],
+    "converts_when_bit1_set": [
+     true
+    ]
+   },
+   "0x02": {
+    "converts_when_bit1_clear": [
+     false
+    ],
+    "converts_when_bit1_set": [
+     true
+    ]
+   },
+   "0x03": {
+    "converts_when_bit1_clear": [
+     false
+    ],
+    "converts_when_bit1_set": [
+     true
+    ]
+   },
+   "0x04": {
+    "converts_when_bit1_clear": [
+     false
+    ],
+    "converts_when_bit1_set": [
+     true
+    ]
+   },
+   "0x05": {
+    "converts_when_bit1_clear": [
+     false
+    ],
+    "converts_when_bit1_set": [
+     true
+    ]
+   },
+   "0x06": {
+    "converts_when_bit1_clear": [
+     true
+    ],
+    "converts_when_bit1_set": [
+     true
+    ]
+   },
+   "0x07": {
+    "converts_when_bit1_clear": [
+     false
+    ],
+    "converts_when_bit1_set": [
+     true
+    ]
+   },
+   "0x08": {
+    "converts_when_bit1_clear": [
+     false
+    ],
+    "converts_when_bit1_set": [
+     true
+    ]
+   }
+  },
+  "cases": 4608,
+  "converted_slot_p3f_during_call": "0x80 then cleared",
+  "converted_slot_type": "0x0F",
+  "evidence": "CONTROLLED ROUTINE RESULT",
+  "model_mismatches": 0,
+  "rule": "converts iff (object +$21 & 15) != 0 and ($D532 == 6 or $D503 bit 1); every other $D503 bit is irrelevant"
+ },
+ "machine_facing_label": "player_attack_badnik",
+ "monitor_sweep": {
+  "callback": "0xA16C (bank $0C)",
+  "cases": 12834,
+  "evidence": "CONTROLLED ROUTINE RESULT",
+  "per_condition": {
+   "airborne_only_bit0": {
+    "no_effect": 2139
+   },
+   "attack_bit1_grounded": {
+    "bottom_hit_player_vy_+2.0_object_up": 300,
+    "break_rebound_-4.0": 375,
+    "no_effect": 1464
+   },
+   "invincible_D532_6": {
+    "no_effect": 2139
+   },
+   "invincible_and_bit1": {
+    "bottom_hit_player_vy_+2.0_object_up": 300,
+    "break_rebound_-4.0": 375,
+    "no_effect": 1464
+   },
+   "jump_bits01": {
+    "bottom_hit_player_vy_+2.0_object_up": 300,
+    "break_rebound_-4.0": 375,
+    "no_effect": 1464
+   },
+   "standing_or_walking": {
+    "no_effect": 2139
+   }
+  },
+  "rule": "break/bounce/bottom-hit all require $D503 bit 1 (the very first test after the $5FA0 projection); $D532 == 6 alone does nothing. Requested player states $0F/$10/$15/$1A reject a top break; a non-negative, non-zero player Y speed is required; state 9 breaks without a rebound; the monitor sets object +3 bit 7 so the generic D520 damage path never sees it"
+ },
+ "non_attacking_contact": {
+  "evidence": "CONTROLLED ROUTINE RESULT + EMULATED ORIGINAL FRAME (contact_trials: type $27 walking/falling hurts, rings 16 -> 0, $1E, D3B1 120)",
+  "invulnerability": "D503 bit 7 (set by hurt $4942, timer $D3B1 = $78): $48BC takes $49F7, no damage, no rebound; contact is still computed",
+  "type1b_moving_spike": "top contact writes D3B0 := $FF whatever bit 1 is (only D532 == 6 saves Sonic); side contact with bit 1 and the floor flag bumps Sonic to state 1 (docs/platform-spike-collision-audit.md)",
+  "type21": "side/low contact writes D3B0 := $FF (damage). Top contact (playerY <= objectY - 4) is a stomp bounce, never damage",
+  "type27": "DAMAGES. The callback only returns, but $6328 raises D520 (object +3 bit 7 is clear) and $48BC hurts the non-attacking player on the NEXT player update (rings 0 -> death $1F). This CORRECTS the earlier reading 'ordinary contact requests no damage'; what is true is that the callback never writes D3B0",
+  "type27_stall": "the callback returns before its movement/timer on every overlap update (stall is real)",
+  "type28_platform_type26_type09": "no damage (they set bit 7 or use their own proximity test)",
+  "vertical_direction": "type $21 is the only badnik whose outcome depends on above/below ($B2B7 compare). Type $27's contact flag direction decides only the rebound, not damage"
+ },
+ "parked_type27_observation": {
+  "can_the_rom_do_it": {
+   "D532_6_while_unrolled": "YES while invincible (stars), any pose: the invincibility pickup sets bits 1|7 and D532 6 substitutes for bit 1",
+   "enemy_specific_other_condition": "NO: $5F3D is the only gate; it reads bit 1 and D532 only",
+   "upright_spring_or_falling_unrolled_and_destroys_bee": "NO: contact_trials show state $0B/$0E (D503 = 1) does NOT convert the bee and the bee hurts Sonic (rings 16 -> 0, $1E)",
+   "visually_unrolled_with_bit1_set": "YES, for ONE update at jump start: the jump request ($45ED) sets bit 1 in the callback of update n while $D501 (the animation state) is still 5/6 until update n+1 (natural_timelines: state $06/$05 requested $0A with D503 $03). Also state $1C (diagonal spring) is attacking by design"
+  },
+  "classification": "B (POC global.playerJump false positive) as the persistent cause: legacy playerJump = (move & 3) != 0 is true in $0B (upright spring), $0E (post-apex / ledge fall) which the ROM treats as NOT attacking; the single canonical one-update window (jump start) is C-class timing but is 1/60 s",
+  "not_reproduced": "the Windows run itself (UNRESOLVED E for the exact trigger Sonic state; every ROM-possible state is classified above)",
+  "question": "type $27 destroyed from above while Sonic appears unrolled",
+  "secondary": "D: POC type $27 ordinary overlap does not hurt; the ROM hurts through D520/$48BC and also rebounds an attacker (-3.0 above / +0.5 below)"
+ },
+ "poc_consumers": {
+  "classification_legend": [
+   "canonical attack posture",
+   "airborne status",
+   "rolling status",
+   "enemy-specific",
+   "unresolved"
+  ],
+  "evidence": "SOURCE READ of POC checkout 7799c3459f59781878574e5d805bb3df4baa057c (read-only; no POC file modified)",
+  "poc_commit": "7799c3459f59781878574e5d805bb3df4baa057c",
+  "rows": [
+   {
+    "current": "global.playerJump = !state11 && (move & 3) != 0",
+    "location": "SCR_chaos_adapter.gml:30",
+    "migration": "retire; split into chaosAttackPosture (bit 1) and airborne (bit 0)",
+    "rom_comparison": "legacy definition; (move&3) includes airborne-without-attack ($0B,$0E)"
+   },
+   {
+    "current": "global.chaosAttackPosture = !state11 && (move & 2) != 0",
+    "location": "SCR_chaos_adapter.gml:35",
+    "migration": "KEEP as the canonical attack bit; consumers should add 'or powerInv (D532==6)' where the ROM does",
+    "rom_comparison": "canonical bit; the state-$11 exclusion is not in the ROM predicate (bit 1 is simply cleared by $4775)"
+   },
+   {
+    "current": "global.playerJumpSpring = next == 11 || next == 28",
+    "location": "SCR_chaos_adapter.gml:31",
+    "migration": "should remain as is (airborne/spring physics)",
+    "rom_comparison": "physics-only (jump-spring gravity/control), not an attack predicate"
+   },
+   {
+    "current": "global.playerSpinDash = next == 15",
+    "location": "SCR_chaos_adapter.gml:32",
+    "migration": "should use canonical attack posture (bit 1 already set in $0F/$10)",
+    "rom_comparison": "state $0F only; the released roll $10 is covered by bit 1"
+   },
+   {
+    "current": "(move&2) || OBJ_player_char_spin || playerJump || playerSpinDash",
+    "location": "SCR_chaos_adapter.gml:242 (SCR_chaos_block47_step)",
+    "migration": "should use canonical attack posture + the four-state exclusion",
+    "rom_comparison": "breakable block $47/$6AE3 requires bit 1 and excludes states $0F/$10/$15/$1A (docs/spring-interaction-audit.md)"
+   },
+   {
+    "current": "playerJump = true; playerJumpSpring = true",
+    "location": "SCR_chaos_adapter.gml:310-311 (type21 top bounce)",
+    "migration": "should set airborne + spring physics but NOT attack",
+    "rom_comparison": "the ROM clears bit 1 on the stomp ($480C): spring-flight is not attacking"
+   },
+   {
+    "current": "place_meeting(OBJ_badniks) && !playerJump && !playerSpinDash -> hazard damage",
+    "location": "SCR_chaos_adapter.gml:425 (sample_damage)",
+    "migration": "should use canonical attack posture (+powerInv) and the ROM's rebound/ignore split",
+    "rom_comparison": "generic contact damage keyed on the legacy predicate; ROM keys on D520 && !(bit1 || D532==6)"
+   },
+   {
+    "current": "OBJ_player_char_spin || playerJump || playerSpinDash || playerSuper || powerInv -> destroy",
+    "location": "OBJ_chaos_object_27/Step_0.gml:58",
+    "migration": "should use canonical attack posture or powerInv (D532==6); drop playerSuper (no ROM counterpart)",
+    "rom_comparison": "THE parked observation: playerJump is true in $0B/$0E (upright spring fall, apex, ledge fall)"
+   },
+   {
+    "current": "ordinary overlap: no damage, exit",
+    "location": "OBJ_chaos_object_27/Step_0.gml:62",
+    "migration": "unresolved in POC: needs ROM-faithful contact damage + -3.0/+0.5 rebound after a defeat",
+    "rom_comparison": "ROM: the callback requests no damage, but $6328 raises D520 and $48BC hurts a non-attacking player next update"
+   },
+   {
+    "current": "(!state11 && (spin || playerJump || playerSpinDash)) || playerSuper || powerInv",
+    "location": "OBJ_chaos_object_21/Step_0.gml:73",
+    "migration": "should use canonical attack posture or powerInv; the top-bounce branch is already ROM-ordered",
+    "rom_comparison": "type $21 tests D503 bit 1 or D532==6 only"
+   },
+   {
+    "current": "with (cp_p) SCR_physics_jump_objects() after defeat",
+    "location": "OBJ_chaos_object_21/Step_0.gml:80",
+    "migration": "should be removed (enemy-specific)",
+    "rom_comparison": "no player rebound in the ROM for a $21 side defeat"
+   },
+   {
+    "current": "!state11 && (spin || playerJump || playerSpinDash)",
+    "location": "OBJ_chaos_object_10/Step_0.gml:69",
+    "migration": "should use canonical attack posture (not powerInv)",
+    "rom_comparison": "monitor requires bit 1 ONLY; D532==6 alone does not break it"
+   },
+   {
+    "current": "playerJump / playerSpinDash / Super / powerInv checks on legacy OBJ_badniks/OBJ_monitors (OBJ_badnik_1)",
+    "location": "SCR_badnik_death.gml / SCR_monitor_collisions.gml",
+    "migration": "should remain legacy (not part of the ROM-derived THZ set)",
+    "rom_comparison": "legacy sample-engine objects, not canonical THZ objects"
+   },
+   {
+    "current": "global.playerJump = true on spring contact",
+    "location": "SCR_physics_spring.gml:23-36",
+    "migration": "should set airborne; attack only for the diagonal ($1C)",
+    "rom_comparison": "physics for the legacy spring; ROM: upright spring clears bit 1, diagonal sets it"
+   },
+   {
+    "current": "playerJump gates ground friction/jump-physics",
+    "location": "SCR_physics_speed.gml:6,74,97,107,126,135; OBJ_player_char/Step_0.gml:150-451",
+    "migration": "should use airborne status (bit 0) / state, remain as is",
+    "rom_comparison": "airborne/physics predicate, not attack"
+   },
+   {
+    "current": "playerJump == false gates",
+    "location": "SCR_physics_ramp.gml:8, SCR_physics_ramp_spin.gml:8; OBJ_chaos_controls/Step_0.gml:39",
+    "migration": "should use airborne status",
+    "rom_comparison": "airborne/physics/checkpoint predicate"
+   },
+   {
+    "current": "legacy spin object",
+    "location": "OBJ_player_char_spin Step_0/Step_2 (playerJump)",
+    "migration": "should remain legacy",
+    "rom_comparison": "legacy character object, not the chaosCore"
+   }
+  ]
+ },
+ "poc_untouched": true,
+ "rebound_model": {
+  "enemy_defeat_by_type27": "the callback converts the badnik only; it writes nothing to the player. The player's own handler $48BC applies the rebound one update later from $D520 and the high nibble of $D521 (side of contact from $6328)",
+  "evidence": "CONTROLLED ROUTINE RESULT (contact_handler_48bc, sweep_type21, sweep_monitor) + EMULATED (contact_trials)",
+  "monitor": {
+   "from_above_moving_down": "vy := $FC00 (-4.0), no rebound if the current state is 9",
+   "from_below": "vy := +2.0 ($0200), monitor rises",
+   "needs": "D503 bit 1 (D532 == 6 alone does nothing)"
+  },
+  "poc_mismatch": "POC type $21 calls SCR_physics_jump_objects() after a defeat (some rebound); the ROM gives none for a side defeat",
+  "type21_attack": "side/low contact with bit 1 or D532 == 6: defeated, no rebound (the object sets +3 bit 7 so D520 is never raised)",
+  "type21_top": {
+   "condition": "overlap and playerY <= objectY - 4",
+   "meaning": "$F940 = -6.75, request $0B, $D448 = $FF, bit 1 cleared by $480C, badnik NOT defeated, any attack posture or none",
+   "vy": -1728
+  },
+  "type27_from_above_player_in_dy_-14..-1": {
+   "meaning": "$FD00 = -3.0",
+   "rule": "$D521 bit 5; overwrites incoming Y speed (incoming speed does not matter); floor flag cleared, airborne set; requested state unchanged; D503 unchanged (attack bit persists); applied at the next player update inside $48BC",
+   "vy": -768
+  },
+  "type27_from_below_player_in_dy_+7..+24": {
+   "meaning": "$0080 = +0.5",
+   "rule": "$D521 bit 4; not applied when the current state is 9 (rolling); no state change",
+   "vy": 128
+  },
+  "type27_from_the_side": "no rebound (D521 bits 6/7 only)"
+ },
+ "research_only": true,
+ "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+ "static_only": false,
+ "thz3_dependency_census": {
+  "boss_only_deferrable": [
+   "type $50 and children $12/$34/$0A",
+   "camera lock / boss music / arena art selector $13 and palette $0C",
+   "defeat -> state $20 -> act-clear screen (shared $18/$19/$20 chain does not apply: no sign in THZ3)"
+  ],
+  "evidence": "DECODED DATA (cached layouts/objects) + references to accepted research; no new ROM tracing",
+  "object_dependencies": {
+   "0x09": {
+    "docs": "docs/object-09.md",
+    "status": "researched and Windows accepted (strict <12 proximity)"
+   },
+   "0x10": {
+    "docs": "docs/object-10.md",
+    "status": "researched; parameter 1 (+10 rings) covered by docs/thz2-thz3-object-deltas.md; attack gate = bit 1 only (this audit)"
+   },
+   "0x1B": {
+    "docs": "docs/platform-spike-collision-audit.md",
+    "status": "researched for THZ1; THZ3 placement (752,128) outside the platform/spike audit's measured set but same routine ($ACFD)"
+   },
+   "0x26": {
+    "docs": "docs/spring-interaction-audit.md",
+    "status": "researched (strong x4 in THZ3: fixed, parameter 0)"
+   },
+   "0x50": {
+    "docs": "docs/object-50.md",
+    "status": "boss: full study exists; DEFERRABLE for ordinary traversal; attack gate = bit 1 only",
+    "unresolved_children": [
+     "type $12",
+     "type $34",
+     "type $0A",
+     "type $0F effect roles",
+     "palette consumer $D494/$D495",
+     "state $20 act-clear screen / next-level load"
+    ]
+   }
+  },
+  "objects_thz3": {
+   "0x09": [
+    [
+     948,
+     100,
+     "0x00"
+    ],
+    [
+     984,
+     74,
+     "0x00"
+    ],
+    [
+     1032,
+     64,
+     "0x00"
+    ]
+   ],
+   "0x10": [
+    [
+     1456,
+     366,
+     "0x01"
+    ]
+   ],
+   "0x1B": [
+    [
+     752,
+     128,
+     "0x00"
+    ]
+   ],
+   "0x26": [
+    [
+     656,
+     384,
+     "0x00"
+    ],
+    [
+     720,
+     384,
+     "0x00"
+    ],
+    [
+     784,
+     384,
+     "0x00"
+    ],
+    [
+     1456,
+     384,
+     "0x00"
+    ]
+   ],
+   "0x50": [
+    [
+     1936,
+     238,
+     "0x00"
+    ]
+   ]
+  },
+  "prerequisites_for_ordinary_traversal": [
+   "canonical THZ3 layout/rings/objects import (levels/thz3)",
+   "shared widescreen viewport/lifecycle adapter (accepted)",
+   "type $26 strong springs, terrain springs, rings (accepted)",
+   "type $10 reward 1 (new branch, trivial)",
+   "canonical attack posture migration (this audit) so the boss and monitors read bit 1",
+   "type $1B at (752,128) (same routine as THZ1)"
+  ],
+  "recommended_next_scope": "THZ3 foundation (layout, rings, springs, monitors, one $1B) immediately after the canonical attack-posture migration; hold the boss until its five follow-up objects and the act-clear screen are studied",
+  "terrain": {
+   "blocks_already_used_by_thz1_or_thz2": 77,
+   "blocks_new_to_thz3": [],
+   "blocks_used_in_thz3": 77,
+   "collision_surface_types_used": [
+    0,
+    1,
+    2,
+    3,
+    7,
+    9,
+    13,
+    20,
+    23,
+    24
+   ],
+   "ring_blocks_present": [
+    "0x40"
+   ],
+   "spike_blocks_present": [],
+   "spring_blocks_present": {
+    "diagonal": [
+     "0x36"
+    ],
+    "horizontal": [],
+    "upright": [
+     "0x31"
+    ]
+   },
+   "terrain_ring_counts": {
+    "initial_visible_population": 9,
+    "object_09_hidden": 0,
+    "object_09_raw_records": 3,
+    "object_09_visible": 3,
+    "terrain": 6
+   },
+   "verdict": "every THZ3 terrain block is already exercised by the accepted THZ1/THZ2 populations: no new collision/terrain mechanism"
+  }
+ },
+ "type21_sweep": {
+  "callback": "0xB2AF (bank $0C)",
+  "cases": 24168,
+  "evidence": "CONTROLLED ROUTINE RESULT",
+  "model_mismatches": 0,
+  "per_condition": {
+   "airborne_only_bit0": {
+    "converted": {
+     "cells": 0
+    },
+    "damage_request_D3B0": {
+     "cells": 1092,
+     "dx": [
+      -19,
+      19
+     ],
+     "dy": [
+      -3,
+      24
+     ]
+    },
+    "stomp_bounce": {
+     "cells": 897,
+     "dx": [
+      -19,
+      19
+     ],
+     "dy": [
+      -26,
+      -4
+     ]
+    }
+   },
+   "attack_bit1_grounded": {
+    "converted": {
+     "cells": 1092,
+     "dx": [
+      -19,
+      19
+     ],
+     "dy": [
+      -3,
+      24
+     ]
+    },
+    "damage_request_D3B0": {
+     "cells": 0
+    },
+    "stomp_bounce": {
+     "cells": 897,
+     "dx": [
+      -19,
+      19
+     ],
+     "dy": [
+      -26,
+      -4
+     ]
+    }
+   },
+   "invincible_D532_6": {
+    "converted": {
+     "cells": 1092,
+     "dx": [
+      -19,
+      19
+     ],
+     "dy": [
+      -3,
+      24
+     ]
+    },
+    "damage_request_D3B0": {
+     "cells": 0
+    },
+    "stomp_bounce": {
+     "cells": 897,
+     "dx": [
+      -19,
+      19
+     ],
+     "dy": [
+      -26,
+      -4
+     ]
+    }
+   },
+   "invincible_and_bit1": {
+    "converted": {
+     "cells": 1092,
+     "dx": [
+      -19,
+      19
+     ],
+     "dy": [
+      -3,
+      24
+     ]
+    },
+    "damage_request_D3B0": {
+     "cells": 0
+    },
+    "stomp_bounce": {
+     "cells": 897,
+     "dx": [
+      -19,
+      19
+     ],
+     "dy": [
+      -26,
+      -4
+     ]
+    }
+   },
+   "jump_bits01": {
+    "converted": {
+     "cells": 1092,
+     "dx": [
+      -19,
+      19
+     ],
+     "dy": [
+      -3,
+      24
+     ]
+    },
+    "damage_request_D3B0": {
+     "cells": 0
+    },
+    "stomp_bounce": {
+     "cells": 897,
+     "dx": [
+      -19,
+      19
+     ],
+     "dy": [
+      -26,
+      -4
+     ]
+    }
+   },
+   "standing_or_walking": {
+    "converted": {
+     "cells": 0
+    },
+    "damage_request_D3B0": {
+     "cells": 1092,
+     "dx": [
+      -19,
+      19
+     ],
+     "dy": [
+      -3,
+      24
+     ]
+    },
+    "stomp_bounce": {
+     "cells": 897,
+     "dx": [
+      -19,
+      19
+     ],
+     "dy": [
+      -26,
+      -4
+     ]
+    }
+   }
+  },
+  "rule": "overlap (|dx| <= 19, -26 <= dy <= 24) -> if player Y <= objectY - 4: stomp bounce (vy $F940, request $0B, $D448 $FF, attack bit cleared by $480C) REGARDLESS of attack bit/D532 and the badnik survives; else $D503 bit 1 or $D532 == 6 -> convert; else D3B0 := $FF. Object +3 bit 7 is set at init, so $6328 never sets D520 for type $21",
+  "stomp_does_not_convert": true
+ },
+ "type27_sweep": {
+  "D521_high_nibble_regions_after_callback": {
+   "0x1": {
+    "cells": 324,
+    "dx_range": [
+     -17,
+     17
+    ],
+    "dy_range": [
+     7,
+     24
+    ]
+   },
+   "0x2": {
+    "cells": 308,
+    "dx_range": [
+     -17,
+     17
+    ],
+    "dy_range": [
+     -14,
+     -1
+    ]
+   },
+   "0x4": {
+    "cells": 363,
+    "dx_range": [
+     -17,
+     -1
+    ],
+    "dy_range": [
+     -13,
+     23
+    ]
+   },
+   "0x8": {
+    "cells": 370,
+    "dx_range": [
+     0,
+     17
+    ],
+    "dy_range": [
+     -13,
+     23
+    ]
+   }
+  },
+  "callback": "0x89AC (bank $1E state 1)",
+  "cases": 21756,
+  "evidence": "CONTROLLED ROUTINE RESULT",
+  "model_mismatches": 0,
+  "overlap_box_player_minus_object": {
+   "cells": 1365,
+   "dx": [
+    -17,
+    17
+   ],
+   "dy": [
+    -14,
+    24
+   ]
+  },
+  "per_condition": {
+   "airborne_only_bit0": {
+    "D3B0_ever_set_by_callback": 0,
+    "cells_converted": 0
+   },
+   "attack_bit1_grounded": {
+    "D3B0_ever_set_by_callback": 0,
+    "cells_converted": 1365
+   },
+   "invincible_D532_6": {
+    "D3B0_ever_set_by_callback": 0,
+    "cells_converted": 1365
+   },
+   "invincible_and_bit1": {
+    "D3B0_ever_set_by_callback": 0,
+    "cells_converted": 1365
+   },
+   "jump_bits01": {
+    "D3B0_ever_set_by_callback": 0,
+    "cells_converted": 1365
+   },
+   "standing_or_walking": {
+    "D3B0_ever_set_by_callback": 0,
+    "cells_converted": 0
+   }
+  },
+  "rule": "overlap && ($D532 == 6 || $D503 bit 1) -> $5F3D converts to $0F; overlap otherwise -> callback returns (NO $D3B0 request) but $6328 has already set player D520 (object +3 bit 7 clear) so $48BC hurts a non-attacking player on the next player update"
+ },
+ "unresolved": [
+  "Super Peel-Out ($15/$1A): in an ordinary charge and release (36+ updates emulated) bit 1 stays CLEAR; the type $05 param-$FF aura that sets bits 1|7 is spawned only after a very long charge script (loop counter $D2); untested beyond that (peel-out is not in the POC)",
+  "Loop states $0C/$0D/$13 and twist $22 are not reachable in THZ1/THZ2 natural runs; their bit-1 behaviour is BYTE-VERIFIED (no writers in the loop/twist code except the exit setters) but not emulated",
+  "Act-clear state $20: setter leaves bit 1 untouched (controlled); not emulated end to end here",
+  "Animation frame identity (is a given state's frame a ball?) was NOT established; the 'visually unrolled' discussion uses state numbers and the one-update state/bit lag only",
+  "James's Windows observation could not be replayed (needs the POC build); the ROM-side mechanism that reproduces 'destroyed from above while apparently unrolled' is the POC's legacy playerJump predicate",
+  "$D532 persistence across act changes (RAM clear not traced); code 3 is not cleared at timer expiry by $4A74 (other clear not found)",
+  "Type $1B THZ3 placement (752,128) not measured"
+ ]
+}

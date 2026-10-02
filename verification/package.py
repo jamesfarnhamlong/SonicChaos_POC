@@ -74,9 +74,10 @@ for slot in range(1,6):
     assert 'loadIcon = 0;' in create and 'loadZone = "zone";' in create
 report['data_card_draw_defaults_validated']=True
 adapter=(root/'scripts/SCR_chaos_adapter/SCR_chaos_adapter.gml').read_text()
-assert 'cp_spike_top = cp_o.chaosBaseY-cp_visible' in adapter
-assert 'cp_spike_bottom = cp_o.chaosBaseY' in adapter
+# $1B collision is the ROM model (SCR_chaos_spike1b, cone against the anchor); the adapter keeps only the floor-anchored presentation.
+assert 'function SCR_chaos_spike_step' not in adapter and 'cp_spike_top' not in adapter
 assert 'cp_o.x-12,cp_o.chaosBaseY-cp_visible' in adapter
+assert 'function chaos_spike1b_step' in (root/'scripts/SCR_chaos_spike1b/SCR_chaos_spike1b.gml').read_text()
 report['moving_spike_floor_anchor_validated']=True
 terrain_manifest=json.loads((root/'POC_notes/rom-cache/terrain-assets.json').read_text())
 for asset in terrain_manifest['assets']:

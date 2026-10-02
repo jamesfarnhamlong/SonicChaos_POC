@@ -1,7 +1,7 @@
 // Executes the actual shipped GML core (JS-compatible syntax), not a reimplementation.
 const fs = require('fs'), vm = require('vm'), path = require('path'), assert = require('assert');
 const root = path.resolve(__dirname,'..');
-const ctx = vm.createContext({global:{},floor:Math.floor,round:Math.round,abs:Math.abs,
+const ctx = vm.createContext({variable_global_exists: () => false, global:{},floor:Math.floor,round:Math.round,abs:Math.abs,
     min:Math.min,max:Math.max,array_create:(n,v)=>Array(n).fill(v),array_length:a=>a.length,
     array_copy:(dst,di,src,si,n)=>{for(let i=0;i<n;i++)dst[di+i]=src[si+i];},
     is_array:Array.isArray});
@@ -30,9 +30,9 @@ ctx.SCR_cc_floor(c);
 assert.strictEqual(c.tile,61,'THZ1 static-spike tile');
 assert.strictEqual(c.bg&2,2,'static-spike floor contact');
 assert.strictEqual(c.hazard,1,'surface type 5 must request hazard damage');
-c=initial({xu:1504*256,yu:830*256,previous:133,bg:0,player_flags:128});
+c=initial({xu:1504*256,yu:830*256,previous:133,bg:0,move:128});
 ctx.SCR_cc_floor(c);
-assert.strictEqual(c.hazard,0,'player damage-disable flag suppresses hazard');
+assert.strictEqual(c.hazard,0,'invulnerability (+$03 bit 7 = move & 128; the earlier fixture used +$04 bit 7, the wrong byte) suppresses the hazard');
 assert.strictEqual(ctx.SCR_cc_lookup(4095,1023,0).index,-1,'4096th map cell must not be queried');
 const report={rom_sha256:data.rom_sha256,actual_gml_executed:true,subroutine_cases:count,
     first_ramp_updates:48,vertical_spring_updates:160,game_maker_compiled:false,

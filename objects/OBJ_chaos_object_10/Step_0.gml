@@ -65,8 +65,7 @@ if (cp_bits != 1) {
 
 // $D503.1 is mandatory. Power code $06 alone does not substitute.
 var cp_state11 = cp_c.state == $11 || cp_c.next == $11;
-var cp_attack = !cp_state11 &&
-    (cp_p.object_index == OBJ_player_char_spin || global.playerJump || global.playerSpinDash);
+var cp_attack = chaos_attack_posture(cp_c); // bit 1 ONLY (docs/player-attack-badnik-audit.md section 6); invincibility alone does not break a monitor
 if (!cp_attack) exit;
 
 // Bottom contact: neither direction nor requested state is tested.

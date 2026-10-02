@@ -35,11 +35,13 @@ for token in ("cp_c.state11_frame == $38 ? 0", "cp_c.state11_frame == $39 ? 1 : 
     assert token in adapter, token
 
 # Task-06 contact inequalities and ordering must remain exact.
-type21 = (ROOT / "objects/OBJ_chaos_object_21/Step_0.gml").read_text()
-for token in ("abs(cp_player_x-cp_object_x) <= 19",
-              "cp_player_y >= cp_object_y-26", "cp_player_y <= cp_object_y+24",
-              "if (cp_player_y <= cp_object_y-4)"):
+# The box and the top-before-attack order now live in chaos_type21_resolve (SCR_chaos_attack, executed by verify_attack_posture.js).
+type21 = (ROOT / "scripts/SCR_chaos_attack/SCR_chaos_attack.gml").read_text()
+for token in ("abs(cp_px - cp_ox) > 19",
+              "cp_py < cp_oy - 26", "cp_py > cp_oy + 24",
+              "if (cp_py <= cp_oy - 4) return 1;"):
     assert token in type21, token
+assert "chaos_type21_resolve(" in (ROOT / "objects/OBJ_chaos_object_21/Step_0.gml").read_text()
 
 
 def classify(dx, dy, attack=False, selector06=False):

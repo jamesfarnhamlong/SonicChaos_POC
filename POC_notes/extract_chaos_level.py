@@ -19,7 +19,7 @@ import argparse, hashlib, json, re, struct, uuid
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
 parser.add_argument("rom", type=Path)
-parser.add_argument("--act", choices=("thz1", "thz2"), required=True)
+parser.add_argument("--act", choices=("thz1", "thz2", "thz3"), required=True)
 parser.add_argument("--out", type=Path, default=Path("extracted"))
 parser.add_argument("--project-root", type=Path)
 args = parser.parse_args()
@@ -51,8 +51,9 @@ def decompress(p):  # identical to extract_chaos.py
 
 layout = json.loads((PKG / "layout.json").read_bytes())
 cells = [c for row in layout["rows"] for c in row]
-assert len(cells) == 4096
-out = cells[:4095]  # loader bound: cell 4095 is never written -> stays backdrop
+STRIDE = layout["dimensions"]["width_cells"]  # ROM row stride = map width (128 / 128 / 80)
+assert len(cells) == STRIDE * layout["dimensions"]["height_cells"]
+out = cells[:4095]  # loader bound: cell 4095 is never written -> stays backdrop (THZ3 has 1280 cells: unaffected)
 surface = {int(b["block_id"], 16): b["collision_surface_type"] for b in layout["block_usage"]}
 SPRING_BLOCK_IDS = {b for b, t in surface.items() if t in (9, 10, 20)}
 RING_BLOCK_IDS = {0x40, 0x41, 0x42, 0x43, 0x44, 0x45}
@@ -79,7 +80,7 @@ for i in range(256):
 W, H = layout["dimensions"]["width_pixels"], layout["dimensions"]["height_pixels"]
 im = Image.new('RGBA', (W, H), pal[0])
 for i, v in enumerate(out):
-    if v < len(blocks): im.paste(blocks[v], ((i % 128) * 32, (i // 128) * 32))
+    if v < len(blocks): im.paste(blocks[v], ((i % STRIDE) * 32, (i // STRIDE) * 32))
 
 
 def boundary_of(x, y):
@@ -94,7 +95,7 @@ def boundary_of(x, y):
 spring_context = []
 for i, v in enumerate(out):
     if v not in SPRING_BLOCK_IDS: continue
-    x = (i % 128) * 32; y = (i // 128) * 32
+    x = (i % STRIDE) * 32; y = (i // STRIDE) * 32
     backdrop = Counter(p for p in boundary_of(x, y) if p[3]).most_common(1)[0][0]
     block = blocks[v].copy()
     transparent_colour = Counter(block.getdata()).most_common(1)[0][0]
@@ -106,7 +107,7 @@ for i, v in enumerate(out):
 ring_cell_context = []
 for i, v in enumerate(out):
     if v not in RING_BLOCK_IDS: continue
-    x = (i % 128) * 32; y = (i // 128) * 32
+    x = (i % STRIDE) * 32; y = (i // STRIDE) * 32
     boundary = boundary_of(x, y)
     transparent_colour = Counter(blocks[v].getdata()).most_common(1)[0][0]
     matching = [p for p in boundary if p == transparent_colour]
@@ -116,7 +117,7 @@ for i, v in enumerate(out):
         'transparent_plane_rgba': list(transparent_colour), 'context_backdrop_rgba': list(backdrop)})
 
 im.save(args.out / f'{args.act}-map.png')
-quadrants = [im.crop((q * 1024, 0, (q + 1) * 1024, 1024)) for q in range(4)]
+quadrants = [im.crop((q * 1024, 0, (q + 1) * 1024, 1024)) for q in range(-(-W // 1024))]   # THZ3 (2560x512): 3 sprites, the unused area is transparent
 hashes = []
 for q, quad in enumerate(quadrants):
     quad.save(args.out / f'{args.act}-terrain-{q}.png', optimize=True)
@@ -155,7 +156,7 @@ if args.project_root:
             'sha256': hashlib.sha256(raw).hexdigest()})
     # Break-replacement block art (type-13 handler $7898 writes block $9D): one opaque 32x32 overlay sprite.
     replacement_assets = []
-    if args.act == 'thz2':
+    if args.act == 'thz2':   # THZ3 reuses SPR_chaos_thz2_block_9d (same block art)
         tmpl_dir = project / 'sprites/SPR_chaos_block_46'
         tmpl = (tmpl_dir / 'SPR_chaos_block_46.yy').read_text()
         seed = uuid.UUID('6f0c2a52-6a6c-4c8e-9d8e-7a3c1f4b9e10')

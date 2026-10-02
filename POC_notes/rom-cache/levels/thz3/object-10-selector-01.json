@@ -1,0 +1,44 @@
+{
+  "format": 1,
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "selector": "0x01",
+  "player_type": "0x01",
+  "generator": "POC_notes/import_type10_selector01.py",
+  "resource": "SPR_chaos_object_10_01",
+  "sources": [
+    {
+      "source_cpu": "0x99A0",
+      "source_rom": "0x399A0",
+      "byte_count": 192,
+      "vram_destination": "0x0980",
+      "tile_bytes_sha256": "63250c665a4ad7720dfebc607b3e57dfee47ef21ce7b31f3183e3e4174769e0c"
+    },
+    {
+      "source_cpu": "0x9EE0",
+      "source_rom": "0x39EE0",
+      "byte_count": 128,
+      "vram_destination": "0x0BC0",
+      "tile_bytes_sha256": "9b8d61e20249afd511490aa386c7dc78ff4c2bf0ee6e707eb4a77aff26da9794"
+    }
+  ],
+  "frames": [
+    {
+      "frame_index": "0x0B",
+      "frame_id": "1001000b-0000-4000-8000-00000000000b",
+      "reference_rgba_sha256": "37704a2e5727ff6a3a0453428828f222e781a3339f73a184aee1b7af156c0e78",
+      "logical_rgba_sha256": "7c54075af06a66d42e7d543aa3b6d56c6bb314dceb63b1672f58a046e810d94b",
+      "png_sha256": "a25c9af2a88ed9ef79e5b3bf519a20537240e47647bd5ce2d33126a005c35833",
+      "root_png": "sprites/SPR_chaos_object_10_01/1001000b-0000-4000-8000-00000000000b.png",
+      "layer_png": "sprites/SPR_chaos_object_10_01/layers/1001000b-0000-4000-8000-00000000000b/10010000-0000-4000-8000-000000000000.png"
+    },
+    {
+      "frame_index": "0x0C",
+      "frame_id": "1001000c-0000-4000-8000-00000000000c",
+      "reference_rgba_sha256": "9571cc57547acfb52bf993cea93cfece3a0c3b0a31ace0f79e71ffe5f795a3a7",
+      "logical_rgba_sha256": "2c499d9a02a682b97c1f3b60776ed6da7dfbbecdbcbbecf9e4cfd4c0b9a162a1",
+      "png_sha256": "b94bd662d8d6fd336edc2e5491d362e741b7f5b33af64c8cd6cc6d489ad29d88",
+      "root_png": "sprites/SPR_chaos_object_10_01/1001000c-0000-4000-8000-00000000000c.png",
+      "layer_png": "sprites/SPR_chaos_object_10_01/layers/1001000c-0000-4000-8000-00000000000c/10010000-0000-4000-8000-000000000000.png"
+    }
+  ]
+}

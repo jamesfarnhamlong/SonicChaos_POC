@@ -1,5 +1,5 @@
 // GameMaker-only bridge. Shared core owns terrain integration; built-in motion stays zero.
-// Loops, object-$26 springs, moving platforms, monitors/combat remain explicit POC adapters.
+// Loops, object-$26 springs, monitors/combat remain explicit POC adapters. Type $28 platforms and type $1B spikes run AFTER the player's pass (SCR_chaos_objects_phase).
 function SCR_chaos_core_attach(cp_p) {
     if (!variable_global_exists("chaosMovementTables")) SCR_chaos_core_data();
     // Stable sprite-to-ROM anchor; never derive physics probes from animated bbox.
@@ -99,9 +99,16 @@ function SCR_chaos_adapter_step(cp_p) {
         cp_p.chaosCoreLastX = cp_p.x; cp_p.chaosCoreLastY = cp_p.y;
         return;
     }
-    cp_c.support = instance_exists(cp_p.chaosSupport) ? 1 : 0;
-    cp_c.objects = cp_c.support ? 32 : 0;
-    if (cp_c.support) { cp_c.move &= ~1; cp_c.bg &= ~2; cp_c.vy = 0; SCR_cc_merge(cp_c); }
+    // Platform ownership ($D3C0) persists on the core between the object phase and the next player pass; only an external release (spring launch, loop entry, hurt) clears
+    // the GameMaker reference. The player's speeds and flags are NOT touched here: a rider keeps its Y speed and the airborne bit until the landing is registered.
+    if (!instance_exists(cp_p.chaosSupport)) cp_c.support = 0;
+    cp_c.objects = cp_c.support != 0 ? 32 : 0;
+    // Immunity and ring inputs of the recovered damage path ($48F7 / $48BC live in the core).
+    cp_c.rings = global.ring; cp_c.shield = global.powerShield;
+    cp_c.immune = global.playerSuper || global.powerInv || (global.playerBlink && (cp_c.move & 128) == 0);
+    // Wall flags written by an object phase (type $1B side contact) reach the X integration TWO updates later: the object phase writes $D521 after update N, the end-of-pass merge of
+    // update N+1 copies it into $D523, and the X integration of update N+2 reads that (Research: a walker stops two updates after the contact). Two-stage pipeline:
+    cp_c.objects |= cp_c.box_ready; cp_c.box_ready = cp_c.box_contacts; cp_c.box_contacts = 0;
     // Solid type-$10 boxes report side contacts here (see OBJ_chaos_object_10); consumed once.
     if (variable_instance_exists(cp_p,"chaosBoxContacts")) { cp_c.objects |= cp_p.chaosBoxContacts; cp_p.chaosBoxContacts = 0; }
     // Sample monitor collision supplies object-side flags; never rewrites terrain profiles.
@@ -112,7 +119,6 @@ function SCR_chaos_adapter_step(cp_p) {
         }
     }
     SCR_cc_merge(cp_c);
-    var cp_previous_foot = cp_c.yu/256+18;
     cp_c.state11_active = global.chaosPowerCode == $04 && global.chaosPowerTimer > 0;
     cp_c.state11_camera_y = floor(camera_get_view_y(view_camera[0]));
     cp_c.camera_x = floor(camera_get_view_x(view_camera[0])); // state $20 act-clear threshold input
@@ -139,25 +145,7 @@ function SCR_chaos_adapter_step(cp_p) {
         cp_c.xu = cp_clamp.xu; cp_c.vx = cp_clamp.vx;
     }
     SCR_chaos_core_publish(cp_p);
-    // Moving object surfaces remain separate from the ROM terrain map.
-    if (cp_c.vy >= 0 && (cp_c.move & 1) != 0) {
-        var cp_count = instance_number(OBJ_chaos_platform);
-        for (var cp_i = 0; cp_i < cp_count; cp_i++) {
-            var cp_platform = instance_find(OBJ_chaos_platform,cp_i);
-            if (SCR_chaos_platform_overlap(cp_p,cp_platform) &&
-                cp_previous_foot <= cp_platform.chaosPreviousY && cp_c.yu/256+18 >= cp_platform.y-1 &&
-                cp_c.yu/256+18 <= cp_platform.y+20) {
-                cp_c.yu = round((cp_platform.y-19)*256);
-                cp_c.vy = 0; cp_c.support = 1; cp_c.objects = 32;
-                cp_p.chaosSupport = cp_platform; SCR_cc_walk(cp_c); SCR_cc_merge(cp_c);
-                SCR_chaos_core_publish(cp_p); break;
-            }
-        }
-    }
-    if ((cp_c.move & 1) != 0 && cp_c.vy < 0) {
-        cp_p.chaosSupport = noone; cp_c.support = 0; cp_c.objects = 0;
-    }
-    // Terrain-ring probe ($753E): one integer point from the update's FINAL anchor (after movement, projection, the room/clamp adapters and moving-platform support) using the
+    // Terrain-ring probe ($753E): one integer point from the update's FINAL anchor (after movement, projection and the room/clamp adapters; the platform phase runs later, as in the ROM) using the
     // current +$07 counter. States outside the recovered 26-state list (loop, twist, act-clear, ...) never probe. The ring manager consumes it.
     chaos_ring_probe_update(cp_c, cp_anim_t);
     SCR_chaos_core_sprites(cp_p);
@@ -165,9 +153,11 @@ function SCR_chaos_adapter_step(cp_p) {
         if (cp_c.sound == 1) audio_play_sound(SFX_sonic_jump,10,false);
         if (cp_c.sound == 2) audio_play_sound(SFX_sonic_spring,10,false);
     }
-    // Keep sample-engine damage/ring-loss/death behaviour, outside the physics core.
-    if (cp_c.hazard != 0) SCR_chaos_apply_hazard_damage(cp_p);
-    else with (cp_p) { SCR_chaos_sample_damage(); }
+    // $48BC: the damage gate runs once at the end of every player update (a static-spike hurt already ran inside the terrain pass). Recovered hurt consequences are applied
+    // to the GameMaker side here; every other damage source keeps the sample-engine path (SCR_chaos_sample_damage -> SCR_chaos_apply_hazard_damage), outside this milestone.
+    SCR_cc_damage_gate(cp_c);
+    SCR_chaos_hurt_apply(cp_p);
+    if (!cp_c.hurt_pending) with (cp_p) { SCR_chaos_sample_damage(); }
 }
 function SCR_chaos_adapter_end(cp_p) {
     if (!variable_instance_exists(cp_p,"chaosCore")) return;
@@ -208,6 +198,33 @@ function SCR_chaos_cancel_state11(cp_p) {
     cp_c.state11_active = false;
 }
 
+/// GameMaker side of a recovered hurt ($48F7, SCR_cc_hurt_rom): rings, scatter object, death object, blink presentation. Also mirrors the core's invulnerability
+/// ($D3B1 countdown, +$03 bit 7) into global.playerBlink so the sample-engine consumers (badniks, monitors, blinking) see the same immunity.
+function SCR_chaos_hurt_apply(cp_p) {
+    var cp_c = cp_p.chaosCore;
+    var cp_inv = (cp_c.move & 128) != 0;
+    if (cp_c.hurt_pending) {
+        SCR_chaos_cancel_state11(cp_p);
+        if (cp_c.hurt_death) {
+            with (cp_p) instance_change(OBJ_player_death,true);
+            return;
+        }
+        if (cp_c.hurt_shield) global.powerShield = false;
+        else global.ring = cp_c.rings;
+        if (cp_c.hurt_scatter > 0) instance_create(cp_p.x,cp_p.y,OBJ_player_lost_b);
+        with (cp_p) alarm[2] = 1;
+        cp_p.chaosSupport = noone;
+        cp_p.chaosSpringVisual = false;
+        SCR_chaos_core_publish(cp_p);
+        if (global.music == 1) audio_play_sound(SFX_sonic_lost_rings,10,false);
+    }
+    if (cp_inv) { global.playerBlink = true; cp_p.chaosRomBlink = true; }
+    else if (variable_instance_exists(cp_p,"chaosRomBlink") && cp_p.chaosRomBlink) {
+        cp_p.chaosRomBlink = false;
+        if (global.chaosDamageBlinkTimer <= 0) global.playerBlink = false;
+    }
+}
+
 function SCR_chaos_apply_hazard_damage(cp_p) {
     if (global.playerSuper || global.playerBlink || global.powerInv) return;
     SCR_chaos_cancel_state11(cp_p);
@@ -238,8 +255,8 @@ function SCR_chaos_apply_hazard_damage(cp_p) {
 function SCR_chaos_block47_step(cp_p) {
     if (!variable_instance_exists(cp_p,"chaosCore")) return false;
     var cp_c = cp_p.chaosCore;
-    var cp_attack = (cp_c.move & 2) != 0 || cp_p.object_index == OBJ_player_char_spin ||
-        global.playerJump || global.playerSpinDash;
+    // Breakable $47 needs the canonical attack bit and excludes the states $0F/$10/$15/$1A (spring audit); the legacy playerJump / spin-object predicates are gone.
+    var cp_attack = chaos_attack_posture(cp_c) && cp_c.state != $0F && cp_c.state != $10 && cp_c.state != $15 && cp_c.state != $1A;
     if (!cp_attack) return false;
 
     var cp_x = cp_c.xu/256;
@@ -307,8 +324,7 @@ function SCR_chaos_type21_top_bounce(cp_p) {
     cp_p.chaosSupport = noone;
     cp_p.chaosGrounded = false;
     cp_p.chaosSpringVisual = true;
-    global.playerJump = true;
-    global.playerJumpSpring = true;
+    global.playerJumpSpring = true; // spring-flight physics only: the stomp CLEARS the attack bit ($480C), so no attack predicate is set here
     if (global.music == 1) audio_play_sound(SFX_sonic_spring,10,false);
 }
 
@@ -346,6 +362,11 @@ function SCR_chaos_type10_reward(cp_parameter, cp_p) {
             if (!variable_global_exists("chaosType10D29A")) global.chaosType10D29A = 0;
             global.chaosType10D29A = SCR_chaos_bcd_add(global.chaosType10D29A,10);
         }
+    } else if (cp_parameter == $01) {
+        // THZ3 parameter $01 (branch $4AC0): BCD $D29A += $10 with the ordinary carry (docs/thz2-thz3-object-deltas.md section 3.3): ten rings; the sample HUD already turns 100 rings into a life.
+        global.ring += 10;
+        if (!variable_global_exists("chaosType10D29A")) global.chaosType10D29A = 0;
+        global.chaosType10D29A = SCR_chaos_bcd_add(global.chaosType10D29A,10);
     } else if (cp_parameter == $03) {
         // THZ2 parameter $03 (dispatch branch $4B0F): power code 3 and a 900-update timer. No sound, no player state
         // request, no velocity change. The effect is the per-update maximum-X-speed field below.
@@ -368,43 +389,6 @@ function SCR_chaos_type10_reward(cp_parameter, cp_p) {
     global.chaosType10QueuedMask = 0;
 }
 
-function SCR_chaos_spike_step(cp_o) {
-    var cp_cam = view_camera[0];
-    var cp_left = camera_get_view_x(cp_cam)-64;
-    var cp_right = cp_left+camera_get_view_width(cp_cam)+128;
-    if (!cp_o.chaosActive) {
-        if (cp_o.x < cp_left || cp_o.x > cp_right) return;
-        cp_o.chaosActive = true; cp_o.chaosState = 1;
-    }
-
-    // Type $1B: rise/fall by six pixels; states 2/4 each last $30 updates.
-    if (cp_o.chaosState == 1) {
-        cp_o.chaosOffset = min(18,cp_o.chaosOffset+6);
-        if (cp_o.chaosOffset == 18) { cp_o.chaosState = 2; cp_o.chaosTimer = 48; }
-    } else if (cp_o.chaosState == 2) {
-        cp_o.chaosTimer--;
-        if (cp_o.chaosTimer <= 0) cp_o.chaosState = 3;
-    } else if (cp_o.chaosState == 3) {
-        cp_o.chaosOffset = max(0,cp_o.chaosOffset-6);
-        if (cp_o.chaosOffset == 0) { cp_o.chaosState = 4; cp_o.chaosTimer = 48; }
-    } else {
-        cp_o.chaosTimer--;
-        if (cp_o.chaosTimer <= 0) cp_o.chaosState = 1;
-    }
-
-    // Original AC8B/ACC3 damage checks run only while rising or raised.
-    if (cp_o.chaosOffset > 0 && (cp_o.chaosState == 1 || cp_o.chaosState == 2) &&
-        instance_exists(OBJ_player)) {
-        var cp_p = instance_find(OBJ_player,0);
-        var cp_visible = min(32,18+cp_o.chaosOffset);
-        var cp_spike_top = cp_o.chaosBaseY-cp_visible;
-        var cp_spike_bottom = cp_o.chaosBaseY;
-        if (cp_p.bbox_right >= cp_o.x-16 && cp_p.bbox_left <= cp_o.x+16 &&
-            cp_p.bbox_bottom >= cp_spike_top &&
-            cp_p.bbox_top <= cp_spike_bottom) SCR_chaos_apply_hazard_damage(cp_p);
-    }
-}
-
 function SCR_chaos_spike_draw(cp_o) {
     // Mapping frame $0E is 24x32. The ROM moves it upward only 18 pixels;
     // presentation keeps the exposed portion bottom-aligned to the floor so
@@ -422,8 +406,9 @@ function SCR_chaos_sample_damage() {
     // Recovered death rule ($401A): fatal iff the SIGNED screen Y (anchor Y - camera Y) is >= $D0. Above the camera is never fatal. (Non-core objects keep the room test.)
     var cp_fatal = variable_instance_exists(id,"chaosCore") ? chaos_vertical_death(chaosCore.yu, camera_get_view_y(view_camera[0])) : (y > room_height);
     if (cp_fatal) { instance_change(OBJ_player_death,true); return; }
-    if (place_meeting(x,y,OBJ_badniks) && !global.playerJump && !global.playerSpinDash)
-        SCR_chaos_apply_hazard_damage(id);
+    // Shared recovered damage path: stage the request $D3B0; $48BC hurts Sonic in his next update.
+    if (place_meeting(x,y,OBJ_badniks) && variable_instance_exists(id,"chaosCore") && !chaos_attack_or_invincible(chaosCore,global.powerInv))
+        chaos_request_stage(chaosCore);
 }
 
 // $7898: the collided map cell becomes $9D (empty, collision flags $00). Fragments (four type-$07 objects) and

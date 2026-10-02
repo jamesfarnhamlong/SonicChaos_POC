@@ -1,0 +1,156 @@
+{
+  "format": 1,
+  "act": "thz3",
+  "replacement_blocks": [],
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "generator": "POC_notes/extract_chaos_level.py",
+  "layout_runtime_cells_sha256": "ed8d7ccc54cf372580edd678750bb8cf01a3772141562d0ee61f8f78bc8f1923",
+  "context_composited_spring_block_ids": [
+    "0x31",
+    "0x36"
+  ],
+  "spring_class_rule": "collision surface type 9/10/20 (reproduces THZ1 $30,$31,$33,$36,$38)",
+  "object_only_ring_block_ids": [
+    "0x40",
+    "0x41",
+    "0x42",
+    "0x43",
+    "0x44",
+    "0x45"
+  ],
+  "spring_placements": [
+    {
+      "block_id": "0x36",
+      "world_x": 1344,
+      "world_y": 160,
+      "transparent_plane_rgba": [
+        0,
+        170,
+        255,
+        255
+      ],
+      "context_backdrop_rgba": [
+        0,
+        170,
+        255,
+        255
+      ]
+    },
+    {
+      "block_id": "0x31",
+      "world_x": 544,
+      "world_y": 352,
+      "transparent_plane_rgba": [
+        0,
+        0,
+        255,
+        255
+      ],
+      "context_backdrop_rgba": [
+        0,
+        0,
+        255,
+        255
+      ]
+    },
+    {
+      "block_id": "0x31",
+      "world_x": 1152,
+      "world_y": 352,
+      "transparent_plane_rgba": [
+        0,
+        0,
+        255,
+        255
+      ],
+      "context_backdrop_rgba": [
+        0,
+        0,
+        255,
+        255
+      ]
+    }
+  ],
+  "ring_cells_removed": [
+    {
+      "block_id": "0x40",
+      "world_x": 160,
+      "world_y": 192,
+      "transparent_plane_rgba": [
+        0,
+        170,
+        255,
+        255
+      ],
+      "context_backdrop_rgba": [
+        0,
+        170,
+        255,
+        255
+      ]
+    },
+    {
+      "block_id": "0x40",
+      "world_x": 192,
+      "world_y": 192,
+      "transparent_plane_rgba": [
+        0,
+        170,
+        255,
+        255
+      ],
+      "context_backdrop_rgba": [
+        0,
+        170,
+        255,
+        255
+      ]
+    },
+    {
+      "block_id": "0x40",
+      "world_x": 224,
+      "world_y": 192,
+      "transparent_plane_rgba": [
+        0,
+        170,
+        255,
+        255
+      ],
+      "context_backdrop_rgba": [
+        0,
+        170,
+        255,
+        255
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "sprite": "SPR_chaos_thz3_terrain_0",
+      "world_x": 0,
+      "width": 1024,
+      "height": 1024,
+      "root_png": "sprites/SPR_chaos_thz3_terrain_0/b0ddf6bb-3d4b-5b7d-bfca-2eb6614215ac.png",
+      "layer_png": "sprites/SPR_chaos_thz3_terrain_0/layers/b0ddf6bb-3d4b-5b7d-bfca-2eb6614215ac/007f54a5-b5f6-5ba0-a7b8-e54e4dfb2c7e.png",
+      "sha256": "44e870fedb8b6911476bfa8bdd87b3b7e5e6ee35d7a9520df42a4c115f399722"
+    },
+    {
+      "sprite": "SPR_chaos_thz3_terrain_1",
+      "world_x": 1024,
+      "width": 1024,
+      "height": 1024,
+      "root_png": "sprites/SPR_chaos_thz3_terrain_1/256a9264-04bf-59e3-a47c-057a34a16a53.png",
+      "layer_png": "sprites/SPR_chaos_thz3_terrain_1/layers/256a9264-04bf-59e3-a47c-057a34a16a53/4d3298c5-d594-5394-b9f9-eaad20881032.png",
+      "sha256": "844a4e4ec0b0ae4f8f1d3e74c299e9f4be38f95e3d43624509f2fc6f57bb8b6b"
+    },
+    {
+      "sprite": "SPR_chaos_thz3_terrain_2",
+      "world_x": 2048,
+      "width": 1024,
+      "height": 1024,
+      "root_png": "sprites/SPR_chaos_thz3_terrain_2/92d2f95f-066d-51c1-9468-50b014fb1f87.png",
+      "layer_png": "sprites/SPR_chaos_thz3_terrain_2/layers/92d2f95f-066d-51c1-9468-50b014fb1f87/229fe131-e22b-5b0b-adcf-b11591d6b5f9.png",
+      "sha256": "5a00a350e463807a986eccc3d425d49e4962db8e7f915aac089b2244fc336a4b"
+    }
+  ]
+}

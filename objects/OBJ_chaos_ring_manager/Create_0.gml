@@ -1,7 +1,7 @@
 /// One owner for two separate canonical THZ1 ring populations.
 depth = 0; // Explicit order: terrain 100 -> ring manager 0 -> player -50.
 // Population A: terrain-derived blocks $40-$43.
-chaosRingRecords = chaos_is_thz2() ? SCR_chaos_thz2_terrain_rings() : SCR_chaos_ring_data();
+chaosRingRecords = chaos_is_thz3() ? SCR_chaos_thz3_terrain_rings() : (chaos_is_thz2() ? SCR_chaos_thz2_terrain_rings() : SCR_chaos_ring_data());
 chaosRingSourceCount = array_length(chaosRingRecords);
 chaosRingQuadIndex = chaos_terrain_ring_index(chaosRingRecords); // $753E probe point -> record
 chaosRingActive = array_create(chaosRingSourceCount,true);
@@ -9,7 +9,7 @@ chaosRingExpectedThisFrame = array_create(chaosRingSourceCount,false);
 chaosRingDrawnThisFrame = array_create(chaosRingSourceCount,false);
 // Population B: raw object-list type $09. Parameter $00 is visible state 1;
 // parameter $01 is invisible state 3 and is never submitted to the renderer.
-chaosType09Records = chaos_is_thz2() ? SCR_chaos_thz2_type09() : SCR_chaos_type09_data();
+chaosType09Records = chaos_is_thz3() ? SCR_chaos_thz3_type09() : (chaos_is_thz2() ? SCR_chaos_thz2_type09() : SCR_chaos_type09_data());
 chaosType09SourceCount = array_length(chaosType09Records);
 chaosType09VisibleCount = 0;
 chaosType09HiddenCount = 0;

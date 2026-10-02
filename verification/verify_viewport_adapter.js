@@ -186,7 +186,7 @@ function makeBee(originX, originY, W) {
         abs: Math.abs, min: Math.min, max: Math.max, clamp: ctx.clamp, view_camera: [0], camera_get_view_x: () => w.camX, camera_get_view_y: () => w.camY,
         camera_get_view_width: () => w.camW, camera_get_view_height: () => 196, instance_find: () => w.player, instance_exists: o => o === w.player, OBJ_player: 1,
         OBJ_player_char_spin: 'spin', SCR_chaos_enemy_score_100_bytes: () => {}, instance_destroy: () => { w.destroyed = true; }});
-    for (const n of ['SCR_chaos_viewport', 'SCR_chaos_placement', 'SCR_chaos_box_contact']) vm.runInContext(hex(rd(`scripts/${n}/${n}.gml`)), w.ctx);
+    for (const n of ['SCR_chaos_viewport', 'SCR_chaos_placement', 'SCR_chaos_box_contact', 'SCR_chaos_attack']) vm.runInContext(hex(rd(`scripts/${n}/${n}.gml`)), w.ctx);
     w.box = {x: originX, y: originY, chaosOriginX: originX, chaosOriginY: originY, chaosActive: false, chaosAsleep: true, chaosAge: 0, chaosScanTick: 0,
         chaosInitialFillDone: false, chaosWoken: false, chaosState: 0, chaosVX: 0, chaosVY: 0, chaosCounter: 0, chaosOscTick: 0, chaosAnimTick: 0, chaosSilentDestroy: false,
         chaosXU: originX * 256, chaosYU: originY * 256, image_index: 0, visible: false};

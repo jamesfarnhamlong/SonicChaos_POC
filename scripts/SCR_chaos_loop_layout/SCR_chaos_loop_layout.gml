@@ -7,10 +7,12 @@ function SCR_chaos_loop_layout(cp_ids) {
     var cp_centers = [];
     var cp_rows = [];
     var cp_count = array_length(cp_ids);
+    var cp_w = 128;
+    if (variable_global_exists("chaosMapWidth")) cp_w = global.chaosMapWidth;
     for (var cp_i = 1; cp_i < cp_count; cp_i++) {
-        if (cp_ids[cp_i] == 82 && cp_ids[cp_i - 1] == 81 && (cp_i % 128) != 0) {
-            array_push(cp_centers, (cp_i % 128) * 32);
-            array_push(cp_rows, floor(cp_i / 128) * 32);
+        if (cp_ids[cp_i] == 82 && cp_ids[cp_i - 1] == 81 && (cp_i % cp_w) != 0) {
+            array_push(cp_centers, (cp_i % cp_w) * 32);
+            array_push(cp_rows, floor(cp_i / cp_w) * 32);
         }
     }
     return {centers: cp_centers, rows: cp_rows};

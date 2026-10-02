@@ -16,7 +16,7 @@ function chaos_ring_probe_eligible(cp_state) {
 function chaos_ring_probe_point(cp_anchor_x, cp_anchor_y, cp_counter) {
     return [cp_anchor_x, max(0, cp_anchor_y + (((cp_counter & 1) != 0) ? 2 : -8))];
 }
-/// Ring records are [index, x, y, block, cell_index, quadrant, ...] with cell_index = row * 128 + column. Returns an array indexed by
+/// Ring records are [index, x, y, block, cell_index, quadrant, ...] with cell_index = row * mapWidth + column (128 in THZ1/THZ2, 80 in THZ3: global.chaosMapWidth). Returns an array indexed by
 /// cell_index * 4 + quadrant holding the record's position in cp_records (or -1).
 function chaos_terrain_ring_index(cp_records) {
     var cp_idx = array_create(128 * 64 * 4, -1);
@@ -25,8 +25,10 @@ function chaos_terrain_ring_index(cp_records) {
 }
 /// Record number whose quadrant contains the probe point, or -1 (outside the 128 x 64 layout, or no ring quadrant there).
 function chaos_terrain_ring_at(cp_index, cp_px, cp_py) {
-    if (cp_px < 0 || cp_py < 0 || (cp_px >> 5) > 127 || (cp_py >> 5) > 63) return -1;
-    return cp_index[(((cp_py >> 5) * 128) + (cp_px >> 5)) * 4 + ((cp_px >> 4) & 1) + 2 * ((cp_py >> 4) & 1)];
+    var cp_w = 128;
+    if (variable_global_exists("chaosMapWidth")) cp_w = global.chaosMapWidth;
+    if (cp_px < 0 || cp_py < 0 || (cp_px >> 5) >= cp_w || (cp_py >> 5) > 63) return -1;
+    return cp_index[(((cp_py >> 5) * cp_w) + (cp_px >> 5)) * 4 + ((cp_px >> 4) & 1) + 2 * ((cp_py >> 4) & 1)];
 }
 /// The call the player adapter makes once per update AFTER movement, terrain projection and the position adapters: publishes the probe point (or none)
 /// for the ring manager. cp_counter is the value returned by SCR_cc_anim_update for this same update.

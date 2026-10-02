@@ -1,0 +1,10 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SCR_chaos_platform",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SCR_chaos_platform",
+  "parent":{"name":"Scripts","path":"folders/Scripts.yy"},
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0"
+}

@@ -57,23 +57,23 @@ assert bounds[(2400, 254)] == 2368
 source_21 = (ROOT / "objects/OBJ_chaos_object_21/Step_0.gml").read_text()
 for token in ("chaosVX = -$0080", "chaosVY = $0200", "floor(x) < chaosLeftBound",
               "floor(x) > chaosOriginX", "SCR_chaos_type21_top_bounce",
-              "SCR_chaos_apply_hazard_damage"):
+              "chaos_type21_resolve"):   # shared $48BC damage path (attack-posture migration), no sample-engine hazard call
     assert token in source_21, token
 
 source_27 = (ROOT / "objects/OBJ_chaos_object_27/Step_0.gml").read_text()
 for token in ("chaosVX = -$0280", "chaos_vp_dist_lt(floor(x),floor(cp_p.x),64)",
               "chaos_vp_dist_ge(floor(x),floor(cp_p.x),384)", "chaosOscTick <= 32",
-              "chaosOscTick >= 97", "ordinary overlap requests no damage"):
+              "chaosOscTick >= 97", "raises $D520"):   # overlap raises $D520; the player's $48BC decides (attack-posture migration)
     assert token.lower() in source_27.lower(), token
 object_27 = json.loads((ROOT / "objects/OBJ_chaos_object_27/OBJ_chaos_object_27.yy").read_text())
 assert object_27["parentObjectId"] is None
 
 source_10 = (ROOT / "objects/OBJ_chaos_object_10/Step_0.gml").read_text()
 adapter = (ROOT / "scripts/SCR_chaos_adapter/SCR_chaos_adapter.gml").read_text()
-for token in ("global.playerJump", "cp_c.vy <= 0", "chaosVY = -$0200",
+for token in ("chaos_attack_posture(cp_c)", "cp_c.vy <= 0", "chaosVY = -$0200",
               "cp_c.vy = $0200", "SPR_chaos_object_0F"):
     assert token in source_10, token
-assert "var cp_state11" in source_10 and "var cp_attack = !cp_state11" in source_10
+assert "var cp_attack = chaos_attack_posture(cp_c)" in source_10   # bit 1 only (attack-posture migration)
 create_10 = (ROOT / "objects/OBJ_chaos_object_10/Create_0.gml").read_text()
 for token in ("chaosGraphicsSelector = chaosParameter",
               "SPR_chaos_object_10_04", "SPR_chaos_object_10_06"):

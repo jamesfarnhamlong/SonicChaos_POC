@@ -110,6 +110,12 @@ removed = [l[1:].strip() for l in core_diff.splitlines() if l.startswith("-") an
 removed = [l for l in removed if l != "state11_anim_tick:0, state11_frame:56, hurt_ticks:0};"]
 # Spring milestone (docs/spring-interaction-audit.md): SCR_cc_spring gained the terrain-state gate; the diagonal vx write moved into a block that also writes facing/D448/sound before the Y-speed gate.
 removed = [l for l in removed if l not in ("if (cp_c.state == 17) return;", "if (cp_kind == 20) cp_c.vx = cp_tile >= 56 ? -1024 : 1024;")]
+# Platform/spike milestone (docs/platform-spike.md): the type-5 foot handler now tests +$03 bit 7 and calls the recovered hurt entry, the type-5 side handler treats $3C/$3D alike,
+# the hurt tick holds until landing for recovered hurts, and SCR_cc_new / SCR_cc_tick gained the damage fields. Only these lines may disappear from the core.
+removed = [l for l in removed if l not in ("camera_x:0, act_clear:false, clear_dx:289};", "// $6ACE: ordinary floor hazards act only after floor contact. Tiles", "// $F4/$F5 are exempt in the original handler.",
+           "if ((cp_s.tile & 254) != 244 && (cp_c.bg & 2) != 0 &&", "(cp_c.player_flags & 128) == 0) cp_c.hazard = 1;", "if ((cp_kind == 5 && cp_s.tile != 61) ||",
+           "if (cp_c.hurt_ticks > 0) cp_c.next = 30;", "else if (cp_grounded) SCR_cc_walk(cp_c);", "cp_c.state = cp_c.next; cp_c.sound = 0; cp_c.unsupported = 0; cp_c.hazard = 0;",
+           "var cp_index = (((cp_ay >> 5) & 127)*128 + ((cp_ax >> 5) & 255));", "if (cp_s.index >= 128) {")]   # THZ3: ROM row stride = map width (global.chaosMapWidth)
 assert removed == ["cp_kind == 13 ||", "if ((cp_kind == 5 && cp_s.tile != 61) || cp_kind == 13 ||",
                    "if (cp_kind == 5 || cp_kind == 13 || cp_kind == 19 || cp_kind == 20 || cp_kind == 21 || cp_kind == 28) {"] or     all("cp_kind == 13" in l for l in removed), removed
 
@@ -137,7 +143,7 @@ assert len(t28) == 3 == len(src28)
 for row, r in zip(t28, src28):
     assert row[:6] == [r["index"], r["world_x"], r["world_y"], int(r["parameter"], 16), int(r["aux0"], 16), int(r["aux1"], 16)]
 assert [(r[1], r[2], r[3], r[5], 16 * r[5] if r[3] == 0x0A else 0) for r in t28] ==     [(552, 720, 0x0A, 0x19, 400), (3672, 608, 0x0A, 0x13, 304), (1552, 304, 0x84, 0x00, 0)]
-assert "cp_travel = 16 * cp_r[7]" in level_gml
+assert "chaos_platform28_configure(cp_inst, cp_r[5], cp_r[7])" in level_gml and "chaosPeriod = 16 * cp_aux1" in (root / "scripts/SCR_chaos_platform/SCR_chaos_platform.gml").read_text()
 assert "OBJ_chaos_platform" not in names
 report["type28"] = {"records": 3, "lift_400": [552, 720], "lift_304": [3672, 608], "sag_84": [1552, 304]}
 
@@ -162,7 +168,7 @@ assert dict(census) == {0x28: 3, 0x26: 10, 0x10: 5, 0x27: 4, 0x21: 5, 0x18: 1, 0
 loader = level_gml[level_gml.index("function chaos_level_spawn_objects()"):level_gml.index("function chaos_type10_configure")]
 for token in ("case $10:", "case $18:", "case $21:", "case $26:", "case $27:", "case $28:", "case $09: break;", "chaosPlacementIndex", "chaosPlacementRom", "chaosSourceClass"):
     assert token in loader, token
-assert loader.count("instance_create(cp_r[1], cp_r[2]") == 4  # $10 $18 $21 $27; $26/$28 create through their helpers
+assert loader.count("instance_create(cp_r[1], cp_r[2]") == 5  # $10 $18 $1B(THZ3 moving spike) $21 $27; $26/$28 create through their helpers
 assert "SPR_chaos_object_10_03" in level_gml
 type10 = [(o[1], o[2], o[5]) for o in objs if o[3] == 0x10]
 assert type10 == [(1088, 206, 6), (336, 302, 3), (2784, 270, 3), (2544, 494, 4), (64, 718, 2)]
@@ -295,7 +301,7 @@ for f in list((root / "objects").rglob("*.gml")) + list((root / "scripts").rglob
     assert "chaosDevLevel" not in f.read_text(errors="ignore"), f
 acts = re.search(r"function chaos_acts\(\) \{\s*return \[(.*?)\];", level_gml, re.S).group(1)
 entries = re.findall(r"\{zone: \"(\w+)\", act: (\d+), room: (\w+), name: \"([^\"]+)\", icon: (\d+)\}", acts)
-assert entries == [("THZ", "1", "ROM_chaos_thz1", "Turquoise Hill 1", "1"), ("THZ", "2", "ROM_chaos_thz2", "Turquoise Hill 2", "1")], entries
+assert entries == [("THZ", "1", "ROM_chaos_thz1", "Turquoise Hill 1", "1"), ("THZ", "2", "ROM_chaos_thz2", "Turquoise Hill 2", "1"), ("THZ", "3", "ROM_chaos_thz3", "Turquoise Hill 3", "1")], entries
 assert yyp_rooms >= {"ROM_chaos_thz1", "ROM_chaos_thz2"}
 menu_yy = (root / "objects/OBJ_menu_data_select/OBJ_menu_data_select.yy").read_text()
 assert menu_yy.count('"eventType":8') == 0

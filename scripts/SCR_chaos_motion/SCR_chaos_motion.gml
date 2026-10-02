@@ -1,4 +1,4 @@
-// Chaos v08: original platform counters, loop lookup movement and collision planes.
+// Chaos v08: loop lookup movement and collision planes. Type $28 platforms live in SCR_chaos_platform (recovered ROM model).
 // Called only in ROM_chaos_thz1. Legacy movement remains in the engine sample.
 function SCR_chaos_player_init(cp_p) {
     cp_p.chaosLoopActive = false;
@@ -29,48 +29,6 @@ function SCR_chaos_player_init(cp_p) {
     }
 }
 
-function SCR_chaos_platform_advance(cp_platform, cp_ridden) {
-    cp_platform.chaosPreviousY = cp_platform.y;
-    if (cp_platform.chaosTravel > 0) {
-        // Bank 30 $86DA/$8925: 1 pixel/update, reverse every 16 * aux1.
-        cp_platform.y += cp_platform.chaosMoveY;
-        cp_platform.chaosTravelTick++;
-        if (cp_platform.chaosTravelTick >= cp_platform.chaosTravel) {
-            cp_platform.chaosTravelTick = 0;
-            cp_platform.chaosMoveY = -cp_platform.chaosMoveY;
-        }
-    } else {
-        // The four subtype $84 platforms depress up to eight pixels, then return.
-        if (cp_ridden && !cp_platform.chaosSagReturning) {
-            if (cp_platform.chaosSag < 8) cp_platform.chaosSag++;
-            else cp_platform.chaosSagReturning = true;
-        } else if (cp_platform.chaosSag > 0) {
-            cp_platform.chaosSag--;
-        }
-        if (!cp_ridden && cp_platform.chaosSag == 0) cp_platform.chaosSagReturning = false;
-        cp_platform.y = cp_platform.chaosHomeY + cp_platform.chaosSag;
-    }
-    cp_platform.chaosDeltaY = cp_platform.y - cp_platform.chaosPreviousY;
-}
-
-function SCR_chaos_platform_overlap(cp_p, cp_platform) {
-    return cp_p.bbox_right >= cp_platform.x - 16 && cp_p.bbox_left < cp_platform.x + 16;
-}
-
-function SCR_chaos_land_on_platform(cp_p, cp_platform) {
-    var cp_foot_offset = cp_p.bbox_bottom - cp_p.y;
-    cp_p.y = cp_platform.y - cp_foot_offset - 1;
-    cp_p.vspeed = 0;
-    cp_p.gravity = 0;
-    cp_p.chaosSupport = cp_platform.id;
-    cp_p.chaosGrounded = true;
-    cp_p.chaosMotionState = 1;
-    global.playerJump = false;
-    global.playerJumpSpring = false;
-    global.playerFly = false;
-    cp_platform.solid = true;
-}
-
 function SCR_chaos_world_begin() {
     var cp_p = instance_find(OBJ_player, 0);
     var cp_playable = instance_exists(cp_p);
@@ -78,22 +36,7 @@ function SCR_chaos_world_begin() {
     if (cp_playable && !variable_instance_exists(cp_p, "chaosLoopActive")) SCR_chaos_player_init(cp_p);
     var cp_on_loop = false;
     if (cp_playable) cp_on_loop = cp_p.chaosLoopActive;
-    var cp_count = instance_number(OBJ_chaos_platform);
-    for (var cp_i = 0; cp_i < cp_count; cp_i++) {
-        var cp_platform = instance_find(OBJ_chaos_platform, cp_i);
-        var cp_ridden = false;
-        if (cp_playable && !cp_on_loop) {
-            cp_ridden = cp_p.chaosSupport == cp_platform.id && cp_p.vspeed >= 0 &&
-                SCR_chaos_platform_overlap(cp_p, cp_platform) &&
-                abs(cp_p.bbox_bottom - (cp_platform.y - 1)) <= 3;
-        }
-        SCR_chaos_platform_advance(cp_platform, cp_ridden);
-        cp_platform.solid = false;
-        if (cp_ridden) SCR_chaos_land_on_platform(cp_p, cp_platform);
-        if (cp_playable && !cp_on_loop && cp_p.vspeed >= 0 && cp_p.bbox_bottom <= cp_platform.y) {
-            cp_platform.solid = true;
-        }
-    }
+    // Platforms are NOT advanced here: the ROM updates objects after the player's whole pass (SCR_chaos_objects_phase, controls End Step).
     if (cp_playable && !cp_on_loop) {
         for (var cp_loop = 0; cp_loop < array_length(global.chaosLoopCenters); cp_loop++) {
             var cp_center = global.chaosLoopCenters[cp_loop];
@@ -209,31 +152,6 @@ function SCR_chaos_player_begin(cp_p) {
         return true;
     }
     cp_p.chaosPreviousFoot = cp_p.bbox_bottom;
-    // Detach as soon as Sonic jumps or walks off a moving platform.
-    if (instance_exists(cp_p.chaosSupport)) {
-        var cp_support = cp_p.chaosSupport;
-        if (cp_p.vspeed < 0 || !SCR_chaos_platform_overlap(cp_p,cp_support) ||
-            abs(cp_p.bbox_bottom-(cp_support.y-1)) > 3) cp_p.chaosSupport = noone;
-    } else cp_p.chaosSupport = noone;
-    // Resolve a predicted downward crossing before the legacy Step can zero
-    // vspeed short of the surface. Rising players pass through from below.
-    if (cp_p.vspeed >= 0 && cp_p.chaosSupport == noone) {
-        var cp_count = instance_number(OBJ_chaos_platform);
-        var cp_candidate = noone;
-        var cp_top = room_height + 1024;
-        var cp_next_foot = cp_p.bbox_bottom + cp_p.vspeed + global.valGravity;
-        for (var cp_i = 0; cp_i < cp_count; cp_i++) {
-            var cp_platform = instance_find(OBJ_chaos_platform,cp_i);
-            var cp_next_left = cp_p.bbox_left + cp_p.hspeed;
-            var cp_next_right = cp_p.bbox_right + cp_p.hspeed;
-            if (cp_next_right < cp_platform.x-16 || cp_next_left >= cp_platform.x+16) continue;
-            if (cp_p.bbox_bottom <= cp_platform.y && cp_next_foot >= cp_platform.y-1 && cp_platform.y < cp_top) {
-                cp_candidate = cp_platform;
-                cp_top = cp_platform.y;
-            }
-        }
-        if (instance_exists(cp_candidate)) SCR_chaos_land_on_platform(cp_p,cp_candidate);
-    }
     return false;
 }
 

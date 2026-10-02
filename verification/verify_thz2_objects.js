@@ -13,8 +13,9 @@ const ctx = vm.createContext({global: {}, array_create: (n, v) => Array(n).fill(
     OBJ_chaos_object_10: obj('10'), OBJ_chaos_object_18: obj('18'), OBJ_chaos_object_21: obj('21'), OBJ_chaos_object_27: obj('27'),
     OBJ_chaos_object_spring_26_normal: obj('26n'), OBJ_chaos_object_spring_26_weak: obj('26w'), OBJ_chaos_object_spring_26_span: obj('26s'),
     OBJ_chaos_platform: obj('28'), SPR_chaos_object_10: 'spr10', SPR_chaos_object_10_03: 'spr10_03', SPR_chaos_object_10_04: 'spr10_04',
-    SPR_chaos_object_10_06: 'spr10_06', chaos_is_thz2: () => true});
+    SPR_chaos_object_10_06: 'spr10_06', chaos_is_thz2: () => true, chaos_is_thz3: () => false});
 vm.runInContext(hex(read('SCR_chaos_level_thz2_data')), ctx);
+vm.runInContext(hex(read('SCR_chaos_platform')).replace(/#macro (\w+) (\S+)/g, 'var $1 = $2;'), ctx);   // chaos_platform28_configure (recovered type $28 model)
 vm.runInContext(loaderSrc, ctx);
 ctx.chaos_level_spawn_objects();
 const byType = {};
@@ -41,7 +42,7 @@ created.filter(i => i.object === '21').forEach(i => { i.chaosOriginX = i.x; ctx.
 assert.deepStrictEqual(created.filter(i => i.object === '21').map(i => i.chaosLeftBound - i.x), [-64, -64, -48, -64, -48]);
 const span = created.find(i => i.object === '26s');
 assert.deepStrictEqual([span.x, span.y, span.chaosSpan], [1504, 896, 128]);
-assert.deepStrictEqual(created.filter(i => i.object === '28').map(i => i.chaosTravel), [400, 304, 0]);
+assert.deepStrictEqual(created.filter(i => i.object === '28').map(i => [i.chaosMode, i.chaosPeriod, i.chaosVY]), [[11, 400, -256], [11, 304, -256], [5, 0, 0]], 'THZ2 lifts (aux1 $19/$13 -> 16 x aux1) and the sag platform');
 // the loader touches only the rows: THZ1 (no rows) spawns nothing
 ctx.chaos_is_thz2 = () => false; created.length = 0; ctx.chaos_level_spawn_objects();
 assert.strictEqual(created.length, 0);

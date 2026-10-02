@@ -48,21 +48,20 @@ if (chaosState == 3 && instance_exists(cp_p) && chaos_vp_dist_ge(floor(x),floor(
 
 // Contact is the recovered ROM box ($6328: Sonic 8x24 vs object 9x14 -> dx -17..+17, dy -14..+24) on the fixed integer anchors, tested before this
 // update's movement. GameMaker sprite/mask bounds and the +18 render adapter play no part in it.
-var cp_overlap = false;
+var cp_hit = 0;
 if (instance_exists(cp_p)) {
     if (!variable_instance_exists(cp_p,"chaosCore")) SCR_chaos_core_attach(cp_p);
-    var cp_c = cp_p.chaosCore;
-    cp_overlap = chaos_type27_contact(floor(cp_c.xu/256),floor(cp_c.yu/256),floor(x),floor(y));
+    // Canonical attack decision (docs/player-attack-badnik-audit.md): +$03 bit 1 or D532 == 6 only. Airborne / global.playerJump play no part. The overlap also raises $D520,
+    // so $48BC hurts a non-attacking Sonic (or rebounds an attacking one) in the next player update.
+    cp_hit = chaos_type27_resolve(cp_p.chaosCore,floor(x),floor(y),global.powerInv);
 }
-if (cp_overlap) {
-    var cp_attack = cp_p.object_index == OBJ_player_char_spin || global.playerJump ||
-        global.playerSpinDash || global.playerSuper || global.powerInv;
-    if (cp_attack) {
+if (cp_hit != 0) {
+    if (cp_hit == 2) {
         SCR_chaos_enemy_score_100_bytes();
         chaosSilentDestroy = false;
         instance_destroy();
     }
-    // Ordinary overlap requests no damage and stalls movement/counter decrement.
+    // The callback stalls movement/counter decrement on every overlap update.
     exit;
 }
 

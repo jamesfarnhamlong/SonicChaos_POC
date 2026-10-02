@@ -26,7 +26,7 @@ for token in ("global.chaosTileIds[1128+cp_slot] = 70", "global.ring += 10",
               "cp_c.vy = -1088", "OBJ_chaos_object_0F_transient"):
     assert token in break47, token
 assert "cp_c.vx =" not in break47
-assert "cp_c.move & 2" in break47 and "cp_c.vx < 0 ? 3 : 0" in break47
+assert "chaos_attack_posture(cp_c)" in break47 and "cp_c.vx < 0 ? 3 : 0" in break47
 
 core = (ROOT / "scripts/SCR_chaos_core/SCR_chaos_core.gml").read_text()
 assert "(cp_kind == 22 && cp_s.tile != 71)" in core

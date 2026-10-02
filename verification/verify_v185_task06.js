@@ -1,7 +1,7 @@
 // Execute the shipped Task-06 core paths against the reviewed reference cache.
 const fs=require('fs'),vm=require('vm'),path=require('path'),assert=require('assert');
 const root=path.resolve(__dirname,'..');
-const ctx=vm.createContext({global:{},floor:Math.floor,round:Math.round,abs:Math.abs,
+const ctx=vm.createContext({variable_global_exists: () => false, global:{},floor:Math.floor,round:Math.round,abs:Math.abs,
     min:Math.min,max:Math.max,array_create:(n,v)=>Array(n).fill(v),array_length:a=>a.length,
     array_copy:(dst,di,src,si,n)=>{for(let i=0;i<n;i++)dst[di+i]=src[si+i];},is_array:Array.isArray});
 for(const n of ['SCR_chaos_motion_data','SCR_chaos_core_data','SCR_chaos_core'])

@@ -57,27 +57,14 @@ var cp_player_x = floor(cp_p.chaosCore.xu/256);
 var cp_player_y = floor(cp_p.chaosCore.yu/256);
 var cp_object_x = floor(chaosXU/256);
 var cp_object_y = floor(chaosYU/256);
-// Shared $6328 box for Sonic (8 x 24) vs this object (11 x 26): dx +-19, dy -26..+24 (docs/collision-geometry-audit.md).
-var cp_overlap = abs(cp_player_x-cp_object_x) <= 19 &&
-    cp_player_y >= cp_object_y-26 && cp_player_y <= cp_object_y+24;
-if (!cp_overlap) exit;
-
-// The top branch precedes attack checks in the original callback.
-if (cp_player_y <= cp_object_y-4) {
-    SCR_chaos_type21_top_bounce(cp_p);
-    exit;
-}
-
-var cp_state11 = cp_p.chaosCore.state == $11 || cp_p.chaosCore.next == $11;
-var cp_attack = (!cp_state11 && (cp_p.object_index == OBJ_player_char_spin ||
-    global.playerJump || global.playerSpinDash)) || global.playerSuper || global.powerInv;
-if (cp_attack) {
+// Canonical contact ($6328 box dx +-19, dy -26..+24) and attack decision: chaos_type21_resolve. The top branch (playerY <= objY - 4) precedes the attack test for any posture.
+var cp_res = chaos_type21_resolve(cp_p.chaosCore,cp_object_x,cp_object_y,global.powerInv);
+if (cp_res == 1) { SCR_chaos_type21_top_bounce(cp_p); exit; }
+if (cp_res == 2) {
+    // Side / low contact while attacking: defeated, no rebound (the ROM gives the player none).
     chaosDefeated = true;
     SCR_chaos_enemy_score_100_bytes();
     instance_create(x,y-13,OBJ_explosion);
-    with (cp_p) SCR_physics_jump_objects();
     instance_destroy();
-    exit;
 }
-
-SCR_chaos_apply_hazard_damage(cp_p);
+// cp_res == 3: the request D3B0 is staged; $48BC hurts Sonic in his next update.

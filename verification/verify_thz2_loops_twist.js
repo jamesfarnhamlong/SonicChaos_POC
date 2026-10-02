@@ -6,7 +6,7 @@ const root = path.resolve(__dirname, '..');
 const gml = n => fs.readFileSync(path.join(root, 'scripts', n, n + '.gml'), 'utf8');
 const ctx = vm.createContext({global: {}, floor: Math.floor, round: Math.round, abs: Math.abs, min: Math.min, max: Math.max,
     array_create: (n, v) => Array(n).fill(v), array_length: a => a.length, array_push: (a, v) => a.push(v),
-    array_copy: (d, di, s, si, n) => { for (let i = 0; i < n; i++) d[di + i] = s[si + i]; }, is_array: Array.isArray});
+    array_copy: (d, di, s, si, n) => { for (let i = 0; i < n; i++) d[di + i] = s[si + i]; }, is_array: Array.isArray, variable_global_exists: k => k in ctx.global});
 for (const n of ['SCR_chaos_motion_data', 'SCR_chaos_core_data', 'SCR_chaos_core', 'SCR_chaos_loop_layout', 'SCR_chaos_level_thz2_data'])
     vm.runInContext(gml(n), ctx, {filename: n + '.gml'});
 ctx.SCR_chaos_motion_data(); ctx.SCR_chaos_core_data();

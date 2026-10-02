@@ -1,17 +1,23 @@
 /// Shared level-selection helpers. THZ1 behaviour is unchanged; THZ2 reuses the same core.
-function chaos_in_level() { return room == ROM_chaos_thz1 || room == ROM_chaos_thz2; }
+function chaos_in_level() { return room == ROM_chaos_thz1 || room == ROM_chaos_thz2 || room == ROM_chaos_thz3; }
 function chaos_is_thz2() { return room == ROM_chaos_thz2; }
+function chaos_is_thz3() { return room == ROM_chaos_thz3; }
 
 /// DEV_SPAWN / UNVERIFIED - GameMaker-only playable spawn, NOT canonical level data.
 /// The package start words (SCR_chaos_thz2_start, raw $D511/$D514 = 110,398) have unresolved
 /// field meanings, so no THZ1-derived offset is applied; the dev spawn just uses the raw values.
 #macro CHAOS_THZ2_DEV_SPAWN_X 110
 #macro CHAOS_THZ2_DEV_SPAWN_Y 398
+/// THZ3: the package start words (SCR_chaos_thz3_start, raw $D511/$D514 = 110,224) are equally unresolved; same DEV_SPAWN / UNVERIFIED treatment.
+#macro CHAOS_THZ3_DEV_SPAWN_X 110
+#macro CHAOS_THZ3_DEV_SPAWN_Y 224
 
 /// Developer route: THZ2 replaces the THZ1 layout in the shared collision array.
 function chaos_level_install_layout() {
-    if (!chaos_is_thz2()) return;
-    var cp_ids = SCR_chaos_thz2_tile_ids();
+    // ROM row stride = map width: 128 in THZ1 / THZ2, 80 in THZ3 (SCR_cc_lookup, ring probe and loop layout read it).
+    global.chaosMapWidth = chaos_is_thz3() ? SCR_chaos_thz3_map_width() : 128;
+    if (!chaos_is_thz2() && !chaos_is_thz3()) return;
+    var cp_ids = chaos_is_thz3() ? SCR_chaos_thz3_tile_ids() : SCR_chaos_thz2_tile_ids();
     global.chaosSourceTileIds = cp_ids;
     global.chaosTileIds = array_create(array_length(cp_ids), 0);
     array_copy(global.chaosTileIds, 0, cp_ids, 0, array_length(cp_ids));
@@ -32,6 +38,7 @@ function chaos_dev_thz2_requested() {
 /// Type $09 is deliberately not instantiated here: the ring manager owns those records (SCR_chaos_thz2_type09).
 function chaos_level_object_rows() {
     if (chaos_is_thz2()) return SCR_chaos_thz2_objects();
+    if (chaos_is_thz3()) return SCR_chaos_thz3_objects();
     return []; // THZ1 objects remain the accepted room-authored instances (the row format is identical for a future THZ1 table)
 }
 
@@ -47,6 +54,7 @@ function chaos_level_spawn_objects() {
         switch (cp_type) {
             case $09: break; // ring manager
             case $10: cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_object_10); chaos_type10_configure(cp_inst, cp_r[5]); break;
+            case $1B: cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_spikes); break; // moving spike: anchor = canonical record (THZ3 (752,128))
             case $18: cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_object_18); break;
             case $21: cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_object_21); chaos_type21_configure(cp_inst, cp_r[5]); break;
             case $26: cp_inst = chaos_spawn_type26(cp_r); break;
@@ -72,6 +80,7 @@ function chaos_type10_configure(cp_inst, cp_param) {
     cp_inst.chaosGraphicsSelector = cp_param;
     switch (cp_param) {
         case $03: cp_inst.sprite_index = SPR_chaos_object_10_03; break;
+        case $01: cp_inst.sprite_index = SPR_chaos_object_10_01; break; // THZ3 ten-ring monitor (selector $01)
         case $04: cp_inst.sprite_index = SPR_chaos_object_10_04; break;
         case $06: cp_inst.sprite_index = SPR_chaos_object_10_06; break;
         default: cp_inst.sprite_index = SPR_chaos_object_10; break; // selector $02 art (the accepted default resource)
@@ -101,15 +110,12 @@ function chaos_spawn_type26(cp_r) {
     return cp_inst;
 }
 
-/// Type $28 from a canonical row. Existing THZ1 platform behaviour is reused (1 pixel/update, first leg up). Parameter $0A =
-/// vertical mover with reversal period 16 * aux1 updates; parameter $84 = the sag/bob platform (chaosTravel 0).
+/// Type $28 from a canonical row (docs/platform-spike-collision-audit.md 1.1): parameter $0A = state 11 vertical lift (1 px/update, first leg up, reversal period 16 * aux1
+/// updates); parameter $84 = state 5 weight-sag platform. Any other parameter is a different ROM state this milestone does not support: never guessed.
 function chaos_spawn_type28(cp_r) {
-    var cp_travel = -1;
-    if (cp_r[5] == $0A) cp_travel = 16 * cp_r[7];
-    else if (cp_r[5] == $84) cp_travel = 0;
-    if (cp_travel < 0) return noone;
+    if (cp_r[5] != $0A && cp_r[5] != $84) return noone;
     var cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_platform);
-    cp_inst.chaosTravel = cp_travel; // the THZ1 Create event keys travel off THZ1 X values; canonical aux1 replaces it
+    chaos_platform28_configure(cp_inst, cp_r[5], cp_r[7]); // the THZ1 Create event keys off THZ1 X values; the canonical row replaces it
     return cp_inst;
 }
 
@@ -129,7 +135,8 @@ function chaos_level_apply_loops() {
 function chaos_acts() {
     return [
         {zone: "THZ", act: 1, room: ROM_chaos_thz1, name: "Turquoise Hill 1", icon: 1},
-        {zone: "THZ", act: 2, room: ROM_chaos_thz2, name: "Turquoise Hill 2", icon: 1}
+        {zone: "THZ", act: 2, room: ROM_chaos_thz2, name: "Turquoise Hill 2", icon: 1},
+        {zone: "THZ", act: 3, room: ROM_chaos_thz3, name: "Turquoise Hill 3", icon: 1}   // non-boss foundation: no act clear (the type $50 boss is not implemented)
     ];
 }
 function chaos_act_count() { return array_length(chaos_acts()); }

@@ -11,7 +11,10 @@ function SCR_cc_new(cp_x, cp_y) {
         hazard:0, angle:0, magnitude:0, twist_variant:0, level:0,
         state11_active:false, state11_camera_y:0,
         state11_anim_tick:0, state11_frame:56, hurt_ticks:0,
-        camera_x:0, act_clear:false, clear_dx:289};
+        camera_x:0, act_clear:false, clear_dx:289,
+        // Damage ($48F7 / $48BC, platform-spike milestone): rings and the immunity inputs are supplied by the adapter each update; the core never reads GameMaker globals.
+        rings:0, shield:false, immune:false, invuln:0, damage_request:0, box_contacts:0, box_ready:0, contact:0, contact_nib:0, stage_contact:0, stage_nib:0, stage_request:0, hurt_rom:false,
+        hurt_pending:false, hurt_death:false, hurt_rings_lost:0, hurt_scatter:0, hurt_shield:false};
 }
 function SCR_cc_merge(cp_c) {
     cp_c.contacts = cp_c.bg;
@@ -72,7 +75,10 @@ function SCR_cc_lookup(cp_x, cp_y, cp_plane) {
     var cp_ax = floor(cp_x) & 65535;
     var cp_ay = floor(cp_y) & 65535;
     if ((cp_ay & 32768) != 0) cp_ay = 0;
-    var cp_index = (((cp_ay >> 5) & 127)*128 + ((cp_ax >> 5) & 255));
+    // ROM row-offset table: the row stride is the act's map width (128 in THZ1/THZ2, 80 in THZ3); columns past the width wrap into the next row exactly as the ROM does.
+    var cp_w = 128;
+    if (variable_global_exists("chaosMapWidth")) cp_w = global.chaosMapWidth; // set by chaos_level_install_layout (128 in THZ1/THZ2, 80 in THZ3)
+    var cp_index = (((cp_ay >> 5) & 127)*cp_w + ((cp_ax >> 5) & 255));
     var cp_address = (49153 + cp_index) & 65535;
     // GAMEMAKER PRESENTATION ADAPTER: a widescreen act-clear camera may expose world X beyond the canonical 4096 px map (128 columns of 32 px). The
     // ROM's lookup would wrap those columns into the NEXT map row (solid tiles can stop the state $20 run). While state $20 runs, columns past the
@@ -95,7 +101,7 @@ function SCR_cc_project_floor(cp_c, cp_s) {
     var cp_raw = cp_s.vertical;
     var cp_mod = cp_s.modifier;
     if ((cp_solid && (cp_raw & 63) == 32) || (!cp_solid && (cp_raw & 63) == 0)) {
-        if (cp_s.index >= 128) {
+        if (cp_s.index >= (variable_global_exists("chaosMapWidth") ? global.chaosMapWidth : 128)) {
             var cp_above = SCR_cc_lookup(cp_s.ax, cp_s.ay-32, cp_c.plane);
             var cp_upper = cp_above.vertical & 63;
             if ((cp_above.flags & 64) != 0) {
@@ -329,10 +335,9 @@ function SCR_cc_floor(cp_c) {
     var cp_kind = cp_s.flags & 31;
     if (cp_kind == 18) SCR_cc_ramp(cp_c,cp_old_mod,cp_s.tile);
     else if (cp_kind == 5) {
-        // $6ACE: ordinary floor hazards act only after floor contact. Tiles
-        // $F4/$F5 are exempt in the original handler.
-        if ((cp_s.tile & 254) != 244 && (cp_c.bg & 2) != 0 &&
-            (cp_c.player_flags & 128) == 0) cp_c.hazard = 1;
+        // $6ACE (docs/platform-spike-collision-audit.md 2.2): tile & $FE != $F4, floor flag $D522 bit 1 set (after the previous surface's projection above),
+        // and +$03 bit 7 (invulnerable, move & 128) clear, then the hurt entry $48F7 DIRECTLY (not through the $48BC request gate). Nothing else: no state, no speed.
+        if ((cp_s.tile & 254) != 244 && (cp_c.bg & 2) != 0 && (cp_c.move & 128) == 0) SCR_cc_terrain_hurt(cp_c);
     }
     else if (cp_kind == 9 || cp_kind == 20) SCR_cc_spring(cp_c,cp_kind,cp_s.tile);
     else if (cp_kind == 23) SCR_cc_twist_enter(cp_c,cp_s.tile);
@@ -383,7 +388,13 @@ function SCR_cc_sides(cp_c) {
         // Its upper half has extent zero and its lower half extent 32. Other
         // type-5 tiles remain bounded as unsupported special dispatches.
         if (cp_kind == 13 && SCR_cc_break13_side(cp_c,cp_s,cp_right)) continue; // $72B6/$72DD; else ordinary projection
-        if ((cp_kind == 5 && cp_s.tile != 61) ||
+        if (cp_kind == 5 && (cp_s.tile == 60 || cp_s.tile == 61)) {
+            // $7306/$7329: blocks $3C/$3D (flags $85, horizontal profile rows 0..15 = none, 16..31 = full) are an ordinary wall; a requested hurt state ($1E) returns without
+            // pushing. The damaging side tiles $F4/$F5 do not occur in any THZ layout.
+            if (cp_c.next != 30) SCR_cc_project_side(cp_c,cp_s,cp_right);
+            continue;
+        }
+        if (cp_kind == 5 ||
             cp_kind == 19 || (cp_kind == 22 && cp_s.tile != 71) || cp_kind == 30) {
             cp_c.unsupported = cp_kind; // special dispatch not falsely presented as ordinary ROM behaviour
             continue;
@@ -442,9 +453,70 @@ function SCR_cc_hurt_tick(cp_c) {
         cp_c.move &= ~1;
     } else cp_c.move |= 1;
     cp_c.hurt_ticks = max(0,cp_c.hurt_ticks-1);
-    if (cp_c.hurt_ticks > 0) cp_c.next = 30;
-    else if (cp_grounded) SCR_cc_walk(cp_c);
+    if (cp_c.hurt_rom && !cp_grounded) cp_c.next = 30;              // recovered hurt entry ($48F7): the control lock lasts until landing
+    else if (cp_c.hurt_ticks > 0) cp_c.next = 30;
+    else if (cp_grounded) { SCR_cc_walk(cp_c); cp_c.hurt_rom = false; }
     else { cp_c.next = 14; cp_c.move |= 1; }
+}
+// Hurt entry $48F7 on the recovered ROM model (docs/platform-spike-collision-audit.md section 4; POC_notes/rom-cache/platform-spike-collision.json hurt_consequences).
+// The adapter supplies rings / shield / immune each update and applies the GameMaker side (global rings, scatter object, death object) from the hurt_* result fields.
+//   no rings : requested state $1F, Y speed -5.0 ($FB00), X speed unchanged, no invulnerability.
+//   rings    : requested state $1E, rings := 0, (rings >> 4) + 1 scatter objects capped at 7, invulnerability counter $D3B1 := $78 (120), +$03 |= $C1 (bit 7 invulnerable,
+//              bit 6, bit 0 airborne), floor flag cleared, Y speed -4.0 (+1.0 when the ceiling flag $D522 bit 0 is set), X speed -1.0 (+1.0 when $D523 bit 3, a left wall).
+//              The knockback direction depends only on the left-wall bit, never on which side the hazard was.
+// A shield (POC power-up, not a ROM mechanic) is consumed instead of the rings; everything else is the same hurt entry.
+function SCR_cc_hurt_rom(cp_c) {
+    cp_c.hurt_pending = true; cp_c.hurt_death = false; cp_c.hurt_rings_lost = 0; cp_c.hurt_scatter = 0; cp_c.hurt_shield = false;
+    cp_c.support = 0;                                               // the state setter ($476D) releases the platform owner $D3C0
+    if (cp_c.rings <= 0 && !cp_c.shield) {
+        cp_c.hurt_death = true; cp_c.next = 31; cp_c.vy = -1280;
+        return;
+    }
+    if (cp_c.shield) cp_c.hurt_shield = true;
+    else { cp_c.hurt_rings_lost = cp_c.rings; cp_c.hurt_scatter = min(7, (cp_c.rings >> 4) + 1); cp_c.rings = 0; }
+    cp_c.vy = (cp_c.bg & 1) != 0 ? 256 : -1024;
+    cp_c.vx = (cp_c.contacts & 8) != 0 ? 256 : -256;
+    cp_c.next = 30; cp_c.invuln = 120; cp_c.move |= 193;
+    cp_c.bg &= ~2; cp_c.contacts &= ~2; cp_c.hurt_rom = true; cp_c.hurt_ticks = 0;
+    cp_c.input_delta = 0; cp_c.surface_delta = 0;
+}
+// Terrain hazard entry: called by the foot handler $6ACE after it has tested +$03 bit 7 itself. Power-ups that make Sonic immune (POC adapter input) suppress it.
+function SCR_cc_terrain_hurt(cp_c) {
+    if (cp_c.immune) return;
+    cp_c.hazard = 1;
+    SCR_cc_hurt_rom(cp_c);
+}
+// $48BC, once at the end of every player update (docs/player-attack-badnik-audit.md section 5). Priority order:
+//   +$03 bit 7 (invulnerable): the counter $D3B1 counts down once per call (120 -> 0); the 121st call clears bits 7/6 and discards the pending request. Nothing else is processed.
+//   +$03 bit 6 (hurt / dying): the contact flag $D520 is cleared only.
+//   immune ($D532 == 6, invincibility): the request $D3B0 and $D520 are cleared.
+//   request $D3B0 != 0: hurt, whatever the attack bit is (type $21 side contact, type $1B top, ...).
+//   $D520 == 0: nothing.   $D520 != 0 with the attack bit (+$03 bit 1): rebound by the high nibble of $D521 (above $20: Y speed -3.0; below $10: +0.5 unless the current state is 9;
+//   side: none); without the attack bit: hurt.
+// Objects write $D520 / $D3B0 AFTER the player's pass (staged by SCR_chaos_attack, promoted by the object phase), so an overlap in update n is consumed in update n+1.
+function SCR_cc_damage_gate(cp_c) {
+    if ((cp_c.move & 128) != 0) {
+        if (cp_c.invuln > 0) cp_c.invuln--;
+        else { cp_c.move &= ~192; cp_c.damage_request = 0; }
+        cp_c.contact = 0;                                       // adapter simplification: no stale contact survives the invulnerability
+        return false;
+    }
+    if ((cp_c.move & 64) != 0) { cp_c.contact = 0; return false; }
+    if (cp_c.immune) { cp_c.damage_request = 0; cp_c.contact = 0; return false; }
+    if (cp_c.damage_request != 0) {
+        cp_c.damage_request = 0; cp_c.contact = 0;
+        SCR_cc_hurt_rom(cp_c);
+        return true;
+    }
+    if (cp_c.contact == 0) return false;
+    cp_c.contact = 0;
+    if ((cp_c.move & 2) != 0) {
+        if ((cp_c.contact_nib & 16) != 0) { if (cp_c.state != 9) cp_c.vy = 128; }
+        else if ((cp_c.contact_nib & 32) != 0) { cp_c.vy = -768; cp_c.bg &= ~2; cp_c.contacts &= ~2; cp_c.move |= 1; }   // above: floor flag cleared, airborne set
+        return false;
+    }
+    SCR_cc_hurt_rom(cp_c);
+    return true;
 }
 // Task 06: state $11 callback $3A7C. Coordinates and velocities retain the
 // core's integer 16.8 / signed 8.8 representation.
@@ -513,7 +585,7 @@ function SCR_cc_state32_body(cp_c) {
 }
 // Ordinary state wrappers. Animation-script scheduling and special states remain out of scope.
 function SCR_cc_tick(cp_c) {
-    cp_c.state = cp_c.next; cp_c.sound = 0; cp_c.unsupported = 0; cp_c.hazard = 0;
+    cp_c.state = cp_c.next; cp_c.sound = 0; cp_c.unsupported = 0; cp_c.hazard = 0; cp_c.hurt_pending = false;
     if (cp_c.state == 34) { SCR_cc_twist_tick(cp_c); return; }
     if (cp_c.state == 17) { SCR_cc_state11_tick(cp_c); return; }
     if (cp_c.state == 32) { SCR_cc_state32_tick(cp_c); return; }

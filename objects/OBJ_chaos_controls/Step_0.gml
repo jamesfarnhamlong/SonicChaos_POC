@@ -60,9 +60,9 @@ if (chaos_in_level() && keyboard_check_pressed(vk_f3)) {
     global.chaosDebug = !global.chaosDebug;
 }
 
-// Developer shortcut (F10): toggle THZ1 <-> THZ2 in-level. Normal selection is the data-select act table (chaos_acts()).
+// Developer shortcut (F10): cycle THZ1 -> THZ2 -> THZ3 in-level. Normal selection is the data-select act table (chaos_acts()).
 if (chaos_in_level() && keyboard_check_pressed(vk_f10)) {
     global.checkPoint = false;
     global.ring = 0;
-    room_goto(chaos_is_thz2() ? ROM_chaos_thz1 : ROM_chaos_thz2);
+    room_goto(chaos_is_thz3() ? ROM_chaos_thz1 : (chaos_is_thz2() ? ROM_chaos_thz3 : ROM_chaos_thz2));
 }

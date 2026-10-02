@@ -12,7 +12,7 @@ const ctx = vm.createContext({global: g, floor: Math.floor, round: Math.round, a
     clamp: (v, a, b) => Math.min(Math.max(v, a), b), array_create: (n, v) => Array(n).fill(v), array_length: a => a.length,
     array_push: (a, v) => a.push(v), array_copy: (d, di, s, si, n) => { for (let i = 0; i < n; i++) d[di + i] = s[si + i]; },
     variable_global_exists: k => k in ctx.global, is_array: Array.isArray,
-    ROM_chaos_thz1: 'thz1', ROM_chaos_thz2: 'thz2', SCR_save_game: () => { saved++; }, noone: -4,
+    ROM_chaos_thz1: 'thz1', ROM_chaos_thz2: 'thz2', ROM_chaos_thz3: 'thz3', SCR_save_game: () => { saved++; }, noone: -4,
     ctx_alarm: () => { alarms++; },
     get room() { return room; }});
 for (const n of ['SCR_chaos_motion_data', 'SCR_chaos_core_data', 'SCR_chaos_core', 'SCR_chaos_level_thz2_data', 'SCR_chaos_box_contact'])
@@ -157,7 +157,7 @@ function chain(name, ids, signY, roomName, W = 348, camOff = 197, leftWalk = 0, 
     assert.deepStrictEqual(progAtReq, [1, 0, false], `${name}: no progression at $20 request`);
     assert.ok(clear > req, `${name} W${W} off${camOff}: act clear after $20 starts (${clear}) x=${px()} cam=${c.camera_x} vx=${c.vx}`);
     assert.strictEqual(g.chaosComplete, true);
-    assert.strictEqual(g.zoneGoto, 2); assert.strictEqual(saved, 1, `${name}: saved exactly once, at the final clear`);
+    assert.strictEqual(g.zoneGoto, roomName === 'thz2' ? 3 : 2, 'progression advances to the next act (THZ3 exists now)'); assert.strictEqual(saved, 1, `${name}: saved exactly once, at the final clear`);
     // recovered pan: never faster than 1 px/update per axis; the sign ends at CENTER(0)-1 unless the room edge limits it
     assert.ok(maxStepX <= 1 && maxStepY <= 1, `${name} W${W}: pan is 1 px/update per axis (${maxStepX},${maxStepY})`);
     const wantX = Math.max(camStart, Math.min(SX - W / 2 - 1, ROOM_W - W)), wantY = Math.min(Math.max(signY - 0x99, 0), ROOM_H - H);

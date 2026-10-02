@@ -10,7 +10,7 @@ OBJECT = ROOT / "objects/OBJ_chaos_object_10"
 assert hashlib.sha256((OBJECT / "Create_0.gml").read_bytes()).hexdigest() == \
     "aa49d57d2496f8476764f0a907b9754cf92c52b0a24954355abe64abf311c541"
 assert hashlib.sha256((OBJECT / "Step_0.gml").read_bytes()).hexdigest() == \
-    "b85245ed5032bbea5d94d1ce51c7497947776274a7c787cd1fce1fd7f78434f3"  # pin updated: shared viewport lifecycle (placement scan + bands); earlier 72211408...; Sonic 8x24 extents in the box call; earlier: 6056a53a...; updated for the shared type-$10 contact fix (README_THZ2_FOUNDATION.md); previously 13d03485...
+    "80852d62e487d00f7224d97ecebbed9601ebcc9d6196a3ac0d89b3c6eb0448dd"  # pin updated: monitor reads the canonical attack bit only (attack-posture migration); earlier b85245ed...; shared viewport lifecycle (placement scan + bands); earlier 72211408...; Sonic 8x24 extents in the box call; earlier: 6056a53a...; updated for the shared type-$10 contact fix (README_THZ2_FOUNDATION.md); previously 13d03485...
 
 draw = (OBJECT / "Draw_0.gml").read_text()
 assert "if (chaosConsumed) { draw_self(); exit; }" in draw
