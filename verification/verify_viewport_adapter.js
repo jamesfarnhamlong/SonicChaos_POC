@@ -188,7 +188,7 @@ function makeBee(originX, originY, W) {
         OBJ_player_char_spin: 'spin', SCR_chaos_enemy_score_100_bytes: () => {}, instance_destroy: () => { w.destroyed = true; }});
     for (const n of ['SCR_chaos_viewport', 'SCR_chaos_placement', 'SCR_chaos_box_contact', 'SCR_chaos_attack']) vm.runInContext(hex(rd(`scripts/${n}/${n}.gml`)), w.ctx);
     w.box = {x: originX, y: originY, chaosOriginX: originX, chaosOriginY: originY, chaosActive: false, chaosAsleep: true, chaosAge: 0, chaosScanTick: 0,
-        chaosInitialFillDone: false, chaosWoken: false, chaosState: 0, chaosVX: 0, chaosVY: 0, chaosCounter: 0, chaosOscTick: 0, chaosAnimTick: 0, chaosSilentDestroy: false,
+        chaosInitialFillDone: false, chaosWoken: false, chaosEnemyType:0x27,chaosEnemyEX:9,chaosEnemyEY:14,chaosCanonicalLifecycle:false,chaosState: 0, chaosVX: 0, chaosVY: 0, chaosCounter: 0, chaosOscTick: 0, chaosAnimTick: 0, chaosSilentDestroy: false,
         chaosXU: originX * 256, chaosYU: originY * 256, image_index: 0, visible: false};
     w.ctx.b = w.box; w.ctx.id = w.box;
     w.step = () => { const was = w.box.chaosActive; vm.runInContext(`(function(){ with (b) { ${body27} } })()`, w.ctx); if (!was && w.box.chaosActive) w.activations++; if (was && !w.box.chaosActive) w.removals++; w.frame++; };
@@ -245,7 +245,7 @@ for (const W of WIDTHS) for (const [d, trig] of [[62, true], [63, true], [64, fa
 // static: the bee consumes the shared bands and PLAYER_DIST helpers only
 {
     const code = strip(step27);
-    ok(/chaos_vp_current\(\)/.test(code) && /SCR_chaos_lifetime_cell\(id,cp_vp,/.test(code) && /SCR_chaos_placement_scan\(id,cp_vp,/.test(code), 'type $27 uses the generic lifecycle through the shared adapter');
+    ok(/chaos_vp_current\(\)/.test(code) && /(?:SCR_chaos_lifetime_cell|chaos_flying_lifetime_cell)\(id,cp_vp,/.test(code) && /SCR_chaos_placement_scan\(id,cp_vp,/.test(code), 'type $27 uses the generic lifecycle through the shared adapter');
     ok(/chaos_vp_dist_ge\(floor\(x\),floor\(cp_p\.x\),384\)/.test(code) && /chaos_vp_dist_lt\(floor\(x\),floor\(cp_p\.x\),64\)/.test(code), 'type $27 trigger/removal are PLAYER_DIST(64/384)');
     ok(!/camera_get_view|view_camera|__view_get|chaos_vp_edge|chaos_vp_center|chaos_vp_left_for_center|cp_vp\.(w|h|left|top)|room_width/.test(code), 'type $27 has no view-width arithmetic of its own');
     ok(!/384\s*[-+*]|[-+*]\s*384|W\s*-\s*256/.test(code), 'type $27 removal radius is a bare PLAYER_DIST(384)');
@@ -261,7 +261,7 @@ const bodyOf = f => divs(hex(rd(f))).replace(/\bexit;/g, 'return;').replace(/\bm
 const LIFE_TYPES = {
     0x10: {file: 'objects/OBJ_chaos_object_10/Step_0.gml', make: (ox, oy) => ({chaosParameter: 2, chaosConsumed: false, chaosReplaceTick: 0, chaosVY: 0, image_index: 0, chaosGraphicsSelector: 2})},
     0x21: {file: 'objects/OBJ_chaos_object_21/Step_0.gml', make: (ox, oy) => ({chaosParameter: 4, chaosLeftBound: ox - 64, chaosVX: -0x80, chaosVY: 0x200, chaosXU: ox * 256, chaosYU: oy * 256, chaosDefeated: false, image_xscale: -1, image_index: 0})},
-    0x27: {file: 'objects/OBJ_chaos_object_27/Step_0.gml', make: (ox, oy) => ({chaosState: 1, chaosVX: -0x280, chaosVY: 0, chaosCounter: 0, chaosOscTick: 0, chaosSilentDestroy: false, chaosXU: ox * 256, chaosYU: oy * 256, image_index: 0})},
+    0x27: {file: 'objects/OBJ_chaos_object_27/Step_0.gml', make: (ox, oy) => ({chaosEnemyType:0x27,chaosEnemyEX:9,chaosEnemyEY:14,chaosCanonicalLifecycle:false,chaosState: 1, chaosVX: -0x280, chaosVY: 0, chaosCounter: 0, chaosOscTick: 0, chaosSilentDestroy: false, chaosXU: ox * 256, chaosYU: oy * 256, image_index: 0})},
 };
 function makeLife(type, ox, oy, W) {
     const t = LIFE_TYPES[type], w = {camX: 0, camY: 0, camW: W, activations: 0};
@@ -313,7 +313,7 @@ for (const type of [0x10, 0x21, 0x27]) {
         }
     }
     const code = strip(rd(LIFE_TYPES[type].file));
-    ok(/SCR_chaos_placement_scan\(id,cp_vp,chaosOriginX,chaosOriginY\)/.test(code) && /SCR_chaos_lifetime_cell\(id,cp_vp,/.test(code) && /chaos_vp_current\(\)/.test(code), `${tag}: lifecycle runs through the shared placement scan and viewport bands`);
+    ok(/SCR_chaos_placement_scan\(id,cp_vp,chaosOriginX,chaosOriginY\)/.test(code) && /(?:SCR_chaos_lifetime_cell|chaos_flying_lifetime_cell)\(id,cp_vp,/.test(code) && /chaos_vp_current\(\)/.test(code), `${tag}: lifecycle runs through the shared placement scan and viewport bands`);
     ok(!/camera_get_view|view_camera|__view_get|room_width|\+\s*384|-\s*128/.test(code), `${tag}: no private view-window arithmetic left`);
 }
 // Types that are NOT window-driven in the POC architecture: persistent room instances / manager records with no lifecycle window to migrate.
@@ -407,7 +407,7 @@ for (const W of WIDTHS.slice(1)) { const vp = ctx.chaos_vp_new(0, 500, W, 196), 
 // no $21-specific (or bee-specific) widescreen offset: the step events only call the shared helpers
 for (const f of ['objects/OBJ_chaos_object_10/Step_0.gml', 'objects/OBJ_chaos_object_21/Step_0.gml', 'objects/OBJ_chaos_object_27/Step_0.gml']) {
     const code = strip(rd(f));
-    ok(/SCR_chaos_lifetime_cell\(id,cp_vp,/.test(code) && !/widescreen|extra|\b92\b|\b348\b|\b124\b|\b188\b/.test(code), `${f}: lifetime via the shared retention helper, no per-object widescreen offset`);
+    ok(/(?:SCR_chaos_lifetime_cell|chaos_flying_lifetime_cell)\(id,cp_vp,/.test(code) && !/widescreen|extra|\b92\b|\b348\b|\b124\b|\b188\b/.test(code), `${f}: lifetime via the shared retention helper, no per-object widescreen offset`);
 }
 ok(!/chaos_life_trace|CHAOS_DIAG21|file_text/.test(strip(rd('objects/OBJ_chaos_object_21/Step_0.gml')) + strip(rd('objects/OBJ_chaos_ring_manager/Draw_64.gml'))), '$21 diagnostic overlay/file code removed');
 ok(!/CHAOS_DIAG21|chaos_life_trace/.test(rd('scripts/SCR_chaos_level/SCR_chaos_level.gml')), 'diagnostic helpers removed from the level script');

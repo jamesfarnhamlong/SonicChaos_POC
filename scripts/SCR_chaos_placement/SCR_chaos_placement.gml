@@ -35,3 +35,9 @@ function SCR_chaos_lifetime_cell(cp_o, cp_vp, cp_world_x, cp_world_y) {
     if (cp_cell <= 1) cp_o.chaosWoken = true;
     return cp_cell;
 }
+
+/// $2C shares $27 callbacks, but the existing THZ retention adapter stays opt-in.
+function chaos_flying_lifetime_cell(cp_o, cp_vp, cp_x, cp_y) {
+    if (cp_o.chaosCanonicalLifecycle) return SCR_chaos_spawn_cell(cp_vp,cp_x,cp_y);
+    return SCR_chaos_lifetime_cell(cp_o,cp_vp,cp_x,cp_y);
+}

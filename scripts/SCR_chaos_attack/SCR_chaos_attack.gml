@@ -30,8 +30,13 @@ function chaos_contact_promote(cp_c) {
 }
 /// Type $27. Returns 0 = no overlap, 1 = overlap, Sonic not attacking (object survives; $D520 raised), 2 = overlap and the bee is converted ($D520 raised too).
 function chaos_type27_resolve(cp_c, cp_ox, cp_oy, cp_inv) {
+    return chaos_ordinary_enemy_resolve(cp_c,cp_ox,cp_oy,cp_inv,9,14);
+}
+/// Shared $6328 -> $5F3D path; $25/$2C have no $21 top-stomp exception.
+function chaos_ordinary_enemy_resolve(cp_c, cp_ox, cp_oy, cp_inv, cp_ex, cp_ey) {
     if ((cp_c.move & 64) != 0) return 0;
-    var cp_bits = SCR_chaos_box_contact(floor(cp_c.xu / 256), floor(cp_c.yu / 256), cp_ox, cp_oy, 8, 24, 9, 14);
+    var cp_pex = cp_c.state == $0F ? 9 : 8;
+    var cp_bits = SCR_chaos_box_contact(floor(cp_c.xu / 256), floor(cp_c.yu / 256), cp_ox, cp_oy, cp_pex, 24, cp_ex, cp_ey);
     if (cp_bits == 0) return 0;
     chaos_contact_stage(cp_c, chaos_contact_nibble(cp_bits));
     return chaos_attack_or_invincible(cp_c, cp_inv) ? 2 : 1;

@@ -14,7 +14,7 @@ function source(ref, rel) {
 }
 const SCRIPTS = ['SCR_chaos_motion_data', 'SCR_chaos_core_data', 'SCR_chaos_core', 'SCR_chaos_level_thz2_data', 'SCR_chaos_level_thz3_data', 'SCR_chaos_gpz_data', 'SCR_chaos_anim_counter_data', 'SCR_chaos_anim_counter',
     'SCR_chaos_terrain_ring', 'SCR_chaos_viewport', 'SCR_chaos_placement', 'SCR_chaos_goal', 'SCR_chaos_box_contact', 'SCR_chaos_attack', 'SCR_chaos_spring', 'SCR_chaos_platform', 'SCR_chaos_damage', 'SCR_chaos_spike1b',
-    'SCR_chaos_motion', 'SCR_chaos_adapter', 'SCR_chaos_objects', 'SCR_chaos_level', 'SCR_chaos_boss_data', 'SCR_chaos_boss'];
+    'SCR_chaos_gpz_enemy', 'SCR_chaos_gpz_enemy_data', 'SCR_chaos_motion', 'SCR_chaos_adapter', 'SCR_chaos_objects', 'SCR_chaos_level', 'SCR_chaos_boss_data', 'SCR_chaos_boss'];
 
 /// ref = null -> working tree; otherwise a git ref. Returns a host with .ctx (the VM), .g (globals) and helpers to build worlds.
 function loadHost(ref) {
@@ -22,12 +22,16 @@ function loadHost(ref) {
     const texts = {};
     for (const n of SCRIPTS) { const t = source(ref, `scripts/${n}/${n}.gml`); if (t !== null) texts[n] = t; }
     const consts = new Set();
+    for (const nm of ['OBJ_chaos_object_25','OBJ_chaos_object_2C','OBJ_chaos_gpz_smoke_0F']) for (const ev of ['Create_0','Step_0','Draw_0']) { const t=source(ref,`objects/${nm}/${ev}.gml`); if(t) for(const m of t.matchAll(/\b(OBJ|SPR|SFX|ROM|TIME|MUS)_\w+/g)) consts.add(m[0]); }
     for (const t of Object.values(texts)) for (const m of t.matchAll(/\b(OBJ|SPR|SFX|ROM|TIME|MUS)_\w+/g)) consts.add(m[0]);
-    const world = {player: null, platforms: [], spikes: [], bosses: [], cam: {x: 0, y: 0, w: 256, h: 192}, events: [], audio: 0, created: [], badniks: [], input: {}, roomWidth: 4096, roomHeight: 1024};
+    const world = {player: null, platforms: [], spikes: [], bosses: [], cam: {x: 0, y: 0, w: 256, h: 192}, events: [], audio: 0, created: [], badniks: [], gpzEnemies: [], smoke: [], input: {}, roomWidth: 4096, roomHeight: 1024};
     for (const c of ['OBJ_chaos_spikes', 'OBJ_chaos_platform', 'OBJ_player', 'OBJ_player_char', 'OBJ_player_char_spin', 'ROM_chaos_thz1', 'ROM_chaos_thz2', 'ROM_chaos_thz3']) consts.add(c);
     const ids = {}; let n = 1000; for (const c of consts) ids[c] = n++;
-    const objectsByType = () => ({[ids.OBJ_player]: world.player ? [world.player] : [], [ids.OBJ_player_char]: world.player ? [world.player] : [], [ids.OBJ_chaos_platform]: world.platforms, [ids.OBJ_chaos_spikes]: world.spikes, [ids.OBJ_chaos_object_50]: world.bosses});
+    const objectsByType = () => ({[ids.OBJ_player]: world.player ? [world.player] : [], [ids.OBJ_player_char]: world.player ? [world.player] : [], [ids.OBJ_chaos_platform]: world.platforms, [ids.OBJ_chaos_spikes]: world.spikes, [ids.OBJ_chaos_object_50]: world.bosses, [ids.OBJ_chaos_object_25]: world.gpzEnemies.filter(o=>o.object_index===ids.OBJ_chaos_object_25&&!o.destroyed), [ids.OBJ_chaos_object_2C]: world.gpzEnemies.filter(o=>o.object_index===ids.OBJ_chaos_object_2C&&!o.destroyed)});
     const sandbox = Object.assign({}, ids, {
+        ev_step:3, ev_step_normal:0,
+        event_perform:()=>host.runEvent(host.self,`objects/${nameOf[host.self.object_index]}/Step_0.gml`),
+        event_inherited:()=>host.runEvent(host.self,host.activeEvent.replace("OBJ_chaos_object_2C","OBJ_chaos_object_27")),
         global: g, floor: Math.floor, round: Math.round, abs: Math.abs, min: Math.min, max: Math.max, sign: Math.sign, clamp: (v, a, b) => Math.min(Math.max(v, a), b),
         point_direction:(x,y,xx,yy)=>Math.atan2(y-yy,xx-x)*180/Math.PI,
         array_create: (k, v) => Array(k).fill(v), array_length: a => a.length, array_push: (a, v) => a.push(v), array_copy: (d, di, s, si, k) => { for (let i = 0; i < k; i++) d[di + i] = s[si + i]; },
@@ -47,10 +51,11 @@ function loadHost(ref) {
         keyboard_check_pressed: () => false, ord: () => 0, vk_f2: 0, parameter_count: () => 0, parameter_string: () => '',
         get room_width() { return world.roomWidth; }, get room_height() { return world.roomHeight; }, room: ids.ROM_chaos_thz1,
     });
+    sandbox.hostEnemyEvent=o=>{o.chaosEnemyPhase=true;host.runEvent(o,`objects/${nameOf[o.object_index]}/Step_0.gml`);};
     const ctx = vm.createContext(sandbox);
     // GML `with (o) { f(); }` changes `self` for a called script; JS `with` does not. The one script that relies on it (SCR_chaos_sample_damage) is rewritten
     // mechanically to take the instance and run its body under `with`.
-    const selfCalls = t => t.replace(/with \((\w+)\) \{ SCR_chaos_sample_damage\(\); \}/g, 'SCR_chaos_sample_damage($1);')
+    const selfCalls = t => t.replace(/with \(cp_enemy\) \{ chaosEnemyPhase=true; event_perform\(ev_step,ev_step_normal\); \}/g, 'hostEnemyEvent(cp_enemy);').replace(/with \((\w+)\) \{ SCR_chaos_sample_damage\(\); \}/g, 'SCR_chaos_sample_damage($1);')
         .replace(/function SCR_chaos_sample_damage\(\) \{([\s\S]*?)[\r\n]\}[\r\n]/, 'function SCR_chaos_sample_damage(__s) { with (__s) {$1 } }$&'.replace('$&', ''));
     for (const [nm, t] of Object.entries(texts)) vm.runInContext(selfCalls(hex(t)), ctx, {filename: nm});
     ctx.SCR_chaos_motion_data(); ctx.SCR_chaos_core_data();
@@ -63,6 +68,7 @@ function loadHost(ref) {
     /// instance_create for the objects this harness hosts (runs the shipped Create_0); anything else is only recorded.
     host.create = (o, x, y) => {
         const nm = nameOf[o];
+        if (["OBJ_chaos_object_25","OBJ_chaos_object_2C","OBJ_chaos_gpz_smoke_0F"].includes(nm)) { const i=host.newInstance(nm,x,y); (nm==="OBJ_chaos_gpz_smoke_0F"?world.smoke:world.gpzEnemies).push(i);return i; }
         if (nm === 'OBJ_chaos_platform' || nm === 'OBJ_chaos_spikes' || nm === 'OBJ_chaos_object_50') { const i = host.newInstance(nm, x, y); (nm === 'OBJ_chaos_platform' ? world.platforms : nm === 'OBJ_chaos_spikes' ? world.spikes : world.bosses).push(i); return i; }
         world.created.push([o, x, y]); return {x, y, object_index: o};
     };
@@ -71,10 +77,10 @@ function loadHost(ref) {
     // script / host name resolve to an instance variable, as GameMaker does.
     host.runEvent = (inst, ev) => {
         const code = source(ref, ev); if (code === null) return false;
-        const fn = vm.runInContext(`(function(__self){ with (__self) {\n${hex(code)}\n} })`, ctx, {filename: ev});
+        const fn = vm.runInContext(`(function(__self){ with (__self) {\n${hex(code).replace(/\bexit;/g,"return;")}\n} })`, ctx, {filename: ev});
         const prox = new Proxy(inst, {has: (t, k) => typeof k === 'string' && (k in t || !(k in sandbox || k in globalThis || k === 'undefined' || k === '__self')), get: (t, k) => k === Symbol.unscopables ? undefined : t[k], set: (t, k, v) => { t[k] = v; return true; }});
         // `id` inside an event is the instance itself
-        inst.id = inst; host.self = inst; fn(prox); host.self = null; return true;
+        inst.id = inst; const prevSelf=host.self,prevEvent=host.activeEvent; host.self = inst;host.activeEvent=ev; fn(prox); host.self=prevSelf;host.activeEvent=prevEvent; return true;
     };
     host.newInstance = (objName, x, y) => {
         const inst = {x, y, object_index: ids[objName], visible: true, solid: false, depth: 0, mask_index: -1, image_index: 0, image_speed: 0, sprite_index: -1};
@@ -113,7 +119,7 @@ function loadHost(ref) {
         for (const [cx, cy] of keep) { const i = cy * 128 + cx; iso[i] = ids1[i]; }
         g.chaosTileIds = iso; g.chaosBrokenCells = [];
     };
-    host.reset = () => { world.badniks.length = 0; world.platforms.length = 0; world.spikes.length = 0; world.bosses.length = 0; world.events.length = 0; world.created.length = 0; world.player = null; world.frameNo = 0;
+    host.reset = () => { world.gpzEnemies.length=0;world.smoke.length=0;world.badniks.length = 0; world.platforms.length = 0; world.spikes.length = 0; world.bosses.length = 0; world.events.length = 0; world.created.length = 0; world.player = null; world.frameNo = 0;
         g.ring = 0; g.playerBlink = false; g.chaosDamageBlinkTimer = 0; g.powerShield = false; g.powerInv = false; g.playerSuper = false; g.chaosAttackPosture = false; };
     return host;
 }

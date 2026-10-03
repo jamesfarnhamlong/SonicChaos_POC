@@ -16,6 +16,23 @@ function SCR_chaos_objects_phase() {
     // $D520 / $D3B0 written by badnik Step events (and the sample-damage path) during this update become visible to the player's NEXT $48BC.
     // Boss contact runs in this object phase so its staged request reaches the next player update.
     chaos_boss_runtime_phase();
+    // GPZ ordinary enemies run after final player/terrain movement, before contact promotion.
+    // Shells remain after $FE deletion; destroyed defeated shells retain occupancy until room reset.
+    if (chaos_is_gpz()) {
+        var cp_enemies=chaos_level_object_rows();
+        for (var cp_ei=0; cp_ei<array_length(cp_enemies); cp_ei++) {
+            var cp_et=cp_enemies[cp_ei][3];
+            if (cp_et != $25 && cp_et != $2C) continue;
+            var cp_eobj=cp_et == $25 ? OBJ_chaos_object_25 : OBJ_chaos_object_2C;
+            for (var cp_ej=0; cp_ej<instance_number(cp_eobj); cp_ej++) {
+                var cp_enemy=instance_find(cp_eobj,cp_ej);
+                if (cp_enemy.chaosPlacementIndex != cp_enemies[cp_ei][0]) continue;
+                with (cp_enemy) { chaosEnemyPhase=true; event_perform(ev_step,ev_step_normal); }
+                if (instance_exists(cp_enemy)) cp_enemy.chaosEnemyPhase=false;
+                break;
+            }
+        }
+    }
     if (cp_have) chaos_contact_promote(cp_c);
     var cp_changed = false;
     var cp_count = instance_number(OBJ_chaos_platform);

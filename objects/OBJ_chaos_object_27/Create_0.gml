@@ -2,6 +2,9 @@
 chaosActive = false;
 chaosWoken = false; chaosAsleep = true; chaosAge = 0; chaosScanTick = 0; chaosInitialFillDone = false; // placement occupancy/lifecycle
 chaosState = 0;
+chaosEnemyType = $27;
+chaosEnemyEX = 9; chaosEnemyEY = 14;
+chaosCanonicalLifecycle = false;
 chaosVX = 0;
 chaosVY = 0;
 chaosCounter = 0;

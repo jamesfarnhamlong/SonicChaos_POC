@@ -108,7 +108,7 @@ for (const act of [1,4,2,5,3,6,1,6,2]) {
     assert.equal(w.bosses.length,act===3?1:0);
     if(act===3) {assert.equal(w.bosses[0].chaosBoss.hp,8); assert.equal(w.bosses[0].chaosBoss.state,-1); assert.equal(w.bosses[0].chaosBoss.camera_mode,0);}
     if(act===1) {assert(population.includes('OBJ_chaos_object_18')); assert(!population.includes('OBJ_chaos_object_50'));}
-    else assert.equal(g.chaosSpawnedIndices.length,gpz?manifest.foundation.instantiate_indices.length+manifest.foundation.integrate_before_instantiating_indices.length-manifest.rings.object09.length:act===2?28:7);
+    else assert.equal(g.chaosSpawnedIndices.length,gpz?manifest.foundation.instantiate_indices.length+manifest.foundation.integrate_before_instantiating_indices.length-manifest.rings.object09.length+manifest.objects.filter(r=>[37,44].includes(parseInt(r.type_id,16))).length:act===2?28:7);
     c.chaos_act_complete(); assert.equal(g.zoneGoto,2); c.SCR_save_game(); assert.equal(writes,0);
     reports.push({act,mapWidth:g.chaosMapWidth,spawn:[p.x,p.y],camera:[w.cam.x,w.cam.y],
         roomInstances:population.length,loadedObjects:g.chaosSpawnedIndices.length,rings:rings.chaosRingSourceCount,bosses:w.bosses.length});

@@ -110,9 +110,13 @@ function scenario(kind, o) {
     Object.assign(obj, {chaosActive: true, chaosAsleep: false, chaosWoken: true, chaosAge: 5, chaosScanTick: 1, chaosInitialFillDone: true});
     if (kind === 27) Object.assign(obj, {chaosState: 1, chaosVX: -0x280, chaosVY: 0, chaosXU: obj.x * 256, chaosYU: obj.y * 256});
     else Object.assign(obj, {chaosState: 3, chaosVX: -0x80, chaosVY: 0, chaosParameter: 0, chaosLeftBound: obj.x - 400, chaosOriginX: obj.x + 40, chaosOriginY: obj.y, chaosXU: obj.x * 256, chaosYU: obj.y * 256});
+    // Contact-only matrix: supply a supported object pose; airborne floor-loss is checked elsewhere.
+    const savedFloor=host.ctx.SCR_chaos_object_floor_project;
+    if(kind===21)host.ctx.SCR_chaos_object_floor_project=(x,y)=>({grounded:true,y});
     obj.stepPath = `objects/OBJ_chaos_object_${kind}/Step_0.gml`; host.world.badniks.push(obj);
     host.world.camHint = null; const rec = [];
     for (let i = 0; i < 3; i++) { host.frame({}); rec.push({vy: p.chaosCore.vy, next: p.chaosCore.next, move: p.chaosCore.move, ring: g.ring, destroyed: !!obj.destroyed, dead: !!p.dead, req: p.chaosCore.damage_request, contact: p.chaosCore.contact}); }
+    host.ctx.SCR_chaos_object_floor_project=savedFloor;
     return {p, obj, rec};
 }
 {
@@ -180,7 +184,7 @@ function scenario(kind, o) {
     const ad = code('scripts/SCR_chaos_adapter/SCR_chaos_adapter.gml'), top = ad.slice(ad.indexOf('function SCR_chaos_type21_top_bounce'), ad.indexOf('function SCR_chaos_enemy_score_100_bytes'));
     ok(!/playerJump\s*=\s*true/.test(top) && /playerJumpSpring\s*=\s*true/.test(top), 'the stomp keeps spring-flight physics but sets no attack predicate');
     ok(/chaos_attack_posture\(cp_c\)/.test(code('objects/OBJ_chaos_object_10/Step_0.gml')) && !/powerInv/.test(code('objects/OBJ_chaos_object_10/Step_0.gml')), 'monitor: attack bit only, no invincibility override');
-    ok(/chaos_type27_resolve\(cp_p\.chaosCore,floor\(x\),floor\(y\),global\.powerInv\)/.test(code('objects/OBJ_chaos_object_27/Step_0.gml')), '$27 uses the canonical resolver with D532 == 6 as powerInv');
+    ok(/chaos_ordinary_enemy_resolve\(cp_p\.chaosCore,floor\(x\),floor\(y\),global\.powerInv,chaosEnemyEX,chaosEnemyEY\)/.test(code('objects/OBJ_chaos_object_27/Step_0.gml')), '$27 uses the canonical resolver with D532 == 6 as powerInv');
     ok(/chaos_attack_or_invincible\(chaosCore,global\.powerInv\)/.test(ad) && !/place_meeting\(x,y,OBJ_badniks\)[^\n]*playerJump/.test(ad), 'sample badnik contact keys on the canonical bit and the shared request path');
     ok(!/SCR_chaos_apply_hazard_damage/.test(code('objects/OBJ_chaos_object_21/Step_0.gml') + code('objects/OBJ_chaos_object_27/Step_0.gml')), 'enemy contact uses the shared $48BC path, not the legacy hazard function');
     ok(/global\.playerJump\s*=\s*!cp_state11/.test(ad), 'global.playerJump keeps its airborne/physics definition for genuine airborne consumers');

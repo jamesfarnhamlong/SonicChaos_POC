@@ -1,0 +1,178 @@
+{
+  "research_commit": "d214c60ccf04f62634c4565f4abf38ec63ae77c6",
+  "transformation": "NONE: source PNG bytes copied exactly; origin (64,56), draw registration (+1,+18)",
+  "assets": [
+    {
+      "resource": "SPR_chaos_gpz_enemy_25",
+      "frame": 0,
+      "source": "build/gpz-enemy-approval/type-25-frame-01-bit4-0.png",
+      "sha256": "1389418bdafeb0ccca9c6bf1de84299c018d61cdadc5d64661cd7acc9f8a957c"
+    },
+    {
+      "resource": "SPR_chaos_gpz_enemy_25",
+      "frame": 1,
+      "source": "build/gpz-enemy-approval/type-25-frame-02-bit4-0.png",
+      "sha256": "6179eb2b72e0c23b68fae68c78b7967c2d18a217320dc617d6767d527b71b630"
+    },
+    {
+      "resource": "SPR_chaos_gpz_enemy_25_mirror",
+      "frame": 0,
+      "source": "build/gpz-enemy-approval/type-25-frame-01-bit4-1.png",
+      "sha256": "dd4184290a6e0e0b1f820627d9a3da0d3d24dbb532e4db73c0dfcad3243bd2a9"
+    },
+    {
+      "resource": "SPR_chaos_gpz_enemy_25_mirror",
+      "frame": 1,
+      "source": "build/gpz-enemy-approval/type-25-frame-02-bit4-1.png",
+      "sha256": "0228f3f5afbcf398128ed4ef3b16f85d217a08c21c91a9b66c66db29243cdab2"
+    },
+    {
+      "resource": "SPR_chaos_gpz_enemy_2C",
+      "frame": 0,
+      "source": "build/gpz-enemy-approval/type-2c-frame-01-bit4-0.png",
+      "sha256": "237542f2b4b0b28810424214e2f2e55b5c90416659e42b4118ff770659fc41e4"
+    },
+    {
+      "resource": "SPR_chaos_gpz_enemy_2C",
+      "frame": 1,
+      "source": "build/gpz-enemy-approval/type-2c-frame-02-bit4-0.png",
+      "sha256": "63735493c52caff95987f02a90b6ad190010d1e34d7d6a13d324d5932d4460f1"
+    },
+    {
+      "resource": "SPR_chaos_gpz_smoke_0F",
+      "frame": 0,
+      "source": "build/gpz-enemy-approval/type-0f-frame-07-bit4-0.png",
+      "sha256": "12284d7d55f6b52e4c40939e82c7dce1b245b8dace4c714ca2aadd784a74c5a0"
+    },
+    {
+      "resource": "SPR_chaos_gpz_smoke_0F",
+      "frame": 1,
+      "source": "build/gpz-enemy-approval/type-0f-frame-08-bit4-0.png",
+      "sha256": "f940ff01c82810321159e699dee1f9ddbe43a19a60b31e2a846b10d2f8ad539a"
+    },
+    {
+      "resource": "SPR_chaos_gpz_smoke_0F",
+      "frame": 2,
+      "source": "build/gpz-enemy-approval/type-0f-frame-09-bit4-0.png",
+      "sha256": "57956ca932216ae86f29543d58dd1dcc11cb513e69a81468c6196108078e4ad2"
+    },
+    {
+      "resource": "SPR_chaos_gpz_support_34",
+      "frame": 0,
+      "source": "build/gpz-enemy-approval/type-34-frame-01-bit4-0.png",
+      "sha256": "011d9dfb1477ea3a2487cee4e8526a7defaeea5888c8f0b56c11785570424197"
+    },
+    {
+      "resource": "SPR_chaos_gpz_support_34",
+      "frame": 1,
+      "source": "build/gpz-enemy-approval/type-34-frame-02-bit4-0.png",
+      "sha256": "b4d3ef38426e1b7213a026e3d5acdbce3744afd624223a37a51776948e3c2e4c"
+    },
+    {
+      "resource": "SPR_chaos_gpz_support_34",
+      "frame": 2,
+      "source": "build/gpz-enemy-approval/type-34-frame-03-bit4-0.png",
+      "sha256": "904dd4c8d8e97ec3bf42a8a4e6886c49ccbddaffe32007d09574134539497225"
+    },
+    {
+      "resource": "SPR_chaos_gpz_support_34",
+      "frame": 3,
+      "source": "build/gpz-enemy-approval/type-34-frame-04-bit4-0.png",
+      "sha256": "385447d451e6b004e353ef70ea35467c95824677e370a468ec7afbb4e911d78e"
+    },
+    {
+      "resource": "SPR_chaos_gpz_support_0A",
+      "frame": 0,
+      "source": "build/gpz-enemy-approval/type-0a-frame-05-bit4-0.png",
+      "sha256": "d82bbc6db7a874debaab63040283c2ef7df1d39772f70dd465258a2a6c18ebb4"
+    },
+    {
+      "resource": "SPR_chaos_gpz_support_0A",
+      "frame": 1,
+      "source": "build/gpz-enemy-approval/type-0a-frame-06-bit4-0.png",
+      "sha256": "0a7424e69f5cb213fb01bca0a79345c5be6f14a4901dc54ed25819f75c64af1b"
+    },
+    {
+      "resource": "SPR_chaos_gpz_boss_51",
+      "frame": 0,
+      "source": "build/gpz51-correction/51-frame-01.png",
+      "sha256": "78b27e4aa7328a80baa376a2d27d0890faad44d485a6f76bf87da8b4ca87f9ca"
+    },
+    {
+      "resource": "SPR_chaos_gpz_boss_51",
+      "frame": 1,
+      "source": "build/gpz51-correction/51-frame-02.png",
+      "sha256": "252d01df419994147d017cfcedc1651d32b2c2d798953fb78a6818484e223cf7"
+    },
+    {
+      "resource": "SPR_chaos_gpz_boss_51",
+      "frame": 2,
+      "source": "build/gpz51-correction/51-frame-03.png",
+      "sha256": "603a9d69e050e86f770f60c36a1be15e74028435ca4bdeaaa4f946667ed49024"
+    },
+    {
+      "resource": "SPR_chaos_gpz_boss_51",
+      "frame": 3,
+      "source": "build/gpz51-correction/51-frame-04.png",
+      "sha256": "0461413de5e3bc482cf1d9ae4ea91e9d17d3ede2c425ec973c7f395f52a33cf0"
+    },
+    {
+      "resource": "SPR_chaos_gpz_boss_51",
+      "frame": 4,
+      "source": "build/gpz51-correction/51-frame-05.png",
+      "sha256": "61f2321a36e39f55db4f293f54037f0825a7c59f2725a9db32828474731dd203"
+    },
+    {
+      "resource": "SPR_chaos_gpz_boss_51",
+      "frame": 5,
+      "source": "build/gpz51-correction/51-frame-06.png",
+      "sha256": "2775ca11e96c4649a4e828e74fbd733af863e77b1d3919922a70e7fd0ab5d47d"
+    },
+    {
+      "resource": "SPR_chaos_gpz_boss_51",
+      "frame": 6,
+      "source": "build/gpz51-correction/51-frame-07.png",
+      "sha256": "a28b7f37c4041a112d3411c2d82bb2e86ad04b73fb9e4629b43ef92d553e4492"
+    },
+    {
+      "resource": "SPR_chaos_gpz_boss_51",
+      "frame": 7,
+      "source": "build/gpz51-correction/51-frame-08.png",
+      "sha256": "2817e1e02f9e8526482917d3aaa9f22e118e51e10c869949123d17a134da0504"
+    },
+    {
+      "resource": "SPR_chaos_gpz_boss_51",
+      "frame": 8,
+      "source": "build/gpz51-correction/51-frame-09.png",
+      "sha256": "284cc3b5ef0398b1ab0974399df01ba2df5eea3dd29a8db95de6d2db9f17eabb"
+    },
+    {
+      "resource": "SPR_chaos_gpz_boss_51",
+      "frame": 9,
+      "source": "build/gpz51-correction/51-frame-10.png",
+      "sha256": "53fb3ac8dcf83341e4ec60e8f9b2eaae73ea77a1b56bc3a248a9e120da7a68d8"
+    },
+    {
+      "resource": "SPR_chaos_gpz_boss_51",
+      "frame": 10,
+      "source": "build/gpz51-correction/51-frame-11.png",
+      "sha256": "16f766514da4255e9074ec55390ab029fb13c6495abfe605f29fef5602cd26bd"
+    }
+  ],
+  "boss_gameplay": "DEFERRED",
+  "normal_stack": "head + balls 1/2/3; mode2 ball4 separate",
+  "throws": [
+    3,
+    2,
+    1
+  ],
+  "regrowth": [
+    1,
+    2,
+    3
+  ],
+  "dust_frames": [
+    10,
+    11
+  ]
+}

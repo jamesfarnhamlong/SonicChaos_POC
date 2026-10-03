@@ -95,9 +95,11 @@ function chaos_level_spawn_objects() {
             case $1B: cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_spikes); break; // moving spike: anchor = canonical record (THZ3 (752,128))
             case $18: cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_object_18); break;
             case $21: cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_object_21); chaos_type21_configure(cp_inst, cp_r[5]); break;
+            case $25: if (chaos_is_gpz()) { cp_inst = instance_create(cp_r[1],cp_r[2],OBJ_chaos_object_25); cp_inst.chaosParameter=cp_r[5]; } break;
             case $26: cp_inst = chaos_spawn_type26(cp_r); break;
             case $27: cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_object_27); break;
             case $28: cp_inst = chaos_spawn_type28(cp_r); break;
+            case $2C: if (chaos_is_gpz()) cp_inst = instance_create(cp_r[1],cp_r[2],OBJ_chaos_object_2C); break;
             case $50: if (chaos_is_thz3()) cp_inst = instance_create(cp_r[1],cp_r[2],OBJ_chaos_object_50); break;
             default: global.chaosSkippedByType[cp_type]++; break;
         }

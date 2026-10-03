@@ -4203,6 +4203,78 @@
         "name": "OBJ_chaos_terrain_foreground",
         "path": "objects/OBJ_chaos_terrain_foreground/OBJ_chaos_terrain_foreground.yy"
       }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_enemy_25",
+        "path": "sprites/SPR_chaos_gpz_enemy_25/SPR_chaos_gpz_enemy_25.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_enemy_25_mirror",
+        "path": "sprites/SPR_chaos_gpz_enemy_25_mirror/SPR_chaos_gpz_enemy_25_mirror.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_enemy_2C",
+        "path": "sprites/SPR_chaos_gpz_enemy_2C/SPR_chaos_gpz_enemy_2C.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_smoke_0F",
+        "path": "sprites/SPR_chaos_gpz_smoke_0F/SPR_chaos_gpz_smoke_0F.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_support_34",
+        "path": "sprites/SPR_chaos_gpz_support_34/SPR_chaos_gpz_support_34.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_support_0A",
+        "path": "sprites/SPR_chaos_gpz_support_0A/SPR_chaos_gpz_support_0A.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_boss_51",
+        "path": "sprites/SPR_chaos_gpz_boss_51/SPR_chaos_gpz_boss_51.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_gpz_enemy_data",
+        "path": "scripts/SCR_chaos_gpz_enemy_data/SCR_chaos_gpz_enemy_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_25",
+        "path": "objects/OBJ_chaos_object_25/OBJ_chaos_object_25.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_2C",
+        "path": "objects/OBJ_chaos_object_2C/OBJ_chaos_object_2C.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_gpz_smoke_0F",
+        "path": "objects/OBJ_chaos_gpz_smoke_0F/OBJ_chaos_gpz_smoke_0F.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_gpz_enemy",
+        "path": "scripts/SCR_chaos_gpz_enemy/SCR_chaos_gpz_enemy.yy"
+      }
     }
   ],
   "resourceType": "GMProject",

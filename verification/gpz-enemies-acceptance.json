@@ -1,0 +1,110 @@
+{
+  "accepted_date": "2026-10-03",
+  "accepted_by": "James",
+  "research_commit": "d214c60ccf04f62634c4565f4abf38ec63ae77c6",
+  "poc_base": "b07c6d391e0a6818f51c61dc2629453d045701c4",
+  "branch": "poc/thz1-cleanup",
+  "windows_package": "SonicChaos_GPZ_Regular_Enemies_20261003_D.zip",
+  "package_sha256": "b4dfb0bc63532099d5a56047f706d5df3fa0a51669eea21d60120b734fb71fd0",
+  "windows_acceptance": "PASS",
+  "accepted_scope": "GPZ1/2 regular enemies in the tested Windows package D scope",
+  "accepted_areas": [
+    "type $25 sprite composition/orientation and gameplay behavior",
+    "type $2C sprite composition/orientation and gameplay behavior",
+    "ordinary type $0F defeat smoke"
+  ],
+  "boss_51": "approved art staged only; gameplay deferred",
+  "focused_checks": [
+    {
+      "check": "verification/verify_gpz_enemies.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verification/verify_gpz_enemy_assets.py",
+      "exit_code": 0
+    },
+    {
+      "check": "verification/verify_attack_posture.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verification/verify_viewport_adapter.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verification/verify_gpz_closure.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verification/verify_thz_closure.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verification/verify_gpz_foundation.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verification/verify_gpz_presentation.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verification/verify_gpz_presentation.py",
+      "exit_code": 0
+    },
+    {
+      "check": "verification/verify_gpz_assets.py --research E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work --rom E:\\AI\\Codex\\Sonic Chaos\\source\\Sonic Chaos (Europe).sms",
+      "exit_code": 0
+    },
+    {
+      "check": "verification/verify_bee_composition.py",
+      "exit_code": 0
+    },
+    {
+      "check": "verification/verify_terrain_ring_probe.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verification/verify_ring_proximity.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verification/verify_thz2_loops_twist.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verification/verify_thz3_boss.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verification/verify_thz3_boss_render.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verification/verify_thz3_boss_clear.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verification/verify_type27_contact.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verification/verify_debug_select.js",
+      "exit_code": 0
+    },
+    {
+      "check": "diff --check",
+      "exit_code": 0
+    }
+  ],
+  "enemy_assertions": 317624,
+  "approved_import_frames": 26,
+  "source_compile": "PASS",
+  "extracted_package_compile": "PASS",
+  "compile_runtime": "GameMaker LTS 2026.0.0.23 Windows VM",
+  "compile_log_sha256": {
+    "source-compile.log": "a625b22c6bff050d363bb7224cc747271d2de847aab07b04414ba9186efc0007",
+    "extracted-compile.log": "065d49aec12cfa16edc41c4d981c9d4f120f51342bd84f4aaa53e517505b6d86"
+  },
+  "accepted_package_runtime_files_rechecked": 2590,
+  "root_agents": "unchanged; Manager-san owns updates"
+}

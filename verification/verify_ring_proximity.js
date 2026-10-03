@@ -91,7 +91,7 @@ ok(/chaos_terrain_ring_at\(/.test(terr) && !/bbox_/.test(terr), 'terrain rings u
 // canonical placements unchanged
 const dirty = cp.spawnSync('git', ['diff', '--quiet', 'HEAD', '--', 'scripts/SCR_chaos_type09_data', 'scripts/SCR_chaos_ring_data', 'scripts/SCR_chaos_level_thz2_data'], {cwd: root}).status;
 eq(dirty, 0, 'accepted ring placements and data unchanged');
-const oldDraw=cp.spawnSync('git',['show','HEAD:objects/OBJ_chaos_ring_manager/Draw_0.gml'],{cwd:root}).stdout.toString().replace(/\r\n/g,'\n');
+const oldDraw=cp.spawnSync('git',['show','HEAD:objects/OBJ_chaos_ring_manager/Draw_0.gml'],{cwd:root}).stdout.toString().replace('chaos_is_gpz() ? SPR_chaos_gpz_terrain_ring : SPR_ring','SPR_ring').replace('chaos_is_gpz() ? SPR_chaos_gpz_ring : SPR_chaos_object_09','SPR_chaos_object_09').replace('var cp_frame = floor(chaosRingFrame);','var cp_frame = floor(chaosRingFrame) mod max(1,sprite_get_number(SPR_ring));').replace(/\r\n/g,'\n');
 // The GPZ VRAM clock now supplies its canonical bounded four-frame selector;
 // verify_gpz_presentation.js checks that clock and unchanged THZ timing directly.
 // Normalize only this authorized selection change; lock all draw coordinates,

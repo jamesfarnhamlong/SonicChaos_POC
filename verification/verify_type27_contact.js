@@ -60,7 +60,7 @@ function makeWorld(W, bbox) {
 function oneUpdate(W, bbox, dx, dy, attack, ox = 1152, oy = 640, renderOffset = 0) {
     const w = makeWorld(W, bbox);
     w.box = {x: ox, y: oy, chaosOriginX: ox, chaosOriginY: oy, chaosActive: true, chaosAsleep: false, chaosWoken: true, chaosAge: 5, chaosScanTick: 1, chaosInitialFillDone: true,
-        chaosState: 1, chaosVX: -0x0280, chaosVY: 0, chaosCounter: 0, chaosOscTick: 0, chaosAnimTick: 0, chaosSilentDestroy: false, chaosXU: ox * 256, chaosYU: oy * 256,
+        chaosEnemyType:0x27,chaosEnemyEX:9,chaosEnemyEY:14,chaosCanonicalLifecycle:false,chaosState: 1, chaosVX: -0x0280, chaosVY: 0, chaosCounter: 0, chaosOscTick: 0, chaosAnimTick: 0, chaosSilentDestroy: false, chaosXU: ox * 256, chaosYU: oy * 256,
         image_index: 0, visible: true, renderOffset};
     w.ctx.b = w.box; w.ctx.id = w.box;
     w.camX = ox - Math.floor(W / 2); w.camY = oy - 100;                    // bee in the middle of the view: awake at every width
@@ -95,7 +95,7 @@ for (const ro of [0, 18, -64, 300]) for (const [dx, dy] of [[17, 0], [18, 0], [0
 // ---------- static guarantees ----------
 const code = strip(stepSrc);
 ok(!/bbox_|place_meeting|collision_|sprite_get|mask_index|sprite_width|sprite_height|render_offset/.test(code), 'type $27 gameplay contact reads no sprite/mask/render data');
-ok(/chaos_type27_resolve\(cp_p\.chaosCore,floor\(x\),floor\(y\),global\.powerInv\)/.test(code) && /floor\(cp_c\.xu \/ 256\), floor\(cp_c\.yu \/ 256\), cp_ox, cp_oy, 8, 24, 9, 14/.test(rd('scripts/SCR_chaos_attack/SCR_chaos_attack.gml')), 'contact is the ROM box on fixed integer anchors');
+ok(code.includes('chaos_ordinary_enemy_resolve(cp_p.chaosCore,floor(x),floor(y),global.powerInv,chaosEnemyEX,chaosEnemyEY)') && rd('objects/OBJ_chaos_object_27/Create_0.gml').includes('chaosEnemyEX = 9; chaosEnemyEY = 14;'), 'shared ordinary resolver keeps type27 extents');
 ok(!/hazard_damage|chaosDamage|SCR_chaos_apply/.test(code), 'no ordinary badnik damage path');
 ok(/chaos_vp_dist_lt\(floor\(x\),floor\(cp_p\.x\),64\)/.test(code) && /chaos_vp_dist_ge\(floor\(x\),floor\(cp_p\.x\),384\)/.test(code), '64 trigger and PLAYER_DIST(384) unchanged');
 ok(rd('objects/OBJ_chaos_object_27/Draw_0.gml').includes('chaos_render_offset_x($27)'), '+18 render adapter untouched (Draw only)');

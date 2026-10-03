@@ -30,7 +30,7 @@ var cp_run_state1 = chaosState == 1 && chaosAge >= 2 && !chaosAsleep;
 if (chaosState == 1 && !cp_run_state1) {
     // no callback this update; the lifetime routine below still runs from the second update
     if (chaosAge >= 2) {
-        var cp_cell_s = SCR_chaos_lifetime_cell(id,cp_vp,floor(x),floor(y));
+        var cp_cell_s = chaos_flying_lifetime_cell(id,cp_vp,floor(x),floor(y));
         if (cp_cell_s == 3) { chaosActive = false; visible = false; chaosAsleep = true; exit; } // $FE: occupancy released
         chaosAsleep = (cp_cell_s >= 2);
         visible = !chaosAsleep;
@@ -53,12 +53,13 @@ if (instance_exists(cp_p)) {
     if (!variable_instance_exists(cp_p,"chaosCore")) SCR_chaos_core_attach(cp_p);
     // Canonical attack decision (docs/player-attack-badnik-audit.md): +$03 bit 1 or D532 == 6 only. Airborne / global.playerJump play no part. The overlap also raises $D520,
     // so $48BC hurts a non-attacking Sonic (or rebounds an attacking one) in the next player update.
-    cp_hit = chaos_type27_resolve(cp_p.chaosCore,floor(x),floor(y),global.powerInv);
+    cp_hit = chaos_ordinary_enemy_resolve(cp_p.chaosCore,floor(x),floor(y),global.powerInv,chaosEnemyEX,chaosEnemyEY);
 }
 if (cp_hit != 0) {
     if (cp_hit == 2) {
         SCR_chaos_enemy_score_100_bytes();
-        chaosSilentDestroy = false;
+        if (chaosEnemyType == $2C) chaos_gpz_enemy_defeat(id);
+        else chaosSilentDestroy = false;
         instance_destroy();
     }
     // The callback stalls movement/counter decrement on every overlap update.
@@ -92,7 +93,7 @@ if (chaosState == 1) {
 
 // Post-update lifetime routine ($61E1): cell 3 = off range (only removes a not-yet-triggered object; bit 1 keeps a triggered one),
 // cell 2 = asleep (not displayed), cells 0/1 = awake.
-var cp_cell_l = SCR_chaos_lifetime_cell(id,cp_vp,floor(x),floor(y));
+var cp_cell_l = chaos_flying_lifetime_cell(id,cp_vp,floor(x),floor(y));
 if (cp_cell_l == 3 && chaosState == 1) { chaosActive = false; visible = false; chaosAsleep = true; exit; }
 chaosAsleep = (cp_cell_l >= 2);
 visible = !chaosAsleep;

@@ -24,8 +24,9 @@ for(const [key,a] of Object.entries(M.acts)) {
  c.room=c[`ROM_chaos_${key}`];c.chaos_level_install_layout();
  eq(g.chaosMapWidth,a.descriptor.layout.width_cells);
  c.chaos_level_spawn_objects();
- for(const t of [0x25,0x2C,0x51])eq(g.chaosSpawnedByType[t],0,'excluded '+t);
- eq(g.chaosSpawnedIndices.length,a.foundation.instantiate_indices.length+a.foundation.integrate_before_instantiating_indices.length-a.rings.object09.length);
+ for(const t of [0x25,0x2C])eq(g.chaosSpawnedByType[t],a.objects.filter(r=>parseInt(r.type_id,16)===t).length,'ordinary enemy '+t);
+ eq(g.chaosSpawnedByType[0x51],0,'boss remains excluded');
+ eq(g.chaosSpawnedIndices.length,a.foundation.instantiate_indices.length+a.foundation.integrate_before_instantiating_indices.length-a.rings.object09.length+a.objects.filter(r=>[0x25,0x2C].includes(parseInt(r.type_id,16))).length);
 }
 // State4 complete timing/carry trajectory from accepted Research ce2ef9b.
 {
