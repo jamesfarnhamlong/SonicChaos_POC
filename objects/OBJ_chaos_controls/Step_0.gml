@@ -1,3 +1,5 @@
+// F10 opens the explicit developer selector. Unpause first.
+if (chaos_in_level() && keyboard_check_pressed(vk_f10)) { chaos_debug_open(); exit; }
 // R restarts the Chaos test. F2 switches between Chaos and the engine sample.
 if (global.chaosDamageBlinkTimer > 0) {
     global.chaosDamageBlinkTimer--;
@@ -58,11 +60,4 @@ if (chaos_in_level()) {
 
 if (chaos_in_level() && keyboard_check_pressed(vk_f3)) {
     global.chaosDebug = !global.chaosDebug;
-}
-
-// Developer shortcut (F10): cycle THZ1 -> THZ2 -> THZ3 in-level. Normal selection is the data-select act table (chaos_acts()).
-if (chaos_in_level() && keyboard_check_pressed(vk_f10)) {
-    global.checkPoint = false;
-    global.ring = 0;
-    room_goto(chaos_is_thz3() ? ROM_chaos_thz1 : (chaos_is_thz2() ? ROM_chaos_thz3 : ROM_chaos_thz2));
 }

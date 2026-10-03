@@ -1,5 +1,7 @@
 /// @description  System
 
+global.chaosDebugSession = false; // Title reload ends developer sessions before loading the save.
+
 // Settings
 global.screenSize = 0; //0 = Auto Size, 1 = Widescreen (16:9), 2 = Retro (4:3)
 global.windowSize = 3; // Window multiplication: 1x, 2x, 3x..

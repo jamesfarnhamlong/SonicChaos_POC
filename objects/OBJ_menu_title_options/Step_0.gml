@@ -1,5 +1,6 @@
 /// @description  Movements
 
+if (keyboard_check_pressed(vk_f10) && !press) { chaos_debug_open(); exit; }
 SCR_buttons();
 
 

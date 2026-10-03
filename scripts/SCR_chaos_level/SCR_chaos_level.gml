@@ -24,7 +24,7 @@ function chaos_level_install_layout() {
     global.chaosBrokenCells = [];
 }
 
-/// -thz2 on the command line launches THZ2 directly from the zone-goto route.
+/// Legacy -thz2 shortcut opens the developer selector from zone-goto.
 function chaos_dev_thz2_requested() {
     for (var cp_i = 1; cp_i <= parameter_count(); cp_i++) {
         if (parameter_string(cp_i) == "-thz2") return true;
@@ -173,7 +173,7 @@ function chaos_act_complete() {
     global.chaosComplete = true;
     global.chaosFinishRings = global.ring;
     var cp_act = chaos_act_index_for_room(room);
-    if (cp_act > 0) {
+    if (cp_act > 0 && (!variable_global_exists("chaosDebugSession") || !global.chaosDebugSession)) {
         global.zoneGoto = chaos_act_progress(global.zoneGoto, cp_act);
         SCR_save_game();
     }

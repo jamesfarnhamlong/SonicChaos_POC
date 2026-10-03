@@ -1,4 +1,5 @@
 function SCR_save_game() {
+	if (variable_global_exists("chaosDebugSession") && global.chaosDebugSession) return;
 	// Open Archive
 	ini_open ("saveGame" + string(global.saveGame) + ".ini");
 
