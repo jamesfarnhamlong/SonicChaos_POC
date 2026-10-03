@@ -7,6 +7,9 @@ function chaos_debug_entries() {
         for (var cp_a = 1; cp_a <= 3; cp_a++) {
             var cp_room = noone;
             if (cp_z == 0) cp_room = cp_acts[cp_a - 1].room;
+            if (cp_z == 1) {
+                switch (cp_a) { case 1: cp_room=ROM_chaos_gpz1; break; case 2: cp_room=ROM_chaos_gpz2; break; case 3: cp_room=ROM_chaos_gpz3; break; }
+            }
             array_push(cp_entries, {zone: cp_zones[cp_z], act: cp_a, room: cp_room,
                 enabled: cp_room != noone && room_exists(cp_room), classification: "act"});
         }

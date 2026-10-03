@@ -57,6 +57,8 @@ function SCR_chaos_world_begin() {
 }
 
 function SCR_chaos_loop_try_enter(cp_p) {
+    // The canonical alternate route belongs to the core, not this ordinary-loop adapter.
+    if (variable_instance_exists(cp_p,"chaosCore") && (cp_p.chaosCore.next == 19 || cp_p.chaosCore.state == 19)) return false;
     if (cp_p.chaosLoopCooldown > 0 || cp_p.vspeed < -0.5 || global.playerFly) return false;
     if (abs(cp_p.hspeed) < 0.25) return false;
     for (var cp_i = 0; cp_i < array_length(global.chaosLoopCenters); cp_i++) {

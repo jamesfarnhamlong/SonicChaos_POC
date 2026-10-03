@@ -14,5 +14,5 @@ chaosXU = round(x*256);
 chaosYU = round(y*256);
 image_speed = 0;
 image_index = 0;
-image_xscale = -1;
+image_xscale = 1; // imported mirrored SAT piece positions; no second pixel flip
 visible = false;

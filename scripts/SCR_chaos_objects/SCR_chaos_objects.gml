@@ -20,7 +20,10 @@ function SCR_chaos_objects_phase() {
     var cp_changed = false;
     var cp_count = instance_number(OBJ_chaos_platform);
     for (var cp_i = 0; cp_i < cp_count; cp_i++) {
-        if (chaos_platform28_step(instance_find(OBJ_chaos_platform,cp_i), cp_c, cp_present)) cp_changed = true;
+        var cp_o=instance_find(OBJ_chaos_platform,cp_i);
+        if (variable_instance_exists(cp_o,"chaosGpzLifecycle") && cp_o.chaosGpzLifecycle) {
+            if (chaos_platform28_lifecycle(cp_o,cp_c,cp_have,chaos_vp_current()) && chaos_platform28_step(cp_o,cp_c,cp_present)) cp_changed=true;
+        } else if (chaos_platform28_step(cp_o, cp_c, cp_present)) cp_changed = true;
     }
     var cp_cam = view_camera[0];
     var cp_left = camera_get_view_x(cp_cam)-64;
@@ -41,4 +44,28 @@ function SCR_chaos_objects_phase() {
     }
     cp_p.chaosSupport = cp_owner;
     if (cp_changed) SCR_chaos_core_publish(cp_p);
+}
+
+/// GPZ placement shells retain provenance after deletion; consumed state4 shells never recreate.
+/// No widescreen retention extension is applied to these platform variants.
+function chaos_platform28_lifecycle(cp_o,cp_c,cp_have,cp_vp) {
+    if (cp_o.chaosConsumed) return false;
+    if (!cp_o.chaosLive) {
+        if (!SCR_chaos_placement_scan(cp_o,cp_vp,cp_o.chaosPlacementX,cp_o.chaosPlacementY)) return false;
+        cp_o.x=cp_o.chaosPlacementX; cp_o.y=cp_o.chaosPlacementY;
+        chaos_platform28_configure(cp_o,cp_o.chaosPlacementParameter,cp_o.chaosPlacementAux1);
+        cp_o.chaosLive=true;
+    }
+    var cp_cell=SCR_chaos_spawn_cell(cp_vp,cp_o.chaosX,cp_o.chaosY);
+    // $8908 moving-platform keep-alive: canonical distance window, independent of viewport width.
+    if (cp_o.chaosMode == 10 || cp_o.chaosMode == 6 || cp_o.chaosMode == 11) {
+        if (cp_have && abs(cp_o.chaosX-floor(cp_c.xu/256)) < 640 && abs(cp_o.chaosY-chaos_signed_world_y(cp_c.yu)) < 672) cp_cell=0;
+    }
+    cp_o.chaosAsleep=cp_cell >= 2;
+    if (cp_o.chaosAsleep && cp_o.chaosMode == 4 && cp_o.chaosPhase != 0) {
+        cp_o.chaosConsumed=true; cp_o.chaosLive=false;
+        array_push(global.chaosConsumedPlatforms,cp_o.chaosPlacementIndex);
+    } else if (cp_cell == 3) cp_o.chaosLive=false;
+    if ((!cp_o.chaosLive || cp_o.chaosAsleep) && cp_have && cp_c.support == cp_o.chaosOwnerId) cp_c.support=0;
+    return cp_o.chaosLive && !cp_o.chaosAsleep;
 }

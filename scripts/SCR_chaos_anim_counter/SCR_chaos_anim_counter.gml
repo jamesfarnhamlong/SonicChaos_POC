@@ -80,5 +80,11 @@ function SCR_cc_anim_step(cp_a, cp_req, cp_hi, cp_floor, cp_side, cp_d448) {
 /// reads them (requested state, $D517 high byte, $D522 bit 1 = bg floor, $D523 & $0C = merged side contacts, $D448 bit 0 = 0 in the POC).
 function SCR_cc_anim_update(cp_c) {
     if (!variable_struct_exists(cp_c, "anim")) cp_c.anim = SCR_cc_anim_new();
+    // Sonic walk/run selectors clear the strip marker when a record reloads
+    // after leaving surface $19 ($8EFB/$8F56), before the movement callback.
+    var cp_reload = cp_c.anim.ptr < 0 || cp_c.anim.cur != cp_c.next || cp_c.anim.t == 1;
+    if (cp_reload && (cp_c.next == 5 || cp_c.next == 6) && (cp_c.previous&31) != 25) {
+        cp_c.special &= ~1; cp_c.surface_counter=0;
+    }
     return SCR_cc_anim_step(cp_c.anim, cp_c.next, cp_c.vx >> 8, (cp_c.bg & 2) != 0, (cp_c.contacts & 12) != 0, 0);
 }

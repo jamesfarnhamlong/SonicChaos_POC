@@ -6,11 +6,13 @@ function SCR_cc_new(cp_x, cp_y) {
     return {xu:round(cp_x*256), yu:round(cp_y*256), vx:0, vy:0,
         state:1, next:1, move:0, bg:0, contacts:0, objects:0, support:0,
         player_flags:0, plane:0, previous:0, tile:255, modifier:0,
+        foot_block:255, special:0, surface_counter:0,
+        route_progress:0, route_x:0, route_y:0, terrain_escape:false,
         input_delta:0, surface_delta:0, maximum:1024, water:0,
         held:0, pressed:0, jump_ticks:0, sound:0, unsupported:0,
         hazard:0, angle:0, magnitude:0, twist_variant:0, level:0,
         state11_active:false, state11_camera_y:0,
-        state11_anim_tick:0, state11_frame:56, hurt_ticks:0,
+        state11_anim_tick:0, state11_frame:56, hurt_ticks:0, zone:0,
         camera_x:0, act_clear:false, clear_dx:289,
         // Damage ($48F7 / $48BC, platform-spike milestone): rings and the immunity inputs are supplied by the adapter each update; the core never reads GameMaker globals.
         rings:0, shield:false, immune:false, invuln:0, damage_request:0, box_contacts:0, box_ready:0, contact:0, contact_nib:0, stage_contact:0, stage_nib:0, stage_request:0, hurt_rom:false,
@@ -98,6 +100,8 @@ function SCR_cc_lookup(cp_x, cp_y, cp_plane) {
 function SCR_cc_project_floor(cp_c, cp_s) {
     if ((cp_c.previous & 192) == 0 || cp_c.vy < 0) return;
     var cp_solid = (cp_c.previous & 128) != 0;
+    // $6FBB: retained strip bit plus REQUESTED $14 bypasses any one-way support.
+    if (!cp_solid && (cp_c.special & 1) != 0 && cp_c.next == 20) { cp_c.bg &= ~2; SCR_cc_merge(cp_c); return; }
     var cp_raw = cp_s.vertical;
     var cp_mod = cp_s.modifier;
     if ((cp_solid && (cp_raw & 63) == 32) || (!cp_solid && (cp_raw & 63) == 0)) {
@@ -135,6 +139,7 @@ function SCR_cc_walk(cp_c) {
 function SCR_cc_fall(cp_c) {
     if (cp_c.state == 10) return;
     cp_c.next = 14; cp_c.vy = 256; cp_c.move = (cp_c.move | 1) & ~2; cp_c.bg &= ~2;
+    cp_c.special &= ~1; cp_c.surface_counter = 0;
 }
 function SCR_cc_roll(cp_c) {
     if (((cp_c.vx & 65535) >> 8) == 0) {
@@ -146,6 +151,7 @@ function SCR_cc_jump(cp_c) {
     if ((cp_c.move & 1) != 0 || cp_c.state == 17 || (cp_c.tile & 252) == 144) return;
     cp_c.move |= 3; cp_c.next = 10; cp_c.vy = cp_c.water ? -832 : -1088;
     cp_c.yu = (cp_c.yu-256) & 16777215; cp_c.bg &= ~2; cp_c.jump_ticks = 0; cp_c.sound = 1;
+    cp_c.special &= ~1; cp_c.surface_counter = 0;
 }
 // $69B2: the negative-velocity contact test is the inverse of the positive one.
 function SCR_cc_ramp(cp_c, cp_previous_mod, cp_tile) {
@@ -183,7 +189,7 @@ function SCR_cc_spring(cp_c, cp_kind, cp_tile) {
             cp_c.d448 = 0; cp_c.sound = 2;
         }
         if (cp_c.vy < 0) return;
-        cp_c.vy = cp_kind == 9 ? -1920 : -1792; // THZ, D297=0
+        cp_c.vy = cp_kind == 9 ? -1920 : (cp_c.zone == 0 ? -1792 : -1408); // ROM $D297 zone distinction
         cp_c.next = cp_kind == 9 ? 11 : 28;
         cp_c.move = cp_kind == 9 ? ((cp_c.move | 1) & ~2) : (cp_c.move | 3);
         if (cp_kind == 9) cp_c.d448 = 255;
@@ -326,13 +332,16 @@ function SCR_cc_break13_floor(cp_c, cp_s) {
     SCR_cc_break13(cp_s.index);
 }
 function SCR_cc_floor(cp_c) {
+    var cp_previous_block = cp_c.foot_block;
     var cp_old_mod = cp_c.modifier; cp_c.modifier = 0;
     var cp_dy = cp_c.state == 33 ? -14 : (cp_c.state == 18 ? 8 : 0);
     var cp_s = SCR_cc_lookup(floor(cp_c.xu/256),floor(cp_c.yu/256)+18+cp_dy,cp_c.plane);
     cp_c.tile = cp_s.tile;
+    cp_c.foot_block = cp_s.tile; // $D497/$D36B are foot samples, never side/ceiling samples.
     SCR_cc_project_floor(cp_c,cp_s);
     cp_c.previous = cp_s.flags;
     var cp_kind = cp_s.flags & 31;
+    if (cp_kind == 16 && SCR_cc_route19_try(cp_c,cp_previous_block,cp_s.tile)) return;
     if (cp_kind == 18) SCR_cc_ramp(cp_c,cp_old_mod,cp_s.tile);
     else if (cp_kind == 5) {
         // $6ACE (docs/platform-spike-collision-audit.md 2.2): tile & $FE != $F4, floor flag $D522 bit 1 set (after the previous surface's projection above),
@@ -342,7 +351,10 @@ function SCR_cc_floor(cp_c) {
     else if (cp_kind == 9 || cp_kind == 20) SCR_cc_spring(cp_c,cp_kind,cp_s.tile);
     else if (cp_kind == 23) SCR_cc_twist_enter(cp_c,cp_s.tile);
     else if (cp_kind == 13) SCR_cc_break13_floor(cp_c,cp_s); // $6B2C
+    else if (cp_kind == 22) { if (cp_c.zone != 0) SCR_cc_break16_floor(cp_c,cp_s); else cp_c.unsupported=22; } // $6AE3; accepted THZ adapter remains separate
+    else if (cp_kind == 25) { cp_c.special |= 1; cp_c.surface_counter = (cp_c.surface_counter+1)&255; }
     else if (cp_kind == 0 || cp_kind == 6 || cp_kind == 7) {
+        cp_c.special &= ~3;
         // $6C45/$6C4D: empty floor can request falling even when projection returned early.
         if ((cp_c.objects & 32) == 0) cp_c.bg &= ~2;
         SCR_cc_merge(cp_c);
@@ -351,7 +363,7 @@ function SCR_cc_floor(cp_c) {
             else SCR_cc_fall(cp_c);
         }
     } else if (cp_kind != 1 && cp_kind != 2 && cp_kind != 3 && cp_kind != 4 &&
-               cp_kind != 10 && cp_kind != 15 && cp_kind != 17 && cp_kind != 21 &&
+               cp_kind != 10 && cp_kind != 15 && cp_kind != 16 && cp_kind != 17 && cp_kind != 21 &&
                cp_kind != 24 && cp_kind != 26 && cp_kind != 28 && cp_kind != 29 && cp_kind != 30) {
         cp_c.unsupported = cp_kind; // recorded, never substituted by coordinate-specific fixes
     }
@@ -388,6 +400,12 @@ function SCR_cc_sides(cp_c) {
         // Its upper half has extent zero and its lower half extent 32. Other
         // type-5 tiles remain bounded as unsupported special dispatches.
         if (cp_kind == 13 && SCR_cc_break13_side(cp_c,cp_s,cp_right)) continue; // $72B6/$72DD; else ordinary projection
+        if (cp_kind == 22 && cp_s.tile == 71 && cp_c.zone != 0) {
+            // $736B/$7389: side entry has its own attack/state/Y gate, no bounce.
+            if (cp_c.state != 15 && cp_c.state != 21 && (cp_c.move & 2) != 0 && cp_c.vy >= 0) SCR_chaos_break16_block(cp_s.index);
+            else SCR_cc_project_side(cp_c,cp_s,cp_right);
+            continue;
+        }
         if (cp_kind == 5 && (cp_s.tile == 60 || cp_s.tile == 61)) {
             // $7306/$7329: blocks $3C/$3D (flags $85, horizontal profile rows 0..15 = none, 16..31 = full) are an ordinary wall; a requested hurt state ($1E) returns without
             // pushing. The damaging side tiles $F4/$F5 do not occur in any THZ layout.
@@ -410,10 +428,20 @@ function SCR_cc_ceiling(cp_c) {
     var cp_s = SCR_cc_lookup(floor(cp_c.xu/256),cp_y-6,cp_c.plane);
     var cp_kind = cp_s.flags & 31;
     if (cp_kind == 13 && cp_c.support == 0) { SCR_cc_break13(cp_s.index); return; } // $7464 -> $7898
-    if (cp_kind == 5 || cp_kind == 13 || cp_kind == 19 || cp_kind == 20 || cp_kind == 21 || cp_kind == 28) {
+    if (cp_kind == 28) {
+        // $746E: only if the decoded underside is strictly above the player anchor.
+        var cp_bottom=(cp_s.ay & 65504)+((cp_s.vertical & 64) != 0 ? (cp_s.vertical & 63) : 32);
+        if (cp_bottom >= cp_y) return;
+        SCR_cc_ceiling_profile(cp_c,cp_s); return;
+    }
+    if (cp_kind == 20) { SCR_cc_ceiling_spring(cp_c,cp_s); return; }
+    if (cp_kind == 5 || cp_kind == 13 || cp_kind == 19 || cp_kind == 21) {
         cp_c.unsupported = cp_kind; return;
     }
     if ((cp_s.flags & 128) == 0 || (cp_s.ay & 65504) == (cp_y & 65504)) return;
+    SCR_cc_ceiling_profile(cp_c,cp_s);
+}
+function SCR_cc_ceiling_profile(cp_c,cp_s) {
     var cp_value = cp_s.vertical & 63;
     if (cp_value == 0) return;
     if ((cp_s.vertical & 64) == 0) cp_value = 32;
@@ -422,11 +450,29 @@ function SCR_cc_ceiling(cp_c) {
     cp_c.yu = (cp_c.yu+(cp_value-cp_local)*256)&16777215;
     cp_c.bg |= 1; SCR_cc_merge(cp_c); cp_c.vy = 256; cp_c.bg &= ~1;
 }
+function SCR_cc_ceiling_spring(cp_c,cp_s) {
+    // $749D: only $3A/$3B; raw profile must be full32 or have bit6, inclusive height.
+    if ((cp_s.tile & 254) != 58) return;
+    var cp_height=cp_s.vertical & 63, cp_local=cp_s.ay & 31;
+    if (cp_height == 0 || (cp_height != 32 && (cp_s.vertical & 64) == 0) || cp_height < cp_local) return;
+    cp_c.yu=(cp_c.yu+(cp_height-cp_local)*256)&16777215;
+    cp_c.bg |= 1; SCR_cc_merge(cp_c);
+    cp_c.vy=1408; cp_c.vx=1024; cp_c.next=27; cp_c.move |= 3; cp_c.sound=2;
+}
+function SCR_cc_break16_floor(cp_c,cp_s) {
+    // $6AE3 attack/state gates, then side-contact or nonnegative Y speed.
+    if ((cp_c.move & 2) == 0 || cp_c.state == 15 || cp_c.state == 16 || cp_c.state == 21 || cp_c.state == 26) return;
+    if ((cp_c.bg & 12) == 0 && cp_c.vy < 0) return;
+    cp_c.vy=-1088; cp_c.move |= 1; cp_c.bg &= ~2; cp_c.contacts &= ~2;
+    SCR_chaos_break16_block(cp_s.index);
+}
 function SCR_cc_shared(cp_c) {
     SCR_cc_input(cp_c);
     if (cp_c.state < 5) cp_c.surface_delta = 0;
     SCR_cc_x(cp_c); SCR_cc_y(cp_c);
-    SCR_cc_floor(cp_c); SCR_cc_sides(cp_c); SCR_cc_ceiling(cp_c); SCR_cc_merge(cp_c);
+    SCR_cc_floor(cp_c);
+    if (cp_c.terrain_escape) return; // original loop setter discards the terrain return.
+    SCR_cc_sides(cp_c); SCR_cc_ceiling(cp_c); SCR_cc_merge(cp_c);
     if ((cp_c.pressed & 48) != 0) SCR_cc_jump(cp_c);
 }
 function SCR_cc_state11_enter(cp_c) {
@@ -585,8 +631,10 @@ function SCR_cc_state32_body(cp_c) {
 }
 // Ordinary state wrappers. Animation-script scheduling and special states remain out of scope.
 function SCR_cc_tick(cp_c) {
+    cp_c.terrain_escape = false;
     cp_c.state = cp_c.next; cp_c.sound = 0; cp_c.unsupported = 0; cp_c.hazard = 0; cp_c.hurt_pending = false;
     if (cp_c.state == 34) { SCR_cc_twist_tick(cp_c); return; }
+    if (cp_c.state == 19) { SCR_cc_route19_tick(cp_c); return; }
     if (cp_c.state == 17) { SCR_cc_state11_tick(cp_c); return; }
     if (cp_c.state == 32) { SCR_cc_state32_tick(cp_c); return; }
     if (cp_c.state == 30) { SCR_cc_hurt_tick(cp_c); return; }
@@ -627,6 +675,7 @@ function SCR_cc_tick(cp_c) {
         else if ((cp_c.held & 2) != 0) { cp_c.vx = 0; cp_c.next = 4; cp_c.move &= ~66; }
         else if (cp_c.state == 3 || cp_c.state == 4) SCR_cc_stand(cp_c);
     } else if (cp_c.state == 5 || cp_c.state == 6 || cp_c.state == 7 || cp_c.state == 8) {
+        if ((cp_c.special&1) != 0 && SCR_cc_strip_suffix(cp_c)) return;
         if ((cp_c.held & 2) != 0 && (cp_c.state == 6 || (cp_c.state == 5 && ((cp_c.vx >> 8)+1 & 255) >= 2))) { SCR_cc_roll(cp_c); return; }
         if (cp_c.state != 6 && (cp_c.held & 12) == 0 && cp_speed < 32 && abs(cp_c.surface_delta) < 24) { SCR_cc_stand(cp_c); return; }
         if (cp_c.state == 5 && !cp_c.water && floor(cp_speed/256) == (cp_c.maximum >> 8)) {
@@ -651,5 +700,54 @@ function SCR_cc_tick(cp_c) {
     } else if (cp_c.state == 11 || cp_c.state == 28) {
         if (cp_ground) SCR_cc_walk(cp_c);
         else if (cp_c.vy >= 0) SCR_cc_fall(cp_c);
-    } else if ((cp_c.state == 10 || cp_c.state == 14) && cp_ground) SCR_cc_walk(cp_c);
+    } else if ((cp_c.state == 10 || cp_c.state == 14 || cp_c.state == 20 || cp_c.state == 29) && cp_ground) SCR_cc_walk(cp_c);
+}
+
+// $3EF7 / $3CFC: unsigned 24-bit progress, integer table positions, retained fractions.
+function SCR_cc_route19_try(cp_c, cp_previous_block, cp_block) {
+    if (cp_block != 82 || cp_previous_block != 87 || cp_c.plane != 0 || (cp_c.bg&2) == 0) return false;
+    SCR_cc_route19_enter(cp_c); return true;
+}
+function SCR_cc_route19_enter(cp_c) {
+    cp_c.route_x = floor(cp_c.xu/256)&65504;
+    cp_c.route_y = (floor(cp_c.yu/256)&65504)+4;
+    cp_c.xu = cp_c.route_x*256+(cp_c.xu&255);
+    cp_c.yu = cp_c.route_y*256+(cp_c.yu&255);
+    cp_c.route_progress=0; cp_c.next=19; cp_c.terrain_escape=true;
+}
+function SCR_cc_route19_tick(cp_c) {
+    if (!variable_global_exists("chaosRoute19X")) {
+        global.chaosRoute19X=SCR_chaos_gpz_loop_x(); global.chaosRoute19Y=SCR_chaos_gpz_loop_y();
+    }
+    cp_c.route_progress=(cp_c.route_progress+(cp_c.vx&65535))&16777215;
+    var cp_progress=cp_c.route_progress>>8;
+    cp_c.xu=(((cp_c.route_x+global.chaosRoute19X[cp_progress])&65535)*256)+(cp_c.xu&255);
+    cp_c.yu=(((cp_c.route_y+global.chaosRoute19Y[cp_progress])&65535)*256)+(cp_c.yu&255);
+    if (cp_progress < 144) {
+        if ((cp_c.vx&65535) < 10) {
+            cp_c.xu=(cp_c.xu+(floor(cp_c.xu/256)<=cp_c.route_x ? 8 : -2)*256)&16777215;
+            cp_c.next=29; cp_c.vy=128; cp_c.move=(cp_c.move|1)&~2;
+            cp_c.bg &= ~2; cp_c.contacts &= ~2; return;
+        }
+        cp_c.vx=SCR_cc_s16(cp_c.vx-10);
+    } else { cp_c.plane=1; cp_c.vx=SCR_cc_s16(cp_c.vx+12); }
+    // $48BC precedes the success test. The bailout above skips it entirely.
+    SCR_cc_damage_gate(cp_c);
+    if (cp_progress >= 416) {
+        cp_c.next=10; cp_c.vx=0; cp_c.vy=cp_c.maximum; cp_c.move |= 3;
+        cp_c.bg &= ~2; cp_c.contacts &= ~2;
+    }
+}
+// Dry walk tests FULL absolute speed equality before strip fall. Run tests the
+// signed high byte (left -769 survives; right +1023 does not). Forced idle is inert.
+function SCR_cc_strip_suffix(cp_c) {
+    if (cp_c.state == 5 && !cp_c.water) {
+        if ((abs(cp_c.vx)>>8) == (cp_c.maximum>>8)) { cp_c.next=6; cp_c.move &= ~3; return true; }
+        if ((cp_c.special&1) != 0) {
+            cp_c.next=20; cp_c.vy=256; cp_c.move=(cp_c.move|1)&~2;
+            cp_c.bg &= ~2; cp_c.contacts &= ~2; cp_c.surface_counter=0; return true;
+        }
+    }
+    if (cp_c.state == 6 && abs(cp_c.vx>>8) < 4) { SCR_cc_walk(cp_c); return true; }
+    return false;
 }

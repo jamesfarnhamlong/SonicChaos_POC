@@ -89,7 +89,7 @@ ok(!/chaosMinSignedY|DeathDiag|death_diag/.test(pubSrc + ad + rd('scripts/SCR_ch
 // ---------- 5. nothing else changed: springs untouched, no clamp at world Y 0 ----------
 {
     const core = rd('scripts/SCR_chaos_core/SCR_chaos_core.gml'), spring = core.slice(core.indexOf('function SCR_cc_terrain_spring_state'), core.indexOf('function SCR_cc_twist_enter'));
-    ok(spring.includes('cp_c.vy = cp_kind == 9 ? -1920 : -1792;') && !/clamp|max\(0/.test(spring), 'spring launch values untouched, no clamp');
+    ok(spring.includes('cp_c.vy = cp_kind == 9 ? -1920 : (cp_c.zone == 0 ? -1792 : -1408);') && !/clamp|max\(0/.test(spring), 'THZ launch preserved; GPZ canonical distinction, no clamp');
     const cp = require('child_process').spawnSync('git', ['diff', '--quiet', '04be9030203786ac12d131bf9a3cd851bb5f3cf5', '--', 'scripts/SCR_chaos_core', 'scripts/SCR_chaos_motion', 'scripts/SCR_chaos_goal', 'scripts/SCR_chaos_placement'], {cwd: root});
     ok(cp.status === 1 || cp.status === 0, 'git available'); // the spring milestone's own core edits are expected; the death milestone touches none of them
     ok(!/cp_c.yu *< *0|cp_c.yu = max|clamp.cp_c.yu|yu = clamp/.test(strip(rd('scripts/SCR_chaos_adapter/SCR_chaos_adapter.gml'))), 'Sonic is not clamped at world Y 0');

@@ -12,7 +12,7 @@ function source(ref, rel) {
     const r = cp.spawnSync('git', ['show', `${ref}:${rel}`], {cwd: root, maxBuffer: 1 << 28});
     return r.status === 0 ? r.stdout.toString('utf8') : null;
 }
-const SCRIPTS = ['SCR_chaos_motion_data', 'SCR_chaos_core_data', 'SCR_chaos_core', 'SCR_chaos_level_thz2_data', 'SCR_chaos_level_thz3_data', 'SCR_chaos_anim_counter_data', 'SCR_chaos_anim_counter',
+const SCRIPTS = ['SCR_chaos_motion_data', 'SCR_chaos_core_data', 'SCR_chaos_core', 'SCR_chaos_level_thz2_data', 'SCR_chaos_level_thz3_data', 'SCR_chaos_gpz_data', 'SCR_chaos_anim_counter_data', 'SCR_chaos_anim_counter',
     'SCR_chaos_terrain_ring', 'SCR_chaos_viewport', 'SCR_chaos_placement', 'SCR_chaos_goal', 'SCR_chaos_box_contact', 'SCR_chaos_attack', 'SCR_chaos_spring', 'SCR_chaos_platform', 'SCR_chaos_damage', 'SCR_chaos_spike1b',
     'SCR_chaos_motion', 'SCR_chaos_adapter', 'SCR_chaos_objects', 'SCR_chaos_level', 'SCR_chaos_boss_data', 'SCR_chaos_boss'];
 
@@ -29,6 +29,7 @@ function loadHost(ref) {
     const objectsByType = () => ({[ids.OBJ_player]: world.player ? [world.player] : [], [ids.OBJ_player_char]: world.player ? [world.player] : [], [ids.OBJ_chaos_platform]: world.platforms, [ids.OBJ_chaos_spikes]: world.spikes, [ids.OBJ_chaos_object_50]: world.bosses});
     const sandbox = Object.assign({}, ids, {
         global: g, floor: Math.floor, round: Math.round, abs: Math.abs, min: Math.min, max: Math.max, sign: Math.sign, clamp: (v, a, b) => Math.min(Math.max(v, a), b),
+        point_direction:(x,y,xx,yy)=>Math.atan2(y-yy,xx-x)*180/Math.PI,
         array_create: (k, v) => Array(k).fill(v), array_length: a => a.length, array_push: (a, v) => a.push(v), array_copy: (d, di, s, si, k) => { for (let i = 0; i < k; i++) d[di + i] = s[si + i]; },
         variable_global_exists: k => k in g, variable_struct_exists: (o, k) => k in o, variable_instance_exists: (o, k) => o !== null && typeof o === 'object' && k in o, is_array: Array.isArray, noone: -4,
         instance_exists: o => (typeof o === 'object' && o !== null && !o.destroyed) || (typeof o === 'number' && o >= 0 && (objectsByType()[o] || []).length > 0),

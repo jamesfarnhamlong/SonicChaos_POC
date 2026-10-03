@@ -7,3 +7,6 @@ chaosSpinTick = 0;
 chaosSpinFrames = [0,0,1,2,3,4,3,2,1];
 chaosSign = chaos_goal_sign_new();
 chaosHopDy = 0;
+if (chaos_is_gpz()) sprite_index=SPR_chaos_gpz_sign;
+chaosPrizeTableCpu=chaos_is_gpz() ? $A962 : $A919;
+chaosPrizeRows=chaos_is_gpz() ? chaos_gpz_prize_rows() : chaos_thz_prize_rows(); // data integration only; accepted prize/retry presentation remains deferred.

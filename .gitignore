@@ -18,6 +18,7 @@ roms/
 *.exe
 *.zip
 build/
+output/
 builds/
 dist/
 exports/

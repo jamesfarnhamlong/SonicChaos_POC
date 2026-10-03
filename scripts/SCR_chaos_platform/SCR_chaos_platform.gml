@@ -31,6 +31,12 @@ function chaos_platform28_gate(cp_platform_vy, cp_player_vy) {
 function chaos_platform28_configure(cp_o, cp_param, cp_aux1) {      // chaosOwnerId is assigned by Create_0
     cp_o.chaosTick = 0; cp_o.chaosSag = 0; cp_o.chaosSagReturning = false;
     cp_o.chaosX = cp_o.x; cp_o.chaosY = cp_o.y; cp_o.chaosHomeY = cp_o.y; cp_o.chaosDeltaX = 0;
+    cp_o.chaosVX = 0; cp_o.chaosPhase = 0; cp_o.chaosDelay = 80; cp_o.chaosYU = cp_o.y * 256;
+    cp_o.chaosWeight = (cp_param & $80) != 0;
+    cp_o.chaosTouchPhase = 0; cp_o.chaosConsumed = false; cp_o.chaosRequestedMode=0;
+    if (cp_param == $83) { cp_o.chaosMode=4; cp_o.chaosVY=0; cp_o.chaosPeriod=0; return true; }
+    if (cp_param == $89) { cp_o.chaosMode=10; cp_o.chaosVX=256; cp_o.chaosVY=0; cp_o.chaosPeriod=16*cp_aux1; return true; }
+    if (cp_param == $05) { cp_o.chaosMode=13; cp_o.chaosVY=0; cp_o.chaosPeriod=16*cp_aux1; return true; }
     if (cp_param == $0A) { cp_o.chaosMode = 11; cp_o.chaosVY = -256; cp_o.chaosPeriod = 16 * cp_aux1; return true; }
     if (cp_param == $84) { cp_o.chaosMode = 5; cp_o.chaosVY = 0; cp_o.chaosPeriod = 0; return true; }
     return false;
@@ -57,7 +63,53 @@ function chaos_platform28_carry(cp_o, cp_c) {
 function chaos_platform28_step(cp_o, cp_c, cp_present) {
     var cp_changed = false;
     cp_o.chaosDeltaX = 0;
-    if (cp_o.chaosMode == 11) {
+    if (cp_o.chaosRequestedMode == 6) { cp_o.chaosMode=6; cp_o.chaosRequestedMode=0; cp_o.chaosVY=-256; }
+    if (cp_o.chaosMode == 4) {
+        if (cp_o.chaosPhase == 255) {
+            cp_o.chaosVY = SCR_cc_s16(cp_o.chaosVY + 48);
+            cp_o.chaosYU = (cp_o.chaosYU + cp_o.chaosVY) & 16777215;
+            cp_o.chaosY = floor(cp_o.chaosYU/256);
+            if (cp_present && chaos_platform28_support(cp_o,cp_c,cp_o.chaosY)) { chaos_platform28_carry(cp_o,cp_c); cp_changed=true; }
+        } else {
+            // $8719: countdown before contact; trigger update loads 80 without decrement.
+            if (cp_o.chaosPhase == 128) {
+                if (cp_o.chaosDelay == 0) cp_o.chaosPhase=255;
+                else cp_o.chaosDelay--;
+            }
+            var cp_supported=cp_present && chaos_platform28_support(cp_o,cp_c,cp_o.chaosY);
+            if (cp_supported && cp_o.chaosPhase == 0) cp_o.chaosPhase=128;
+            chaos_platform28_sag(cp_o,cp_supported);
+            cp_o.chaosYU=cp_o.chaosY*256;
+            if (cp_supported) { chaos_platform28_carry(cp_o,cp_c); cp_changed=true; }
+        }
+    } else if (cp_o.chaosMode == 13) {
+        // $85FE only classifies contact and requests state 6. No carry until its next callback.
+        if (cp_present && cp_c.vy >= 0 && chaos_platform28_support_contact(floor(cp_c.xu/256),floor(cp_c.yu/256),cp_o.chaosX,cp_o.chaosY)) {
+            cp_o.chaosRequestedMode=6; cp_o.chaosTouchPhase=0;
+        }
+    } else if (cp_o.chaosMode == 10) {
+        // $8662: movement/contact/carry precede the reversal counter ($8925).
+        cp_o.chaosDeltaX=cp_o.chaosVX/256;
+        cp_o.chaosX+=cp_o.chaosDeltaX;
+        var cp_supported=cp_present && cp_c.vy >= 0 && chaos_platform28_support(cp_o,cp_c,cp_o.chaosY);
+        if (cp_present && cp_c.vy < 0 && cp_c.support == cp_o.chaosOwnerId) cp_c.support=0;
+        chaos_platform28_sag(cp_o,cp_supported);
+        if (cp_supported) { chaos_platform28_carry(cp_o,cp_c); cp_changed=true; }
+        cp_o.chaosTick++;
+        if (cp_o.chaosTick >= cp_o.chaosPeriod) { cp_o.chaosVX=-cp_o.chaosVX; cp_o.chaosTick=0; }
+    } else if (cp_o.chaosMode == 6) {
+        // $87B2 waits for any contact once state 6 is active; then uses $86DA.
+        if (cp_o.chaosTouchPhase == 0) {
+            if (!cp_present || chaos_platform28_contact_bits(floor(cp_c.xu/256),floor(cp_c.yu/256),cp_o.chaosX,cp_o.chaosY) == 0) { cp_o.x=cp_o.chaosX; cp_o.y=cp_o.chaosY; return false; }
+            cp_o.chaosTouchPhase=1;
+        }
+        cp_o.chaosY+=cp_o.chaosVY/256;
+        if (cp_present && chaos_platform28_support(cp_o,cp_c,cp_o.chaosY)) { chaos_platform28_carry(cp_o,cp_c); cp_changed=true; }
+        cp_o.chaosTick++;
+        if (cp_o.chaosTick >= cp_o.chaosPeriod) { cp_o.chaosVY=-cp_o.chaosVY; cp_o.chaosTick=0; }
+        if (cp_o.chaosVY >= 0) cp_o.chaosTouchPhase=2;
+        else if (cp_o.chaosTouchPhase == 1 && cp_o.chaosTick == 0) cp_o.chaosTouchPhase=0;
+    } else if (cp_o.chaosMode == 11) {
         // $86DA: reversal counter ($8925, period 16 * aux1), gate, move 1 px, then the contact test at the POST-move Y.
         if (cp_o.chaosTick >= cp_o.chaosPeriod) { cp_o.chaosVY = -cp_o.chaosVY; cp_o.chaosTick = 0; }
         cp_o.chaosY += cp_o.chaosVY / 256;
@@ -75,5 +127,17 @@ function chaos_platform28_step(cp_o, cp_c, cp_present) {
         if (cp_supported) { chaos_platform28_carry(cp_o, cp_c); cp_changed = true; }
     }
     cp_o.y = cp_o.chaosY;
+    cp_o.x = cp_o.chaosX;
     return cp_changed;
+}
+
+/// $88FB: one sag/recovery cycle; rest while ridden, rearm after release.
+function chaos_platform28_sag(cp_o,cp_supported) {
+    if (!cp_o.chaosWeight) return;
+    if (cp_supported && !cp_o.chaosSagReturning) {
+        if (cp_o.chaosSag < 8) cp_o.chaosSag++;
+        else cp_o.chaosSagReturning=true;
+    } else if (cp_o.chaosSag > 0) cp_o.chaosSag--;
+    if (!cp_supported && cp_o.chaosSag == 0) cp_o.chaosSagReturning=false;
+    cp_o.chaosY=cp_o.chaosHomeY+cp_o.chaosSag;
 }

@@ -68,7 +68,7 @@ function chaos_boss_contact(cp_b, cp_c, cp_can_hit) {
     if (cp_bits == 2) cp_c.vy=1536;
     else if (cp_bits == 1) cp_c.vy=-1024;
     else cp_c.vy=-cp_c.vy;
-    cp_c.next=27; cp_c.move|=3; cp_c.bg &= ~2; cp_c.contacts &= ~2;
+    cp_c.next=27; // $8105 preserves movement/floor flags; top bounce above owns its separate setter.
     global.chaosLastSoundRequest=$B6;
     if (!cp_can_hit) return 0;
     cp_b.hp--;

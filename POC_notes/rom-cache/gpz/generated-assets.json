@@ -1,0 +1,241 @@
+{
+  "research_commit": "bbcef38a4463b4054d5dbeeede197d9c7b1b8238",
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "assets": [
+    {
+      "resource": "SPR_chaos_gpz1_terrain_0",
+      "frame": 0,
+      "rgba_sha256": "285734f0abf748f2cffbddabed2cda40f1c2bf934f652fc975f33a13692e2d1d"
+    },
+    {
+      "resource": "SPR_chaos_gpz1_terrain_1",
+      "frame": 0,
+      "rgba_sha256": "d0e3b1572b78dbaf38c7ce2bb9a1801dbfc4b247760879a08eb800079a62a12d"
+    },
+    {
+      "resource": "SPR_chaos_gpz1_terrain_2",
+      "frame": 0,
+      "rgba_sha256": "2f89a2a1e1b1f749e96dc2f620b3759b1c9646f0fec3bdad976e79b6a70cdbe2"
+    },
+    {
+      "resource": "SPR_chaos_gpz1_terrain_3",
+      "frame": 0,
+      "rgba_sha256": "8026d5d25c254bcbd5e3de497dfd74d05131aa08875ad66371bcf4a47caa1a46"
+    },
+    {
+      "resource": "SPR_chaos_gpz1_terrain_4",
+      "frame": 0,
+      "rgba_sha256": "941c01fce8a296eecc7b7235a39ba544feac4771a248721dcf90fb6f3ce1a03a"
+    },
+    {
+      "resource": "SPR_chaos_gpz2_terrain_0",
+      "frame": 0,
+      "rgba_sha256": "c4c20954fff7cd6b408d4feb89886079b755c82961082b228e448d7fe3c596d5"
+    },
+    {
+      "resource": "SPR_chaos_gpz2_terrain_1",
+      "frame": 0,
+      "rgba_sha256": "48bcc6cc46fdc6b647e0e374ff6c58bb6db19938aae2f001211f77ade6dd8ab0"
+    },
+    {
+      "resource": "SPR_chaos_gpz2_terrain_2",
+      "frame": 0,
+      "rgba_sha256": "e5f3e0d8bf80ce0531c6263ac3586808810a69478e346f31a5537640344dac20"
+    },
+    {
+      "resource": "SPR_chaos_gpz2_terrain_3",
+      "frame": 0,
+      "rgba_sha256": "43486b092f03977cdc6a4aaa0c5dfb4d06c32e9f951bdd35e9c29f6ec30ef8d9"
+    },
+    {
+      "resource": "SPR_chaos_gpz3_terrain_0",
+      "frame": 0,
+      "rgba_sha256": "3f1d1b6fbeea74a562229dcec2ade535d14f8eb079232ccd8a3c89825aca2245"
+    },
+    {
+      "resource": "SPR_chaos_gpz3_terrain_1",
+      "frame": 0,
+      "rgba_sha256": "e3879ec413fe232ae5660c04eb05f44552071fc0ee820aac55453f1bbae623a0"
+    },
+    {
+      "resource": "SPR_chaos_gpz3_terrain_2",
+      "frame": 0,
+      "rgba_sha256": "babb6e198046e288d89a822c8065f808ae915926b68acdc003a380ffa1b2b672"
+    },
+    {
+      "resource": "SPR_chaos_gpz_block_46",
+      "frame": 0,
+      "rgba_sha256": "195baffc3a86723c34d39a0b61ff968893355c101d6b0688e54c972e80790ae3"
+    },
+    {
+      "resource": "SPR_chaos_gpz_block_47",
+      "frame": 0,
+      "rgba_sha256": "49693a1daaeab88a068a4f5572de15801b005716d8833679762836db09269368"
+    },
+    {
+      "resource": "SPR_chaos_gpz_block_9d",
+      "frame": 0,
+      "rgba_sha256": "9b7151999c007e1fdb762e685926fd2901ed6ca5c9537cd90defe3eed73d8f3f"
+    },
+    {
+      "resource": "SPR_chaos_gpz_foreground",
+      "frame": 0,
+      "rgba_sha256": "1c68cd2da16bbd3bb99a9800aabe8d11606ce538ee1943bbbf05e21a5475ed9c"
+    },
+    {
+      "resource": "SPR_chaos_gpz_platform",
+      "frame": 0,
+      "rgba_sha256": "c8fa7e94b4f5d3f99b0447c8d4786dacb79ae125a966b96b19bf1f672b98bc41"
+    },
+    {
+      "resource": "SPR_chaos_gpz_ring",
+      "frame": 0,
+      "rgba_sha256": "4800ff23c70e20ffa39db4b3194f1a84092bba45ae7608fb379c31753acbb628"
+    },
+    {
+      "resource": "SPR_chaos_gpz_ring",
+      "frame": 1,
+      "rgba_sha256": "888a7948a4858c4a39aa324ed5594a707d8dce2905e486bc5259a12083f5d337"
+    },
+    {
+      "resource": "SPR_chaos_gpz_ring",
+      "frame": 2,
+      "rgba_sha256": "fe6a46239b98ed3c16273ed0e2e34d93046beb48144a2c9d0a05106206686b27"
+    },
+    {
+      "resource": "SPR_chaos_gpz_ring",
+      "frame": 3,
+      "rgba_sha256": "4433456c41e88a1c7bf8d861c5b6e0c12f5ce71e5d8a06a023f52499d7d17ac3"
+    },
+    {
+      "resource": "SPR_chaos_gpz_ring",
+      "frame": 4,
+      "rgba_sha256": "e2c1e7eafcd14cbe8a6719f35c5207adf41b7aadff009044c0fd0762ed9c1b74"
+    },
+    {
+      "resource": "SPR_chaos_gpz_ring",
+      "frame": 5,
+      "rgba_sha256": "7ada550252c37381d52d9d6afddc15b69b36fbefd91d2c09254ed1f02158d186"
+    },
+    {
+      "resource": "SPR_chaos_gpz_terrain_ring",
+      "frame": 0,
+      "rgba_sha256": "4800ff23c70e20ffa39db4b3194f1a84092bba45ae7608fb379c31753acbb628"
+    },
+    {
+      "resource": "SPR_chaos_gpz_terrain_ring",
+      "frame": 1,
+      "rgba_sha256": "888a7948a4858c4a39aa324ed5594a707d8dce2905e486bc5259a12083f5d337"
+    },
+    {
+      "resource": "SPR_chaos_gpz_terrain_ring",
+      "frame": 2,
+      "rgba_sha256": "4433456c41e88a1c7bf8d861c5b6e0c12f5ce71e5d8a06a023f52499d7d17ac3"
+    },
+    {
+      "resource": "SPR_chaos_gpz_terrain_ring",
+      "frame": 3,
+      "rgba_sha256": "fe6a46239b98ed3c16273ed0e2e34d93046beb48144a2c9d0a05106206686b27"
+    },
+    {
+      "resource": "SPR_chaos_gpz_spring",
+      "frame": 0,
+      "rgba_sha256": "9b60ca2ba13a4205ce6771f3ff09789b96b50e1363f1abf017493b060c3a850e"
+    },
+    {
+      "resource": "SPR_chaos_gpz_spike",
+      "frame": 0,
+      "rgba_sha256": "c24712fcf27a9408da659bbfb138813eb5b8bcabfa3baa9d2a77333b7d8a6b2c"
+    },
+    {
+      "resource": "SPR_chaos_gpz_poof",
+      "frame": 0,
+      "rgba_sha256": "183a78d08a79b62520f974d306e4f527f049ff4c6c1c4f32d06927d1e10758f6"
+    },
+    {
+      "resource": "SPR_chaos_gpz_poof",
+      "frame": 1,
+      "rgba_sha256": "2d3815a0efc12a46a3aaa2a8752525ea62c7828b08b74156c4a6bf8db065a2f7"
+    },
+    {
+      "resource": "SPR_chaos_gpz_poof",
+      "frame": 2,
+      "rgba_sha256": "9793573b5f44dc98393556fdbf3ff79bc30fcfa46312870f0cd551b2c487c854"
+    },
+    {
+      "resource": "SPR_chaos_gpz_sign",
+      "frame": 0,
+      "rgba_sha256": "de3c9431b8ab987991f86c55e4d3800e7c2174e1a1afd5908a64ad0663843310"
+    },
+    {
+      "resource": "SPR_chaos_gpz_sign",
+      "frame": 1,
+      "rgba_sha256": "46d7285cdd0dc02b1f71b665fc11e50f7f3e2a2aff2cbfa7d4db04c51cdd3435"
+    },
+    {
+      "resource": "SPR_chaos_gpz_sign",
+      "frame": 2,
+      "rgba_sha256": "d1ae3fa36ac58da0efc71913b1b437db04cad57147db8e1bfcbe3557f6298e8b"
+    },
+    {
+      "resource": "SPR_chaos_gpz_sign",
+      "frame": 3,
+      "rgba_sha256": "f815963df14f9494a7466e80b2e67bc97936754417519358d7cb251b05303ae7"
+    },
+    {
+      "resource": "SPR_chaos_gpz_sign",
+      "frame": 4,
+      "rgba_sha256": "123cbc6539fc22e57f3f291d754a7339b7425b2182aca73dea8adef49c9b4105"
+    },
+    {
+      "resource": "SPR_chaos_gpz_monitor_01",
+      "frame": 0,
+      "rgba_sha256": "7c54075af06a66d42e7d543aa3b6d56c6bb314dceb63b1672f58a046e810d94b"
+    },
+    {
+      "resource": "SPR_chaos_gpz_monitor_01",
+      "frame": 1,
+      "rgba_sha256": "2c499d9a02a682b97c1f3b60776ed6da7dfbbecdbcbbecf9e4cfd4c0b9a162a1"
+    },
+    {
+      "resource": "SPR_chaos_gpz_monitor_02",
+      "frame": 0,
+      "rgba_sha256": "f38115b6d65355b40364f341fb863ffc242f1d8ce45970fb5a6225bcc474beef"
+    },
+    {
+      "resource": "SPR_chaos_gpz_monitor_02",
+      "frame": 1,
+      "rgba_sha256": "2c499d9a02a682b97c1f3b60776ed6da7dfbbecdbcbbecf9e4cfd4c0b9a162a1"
+    },
+    {
+      "resource": "SPR_chaos_gpz_monitor_03",
+      "frame": 0,
+      "rgba_sha256": "8ae6005022aaae7c61c30aae3287d4f4829e8b3acde222bfe233e59e9178ae7b"
+    },
+    {
+      "resource": "SPR_chaos_gpz_monitor_03",
+      "frame": 1,
+      "rgba_sha256": "2c499d9a02a682b97c1f3b60776ed6da7dfbbecdbcbbecf9e4cfd4c0b9a162a1"
+    },
+    {
+      "resource": "SPR_chaos_gpz_monitor_04",
+      "frame": 0,
+      "rgba_sha256": "7ff49b4aec5dc588a6027ab7187b74bc9c26928b14b446d2be081c0b09aec66e"
+    },
+    {
+      "resource": "SPR_chaos_gpz_monitor_04",
+      "frame": 1,
+      "rgba_sha256": "2c499d9a02a682b97c1f3b60776ed6da7dfbbecdbcbbecf9e4cfd4c0b9a162a1"
+    },
+    {
+      "resource": "SPR_chaos_gpz_monitor_06",
+      "frame": 0,
+      "rgba_sha256": "95b24bb5629f305f8346ed024d4aae8437886684705145157f9dba0cef584b26"
+    },
+    {
+      "resource": "SPR_chaos_gpz_monitor_06",
+      "frame": 1,
+      "rgba_sha256": "2c499d9a02a682b97c1f3b60776ed6da7dfbbecdbcbbecf9e4cfd4c0b9a162a1"
+    }
+  ]
+}

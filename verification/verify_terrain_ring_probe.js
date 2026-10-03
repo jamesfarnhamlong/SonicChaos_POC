@@ -238,8 +238,13 @@ const iAnim = ad.indexOf('SCR_cc_anim_update(cp_c)'), iTick = ad.indexOf('SCR_cc
 ok(iAnim > 0 && iAnim < iTick && iTick < iClamp && iClamp < iProbe && !/platform/i.test(ad.slice(iTick, iProbe)), 'order: counter engine -> callback/movement -> position adapters -> ring probe (the platform phase runs later, after the player pass, as in the ROM)');
 ok(/cp_c\.ring_probe_valid = false/.test(ad), 'probe cleared at the start of each update (loop states return before reaching it)');
 ok(!/image_index|image_speed/.test(strip(rd('scripts/SCR_chaos_anim_counter/SCR_chaos_anim_counter.gml'))), 'the counter never reads GameMaker animation state');
-const dirty = require('child_process').spawnSync('git', ['diff', '--quiet', '35fc7fc2b66cc5a06d72cf5c39469252b74a7a30', '--', 'scripts/SCR_chaos_ring_data', 'scripts/SCR_chaos_type09_data', 'scripts/SCR_chaos_level_thz2_data', 'objects/OBJ_chaos_ring_manager/Draw_0.gml'], {cwd: root}).status;
-eq(dirty, 0, 'canonical ring data and ring drawing byte-identical to the type-09 checkpoint');
+const dirty = require('child_process').spawnSync('git', ['diff', '--quiet', '35fc7fc2b66cc5a06d72cf5c39469252b74a7a30', '--', 'scripts/SCR_chaos_ring_data', 'scripts/SCR_chaos_type09_data', 'scripts/SCR_chaos_level_thz2_data'], {cwd: root}).status;
+eq(dirty, 0, 'canonical ring data byte-identical to the type-09 checkpoint');
+const oldDraw=require('child_process').spawnSync('git',['show','35fc7fc2b66cc5a06d72cf5c39469252b74a7a30:objects/OBJ_chaos_ring_manager/Draw_0.gml'],{cwd:root}).stdout.toString().replace(/\r\n/g,'\n');
+// Canonical GPZ VRAM frame selection and the accepted THZ clock are exercised
+// by verify_gpz_presentation.js. Keep the source lock for every other draw detail.
+const draw=rd('objects/OBJ_chaos_ring_manager/Draw_0.gml').replace('chaos_is_gpz() ? SPR_chaos_gpz_terrain_ring : SPR_ring','SPR_ring').replace('chaos_is_gpz() ? SPR_chaos_gpz_ring : SPR_chaos_object_09','SPR_chaos_object_09').replace('var cp_frame = floor(chaosRingFrame);','var cp_frame = floor(chaosRingFrame) mod max(1,sprite_get_number(SPR_ring));').replace(/\r\n/g,'\n');
+eq(draw,oldDraw,'accepted ring draw geometry preserved outside GPZ terrain resource/selector integration');
 const t09 = step.slice(step.indexOf('var cp_have_anchor'));
 ok(/chaos_ring_proximity\(cp_anchor_x,cp_anchor_y,cp_t09_record\[1\],cp_t09_record\[2\]\)/.test(t09) && /cp_t09_parameter == 1 && \(chaosRingGlobalFrame mod 2\) != 0/.test(t09), 'type $09 section unchanged');
 console.log(`TERRAIN RING PROBE CHECKS PASSED (${checks} assertions, ${rows} transition updates, ${swept} real-ring sweep cells)`);

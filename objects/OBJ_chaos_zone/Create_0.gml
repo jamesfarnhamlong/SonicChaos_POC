@@ -49,7 +49,10 @@ if (global.checkPoint == true)
 }
 else
 {
-    if (chaos_is_thz3()) {
+    if (chaos_is_gpz()) {
+        var cp_start = chaos_gpz_start();
+        instance_create(cp_start[0],cp_start[1],OBJ_player_char);
+    } else if (chaos_is_thz3()) {
         // DEV_SPAWN / UNVERIFIED: player-start word semantics are unresolved in the package.
         instance_create(CHAOS_THZ3_DEV_SPAWN_X, CHAOS_THZ3_DEV_SPAWN_Y, OBJ_player_char);
     } else if (chaos_is_thz2()) {
@@ -82,7 +85,11 @@ __view_set(e__VW.VBorder, 0, round(__view_get(e__VW.HView, 0) / 2));
 __view_set(e__VW.XView, 0, 0);
 __view_set(e__VW.YView, 0, 550);
 // Debug-only fresh camera, including THZ3's shorter room.
-if (variable_global_exists("chaosDebugSession") && global.chaosDebugSession) {
+if (chaos_is_gpz()) {
+    var cp_camera = chaos_gpz_camera();
+    __view_set(e__VW.XView,0,cp_camera[0]);
+    __view_set(e__VW.YView,0,cp_camera[1]);
+} else if (variable_global_exists("chaosDebugSession") && global.chaosDebugSession) {
     __view_set(e__VW.YView, 0, clamp(round(OBJ_player.y - __view_get(e__VW.HView, 0) / 1.5), 0, max(0, room_height - __view_get(e__VW.HView, 0))));
 }
 if (!instance_exists(OBJ_chaos_controls)) instance_create(0, 0, OBJ_chaos_controls);

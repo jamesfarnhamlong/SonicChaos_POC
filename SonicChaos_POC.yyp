@@ -748,55 +748,294 @@
   },
   "name": "SonicChaos_POC",
   "resources": [
-    {"id":{"name":"SCR_chaos_debug_select","path":"scripts/SCR_chaos_debug_select/SCR_chaos_debug_select.yy"}},
-    {"id":{"name":"OBJ_chaos_debug_select","path":"objects/OBJ_chaos_debug_select/OBJ_chaos_debug_select.yy"}},
-    {"id":{"name":"ROM_chaos_debug_select","path":"rooms/ROM_chaos_debug_select/ROM_chaos_debug_select.yy"}},
-    {"id": {"name": "SPR_chaos_boss_50_flash", "path": "sprites/SPR_chaos_boss_50_flash/SPR_chaos_boss_50_flash.yy"}},
-    {"id": {"name": "SPR_chaos_boss_50_mirror_flash", "path": "sprites/SPR_chaos_boss_50_mirror_flash/SPR_chaos_boss_50_mirror_flash.yy"}},
-    {"id": {"name": "SCR_chaos_boss_data", "path": "scripts/SCR_chaos_boss_data/SCR_chaos_boss_data.yy"}},
-    {"id": {"name": "SCR_chaos_boss", "path": "scripts/SCR_chaos_boss/SCR_chaos_boss.yy"}},
-    {"id": {"name": "OBJ_chaos_object_50", "path": "objects/OBJ_chaos_object_50/OBJ_chaos_object_50.yy"}},
-    {"id": {"name": "OBJ_chaos_boss_effect", "path": "objects/OBJ_chaos_boss_effect/OBJ_chaos_boss_effect.yy"}},
-    {"id": {"name": "SPR_chaos_boss_50", "path": "sprites/SPR_chaos_boss_50/SPR_chaos_boss_50.yy"}},
-    {"id": {"name": "SPR_chaos_boss_50_mirror", "path": "sprites/SPR_chaos_boss_50_mirror/SPR_chaos_boss_50_mirror.yy"}},
-    {"id": {"name": "SPR_chaos_boss_puff_34", "path": "sprites/SPR_chaos_boss_puff_34/SPR_chaos_boss_puff_34.yy"}},
-    {"id": {"name": "SPR_chaos_boss_sparkle_0A", "path": "sprites/SPR_chaos_boss_sparkle_0A/SPR_chaos_boss_sparkle_0A.yy"}},
-    {"id": {"name": "SPR_chaos_boss_poof_0F", "path": "sprites/SPR_chaos_boss_poof_0F/SPR_chaos_boss_poof_0F.yy"}},
-    {"id": {"name": "SCR_chaos_core", "path": "scripts/SCR_chaos_core/SCR_chaos_core.yy"}},
-    {"id": {"name": "SCR_chaos_core_data", "path": "scripts/SCR_chaos_core_data/SCR_chaos_core_data.yy"}},
-    {"id": {"name": "SCR_chaos_adapter", "path": "scripts/SCR_chaos_adapter/SCR_chaos_adapter.yy"}},
-    {"id": {"name": "SCR_chaos_render_adapter", "path": "scripts/SCR_chaos_render_adapter/SCR_chaos_render_adapter.yy"}},
-    {"id": {"name": "ROM_chaos_thz2", "path": "rooms/ROM_chaos_thz2/ROM_chaos_thz2.yy"}},
-    {"id": {"name": "ROM_chaos_thz3", "path": "rooms/ROM_chaos_thz3/ROM_chaos_thz3.yy"}},
-    {"id": {"name": "OBJ_chaos_thz3_terrain", "path": "objects/OBJ_chaos_thz3_terrain/OBJ_chaos_thz3_terrain.yy"}},
-    {"id": {"name": "OBJ_chaos_thz2_terrain", "path": "objects/OBJ_chaos_thz2_terrain/OBJ_chaos_thz2_terrain.yy"}},
-    {"id": {"name": "SCR_chaos_level", "path": "scripts/SCR_chaos_level/SCR_chaos_level.yy"}},
-    {"id": {"name": "SCR_chaos_loop_layout", "path": "scripts/SCR_chaos_loop_layout/SCR_chaos_loop_layout.yy"}},
-    {"id": {"name": "SCR_chaos_box_contact", "path": "scripts/SCR_chaos_box_contact/SCR_chaos_box_contact.yy"}},
-    {"id": {"name": "SCR_chaos_goal", "path": "scripts/SCR_chaos_goal/SCR_chaos_goal.yy"}},
-    {"id": {"name": "SCR_chaos_viewport", "path": "scripts/SCR_chaos_viewport/SCR_chaos_viewport.yy"}},
-    {"id": {"name": "SCR_chaos_anim_counter_data", "path": "scripts/SCR_chaos_anim_counter_data/SCR_chaos_anim_counter_data.yy"}},
-    {"id": {"name": "SCR_chaos_anim_counter", "path": "scripts/SCR_chaos_anim_counter/SCR_chaos_anim_counter.yy"}},
-    {"id": {"name": "SCR_chaos_terrain_ring", "path": "scripts/SCR_chaos_terrain_ring/SCR_chaos_terrain_ring.yy"}},
-    {"id": {"name": "SCR_chaos_attack", "path": "scripts/SCR_chaos_attack/SCR_chaos_attack.yy"}},
-    {"id": {"name": "SCR_chaos_level_thz3_data", "path": "scripts/SCR_chaos_level_thz3_data/SCR_chaos_level_thz3_data.yy"}},
-    {"id": {"name": "SCR_chaos_objects", "path": "scripts/SCR_chaos_objects/SCR_chaos_objects.yy"}},
-    {"id": {"name": "SCR_chaos_platform", "path": "scripts/SCR_chaos_platform/SCR_chaos_platform.yy"}},
-    {"id": {"name": "SCR_chaos_spike1b", "path": "scripts/SCR_chaos_spike1b/SCR_chaos_spike1b.yy"}},
-    {"id": {"name": "SCR_chaos_spring", "path": "scripts/SCR_chaos_spring/SCR_chaos_spring.yy"}},
-    {"id": {"name": "SCR_chaos_placement", "path": "scripts/SCR_chaos_placement/SCR_chaos_placement.yy"}},
-    {"id": {"name": "SCR_chaos_level_thz2_data", "path": "scripts/SCR_chaos_level_thz2_data/SCR_chaos_level_thz2_data.yy"}},
-    {"id": {"name": "SPR_chaos_thz2_terrain_0", "path": "sprites/SPR_chaos_thz2_terrain_0/SPR_chaos_thz2_terrain_0.yy"}},
-    {"id": {"name": "SPR_chaos_thz2_terrain_1", "path": "sprites/SPR_chaos_thz2_terrain_1/SPR_chaos_thz2_terrain_1.yy"}},
-    {"id": {"name": "SPR_chaos_thz2_terrain_2", "path": "sprites/SPR_chaos_thz2_terrain_2/SPR_chaos_thz2_terrain_2.yy"}},
-    {"id": {"name": "SPR_chaos_thz2_terrain_3", "path": "sprites/SPR_chaos_thz2_terrain_3/SPR_chaos_thz2_terrain_3.yy"}},
-    {"id": {"name": "SPR_chaos_thz2_block_9d", "path": "sprites/SPR_chaos_thz2_block_9d/SPR_chaos_thz2_block_9d.yy"}},
-    {"id": {"name": "SPR_chaos_thz3_terrain_0", "path": "sprites/SPR_chaos_thz3_terrain_0/SPR_chaos_thz3_terrain_0.yy"}},
-    {"id": {"name": "SPR_chaos_thz3_terrain_1", "path": "sprites/SPR_chaos_thz3_terrain_1/SPR_chaos_thz3_terrain_1.yy"}},
-    {"id": {"name": "SPR_chaos_thz3_terrain_2", "path": "sprites/SPR_chaos_thz3_terrain_2/SPR_chaos_thz3_terrain_2.yy"}},
-    {"id": {"name": "SPR_chaos_object_10_03", "path": "sprites/SPR_chaos_object_10_03/SPR_chaos_object_10_03.yy"}},
-    {"id": {"name": "SPR_chaos_object_10_01", "path": "sprites/SPR_chaos_object_10_01/SPR_chaos_object_10_01.yy"}},
-
+    {
+      "id": {
+        "name": "SCR_chaos_debug_select",
+        "path": "scripts/SCR_chaos_debug_select/SCR_chaos_debug_select.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_debug_select",
+        "path": "objects/OBJ_chaos_debug_select/OBJ_chaos_debug_select.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_debug_select",
+        "path": "rooms/ROM_chaos_debug_select/ROM_chaos_debug_select.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_boss_50_flash",
+        "path": "sprites/SPR_chaos_boss_50_flash/SPR_chaos_boss_50_flash.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_boss_50_mirror_flash",
+        "path": "sprites/SPR_chaos_boss_50_mirror_flash/SPR_chaos_boss_50_mirror_flash.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_boss_data",
+        "path": "scripts/SCR_chaos_boss_data/SCR_chaos_boss_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_boss",
+        "path": "scripts/SCR_chaos_boss/SCR_chaos_boss.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_50",
+        "path": "objects/OBJ_chaos_object_50/OBJ_chaos_object_50.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_boss_effect",
+        "path": "objects/OBJ_chaos_boss_effect/OBJ_chaos_boss_effect.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_boss_50",
+        "path": "sprites/SPR_chaos_boss_50/SPR_chaos_boss_50.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_boss_50_mirror",
+        "path": "sprites/SPR_chaos_boss_50_mirror/SPR_chaos_boss_50_mirror.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_boss_puff_34",
+        "path": "sprites/SPR_chaos_boss_puff_34/SPR_chaos_boss_puff_34.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_boss_sparkle_0A",
+        "path": "sprites/SPR_chaos_boss_sparkle_0A/SPR_chaos_boss_sparkle_0A.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_boss_poof_0F",
+        "path": "sprites/SPR_chaos_boss_poof_0F/SPR_chaos_boss_poof_0F.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_core",
+        "path": "scripts/SCR_chaos_core/SCR_chaos_core.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_core_data",
+        "path": "scripts/SCR_chaos_core_data/SCR_chaos_core_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_adapter",
+        "path": "scripts/SCR_chaos_adapter/SCR_chaos_adapter.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_render_adapter",
+        "path": "scripts/SCR_chaos_render_adapter/SCR_chaos_render_adapter.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_thz2",
+        "path": "rooms/ROM_chaos_thz2/ROM_chaos_thz2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_thz3",
+        "path": "rooms/ROM_chaos_thz3/ROM_chaos_thz3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_thz3_terrain",
+        "path": "objects/OBJ_chaos_thz3_terrain/OBJ_chaos_thz3_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_thz2_terrain",
+        "path": "objects/OBJ_chaos_thz2_terrain/OBJ_chaos_thz2_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_level",
+        "path": "scripts/SCR_chaos_level/SCR_chaos_level.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_loop_layout",
+        "path": "scripts/SCR_chaos_loop_layout/SCR_chaos_loop_layout.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_box_contact",
+        "path": "scripts/SCR_chaos_box_contact/SCR_chaos_box_contact.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_goal",
+        "path": "scripts/SCR_chaos_goal/SCR_chaos_goal.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_viewport",
+        "path": "scripts/SCR_chaos_viewport/SCR_chaos_viewport.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_anim_counter_data",
+        "path": "scripts/SCR_chaos_anim_counter_data/SCR_chaos_anim_counter_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_anim_counter",
+        "path": "scripts/SCR_chaos_anim_counter/SCR_chaos_anim_counter.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_terrain_ring",
+        "path": "scripts/SCR_chaos_terrain_ring/SCR_chaos_terrain_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_attack",
+        "path": "scripts/SCR_chaos_attack/SCR_chaos_attack.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_level_thz3_data",
+        "path": "scripts/SCR_chaos_level_thz3_data/SCR_chaos_level_thz3_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_objects",
+        "path": "scripts/SCR_chaos_objects/SCR_chaos_objects.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_platform",
+        "path": "scripts/SCR_chaos_platform/SCR_chaos_platform.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_spike1b",
+        "path": "scripts/SCR_chaos_spike1b/SCR_chaos_spike1b.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_spring",
+        "path": "scripts/SCR_chaos_spring/SCR_chaos_spring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_placement",
+        "path": "scripts/SCR_chaos_placement/SCR_chaos_placement.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_level_thz2_data",
+        "path": "scripts/SCR_chaos_level_thz2_data/SCR_chaos_level_thz2_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_thz2_terrain_0",
+        "path": "sprites/SPR_chaos_thz2_terrain_0/SPR_chaos_thz2_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_thz2_terrain_1",
+        "path": "sprites/SPR_chaos_thz2_terrain_1/SPR_chaos_thz2_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_thz2_terrain_2",
+        "path": "sprites/SPR_chaos_thz2_terrain_2/SPR_chaos_thz2_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_thz2_terrain_3",
+        "path": "sprites/SPR_chaos_thz2_terrain_3/SPR_chaos_thz2_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_thz2_block_9d",
+        "path": "sprites/SPR_chaos_thz2_block_9d/SPR_chaos_thz2_block_9d.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_thz3_terrain_0",
+        "path": "sprites/SPR_chaos_thz3_terrain_0/SPR_chaos_thz3_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_thz3_terrain_1",
+        "path": "sprites/SPR_chaos_thz3_terrain_1/SPR_chaos_thz3_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_thz3_terrain_2",
+        "path": "sprites/SPR_chaos_thz3_terrain_2/SPR_chaos_thz3_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_10_03",
+        "path": "sprites/SPR_chaos_object_10_03/SPR_chaos_object_10_03.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_10_01",
+        "path": "sprites/SPR_chaos_object_10_01/SPR_chaos_object_10_01.yy"
+      }
+    },
     {
       "id": {
         "name": "compatibility_report_190926_1658555855",
@@ -2915,8 +3154,18 @@
         "path": "objects/OBJ_chaos_terrain_3/OBJ_chaos_terrain_3.yy"
       }
     },
-    {"id":{"name":"SPR_chaos_block_46","path":"sprites/SPR_chaos_block_46/SPR_chaos_block_46.yy"}},
-    {"id":{"name":"SPR_chaos_block_47","path":"sprites/SPR_chaos_block_47/SPR_chaos_block_47.yy"}},
+    {
+      "id": {
+        "name": "SPR_chaos_block_46",
+        "path": "sprites/SPR_chaos_block_46/SPR_chaos_block_46.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_block_47",
+        "path": "sprites/SPR_chaos_block_47/SPR_chaos_block_47.yy"
+      }
+    },
     {
       "id": {
         "name": "OBJ_chaos_object_0F_transient",
@@ -3738,6 +3987,222 @@
         "name": "OBJ_chaos_object_spring_26_span",
         "path": "objects/OBJ_chaos_object_spring_26_span/OBJ_chaos_object_spring_26_span.yy"
       }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz1_terrain_0",
+        "path": "sprites/SPR_chaos_gpz1_terrain_0/SPR_chaos_gpz1_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz1_terrain_1",
+        "path": "sprites/SPR_chaos_gpz1_terrain_1/SPR_chaos_gpz1_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz1_terrain_2",
+        "path": "sprites/SPR_chaos_gpz1_terrain_2/SPR_chaos_gpz1_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz1_terrain_3",
+        "path": "sprites/SPR_chaos_gpz1_terrain_3/SPR_chaos_gpz1_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz1_terrain_4",
+        "path": "sprites/SPR_chaos_gpz1_terrain_4/SPR_chaos_gpz1_terrain_4.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_gpz1_terrain",
+        "path": "objects/OBJ_chaos_gpz1_terrain/OBJ_chaos_gpz1_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_gpz1",
+        "path": "rooms/ROM_chaos_gpz1/ROM_chaos_gpz1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz2_terrain_0",
+        "path": "sprites/SPR_chaos_gpz2_terrain_0/SPR_chaos_gpz2_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz2_terrain_1",
+        "path": "sprites/SPR_chaos_gpz2_terrain_1/SPR_chaos_gpz2_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz2_terrain_2",
+        "path": "sprites/SPR_chaos_gpz2_terrain_2/SPR_chaos_gpz2_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz2_terrain_3",
+        "path": "sprites/SPR_chaos_gpz2_terrain_3/SPR_chaos_gpz2_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_gpz2_terrain",
+        "path": "objects/OBJ_chaos_gpz2_terrain/OBJ_chaos_gpz2_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_gpz2",
+        "path": "rooms/ROM_chaos_gpz2/ROM_chaos_gpz2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz3_terrain_0",
+        "path": "sprites/SPR_chaos_gpz3_terrain_0/SPR_chaos_gpz3_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz3_terrain_1",
+        "path": "sprites/SPR_chaos_gpz3_terrain_1/SPR_chaos_gpz3_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz3_terrain_2",
+        "path": "sprites/SPR_chaos_gpz3_terrain_2/SPR_chaos_gpz3_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_gpz3_terrain",
+        "path": "objects/OBJ_chaos_gpz3_terrain/OBJ_chaos_gpz3_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_gpz3",
+        "path": "rooms/ROM_chaos_gpz3/ROM_chaos_gpz3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_block_46",
+        "path": "sprites/SPR_chaos_gpz_block_46/SPR_chaos_gpz_block_46.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_block_9d",
+        "path": "sprites/SPR_chaos_gpz_block_9d/SPR_chaos_gpz_block_9d.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_platform",
+        "path": "sprites/SPR_chaos_gpz_platform/SPR_chaos_gpz_platform.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_ring",
+        "path": "sprites/SPR_chaos_gpz_ring/SPR_chaos_gpz_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_monitor_01",
+        "path": "sprites/SPR_chaos_gpz_monitor_01/SPR_chaos_gpz_monitor_01.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_monitor_02",
+        "path": "sprites/SPR_chaos_gpz_monitor_02/SPR_chaos_gpz_monitor_02.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_monitor_03",
+        "path": "sprites/SPR_chaos_gpz_monitor_03/SPR_chaos_gpz_monitor_03.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_monitor_04",
+        "path": "sprites/SPR_chaos_gpz_monitor_04/SPR_chaos_gpz_monitor_04.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_monitor_06",
+        "path": "sprites/SPR_chaos_gpz_monitor_06/SPR_chaos_gpz_monitor_06.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_gpz_data",
+        "path": "scripts/SCR_chaos_gpz_data/SCR_chaos_gpz_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_terrain_ring",
+        "path": "sprites/SPR_chaos_gpz_terrain_ring/SPR_chaos_gpz_terrain_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_spring",
+        "path": "sprites/SPR_chaos_gpz_spring/SPR_chaos_gpz_spring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_spike",
+        "path": "sprites/SPR_chaos_gpz_spike/SPR_chaos_gpz_spike.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_poof",
+        "path": "sprites/SPR_chaos_gpz_poof/SPR_chaos_gpz_poof.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_sign",
+        "path": "sprites/SPR_chaos_gpz_sign/SPR_chaos_gpz_sign.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_block_47",
+        "path": "sprites/SPR_chaos_gpz_block_47/SPR_chaos_gpz_block_47.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_foreground",
+        "path": "sprites/SPR_chaos_gpz_foreground/SPR_chaos_gpz_foreground.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_terrain_foreground",
+        "path": "objects/OBJ_chaos_terrain_foreground/OBJ_chaos_terrain_foreground.yy"
+      }
     }
   ],
   "resourceType": "GMProject",
@@ -3815,7 +4280,30 @@
         "path": "rooms/ROM_chaos_thz3/ROM_chaos_thz3.yy"
       }
     },
-    {"roomId":{"name":"ROM_chaos_debug_select","path":"rooms/ROM_chaos_debug_select/ROM_chaos_debug_select.yy"}}
+    {
+      "roomId": {
+        "name": "ROM_chaos_debug_select",
+        "path": "rooms/ROM_chaos_debug_select/ROM_chaos_debug_select.yy"
+      }
+    },
+    {
+      "roomId": {
+        "name": "ROM_chaos_gpz1",
+        "path": "rooms/ROM_chaos_gpz1/ROM_chaos_gpz1.yy"
+      }
+    },
+    {
+      "roomId": {
+        "name": "ROM_chaos_gpz2",
+        "path": "rooms/ROM_chaos_gpz2/ROM_chaos_gpz2.yy"
+      }
+    },
+    {
+      "roomId": {
+        "name": "ROM_chaos_gpz3",
+        "path": "rooms/ROM_chaos_gpz3/ROM_chaos_gpz3.yy"
+      }
+    }
   ],
   "templateType": null,
   "TextureGroups": [

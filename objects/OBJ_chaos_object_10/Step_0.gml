@@ -83,4 +83,4 @@ if (cp_c.state != 9) cp_c.vy = -$0400;
 SCR_chaos_type10_reward(chaosParameter,cp_p);
 SCR_chaos_enemy_score_100_bytes();
 chaosConsumed = true; chaosActive = false; chaosReplaceTick = 0;
-sprite_index = SPR_chaos_object_0F; image_index = 0; visible = true;
+sprite_index = chaos_is_gpz() ? SPR_chaos_gpz_poof : SPR_chaos_object_0F; image_index = 0; visible = true;

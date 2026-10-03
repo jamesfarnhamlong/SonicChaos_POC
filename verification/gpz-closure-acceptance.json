@@ -1,0 +1,93 @@
+{
+  "accepted_date": "2026-10-03",
+  "accepted_by": "James",
+  "research_commit": "08fb38ca081ac9c1644b9ae8a3d83182d9510450",
+  "poc_base": "42aaa5032cef385284a00d0c1b7a0e7714747b4b",
+  "branch": "poc/thz1-cleanup",
+  "windows_package": "SonicChaos_GPZ_THZ_Closure_20261003_C.zip",
+  "package_sha256": "3767e9860155143e4b1981b8a79d3b8be69cc02cb639c7e17a7575fcdbc6ef63",
+  "windows_acceptance": "PASS",
+  "no_regressions_observed": "tested scope",
+  "accepted_areas": [
+    "all four GPZ alternate state $13 loop routes",
+    "surface $19 run/slow/special-fall behavior",
+    "$1000 foreground pipe priority",
+    "GPZ terrain-ring four-frame animation",
+    "THZ type $27 mirrored SAT composition",
+    "THZ3 grounded boss side-hit continuation"
+  ],
+  "focused_checks": [
+    {
+      "check": "verify_gpz_closure.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verify_thz_closure.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verify_gpz_foundation.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verify_gpz_presentation.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verify_gpz_presentation.py",
+      "exit_code": 0
+    },
+    {
+      "check": "verify_gpz_assets.py",
+      "exit_code": 0
+    },
+    {
+      "check": "verify_bee_composition.py",
+      "exit_code": 0
+    },
+    {
+      "check": "verify_terrain_ring_probe.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verify_ring_proximity.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verify_thz2_loops_twist.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verify_thz3_boss.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verify_thz3_boss_render.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verify_thz3_boss_clear.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verify_type27_contact.js",
+      "exit_code": 0
+    },
+    {
+      "check": "verify_debug_select.js",
+      "exit_code": 0
+    },
+    {
+      "check": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "source_compile": "PASS",
+  "extracted_package_compile": "PASS",
+  "compile_runtime": "GameMaker LTS 2026.0.0.23 Windows VM",
+  "compile_log_sha256": {
+    "source-compile.log": "e28d13b1cfd1424b2780f38c924da7b0ad53328d4ceae2d886919dc822b8d5da",
+    "extracted-compile.log": "a782c3bea339fa1eb633ea161d528c88421412d4674cb00a653fddcbdb626f56"
+  },
+  "root_agents": "unchanged; Manager-san owns updates"
+}
