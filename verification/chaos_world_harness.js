@@ -13,7 +13,7 @@ function source(ref, rel) {
     return r.status === 0 ? r.stdout.toString('utf8') : null;
 }
 const SCRIPTS = ['SCR_chaos_motion_data', 'SCR_chaos_core_data', 'SCR_chaos_core', 'SCR_chaos_level_thz2_data', 'SCR_chaos_level_thz3_data', 'SCR_chaos_gpz_data', 'SCR_chaos_anim_counter_data', 'SCR_chaos_anim_counter',
-    'SCR_chaos_terrain_ring', 'SCR_chaos_viewport', 'SCR_chaos_placement', 'SCR_chaos_goal', 'SCR_chaos_box_contact', 'SCR_chaos_attack', 'SCR_chaos_spring', 'SCR_chaos_platform', 'SCR_chaos_damage', 'SCR_chaos_spike1b',
+    'SCR_chaos_terrain_ring', 'SCR_chaos_viewport', 'SCR_chaos_lost_ring', 'SCR_chaos_placement', 'SCR_chaos_goal', 'SCR_chaos_box_contact', 'SCR_chaos_attack', 'SCR_chaos_spring', 'SCR_chaos_platform', 'SCR_chaos_damage', 'SCR_chaos_spike1b',
     'SCR_chaos_gpz_enemy', 'SCR_chaos_gpz_enemy_data', 'SCR_chaos_motion', 'SCR_chaos_adapter', 'SCR_chaos_objects', 'SCR_chaos_level', 'SCR_chaos_boss_data', 'SCR_chaos_boss', 'SCR_chaos_gpz_boss_data', 'SCR_chaos_gpz_boss'];
 
 /// ref = null -> working tree; otherwise a git ref. Returns a host with .ctx (the VM), .g (globals) and helpers to build worlds.
@@ -120,7 +120,7 @@ function loadHost(ref) {
         g.chaosTileIds = iso; g.chaosBrokenCells = [];
     };
     host.reset = () => { world.gpzEnemies.length=0;world.smoke.length=0;world.badniks.length = 0; world.platforms.length = 0; world.spikes.length = 0; world.bosses.length = 0; world.events.length = 0; world.created.length = 0; world.player = null; world.frameNo = 0;
-        g.ring = 0; g.playerBlink = false; g.chaosDamageBlinkTimer = 0; g.powerShield = false; g.powerInv = false; g.playerSuper = false; g.chaosAttackPosture = false; };
+        if (ctx.chaos_lr_reset) ctx.chaos_lr_reset(); g.ring = 0; g.playerBlink = false; g.chaosDamageBlinkTimer = 0; g.powerShield = false; g.powerInv = false; g.playerSuper = false; g.chaosAttackPosture = false; };
     return host;
 }
 module.exports = {loadHost, hex, source, root};

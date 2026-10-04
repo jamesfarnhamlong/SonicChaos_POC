@@ -507,7 +507,7 @@ function SCR_cc_hurt_tick(cp_c) {
 // Hurt entry $48F7 on the recovered ROM model (docs/platform-spike-collision-audit.md section 4; POC_notes/rom-cache/platform-spike-collision.json hurt_consequences).
 // The adapter supplies rings / shield / immune each update and applies the GameMaker side (global rings, scatter object, death object) from the hurt_* result fields.
 //   no rings : requested state $1F, Y speed -5.0 ($FB00), X speed unchanged, no invulnerability.
-//   rings    : requested state $1E, rings := 0, (rings >> 4) + 1 scatter objects capped at 7, invulnerability counter $D3B1 := $78 (120), +$03 |= $C1 (bit 7 invulnerable,
+//   rings    : requested state $1E, rings := 0, min(7, tens digit + 1) collectable type-$06 scatter rings (chaos_lr_count; the ROM counter is BCD, never rings >> 4), invulnerability counter $D3B1 := $78 (120), +$03 |= $C1 (bit 7 invulnerable,
 //              bit 6, bit 0 airborne), floor flag cleared, Y speed -4.0 (+1.0 when the ceiling flag $D522 bit 0 is set), X speed -1.0 (+1.0 when $D523 bit 3, a left wall).
 //              The knockback direction depends only on the left-wall bit, never on which side the hazard was.
 // A shield (POC power-up, not a ROM mechanic) is consumed instead of the rings; everything else is the same hurt entry.
@@ -519,7 +519,7 @@ function SCR_cc_hurt_rom(cp_c) {
         return;
     }
     if (cp_c.shield) cp_c.hurt_shield = true;
-    else { cp_c.hurt_rings_lost = cp_c.rings; cp_c.hurt_scatter = min(7, (cp_c.rings >> 4) + 1); cp_c.rings = 0; }
+    else { cp_c.hurt_rings_lost = cp_c.rings; cp_c.hurt_scatter = chaos_lr_count(cp_c.rings); cp_c.rings = 0; }
     cp_c.vy = (cp_c.bg & 1) != 0 ? 256 : -1024;
     cp_c.vx = (cp_c.contacts & 8) != 0 ? 256 : -256;
     cp_c.next = 30; cp_c.invuln = 120; cp_c.move |= 193;

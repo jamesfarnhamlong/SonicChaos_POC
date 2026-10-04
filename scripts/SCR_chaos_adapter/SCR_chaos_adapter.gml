@@ -234,7 +234,8 @@ function SCR_chaos_hurt_apply(cp_p) {
         }
         if (cp_c.hurt_shield) global.powerShield = false;
         else global.ring = cp_c.rings;
-        if (cp_c.hurt_scatter > 0) instance_create(cp_p.x,cp_p.y,OBJ_player_lost_b);
+        // Recovered type-$06 lost rings (SCR_chaos_lost_ring): collectable, bouncing, no timer / blink. The legacy decorative OBJ_player_lost_b is no longer used here.
+        if (cp_c.hurt_scatter > 0) SCR_chaos_lost_rings_emit(cp_p,cp_c.hurt_rings_lost);
         with (cp_p) alarm[2] = 1;
         cp_p.chaosSupport = noone;
         cp_p.chaosSpringVisual = false;
@@ -258,8 +259,9 @@ function SCR_chaos_apply_hazard_damage(cp_p) {
     }
     if (global.powerShield) global.powerShield = false;
     else {
+        var cp_lost = global.ring;
         global.ring = 0;
-        instance_create(cp_p.x,cp_p.y,OBJ_player_lost_b);
+        SCR_chaos_lost_rings_emit(cp_p,cp_lost);
     }
     global.playerBlink = true;
     // Immunity intentionally outlasts the bounded hurt state so recovered

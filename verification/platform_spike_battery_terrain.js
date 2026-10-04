@@ -12,6 +12,10 @@ function newCore(host, x, y, o = {}) {
     const c = host.ctx.SCR_cc_new(x, y); Object.assign(c, {state: 5, next: 5, move: 0, bg: 0, contacts: 0, previous: 0, vy: 0, vx: 0, rings: 5}, o); return c;
 }
 const hurtFlag = c => c.hurt_pending === true || c.hazard === 1;
+// The old rows (rings_N) fed RAW BYTES to the BCD counter $D29A, so their scatter counts used the high nibble. Research 399f95b corrected that: the POC counter is DECIMAL and the count is
+// min(7, tens digit + 1). The expected count therefore comes from the corrected decimal emission table (>= 100 cannot occur in the ROM; the POC emits the maximum).
+const SCATTER = JSON.parse(fs.readFileSync(path.join(root, 'POC_notes/rom-cache/player-hurt-ring-scatter.json'), 'utf8')).emission.rows;
+const scatterFor = rings => rings === 0 ? 0 : (rings <= 99 ? SCATTER[String(rings)].objects : 7);
 
 function section_terrain(host, add) {
     const g = host.g, ctx = host.ctx;
@@ -138,7 +142,7 @@ function section_terrain(host, add) {
             ctx.SCR_cc_hurt_rom(c);
             const reqWant = parseInt(e.requested_state, 16), death = reqWant === 0x1F;
             const got = {next: c.next, vx: c.vx, vy: c.vy, inv: c.invuln, rings: death ? 0 : c.rings, scatter: c.hurt_scatter, floor: (c.bg & 2) !== 0, flags: c.move & 0xC1};
-            const want = {next: reqWant, vx: death ? 0 : e.vx, vy: e.vy, inv: death ? 0 : e.invulnerability_timer_d3b1, rings: e.rings_after, scatter: e.scatter_objects_type_06, floor: e.floor_flag_after, flags: parseInt(e.d503, 16) & 0xC1};
+            const want = {next: reqWant, vx: death ? 0 : e.vx, vy: e.vy, inv: death ? 0 : e.invulnerability_timer_d3b1, rings: e.rings_after, scatter: scatterFor(rings), floor: e.floor_flag_after, flags: parseInt(e.d503, 16) & 0xC1};
             if (JSON.stringify(got) !== JSON.stringify(want)) { bad++; if (first.length < 3) first.push([name, got, want]); }
         }
         add('G1', 'damage', 'hurt entry $48F7: state, speeds, ring loss, scatter count (cap 7), invulnerability 120, +$03 |= $C1, left-wall / ceiling variants vs Research rows', bad === 0, `${bad} rows differ ${JSON.stringify(first)}`);

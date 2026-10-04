@@ -888,6 +888,12 @@
     },
     {
       "id": {
+        "name": "SCR_chaos_lost_ring",
+        "path": "scripts/SCR_chaos_lost_ring/SCR_chaos_lost_ring.yy"
+      }
+    },
+    {
+      "id": {
         "name": "SCR_chaos_loop_layout",
         "path": "scripts/SCR_chaos_loop_layout/SCR_chaos_loop_layout.yy"
       }

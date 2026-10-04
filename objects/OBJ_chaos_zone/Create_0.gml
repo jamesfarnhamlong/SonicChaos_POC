@@ -1,3 +1,5 @@
+depth = -10; // draws the recovered lost rings (Draw_0): above the ring manager (0) and terrain, below the player (-50)
+chaos_lr_reset(); // recovered lost rings (type $06) never survive a room start / act restart
 global.chaosBeyondMapOpen = false; // GameMaker adapter flag: set only while player state $20 runs (SCR_cc_lookup)
 // Native fixed-point updates, not the old velocity*2 / acceleration*4 approximation.
 // 60Hz is the prototype test clock; PAL/NTSC scheduler fidelity is still unverified.
