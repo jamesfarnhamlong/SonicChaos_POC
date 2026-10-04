@@ -1,0 +1,11 @@
+{
+  "research_commit": "44e0714d16185f213ab1b73822c67e50546ce3f6",
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "art_transformation": "NONE",
+  "tails": [
+    39568,
+    39951
+  ],
+  "scripts": 21,
+  "scheduler": "19 live slots; dynamic allocator scans slots 7..17; head slot7"
+}

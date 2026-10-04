@@ -1,0 +1,822 @@
+{
+  "baseline": {
+    "first_mapped_activation": 1.0,
+    "mode_changes": [
+      {
+        "viewport": [
+          348.0,
+          196.0
+        ],
+        "clear": false,
+        "camera_mode": 1.0,
+        "player_state": 14.0,
+        "player_requested": 14.0,
+        "update": 1.0,
+        "active": true,
+        "boss_tick": 1.0,
+        "created": 1.0,
+        "camera_top": 35.0,
+        "sonic_world": [
+          1760.0,
+          160.1875
+        ],
+        "camera_left": 1586.0,
+        "sonic_screen": [
+          174.0,
+          125.1875
+        ],
+        "boss_world": [
+          1856,
+          270
+        ],
+        "boss_screen": [
+          270.0,
+          235.0
+        ],
+        "fight_target": [
+          1571.0,
+          96.0
+        ],
+        "limits": [
+          0.0,
+          1664.0,
+          0.0
+        ]
+      },
+      {
+        "viewport": [
+          348.0,
+          196.0
+        ],
+        "clear": false,
+        "camera_mode": 2.0,
+        "player_state": 1.0,
+        "player_requested": 1.0,
+        "update": 130.0,
+        "active": true,
+        "boss_tick": 130.0,
+        "created": 1.0,
+        "camera_top": 143.0,
+        "sonic_world": [
+          1760.0,
+          270.125
+        ],
+        "camera_left": 1571.0,
+        "sonic_screen": [
+          189.0,
+          127.125
+        ],
+        "boss_world": [
+          1856,
+          270
+        ],
+        "boss_screen": [
+          285.0,
+          127.0
+        ],
+        "fight_target": [
+          1571.0,
+          96.0
+        ],
+        "limits": [
+          0.0,
+          1664.0,
+          0.0
+        ]
+      },
+      {
+        "viewport": [
+          348.0,
+          196.0
+        ],
+        "clear": false,
+        "camera_mode": 3.0,
+        "player_state": 1.0,
+        "player_requested": 1.0,
+        "update": 176.0,
+        "active": true,
+        "boss_tick": 176.0,
+        "created": 1.0,
+        "camera_top": 97.0,
+        "sonic_world": [
+          1760.0,
+          270.125
+        ],
+        "camera_left": 1571.0,
+        "sonic_screen": [
+          189.0,
+          173.125
+        ],
+        "boss_world": [
+          1856,
+          270
+        ],
+        "boss_screen": [
+          285.0,
+          173.0
+        ],
+        "fight_target": [
+          1571.0,
+          96.0
+        ],
+        "limits": [
+          1570.0,
+          1664.0,
+          0.0
+        ]
+      },
+      {
+        "viewport": [
+          348.0,
+          196.0
+        ],
+        "clear": true,
+        "camera_mode": 4.0,
+        "player_state": 1.0,
+        "player_requested": 32.0,
+        "update": 612.0,
+        "active": true,
+        "boss_tick": 612.0,
+        "created": 1.0,
+        "camera_top": 96.0,
+        "sonic_world": [
+          1760.0,
+          270.125
+        ],
+        "camera_left": 1586.0,
+        "sonic_screen": [
+          174.0,
+          174.125
+        ],
+        "boss_world": [
+          1820,
+          181
+        ],
+        "boss_screen": [
+          234.0,
+          85.0
+        ],
+        "fight_target": [
+          1571.0,
+          96.0
+        ],
+        "limits": [
+          1571.0,
+          1920.0,
+          96.0
+        ]
+      }
+    ],
+    "largest_active_camera_step": [
+      15.0,
+      612.0
+    ],
+    "clear_update": 612.0,
+    "settled_fight": [
+      1571,
+      96.0
+    ],
+    "fight_screen_x_range": [
+      189.0,
+      189.0
+    ],
+    "screenshot_sha256": "c0d90be0d42875383a6e8739117e3ff1a4c028a0d8b096a800f5456ce5e49b7a"
+  },
+  "updated": {
+    "first_mapped_activation": 1.0,
+    "mode_changes": [
+      {
+        "camera_mode": 1.0,
+        "boss_screen": [
+          289.0,
+          207.0
+        ],
+        "clear": false,
+        "fight_target": [
+          1571.0,
+          112.0
+        ],
+        "limits": [
+          0.0,
+          1664.0,
+          0.0
+        ],
+        "viewport": [
+          348.0,
+          196.0
+        ],
+        "player_state": 14.0,
+        "player_requested": 14.0,
+        "active": true,
+        "update": 1.0,
+        "boss_tick": 1.0,
+        "camera_left": 1567.0,
+        "created": 1.0,
+        "camera_top": 63.0,
+        "sonic_world": [
+          1760.0,
+          160.1875
+        ],
+        "sonic_screen": [
+          193.0,
+          97.1875
+        ],
+        "boss_world": [
+          1856,
+          270
+        ]
+      },
+      {
+        "camera_mode": 2.0,
+        "boss_screen": [
+          271.0,
+          127.0
+        ],
+        "clear": false,
+        "fight_target": [
+          1571.0,
+          112.0
+        ],
+        "limits": [
+          0.0,
+          1664.0,
+          0.0
+        ],
+        "viewport": [
+          348.0,
+          196.0
+        ],
+        "player_state": 1.0,
+        "player_requested": 1.0,
+        "active": true,
+        "update": 130.0,
+        "boss_tick": 130.0,
+        "camera_left": 1585.0,
+        "created": 1.0,
+        "camera_top": 143.0,
+        "sonic_world": [
+          1760.0,
+          270.125
+        ],
+        "sonic_screen": [
+          175.0,
+          127.125
+        ],
+        "boss_world": [
+          1856,
+          270
+        ]
+      },
+      {
+        "camera_mode": 3.0,
+        "boss_screen": [
+          285.0,
+          157.0
+        ],
+        "clear": false,
+        "fight_target": [
+          1571.0,
+          112.0
+        ],
+        "limits": [
+          1570.0,
+          1664.0,
+          0.0
+        ],
+        "viewport": [
+          348.0,
+          196.0
+        ],
+        "player_state": 1.0,
+        "player_requested": 1.0,
+        "active": true,
+        "update": 160.0,
+        "boss_tick": 160.0,
+        "camera_left": 1571.0,
+        "created": 1.0,
+        "camera_top": 113.0,
+        "sonic_world": [
+          1760.0,
+          270.125
+        ],
+        "sonic_screen": [
+          189.0,
+          157.125
+        ],
+        "boss_world": [
+          1856,
+          270
+        ]
+      },
+      {
+        "camera_mode": 4.0,
+        "boss_screen": [
+          229.0,
+          75.0
+        ],
+        "clear": true,
+        "fight_target": [
+          1571.0,
+          112.0
+        ],
+        "limits": [
+          1571.0,
+          1920.0,
+          96.0
+        ],
+        "viewport": [
+          348.0,
+          196.0
+        ],
+        "player_state": 1.0,
+        "player_requested": 32.0,
+        "active": true,
+        "update": 612.0,
+        "boss_tick": 612.0,
+        "camera_left": 1575.0,
+        "created": 1.0,
+        "camera_top": 112.0,
+        "sonic_world": [
+          1760.0,
+          270.125
+        ],
+        "sonic_screen": [
+          185.0,
+          158.125
+        ],
+        "boss_world": [
+          1804,
+          187
+        ]
+      }
+    ],
+    "largest_active_camera_step": [
+      4.0,
+      726.0
+    ],
+    "clear_update": 612.0,
+    "settled_fight": [
+      1571,
+      112.0
+    ],
+    "fight_screen_x_range": [
+      189.0,
+      189.0
+    ],
+    "screenshot_sha256": "4668f86ef4106e43513f02b1ea69cc2bb82f8a6da2dd5ba69b4678db75a1157e"
+  },
+  "baseline-approach": {
+    "first_mapped_activation": 57.0,
+    "mode_changes": [
+      {
+        "viewport": [
+          348.0,
+          196.0
+        ],
+        "clear": false,
+        "camera_mode": 0.0,
+        "player_state": 14.0,
+        "player_requested": 14.0,
+        "update": 1.0,
+        "active": false,
+        "boss_tick": 0.0,
+        "created": 1.0,
+        "camera_top": 145.0,
+        "sonic_world": [
+          1376.125,
+          270.1875
+        ],
+        "camera_left": 1200.0,
+        "sonic_screen": [
+          176.125,
+          125.1875
+        ],
+        "boss_world": [
+          1728,
+          270
+        ],
+        "boss_screen": [
+          528.0,
+          125.0
+        ],
+        "fight_target": [
+          1571.0,
+          96.0
+        ],
+        "limits": [
+          0.0,
+          1664.0,
+          0.0
+        ]
+      },
+      {
+        "viewport": [
+          348.0,
+          196.0
+        ],
+        "clear": false,
+        "camera_mode": 1.0,
+        "player_state": 5.0,
+        "player_requested": 5.0,
+        "update": 57.0,
+        "active": true,
+        "boss_tick": 1.0,
+        "created": 1.0,
+        "camera_top": 137.0,
+        "sonic_world": [
+          1493.1875,
+          262.5625
+        ],
+        "camera_left": 1319.0,
+        "sonic_screen": [
+          174.1875,
+          125.5625
+        ],
+        "boss_world": [
+          1856,
+          270
+        ],
+        "boss_screen": [
+          537.0,
+          133.0
+        ],
+        "fight_target": [
+          1571.0,
+          96.0
+        ],
+        "limits": [
+          0.0,
+          1664.0,
+          0.0
+        ]
+      },
+      {
+        "viewport": [
+          348.0,
+          196.0
+        ],
+        "clear": false,
+        "camera_mode": 2.0,
+        "player_state": 1.0,
+        "player_requested": 1.0,
+        "update": 186.0,
+        "active": true,
+        "boss_tick": 130.0,
+        "created": 1.0,
+        "camera_top": 144.0,
+        "sonic_world": [
+          1700.65625,
+          270.5625
+        ],
+        "camera_left": 1528.0,
+        "sonic_screen": [
+          172.65625,
+          126.5625
+        ],
+        "boss_world": [
+          1856,
+          270
+        ],
+        "boss_screen": [
+          328.0,
+          126.0
+        ],
+        "fight_target": [
+          1571.0,
+          96.0
+        ],
+        "limits": [
+          0.0,
+          1664.0,
+          0.0
+        ]
+      },
+      {
+        "viewport": [
+          348.0,
+          196.0
+        ],
+        "clear": false,
+        "camera_mode": 3.0,
+        "player_state": 1.0,
+        "player_requested": 1.0,
+        "update": 233.0,
+        "active": true,
+        "boss_tick": 177.0,
+        "created": 1.0,
+        "camera_top": 97.0,
+        "sonic_world": [
+          1700.65625,
+          270.5625
+        ],
+        "camera_left": 1571.0,
+        "sonic_screen": [
+          129.65625,
+          173.5625
+        ],
+        "boss_world": [
+          1856,
+          270
+        ],
+        "boss_screen": [
+          285.0,
+          173.0
+        ],
+        "fight_target": [
+          1571.0,
+          96.0
+        ],
+        "limits": [
+          1570.0,
+          1664.0,
+          0.0
+        ]
+      },
+      {
+        "viewport": [
+          348.0,
+          196.0
+        ],
+        "clear": true,
+        "camera_mode": 4.0,
+        "player_state": 1.0,
+        "player_requested": 32.0,
+        "update": 668.0,
+        "active": true,
+        "boss_tick": 612.0,
+        "created": 1.0,
+        "camera_top": 96.0,
+        "sonic_world": [
+          1700.65625,
+          270.5625
+        ],
+        "camera_left": 1571.0,
+        "sonic_screen": [
+          129.65625,
+          174.5625
+        ],
+        "boss_world": [
+          1828,
+          153
+        ],
+        "boss_screen": [
+          257.0,
+          57.0
+        ],
+        "fight_target": [
+          1571.0,
+          96.0
+        ],
+        "limits": [
+          1571.0,
+          1920.0,
+          96.0
+        ]
+      }
+    ],
+    "largest_active_camera_step": [
+      31.0,
+      57.0
+    ],
+    "clear_update": 668.0,
+    "settled_fight": [
+      1571,
+      96.0
+    ],
+    "fight_screen_x_range": [
+      129.65625,
+      129.65625
+    ]
+  },
+  "updated-approach": {
+    "first_mapped_activation": 57.0,
+    "mode_changes": [
+      {
+        "camera_top": 145.0,
+        "clear": false,
+        "sonic_world": [
+          1376.125,
+          270.1875
+        ],
+        "sonic_screen": [
+          176.125,
+          125.1875
+        ],
+        "boss_world": [
+          1728,
+          270
+        ],
+        "boss_screen": [
+          528.0,
+          125.0
+        ],
+        "fight_target": [
+          1571.0,
+          112.0
+        ],
+        "limits": [
+          0.0,
+          1664.0,
+          0.0
+        ],
+        "viewport": [
+          348.0,
+          196.0
+        ],
+        "player_state": 14.0,
+        "player_requested": 14.0,
+        "active": false,
+        "camera_left": 1200.0,
+        "update": 1.0,
+        "boss_tick": 0.0,
+        "created": 1.0,
+        "camera_mode": 0.0
+      },
+      {
+        "camera_top": 137.0,
+        "clear": false,
+        "sonic_world": [
+          1493.1875,
+          262.5625
+        ],
+        "sonic_screen": [
+          201.1875,
+          125.5625
+        ],
+        "boss_world": [
+          1856,
+          270
+        ],
+        "boss_screen": [
+          564.0,
+          133.0
+        ],
+        "fight_target": [
+          1571.0,
+          112.0
+        ],
+        "limits": [
+          0.0,
+          1664.0,
+          0.0
+        ],
+        "viewport": [
+          348.0,
+          196.0
+        ],
+        "player_state": 5.0,
+        "player_requested": 5.0,
+        "active": true,
+        "camera_left": 1292.0,
+        "update": 57.0,
+        "boss_tick": 1.0,
+        "created": 1.0,
+        "camera_mode": 1.0
+      },
+      {
+        "camera_top": 144.0,
+        "clear": false,
+        "sonic_world": [
+          1700.65625,
+          270.5625
+        ],
+        "sonic_screen": [
+          172.65625,
+          126.5625
+        ],
+        "boss_world": [
+          1856,
+          270
+        ],
+        "boss_screen": [
+          328.0,
+          126.0
+        ],
+        "fight_target": [
+          1571.0,
+          112.0
+        ],
+        "limits": [
+          0.0,
+          1664.0,
+          0.0
+        ],
+        "viewport": [
+          348.0,
+          196.0
+        ],
+        "player_state": 1.0,
+        "player_requested": 1.0,
+        "active": true,
+        "camera_left": 1528.0,
+        "update": 186.0,
+        "boss_tick": 130.0,
+        "created": 1.0,
+        "camera_mode": 2.0
+      },
+      {
+        "camera_top": 112.0,
+        "clear": false,
+        "sonic_world": [
+          1700.65625,
+          270.5625
+        ],
+        "sonic_screen": [
+          129.65625,
+          158.5625
+        ],
+        "boss_world": [
+          1856,
+          270
+        ],
+        "boss_screen": [
+          285.0,
+          158.0
+        ],
+        "fight_target": [
+          1571.0,
+          112.0
+        ],
+        "limits": [
+          1570.0,
+          1664.0,
+          0.0
+        ],
+        "viewport": [
+          348.0,
+          196.0
+        ],
+        "player_state": 1.0,
+        "player_requested": 1.0,
+        "active": true,
+        "camera_left": 1571.0,
+        "update": 229.0,
+        "boss_tick": 173.0,
+        "created": 1.0,
+        "camera_mode": 3.0
+      },
+      {
+        "camera_top": 112.0,
+        "clear": true,
+        "sonic_world": [
+          1700.65625,
+          270.5625
+        ],
+        "sonic_screen": [
+          129.65625,
+          158.5625
+        ],
+        "boss_world": [
+          1823,
+          157
+        ],
+        "boss_screen": [
+          252.0,
+          45.0
+        ],
+        "fight_target": [
+          1571.0,
+          112.0
+        ],
+        "limits": [
+          1571.0,
+          1920.0,
+          96.0
+        ],
+        "viewport": [
+          348.0,
+          196.0
+        ],
+        "player_state": 1.0,
+        "player_requested": 32.0,
+        "active": true,
+        "camera_left": 1571.0,
+        "update": 668.0,
+        "boss_tick": 612.0,
+        "created": 1.0,
+        "camera_mode": 4.0
+      }
+    ],
+    "largest_active_camera_step": [
+      4.0,
+      797.0
+    ],
+    "clear_update": 668.0,
+    "settled_fight": [
+      1571,
+      112.0
+    ],
+    "fight_screen_x_range": [
+      129.65625,
+      129.65625
+    ]
+  },
+  "capture_policy": "Actual GameMaker2026.0.0.23 application_surface, logical348x196, displayed640x360; isolated initial placement/final-health fixture; no shipping capture hooks.",
+  "floor_strip": {
+    "old_logical": 4,
+    "new_logical": 20,
+    "new_displayed": 36.734693877551024,
+    "world_floor_art_registration": 288,
+    "canonical_controller_floor": 270
+  }
+}

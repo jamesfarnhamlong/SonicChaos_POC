@@ -101,6 +101,7 @@ function chaos_level_spawn_objects() {
             case $28: cp_inst = chaos_spawn_type28(cp_r); break;
             case $2C: if (chaos_is_gpz()) cp_inst = instance_create(cp_r[1],cp_r[2],OBJ_chaos_object_2C); break;
             case $50: if (chaos_is_thz3()) cp_inst = instance_create(cp_r[1],cp_r[2],OBJ_chaos_object_50); break;
+            case $51: if (chaos_gpz_act()==3) cp_inst=instance_create(cp_r[1],cp_r[2],OBJ_chaos_object_51); break;
             default: global.chaosSkippedByType[cp_type]++; break;
         }
         if (cp_inst != noone) {

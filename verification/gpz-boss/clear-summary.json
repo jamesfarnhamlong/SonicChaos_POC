@@ -1,0 +1,185 @@
+[
+  {
+    "width": 256,
+    "height": 192,
+    "clear_visits": 262,
+    "first": {
+      "t": 0,
+      "state": 32,
+      "next": 32,
+      "animation": {
+        "cur": 0,
+        "t": 180,
+        "ptr": 2,
+        "loop": 0
+      },
+      "sprite": 1020,
+      "frame": 0,
+      "movement_flags": 0,
+      "player_flags": 0,
+      "facing": 1,
+      "x": 1800,
+      "y": 270,
+      "camera": [
+        1672,
+        96
+      ],
+      "clear_dx": 289,
+      "clear": false,
+      "overlay": false,
+      "sparkles": 0
+    },
+    "last": {
+      "t": 116,
+      "state": 32,
+      "next": 32,
+      "animation": {
+        "cur": 32,
+        "t": 180,
+        "ptr": -1,
+        "loop": 0
+      },
+      "sprite": 1023,
+      "frame": 0,
+      "movement_flags": 0,
+      "player_flags": 0,
+      "facing": 1,
+      "x": 2211,
+      "y": 270,
+      "camera": [
+        1919,
+        96
+      ],
+      "clear_dx": 289,
+      "clear": true,
+      "overlay": true,
+      "sparkles": 14
+    },
+    "destination": {
+      "zone": 2,
+      "act": 0
+    }
+  },
+  {
+    "width": 640,
+    "height": 192,
+    "clear_visits": 262,
+    "first": {
+      "t": 0,
+      "state": 32,
+      "next": 32,
+      "animation": {
+        "cur": 0,
+        "t": 180,
+        "ptr": 2,
+        "loop": 0
+      },
+      "sprite": 1020,
+      "frame": 0,
+      "movement_flags": 0,
+      "player_flags": 0,
+      "facing": 1,
+      "x": 1800,
+      "y": 270,
+      "camera": [
+        1283,
+        96
+      ],
+      "clear_dx": 673,
+      "clear": false,
+      "overlay": false,
+      "sparkles": 0
+    },
+    "last": {
+      "t": 180,
+      "state": 32,
+      "next": 32,
+      "animation": {
+        "cur": 32,
+        "t": 180,
+        "ptr": -1,
+        "loop": 0
+      },
+      "sprite": 1023,
+      "frame": 0,
+      "movement_flags": 1,
+      "player_flags": 0,
+      "facing": 1,
+      "x": 2595,
+      "y": 277,
+      "camera": [
+        1919,
+        96
+      ],
+      "clear_dx": 673,
+      "clear": true,
+      "overlay": true,
+      "sparkles": 22
+    },
+    "destination": {
+      "zone": 2,
+      "act": 0
+    }
+  },
+  {
+    "width": 348,
+    "height": 196,
+    "clear_visits": 262,
+    "first": {
+      "t": 0,
+      "state": 32,
+      "next": 32,
+      "animation": {
+        "cur": 0,
+        "t": 180,
+        "ptr": 2,
+        "loop": 0
+      },
+      "sprite": 1020,
+      "frame": 0,
+      "movement_flags": 0,
+      "player_flags": 0,
+      "facing": 1,
+      "x": 1800,
+      "y": 270,
+      "camera": [
+        1575,
+        112
+      ],
+      "clear_dx": 381,
+      "clear": false,
+      "overlay": false,
+      "sparkles": 0
+    },
+    "last": {
+      "t": 131,
+      "state": 32,
+      "next": 32,
+      "animation": {
+        "cur": 32,
+        "t": 180,
+        "ptr": -1,
+        "loop": 0
+      },
+      "sprite": 1023,
+      "frame": 0,
+      "movement_flags": 0,
+      "player_flags": 0,
+      "facing": 1,
+      "x": 2301,
+      "y": 270,
+      "camera": [
+        1919,
+        112
+      ],
+      "clear_dx": 381,
+      "clear": true,
+      "overlay": true,
+      "sparkles": 16
+    },
+    "destination": {
+      "zone": 2,
+      "act": 0
+    }
+  }
+]

@@ -1,0 +1,82 @@
+{
+  "research": "44e0714d16185f213ab1b73822c67e50546ce3f6",
+  "asset_transformation": "NONE",
+  "samples": [
+    {
+      "run": "mode1_left",
+      "tick": 232,
+      "pixel_parity": "PASS"
+    },
+    {
+      "run": "mode1_left",
+      "tick": 357,
+      "pixel_parity": "PASS"
+    },
+    {
+      "run": "mode1_left",
+      "tick": 471,
+      "pixel_parity": "PASS"
+    },
+    {
+      "run": "mode1_left",
+      "tick": 601,
+      "pixel_parity": "PASS"
+    },
+    {
+      "run": "mode1_left",
+      "tick": 602,
+      "pixel_parity": "PASS"
+    },
+    {
+      "run": "mode1_left",
+      "tick": 630,
+      "pixel_parity": "PASS"
+    },
+    {
+      "run": "mode1_left",
+      "tick": 670,
+      "pixel_parity": "PASS"
+    },
+    {
+      "run": "mode1_left",
+      "tick": 704,
+      "pixel_parity": "PASS"
+    },
+    {
+      "run": "mode2_left",
+      "tick": 268,
+      "pixel_parity": "PASS"
+    },
+    {
+      "run": "mode1_left",
+      "tick": 360,
+      "pixel_parity": "PASS"
+    },
+    {
+      "run": "mode1_left",
+      "tick": 333,
+      "pixel_parity": "PASS"
+    },
+    {
+      "run": "mode1_right",
+      "tick": 333,
+      "pixel_parity": "PASS"
+    },
+    {
+      "run": "mode1_left",
+      "tick": 447,
+      "pixel_parity": "PASS"
+    },
+    {
+      "run": "mode1_right",
+      "tick": 447,
+      "pixel_parity": "PASS"
+    }
+  ],
+  "approved_boards": [
+    "51-stack-registration.png",
+    "51-sequence-summary.png",
+    "51-mode-direction.png",
+    "support-approval.png"
+  ]
+}

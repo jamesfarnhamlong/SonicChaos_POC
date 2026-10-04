@@ -23,5 +23,5 @@ assert len(manifest['assets'])==26
 for b in (ROOT/'verification/gpz-enemies/approved').glob('*.png'):
     source=next(RESEARCH/r for r in approved if Path(r).name==b.name and 'gpz51-correction' in r or Path(r).name==b.name and '51-' not in b.name)
     assert sha(b)==sha(source)
-assert 'case $51:' not in (ROOT/'scripts/SCR_chaos_level/SCR_chaos_level.gml').read_text()
-print('GPZ ENEMY ASSET CHECKS PASSED: 26 byte-identical frames, 6 approved boards, no forced mirrors/boss dispatch')
+assert 'case $51: if (chaos_gpz_act()==3)' in (ROOT/'scripts/SCR_chaos_level/SCR_chaos_level.gml').read_text()
+print('GPZ ENEMY ASSET CHECKS PASSED: 26 byte-identical frames, 6 approved boards, no forced mirrors; GPZ3 boss dispatch')

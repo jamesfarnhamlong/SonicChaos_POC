@@ -4275,6 +4275,24 @@
         "name": "SCR_chaos_gpz_enemy",
         "path": "scripts/SCR_chaos_gpz_enemy/SCR_chaos_gpz_enemy.yy"
       }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_gpz_boss_data",
+        "path": "scripts/SCR_chaos_gpz_boss_data/SCR_chaos_gpz_boss_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_gpz_boss",
+        "path": "scripts/SCR_chaos_gpz_boss/SCR_chaos_gpz_boss.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_51",
+        "path": "objects/OBJ_chaos_object_51/OBJ_chaos_object_51.yy"
+      }
     }
   ],
   "resourceType": "GMProject",

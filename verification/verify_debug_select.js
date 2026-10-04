@@ -83,7 +83,8 @@ for (const act of [1,4,2,5,3,6,1,6,2]) {
         chaosBossSparkleOn:true,chaosMapWidth:17,chaosOwnerSeq:99,playerSpinDash:true,ring:99,chaosConsumedPlatforms:[3,5]});
     w.cam.x=1679; w.cam.y=78;
     if(rings) rings.chaosRingActive.fill(false);
-    if(w.bosses[0]) {w.bosses[0].chaosBoss.hp=1; w.bosses[0].chaosBoss.camera_mode=3;}
+    if(w.bosses[0]?.chaosBoss) {w.bosses[0].chaosBoss.hp=1; w.bosses[0].chaosBoss.camera_mode=3;}
+    if(w.bosses[0]?.chaosBoss51) {w.bosses[0].chaosBoss51.head.health=1;w.bosses[0].chaosBoss51.active=true;}
     enterSelector();
     assert(c.chaos_debug_launch(entries[act-1])); assert.equal(nextRoom,entries[act-1].room);
     c.room=nextRoom;
@@ -105,10 +106,11 @@ for (const act of [1,4,2,5,3,6,1,6,2]) {
     assert.equal(p.chaosCore.state,1); assert.equal(p.chaosCore.next,1); assert.equal(p.chaosCore.vx,0);
     assert.equal(p.chaosCore.state11_active,false); assert.equal(p.chaosCore.act_clear,false); assert.equal(p.chaosSupport,c.noone);
     assert(rings.chaosRingActive.every(Boolean)); assert(rings.chaosType09Collected.every(v=>!v));
-    assert.equal(w.bosses.length,act===3?1:0);
+    assert.equal(w.bosses.length,act===3 || (gpz && local===3)?1:0);
+    if(gpz && local===3) {assert.equal(w.bosses[0].chaosBoss51.active,false);assert.equal(w.bosses[0].chaosBoss51.tick,0);}
     if(act===3) {assert.equal(w.bosses[0].chaosBoss.hp,8); assert.equal(w.bosses[0].chaosBoss.state,-1); assert.equal(w.bosses[0].chaosBoss.camera_mode,0);}
     if(act===1) {assert(population.includes('OBJ_chaos_object_18')); assert(!population.includes('OBJ_chaos_object_50'));}
-    else assert.equal(g.chaosSpawnedIndices.length,gpz?manifest.foundation.instantiate_indices.length+manifest.foundation.integrate_before_instantiating_indices.length-manifest.rings.object09.length+manifest.objects.filter(r=>[37,44].includes(parseInt(r.type_id,16))).length:act===2?28:7);
+    else assert.equal(g.chaosSpawnedIndices.length,gpz?manifest.foundation.instantiate_indices.length+manifest.foundation.integrate_before_instantiating_indices.length-manifest.rings.object09.length+manifest.objects.filter(r=>[37,44].includes(parseInt(r.type_id,16))).length+(local===3?1:0):act===2?28:7);
     c.chaos_act_complete(); assert.equal(g.zoneGoto,2); c.SCR_save_game(); assert.equal(writes,0);
     reports.push({act,mapWidth:g.chaosMapWidth,spawn:[p.x,p.y],camera:[w.cam.x,w.cam.y],
         roomInstances:population.length,loadedObjects:g.chaosSpawnedIndices.length,rings:rings.chaosRingSourceCount,bosses:w.bosses.length});

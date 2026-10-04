@@ -33,7 +33,7 @@ for(const act of ['gpz1','gpz2','gpz3']) {
   if(o.object_index===c.OBJ_chaos_object_25)eq(o.chaosParameter,parseInt(source.parameter,16));
   else eq([o.chaosEnemyEX,o.chaosEnemyEY,o.image_xscale],[12,16,1]);
  }
- eq(g.chaosSpawnedByType[81],0,'boss remains deferred');
+ eq(g.chaosSpawnedByType[81],act==='gpz3'?1:0,'$51 dispatch only in GPZ3; regular enemies unchanged');
 }
 // All-byte patrol initializer arithmetic; strict unsigned bounds and fractional overshoots.
 for(let parameter=0;parameter<256;parameter++) {

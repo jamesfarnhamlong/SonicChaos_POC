@@ -1,0 +1,196 @@
+[
+  {
+    "command": [
+      "node",
+      "verification/verify_gpz_boss_camera.js"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "C:\\Users\\james\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "verification/verify_gpz_boss_camera_capture.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "verification/verify_gpz_boss_e1.js"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "verification/verify_gpz_boss.js"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "verification/verify_gpz_boss_clear.js"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "C:\\Users\\james\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "verification/verify_gpz_boss_assets.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "C:\\Users\\james\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "verification/preview_gpz_boss.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "verification/verify_gpz_enemies.js"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "C:\\Users\\james\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "verification/verify_gpz_enemy_assets.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "verification/verify_attack_posture.js"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "verification/verify_viewport_adapter.js"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "verification/verify_gpz_closure.js"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "verification/verify_thz_closure.js"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "verification/verify_gpz_foundation.js"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "verification/verify_gpz_presentation.js"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "C:\\Users\\james\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "verification/verify_gpz_presentation.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "C:\\Users\\james\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "verification/verify_gpz_assets.py",
+      "--research",
+      "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work",
+      "--rom",
+      "E:\\AI\\Codex\\Sonic Chaos\\source\\Sonic Chaos (Europe).sms"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "C:\\Users\\james\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "verification/verify_bee_composition.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "verification/verify_terrain_ring_probe.js"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "verification/verify_ring_proximity.js"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "verification/verify_thz2_loops_twist.js"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "verification/verify_thz3_boss.js"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "verification/verify_thz3_boss_render.js"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "verification/verify_thz3_boss_clear.js"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "verification/verify_type27_contact.js"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "verification/verify_debug_select.js"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0
+  }
+]

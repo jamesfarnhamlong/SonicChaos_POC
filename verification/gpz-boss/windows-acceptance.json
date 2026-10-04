@@ -1,0 +1,10 @@
+{
+  "accepted_by": "James",
+  "accepted_date": "2026-10-04",
+  "package": "SonicChaos_GPZ3_Boss_51_20261003_E2.zip",
+  "sha256": "5ec97af8456274d1c6a7252297d5b07cd258626c0cdfccfe24832dcbc83e2983",
+  "accepted_base": "84c3e108177bca06b490c5857307e02147cb2901",
+  "boss_research": "44e0714d16185f213ab1b73822c67e50546ce3f6",
+  "scope": "Complete GPZ3 $51 boss, approved composition/support effects, E.1 projectile/framing and E.2 vertical/transition camera adapters",
+  "excluded": "Recoverable lost-ring mechanic; results-screen assets and playable MGHZ1 remain deferred"
+}

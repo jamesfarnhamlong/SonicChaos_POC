@@ -99,6 +99,7 @@ global.chaosComplete = false;
 global.chaosGoalContact = false;
 global.chaosPan = chaos_goal_pan_new();
 global.chaosHudSlide = 0;
+global.chaosBossNextAct = noone;
 global.chaosTraceFrame = 0;
 global.chaosTraceLastCam = -1;
 global.chaosNotice = 0;

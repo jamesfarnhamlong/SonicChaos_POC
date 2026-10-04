@@ -11,6 +11,7 @@ if (chaos_in_level()) {
     if (global.chaosNotice > 0) draw_text_transformed(vx+4,vy+vh-40,"CHECKPOINT SAVED",0.75,0.75,0);
     // Type $18 presentation is ROM-derived; act clear comes from player state $20 (SCR_chaos_goal).
     if (global.chaosComplete) {
-        draw_text_transformed(vx+4, vy+vh-27, "ACT " + string(chaos_act_entry(chaos_act_index_for_room(room)).act) + " COMPLETE!  " + string(global.chaosFinishTime) + "s  /  " + string(global.chaosFinishRings) + " rings", 0.75, 0.75, 0);
+        var cp_complete_act=chaos_gpz_act()==3 ? 3 : chaos_act_entry(chaos_act_index_for_room(room)).act;
+        draw_text_transformed(vx+4, vy+vh-27, "ACT " + string(cp_complete_act) + " COMPLETE!  " + string(global.chaosFinishTime) + "s  /  " + string(global.chaosFinishRings) + " rings", 0.75, 0.75, 0);
     }
 }
