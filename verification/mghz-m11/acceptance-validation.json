@@ -1,0 +1,193 @@
+{
+  "status": "PASS",
+  "windows_acceptance": "James, 2026-10-04",
+  "accepted_parent": "82ebc89d68cd0d7e4d66be54a6c9954e6e2d9fed",
+  "research_followup": "a779fde37130a834e099c985345adb9df648caaa",
+  "focused_checks": [
+    {
+      "command": [
+        "node",
+        "verification/verify_mghz.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "verification/verify_mghz_closure.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "verification/verify_mghz_platform_crush.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "verification/verify_lost_rings.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "verification/verify_terrain_ring_probe.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "verification/verify_ring_proximity.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "verification/verify_spring_interaction.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "verification/verify_platform_spike.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "verification/verify_attack_posture.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "verification/verify_death_boundary.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "verification/verify_viewport_adapter.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "verification/verify_thz2_breakable.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "verification/verify_thz2_loops_twist.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "verification/verify_gpz_foundation.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "verification/verify_gpz_closure.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "verification/verify_gpz_presentation.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "verification/verify_gpz_enemies.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "verification/verify_gpz_boss.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "verification/verify_thz3_boss.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "verification/verify_thz_closure.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "verification/verify_debug_select.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "verification/verify_act_completion.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\james\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "verification/verify_mghz_assets.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "source_compile": "PASS GameMaker VM runtime 2026.0.0.23, exit 0, Igor complete",
+  "fresh_extracted_package_compile": "PASS GameMaker VM runtime 2026.0.0.23, exit 0, Igor complete",
+  "package": {
+    "zip_sha256": "6f690920726863eff5dd7c4a757e0d29973c85a09f2af010a624fdb83ebf2014",
+    "files": 3093,
+    "project": "E:\\AI\\Codex\\Sonic Chaos\\SonicChaos_POC_thz1_cleanup\\build\\mghz-acceptance\\fresh-extraction\\SonicChaos_MGHZ_Foundation_20261004_M1_1\\SonicChaos_POC.yyp",
+    "gameplay_resource_parity": 2738
+  },
+  "native_evidence_reverification": [
+    "four sign-clear chains",
+    "renderer A/B and original art parity",
+    "five canonical platform cases",
+    "48 captures: 1945738 ROM-matching terrain pixels"
+  ],
+  "fall_and_monitor_classification": "33 paired source cases and 373 native rows identical to accepted parent; pre-existing shared behavior, not MGHZ regressions; no attempted fix",
+  "diff_check": "PASS; repeated on staged content before commit"
+}

@@ -47,14 +47,14 @@ if (chaos_in_level()) {
   }
  }
  // Act clear arrives only from player state $20 (type $18 -> $19 -> $20); contact alone never completes the act.
- if (!global.chaosComplete && instance_exists(OBJ_player_char) && variable_instance_exists(instance_find(OBJ_player_char,0),"chaosCore") && instance_find(OBJ_player_char,0).chaosCore.act_clear) {
+ if (!global.chaosComplete && instance_exists(chaos_goal_player()) && variable_instance_exists(chaos_goal_player(),"chaosCore") && chaos_goal_player().chaosCore.act_clear) {
   chaos_act_complete();
  }
  if (global.chaosGoalContact || (global.chaosComplete && !chaos_is_thz3() && chaos_gpz_act()!=3)) {
   with(OBJ_count_time) alarm[0] = -1;
  }
- if (global.chaosGoalContact && !global.chaosComplete && instance_exists(OBJ_player_char) && instance_exists(OBJ_chaos_object_18) && variable_instance_exists(instance_find(OBJ_player_char,0),"chaosCore")) {
-  chaos_goal_trace(instance_find(OBJ_player_char,0).chaosCore, instance_find(OBJ_chaos_object_18,0).x);
+ if (global.chaosGoalContact && !global.chaosComplete && instance_exists(chaos_goal_player()) && instance_exists(OBJ_chaos_object_18) && variable_instance_exists(chaos_goal_player(),"chaosCore")) {
+  chaos_goal_trace(chaos_goal_player().chaosCore, instance_find(OBJ_chaos_object_18,0).x);
  }
 }
 

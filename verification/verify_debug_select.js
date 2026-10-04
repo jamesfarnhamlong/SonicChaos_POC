@@ -9,7 +9,7 @@ let nextRoom, writes = 0, controls, rings;
 Object.assign(c, {ROM_chaos_debug_select: 9001, ROM_menu_title: 9002,
     OBJ_chaos_controls: 9003, OBJ_chaos_ring_manager: 9004, OBJ_effect_fade_in: 9005,
     game_set_speed: () => {}, gamespeed_fps: 0, SCR_screen: () => {},
-    room_exists: v => [h.ids.ROM_chaos_thz1,h.ids.ROM_chaos_thz2,h.ids.ROM_chaos_thz3,h.ids.ROM_chaos_gpz1,h.ids.ROM_chaos_gpz2,h.ids.ROM_chaos_gpz3].includes(v),
+    room_exists: v => [h.ids.ROM_chaos_thz1,h.ids.ROM_chaos_thz2,h.ids.ROM_chaos_thz3,h.ids.ROM_chaos_gpz1,h.ids.ROM_chaos_gpz2,h.ids.ROM_chaos_gpz3,h.ids.ROM_chaos_mghz1,h.ids.ROM_chaos_mghz2,h.ids.ROM_chaos_mghz3].includes(v),
     room_goto: v => {nextRoom = v;}, instance_activate_all: () => {}, audio_stop_all: () => {},
     ini_open: () => {writes++;}, ini_write_real: () => {}, ini_close: () => {},
     score: 0, string: String, vk_escape: 27, surface_exists: () => false});
@@ -37,7 +37,7 @@ const originalDepth = c.instance_create_depth;
 c.instance_create_depth = (x,y,d,o) => o === c.OBJ_chaos_ring_manager ? c.instance_create(x,y,o) : originalDepth(x,y,d,o);
 const entries = c.chaos_debug_entries();
 assert.equal(entries.length,21);
-assert.equal(entries.filter(e=>e.enabled).length,6);
+assert.equal(entries.filter(e=>e.enabled).length,9);
 assert.deepEqual(Array.from(entries.slice(0,18),e=>e.act),Array.from({length:18},(_,i)=>i%3+1));
 assert.equal(new Set(entries.slice(0,18).map(e=>e.zone)).size,6);
 assert(entries.slice(18).every(e=>e.classification==='test' && !e.enabled));

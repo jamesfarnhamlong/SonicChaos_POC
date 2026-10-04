@@ -1,0 +1,216 @@
+{
+  "research_commit": "ac04dfe4d3d7aedea394948811da67eba83782bd",
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "assets": [
+    {
+      "resource": "SPR_chaos_mghz_block_9b",
+      "frame": 0,
+      "rgba_sha256": "7f93ca2d23ed049d459d305e1eb96b532481f1a7eb3c9d561ba80ad2095f6afe"
+    },
+    {
+      "resource": "SPR_chaos_mghz_block_9c",
+      "frame": 0,
+      "rgba_sha256": "bda3b2c32ceb9c2c7e7494de4d9ec1063cb87e60392c1c0cb580709d0ecf669b"
+    },
+    {
+      "resource": "SPR_chaos_mghz_block_9d",
+      "frame": 0,
+      "rgba_sha256": "27807325a3f26b274112899092185ebcce20719664b0fc7c2228e763b008caa5"
+    },
+    {
+      "resource": "SPR_chaos_mghz_blocks",
+      "frame": 0,
+      "rgba_sha256": "4a6733fd7731c520402c346258ff436d137c8a6f09c32dc24a1608041fdc1f52"
+    },
+    {
+      "resource": "SPR_chaos_mghz_foreground",
+      "frame": 0,
+      "rgba_sha256": "23016ebdbdb81f65ab3d295867f897471f36d7eaf9e182c8f503d339f59cbf0b"
+    },
+    {
+      "resource": "SPR_chaos_mghz_monitor_01",
+      "frame": 0,
+      "rgba_sha256": "7c54075af06a66d42e7d543aa3b6d56c6bb314dceb63b1672f58a046e810d94b"
+    },
+    {
+      "resource": "SPR_chaos_mghz_monitor_01",
+      "frame": 1,
+      "rgba_sha256": "2c499d9a02a682b97c1f3b60776ed6da7dfbbecdbcbbecf9e4cfd4c0b9a162a1"
+    },
+    {
+      "resource": "SPR_chaos_mghz_monitor_02",
+      "frame": 0,
+      "rgba_sha256": "f38115b6d65355b40364f341fb863ffc242f1d8ce45970fb5a6225bcc474beef"
+    },
+    {
+      "resource": "SPR_chaos_mghz_monitor_02",
+      "frame": 1,
+      "rgba_sha256": "2c499d9a02a682b97c1f3b60776ed6da7dfbbecdbcbbecf9e4cfd4c0b9a162a1"
+    },
+    {
+      "resource": "SPR_chaos_mghz_monitor_06",
+      "frame": 0,
+      "rgba_sha256": "95b24bb5629f305f8346ed024d4aae8437886684705145157f9dba0cef584b26"
+    },
+    {
+      "resource": "SPR_chaos_mghz_monitor_06",
+      "frame": 1,
+      "rgba_sha256": "2c499d9a02a682b97c1f3b60776ed6da7dfbbecdbcbbecf9e4cfd4c0b9a162a1"
+    },
+    {
+      "resource": "SPR_chaos_mghz_palette_11",
+      "frame": 0,
+      "rgba_sha256": "88909a69a2c6886829ee8f3337fcf48c25edc08ab786c6a607aba1850ac6c486"
+    },
+    {
+      "resource": "SPR_chaos_mghz_palette_11_front",
+      "frame": 0,
+      "rgba_sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "resource": "SPR_chaos_mghz_palette_4",
+      "frame": 0,
+      "rgba_sha256": "522f073352c292d4d40256648f9652a16eb31a403b1f2b6a56574f66e6c7ea97"
+    },
+    {
+      "resource": "SPR_chaos_mghz_palette_4_front",
+      "frame": 0,
+      "rgba_sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "resource": "SPR_chaos_mghz_platform",
+      "frame": 0,
+      "rgba_sha256": "c6d431115738db1dae180722aa9b0670fa88f5bf7ea744e20ec6075347f811f2"
+    },
+    {
+      "resource": "SPR_chaos_mghz_poof",
+      "frame": 0,
+      "rgba_sha256": "183a78d08a79b62520f974d306e4f527f049ff4c6c1c4f32d06927d1e10758f6"
+    },
+    {
+      "resource": "SPR_chaos_mghz_poof",
+      "frame": 1,
+      "rgba_sha256": "2d3815a0efc12a46a3aaa2a8752525ea62c7828b08b74156c4a6bf8db065a2f7"
+    },
+    {
+      "resource": "SPR_chaos_mghz_poof",
+      "frame": 2,
+      "rgba_sha256": "9793573b5f44dc98393556fdbf3ff79bc30fcfa46312870f0cd551b2c487c854"
+    },
+    {
+      "resource": "SPR_chaos_mghz_ring",
+      "frame": 0,
+      "rgba_sha256": "4800ff23c70e20ffa39db4b3194f1a84092bba45ae7608fb379c31753acbb628"
+    },
+    {
+      "resource": "SPR_chaos_mghz_ring",
+      "frame": 1,
+      "rgba_sha256": "888a7948a4858c4a39aa324ed5594a707d8dce2905e486bc5259a12083f5d337"
+    },
+    {
+      "resource": "SPR_chaos_mghz_ring",
+      "frame": 2,
+      "rgba_sha256": "fe6a46239b98ed3c16273ed0e2e34d93046beb48144a2c9d0a05106206686b27"
+    },
+    {
+      "resource": "SPR_chaos_mghz_ring",
+      "frame": 3,
+      "rgba_sha256": "4433456c41e88a1c7bf8d861c5b6e0c12f5ce71e5d8a06a023f52499d7d17ac3"
+    },
+    {
+      "resource": "SPR_chaos_mghz_ring",
+      "frame": 4,
+      "rgba_sha256": "e2c1e7eafcd14cbe8a6719f35c5207adf41b7aadff009044c0fd0762ed9c1b74"
+    },
+    {
+      "resource": "SPR_chaos_mghz_ring",
+      "frame": 5,
+      "rgba_sha256": "7ada550252c37381d52d9d6afddc15b69b36fbefd91d2c09254ed1f02158d186"
+    },
+    {
+      "resource": "SPR_chaos_mghz_sign",
+      "frame": 0,
+      "rgba_sha256": "de3c9431b8ab987991f86c55e4d3800e7c2174e1a1afd5908a64ad0663843310"
+    },
+    {
+      "resource": "SPR_chaos_mghz_sign",
+      "frame": 1,
+      "rgba_sha256": "46d7285cdd0dc02b1f71b665fc11e50f7f3e2a2aff2cbfa7d4db04c51cdd3435"
+    },
+    {
+      "resource": "SPR_chaos_mghz_sign",
+      "frame": 2,
+      "rgba_sha256": "d1ae3fa36ac58da0efc71913b1b437db04cad57147db8e1bfcbe3557f6298e8b"
+    },
+    {
+      "resource": "SPR_chaos_mghz_sign",
+      "frame": 3,
+      "rgba_sha256": "f815963df14f9494a7466e80b2e67bc97936754417519358d7cb251b05303ae7"
+    },
+    {
+      "resource": "SPR_chaos_mghz_sign",
+      "frame": 4,
+      "rgba_sha256": "123cbc6539fc22e57f3f291d754a7339b7425b2182aca73dea8adef49c9b4105"
+    },
+    {
+      "resource": "SPR_chaos_mghz_spike",
+      "frame": 0,
+      "rgba_sha256": "c24712fcf27a9408da659bbfb138813eb5b8bcabfa3baa9d2a77333b7d8a6b2c"
+    },
+    {
+      "resource": "SPR_chaos_mghz_spring",
+      "frame": 0,
+      "rgba_sha256": "702411d610685cfff69d28ca67590a19d14a3b607da6404dd8940e5f34c7a142"
+    },
+    {
+      "resource": "SPR_chaos_mghz_strip",
+      "frame": 0,
+      "rgba_sha256": "abe7c5297b4b81e7512f3b6a07e8301997111307ff786a5f67faa3ba484395de"
+    },
+    {
+      "resource": "SPR_chaos_mghz_strip",
+      "frame": 1,
+      "rgba_sha256": "86b11e11812984722f31dceef306f3ac27fc324c6a90fd40f1b544c1c298f276"
+    },
+    {
+      "resource": "SPR_chaos_mghz_strip",
+      "frame": 2,
+      "rgba_sha256": "abe7c5297b4b81e7512f3b6a07e8301997111307ff786a5f67faa3ba484395de"
+    },
+    {
+      "resource": "SPR_chaos_mghz_strip_front",
+      "frame": 0,
+      "rgba_sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "resource": "SPR_chaos_mghz_strip_front",
+      "frame": 1,
+      "rgba_sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "resource": "SPR_chaos_mghz_strip_front",
+      "frame": 2,
+      "rgba_sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "resource": "SPR_chaos_mghz_terrain_ring",
+      "frame": 0,
+      "rgba_sha256": "4800ff23c70e20ffa39db4b3194f1a84092bba45ae7608fb379c31753acbb628"
+    },
+    {
+      "resource": "SPR_chaos_mghz_terrain_ring",
+      "frame": 1,
+      "rgba_sha256": "888a7948a4858c4a39aa324ed5594a707d8dce2905e486bc5259a12083f5d337"
+    },
+    {
+      "resource": "SPR_chaos_mghz_terrain_ring",
+      "frame": 2,
+      "rgba_sha256": "4433456c41e88a1c7bf8d861c5b6e0c12f5ce71e5d8a06a023f52499d7d17ac3"
+    },
+    {
+      "resource": "SPR_chaos_mghz_terrain_ring",
+      "frame": 3,
+      "rgba_sha256": "fe6a46239b98ed3c16273ed0e2e34d93046beb48144a2c9d0a05106206686b27"
+    }
+  ]
+}

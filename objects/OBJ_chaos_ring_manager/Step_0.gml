@@ -1,4 +1,4 @@
-if (chaos_is_gpz()) {
+if (chaos_is_gpz() || chaos_is_mghz()) {
     // Original terrain tile upload $7450A: four frames, eight updates each.
     chaosRingFrame = (chaosRingGlobalFrame div 8) mod 4;
 } else {

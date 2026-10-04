@@ -1,0 +1,18 @@
+[
+  {
+    "width": 256,
+    "plunge_update": 99.0,
+    "counter": 25,
+    "death_update": 101.0,
+    "max_camera_step": 7.0,
+    "status": "PASS"
+  },
+  {
+    "width": 348,
+    "plunge_update": 99.0,
+    "counter": 25,
+    "death_update": 101.0,
+    "max_camera_step": 7.0,
+    "status": "PASS"
+  }
+]

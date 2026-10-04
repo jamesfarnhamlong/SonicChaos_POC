@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "canonical_blocks": 249,
+  "runtime_cells": 11070,
+  "ring_frames": 4,
+  "strip_frames": 3,
+  "palette_masks": "pixel-exact both priority passes",
+  "mapping_negative_control": "nonaligned GPZ table rejects table-relative formula",
+  "ROM_verified": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607"
+}

@@ -38,6 +38,15 @@ function chaos_goal_contact(cp_px, cp_py, cp_vx, cp_requested, cp_sx, cp_sy) {
 
 /// Sign state machine ($18 states 3 -> 4 -> 5). tick counts updates from the contact update (= 0).
 /// hop_yu is the 8.8 offset from the canonical anchor (the instance keeps its canonical y; only drawing adds the offset).
+/// Both playable object variants share one canonical core. A spin instance can
+/// remain active after its core returns to walking; select by core, not sprite.
+function chaos_goal_player() {
+    var cp_p=instance_find(OBJ_player,0);
+    if (!instance_exists(cp_p)) return noone;
+    if (cp_p.object_index != OBJ_player_char && cp_p.object_index != OBJ_player_char_spin) return noone;
+    if (!variable_instance_exists(cp_p,"chaosCore")) return noone;
+    return cp_p;
+}
 function chaos_goal_sign_new() {
     return {state:3, tick:0, hop_yu:0, hop_vy:0, moved:false, contact:false, spawn_child:false, child_spawned:false};
 }

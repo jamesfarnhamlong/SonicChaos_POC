@@ -39,7 +39,7 @@ for (var cp_i=0; cp_i<chaosRingSourceCount; cp_i++) {
     if (!cp_expected) continue;
     chaosRingExpectedThisFrame[cp_i] = true;
     chaosRingExpectedInCamera++;
-    draw_sprite(chaos_is_gpz() ? SPR_chaos_gpz_terrain_ring : SPR_ring,cp_frame,cp_world_x-cp_cam_x,cp_world_y-cp_cam_y);
+    draw_sprite(chaos_is_mghz() ? SPR_chaos_mghz_terrain_ring : (chaos_is_gpz() ? SPR_chaos_gpz_terrain_ring : SPR_ring),cp_frame,cp_world_x-cp_cam_x,cp_world_y-cp_cam_y);
     chaosRingDrawnThisFrame[cp_i] = true;
     chaosRingDrawnToSurface++;
 }
@@ -72,7 +72,7 @@ for (var cp_t09=0; cp_t09<chaosType09SourceCount; cp_t09++) {
     var cp_t09_ring_frame = cp_t09_cycle == 0 ? 0 : (cp_t09_cycle == 1 ? 1 : (cp_t09_cycle == 2 ? 3 : 2));
     var cp_t09_frame = cp_t09_state == 1 ? cp_t09_ring_frame :
         4+(((chaosType09SparkleTimer[cp_t09]-1) div 4) mod 2);
-    draw_sprite(chaos_is_gpz() ? SPR_chaos_gpz_ring : SPR_chaos_object_09,cp_t09_frame,
+    draw_sprite(chaos_is_mghz() ? SPR_chaos_mghz_ring : (chaos_is_gpz() ? SPR_chaos_gpz_ring : SPR_chaos_object_09),cp_t09_frame,
         cp_t09_draw_x-cp_cam_x,cp_t09_draw_y-cp_cam_y);
     chaosType09DrawnThisFrame[cp_t09] = true;
     chaosRingDrawnToSurface++;

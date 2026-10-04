@@ -1,5 +1,18 @@
+function chaos_mghz_act() {
+    if (room == ROM_chaos_mghz1) return 1;
+    if (room == ROM_chaos_mghz2) return 2;
+    if (room == ROM_chaos_mghz3) return 3;
+    return 0;
+}
+function chaos_is_mghz() { return chaos_mghz_act() != 0; }
+function chaos_mghz_start() {
+ switch (chaos_mghz_act()) { case 1: return SCR_chaos_mghz1_start(); case 2: return SCR_chaos_mghz2_start(); case 3: return SCR_chaos_mghz3_start(); } return [0,0];
+}
+function chaos_mghz_camera() {
+ switch (chaos_mghz_act()) { case 1: return SCR_chaos_mghz1_camera(); case 2: return SCR_chaos_mghz2_camera(); case 3: return SCR_chaos_mghz3_camera(); } return [0,0];
+}
 /// Shared level-selection helpers. THZ1 behaviour is unchanged; THZ2 reuses the same core.
-function chaos_in_level() { return room == ROM_chaos_thz1 || room == ROM_chaos_thz2 || room == ROM_chaos_thz3 || chaos_is_gpz(); }
+function chaos_in_level() { return room == ROM_chaos_thz1 || room == ROM_chaos_thz2 || room == ROM_chaos_thz3 || chaos_is_gpz() || chaos_is_mghz(); }
 function chaos_gpz_act() {
     if (room == ROM_chaos_gpz1) return 1;
     if (room == ROM_chaos_gpz2) return 2;
@@ -16,10 +29,12 @@ function chaos_gpz_camera() {
     return [0,0];
 }
 function chaos_level_terrain_rings() {
+ switch (chaos_mghz_act()) { case 1: return SCR_chaos_mghz1_terrain_rings(); case 2: return SCR_chaos_mghz2_terrain_rings(); case 3: return SCR_chaos_mghz3_terrain_rings(); }
     switch (chaos_gpz_act()) { case 1: return SCR_chaos_gpz1_terrain_rings(); case 2: return SCR_chaos_gpz2_terrain_rings(); case 3: return SCR_chaos_gpz3_terrain_rings(); }
     return chaos_is_thz3() ? SCR_chaos_thz3_terrain_rings() : (chaos_is_thz2() ? SCR_chaos_thz2_terrain_rings() : SCR_chaos_ring_data());
 }
 function chaos_level_type09() {
+ switch (chaos_mghz_act()) { case 1: return SCR_chaos_mghz1_type09(); case 2: return SCR_chaos_mghz2_type09(); case 3: return SCR_chaos_mghz3_type09(); }
     switch (chaos_gpz_act()) { case 1: return SCR_chaos_gpz1_type09(); case 2: return SCR_chaos_gpz2_type09(); case 3: return SCR_chaos_gpz3_type09(); }
     return chaos_is_thz3() ? SCR_chaos_thz3_type09() : (chaos_is_thz2() ? SCR_chaos_thz2_type09() : SCR_chaos_type09_data());
 }
@@ -40,6 +55,19 @@ function chaos_level_install_layout() {
     // ROM row stride = map width: 128 in THZ1 / THZ2, 80 in THZ3 (SCR_cc_lookup, ring probe and loop layout read it).
     global.chaosMapWidth = chaos_is_thz3() ? SCR_chaos_thz3_map_width() : 128;
     global.chaosConsumedPlatforms = [];
+    if (chaos_is_mghz()) {
+        var cp_ids;
+        switch (chaos_mghz_act()) {
+            case 1: global.chaosMapWidth = SCR_chaos_mghz1_map_width(); cp_ids = SCR_chaos_mghz1_tile_ids(); SCR_chaos_mghz1_profiles(); break;
+            case 2: global.chaosMapWidth = SCR_chaos_mghz2_map_width(); cp_ids = SCR_chaos_mghz2_tile_ids(); SCR_chaos_mghz2_profiles(); break;
+            case 3: global.chaosMapWidth = SCR_chaos_mghz3_map_width(); cp_ids = SCR_chaos_mghz3_tile_ids(); SCR_chaos_mghz3_profiles(); break;
+        }
+        global.chaosSourceTileIds = cp_ids;
+        global.chaosTileIds = array_create(array_length(cp_ids),0);
+        array_copy(global.chaosTileIds,0,cp_ids,0,array_length(cp_ids));
+        global.chaosBrokenCells = [];
+        return;
+    }
     if (chaos_is_gpz()) {
         var cp_ids;
         switch (chaos_gpz_act()) {
@@ -74,6 +102,7 @@ function chaos_dev_thz2_requested() {
 /// its raw record; each instance keeps its placement provenance (chaosPlacement*). Unsupported types are counted, never guessed.
 /// Type $09 is deliberately not instantiated here: the ring manager owns those records (SCR_chaos_thz2_type09).
 function chaos_level_object_rows() {
+ switch (chaos_mghz_act()) { case 1: return SCR_chaos_mghz1_objects(); case 2: return SCR_chaos_mghz2_objects(); case 3: return SCR_chaos_mghz3_objects(); }
     switch (chaos_gpz_act()) { case 1: return SCR_chaos_gpz1_objects(); case 2: return SCR_chaos_gpz2_objects(); case 3: return SCR_chaos_gpz3_objects(); }
     if (chaos_is_thz2()) return SCR_chaos_thz2_objects();
     if (chaos_is_thz3()) return SCR_chaos_thz3_objects();
@@ -88,6 +117,7 @@ function chaos_level_spawn_objects() {
     for (var cp_i = 0; cp_i < array_length(cp_rows); cp_i++) {
         var cp_r = cp_rows[cp_i];
         var cp_type = cp_r[3];
+        if (chaos_is_mghz() && (cp_type == $21 || cp_type == $24 || cp_type == $2E || cp_type == $2F || cp_type == $56 || cp_type == $57 || cp_type == $58 || (cp_type == $10 && cp_r[5] == $04))) { global.chaosSkippedByType[cp_type]++; continue; }
         var cp_inst = noone;
         switch (cp_type) {
             case $09: break; // ring manager
@@ -120,6 +150,13 @@ function chaos_level_spawn_objects() {
 function chaos_type10_configure(cp_inst, cp_param) {
     cp_inst.chaosParameter = cp_param;
     cp_inst.chaosGraphicsSelector = cp_param;
+    if (chaos_is_mghz()) {
+        switch (cp_param) {
+            case 1: cp_inst.sprite_index=SPR_chaos_mghz_monitor_01; break;
+            case 2: cp_inst.sprite_index=SPR_chaos_mghz_monitor_02; break;
+            case 6: cp_inst.sprite_index=SPR_chaos_mghz_monitor_06; break;
+        } return;
+    }
     if (chaos_is_gpz()) {
         switch (cp_param) {
             case 1: cp_inst.sprite_index = SPR_chaos_gpz_monitor_01; break;
@@ -168,8 +205,8 @@ function chaos_spawn_type28(cp_r) {
     if (cp_r[5] != $0A && cp_r[5] != $84 && cp_r[5] != $83 && cp_r[5] != $89 && cp_r[5] != $05) return noone;
     var cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_platform);
     chaos_platform28_configure(cp_inst, cp_r[5], cp_r[7]); // the THZ1 Create event keys off THZ1 X values; the canonical row replaces it
-    if (chaos_is_gpz()) {
-        cp_inst.sprite_index = SPR_chaos_gpz_platform;
+    if (chaos_is_gpz() || chaos_is_mghz()) {
+        cp_inst.sprite_index = chaos_is_mghz() ? SPR_chaos_mghz_platform : SPR_chaos_gpz_platform;
         cp_inst.chaosGpzLifecycle = true;
         cp_inst.chaosLive=false; cp_inst.chaosAsleep=true; cp_inst.chaosScanTick=0; cp_inst.chaosInitialFillDone=false;
         cp_inst.chaosPlacementX = cp_r[1]; cp_inst.chaosPlacementY = cp_r[2];
@@ -221,6 +258,13 @@ function chaos_act_index_for_room(cp_room) {
     }
     return 0;
 }
+/// Presentation metadata also covers developer-launched acts outside save progression.
+function chaos_current_act_number() {
+    var cp_act=chaos_mghz_act();
+    if (cp_act == 0) cp_act=chaos_gpz_act();
+    if (cp_act != 0) return cp_act;
+    return chaos_act_entry(chaos_act_index_for_room(room)).act;
+}
 
 /// Final act-clear handoff, shared by every act. Called once, when player state $20 sets the act-clear flag
 /// (SCR_cc_state32_tick, ROM $83A6 -> $D293). Sign acts stop at $18 contact; THZ3's boss does not stop it.
@@ -249,8 +293,8 @@ function chaos_goal_begin(cp_sign) {
 /// Camera for the act-clear chain, applied from the zone's end step: the recovered pan/freeze (chaos_goal_pan_step) driven by the
 /// live view. While pan mode is active the follow camera is off on BOTH axes, like the ROM ($5832 is skipped in pan mode).
 function chaos_goal_camera_step() {
-    if (!global.chaosPan.active || !instance_exists(OBJ_player_char)) return;
-    var cp_p = instance_find(OBJ_player_char,0);
+    if (!global.chaosPan.active || !instance_exists(chaos_goal_player())) return;
+    var cp_p = chaos_goal_player();
     if (!variable_instance_exists(cp_p,"chaosCore")) return;
     var cp_core = cp_p.chaosCore;
     var cp_vp = chaos_vp_current();

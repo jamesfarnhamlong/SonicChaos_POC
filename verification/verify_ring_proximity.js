@@ -96,6 +96,6 @@ const oldDraw=cp.spawnSync('git',['show','HEAD:objects/OBJ_chaos_ring_manager/Dr
 // verify_gpz_presentation.js checks that clock and unchanged THZ timing directly.
 // Normalize only this authorized selection change; lock all draw coordinates,
 // type-$09 normal/sparkle selection and the rest of the accepted presentation.
-const draw=rd('objects/OBJ_chaos_ring_manager/Draw_0.gml').replace('chaos_is_gpz() ? SPR_chaos_gpz_terrain_ring : SPR_ring','SPR_ring').replace('chaos_is_gpz() ? SPR_chaos_gpz_ring : SPR_chaos_object_09','SPR_chaos_object_09').replace('var cp_frame = floor(chaosRingFrame);','var cp_frame = floor(chaosRingFrame) mod max(1,sprite_get_number(SPR_ring));').replace(/\r\n/g,'\n');
+const draw=rd('objects/OBJ_chaos_ring_manager/Draw_0.gml').replace('chaos_is_mghz() ? SPR_chaos_mghz_terrain_ring : (chaos_is_gpz() ? SPR_chaos_gpz_terrain_ring : SPR_ring)','SPR_ring').replace('chaos_is_mghz() ? SPR_chaos_mghz_ring : (chaos_is_gpz() ? SPR_chaos_gpz_ring : SPR_chaos_object_09)','SPR_chaos_object_09').replace('var cp_frame = floor(chaosRingFrame);','var cp_frame = floor(chaosRingFrame) mod max(1,sprite_get_number(SPR_ring));').replace(/\r\n/g,'\n');
 eq(draw,oldDraw,'accepted draw coordinates and type-$09 animation unchanged outside GPZ terrain resource/selector integration');
 console.log(`RING PROXIMITY CHECKS PASSED (${checks} assertions, ${runs} Step_2 runs, THZ1+THZ2 records, widths 256/290/348/400/640, 4 mask shapes, 3 GM offsets)`);

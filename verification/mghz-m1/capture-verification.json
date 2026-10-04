@@ -1,0 +1,392 @@
+{
+  "status": "PASS",
+  "native_captures": 48,
+  "terrain_pixels": 1945738,
+  "camera": "controlled render fixture at canonical world coordinates",
+  "checks": [
+    {
+      "scene": "mghz1-start-256",
+      "update": 4,
+      "terrain_pixels": 38264,
+      "matched": 38264,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "mghz1-start-256",
+      "update": 8,
+      "terrain_pixels": 38264,
+      "matched": 38264,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "mghz1-start-256",
+      "update": 20,
+      "terrain_pixels": 38264,
+      "matched": 38264,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "mghz2-start-256",
+      "update": 4,
+      "terrain_pixels": 37155,
+      "matched": 37155,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "mghz2-start-256",
+      "update": 8,
+      "terrain_pixels": 37155,
+      "matched": 37155,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "mghz2-start-256",
+      "update": 20,
+      "terrain_pixels": 37155,
+      "matched": 37155,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "mghz3-start-256",
+      "update": 4,
+      "terrain_pixels": 38264,
+      "matched": 38264,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "mghz3-start-256",
+      "update": 8,
+      "terrain_pixels": 38264,
+      "matched": 38264,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "mghz3-start-256",
+      "update": 20,
+      "terrain_pixels": 38264,
+      "matched": 38264,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "oil-256",
+      "update": 4,
+      "terrain_pixels": 35360,
+      "matched": 35360,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "oil-256",
+      "update": 8,
+      "terrain_pixels": 35316,
+      "matched": 35316,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "oil-256",
+      "update": 20,
+      "terrain_pixels": 35184,
+      "matched": 35184,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "spike-3e-256",
+      "update": 4,
+      "terrain_pixels": 34966,
+      "matched": 34966,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "spike-3e-256",
+      "update": 8,
+      "terrain_pixels": 34966,
+      "matched": 34966,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "spike-3e-256",
+      "update": 20,
+      "terrain_pixels": 35911,
+      "matched": 35911,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "spike-3f-256",
+      "update": 4,
+      "terrain_pixels": 38859,
+      "matched": 38859,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "spike-3f-256",
+      "update": 8,
+      "terrain_pixels": 38264,
+      "matched": 38264,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "spike-3f-256",
+      "update": 20,
+      "terrain_pixels": 38264,
+      "matched": 38264,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "twist-256",
+      "update": 4,
+      "terrain_pixels": 40399,
+      "matched": 40399,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "twist-256",
+      "update": 8,
+      "terrain_pixels": 40698,
+      "matched": 40698,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "twist-256",
+      "update": 20,
+      "terrain_pixels": 37693,
+      "matched": 37693,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "scenery-256",
+      "update": 4,
+      "terrain_pixels": 37877,
+      "matched": 37877,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "scenery-256",
+      "update": 8,
+      "terrain_pixels": 37453,
+      "matched": 37453,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "scenery-256",
+      "update": 20,
+      "terrain_pixels": 36393,
+      "matched": 36393,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "mghz1-start-348",
+      "update": 4,
+      "terrain_pixels": 43528,
+      "matched": 43528,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "mghz1-start-348",
+      "update": 8,
+      "terrain_pixels": 43528,
+      "matched": 43528,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "mghz1-start-348",
+      "update": 20,
+      "terrain_pixels": 43528,
+      "matched": 43528,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "mghz2-start-348",
+      "update": 4,
+      "terrain_pixels": 34587,
+      "matched": 34587,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "mghz2-start-348",
+      "update": 8,
+      "terrain_pixels": 34587,
+      "matched": 34587,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "mghz2-start-348",
+      "update": 20,
+      "terrain_pixels": 34587,
+      "matched": 34587,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "mghz3-start-348",
+      "update": 4,
+      "terrain_pixels": 45448,
+      "matched": 45448,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "mghz3-start-348",
+      "update": 8,
+      "terrain_pixels": 45448,
+      "matched": 45448,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "mghz3-start-348",
+      "update": 20,
+      "terrain_pixels": 45448,
+      "matched": 45448,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "oil-348",
+      "update": 4,
+      "terrain_pixels": 42544,
+      "matched": 42544,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "oil-348",
+      "update": 8,
+      "terrain_pixels": 42500,
+      "matched": 42500,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "oil-348",
+      "update": 20,
+      "terrain_pixels": 42368,
+      "matched": 42368,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "spike-3e-348",
+      "update": 4,
+      "terrain_pixels": 44866,
+      "matched": 44866,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "spike-3e-348",
+      "update": 8,
+      "terrain_pixels": 44866,
+      "matched": 44866,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "spike-3e-348",
+      "update": 20,
+      "terrain_pixels": 46009,
+      "matched": 46009,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "spike-3f-348",
+      "update": 4,
+      "terrain_pixels": 46043,
+      "matched": 46043,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "spike-3f-348",
+      "update": 8,
+      "terrain_pixels": 45448,
+      "matched": 45448,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "spike-3f-348",
+      "update": 20,
+      "terrain_pixels": 45448,
+      "matched": 45448,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "twist-348",
+      "update": 4,
+      "terrain_pixels": 47583,
+      "matched": 47583,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "twist-348",
+      "update": 8,
+      "terrain_pixels": 47882,
+      "matched": 47882,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "twist-348",
+      "update": 20,
+      "terrain_pixels": 44877,
+      "matched": 44877,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "scenery-348",
+      "update": 4,
+      "terrain_pixels": 45957,
+      "matched": 45957,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "scenery-348",
+      "update": 8,
+      "terrain_pixels": 45533,
+      "matched": 45533,
+      "ratio": 1.0,
+      "examples": []
+    },
+    {
+      "scene": "scenery-348",
+      "update": 20,
+      "terrain_pixels": 44473,
+      "matched": 44473,
+      "ratio": 1.0,
+      "examples": []
+    }
+  ]
+}

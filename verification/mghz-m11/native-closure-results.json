@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "sign_chains": [
+    {
+      "act": 1,
+      "player": "standing",
+      "prize_table": "$A962",
+      "contact": 2.0,
+      "child": 133.0,
+      "state20": 282.0,
+      "clear": 357.0
+    },
+    {
+      "act": 1,
+      "player": "spin",
+      "prize_table": "$A962",
+      "contact": 3.0,
+      "child": 134.0,
+      "state20": 283.0,
+      "clear": 355.0
+    },
+    {
+      "act": 2,
+      "player": "standing",
+      "prize_table": "$A962",
+      "contact": 2.0,
+      "child": 133.0,
+      "state20": 282.0,
+      "clear": 357.0
+    },
+    {
+      "act": 2,
+      "player": "spin",
+      "prize_table": "$A962",
+      "contact": 3.0,
+      "child": 134.0,
+      "state20": 283.0,
+      "clear": 355.0
+    }
+  ],
+  "overlay_ab_changed_pixels": {
+    "all": 0,
+    "no-strip": 564,
+    "no-palettes": 876,
+    "none": 1440,
+    "nearest": 1302,
+    "no-foreground": 34,
+    "nearest-foreground": 34
+  },
+  "background_pixels_cleared": 197,
+  "horizontal_line": "Persists with effects disabled; absent with foreground disabled or nearest foreground sampling; absent in shipping fix.",
+  "unchanged_mghz_art_frames": 42,
+  "animated_tile_references": 412,
+  "animated_blocks": [
+    "$D2",
+    "$D3"
+  ],
+  "platform": "Historical pre-correction evidence; superseded by native-platform-correction-results.json."
+}

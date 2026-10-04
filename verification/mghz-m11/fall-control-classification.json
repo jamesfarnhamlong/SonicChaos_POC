@@ -1,0 +1,13 @@
+{
+  "classification": "PRE-EXISTING SHARED PLAYER / SOLID-CONTACT BEHAVIOR; NOT M1 REGRESSION",
+  "accepted_base": "82ebc89d68cd0d7e4d66be54a6c9954e6e2d9fed",
+  "paired_cases": 33,
+  "paired_cases_identical": true,
+  "native_gp_z2_rows": 373,
+  "native_gameplay_values_identical": true,
+  "native_fixture": "Accepted GPZ2 strip and canonical monitor #12; synthetic initial player placement/camera, unrelated enemies/spikes removed; monitor explicitly awake. No terrain mutation.",
+  "shipping_changes_this_diagnosis": false,
+  "new_zip": false,
+  "commit": "Included as diagnostic evidence in the Windows-accepted MGHZ foundation milestone; shared behaviors remain unchanged.",
+  "canonical_fidelity": "Special $14 acceleration table is ROM-derived; persistent snag and multi-strip fall still require original-game/Research comparison before any fix."
+}

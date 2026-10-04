@@ -1,0 +1,183 @@
+{
+  "status": "PASS",
+  "milestones": [
+    {
+      "scene": "mghz2-12-crush",
+      "u": 104,
+      "kind": "death",
+      "row": {
+        "scene": "mghz2-12-crush",
+        "object": "OBJ_player_death",
+        "y": 517.625,
+        "platform": [
+          {
+            "mode": 6.0,
+            "y": 530.0,
+            "vy": -256.0
+          }
+        ],
+        "vy": -1280.0,
+        "events": [
+          {
+            "owner": 10.0,
+            "y": 517.0,
+            "kind": "death"
+          }
+        ],
+        "next": 31.0,
+        "projections": [],
+        "move": 1,
+        "u": 104.0,
+        "freeze": 2.0,
+        "floor": 0,
+        "owner": 0.0,
+        "state": 1.0,
+        "rings": 5.0
+      }
+    },
+    {
+      "scene": "mghz2-13-crush",
+      "u": 136,
+      "kind": "death",
+      "row": {
+        "scene": "mghz2-13-crush",
+        "object": "OBJ_player_death",
+        "y": 421.625,
+        "platform": [
+          {
+            "mode": 6.0,
+            "y": 434.0,
+            "vy": -256.0
+          }
+        ],
+        "vy": -1280.0,
+        "events": [
+          {
+            "owner": 23.0,
+            "y": 421.0,
+            "kind": "death"
+          }
+        ],
+        "next": 31.0,
+        "projections": [],
+        "move": 1,
+        "u": 136.0,
+        "freeze": 2.0,
+        "floor": 0,
+        "owner": 0.0,
+        "state": 1.0,
+        "rings": 5.0
+      }
+    },
+    {
+      "scene": "mghz2-12-jump",
+      "u": 75,
+      "kind": "break",
+      "row": {
+        "scene": "mghz2-12-jump",
+        "object": "OBJ_player_char",
+        "y": 517.375,
+        "platform": [
+          {
+            "mode": 6.0,
+            "y": 559.0,
+            "vy": -256.0
+          }
+        ],
+        "vy": -464,
+        "events": [
+          {
+            "index": 2006.0,
+            "kind": "break"
+          }
+        ],
+        "next": 10.0,
+        "projections": [],
+        "move": 3,
+        "u": 75.0,
+        "freeze": 0.0,
+        "floor": 0,
+        "owner": 0.0,
+        "state": 10.0,
+        "rings": 5.0
+      }
+    },
+    {
+      "scene": "mghz1-10-snap",
+      "u": 194,
+      "kind": "snap",
+      "row": {
+        "scene": "mghz1-10-snap",
+        "object": "OBJ_player_char",
+        "y": 206.625,
+        "platform": [
+          {
+            "mode": 6.0,
+            "y": 230.0,
+            "vy": -256.0
+          }
+        ],
+        "vy": 832,
+        "events": [],
+        "next": 1.0,
+        "projections": [
+          {
+            "owner": 46.0,
+            "path": "SCR_cc_project_floor",
+            "before": 217.625,
+            "after": 206.625,
+            "block": 249.0,
+            "floor": 2
+          }
+        ],
+        "move": 0,
+        "u": 194.0,
+        "freeze": 0.0,
+        "floor": 2,
+        "owner": 0.0,
+        "state": 1.0,
+        "rings": 0.0
+      }
+    },
+    {
+      "scene": "mghz1-11-snap",
+      "u": 450,
+      "kind": "snap",
+      "row": {
+        "scene": "mghz1-11-snap",
+        "object": "OBJ_player_char",
+        "y": 366.625,
+        "platform": [
+          {
+            "mode": 6.0,
+            "y": 390.0,
+            "vy": -256.0
+          }
+        ],
+        "vy": 832,
+        "events": [],
+        "next": 1.0,
+        "projections": [
+          {
+            "owner": 58.0,
+            "path": "SCR_cc_project_floor",
+            "before": 377.625,
+            "after": 366.625,
+            "block": 249.0,
+            "floor": 2
+          }
+        ],
+        "move": 0,
+        "u": 450.0,
+        "freeze": 0.0,
+        "floor": 2,
+        "owner": 0.0,
+        "state": 1.0,
+        "rings": 0.0
+      }
+    }
+  ],
+  "native_cases": 5,
+  "update_index": "zero-based",
+  "source": "shipping GML in isolated fixture snapshot"
+}

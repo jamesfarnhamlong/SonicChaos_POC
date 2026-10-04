@@ -4,7 +4,10 @@
 // DEVIATION (adapter): while the GameMaker loop adapter owns the player (chaosLoopActive) no contact is evaluated; the ROM would still test it.
 function SCR_chaos_objects_phase() {
     if (!chaos_in_level()) return;
+    if (variable_global_exists("chaosCrushDeathPhase") && global.chaosCrushDeathPhase == 2) return;
     var cp_p = instance_find(OBJ_player,0);
+    if (!instance_exists(cp_p) && variable_global_exists("chaosCrushDeathPhase") && global.chaosCrushDeathPhase == 1)
+        cp_p = instance_find(OBJ_player_death,0);
     var cp_have = false;
     var cp_present = false;
     var cp_c = noone;
@@ -53,6 +56,13 @@ function SCR_chaos_objects_phase() {
     for (var cp_k = 0; cp_k < cp_count; cp_k++) {
         var cp_spike = instance_find(OBJ_chaos_spikes,cp_k);
         if (chaos_spike1b_step(cp_spike, cp_c, cp_present, cp_spike.x >= cp_left && cp_spike.x <= cp_right)) cp_changed = true;
+    }
+    if (variable_global_exists("chaosCrushDeathPhase") && global.chaosCrushDeathPhase == 1) {
+        // $4984 leaves the owner intact; the final object pass releases it.
+        if (instance_exists(cp_p) && variable_instance_exists(cp_p,"chaosCore")) {
+            cp_p.chaosCore.support=0; cp_p.chaosSupport=noone;
+        }
+        global.chaosCrushDeathPhase=2;
     }
     if (!cp_have) return;
     // GameMaker mirror of the owner ($D3C0 on the core).

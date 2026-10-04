@@ -6,7 +6,7 @@ function SCR_cc_new(cp_x, cp_y) {
     return {xu:round(cp_x*256), yu:round(cp_y*256), vx:0, vy:0,
         state:1, next:1, move:0, bg:0, contacts:0, objects:0, support:0,
         player_flags:0, plane:0, previous:0, tile:255, modifier:0,
-        foot_block:255, special:0, surface_counter:0,
+        foot_block:255, special:0, surface_counter:0, frame_counter:0,
         route_progress:0, route_x:0, route_y:0, terrain_escape:false,
         input_delta:0, surface_delta:0, maximum:1024, water:0,
         held:0, pressed:0, jump_ticks:0, sound:0, unsupported:0,
@@ -16,7 +16,7 @@ function SCR_cc_new(cp_x, cp_y) {
         camera_x:0, act_clear:false, clear_dx:289,
         // Damage ($48F7 / $48BC, platform-spike milestone): rings and the immunity inputs are supplied by the adapter each update; the core never reads GameMaker globals.
         rings:0, shield:false, immune:false, invuln:0, damage_request:0, box_contacts:0, box_ready:0, contact:0, contact_nib:0, stage_contact:0, stage_nib:0, stage_request:0, hurt_rom:false,
-        hurt_pending:false, hurt_death:false, hurt_rings_lost:0, hurt_scatter:0, hurt_shield:false};
+        hurt_pending:false, hurt_death:false, hurt_rings_lost:0, hurt_scatter:0, hurt_shield:false, crush_death:false};
 }
 function SCR_cc_merge(cp_c) {
     cp_c.contacts = cp_c.bg;
@@ -102,6 +102,18 @@ function SCR_cc_project_floor(cp_c, cp_s) {
     var cp_solid = (cp_c.previous & 128) != 0;
     // $6FBB: retained strip bit plus REQUESTED $14 bypasses any one-way support.
     if (!cp_solid && (cp_c.special & 1) != 0 && cp_c.next == 20) { cp_c.bg &= ~2; SCR_cc_merge(cp_c); return; }
+    // $7010..$7055: previous bit6-only flags plus retained oil bit. Probe
+    // four pixels lower; no shallow-penetration clamp and no speed/state edit.
+    if (!cp_solid && (cp_c.special & 2) != 0) {
+        cp_c.bg &= ~2;
+        // $7010 increments D35A without looking up another block/profile.
+        var cp_total_sink = (cp_s.vertical + ((cp_s.ay+4) & 31)) & 255;
+        if (cp_total_sink >= 32) {
+            cp_c.yu = (cp_c.yu - (cp_total_sink-32)*256 + cp_c.surface_counter*256)&16777215;
+            cp_c.bg |= 2; cp_c.modifier = cp_s.modifier;
+        }
+        SCR_cc_merge(cp_c); return;
+    }
     var cp_raw = cp_s.vertical;
     var cp_mod = cp_s.modifier;
     if ((cp_solid && (cp_raw & 63) == 32) || (!cp_solid && (cp_raw & 63) == 0)) {
@@ -346,15 +358,23 @@ function SCR_cc_floor(cp_c) {
     else if (cp_kind == 5) {
         // $6ACE (docs/platform-spike-collision-audit.md 2.2): tile & $FE != $F4, floor flag $D522 bit 1 set (after the previous surface's projection above),
         // and +$03 bit 7 (invulnerable, move & 128) clear, then the hurt entry $48F7 DIRECTLY (not through the $48BC request gate). Nothing else: no state, no speed.
-        if ((cp_s.tile & 254) != 244 && (cp_c.bg & 2) != 0 && (cp_c.move & 128) == 0) SCR_cc_terrain_hurt(cp_c);
+        if ((cp_s.tile & 254) != 244 && (cp_c.bg & 2) != 0 && (cp_c.move & 128) == 0) {
+            if (cp_c.zone == 3) { cp_c.hazard=1; SCR_cc_hurt_rom(cp_c); }
+            else SCR_cc_terrain_hurt(cp_c);
+        }
     }
     else if (cp_kind == 9 || cp_kind == 20) SCR_cc_spring(cp_c,cp_kind,cp_s.tile);
     else if (cp_kind == 23) SCR_cc_twist_enter(cp_c,cp_s.tile);
     else if (cp_kind == 13) SCR_cc_break13_floor(cp_c,cp_s); // $6B2C
     else if (cp_kind == 22) { if (cp_c.zone != 0) SCR_cc_break16_floor(cp_c,cp_s); else cp_c.unsupported=22; } // $6AE3; accepted THZ adapter remains separate
     else if (cp_kind == 25) { cp_c.special |= 1; cp_c.surface_counter = (cp_c.surface_counter+1)&255; }
+    else if (cp_kind == 27) {
+        // $6B14: $D12F counts displayed frames, not contact calls.
+        cp_c.special |= 2;
+        if ((cp_c.frame_counter & 3) == 0) cp_c.surface_counter = (cp_c.surface_counter+1)&255;
+    }
     else if (cp_kind == 0 || cp_kind == 6 || cp_kind == 7) {
-        cp_c.special &= ~3;
+        if (cp_kind == 0) cp_c.special &= ~3; // $6C4D (6/7) enters AFTER the two RES instructions.
         // $6C45/$6C4D: empty floor can request falling even when projection returned early.
         if ((cp_c.objects & 32) == 0) cp_c.bg &= ~2;
         SCR_cc_merge(cp_c);
@@ -406,7 +426,7 @@ function SCR_cc_sides(cp_c) {
             else SCR_cc_project_side(cp_c,cp_s,cp_right);
             continue;
         }
-        if (cp_kind == 5 && (cp_s.tile == 60 || cp_s.tile == 61)) {
+        if (cp_kind == 5 && cp_s.tile >= 60 && cp_s.tile <= 63) {
             // $7306/$7329: blocks $3C/$3D (flags $85, horizontal profile rows 0..15 = none, 16..31 = full) are an ordinary wall; a requested hurt state ($1E) returns without
             // pushing. The damaging side tiles $F4/$F5 do not occur in any THZ layout.
             if (cp_c.next != 30) SCR_cc_project_side(cp_c,cp_s,cp_right);
@@ -427,7 +447,13 @@ function SCR_cc_ceiling(cp_c) {
     var cp_y = floor(cp_c.yu/256);
     var cp_s = SCR_cc_lookup(floor(cp_c.xu/256),cp_y-6,cp_c.plane);
     var cp_kind = cp_s.flags & 31;
-    if (cp_kind == 13 && cp_c.support == 0) { SCR_cc_break13(cp_s.index); return; } // $7464 -> $7898
+    if (cp_kind == 13) {
+        // $7464: owner clear -> $7898; supported rider -> direct $4984.
+        // This branch precedes solid-ceiling projection and never tests rings.
+        if (cp_c.support == 0) SCR_cc_break13(cp_s.index);
+        else SCR_cc_crush_death(cp_c);
+        return;
+    }
     if (cp_kind == 28) {
         // $746E: only if the decoded underside is strictly above the player anchor.
         var cp_bottom=(cp_s.ay & 65504)+((cp_s.vertical & 64) != 0 ? (cp_s.vertical & 63) : 32);
@@ -435,11 +461,25 @@ function SCR_cc_ceiling(cp_c) {
         SCR_cc_ceiling_profile(cp_c,cp_s); return;
     }
     if (cp_kind == 20) { SCR_cc_ceiling_spring(cp_c,cp_s); return; }
+    if (cp_kind == 5) { SCR_cc_ceiling_spike(cp_c,cp_s); return; }
     if (cp_kind == 5 || cp_kind == 13 || cp_kind == 19 || cp_kind == 21) {
         cp_c.unsupported = cp_kind; return;
     }
     if ((cp_s.flags & 128) == 0 || (cp_s.ay & 65504) == (cp_y & 65504)) return;
     SCR_cc_ceiling_profile(cp_c,cp_s);
+}
+function SCR_cc_ceiling_spike(cp_c,cp_s) {
+    // $74E7: special ceiling profile, current hurt state keeps projection only.
+    var cp_height=cp_s.vertical & 63, cp_local=cp_s.ay & 31;
+    if (cp_height == 0 || (cp_height != 32 && (cp_s.vertical & 64) == 0) || cp_height < cp_local) return;
+    cp_c.yu=(cp_c.yu+(cp_height-cp_local)*256)&16777215;
+    cp_c.bg |= 1; SCR_cc_merge(cp_c);
+    if (cp_c.state == 30) return;
+    if ((cp_s.tile & 254) == 62 && (cp_c.move & 128) == 0) {
+        // Direct $48F7: $D532 == 6 does not suppress this terrain entry.
+        cp_c.hazard=1; SCR_cc_hurt_rom(cp_c); return;
+    }
+    cp_c.vy=256; cp_c.bg &= ~1;
 }
 function SCR_cc_ceiling_profile(cp_c,cp_s) {
     var cp_value = cp_s.vertical & 63;
@@ -525,6 +565,15 @@ function SCR_cc_hurt_rom(cp_c) {
     cp_c.next = 30; cp_c.invuln = 120; cp_c.move |= 193;
     cp_c.bg &= ~2; cp_c.contacts &= ~2; cp_c.hurt_rom = true; cp_c.hurt_ticks = 0;
     cp_c.input_delta = 0; cp_c.surface_delta = 0;
+}
+// $4984, reached directly by a supported rider in ceiling surface $0D.
+// The owner survives this player pass; state replacement releases it before
+// the final object move. No $48F7 ring/shield/invulnerability decision occurs.
+function SCR_cc_crush_death(cp_c) {
+    cp_c.next=31; cp_c.move |= 1; cp_c.player_flags=0;
+    cp_c.vy=-1280; cp_c.bg &= ~2; cp_c.sound=$96;
+    cp_c.crush_death=true; cp_c.hurt_pending=true; cp_c.hurt_death=true;
+    cp_c.hurt_rings_lost=0; cp_c.hurt_scatter=0; cp_c.hurt_shield=false;
 }
 // Terrain hazard entry: called by the foot handler $6ACE after it has tested +$03 bit 7 itself. Power-ups that make Sonic immune (POC adapter input) suppress it.
 function SCR_cc_terrain_hurt(cp_c) {
@@ -632,7 +681,7 @@ function SCR_cc_state32_body(cp_c) {
 // Ordinary state wrappers. Animation-script scheduling and special states remain out of scope.
 function SCR_cc_tick(cp_c) {
     cp_c.terrain_escape = false;
-    cp_c.state = cp_c.next; cp_c.sound = 0; cp_c.unsupported = 0; cp_c.hazard = 0; cp_c.hurt_pending = false;
+    cp_c.state = cp_c.next; cp_c.sound = 0; cp_c.unsupported = 0; cp_c.hazard = 0; cp_c.hurt_pending = false; cp_c.crush_death=false;
     if (cp_c.state == 34) { SCR_cc_twist_tick(cp_c); return; }
     if (cp_c.state == 19) { SCR_cc_route19_tick(cp_c); return; }
     if (cp_c.state == 17) { SCR_cc_state11_tick(cp_c); return; }

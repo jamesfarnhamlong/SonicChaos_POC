@@ -11,7 +11,7 @@ for (const n of ['SCR_chaos_motion_data', 'SCR_chaos_core_data', 'SCR_chaos_core
     vm.runInContext(gml(n), ctx, {filename: n + '.gml'});
 // The adapter file mixes GameMaker-only code; execute only the break function verbatim.
 const adapter = gml('SCR_chaos_adapter');
-vm.runInContext(adapter.slice(adapter.indexOf('function SCR_chaos_break_block')), ctx);
+vm.runInContext(adapter.slice(adapter.indexOf('function SCR_chaos_break_block'),adapter.indexOf('function SCR_chaos_break16_block')), ctx);
 ctx.SCR_chaos_motion_data(); ctx.SCR_chaos_core_data();
 
 function fresh() {

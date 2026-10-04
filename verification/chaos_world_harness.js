@@ -12,7 +12,7 @@ function source(ref, rel) {
     const r = cp.spawnSync('git', ['show', `${ref}:${rel}`], {cwd: root, maxBuffer: 1 << 28});
     return r.status === 0 ? r.stdout.toString('utf8') : null;
 }
-const SCRIPTS = ['SCR_chaos_motion_data', 'SCR_chaos_core_data', 'SCR_chaos_core', 'SCR_chaos_level_thz2_data', 'SCR_chaos_level_thz3_data', 'SCR_chaos_gpz_data', 'SCR_chaos_anim_counter_data', 'SCR_chaos_anim_counter',
+const SCRIPTS = ['SCR_chaos_motion_data', 'SCR_chaos_core_data', 'SCR_chaos_core', 'SCR_chaos_level_thz2_data', 'SCR_chaos_level_thz3_data', 'SCR_chaos_gpz_data', 'SCR_chaos_mghz_data', 'SCR_chaos_mghz_effects', 'SCR_chaos_anim_counter_data', 'SCR_chaos_anim_counter',
     'SCR_chaos_terrain_ring', 'SCR_chaos_viewport', 'SCR_chaos_lost_ring', 'SCR_chaos_placement', 'SCR_chaos_goal', 'SCR_chaos_box_contact', 'SCR_chaos_attack', 'SCR_chaos_spring', 'SCR_chaos_platform', 'SCR_chaos_damage', 'SCR_chaos_spike1b',
     'SCR_chaos_gpz_enemy', 'SCR_chaos_gpz_enemy_data', 'SCR_chaos_motion', 'SCR_chaos_adapter', 'SCR_chaos_objects', 'SCR_chaos_level', 'SCR_chaos_boss_data', 'SCR_chaos_boss', 'SCR_chaos_gpz_boss_data', 'SCR_chaos_gpz_boss'];
 
@@ -48,6 +48,7 @@ function loadHost(ref) {
         e__VW: {Object:0,XView:1,YView:2}, __view_set: (field,view,value) => { if(field===1) world.cam.x=value; if(field===2) world.cam.y=value; },
         SCR_buttons: () => { const i = world.input; g.btUp = !!i.up; g.btDown = !!i.down; g.btLeft = !!i.left; g.btRight = !!i.right; g.btSpace = !!i.jump; g.btSpacePress = !!i.jumpPress; },
         SCR_player_sprites: () => {}, draw_sprite: () => {}, draw_sprite_part: () => {}, draw_set_color: () => {}, draw_line_width: () => {}, make_color_rgb: () => 0, c_white: 0,
+        gpu_get_texfilter:()=>world.texfilter??true,gpu_set_texfilter:value=>{world.texfilter=value;},draw_sprite_part_ext:()=>{},
         keyboard_check_pressed: () => false, ord: () => 0, vk_f2: 0, parameter_count: () => 0, parameter_string: () => '',
         get room_width() { return world.roomWidth; }, get room_height() { return world.roomHeight; }, room: ids.ROM_chaos_thz1,
     });

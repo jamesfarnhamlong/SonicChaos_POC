@@ -1,7 +1,7 @@
 // Sign state 3 tests contact every update (shared overlap, movement gate); contact is NOT act completion.
 var cp_contact = false;
-if (chaosSign.state == 3 && instance_exists(OBJ_player_char)) {
-    var cp_p = instance_find(OBJ_player_char,0);
+if (chaosSign.state == 3 && instance_exists(chaos_goal_player())) {
+    var cp_p = chaos_goal_player();
     if (variable_instance_exists(cp_p,"chaosCore")) {
         var cp_c = cp_p.chaosCore;
         cp_contact = chaos_goal_contact(floor(cp_c.xu/256), floor(cp_c.yu/256), cp_c.vx, cp_c.next, x, y);

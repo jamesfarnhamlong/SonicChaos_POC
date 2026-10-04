@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "assertions": 639035,
+  "spike_paths": "head,foot,side,exempt",
+  "source": "shipped GML + canonical original-routine caches"
+}

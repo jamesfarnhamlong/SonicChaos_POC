@@ -86,6 +86,9 @@ function chaos_platform28_step(cp_o, cp_c, cp_present) {
         // $85FE only classifies contact and requests state 6. No carry until its next callback.
         if (cp_present && cp_c.vy >= 0 && chaos_platform28_support_contact(floor(cp_c.xu/256),floor(cp_c.yu/256),cp_o.chaosX,cp_o.chaosY)) {
             cp_o.chaosRequestedMode=6; cp_o.chaosTouchPhase=0;
+            // $85FE calls $033B even before ownership/carry begins. Its top
+            // contact reaches the next player pass's $D521 -> $D523 merge.
+            cp_c.box_ready |= 32;
         }
     } else if (cp_o.chaosMode == 10) {
         // $8662: movement/contact/carry precede the reversal counter ($8925).

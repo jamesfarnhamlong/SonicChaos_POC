@@ -4299,6 +4299,252 @@
         "name": "OBJ_chaos_object_51",
         "path": "objects/OBJ_chaos_object_51/OBJ_chaos_object_51.yy"
       }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz1_terrain_0",
+        "path": "sprites/SPR_chaos_mghz1_terrain_0/SPR_chaos_mghz1_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz1_terrain_1",
+        "path": "sprites/SPR_chaos_mghz1_terrain_1/SPR_chaos_mghz1_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz1_terrain_2",
+        "path": "sprites/SPR_chaos_mghz1_terrain_2/SPR_chaos_mghz1_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz1_terrain_3",
+        "path": "sprites/SPR_chaos_mghz1_terrain_3/SPR_chaos_mghz1_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_mghz1_terrain",
+        "path": "objects/OBJ_chaos_mghz1_terrain/OBJ_chaos_mghz1_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_mghz1",
+        "path": "rooms/ROM_chaos_mghz1/ROM_chaos_mghz1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz2_terrain_0",
+        "path": "sprites/SPR_chaos_mghz2_terrain_0/SPR_chaos_mghz2_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz2_terrain_1",
+        "path": "sprites/SPR_chaos_mghz2_terrain_1/SPR_chaos_mghz2_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz2_terrain_2",
+        "path": "sprites/SPR_chaos_mghz2_terrain_2/SPR_chaos_mghz2_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz2_terrain_3",
+        "path": "sprites/SPR_chaos_mghz2_terrain_3/SPR_chaos_mghz2_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_mghz2_terrain",
+        "path": "objects/OBJ_chaos_mghz2_terrain/OBJ_chaos_mghz2_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_mghz2",
+        "path": "rooms/ROM_chaos_mghz2/ROM_chaos_mghz2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz3_terrain_0",
+        "path": "sprites/SPR_chaos_mghz3_terrain_0/SPR_chaos_mghz3_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz3_terrain_1",
+        "path": "sprites/SPR_chaos_mghz3_terrain_1/SPR_chaos_mghz3_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz3_terrain_2",
+        "path": "sprites/SPR_chaos_mghz3_terrain_2/SPR_chaos_mghz3_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz3_terrain_3",
+        "path": "sprites/SPR_chaos_mghz3_terrain_3/SPR_chaos_mghz3_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_mghz3_terrain",
+        "path": "objects/OBJ_chaos_mghz3_terrain/OBJ_chaos_mghz3_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_mghz3",
+        "path": "rooms/ROM_chaos_mghz3/ROM_chaos_mghz3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_block_9b",
+        "path": "sprites/SPR_chaos_mghz_block_9b/SPR_chaos_mghz_block_9b.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_block_9c",
+        "path": "sprites/SPR_chaos_mghz_block_9c/SPR_chaos_mghz_block_9c.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_block_9d",
+        "path": "sprites/SPR_chaos_mghz_block_9d/SPR_chaos_mghz_block_9d.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_foreground",
+        "path": "sprites/SPR_chaos_mghz_foreground/SPR_chaos_mghz_foreground.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_platform",
+        "path": "sprites/SPR_chaos_mghz_platform/SPR_chaos_mghz_platform.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_ring",
+        "path": "sprites/SPR_chaos_mghz_ring/SPR_chaos_mghz_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_terrain_ring",
+        "path": "sprites/SPR_chaos_mghz_terrain_ring/SPR_chaos_mghz_terrain_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_spring",
+        "path": "sprites/SPR_chaos_mghz_spring/SPR_chaos_mghz_spring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_spike",
+        "path": "sprites/SPR_chaos_mghz_spike/SPR_chaos_mghz_spike.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_poof",
+        "path": "sprites/SPR_chaos_mghz_poof/SPR_chaos_mghz_poof.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_sign",
+        "path": "sprites/SPR_chaos_mghz_sign/SPR_chaos_mghz_sign.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_monitor_01",
+        "path": "sprites/SPR_chaos_mghz_monitor_01/SPR_chaos_mghz_monitor_01.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_monitor_02",
+        "path": "sprites/SPR_chaos_mghz_monitor_02/SPR_chaos_mghz_monitor_02.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_monitor_06",
+        "path": "sprites/SPR_chaos_mghz_monitor_06/SPR_chaos_mghz_monitor_06.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_mghz_data",
+        "path": "scripts/SCR_chaos_mghz_data/SCR_chaos_mghz_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_palette_11",
+        "path": "sprites/SPR_chaos_mghz_palette_11/SPR_chaos_mghz_palette_11.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_palette_11_front",
+        "path": "sprites/SPR_chaos_mghz_palette_11_front/SPR_chaos_mghz_palette_11_front.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_palette_4",
+        "path": "sprites/SPR_chaos_mghz_palette_4/SPR_chaos_mghz_palette_4.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_palette_4_front",
+        "path": "sprites/SPR_chaos_mghz_palette_4_front/SPR_chaos_mghz_palette_4_front.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_strip",
+        "path": "sprites/SPR_chaos_mghz_strip/SPR_chaos_mghz_strip.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_strip_front",
+        "path": "sprites/SPR_chaos_mghz_strip_front/SPR_chaos_mghz_strip_front.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_mghz_effects",
+        "path": "scripts/SCR_chaos_mghz_effects/SCR_chaos_mghz_effects.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_blocks",
+        "path": "sprites/SPR_chaos_mghz_blocks/SPR_chaos_mghz_blocks.yy"
+      }
     }
   ],
   "resourceType": "GMProject",
@@ -4398,6 +4644,24 @@
       "roomId": {
         "name": "ROM_chaos_gpz3",
         "path": "rooms/ROM_chaos_gpz3/ROM_chaos_gpz3.yy"
+      }
+    },
+    {
+      "roomId": {
+        "name": "ROM_chaos_mghz1",
+        "path": "rooms/ROM_chaos_mghz1/ROM_chaos_mghz1.yy"
+      }
+    },
+    {
+      "roomId": {
+        "name": "ROM_chaos_mghz2",
+        "path": "rooms/ROM_chaos_mghz2/ROM_chaos_mghz2.yy"
+      }
+    },
+    {
+      "roomId": {
+        "name": "ROM_chaos_mghz3",
+        "path": "rooms/ROM_chaos_mghz3/ROM_chaos_mghz3.yy"
       }
     }
   ],

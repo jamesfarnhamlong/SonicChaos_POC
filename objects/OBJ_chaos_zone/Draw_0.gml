@@ -5,6 +5,6 @@ for (var cp_lr_i=0; cp_lr_i<array_length(cp_lr_list); cp_lr_i++) {
     var cp_lr = cp_lr_list[cp_lr_i];
     var cp_lr_frame = chaos_lr_frame(cp_lr);
     if (cp_lr_frame < 0) continue;
-    draw_sprite(chaos_is_gpz() ? SPR_chaos_gpz_ring : SPR_chaos_object_09,cp_lr_frame,
+    draw_sprite(chaos_is_mghz() ? SPR_chaos_mghz_ring : (chaos_is_gpz() ? SPR_chaos_gpz_ring : SPR_chaos_object_09),cp_lr_frame,
         chaos_lr_pixel_x(cp_lr)+TYPE09_RENDER_X,chaos_lr_pixel_y(cp_lr)+TYPE09_RENDER_Y);
 }
