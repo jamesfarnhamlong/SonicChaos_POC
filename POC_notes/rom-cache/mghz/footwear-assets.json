@@ -1,0 +1,104 @@
+{
+  "research_inputs": {
+    "foundation_art": "ac04dfe4d3d7aedea394948811da67eba83782bd",
+    "footwear_audit": "150977e"
+  },
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "registration": [
+    1,
+    18
+  ],
+  "canvas": [
+    64,
+    64
+  ],
+  "anchor": [
+    32,
+    32
+  ],
+  "approved_frame_hashes_checked": {
+    "0x21": {
+      "0": [
+        "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      ],
+      "1": [
+        "57d454090ab4b9dd474b69cca64038e3d4d6db9c4b4c9585b20fcbde0742ef4a",
+        "89f75d99268721bf6a04981e1551593fcd0fe3056fa762aed547caa0583fd44a"
+      ],
+      "2": [
+        "91ae7999e1a91f26f34914dd34dd2856c2076d9b907ba20079756819a43e58ab",
+        "1f8dd18dc83f6815a8caee3fc495f0b7271225dc55aa75ccf4949a5e56817989"
+      ]
+    },
+    "0x2F": {
+      "0": [
+        "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      ],
+      "1": [
+        "476dded85ac239188c9a78b973f34b63d1d8774e41576e963882871400e36d32"
+      ],
+      "2": [
+        "46417f8f6926434e1091772c3749e5fc04ad9db6b0f451227332f5477c004d0b"
+      ],
+      "3": [
+        "28507180c0a0474240ea6d9f31ac705aa418855742857d942ec34417c86d82b9"
+      ],
+      "4": [
+        "077c1dda8d179f5d2b0f7c7328ef4f4fac9e9841a775eed1b3e8b3fbfaef211e"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "resource": "SPR_chaos_mghz_object_21",
+      "frame": 0,
+      "rgba_sha256": "afb566cf8067586693403f2122a569e1fc18ce3c49e4b0eec617e2eae5e12041"
+    },
+    {
+      "resource": "SPR_chaos_mghz_object_21",
+      "frame": 1,
+      "rgba_sha256": "c7cbdce59789c57409437e4c553cafa6bb991583da93295bfb28512eb107e957"
+    },
+    {
+      "resource": "SPR_chaos_mghz_object_21",
+      "frame": 2,
+      "rgba_sha256": "bf76337bfa838d7d52a66ff6d71364326e97f3698b4dd867cc499375eca5ccf6"
+    },
+    {
+      "resource": "SPR_chaos_mghz_object_21",
+      "frame": 3,
+      "rgba_sha256": "0995a4560dbd99fec6f0809e2fe50145d08a064f0fcaaa948cb0272e6c5cf954"
+    },
+    {
+      "resource": "SPR_chaos_mghz_spring_shoes",
+      "frame": 0,
+      "rgba_sha256": "17746d92010dce0b1ae84032b6411a52aeacb9f130165317e216a731e3ccc3ad"
+    },
+    {
+      "resource": "SPR_chaos_mghz_spring_shoes",
+      "frame": 1,
+      "rgba_sha256": "c5c7d72c3ab920e9df4016da0dd3c25d74c78c1130c49b0b6162744e2004aeea"
+    },
+    {
+      "resource": "SPR_chaos_mghz_spring_shoes",
+      "frame": 2,
+      "rgba_sha256": "9f571961b1adb31b2bd8eba2ec2e64725aef58b2b3839a180a46355111c26b73"
+    },
+    {
+      "resource": "SPR_chaos_mghz_spring_shoes",
+      "frame": 3,
+      "rgba_sha256": "326385925bf4599f59b253d7338f6e02322fa311afc0bfc0c4dc8b8cd61d8585"
+    },
+    {
+      "resource": "SPR_chaos_mghz_monitor_04",
+      "frame": 0,
+      "rgba_sha256": "7ff49b4aec5dc588a6027ab7187b74bc9c26928b14b446d2be081c0b09aec66e"
+    },
+    {
+      "resource": "SPR_chaos_mghz_monitor_04",
+      "frame": 1,
+      "rgba_sha256": "2c499d9a02a682b97c1f3b60776ed6da7dfbbecdbcbbecf9e4cfd4c0b9a162a1"
+    }
+  ]
+}

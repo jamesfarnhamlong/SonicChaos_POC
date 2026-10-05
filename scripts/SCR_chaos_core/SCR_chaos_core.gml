@@ -16,7 +16,9 @@ function SCR_cc_new(cp_x, cp_y) {
         camera_x:0, act_clear:false, clear_dx:289,
         // Damage ($48F7 / $48BC, platform-spike milestone): rings and the immunity inputs are supplied by the adapter each update; the core never reads GameMaker globals.
         rings:0, shield:false, immune:false, invuln:0, damage_request:0, box_contacts:0, box_ready:0, contact:0, contact_nib:0, stage_contact:0, stage_nib:0, stage_request:0, hurt_rom:false,
-        hurt_pending:false, hurt_death:false, hurt_rings_lost:0, hurt_scatter:0, hurt_shield:false, crush_death:false};
+        hurt_pending:false, hurt_death:false, hurt_rings_lost:0, hurt_scatter:0, hurt_shield:false, crush_death:false,
+        // Footwear (docs/powerup-shoes-audit.md): queued reward mask $D3A3, Rocket hurt result, Spring Shoes owner events for the object adapter, relaunch snapshot for the object phase.
+        reward_queue:0, hurt_rocket:false, owner_event:0, shoe_bounced:false, shoe_prev_vy:0, state11_exit:false};
 }
 function SCR_cc_merge(cp_c) {
     cp_c.contacts = cp_c.bg;
@@ -380,7 +382,7 @@ function SCR_cc_floor(cp_c) {
         SCR_cc_merge(cp_c);
         if ((cp_c.contacts & 2) == 0 && (cp_c.move & 1) == 0) {
             if (cp_c.state == 9) { cp_c.next = 10; cp_c.vy = 0; cp_c.move |= 3; cp_c.bg &= ~2; }
-            else SCR_cc_fall(cp_c);
+            else if (cp_c.state != 17) SCR_cc_fall(cp_c);   // Rocket Shoes fly over empty floor: the original fixture keeps requested state $11 and Y speed untouched (powerup-shoes.json, duration.expiry)
         }
     } else if (cp_kind != 1 && cp_kind != 2 && cp_kind != 3 && cp_kind != 4 &&
                cp_kind != 10 && cp_kind != 15 && cp_kind != 16 && cp_kind != 17 && cp_kind != 21 &&
@@ -554,11 +556,14 @@ function SCR_cc_hurt_tick(cp_c) {
 function SCR_cc_hurt_rom(cp_c) {
     cp_c.hurt_pending = true; cp_c.hurt_death = false; cp_c.hurt_rings_lost = 0; cp_c.hurt_scatter = 0; cp_c.hurt_shield = false;
     cp_c.support = 0;                                               // the state setter ($476D) releases the platform owner $D3C0
-    if (cp_c.rings <= 0 && !cp_c.shield) {
+    // $48F7 checks the CURRENT state first: Rocket Shoes keep their rings (also zero rings), consume no shield and never select death; $4942 then hurts.
+    if (cp_c.state == 17) cp_c.hurt_rocket = true;
+    else if (cp_c.rings <= 0 && !cp_c.shield) {
         cp_c.hurt_death = true; cp_c.next = 31; cp_c.vy = -1280;
         return;
     }
-    if (cp_c.shield) cp_c.hurt_shield = true;
+    if (cp_c.hurt_rocket) cp_c.reward_queue &= ~8;                  // $4905: the queued reward bit 3 is cancelled (the adapter clears selector $D532)
+    else if (cp_c.shield) cp_c.hurt_shield = true;
     else { cp_c.hurt_rings_lost = cp_c.rings; cp_c.hurt_scatter = chaos_lr_count(cp_c.rings); cp_c.rings = 0; }
     cp_c.vy = (cp_c.bg & 1) != 0 ? 256 : -1024;
     cp_c.vx = (cp_c.contacts & 8) != 0 ? 256 : -256;
@@ -613,47 +618,85 @@ function SCR_cc_damage_gate(cp_c) {
     SCR_cc_hurt_rom(cp_c);
     return true;
 }
-// Task 06: state $11 callback $3A7C. Coordinates and velocities retain the
-// core's integer 16.8 / signed 8.8 representation.
+// State $11 callback $3A7C (Rocket Shoes; docs/powerup-shoes-audit.md section 4, asm/recovered/player_state_11_handler.asm). Order: vertical input ($3AC1), viewport clamp
+// ($3B25), facing from Left/Right ($48A7), the facing direction ORed into the held input, shared movement ($3FEF), the floor tail, then the duration test.
+// Coordinates and velocities keep the core's integer 16.8 / signed 8.8 representation.
 function SCR_cc_state11_tick(cp_c) {
+    // $3AC1: Up has priority over Down. Both clamps test the SIGNED HIGH BYTE of the new speed ($FD / $03), so -$0300 stays and +$0300 clamps.
     if ((cp_c.held & 1) != 0) {
         cp_c.vy = SCR_cc_s16(cp_c.vy-64);
-        if (cp_c.vy < -768) cp_c.vy = -1024;
+        if ((cp_c.vy >> 8) < -3) cp_c.vy = -1024;
     } else if ((cp_c.held & 2) != 0) {
         cp_c.vy = SCR_cc_s16(cp_c.vy+64);
-        if (cp_c.vy > 768) cp_c.vy = 1024;
+        if ((cp_c.vy >> 8) >= 3) cp_c.vy = 1024;
+    } else {
+        // Neutral: -$20 for a nonnegative high byte, +$20 for a negative one. There is no clamp to zero, so a fractional speed oscillates around it.
+        cp_c.vy = SCR_cc_s16(cp_c.vy + ((cp_c.vy >> 8) >= 0 ? -32 : 32));
     }
-    else if (cp_c.vy > 0) cp_c.vy = max(0,cp_c.vy-32);
-    else if (cp_c.vy < 0) cp_c.vy = min(0,cp_c.vy+32);
 
-    // Original 192-line gameplay viewport limits use the integer player
-    // anchor, not animated sprite bounds.
-    var cp_integer_y = floor(cp_c.yu/256);
-    if (cp_integer_y-cp_c.state11_camera_y < 25) {
+    // $3B25: original 192-line gameplay viewport limits use the integer player anchor, not animated sprite bounds. Screen Y < 24 -> +25, >= 192 -> +191.
+    var cp_screen_y = floor(cp_c.yu/256)-cp_c.state11_camera_y;
+    if (cp_screen_y < 24) {
         cp_c.yu = (cp_c.state11_camera_y+25)*256; cp_c.vy = 0;
-    } else if (cp_integer_y-cp_c.state11_camera_y >= 192) {
+    } else if (cp_screen_y >= 192) {
         cp_c.yu = (cp_c.state11_camera_y+191)*256; cp_c.vy = 0;
     }
 
-    SCR_cc_shared(cp_c); // shared X input, terrain collision, no state-$11 gravity
+    SCR_cc_facing(cp_c);                                        // $48A7
+    cp_c.held |= (cp_c.player_flags & 16) != 0 ? 4 : 8;         // $3A89: mirrored = Left, otherwise Right; there is no neutral horizontal cruise
+    SCR_cc_shared(cp_c);                                        // $3FEF: shared X input, terrain collision, no state-$11 gravity
 
-    // Shared empty-floor handling normally requests state $0E. State $11's
-    // own callback remains active until its timer ends and only adopts the
-    // grounded/airborne contact representation here.
-    if (cp_c.state11_active) {
-        cp_c.next = 17;
-        if ((cp_c.contacts & 2) != 0) {
-            cp_c.move &= ~1;
-            if (cp_c.vy > 0) cp_c.vy = 0;
-        } else cp_c.move |= 1;
+    // $3A9D: floor-contact tail. The merged contact bit selects it; it clears the floor flag, lifts the anchor two pixels and zeros Y speed.
+    if ((cp_c.contacts & 2) != 0) {
+        cp_c.bg &= ~2;
+        cp_c.yu = (cp_c.yu-512) & 16777215;
+        cp_c.vy = 0;
     }
+
+    // Empty floor never requests falling in this state (SCR_cc_floor), so only the timer ends it. The state stays requested while the shared timer ($D44C) is nonzero.
+    if (cp_c.state11_active) cp_c.next = 17;
 
     var cp_phase = cp_c.state11_anim_tick % 24;
     cp_c.state11_frame = cp_phase < 8 ? 56 : (cp_phase < 12 ? 57 :
         (cp_phase < 20 ? 58 : 57));
     cp_c.state11_anim_tick = (cp_c.state11_anim_tick+1) % 24;
 
-    if (!cp_c.state11_active) SCR_cc_fall(cp_c);
+    // $3AB5: timer zero (the callback itself still moved/collided above) restores the music (adapter) and requests falling $0E via $463C.
+    if (!cp_c.state11_active) { cp_c.state11_exit = true; SCR_cc_fall(cp_c); }   // the adapter issues the music request ($189B) in this same update
+}
+// $48A7: Left sets the mirrored facing bit (+$04 bit 4) even when Right is also held; Right alone clears it; neither leaves it unchanged.
+function SCR_cc_facing(cp_c) {
+    if ((cp_c.held & 12) == 0) return;
+    if ((cp_c.held & 4) != 0) cp_c.player_flags |= 16;
+    else cp_c.player_flags &= ~16;
+}
+// $494F: the hurt movement without the damage flags (no invulnerability bits, no ring loss, no pending hurt event). Used directly by the state-$12 side-wall branch.
+function SCR_cc_hurt_move(cp_c) {
+    cp_c.next = 30; cp_c.contact = 0;
+    cp_c.vy = (cp_c.bg & 1) != 0 ? 256 : -1024;
+    cp_c.vx = (cp_c.contacts & 8) != 0 ? 256 : -256;
+    cp_c.move |= 1; cp_c.bg &= ~2; cp_c.contacts &= ~2;
+    cp_c.input_delta = 0; cp_c.surface_delta = 0;
+    cp_c.hurt_rom = true; cp_c.hurt_ticks = 0;
+}
+// State $12 callback $3B4E (Spring Shoes; docs/powerup-shoes-audit.md section 6). Shared movement first (ordinary gravity, ordinary horizontal control, the foot probe
+// already carries the +8 offset), then facing, then in order: action button (detach + ordinary jump), side contact (detach + hurt movement), floor contact (automatic
+// relaunch). cp_c.owner_event (3 = owner state 3, 5 = owner state 5/detach) is consumed by the GameMaker owner adapter; the core never touches the object.
+function SCR_cc_state18_tick(cp_c) {
+    SCR_cc_shared(cp_c);
+    if (cp_c.next != 18) { cp_c.owner_event = 5; return; }       // a shared handler (terrain spring, jump, ...) already replaced the state: the owner sees that and detaches
+    SCR_cc_facing(cp_c);
+    if ((cp_c.pressed & 48) != 0) {
+        cp_c.owner_event = 5; cp_c.move &= ~1;                  // $3B8E: RES airborne, then $45ED (-4.25 dry / -3.25 water, state $0A)
+        SCR_cc_jump(cp_c);
+        return;
+    }
+    if ((cp_c.contacts & 12) != 0) { cp_c.owner_event = 5; SCR_cc_hurt_move(cp_c); return; }
+    if ((cp_c.contacts & 2) == 0) return;
+    cp_c.shoe_bounced = true; cp_c.shoe_prev_vy = cp_c.vy;
+    cp_c.bg &= ~2; cp_c.move |= 1;                              // attack posture is neither read nor written
+    cp_c.vy = -1920; cp_c.yu = (cp_c.yu-256) & 16777215;
+    cp_c.next = 18; cp_c.owner_event = 3; cp_c.sound = 2;
 }
 // Player state $20 (act-clear run), handler $83A6. Input is never read. Y speed is cleared, X speed is raised by $10 per update to
 // the $0600 cap, and movement uses the shared terrain pipeline. With d = playerX - cameraX the act-clear flag is set when d reaches
@@ -682,9 +725,11 @@ function SCR_cc_state32_body(cp_c) {
 function SCR_cc_tick(cp_c) {
     cp_c.terrain_escape = false;
     cp_c.state = cp_c.next; cp_c.sound = 0; cp_c.unsupported = 0; cp_c.hazard = 0; cp_c.hurt_pending = false; cp_c.crush_death=false;
+    cp_c.owner_event = 0; cp_c.shoe_bounced = false; cp_c.hurt_rocket = false; cp_c.state11_exit = false;
     if (cp_c.state == 34) { SCR_cc_twist_tick(cp_c); return; }
     if (cp_c.state == 19) { SCR_cc_route19_tick(cp_c); return; }
     if (cp_c.state == 17) { SCR_cc_state11_tick(cp_c); return; }
+    if (cp_c.state == 18) { SCR_cc_state18_tick(cp_c); return; }
     if (cp_c.state == 32) { SCR_cc_state32_tick(cp_c); return; }
     if (cp_c.state == 30) { SCR_cc_hurt_tick(cp_c); return; }
     if ((cp_c.state == 7 && (cp_c.contacts & 8) != 0) || (cp_c.state == 8 && (cp_c.contacts & 4) != 0)) {

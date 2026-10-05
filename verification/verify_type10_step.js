@@ -13,7 +13,7 @@ function scenario(param, opts) {
     const ctx = vm.createContext({global: {playerJump: false, playerSpinDash: false}, floor: Math.floor,
         instance_find: () => player, instance_exists: () => true, OBJ_player: 1, OBJ_player_char_spin: 'spin',
         SCR_chaos_core_attach: () => {}, variable_instance_exists: (o, k) => k in o, SCR_chaos_type10_reward: (p) => rewards.push(p), SCR_chaos_enemy_score_100_bytes: () => {},
-        chaos_is_gpz: () => !!opts.gpz, SPR_chaos_gpz_poof: 'gpzPoof', SPR_chaos_object_0F: 'spr0f'});
+        chaos_is_gpz: () => !!opts.gpz, chaos_is_mghz: () => false, SPR_chaos_mghz_poof: 'mghzPoof', SPR_chaos_gpz_poof: 'gpzPoof', SPR_chaos_object_0F: 'spr0f'});
     vm.runInContext(contactSrc, ctx);
     vm.runInContext(fs.readFileSync(path.join(root, 'scripts/SCR_chaos_attack/SCR_chaos_attack.gml'), 'utf8'), ctx);
     const box = {x: 500, y: 500, chaosParameter: param, chaosState: 2, chaosVY: 0, chaosConsumed: false, chaosActive: true,

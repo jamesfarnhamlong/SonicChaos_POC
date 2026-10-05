@@ -2,6 +2,7 @@
 // Called only in ROM_chaos_thz1. Legacy movement remains in the engine sample.
 function SCR_chaos_player_init(cp_p) {
     cp_p.chaosLoopActive = false;
+    cp_p.chaosBoxContacts = 0;   // object-contact accumulator (see SCR_chaos_core_attach)
     cp_p.chaosLoopCursor = 0;
     cp_p.chaosLoopVelocity = 0;
     cp_p.chaosLoopDirection = 1;

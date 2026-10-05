@@ -22,10 +22,10 @@ function loadHost(ref) {
     const texts = {};
     for (const n of SCRIPTS) { const t = source(ref, `scripts/${n}/${n}.gml`); if (t !== null) texts[n] = t; }
     const consts = new Set();
-    for (const nm of ['OBJ_chaos_object_25','OBJ_chaos_object_2C','OBJ_chaos_gpz_smoke_0F','OBJ_chaos_object_51']) for (const ev of ['Create_0','Step_0','Draw_0']) { const t=source(ref,`objects/${nm}/${ev}.gml`); if(t) for(const m of t.matchAll(/\b(OBJ|SPR|SFX|ROM|TIME|MUS)_\w+/g)) consts.add(m[0]); }
+    for (const nm of ['OBJ_chaos_object_25','OBJ_chaos_object_2C','OBJ_chaos_gpz_smoke_0F','OBJ_chaos_object_51','OBJ_chaos_object_21','OBJ_chaos_object_2F','OBJ_chaos_object_10','OBJ_chaos_object_19','OBJ_chaos_object_18']) for (const ev of ['Create_0','Step_0','Draw_0']) { const t=source(ref,`objects/${nm}/${ev}.gml`); if(t) for(const m of t.matchAll(/\b(OBJ|SPR|SFX|ROM|TIME|MUS)_\w+/g)) consts.add(m[0]); }
     for (const t of Object.values(texts)) for (const m of t.matchAll(/\b(OBJ|SPR|SFX|ROM|TIME|MUS)_\w+/g)) consts.add(m[0]);
     const world = {player: null, platforms: [], spikes: [], bosses: [], cam: {x: 0, y: 0, w: 256, h: 192}, events: [], audio: 0, created: [], badniks: [], gpzEnemies: [], smoke: [], input: {}, roomWidth: 4096, roomHeight: 1024};
-    for (const c of ['OBJ_chaos_spikes', 'OBJ_chaos_platform', 'OBJ_player', 'OBJ_player_char', 'OBJ_player_char_spin', 'ROM_chaos_thz1', 'ROM_chaos_thz2', 'ROM_chaos_thz3']) consts.add(c);
+    for (const c of ['OBJ_chaos_spikes', 'OBJ_chaos_platform', 'OBJ_ring_stars', 'OBJ_chaos_ring_manager', 'OBJ_player', 'OBJ_player_char', 'OBJ_player_char_spin', 'ROM_chaos_thz1', 'ROM_chaos_thz2', 'ROM_chaos_thz3']) consts.add(c);
     const ids = {}; let n = 1000; for (const c of consts) ids[c] = n++;
     const objectsByType = () => ({[ids.OBJ_player]: world.player ? [world.player] : [], [ids.OBJ_player_char]: world.player ? [world.player] : [], [ids.OBJ_chaos_platform]: world.platforms, [ids.OBJ_chaos_spikes]: world.spikes, [ids.OBJ_chaos_object_50]: world.bosses.filter(o=>o.object_index===ids.OBJ_chaos_object_50), [ids.OBJ_chaos_object_51]: world.bosses.filter(o=>o.object_index===ids.OBJ_chaos_object_51), [ids.OBJ_chaos_object_25]: world.gpzEnemies.filter(o=>o.object_index===ids.OBJ_chaos_object_25&&!o.destroyed), [ids.OBJ_chaos_object_2C]: world.gpzEnemies.filter(o=>o.object_index===ids.OBJ_chaos_object_2C&&!o.destroyed)});
     const sandbox = Object.assign({}, ids, {
@@ -70,6 +70,8 @@ function loadHost(ref) {
     host.create = (o, x, y) => {
         const nm = nameOf[o];
         if (["OBJ_chaos_object_25","OBJ_chaos_object_2C","OBJ_chaos_gpz_smoke_0F"].includes(nm)) { const i=host.newInstance(nm,x,y); (nm==="OBJ_chaos_gpz_smoke_0F"?world.smoke:world.gpzEnemies).push(i);return i; }
+        // M2: mapped footwear/enemy/monitor objects created by the level loader run their shipped Create event and Step event inside frame() (after the player, as in the ROM).
+        if (['OBJ_chaos_object_21','OBJ_chaos_object_2F','OBJ_chaos_object_10','OBJ_chaos_object_19','OBJ_chaos_object_18'].includes(nm)) { const i=host.newInstance(nm,x,y); i.stepPath=`objects/${nm}/Step_0.gml`; world.badniks.push(i); return i; }
         if (nm === 'OBJ_chaos_platform' || nm === 'OBJ_chaos_spikes' || nm === 'OBJ_chaos_object_50' || nm === 'OBJ_chaos_object_51') { const i = host.newInstance(nm, x, y); (nm === 'OBJ_chaos_platform' ? world.platforms : nm === 'OBJ_chaos_spikes' ? world.spikes : world.bosses).push(i); return i; }
         world.created.push([o, x, y]); return {x, y, object_index: o};
     };

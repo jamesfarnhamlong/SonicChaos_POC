@@ -88,7 +88,7 @@ g.chaosMapWidth = 128; g.chaosTileIds = host.ids1; eq(ctx.SCR_cc_lookup(40 * 32,
     eq(spawned[0x26], 4); eq(spawned[0x10], 1); eq(spawned[0x1B], 1); eq(spawned[0x09], 0, 'type $09 belongs to the ring manager'); eq(spawned[0x50], 1, 'canonical boss record is loaded'); eq(skipped.reduce((a, b) => a + b, 0), 0);
     eq(host.world.bosses.length, 1); deep([host.world.bosses[0].x,host.world.bosses[0].y],[1936,238]); eq(host.world.bosses[0].chaosBoss.state,-1,'boss waits for right-edge creation band');
     eq(host.world.spikes.length, 1); const sp = host.world.spikes[0]; eq(sp.x, 752); eq(sp.y, 128); eq(sp.chaosBaseY, 128, 'canonical anchor is the cycle base');
-    const t10 = host.world.created.filter(c => c[0] === host.ids.OBJ_chaos_object_10); eq(t10.length, 1); deep([t10[0][1], t10[0][2]], [1456, 366]);
+    const t10 = host.world.badniks.filter(b => b.object_index === host.ids.OBJ_chaos_object_10); eq(t10.length, 1); deep([t10[0].x, t10[0].y], [1456, 366]);   // the harness now hosts real $10 instances (M2)
     eq(host.world.created.filter(c => c[0] === host.ids.OBJ_chaos_object_spring_26_normal).length, 4, 'four strong springs (parameter $00)');
     ok(rd('scripts/SCR_chaos_level/SCR_chaos_level.gml').includes('OBJ_chaos_object_50'), 'boss comes from the generic canonical loader');
     g.chaosMapWidth = 128; ctx.room = host.ids.ROM_chaos_thz1;

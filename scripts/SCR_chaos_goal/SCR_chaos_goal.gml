@@ -80,6 +80,14 @@ function chaos_goal_child_step(cp_c, cp_grounded, cp_player_in_state20) {
     return true;
 }
 
+/// Sign wake ($A87D state-2 callback; type $50 state 0 at $9765 is identical): a REQUESTED player state $12 becomes $0E. This is the only footwear clear path in the ROM besides ordinary
+/// state replacement; the owner pointer $D3A4 is never written. Returns true when it converted.
+function chaos_footwear_wake_convert(cp_core) {
+    if (cp_core.next != 18) return false;
+    cp_core.next = 14;
+    return true;
+}
+
 /// $4892: request player state $20 (the core runs the $83A6 handler from the next update).
 function chaos_goal_request_state20(cp_core) {
     cp_core.next = 32;

@@ -49,6 +49,10 @@ function SCR_chaos_object_spring_step(cp_o) {
     if (!variable_instance_exists(cp_p,"chaosCore")) SCR_chaos_core_attach(cp_p);
     var cp_c = cp_p.chaosCore;
     var cp_px = floor(cp_c.xu/256), cp_py = floor(cp_c.yu/256);
+    // Mapped $26 springs are INERT for Spring Shoes (state $12): the shoes' own rebound clears the floor flag in the update they land, and the +8 foot probe puts the wearer outside the
+    // contact window (docs/spring-shoes-presentation-audit.md 3.3). Nothing special is coded here: the ordinary gates simply never pass.
+    var cp_vy = cp_c.vy;
+    var cp_floor = (cp_c.bg & 2) != 0;
     var cp_oy = cp_o.chaosLayoutY + 12;                      // canonical rest anchor (placement Y + 12)
     var cp_strong = cp_o.chaosParameter == 0;
     // DEVIATION: the GameMaker loop adapter drives the player outside the core while a loop is active, so no contact is evaluated then (the ROM would still fire).
@@ -56,7 +60,7 @@ function SCR_chaos_object_spring_step(cp_o) {
 
     if (cp_o.chaosState == 8) {                              // span rest: trigger
         cp_o.chaosOffset = 0; cp_o.chaosDrawX = cp_o.chaosBaseX;
-        if (cp_free && chaos_spring26_gate(cp_c.vy, (cp_c.bg & 2) != 0, cp_c.next) &&
+        if (cp_free && chaos_spring26_gate(cp_vy, cp_floor, cp_c.next) &&
             chaos_spring26_span_contact(cp_px, cp_py, cp_o.chaosBaseX, cp_o.chaosSpan, cp_oy)) cp_o.chaosState = 9;
         return;
     }
@@ -71,7 +75,7 @@ function SCR_chaos_object_spring_step(cp_o) {
     }
     if (cp_o.chaosState == 7) {                              // fixed rest: contact
         cp_o.chaosOffset = 0; cp_o.chaosDrawX = cp_o.chaosBaseX;
-        if (cp_free && chaos_spring26_gate(cp_c.vy, (cp_c.bg & 2) != 0, cp_c.next) &&
+        if (cp_free && chaos_spring26_gate(cp_vy, cp_floor, cp_c.next) &&
             chaos_spring26_fixed_contact(cp_px, cp_py, cp_o.chaosBaseX, cp_oy) && chaos_spring26_launch(cp_c, cp_strong)) {
             chaos_spring26_launch_presentation(cp_p);
             cp_o.chaosState = (cp_o.chaosParameter == 1) ? 3 : 1;

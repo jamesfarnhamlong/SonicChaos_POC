@@ -194,6 +194,7 @@ function chaos_boss_runtime_phase() {
     chaos_boss_tick(cp_b,chaos_vp_current(),cp_c,cp_present);
     if (cp_b.converted) cp_inst.chaosType=cp_b.converted_age < 38 ? $0F : $FF;
     if (cp_old_state == -1 && cp_b.state == 1) global.chaosLastSoundRequest=$8C;
+    if (cp_old_state == -1 && cp_b.state != -1 && cp_present) chaos_footwear_wake_convert(cp_c); // type $50 state 0 ($9765): requested $12 -> $0E, like the sign
     if (cp_present && cp_old_state >= 6 && cp_old_state <= 18) SCR_chaos_core_publish(cp_p);
     var cp_mapping=chaos_boss_mapping(cp_b.state,cp_b.state_age);
     // State 3 requests 18 this update; frame 1 is loaded by state 18 on the next update.

@@ -1,0 +1,539 @@
+{
+ "first_state12_update_poc": 12,
+ "research_first_state12_update": 12,
+ "update_offset": 0,
+ "contacts_poc": [
+  12,
+  93,
+  174,
+  255
+ ],
+ "contacts_research": [
+  12,
+  93,
+  174,
+  255
+ ],
+ "periods_poc": [
+  81,
+  81,
+  81
+ ],
+ "periods_research": [
+  81,
+  81,
+  81
+ ],
+ "shoe_runs_poc": [
+  {
+   "state": 1,
+   "frame": 1,
+   "length": 11,
+   "first_research_u": 1
+  },
+  {
+   "state": 3,
+   "frame": 3,
+   "length": 12,
+   "first_research_u": 12
+  },
+  {
+   "state": 4,
+   "frame": 4,
+   "length": 69,
+   "first_research_u": 24
+  },
+  {
+   "state": 3,
+   "frame": 3,
+   "length": 12,
+   "first_research_u": 93
+  },
+  {
+   "state": 4,
+   "frame": 4,
+   "length": 69,
+   "first_research_u": 105
+  },
+  {
+   "state": 3,
+   "frame": 3,
+   "length": 12,
+   "first_research_u": 174
+  },
+  {
+   "state": 4,
+   "frame": 4,
+   "length": 69,
+   "first_research_u": 186
+  },
+  {
+   "state": 3,
+   "frame": 3,
+   "length": 12,
+   "first_research_u": 255
+  },
+  {
+   "state": 4,
+   "frame": 4,
+   "length": 34,
+   "first_research_u": 267
+  }
+ ],
+ "shoe_runs_research": [
+  {
+   "state": 1,
+   "frame": 1,
+   "length": 7,
+   "first": 5
+  },
+  {
+   "state": 3,
+   "frame": 3,
+   "length": 12,
+   "first": 12
+  },
+  {
+   "state": 4,
+   "frame": 4,
+   "length": 69,
+   "first": 24
+  },
+  {
+   "state": 3,
+   "frame": 3,
+   "length": 12,
+   "first": 93
+  },
+  {
+   "state": 4,
+   "frame": 4,
+   "length": 69,
+   "first": 105
+  },
+  {
+   "state": 3,
+   "frame": 3,
+   "length": 12,
+   "first": 174
+  },
+  {
+   "state": 4,
+   "frame": 4,
+   "length": 69,
+   "first": 186
+  },
+  {
+   "state": 3,
+   "frame": 3,
+   "length": 12,
+   "first": 255
+  },
+  {
+   "state": 4,
+   "frame": 4,
+   "length": 34,
+   "first": 267
+  }
+ ],
+ "player_frame_values": [
+  11
+ ],
+ "offsets_y": {
+  "0": [
+   11
+  ],
+  "1": [
+   16
+  ],
+  "2": [
+   16
+  ],
+  "3": [
+   16
+  ],
+  "4": [
+   16
+  ],
+  "5": [
+   16
+  ],
+  "6": [
+   16
+  ],
+  "7": [
+   16
+  ],
+  "8": [
+   16
+  ],
+  "9": [
+   16
+  ],
+  "10": [
+   16
+  ],
+  "11": [
+   16
+  ],
+  "12": [
+   16
+  ],
+  "13": [
+   11
+  ],
+  "-2": [
+   11
+  ],
+  "-1": [
+   11
+  ]
+ },
+ "mismatches": [],
+ "rows_compared": 31,
+ "rows_mismatching": 0,
+ "sample_rows": [
+  {
+   "u": 11,
+   "state": 14,
+   "req": 18,
+   "pframe": null,
+   "x": 1552,
+   "y": 222,
+   "vy": 784,
+   "facing": 0,
+   "shoe": {
+    "state": 1,
+    "frame": 1,
+    "tick": 7,
+    "x": 1552,
+    "y": 238,
+    "active": true
+   },
+   "frameAtCall": 1
+  },
+  {
+   "u": 12,
+   "state": 18,
+   "req": 18,
+   "pframe": 11,
+   "x": 1552,
+   "y": 225,
+   "vy": -1920,
+   "facing": 0,
+   "shoe": {
+    "state": 3,
+    "frame": 3,
+    "tick": 0,
+    "x": 1552,
+    "y": 236,
+    "active": true
+   },
+   "frameAtCall": 1
+  },
+  {
+   "u": 13,
+   "state": 18,
+   "req": 18,
+   "pframe": 11,
+   "x": 1552,
+   "y": 217,
+   "vy": -1872,
+   "facing": 0,
+   "shoe": {
+    "state": 3,
+    "frame": 3,
+    "tick": 1,
+    "x": 1552,
+    "y": 233,
+    "active": true
+   },
+   "frameAtCall": 3
+  },
+  {
+   "u": 14,
+   "state": 18,
+   "req": 18,
+   "pframe": 11,
+   "x": 1552,
+   "y": 210,
+   "vy": -1824,
+   "facing": 0,
+   "shoe": {
+    "state": 3,
+    "frame": 3,
+    "tick": 2,
+    "x": 1552,
+    "y": 226,
+    "active": true
+   },
+   "frameAtCall": 3
+  },
+  {
+   "u": 15,
+   "state": 18,
+   "req": 18,
+   "pframe": 11,
+   "x": 1552,
+   "y": 203,
+   "vy": -1776,
+   "facing": 0,
+   "shoe": {
+    "state": 3,
+    "frame": 3,
+    "tick": 3,
+    "x": 1552,
+    "y": 219,
+    "active": true
+   },
+   "frameAtCall": 3
+  },
+  {
+   "u": 16,
+   "state": 18,
+   "req": 18,
+   "pframe": 11,
+   "x": 1552,
+   "y": 196,
+   "vy": -1728,
+   "facing": 0,
+   "shoe": {
+    "state": 3,
+    "frame": 3,
+    "tick": 4,
+    "x": 1552,
+    "y": 212,
+    "active": true
+   },
+   "frameAtCall": 3
+  },
+  {
+   "u": 17,
+   "state": 18,
+   "req": 18,
+   "pframe": 11,
+   "x": 1552,
+   "y": 190,
+   "vy": -1680,
+   "facing": 0,
+   "shoe": {
+    "state": 3,
+    "frame": 3,
+    "tick": 5,
+    "x": 1552,
+    "y": 206,
+    "active": true
+   },
+   "frameAtCall": 3
+  },
+  {
+   "u": 18,
+   "state": 18,
+   "req": 18,
+   "pframe": 11,
+   "x": 1552,
+   "y": 183,
+   "vy": -1632,
+   "facing": 0,
+   "shoe": {
+    "state": 3,
+    "frame": 3,
+    "tick": 6,
+    "x": 1552,
+    "y": 199,
+    "active": true
+   },
+   "frameAtCall": 3
+  },
+  {
+   "u": 19,
+   "state": 18,
+   "req": 18,
+   "pframe": 11,
+   "x": 1552,
+   "y": 177,
+   "vy": -1584,
+   "facing": 0,
+   "shoe": {
+    "state": 3,
+    "frame": 3,
+    "tick": 7,
+    "x": 1552,
+    "y": 193,
+    "active": true
+   },
+   "frameAtCall": 3
+  },
+  {
+   "u": 20,
+   "state": 18,
+   "req": 18,
+   "pframe": 11,
+   "x": 1552,
+   "y": 171,
+   "vy": -1536,
+   "facing": 0,
+   "shoe": {
+    "state": 3,
+    "frame": 3,
+    "tick": 8,
+    "x": 1552,
+    "y": 187,
+    "active": true
+   },
+   "frameAtCall": 3
+  },
+  {
+   "u": 21,
+   "state": 18,
+   "req": 18,
+   "pframe": 11,
+   "x": 1552,
+   "y": 165,
+   "vy": -1488,
+   "facing": 0,
+   "shoe": {
+    "state": 3,
+    "frame": 3,
+    "tick": 9,
+    "x": 1552,
+    "y": 181,
+    "active": true
+   },
+   "frameAtCall": 3
+  },
+  {
+   "u": 22,
+   "state": 18,
+   "req": 18,
+   "pframe": 11,
+   "x": 1552,
+   "y": 160,
+   "vy": -1440,
+   "facing": 0,
+   "shoe": {
+    "state": 3,
+    "frame": 3,
+    "tick": 10,
+    "x": 1552,
+    "y": 176,
+    "active": true
+   },
+   "frameAtCall": 3
+  },
+  {
+   "u": 23,
+   "state": 18,
+   "req": 18,
+   "pframe": 11,
+   "x": 1552,
+   "y": 154,
+   "vy": -1392,
+   "facing": 0,
+   "shoe": {
+    "state": 3,
+    "frame": 3,
+    "tick": 11,
+    "x": 1552,
+    "y": 170,
+    "active": true
+   },
+   "frameAtCall": 3
+  },
+  {
+   "u": 24,
+   "state": 18,
+   "req": 18,
+   "pframe": 11,
+   "x": 1552,
+   "y": 149,
+   "vy": -1344,
+   "facing": 0,
+   "shoe": {
+    "state": 4,
+    "frame": 4,
+    "tick": 0,
+    "x": 1552,
+    "y": 165,
+    "active": true
+   },
+   "frameAtCall": 3
+  },
+  {
+   "u": 25,
+   "state": 18,
+   "req": 18,
+   "pframe": 11,
+   "x": 1552,
+   "y": 144,
+   "vy": -1296,
+   "facing": 0,
+   "shoe": {
+    "state": 4,
+    "frame": 4,
+    "tick": 1,
+    "x": 1552,
+    "y": 155,
+    "active": true
+   },
+   "frameAtCall": 4
+  },
+  {
+   "u": 26,
+   "state": 18,
+   "req": 18,
+   "pframe": 11,
+   "x": 1552,
+   "y": 139,
+   "vy": -1248,
+   "facing": 0,
+   "shoe": {
+    "state": 4,
+    "frame": 4,
+    "tick": 2,
+    "x": 1552,
+    "y": 150,
+    "active": true
+   },
+   "frameAtCall": 4
+  },
+  {
+   "u": 27,
+   "state": 18,
+   "req": 18,
+   "pframe": 11,
+   "x": 1552,
+   "y": 135,
+   "vy": -1200,
+   "facing": 0,
+   "shoe": {
+    "state": 4,
+    "frame": 4,
+    "tick": 3,
+    "x": 1552,
+    "y": 146,
+    "active": true
+   },
+   "frameAtCall": 4
+  },
+  {
+   "u": 28,
+   "state": 18,
+   "req": 18,
+   "pframe": 11,
+   "x": 1552,
+   "y": 130,
+   "vy": -1152,
+   "facing": 0,
+   "shoe": {
+    "state": 4,
+    "frame": 4,
+    "tick": 4,
+    "x": 1552,
+    "y": 141,
+    "active": true
+   },
+   "frameAtCall": 4
+  }
+ ]
+}

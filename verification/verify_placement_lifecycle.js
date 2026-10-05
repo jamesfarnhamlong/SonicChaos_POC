@@ -3,7 +3,7 @@
 const fs = require('fs'), vm = require('vm'), path = require('path'), assert = require('assert');
 const root = path.resolve(__dirname, '..');
 const hex = t => t.replace(/(?<![\w"])\$([0-9A-Fa-f]+)/g, '0x$1');
-const macros = t => t.replace(/#macro (\w+) (\S+)/g, 'var $1 = $2;').replace(/\bmod\b/g, '%');
+const macros = t => hex(t).replace(/#macro (\w+) (\S+)/g, 'var $1 = $2;').replace(/\bmod\b/g, '%');   // also converts $XX literals (the shared attack helper uses $0F)
 // the spawn cell is the shared viewport adapter's lifecycle band (SCR_chaos_viewport) applied to the real view
 const placementSrc = macros(fs.readFileSync(path.join(root, 'scripts/SCR_chaos_viewport/SCR_chaos_viewport.gml'), 'utf8')) + String.fromCharCode(10) +
     macros(fs.readFileSync(path.join(root, 'scripts/SCR_chaos_placement/SCR_chaos_placement.gml'), 'utf8'));
@@ -37,7 +37,8 @@ function makeWorld(originX, originY) {
     vm.runInContext(placementSrc, w.ctx); vm.runInContext(macros(fs.readFileSync(path.join(root, 'scripts/SCR_chaos_box_contact/SCR_chaos_box_contact.gml'), 'utf8')), w.ctx); vm.runInContext(macros(fs.readFileSync(path.join(root, 'scripts/SCR_chaos_attack/SCR_chaos_attack.gml'), 'utf8')), w.ctx);
     w.box = {x: originX, y: originY, chaosOriginX: originX, chaosOriginY: originY, chaosActive: false, chaosAsleep: true, chaosAge: 0, chaosScanTick: 0,
              chaosInitialFillDone: false, chaosState: 0, chaosVX: 0, chaosVY: 0, chaosCounter: 0, chaosOscTick: 0, chaosAnimTick: 0, chaosSilentDestroy: false,
-             chaosXU: originX * 256, chaosYU: originY * 256, image_index: 0, visible: false};
+             chaosXU: originX * 256, chaosYU: originY * 256, image_index: 0, visible: false,
+             chaosEnemyEX: 9, chaosEnemyEY: 14, chaosEnemyType: 0x27, chaosAltStart: false, chaosLatch: 0, chaosBit4: true, chaosInitDelay: 0, chaosOrientPending: false};   // GPZ enemy extents + M2 $21 start-path fields
     w.ctx.box = box => box; w.ctx.b = w.box; w.ctx.id = w.box;
     w.step = () => {
         const was = w.box.chaosActive;

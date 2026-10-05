@@ -272,7 +272,8 @@ function makeLife(type, ox, oy, W) {
         SCR_chaos_object_floor_project: (x, y) => ({grounded: true, y: oy}), instance_destroy: () => {}});
     for (const n of ['SCR_chaos_viewport', 'SCR_chaos_placement']) vm.runInContext(hex(rd(`scripts/${n}/${n}.gml`)), w.ctx);
     w.box = Object.assign({x: ox, y: oy, chaosOriginX: ox, chaosOriginY: oy, chaosActive: false, chaosAsleep: true, chaosAge: 0, chaosScanTick: 0, chaosInitialFillDone: false, chaosWoken: false,
-        chaosState: 0, chaosAnimTick: 0, visible: false}, t.make(ox, oy));
+        chaosState: 0, chaosAnimTick: 0, visible: false,
+        chaosAltStart: false, chaosLatch: 0, chaosBit4: true, chaosInitDelay: 0, chaosOrientPending: false}, t.make(ox, oy));   // M2 $21 start-path fields (THZ/flags $00 behaviour)
     w.ctx.b = w.box; w.ctx.id = w.box; w.src = bodyOf(t.file);
     w.script = new vm.Script(`(function(){ with (b) { ${w.src} } })()`);
     w.step = () => { const was = w.box.chaosActive; w.script.runInContext(w.ctx); if (!was && w.box.chaosActive) w.activations++; };

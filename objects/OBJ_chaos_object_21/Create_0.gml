@@ -1,4 +1,4 @@
-// THZ1 numeric object type $21. Parameters come from the six canonical records.
+// Numeric object type $21. THZ1 parameters come from the six canonical records; THZ2/THZ3/MGHZ rows override them through chaos_type21_configure.
 chaosOriginX = x;
 chaosOriginY = y;
 chaosParameter = 0;
@@ -20,7 +20,13 @@ chaosVX = -$0080;
 chaosVY = $0200;
 chaosAnimTick = 0;
 chaosDefeated = false;
+// $B210 flags bit 4 (the MGHZ start path): latch +$3F = 1 and requested state 5 instead of 3. THZ records carry flags $00 and keep states 3/4.
+chaosAltStart = false;
+chaosLatch = 0;
+chaosBit4 = true;        // object +$04 bit 4: selects the alternate art base and the mirrored coordinate stream
+chaosInitDelay = 0;      // updates spent in the init/state-switch records before the first patrol callback (alt start only)
+chaosOrientPending = false;
 image_speed = 0;
 image_index = 0;
-image_xscale = -1;
 visible = false;
+image_xscale = -1;

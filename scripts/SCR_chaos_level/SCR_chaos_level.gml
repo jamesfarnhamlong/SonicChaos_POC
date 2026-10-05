@@ -117,18 +117,19 @@ function chaos_level_spawn_objects() {
     for (var cp_i = 0; cp_i < array_length(cp_rows); cp_i++) {
         var cp_r = cp_rows[cp_i];
         var cp_type = cp_r[3];
-        if (chaos_is_mghz() && (cp_type == $21 || cp_type == $24 || cp_type == $2E || cp_type == $2F || cp_type == $56 || cp_type == $57 || cp_type == $58 || (cp_type == $10 && cp_r[5] == $04))) { global.chaosSkippedByType[cp_type]++; continue; }
+        if (chaos_is_mghz() && (cp_type == $24 || cp_type == $2E || cp_type == $56 || cp_type == $57 || cp_type == $58)) { global.chaosSkippedByType[cp_type]++; continue; } // deferred MGHZ-only runtimes; $21, $2F and the Rocket monitor are M2
         var cp_inst = noone;
         switch (cp_type) {
             case $09: break; // ring manager
             case $10: cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_object_10); chaos_type10_configure(cp_inst, cp_r[5]); break;
             case $1B: cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_spikes); break; // moving spike: anchor = canonical record (THZ3 (752,128))
             case $18: cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_object_18); break;
-            case $21: cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_object_21); chaos_type21_configure(cp_inst, cp_r[5]); break;
+            case $21: cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_object_21); chaos_type21_configure(cp_inst, cp_r[5], cp_r[4]); break;
             case $25: if (chaos_is_gpz()) { cp_inst = instance_create(cp_r[1],cp_r[2],OBJ_chaos_object_25); cp_inst.chaosParameter=cp_r[5]; } break;
             case $26: cp_inst = chaos_spawn_type26(cp_r); break;
             case $27: cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_object_27); break;
             case $28: cp_inst = chaos_spawn_type28(cp_r); break;
+            case $2F: if (chaos_is_mghz() && cp_r[5] == $00) { cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_object_2F); cp_inst.chaosParameter = cp_r[5]; } break; // Spring Shoes, numeric parameter $00 only
             case $2C: if (chaos_is_gpz()) cp_inst = instance_create(cp_r[1],cp_r[2],OBJ_chaos_object_2C); break;
             case $50: if (chaos_is_thz3()) cp_inst = instance_create(cp_r[1],cp_r[2],OBJ_chaos_object_50); break;
             case $51: if (chaos_gpz_act()==3) cp_inst=instance_create(cp_r[1],cp_r[2],OBJ_chaos_object_51); break;
@@ -154,6 +155,7 @@ function chaos_type10_configure(cp_inst, cp_param) {
         switch (cp_param) {
             case 1: cp_inst.sprite_index=SPR_chaos_mghz_monitor_01; break;
             case 2: cp_inst.sprite_index=SPR_chaos_mghz_monitor_02; break;
+            case 4: cp_inst.sprite_index=SPR_chaos_mghz_monitor_04; break; // Rocket Shoes reward icon
             case 6: cp_inst.sprite_index=SPR_chaos_mghz_monitor_06; break;
         } return;
     }
@@ -177,9 +179,12 @@ function chaos_type10_configure(cp_inst, cp_param) {
 }
 
 /// Type $21: parameter * 16 is the leftward patrol span (docs/object-21.md).
-function chaos_type21_configure(cp_inst, cp_param) {
+/// Placement flags bit 4 ($10, every MGHZ record) selects the $B210 alternate start (latch 1, states 5/6); THZ records carry $00. The MGHZ resource holds both runtime orientations.
+function chaos_type21_configure(cp_inst, cp_param, cp_flags) {
     cp_inst.chaosParameter = cp_param;
     cp_inst.chaosLeftBound = cp_inst.chaosOriginX - (cp_param << 4);
+    cp_inst.chaosAltStart = (cp_flags & $10) != 0;
+    if (cp_inst.chaosAltStart && chaos_is_mghz()) cp_inst.sprite_index = SPR_chaos_mghz_object_21;
 }
 
 /// Type $26 from a canonical row. Parameter bit 7 = span mode with width (parameter & $7F) * 16; without bit 7 the

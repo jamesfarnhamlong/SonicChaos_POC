@@ -21,18 +21,7 @@ if (chaos_in_level() && instance_exists(OBJ_player)) {
 }
 
 if (chaos_in_level()) {
- if (global.chaosPowerTimer > 0) {
-  global.chaosPowerTimer--;
-  if (global.chaosPowerTimer == 0) {
-   if (global.chaosPowerCode == $06) global.powerInv = false;
-   if (global.chaosPowerCode == $04) {
-    global.chaosLastSoundRequest = $81;
-    global.chaosMusicRestoreRequested = true;
-   }
-   // ROM $4A74 clears only codes 4 and 6 at timer zero; code 3 is not cleared (see docs/thz2-thz3-object-deltas.md).
-   if (global.chaosPowerCode != $03) global.chaosPowerCode = 0;
-  }
- }
+ // The shared power selector/timer ($D532/$D44C) now counts down inside the player update (SCR_chaos_power_tick), where the ROM does it.
  if (global.chaosNotice > 0) global.chaosNotice--;
  if (room == ROM_chaos_thz1 && instance_exists(OBJ_player_char) && !global.chaosComplete) {
   var p = instance_find(OBJ_player_char,0);

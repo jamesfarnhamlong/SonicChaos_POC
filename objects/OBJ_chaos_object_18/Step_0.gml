@@ -1,3 +1,10 @@
+// Wake ($61E1 band, 32 px beyond the right edge = screen X < 288 on the 256 px screen, EDGE(RIGHT,+32) of the live view): the state-2 callback converts a requested Spring Shoes state $12
+// to $0E once per wake. The latch re-arms when the sign leaves the lifetime window.
+var cp_cell = SCR_chaos_spawn_cell(chaos_vp_current(), x, y);
+if (cp_cell <= 1 && !chaosWoke) {
+    chaosWoke = true;
+    if (instance_exists(chaos_goal_player()) && variable_instance_exists(chaos_goal_player(),"chaosCore")) chaos_footwear_wake_convert(chaos_goal_player().chaosCore);
+} else if (cp_cell >= 3) chaosWoke = false;
 // Sign state 3 tests contact every update (shared overlap, movement gate); contact is NOT act completion.
 var cp_contact = false;
 if (chaosSign.state == 3 && instance_exists(chaos_goal_player())) {

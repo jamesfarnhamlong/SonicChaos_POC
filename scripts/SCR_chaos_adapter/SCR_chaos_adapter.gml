@@ -16,6 +16,10 @@ function SCR_chaos_core_attach(cp_p) {
     cp_p.chaosQueuedBounce = false;
     cp_p.chaosAdapterLoop = false;
     cp_p.chaosSpringVisual = false;
+    // Per-update object-contact accumulator (D523 bits 6/7/5 staged by solid objects in the object phase, merged and cleared by SCR_chaos_adapter_step). Created here, the one place every
+    // object-phase writer reaches first (objects call SCR_chaos_core_attach when no core exists), so no reader or writer ever sees it unset.
+    cp_p.chaosBoxContacts = 0;
+    cp_p.chaosShoeOwner = noone;      // $D3A4 equivalent: the attached type-$2F object (GameMaker instance id)
 }
 function SCR_chaos_core_publish(cp_p) {
     var cp_c = cp_p.chaosCore;
@@ -35,21 +39,27 @@ function SCR_chaos_core_publish(cp_p) {
     global.playerSpinDash = !cp_state11 && cp_c.next == 15;
     global.playerFly = false;
     // ROM attack posture ($D503 bit 1): the ONLY thing badnik routines read (never 'airborne'). global.playerJump above is the legacy (move & 3) approximation.
-    global.chaosAttackPosture = !cp_state11 && (cp_c.move & 2) != 0;
+    // The stored bit is published as is: Rocket entry clears it, state $11 never forces it either way, state $12 inherits it (docs/powerup-shoes-audit.md section 5/7).
+    global.chaosAttackPosture = (cp_c.move & 2) != 0;
     cp_p.chaosAttack = global.chaosAttackPosture;
 }
 function SCR_chaos_core_sprites(cp_p) {
     var cp_c = cp_p.chaosCore;
     with (cp_p) {
         SCR_player_sprites();
-        if (cp_c.vx != 0) image_xscale = sign(cp_c.vx);
+        var cp_footwear = cp_c.state == $11 || cp_c.next == $11 || cp_c.state == $12 || cp_c.next == $12;
+        // $48A7 owns the facing bit in the footwear states (a Rocket reversal changes facing while the old velocity still points the other way).
+        if (cp_footwear) image_xscale = (cp_c.player_flags & 16) != 0 ? -1 : 1;
+        else if (cp_c.vx != 0) image_xscale = sign(cp_c.vx);
         if (image_xscale < 0) cp_c.player_flags |= 16; else cp_c.player_flags &= ~16;
         var cp_sprite = SPR_player_walk;
         var cp_state11_visual = cp_c.state == $11 || cp_c.next == $11;
+        var cp_state12_visual = cp_c.state == $12 || cp_c.next == $12;
         var cp_hurt_visual = cp_c.state == $1E || cp_c.next == $1E;
         // Task 07: exact ROM frames $38/$39/$3A. The core owns the canonical
         // 8/4/8/4 timing; GameMaker animation timing is deliberately disabled.
         if (cp_state11_visual) cp_sprite = SPR_chaos_player_state_11;
+        else if (cp_state12_visual) cp_sprite = SPR_player_jump;   // state $12's script is the single spring-pose record $0B
         else if (cp_hurt_visual) cp_sprite = SPR_player_falling;
         // State $20 owns the run-off animation. The ROM handoff can retain
         // attack/airborne bits for this first update; they must not select the
@@ -82,6 +92,7 @@ function SCR_chaos_core_sprites(cp_p) {
                 (cp_c.state11_frame == $39 ? 1 : 2);
             image_speed = 0;
         }
+        else if (cp_state12_visual) { image_index = 0; image_speed = 0; }
         else image_speed = (cp_p.chaosSpringVisual && cp_c.vy < 0) ? 0 :
             (cp_c.vx == 0 ? 0.15 : clamp(abs(cp_c.vx)/4096,0.075,0.325));
     }
@@ -112,6 +123,8 @@ function SCR_chaos_adapter_step(cp_p) {
     cp_c.xu = round(cp_p.x*256); cp_c.yu = round((cp_p.y-cp_p.chaosAnchorOffset)*256);
     cp_c.ring_probe_valid = false; // ordinary terrain-ring probe ($753E): set below only for an update that reaches it
     if (cp_p.chaosAdapterLoop) {
+        cp_p.chaosBoxContacts = 0;   // no merge this update: never carry staged object contacts across a loop
+        SCR_chaos_power_tick(cp_p,cp_c);
         cp_p.hspeed = 0; cp_p.vspeed = 0; cp_p.gravity = 0;
         cp_p.chaosCoreLastX = cp_p.x; cp_p.chaosCoreLastY = cp_p.y;
         return;
@@ -127,7 +140,7 @@ function SCR_chaos_adapter_step(cp_p) {
     // update N+1 copies it into $D523, and the X integration of update N+2 reads that (Research: a walker stops two updates after the contact). Two-stage pipeline:
     cp_c.objects |= cp_c.box_ready; cp_c.box_ready = cp_c.box_contacts; cp_c.box_contacts = 0;
     // Solid type-$10 boxes report side contacts here (see OBJ_chaos_object_10); consumed once.
-    if (variable_instance_exists(cp_p,"chaosBoxContacts")) { cp_c.objects |= cp_p.chaosBoxContacts; cp_p.chaosBoxContacts = 0; }
+    cp_c.objects |= cp_p.chaosBoxContacts; cp_p.chaosBoxContacts = 0;
     // Sample monitor collision supplies object-side flags; never rewrites terrain profiles.
     if ((cp_c.move & 3) == 0) {
         with (cp_p) {
@@ -136,7 +149,7 @@ function SCR_chaos_adapter_step(cp_p) {
         }
     }
     SCR_cc_merge(cp_c);
-    cp_c.state11_active = global.chaosPowerCode == $04 && global.chaosPowerTimer > 0;
+    cp_c.state11_active = global.chaosPowerTimer > 0;   // $D44C != 0 (the callback tests the shared timer, not the selector)
     cp_c.state11_camera_y = floor(camera_get_view_y(view_camera[0]));
     cp_c.camera_x = floor(camera_get_view_x(view_camera[0])); // state $20 act-clear threshold input
     cp_c.clear_dx = chaos_goal_clear_dx(camera_get_view_width(view_camera[0])); // widescreen adapter: view right edge + 33 (canonical $121 on the 256 px screen)
@@ -151,6 +164,7 @@ function SCR_chaos_adapter_step(cp_p) {
     var cp_anim_t = SCR_cc_anim_update(cp_c);
     if (chaos_is_mghz()) cp_c.frame_counter = global.chaosMghzEffects.frame;
     SCR_cc_tick(cp_c);
+    SCR_chaos_footwear_phase(cp_p,cp_c);
     // Widescreen room boundary adapter. Original camera-relative 256px clipping is omitted.
     // State $20 runs past the map edge exactly as the ROM does (shared terrain lookup), so the boundary adapter yields to it.
     if (cp_c.state != 32 && (cp_c.xu < 16*256 || cp_c.xu > (room_width-9)*256)) {
@@ -214,10 +228,13 @@ function SCR_chaos_object_spring_draw(cp_o) {
 function SCR_chaos_cancel_state11(cp_p) {
     if (!instance_exists(cp_p) || !variable_instance_exists(cp_p,"chaosCore")) return;
     var cp_c = cp_p.chaosCore;
-    if (cp_c.state != $11 && cp_c.next != $11 && global.chaosPowerCode != $04) return;
+    // $48F7 tests the CURRENT state ($D501 == $11) only. It clears the selector $D532 and the queued reward bit 3, restores the level music and requests sound $C3,
+    // then enters hurt $1E ($4942). The timer $D44C is left alone and the rings are not touched.
+    if (cp_c.state != $11) return;
+    if (global.chaosPowerCode == $06) global.powerInv = false;   // POC mirror of selector 6
     global.chaosPowerCode = 0;
-    global.chaosPowerTimer = 0;
-    global.chaosLastSoundRequest = $81; // recovered level-music restore request
+    cp_c.reward_queue &= ~8;
+    global.chaosLastSoundRequest = $C3;
     global.chaosMusicRestoreRequested = true;
     cp_c.state = $1E; cp_c.next = $1E;
     cp_c.state11_active = false;
@@ -235,6 +252,7 @@ function SCR_chaos_hurt_apply(cp_p) {
             with (cp_p) instance_change(OBJ_player_death,true);
             return;
         }
+        var cp_rocket_hurt = cp_c.hurt_rocket;
         SCR_chaos_cancel_state11(cp_p);
         if (cp_c.hurt_death) {
             with (cp_p) instance_change(OBJ_player_death,true);
@@ -248,7 +266,7 @@ function SCR_chaos_hurt_apply(cp_p) {
         cp_p.chaosSupport = noone;
         cp_p.chaosSpringVisual = false;
         SCR_chaos_core_publish(cp_p);
-        if (global.music == 1) audio_play_sound(SFX_sonic_lost_rings,10,false);
+        if (global.music == 1 && !cp_rocket_hurt) audio_play_sound(SFX_sonic_lost_rings,10,false);
     }
     if (cp_inv) { global.playerBlink = true; cp_p.chaosRomBlink = true; }
     else if (variable_instance_exists(cp_p,"chaosRomBlink") && cp_p.chaosRomBlink) {
@@ -259,8 +277,14 @@ function SCR_chaos_hurt_apply(cp_p) {
 
 function SCR_chaos_apply_hazard_damage(cp_p) {
     if (global.playerSuper || global.playerBlink || global.powerInv) return;
-    SCR_chaos_cancel_state11(cp_p);
     if (!variable_instance_exists(cp_p,"chaosCore")) SCR_chaos_core_attach(cp_p);
+    if (cp_p.chaosCore.state == $11) {
+        // $48F7 Rocket branch: rings (also zero), shield and the ordinary no-ring death selection are bypassed; the shared hurt result is applied.
+        cp_p.chaosCore.rings = global.ring;
+        SCR_cc_hurt_rom(cp_p.chaosCore);
+        SCR_chaos_hurt_apply(cp_p);
+        return;
+    }
     if (!global.powerShield && global.ring <= 0) {
         with (cp_p) instance_change(OBJ_player_death,true);
         return;
@@ -362,6 +386,17 @@ function SCR_chaos_type21_top_bounce(cp_p) {
     if (global.music == 1) audio_play_sound(SFX_sonic_spring,10,false);
 }
 
+/// Type $21 defeat presentation (the ROM converts the slot to type $0F). THZ keeps the accepted sample explosion; the MGHZ alt-start object reuses the accepted MGHZ
+/// $0F poof art with the shared $0F timeline (chaos_gpz_smoke_frames) at the converted anchor.
+function chaos_type21_defeat(cp_o) {
+    if (cp_o.chaosAltStart) {
+        var cp_smoke = instance_create(cp_o.x,cp_o.y,OBJ_chaos_gpz_smoke_0F);
+        cp_smoke.sprite_index = SPR_chaos_mghz_poof;
+        cp_smoke.chaosPlacementToken = 0;
+        cp_smoke.chaosAnchorDraw = true;
+    } else instance_create(cp_o.x,cp_o.y-13,OBJ_explosion);
+}
+
 // Preserve the verified original three-byte award independently of the sample
 // engine's unrelated decimal score display.
 function SCR_chaos_enemy_score_100_bytes() {
@@ -386,12 +421,10 @@ function SCR_chaos_type10_reward(cp_parameter, cp_p) {
         global.chaosLastSoundRequest = $A9;
     } else if (cp_parameter == $04) {
         if (global.player == 1) {
-            global.chaosPowerCode = $04;
-            global.chaosPowerTimer = 300;
-            global.chaosLastSoundRequest = $85;
-            if (variable_instance_exists(cp_p,"chaosCore")) {
-                SCR_cc_state11_enter(cp_p.chaosCore);
-            }
+            // Breaking the monitor only queues $D3A3 bit 3 (object phase N). The player's next update runs its old state first; the reward dispatcher then writes
+            // selector 4 / timer 300 and requests $11 (SCR_chaos_footwear_phase), so the first $11 callback is update N+2.
+            if (!variable_instance_exists(cp_p,"chaosCore")) SCR_chaos_core_attach(cp_p);
+            cp_p.chaosCore.reward_queue |= 8;
         } else {
             if (!variable_global_exists("chaosType10D29A")) global.chaosType10D29A = 0;
             global.chaosType10D29A = SCR_chaos_bcd_add(global.chaosType10D29A,10);
@@ -465,4 +498,41 @@ function SCR_chaos_break16_block(cp_index) {
     var cp_fx=instance_create_depth((cp_index mod cp_width)*32+16,(cp_index div cp_width)*32+8,-20,OBJ_chaos_object_0F_transient);
     cp_fx.chaosParameter=$40;
     if (chaos_is_gpz()) cp_fx.sprite_index=SPR_chaos_gpz_poof;
+}
+
+/// Shared selector/timer ($D532 / $D44C) end-of-player-update step plus the queued Rocket reward ($D3A3 bit 3). Order inside one update: the old state's callback,
+/// then the decrement, then the reward dispatcher. A Rocket reward therefore leaves the timer at 300 for the first full callback (300 callbacks enter with 300..1; the
+/// next one enters with zero). Speed-up (code 3) is not cleared at zero (docs/thz2-thz3-object-deltas.md); codes 4 and 6 are.
+function SCR_chaos_power_tick(cp_p, cp_c) {
+    if (global.chaosPowerTimer > 0) {
+        global.chaosPowerTimer--;
+        if (global.chaosPowerTimer == 0) {
+            if (global.chaosPowerCode == $06) global.powerInv = false;
+            if (global.chaosPowerCode != $03) global.chaosPowerCode = 0;
+        }
+    }
+    if ((cp_c.reward_queue & 8) != 0) {
+        cp_c.reward_queue &= ~8;
+        global.chaosPowerCode = $04;
+        global.chaosPowerTimer = 300;
+        global.chaosLastSoundRequest = $85;
+        SCR_cc_state11_enter(cp_c);
+    }
+}
+
+/// Everything footwear-related that follows the player's callback: shared timer/reward, and the Spring Shoes owner ($D3A4): positioning ($3BA8 -> $5F27: owner X = player X,
+/// owner Y = player Y + 16 while the owner shows mapping frame 3, else + 11) and the owner-state requests the callback writes (3 after each bounce, 5 on detach).
+function SCR_chaos_footwear_phase(cp_p, cp_c) {
+    // The Rocket exit callback ($3AB5: timer zero) restores the level music itself ($189B) before it requests falling.
+    if (cp_c.state11_exit) { global.chaosLastSoundRequest = $81; global.chaosMusicRestoreRequested = true; }
+    SCR_chaos_power_tick(cp_p,cp_c);
+    var cp_owner = cp_p.chaosShoeOwner;
+    var cp_has = instance_exists(cp_owner);
+    if (cp_c.state == $12 && cp_has) {
+        cp_owner.x = floor(cp_c.xu/256);
+        cp_owner.y = chaos_signed_world_y(cp_c.yu) + (cp_owner.chaosFrame == 3 ? 16 : 11);
+        cp_owner.chaosYU = round(cp_owner.y*256);
+    }
+    if (cp_has && cp_c.owner_event != 0) cp_owner.chaosRequest = cp_c.owner_event;
+    if (cp_c.state != $12 && cp_c.next != $12) cp_p.chaosShoeOwner = noone;
 }

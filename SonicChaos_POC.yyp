@@ -4272,6 +4272,12 @@
     },
     {
       "id": {
+        "name": "OBJ_chaos_object_2F",
+        "path": "objects/OBJ_chaos_object_2F/OBJ_chaos_object_2F.yy"
+      }
+    },
+    {
+      "id": {
         "name": "OBJ_chaos_gpz_smoke_0F",
         "path": "objects/OBJ_chaos_gpz_smoke_0F/OBJ_chaos_gpz_smoke_0F.yy"
       }
@@ -4544,6 +4550,24 @@
       "id": {
         "name": "SPR_chaos_mghz_blocks",
         "path": "sprites/SPR_chaos_mghz_blocks/SPR_chaos_mghz_blocks.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_object_21",
+        "path": "sprites/SPR_chaos_mghz_object_21/SPR_chaos_mghz_object_21.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_spring_shoes",
+        "path": "sprites/SPR_chaos_mghz_spring_shoes/SPR_chaos_mghz_spring_shoes.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_monitor_04",
+        "path": "sprites/SPR_chaos_mghz_monitor_04/SPR_chaos_mghz_monitor_04.yy"
       }
     }
   ],
