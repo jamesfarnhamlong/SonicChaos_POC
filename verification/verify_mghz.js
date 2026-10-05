@@ -26,10 +26,11 @@ for(const [key,a] of Object.entries(M.acts)) {
  const stride=a.descriptor.layout.width_cells;
  eq(c.SCR_cc_lookup((4095%stride)*32,Math.floor(4095/stride)*32,0).index,-1,'4095 loader guard');
  h.reset();c.chaos_level_spawn_objects();
- for(const t of [0x24,0x2e,0x56,0x57,0x58])eq(g.chaosSpawnedByType[t],0,'excluded '+t);   // M2 consumes $21, $2F and the Rocket monitor
+ for(const t of [0x56,0x57,0x58])eq(g.chaosSpawnedByType[t],0,'excluded '+t);
  const rec=C.acts[key].records;
  for(const t of [0x28,0x1b,0x18])eq(g.chaosSpawnedByType[t],rec.filter(r=>parseInt(r.type_id,16)===t).length,'shared '+t);
  for(const t of [0x10,0x21,0x2f])eq(g.chaosSpawnedByType[t],rec.filter(r=>parseInt(r.type_id,16)===t).length,'M2 spawn '+t);
+ for(const t of [0x24,0x2e])eq(g.chaosSpawnedByType[t],rec.filter(r=>parseInt(r.type_id,16)===t).length,'M3 records '+t);
  for(const width of [256,348,640]){w.cam.w=width;const p=h.newPlayer(...a.start.player_anchor,{state:1,move:0});eq([p.chaosCore.zone,p.chaosCore.level],[3,3]);}
 }
 c.room=c.ROM_chaos_mghz1;c.chaos_level_install_layout();

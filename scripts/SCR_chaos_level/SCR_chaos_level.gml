@@ -110,6 +110,7 @@ function chaos_level_object_rows() {
 }
 
 function chaos_level_spawn_objects() {
+    if (chaos_is_mghz()) global.chaosM3=chaos_m3_new();
     global.chaosSpawnedByType = array_create(256, 0);
     global.chaosSkippedByType = array_create(256, 0);
     global.chaosSpawnedIndices = [];
@@ -117,9 +118,17 @@ function chaos_level_spawn_objects() {
     for (var cp_i = 0; cp_i < array_length(cp_rows); cp_i++) {
         var cp_r = cp_rows[cp_i];
         var cp_type = cp_r[3];
-        if (chaos_is_mghz() && (cp_type == $24 || cp_type == $2E || cp_type == $56 || cp_type == $57 || cp_type == $58)) { global.chaosSkippedByType[cp_type]++; continue; } // deferred MGHZ-only runtimes; $21, $2F and the Rocket monitor are M2
+        if (chaos_is_mghz() && (cp_type == $56 || cp_type == $57 || cp_type == $58)) { global.chaosSkippedByType[cp_type]++; continue; } // parked runtimes
         var cp_inst = noone;
         switch (cp_type) {
+            case $24:
+            case $2E:
+                if (chaos_is_mghz()) {
+                    chaos_m3_record(global.chaosM3,cp_r,noone);
+                    global.chaosSpawnedByType[cp_type]++;
+                    array_push(global.chaosSpawnedIndices,cp_r[0]);
+                }
+                break;
             case $09: break; // ring manager
             case $10: cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_object_10); chaos_type10_configure(cp_inst, cp_r[5]); break;
             case $1B: cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_spikes); break; // moving spike: anchor = canonical record (THZ3 (752,128))
@@ -143,6 +152,7 @@ function chaos_level_spawn_objects() {
             global.chaosSpawnedByType[cp_type]++;
             array_push(global.chaosSpawnedIndices, cp_r[0]);
         }
+        if (chaos_is_mghz() && (cp_inst != noone || cp_type == $09)) chaos_m3_record(global.chaosM3,cp_r,cp_inst);
     }
 }
 

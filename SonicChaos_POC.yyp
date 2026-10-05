@@ -4569,6 +4569,24 @@
         "name": "SPR_chaos_mghz_monitor_04",
         "path": "sprites/SPR_chaos_mghz_monitor_04/SPR_chaos_mghz_monitor_04.yy"
       }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_object_24",
+        "path": "sprites/SPR_chaos_mghz_object_24/SPR_chaos_mghz_object_24.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_object_2E",
+        "path": "sprites/SPR_chaos_mghz_object_2E/SPR_chaos_mghz_object_2E.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_mghz_m3",
+        "path": "scripts/SCR_chaos_mghz_m3/SCR_chaos_mghz_m3.yy"
+      }
     }
   ],
   "resourceType": "GMProject",

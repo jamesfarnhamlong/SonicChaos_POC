@@ -47,8 +47,9 @@ function chaos_51_get(cp_b,cp_addr) {
 }
 function chaos_51_alloc(cp_b,cp_type,cp_param,cp_x,cp_y,cp_dynamic) {
     var cp_start=cp_dynamic ? 7 : 0, cp_end=cp_dynamic ? 18 : 16;
-    for (var cp_i=cp_start;cp_i<cp_end;cp_i++) {
-        if (cp_b.slots[cp_i].type!=0) continue;
+    var cp_free=chaos_object_free_slot(cp_b.slots,cp_start,cp_end);
+    if (cp_free >= 0) {
+        var cp_i=cp_free;
         var cp_s=chaos_51_slot($D540+cp_i*64,cp_type,cp_param,cp_x,cp_y);
         cp_b.slots[cp_i]=cp_s;
         cp_b.last_child=cp_s.slot;

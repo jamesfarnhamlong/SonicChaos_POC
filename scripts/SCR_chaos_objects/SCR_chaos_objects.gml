@@ -57,6 +57,9 @@ function SCR_chaos_objects_phase() {
         var cp_spike = instance_find(OBJ_chaos_spikes,cp_k);
         if (chaos_spike1b_step(cp_spike, cp_c, cp_present, cp_spike.x >= cp_left && cp_spike.x <= cp_right)) cp_changed = true;
     }
+    // M1/M2 lifetimes have now updated: their occupancy bridge is current.
+    chaos_m3_runtime_phase(cp_c,cp_have);
+    if (cp_have) chaos_contact_promote(cp_c);
     if (variable_global_exists("chaosCrushDeathPhase") && global.chaosCrushDeathPhase == 1) {
         // $4984 leaves the owner intact; the final object pass releases it.
         if (instance_exists(cp_p) && variable_instance_exists(cp_p,"chaosCore")) {

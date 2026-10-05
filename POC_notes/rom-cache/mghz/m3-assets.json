@@ -1,0 +1,60 @@
+{
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "research": "7ba4d8a7bfb7f8164462fbf50db05c4b63cec0fe",
+  "frames": [
+    {
+      "resource": "SPR_chaos_mghz_object_24",
+      "frame": 0,
+      "rgba_sha256": "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe",
+      "approved_index_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "resource": "SPR_chaos_mghz_object_24",
+      "frame": 1,
+      "rgba_sha256": "47b5e9aee02304ab99486a8e12c3a2792d7e21d7fee6490eeb5e6c581932752f",
+      "approved_index_sha256": "14747ff909265f3477bdfc69db01eae8cf9ebcdc487ac41cdfdc3f53754b46fa"
+    },
+    {
+      "resource": "SPR_chaos_mghz_object_24",
+      "frame": 2,
+      "rgba_sha256": "d9afedcf79ff5c413d746eb6d134d5af82f35ae784ea07aefb72d42d8c9d8d5a",
+      "approved_index_sha256": "828c35e9a3f1c9f2f308fb271972bf2b4f1fc6412839bbfd3b74131c8de55c9f"
+    },
+    {
+      "resource": "SPR_chaos_mghz_object_24",
+      "frame": 3,
+      "rgba_sha256": "e99dd9caf1fc15aa47635694e55a80e280725a9cb5b9d71285b542a11cf77087",
+      "approved_index_sha256": "345854d5c172ef2fdd002e186adf70c7a13abc365492f8e88ccb132e47f6f188"
+    },
+    {
+      "resource": "SPR_chaos_mghz_object_2E",
+      "frame": 0,
+      "rgba_sha256": "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe",
+      "approved_index_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "resource": "SPR_chaos_mghz_object_2E",
+      "frame": 1,
+      "rgba_sha256": "db780e728501040ba128b492c2f508d2209f21f879dc81fdcfcd449c8704907a",
+      "approved_index_sha256": "94271ec96bb1a547b3bb73cd633b3b62bed08a57186281ad6d63f3e06b830317"
+    },
+    {
+      "resource": "SPR_chaos_mghz_object_2E",
+      "frame": 2,
+      "rgba_sha256": "9beea1f44b8a4df700cea21afedebef792c7a7b99a89a24758d47fd9d0b21ad4",
+      "approved_index_sha256": "551effc410dc16ae7e89af2f4f8a303ebcd79a27c752bdec7a8fb2e4ea1b365e"
+    },
+    {
+      "resource": "SPR_chaos_mghz_object_2E",
+      "frame": 3,
+      "rgba_sha256": "f2ed3dcb62ad325f7a8c35457f11e7891cf3b3e653965ba2a09b39e859f51048",
+      "approved_index_sha256": "8c5183bbbea04cf52e7af40e7cf66b5a352d636f549fda8960fdb90076bb4e92"
+    },
+    {
+      "resource": "SPR_chaos_mghz_object_2E",
+      "frame": 4,
+      "rgba_sha256": "555bbc4b938a9ff6306c87f01e82f21604cc6afdaeea03ade967ac45875cd294",
+      "approved_index_sha256": "7d0c70f558883be42aacf085cf1d9d362c698a774f28b37b9f44f622020a7024"
+    }
+  ]
+}

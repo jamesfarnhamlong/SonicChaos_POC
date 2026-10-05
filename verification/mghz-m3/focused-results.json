@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "assertions": 66053,
+  "sections": {
+    "placements/scope": 18,
+    "trigger/speed/state": 2130,
+    "shake/fall/terrain/conversion": 105,
+    "last shake callback/disabled score": 3,
+    "contact geometry/postures/gates": 50069,
+    "lifecycle/retention/shared 0F": 59,
+    "strip bounds/no contact": 13522,
+    "bursts/child rows/pool/order": 110,
+    "cadence/initial creation/keep-alive": 24,
+    "runtime score/occupancy/contact integration": 13
+  },
+  "research": "7ba4d8a7bfb7f8164462fbf50db05c4b63cec0fe"
+}

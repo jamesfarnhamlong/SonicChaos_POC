@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "tests": 45,
+  "command": ".venv/Scripts/python.exe -m unittest tests.test_mghz_object_24_2e",
+  "research_commit": "7ba4d8a7bfb7f8164462fbf50db05c4b63cec0fe",
+  "rom_verified": true,
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607"
+}
