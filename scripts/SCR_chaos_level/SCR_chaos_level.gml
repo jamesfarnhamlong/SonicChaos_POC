@@ -118,7 +118,7 @@ function chaos_level_spawn_objects() {
     for (var cp_i = 0; cp_i < array_length(cp_rows); cp_i++) {
         var cp_r = cp_rows[cp_i];
         var cp_type = cp_r[3];
-        if (chaos_is_mghz() && (cp_type == $56 || cp_type == $57 || cp_type == $58)) { global.chaosSkippedByType[cp_type]++; continue; } // parked runtimes
+        if (chaos_is_mghz() && (cp_type == $57 || cp_type == $58 || (cp_type == $56 && chaos_mghz_act() != 3))) { global.chaosSkippedByType[cp_type]++; continue; } // $57/$58 exist only as script children of $56
         var cp_inst = noone;
         switch (cp_type) {
             case $24:
@@ -142,6 +142,7 @@ function chaos_level_spawn_objects() {
             case $2C: if (chaos_is_gpz()) cp_inst = instance_create(cp_r[1],cp_r[2],OBJ_chaos_object_2C); break;
             case $50: if (chaos_is_thz3()) cp_inst = instance_create(cp_r[1],cp_r[2],OBJ_chaos_object_50); break;
             case $51: if (chaos_gpz_act()==3) cp_inst=instance_create(cp_r[1],cp_r[2],OBJ_chaos_object_51); break;
+            case $56: if (chaos_mghz_act()==3) cp_inst=instance_create(cp_r[1],cp_r[2],OBJ_chaos_object_56); break; // MGHZ3 boss: creation by the mapped scan, script slot in global.chaosM3
             default: global.chaosSkippedByType[cp_type]++; break;
         }
         if (cp_inst != noone) {

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "parity_256_assertions": 343881,
+  "integration_assertions": 317,
+  "widescreen_assertions": 211113,
+  "asset_assertions": 4332,
+  "boss_total_assertions": 559643
+}

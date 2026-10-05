@@ -13,7 +13,7 @@ function source(ref, rel) {
     return r.status === 0 ? r.stdout.toString('utf8') : null;
 }
 const SCRIPTS = ['SCR_chaos_motion_data', 'SCR_chaos_core_data', 'SCR_chaos_core', 'SCR_chaos_level_thz2_data', 'SCR_chaos_level_thz3_data', 'SCR_chaos_gpz_data', 'SCR_chaos_mghz_data', 'SCR_chaos_mghz_effects', 'SCR_chaos_anim_counter_data', 'SCR_chaos_anim_counter',
-    'SCR_chaos_mghz_m3', 'SCR_chaos_terrain_ring', 'SCR_chaos_viewport', 'SCR_chaos_lost_ring', 'SCR_chaos_placement', 'SCR_chaos_goal', 'SCR_chaos_box_contact', 'SCR_chaos_attack', 'SCR_chaos_spring', 'SCR_chaos_platform', 'SCR_chaos_damage', 'SCR_chaos_spike1b',
+    'SCR_chaos_mghz_m3', 'SCR_chaos_mghz_boss_data', 'SCR_chaos_mghz_boss', 'SCR_chaos_terrain_ring', 'SCR_chaos_viewport', 'SCR_chaos_lost_ring', 'SCR_chaos_placement', 'SCR_chaos_goal', 'SCR_chaos_box_contact', 'SCR_chaos_attack', 'SCR_chaos_spring', 'SCR_chaos_platform', 'SCR_chaos_damage', 'SCR_chaos_spike1b',
     'SCR_chaos_gpz_enemy', 'SCR_chaos_gpz_enemy_data', 'SCR_chaos_motion', 'SCR_chaos_adapter', 'SCR_chaos_objects', 'SCR_chaos_level', 'SCR_chaos_boss_data', 'SCR_chaos_boss', 'SCR_chaos_gpz_boss_data', 'SCR_chaos_gpz_boss'];
 
 /// ref = null -> working tree; otherwise a git ref. Returns a host with .ctx (the VM), .g (globals) and helpers to build worlds.
@@ -22,17 +22,17 @@ function loadHost(ref) {
     const texts = {};
     for (const n of SCRIPTS) { const t = source(ref, `scripts/${n}/${n}.gml`); if (t !== null) texts[n] = t; }
     const consts = new Set();
-    for (const nm of ['OBJ_chaos_object_25','OBJ_chaos_object_2C','OBJ_chaos_gpz_smoke_0F','OBJ_chaos_object_51','OBJ_chaos_object_21','OBJ_chaos_object_2F','OBJ_chaos_object_10','OBJ_chaos_object_19','OBJ_chaos_object_18']) for (const ev of ['Create_0','Step_0','Draw_0']) { const t=source(ref,`objects/${nm}/${ev}.gml`); if(t) for(const m of t.matchAll(/\b(OBJ|SPR|SFX|ROM|TIME|MUS)_\w+/g)) consts.add(m[0]); }
+    for (const nm of ['OBJ_chaos_object_25','OBJ_chaos_object_2C','OBJ_chaos_gpz_smoke_0F','OBJ_chaos_object_51','OBJ_chaos_object_56','OBJ_chaos_object_21','OBJ_chaos_object_2F','OBJ_chaos_object_10','OBJ_chaos_object_19','OBJ_chaos_object_18']) for (const ev of ['Create_0','Step_0','Draw_0']) { const t=source(ref,`objects/${nm}/${ev}.gml`); if(t) for(const m of t.matchAll(/\b(OBJ|SPR|SFX|ROM|TIME|MUS)_\w+/g)) consts.add(m[0]); }
     for (const t of Object.values(texts)) for (const m of t.matchAll(/\b(OBJ|SPR|SFX|ROM|TIME|MUS)_\w+/g)) consts.add(m[0]);
     const world = {player: null, platforms: [], spikes: [], bosses: [], cam: {x: 0, y: 0, w: 256, h: 192}, events: [], audio: 0, created: [], badniks: [], gpzEnemies: [], smoke: [], input: {}, roomWidth: 4096, roomHeight: 1024};
     for (const c of ['OBJ_chaos_spikes', 'OBJ_chaos_platform', 'OBJ_ring_stars', 'OBJ_chaos_ring_manager', 'OBJ_player', 'OBJ_player_char', 'OBJ_player_char_spin', 'ROM_chaos_thz1', 'ROM_chaos_thz2', 'ROM_chaos_thz3']) consts.add(c);
     const ids = {}; let n = 1000; for (const c of consts) ids[c] = n++;
-    const objectsByType = () => ({[ids.OBJ_player]: world.player ? [world.player] : [], [ids.OBJ_player_char]: world.player ? [world.player] : [], [ids.OBJ_chaos_platform]: world.platforms, [ids.OBJ_chaos_spikes]: world.spikes, [ids.OBJ_chaos_object_50]: world.bosses.filter(o=>o.object_index===ids.OBJ_chaos_object_50), [ids.OBJ_chaos_object_51]: world.bosses.filter(o=>o.object_index===ids.OBJ_chaos_object_51), [ids.OBJ_chaos_object_25]: world.gpzEnemies.filter(o=>o.object_index===ids.OBJ_chaos_object_25&&!o.destroyed), [ids.OBJ_chaos_object_2C]: world.gpzEnemies.filter(o=>o.object_index===ids.OBJ_chaos_object_2C&&!o.destroyed)});
+    const objectsByType = () => ({[ids.OBJ_player]: world.player ? [world.player] : [], [ids.OBJ_player_char]: world.player ? [world.player] : [], [ids.OBJ_chaos_platform]: world.platforms, [ids.OBJ_chaos_spikes]: world.spikes, [ids.OBJ_chaos_object_50]: world.bosses.filter(o=>o.object_index===ids.OBJ_chaos_object_50), [ids.OBJ_chaos_object_51]: world.bosses.filter(o=>o.object_index===ids.OBJ_chaos_object_51), [ids.OBJ_chaos_object_56]: world.bosses.filter(o=>o.object_index===ids.OBJ_chaos_object_56), [ids.OBJ_chaos_object_25]: world.gpzEnemies.filter(o=>o.object_index===ids.OBJ_chaos_object_25&&!o.destroyed), [ids.OBJ_chaos_object_2C]: world.gpzEnemies.filter(o=>o.object_index===ids.OBJ_chaos_object_2C&&!o.destroyed)});
     const sandbox = Object.assign({}, ids, {
         ev_step:3, ev_step_normal:0,
         event_perform:()=>host.runEvent(host.self,`objects/${nameOf[host.self.object_index]}/Step_0.gml`),
         event_inherited:()=>host.runEvent(host.self,host.activeEvent.replace("OBJ_chaos_object_2C","OBJ_chaos_object_27")),
-        global: g, score:0, floor: Math.floor, round: Math.round, abs: Math.abs, min: Math.min, max: Math.max, sign: Math.sign, clamp: (v, a, b) => Math.min(Math.max(v, a), b),
+        global: g, score:0, floor: Math.floor, ceil: Math.ceil, string: v=>String(v), show_debug_message: ()=>{}, round: Math.round, abs: Math.abs, min: Math.min, max: Math.max, sign: Math.sign, clamp: (v, a, b) => Math.min(Math.max(v, a), b),
         point_direction:(x,y,xx,yy)=>Math.atan2(y-yy,xx-x)*180/Math.PI,
         array_create: (k, v) => Array(k).fill(v), array_length: a => a.length, array_push: (a, v) => a.push(v), array_copy: (d, di, s, si, k) => { for (let i = 0; i < k; i++) d[di + i] = s[si + i]; },
         variable_global_exists: k => k in g, variable_struct_exists: (o, k) => k in o, variable_instance_exists: (o, k) => o !== null && typeof o === 'object' && k in o, is_array: Array.isArray, noone: -4,
@@ -53,6 +53,9 @@ function loadHost(ref) {
         get room_width() { return world.roomWidth; }, get room_height() { return world.roomHeight; }, room: ids.ROM_chaos_thz1,
     });
     sandbox.hostEnemyEvent=o=>{o.chaosEnemyPhase=true;host.runEvent(o,`objects/${nameOf[o.object_index]}/Step_0.gml`);};
+    // Object.assign above copies the getters' values: re-install live accessors so room_width/room_height follow world.roomWidth/roomHeight
+    Object.defineProperty(sandbox, 'room_width', {get() { return world.roomWidth; }, enumerable: true, configurable: true});
+    Object.defineProperty(sandbox, 'room_height', {get() { return world.roomHeight; }, enumerable: true, configurable: true});
     const ctx = vm.createContext(sandbox);
     // GML `with (o) { f(); }` changes `self` for a called script; JS `with` does not. The one script that relies on it (SCR_chaos_sample_damage) is rewritten
     // mechanically to take the instance and run its body under `with`.
@@ -72,7 +75,7 @@ function loadHost(ref) {
         if (["OBJ_chaos_object_25","OBJ_chaos_object_2C","OBJ_chaos_gpz_smoke_0F"].includes(nm)) { const i=host.newInstance(nm,x,y); (nm==="OBJ_chaos_gpz_smoke_0F"?world.smoke:world.gpzEnemies).push(i);return i; }
         // M2: mapped footwear/enemy/monitor objects created by the level loader run their shipped Create event and Step event inside frame() (after the player, as in the ROM).
         if (['OBJ_chaos_object_21','OBJ_chaos_object_2F','OBJ_chaos_object_10','OBJ_chaos_object_19','OBJ_chaos_object_18'].includes(nm)) { const i=host.newInstance(nm,x,y); i.stepPath=`objects/${nm}/Step_0.gml`; world.badniks.push(i); return i; }
-        if (nm === 'OBJ_chaos_platform' || nm === 'OBJ_chaos_spikes' || nm === 'OBJ_chaos_object_50' || nm === 'OBJ_chaos_object_51') { const i = host.newInstance(nm, x, y); (nm === 'OBJ_chaos_platform' ? world.platforms : nm === 'OBJ_chaos_spikes' ? world.spikes : world.bosses).push(i); return i; }
+        if (nm === 'OBJ_chaos_platform' || nm === 'OBJ_chaos_spikes' || nm === 'OBJ_chaos_object_50' || nm === 'OBJ_chaos_object_51' || nm === 'OBJ_chaos_object_56') { const i = host.newInstance(nm, x, y); (nm === 'OBJ_chaos_platform' ? world.platforms : nm === 'OBJ_chaos_spikes' ? world.spikes : world.bosses).push(i); return i; }
         world.created.push([o, x, y]); return {x, y, object_index: o};
     };
 

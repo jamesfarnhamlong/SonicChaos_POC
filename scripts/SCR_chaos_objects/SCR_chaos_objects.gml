@@ -23,6 +23,7 @@ function SCR_chaos_objects_phase() {
     // Boss contact runs in this object phase so its staged request reaches the next player update.
     chaos_boss_runtime_phase();
     chaos_51_runtime_phase();
+    chaos_56_runtime_phase();
     // GPZ ordinary enemies run after final player/terrain movement, before contact promotion.
     // Shells remain after $FE deletion; destroyed defeated shells retain occupancy until room reset.
     if (chaos_is_gpz()) {

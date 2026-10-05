@@ -1,0 +1,158 @@
+[
+  {
+    "check": "verify_mghz_boss",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_mghz_boss_integration",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_mghz_boss_wide",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_mghz_m3",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_mghz_footwear",
+    "exit_code": 0
+  },
+  {
+    "check": "capture_spring_shoes_presentation",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_mghz",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_mghz_closure",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_mghz_platform_crush",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_lost_rings",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_terrain_ring_probe",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_spring_interaction",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_platform_spike",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_attack_posture",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_death_boundary",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_viewport_adapter",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_placement_lifecycle",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_type10_step",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_type10_contact",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_thz2_objects",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_v185_task06",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_v186_task07",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_thz2_breakable",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_thz2_loops_twist",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_gpz_foundation",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_gpz_closure",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_gpz_presentation",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_gpz_enemies",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_gpz_boss",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_thz3_boss",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_thz_closure",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_debug_select",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_act_completion",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_mghz_boss_assets",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_mghz_assets",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_mghz_footwear_assets",
+    "exit_code": 0
+  },
+  {
+    "check": "verify_mghz_m3_assets",
+    "exit_code": 0
+  },
+  {
+    "check": "lint_mghz_boss_gml",
+    "exit_code": 0
+  },
+  {
+    "check": "git-diff-check",
+    "exit_code": 0
+  }
+]

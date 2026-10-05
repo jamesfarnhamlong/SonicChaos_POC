@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "assertions": 4332,
+  "frames": 31,
+  "pixel_differences": 0,
+  "sheet": "m4-verification-sheet.png",
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "resources": [
+    "SPR_chaos_mghz_boss_56",
+    "SPR_chaos_mghz_boss_56_flash",
+    "SPR_chaos_mghz_boss_puff_34",
+    "SPR_chaos_mghz_boss_sparkle_0A",
+    "SPR_chaos_mghz_boss_poof_0F"
+  ]
+}

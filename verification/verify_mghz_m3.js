@@ -22,7 +22,8 @@ for(const act of [1,2,3]){
  const wanted=D.placements.records.filter(r=>r.act===`mghz${act}`).map(canonicalRow);
  eq(rows.map(r=>r.slice(0,8)),wanted,`MGHZ${act} canonical placements`);
  eq(g.chaosM3.records.filter(r=>[0x24,0x2e].includes(r.row[3])).map(r=>r.row.slice(0,8)),wanted,'runtime importer');
- for(const t of [0x56,0x57,0x58,0x2d]) eq(g.chaosSpawnedByType[t],0,'excluded/unused type');
+ for(const t of [0x57,0x58,0x2d]) eq(g.chaosSpawnedByType[t],0,'excluded/unused type');
+ eq(g.chaosSpawnedByType[0x56],act===3?1:0,'$56: MGHZ3 boss package, no other act');
 }
 section('placements/scope');
 // Trigger boundaries are the cache sweep intervals, including the exact speed extremes.

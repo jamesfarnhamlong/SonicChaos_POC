@@ -10,7 +10,7 @@ function chaos_m3_slot(cp_type,cp_param,cp_x,cp_y,cp_token) {
     return {type:cp_type,parameter:cp_param,xu:cp_x*256,yu:cp_y*256,
         origin_x:cp_x,origin_y:cp_y,token:cp_token,state:0,requested:0,
         tick:0,frame:0,vx:0,vy:0,asleep:true,woken:false,keep:false,
-        external:false,ref:noone,ring_ref:noone,aux0:0,aux1:0,age:0,converted:false};
+        external:false,ref:noone,ring_ref:noone,aux0:0,aux1:0,age:0,converted:false,boss:false};
 }
 function chaos_m3_new() {
     var cp_slots=[];
@@ -150,6 +150,7 @@ function chaos_m3_scan(cp_b,cp_vp) {
         var cp_s=chaos_m3_slot(cp_r[3],cp_r[5],cp_r[1],cp_r[2],cp_r[0]);
         cp_s.aux0=cp_r[6];cp_s.aux1=cp_r[7];
         cp_s.external=cp_r[3] != $24 && cp_r[3] != $2E;cp_s.ref=cp_rec.ref;
+        if (cp_r[3] == $56) cp_s=chaos_56_slot($56,cp_r[5],cp_r[1],cp_r[2],cp_r[0]); // MGHZ3 boss: script-driven slot (SCR_chaos_mghz_boss)
         cp_b.slots[cp_slot]=cp_s;cp_rec.occupied=true;
     }
     cp_b.initial=false;
@@ -163,6 +164,7 @@ function chaos_m3_phase(cp_b,cp_c,cp_have,cp_vp) {
     for (var cp_i=7;cp_i<18;cp_i++) {
         var cp_s=cp_b.slots[cp_i];
         if (cp_s.type == 0) continue;
+        if (cp_s.boss) continue; // $56/$57/$58 and their $12/$34/$0A/$0F support run in chaos_56_tick
         if (cp_s.type == $FE) { cp_s.type=$FF;cp_s.state=0;continue; }
         if (cp_s.type == $FF) { chaos_m3_release(cp_b,cp_s);cp_b.slots[cp_i]=chaos_m3_slot(0,0,0,0,0);continue; }
         if (cp_s.external) {
@@ -236,7 +238,7 @@ function chaos_m3_draw() {
     if (!chaos_is_mghz() || !variable_global_exists("chaosM3")) return;
     for (var cp_i=7;cp_i<18;cp_i++) {
         var cp_s=global.chaosM3.slots[cp_i];
-        if (cp_s.external || cp_s.frame == 0 || cp_s.type >= $F0 || cp_s.type == 0) continue;
+        if (cp_s.external || cp_s.boss || cp_s.frame == 0 || cp_s.type >= $F0 || cp_s.type == 0) continue;   // boss script slots are drawn by chaos_56_draw
         if (cp_s.type == $24 && cp_s.asleep) continue;
         if (cp_s.type == $0F && !cp_s.converted) continue;
         if (cp_s.type == $0F && cp_s.age == 0) draw_sprite(SPR_chaos_mghz_object_24,cp_s.frame,chaos_m3_x(cp_s),chaos_m3_y(cp_s));

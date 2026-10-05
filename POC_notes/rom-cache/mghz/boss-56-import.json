@@ -1,0 +1,373 @@
+{
+  "research_commit": "e0f42f89a6ecabd6ed504ef318ea8170ce1a3f1f",
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "art_transformation": "NONE (no whole-image mirror)",
+  "registration": [
+    1,
+    18
+  ],
+  "canvas": [
+    64,
+    96
+  ],
+  "anchor": [
+    32,
+    64
+  ],
+  "scripts": {
+    "86": 13,
+    "87": 4,
+    "88": 2,
+    "18": 2,
+    "52": 3,
+    "10": 3,
+    "15": 5
+  },
+  "records": {
+    "86": 62,
+    "87": 17,
+    "88": 4,
+    "18": 4,
+    "52": 24,
+    "10": 18,
+    "15": 35
+  },
+  "approved_boss_frame_hashes_checked": {
+    "0": [
+      "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    ],
+    "1": [
+      "54ffdec5d8529dff769968ddde23f31d9da6b2e494fb50e5faadd63352c2c99b",
+      "7a291e26bf4f0b601eaa70bdbef80314037f5ff7889d9e9531a7405ddfaa5307"
+    ],
+    "2": [
+      "654d81e8bb96e087a27c9e02b57df0bfbfb972d33de8a1b8e29eb6de7f7d58c6",
+      "83a1b022a20fa0f9ed7e786ce9984e537ac8ca9c2ed7c3d6fb0b92c802eafecf"
+    ],
+    "3": [
+      "a67b8d7ff50311dd24d4b156c11b287c480c30dbb87f808931da072e3adc02be",
+      "2eb7fe3e1a31e1e959a666c8c534d377165237636e2083e31d56ab1a1e5b2d28"
+    ],
+    "4": [
+      "8f755a3de127b45f73c35632f8a2709a98c354e84b81795e5710688ecf38d22b",
+      "0ee8b71eb122e0ecd6bcd38ba64dc5e6a7daf7e5a594a4c71ad58afe038deb1e"
+    ],
+    "5": [
+      "1f622f3dd08ddfbc719ce16c1a1e13c09e5c230aa84532cef7908a63e8efc295",
+      "8dc7f0002a7bd0ac3ab1e90ad5927b89c14b9b0f35e4ead5ba49969f21649798"
+    ],
+    "6": [
+      "bdab7db58acaf6542d913f9a56d5827c9d1598854c69e821f6d5b54c53c2a1af",
+      "29388995e8be86a0f11fbb695d159412d94b49338580d0888c5ea52f40cf5243"
+    ],
+    "11": [
+      "beeee7788b1f691e20b37501fe65f511fa456a38fb384c58eae8cc0073af9804",
+      "cbaae8833bc750ffb9bb598ae7fd00344d4c1a10779f1fa58dd99f555709284a"
+    ],
+    "12": [
+      "fdbbebf29c6151804676f67b3e06d430031b48819c3c2eac74b9bf9da2280ded",
+      "795ade5bad659ace0c44fba4e28876a034edfbeb177d03658b4d59bca5e17885"
+    ],
+    "13": [
+      "4a77e67881f4870d41509e7b8651fd1aeac9d374a1cb6c6cfbb761d135e25f27",
+      "4a77e67881f4870d41509e7b8651fd1aeac9d374a1cb6c6cfbb761d135e25f27"
+    ],
+    "14": [
+      "b75fb4eb570e7fd66f7ba2afc1998a306dd1b63b5c648c1c7ec60efac34da6f9",
+      "b75fb4eb570e7fd66f7ba2afc1998a306dd1b63b5c648c1c7ec60efac34da6f9"
+    ],
+    "15": [
+      "c066d3e26cd8b188e775893f00f40c1bdf5fd3d137f036450d29c3ceed04839b",
+      "c066d3e26cd8b188e775893f00f40c1bdf5fd3d137f036450d29c3ceed04839b"
+    ]
+  },
+  "support_index_hashes": {
+    "0x34/1": "38366944e18cebea47cdaaf53ccdaa8362f5f22bf22d1815e60c835dbc87eab3",
+    "0x34/2": "1a2f14162cf483925bf3a6f80662a5b30e7f87c5cdf0fc539e8103521ee193c3",
+    "0x34/3": "c414de4f06bd4ab55234bbf104755122a89d19d6d3ca57418247b20652679d87",
+    "0x34/4": "5a046a4b3cc8e183fc6e4c4d011de724c31d398c050460f71927867de1cdafcd",
+    "0x0A/5": "69e20620d454d9269aafbe30490f724094867929965b33f46d72c773c92c8be4",
+    "0x0A/6": "539c345d3969edc90bade44f6b41c7527f5ddbb89d367108d044a8eda094036b"
+  },
+  "poof_rgba_and_index_hashes": {
+    "7": [
+      "8b630ed4b7215461cf82b3d6315d270026a64e323ac13a8ac08f7d494e26fd3b",
+      "edef2202e887d81c5f317ee1d6e9182cd05053948b9a050646bc2716f19a944c"
+    ],
+    "8": [
+      "97f6886b7024fcebbdca32b87ad09279e6769e1922e9dc5cdca026ec6432903c",
+      "411fb5d28045fd8e9869fe3c6896b6a17d1ed85fb3b8544f4125f753ae32b984"
+    ],
+    "9": [
+      "2dbb14d08faa27ba66775b0b54e4cd448dee160cc5e27b2f1734aed976ab5828",
+      "fcd9467e4f31fec010b07b9c77d4df10492a5a0692fa872c3e3b0dd581b8a259"
+    ]
+  },
+  "extents": {
+    "1": [
+      16,
+      48
+    ],
+    "2": [
+      16,
+      48
+    ],
+    "3": [
+      16,
+      48
+    ],
+    "4": [
+      16,
+      48
+    ],
+    "5": [
+      16,
+      48
+    ],
+    "6": [
+      16,
+      48
+    ],
+    "11": [
+      12,
+      16
+    ],
+    "12": [
+      8,
+      16
+    ],
+    "13": [
+      4,
+      16
+    ],
+    "14": [
+      4,
+      16
+    ],
+    "15": [
+      4,
+      16
+    ]
+  },
+  "assets": [
+    {
+      "resource": "SPR_chaos_mghz_boss_56",
+      "sprite_frame": 0,
+      "mapping_frame": 1,
+      "source": "mghz3 + selector $16 loads, sprite palette 15",
+      "rgba_sha256": "6e6f202896074a76ba8a89bf3a4873e597084bad82fc94f5bc97cf38afba2aa6"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_56",
+      "sprite_frame": 1,
+      "mapping_frame": 2,
+      "source": "mghz3 + selector $16 loads, sprite palette 15",
+      "rgba_sha256": "9635674d206faf78a52314854b30c4740983e73c715afb254c23c2e64ff1530f"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_56",
+      "sprite_frame": 2,
+      "mapping_frame": 3,
+      "source": "mghz3 + selector $16 loads, sprite palette 15",
+      "rgba_sha256": "9200b1a016c2a30609ae6da5ead543fa68d74e44379e0a11be4c9f58707d0242"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_56",
+      "sprite_frame": 3,
+      "mapping_frame": 4,
+      "source": "mghz3 + selector $16 loads, sprite palette 15",
+      "rgba_sha256": "d5cde63de5a3da8fb821b03693fce6e2cd084eaa62f7a63a683a1f55ef7d1d84"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_56",
+      "sprite_frame": 4,
+      "mapping_frame": 5,
+      "source": "mghz3 + selector $16 loads, sprite palette 15",
+      "rgba_sha256": "599475b7a55301e6017e03283a0eaeaa1c5169358478042c5cf6c4a77e1f9d5c"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_56",
+      "sprite_frame": 5,
+      "mapping_frame": 6,
+      "source": "mghz3 + selector $16 loads, sprite palette 15",
+      "rgba_sha256": "bf47a393de9f986970a82bc87be2fa019b4bac32d2844bcd1ae4c527e5ce93c1"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_56",
+      "sprite_frame": 6,
+      "mapping_frame": 11,
+      "source": "mghz3 + selector $16 loads, sprite palette 15",
+      "rgba_sha256": "4fa3ee8b61bf39d61b2db9c11a0676ec78f1d6afa3d046033bc23be63dfe771b"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_56",
+      "sprite_frame": 7,
+      "mapping_frame": 12,
+      "source": "mghz3 + selector $16 loads, sprite palette 15",
+      "rgba_sha256": "95f9f040f7f256cdc7b08c195679a096e095a4b614bac340c59e05a3f8a2508a"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_56",
+      "sprite_frame": 8,
+      "mapping_frame": 13,
+      "source": "mghz3 + selector $16 loads, sprite palette 15",
+      "rgba_sha256": "c65f78a2ba38e7478fc7d72e97c638666d44633418b8dc005122f4e0a70fbd93"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_56",
+      "sprite_frame": 9,
+      "mapping_frame": 14,
+      "source": "mghz3 + selector $16 loads, sprite palette 15",
+      "rgba_sha256": "7e4d5478cd7612d4dc8229ec7ae6809a1550ec638cd281a2bf71f38ad9dee347"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_56",
+      "sprite_frame": 10,
+      "mapping_frame": 15,
+      "source": "mghz3 + selector $16 loads, sprite palette 15",
+      "rgba_sha256": "bfecdd36b5cb182f359d8ddf78f6bf94e042f9841fd673528568d08e29c37a9c"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_56_flash",
+      "sprite_frame": 0,
+      "mapping_frame": 1,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F",
+      "rgba_sha256": "de43448a48b05e1c906cd7551d48d3514c54838858b7072617f6904e42942725"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_56_flash",
+      "sprite_frame": 1,
+      "mapping_frame": 2,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F",
+      "rgba_sha256": "145ddf2a36c4bbb905dffea8e616033613a9ba1af9b7afc2eb021f50abeaac28"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_56_flash",
+      "sprite_frame": 2,
+      "mapping_frame": 3,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F",
+      "rgba_sha256": "a38505b8c5007bc4ab16720113d6098ee05ce83038b61b357a8a544929a76c3e"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_56_flash",
+      "sprite_frame": 3,
+      "mapping_frame": 4,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F",
+      "rgba_sha256": "aa3ca931fd8186bf3611a3a1be144c86f04faa66d1d6730a41227e7fed61ad7f"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_56_flash",
+      "sprite_frame": 4,
+      "mapping_frame": 5,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F",
+      "rgba_sha256": "8a9284cf3fe6d93ac4f69cf50ab8eefc711054766e1326a83b5f95bb2c6481b7"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_56_flash",
+      "sprite_frame": 5,
+      "mapping_frame": 6,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F",
+      "rgba_sha256": "36c301e156fb94be706eca708517744c71b6956e843bc197661db10b976c3b34"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_56_flash",
+      "sprite_frame": 6,
+      "mapping_frame": 11,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F",
+      "rgba_sha256": "4fa3ee8b61bf39d61b2db9c11a0676ec78f1d6afa3d046033bc23be63dfe771b"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_56_flash",
+      "sprite_frame": 7,
+      "mapping_frame": 12,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F",
+      "rgba_sha256": "95f9f040f7f256cdc7b08c195679a096e095a4b614bac340c59e05a3f8a2508a"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_56_flash",
+      "sprite_frame": 8,
+      "mapping_frame": 13,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F",
+      "rgba_sha256": "c65f78a2ba38e7478fc7d72e97c638666d44633418b8dc005122f4e0a70fbd93"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_56_flash",
+      "sprite_frame": 9,
+      "mapping_frame": 14,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F",
+      "rgba_sha256": "7e4d5478cd7612d4dc8229ec7ae6809a1550ec638cd281a2bf71f38ad9dee347"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_56_flash",
+      "sprite_frame": 10,
+      "mapping_frame": 15,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F",
+      "rgba_sha256": "bfecdd36b5cb182f359d8ddf78f6bf94e042f9841fd673528568d08e29c37a9c"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_puff_34",
+      "sprite_frame": 0,
+      "mapping_frame": 1,
+      "source": "type $34 art base $6E (zone-3 table $1E:$8C98), shared explosion tiles",
+      "rgba_sha256": "a7ef15cfe2fcde9f6241f9101691fc352f0bd16a79231571e7b3d2b5c2bd2586"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_puff_34",
+      "sprite_frame": 1,
+      "mapping_frame": 2,
+      "source": "type $34 art base $6E (zone-3 table $1E:$8C98), shared explosion tiles",
+      "rgba_sha256": "258d758f8fffbd200cbb73b7ec44562f335c04bc62488509e30cad0cf606a1f7"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_puff_34",
+      "sprite_frame": 2,
+      "mapping_frame": 3,
+      "source": "type $34 art base $6E (zone-3 table $1E:$8C98), shared explosion tiles",
+      "rgba_sha256": "caaf8f24cf09988849ad6c138ccf62c5992ea14cf16c9fe14dd671f35e743dfe"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_puff_34",
+      "sprite_frame": 3,
+      "mapping_frame": 4,
+      "source": "type $34 art base $6E (zone-3 table $1E:$8C98), shared explosion tiles",
+      "rgba_sha256": "11210a709a698aa832b25c487d0a6783259d962c7870a0303a8b544b622edc4f"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_sparkle_0A",
+      "sprite_frame": 0,
+      "mapping_frame": 5,
+      "source": "type $0A parameter $FF sparkle frames (shared mapping $8C71)",
+      "rgba_sha256": "e36715c8a76dd61ff47d0b352149654501b9503ed5fa6520629f62e2642da043"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_sparkle_0A",
+      "sprite_frame": 1,
+      "mapping_frame": 6,
+      "source": "type $0A parameter $FF sparkle frames (shared mapping $8C71)",
+      "rgba_sha256": "64e512b67c187402fe08460ee3f72151f75e11bafa4a9a5a7dacbe2f983a2914"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_poof_0F",
+      "sprite_frame": 0,
+      "mapping_frame": 7,
+      "source": "type $0F frames 7..9 (shared mapping $8C71), +(1,18) registration like every other mapped object",
+      "rgba_sha256": "8b630ed4b7215461cf82b3d6315d270026a64e323ac13a8ac08f7d494e26fd3b"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_poof_0F",
+      "sprite_frame": 1,
+      "mapping_frame": 8,
+      "source": "type $0F frames 7..9 (shared mapping $8C71), +(1,18) registration like every other mapped object",
+      "rgba_sha256": "97f6886b7024fcebbdca32b87ad09279e6769e1922e9dc5cdca026ec6432903c"
+    },
+    {
+      "resource": "SPR_chaos_mghz_boss_poof_0F",
+      "sprite_frame": 2,
+      "mapping_frame": 9,
+      "source": "type $0F frames 7..9 (shared mapping $8C71), +(1,18) registration like every other mapped object",
+      "rgba_sha256": "2dbb14d08faa27ba66775b0b54e4cd448dee160cc5e27b2f1734aed976ab5828"
+    }
+  ],
+  "allocators": "script children $5EE1 slots 7..17 (11); HUD/bonus $5E9C slots 0..15; scheduler 19 slots"
+}

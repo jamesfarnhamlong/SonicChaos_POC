@@ -4587,6 +4587,54 @@
         "name": "SCR_chaos_mghz_m3",
         "path": "scripts/SCR_chaos_mghz_m3/SCR_chaos_mghz_m3.yy"
       }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_boss_56",
+        "path": "sprites/SPR_chaos_mghz_boss_56/SPR_chaos_mghz_boss_56.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_boss_56_flash",
+        "path": "sprites/SPR_chaos_mghz_boss_56_flash/SPR_chaos_mghz_boss_56_flash.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_boss_puff_34",
+        "path": "sprites/SPR_chaos_mghz_boss_puff_34/SPR_chaos_mghz_boss_puff_34.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_boss_sparkle_0A",
+        "path": "sprites/SPR_chaos_mghz_boss_sparkle_0A/SPR_chaos_mghz_boss_sparkle_0A.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_mghz_boss_data",
+        "path": "scripts/SCR_chaos_mghz_boss_data/SCR_chaos_mghz_boss_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_mghz_boss",
+        "path": "scripts/SCR_chaos_mghz_boss/SCR_chaos_mghz_boss.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_56",
+        "path": "objects/OBJ_chaos_object_56/OBJ_chaos_object_56.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_boss_poof_0F",
+        "path": "sprites/SPR_chaos_mghz_boss_poof_0F/SPR_chaos_mghz_boss_poof_0F.yy"
+      }
     }
   ],
   "resourceType": "GMProject",

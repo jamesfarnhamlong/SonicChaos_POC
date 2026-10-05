@@ -2,7 +2,7 @@
 
 vx = __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) - 66;
 vy = __view_get( e__VW.YView, 0 ) + 14;
-if (chaos_is_thz3() || chaos_gpz_act()==3) vy += global.chaosHudSlide;
+if (chaos_is_thz3() || chaos_gpz_act()==3 || chaos_mghz_act()==3) vy += global.chaosHudSlide;
 
 // Player
 draw_sprite(SPR_icon_life, 0, vx, vy);
@@ -23,7 +23,7 @@ draw_sprite(SPR_font_x, -1, vx+22, vy);
 
 vx = __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) - 35;
 vy = __view_get( e__VW.YView, 0 ) + 17;
-if (chaos_is_thz3() || chaos_gpz_act()==3) vy += global.chaosHudSlide;
+if (chaos_is_thz3() || chaos_gpz_act()==3 || chaos_mghz_act()==3) vy += global.chaosHudSlide;
 
 font = font_add_sprite(SPR_font_numbers,48,false,1);
 draw_set_font(font);
