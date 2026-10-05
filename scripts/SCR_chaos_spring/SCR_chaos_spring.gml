@@ -43,6 +43,14 @@ function chaos_spring26_launch_presentation(cp_p) {
 /// The extension timeline reproduces the emulated original: 4 extension updates, hold, 4 retract updates, contact evaluated again 42 (strong) / 20 (weak)
 /// updates after the launch update.
 function SCR_chaos_object_spring_step(cp_o) {
+    if (chaos_is_sez()) {
+        if (!chaos_sez_mapped_awake(cp_o,cp_o.chaosBaseX,cp_o.chaosLayoutY+12)) return;
+        if (cp_o.chaosSezRecreated) {
+            cp_o.chaosState=cp_o.chaosRestState; cp_o.chaosTimer=0; cp_o.chaosOffset=0;
+            cp_o.chaosDrawX=cp_o.chaosBaseX;
+            cp_o.chaosSezRecreated=false;
+        }
+    }
     var cp_p = instance_find(OBJ_player,0);
     if (!instance_exists(cp_p) ||
         (cp_p.object_index != OBJ_player_char && cp_p.object_index != OBJ_player_char_spin)) return;

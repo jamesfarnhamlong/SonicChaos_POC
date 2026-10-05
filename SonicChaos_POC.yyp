@@ -4635,6 +4635,276 @@
         "name": "SPR_chaos_mghz_boss_poof_0F",
         "path": "sprites/SPR_chaos_mghz_boss_poof_0F/SPR_chaos_mghz_boss_poof_0F.yy"
       }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez1_terrain_0",
+        "path": "sprites/SPR_chaos_sez1_terrain_0/SPR_chaos_sez1_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez1_terrain_1",
+        "path": "sprites/SPR_chaos_sez1_terrain_1/SPR_chaos_sez1_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez1_terrain_2",
+        "path": "sprites/SPR_chaos_sez1_terrain_2/SPR_chaos_sez1_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez1_terrain_3",
+        "path": "sprites/SPR_chaos_sez1_terrain_3/SPR_chaos_sez1_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_sez1_terrain",
+        "path": "objects/OBJ_chaos_sez1_terrain/OBJ_chaos_sez1_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_sez1",
+        "path": "rooms/ROM_chaos_sez1/ROM_chaos_sez1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez2_terrain_0",
+        "path": "sprites/SPR_chaos_sez2_terrain_0/SPR_chaos_sez2_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez2_terrain_1",
+        "path": "sprites/SPR_chaos_sez2_terrain_1/SPR_chaos_sez2_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez2_terrain_2",
+        "path": "sprites/SPR_chaos_sez2_terrain_2/SPR_chaos_sez2_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez2_terrain_3",
+        "path": "sprites/SPR_chaos_sez2_terrain_3/SPR_chaos_sez2_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_sez2_terrain",
+        "path": "objects/OBJ_chaos_sez2_terrain/OBJ_chaos_sez2_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_sez2",
+        "path": "rooms/ROM_chaos_sez2/ROM_chaos_sez2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez3_terrain_0",
+        "path": "sprites/SPR_chaos_sez3_terrain_0/SPR_chaos_sez3_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez3_terrain_1",
+        "path": "sprites/SPR_chaos_sez3_terrain_1/SPR_chaos_sez3_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez3_terrain_2",
+        "path": "sprites/SPR_chaos_sez3_terrain_2/SPR_chaos_sez3_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez3_terrain_3",
+        "path": "sprites/SPR_chaos_sez3_terrain_3/SPR_chaos_sez3_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_sez3_terrain",
+        "path": "objects/OBJ_chaos_sez3_terrain/OBJ_chaos_sez3_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_sez3",
+        "path": "rooms/ROM_chaos_sez3/ROM_chaos_sez3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_block_46",
+        "path": "sprites/SPR_chaos_sez_block_46/SPR_chaos_sez_block_46.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_block_47",
+        "path": "sprites/SPR_chaos_sez_block_47/SPR_chaos_sez_block_47.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_block_9b",
+        "path": "sprites/SPR_chaos_sez_block_9b/SPR_chaos_sez_block_9b.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_block_9c",
+        "path": "sprites/SPR_chaos_sez_block_9c/SPR_chaos_sez_block_9c.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_block_9d",
+        "path": "sprites/SPR_chaos_sez_block_9d/SPR_chaos_sez_block_9d.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_foreground",
+        "path": "sprites/SPR_chaos_sez_foreground/SPR_chaos_sez_foreground.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_platform",
+        "path": "sprites/SPR_chaos_sez_platform/SPR_chaos_sez_platform.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_ring",
+        "path": "sprites/SPR_chaos_sez_ring/SPR_chaos_sez_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_terrain_ring",
+        "path": "sprites/SPR_chaos_sez_terrain_ring/SPR_chaos_sez_terrain_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_spring",
+        "path": "sprites/SPR_chaos_sez_spring/SPR_chaos_sez_spring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_spike",
+        "path": "sprites/SPR_chaos_sez_spike/SPR_chaos_sez_spike.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_poof",
+        "path": "sprites/SPR_chaos_sez_poof/SPR_chaos_sez_poof.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_sign",
+        "path": "sprites/SPR_chaos_sez_sign/SPR_chaos_sez_sign.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_monitor_01",
+        "path": "sprites/SPR_chaos_sez_monitor_01/SPR_chaos_sez_monitor_01.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_monitor_02",
+        "path": "sprites/SPR_chaos_sez_monitor_02/SPR_chaos_sez_monitor_02.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_monitor_04",
+        "path": "sprites/SPR_chaos_sez_monitor_04/SPR_chaos_sez_monitor_04.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_monitor_06",
+        "path": "sprites/SPR_chaos_sez_monitor_06/SPR_chaos_sez_monitor_06.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_sez_data",
+        "path": "scripts/SCR_chaos_sez_data/SCR_chaos_sez_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_blocks",
+        "path": "sprites/SPR_chaos_sez_blocks/SPR_chaos_sez_blocks.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_effect5",
+        "path": "sprites/SPR_chaos_sez_effect5/SPR_chaos_sez_effect5.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_effect5_front",
+        "path": "sprites/SPR_chaos_sez_effect5_front/SPR_chaos_sez_effect5_front.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_puff",
+        "path": "sprites/SPR_chaos_sez_puff/SPR_chaos_sez_puff.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_ring_sparkle",
+        "path": "sprites/SPR_chaos_sez_ring_sparkle/SPR_chaos_sez_ring_sparkle.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_shard",
+        "path": "sprites/SPR_chaos_sez_shard/SPR_chaos_sez_shard.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_sparkle",
+        "path": "sprites/SPR_chaos_sez_sparkle/SPR_chaos_sez_sparkle.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_spring_shoes",
+        "path": "sprites/SPR_chaos_sez_spring_shoes/SPR_chaos_sez_spring_shoes.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_sez_effects",
+        "path": "scripts/SCR_chaos_sez_effects/SCR_chaos_sez_effects.yy"
+      }
     }
   ],
   "resourceType": "GMProject",
@@ -4752,6 +5022,24 @@
       "roomId": {
         "name": "ROM_chaos_mghz3",
         "path": "rooms/ROM_chaos_mghz3/ROM_chaos_mghz3.yy"
+      }
+    },
+    {
+      "roomId": {
+        "name": "ROM_chaos_sez1",
+        "path": "rooms/ROM_chaos_sez1/ROM_chaos_sez1.yy"
+      }
+    },
+    {
+      "roomId": {
+        "name": "ROM_chaos_sez2",
+        "path": "rooms/ROM_chaos_sez2/ROM_chaos_sez2.yy"
+      }
+    },
+    {
+      "roomId": {
+        "name": "ROM_chaos_sez3",
+        "path": "rooms/ROM_chaos_sez3/ROM_chaos_sez3.yy"
       }
     }
   ],

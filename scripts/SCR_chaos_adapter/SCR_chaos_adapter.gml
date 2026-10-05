@@ -5,9 +5,9 @@ function SCR_chaos_core_attach(cp_p) {
     // Stable sprite-to-ROM anchor; never derive physics probes from animated bbox.
     cp_p.chaosAnchorOffset = 18 - (sprite_get_bbox_bottom(SPR_player_mask)-sprite_get_yoffset(SPR_player_mask));
     cp_p.chaosCore = SCR_cc_new(cp_p.x, cp_p.y-cp_p.chaosAnchorOffset);
-    cp_p.chaosCore.zone = chaos_is_mghz() ? 3 : (chaos_is_gpz() ? 1 : 0);
+    cp_p.chaosCore.zone = chaos_is_sez() ? 2 : (chaos_is_mghz() ? 3 : (chaos_is_gpz() ? 1 : 0));
     cp_p.chaosCore.level = cp_p.chaosCore.zone;
-    if (chaos_is_gpz() || chaos_is_mghz()) cp_p.chaosCore.yu=round(cp_p.y*256); // Research loader start is the canonical anchor, before the sprite adapter.
+    if (chaos_is_gpz() || chaos_is_mghz() || chaos_is_sez()) cp_p.chaosCore.yu=round(cp_p.y*256); // Research loader start is the canonical anchor, before the sprite adapter.
     cp_p.chaosCore.previous = SCR_cc_lookup(cp_p.x,cp_p.chaosCore.yu/256+18,0).flags;
     cp_p.chaosCore.vx = round(cp_p.hspeed*256);
     cp_p.chaosCore.vy = round(cp_p.vspeed*256);
@@ -163,6 +163,7 @@ function SCR_chaos_adapter_step(cp_p) {
     // state, the X speed high byte, floor contact ($D522 bit 1) and side contacts ($D523 & $0C). Never driven by GameMaker image_index/image_speed.
     var cp_anim_t = SCR_cc_anim_update(cp_c);
     if (chaos_is_mghz()) cp_c.frame_counter = global.chaosMghzEffects.frame;
+    if (chaos_is_sez()) cp_c.frame_counter = global.chaosSezEffects.frame;
     SCR_cc_tick(cp_c);
     SCR_chaos_footwear_phase(cp_p,cp_c);
     // Widescreen room boundary adapter. Original camera-relative 256px clipping is omitted.
@@ -214,6 +215,7 @@ function SCR_chaos_adapter_end(cp_p) {
 }
 // Mapped type $26 spring logic lives in SCR_chaos_spring (recovered ROM model); only its drawing remains here.
 function SCR_chaos_object_spring_draw(cp_o) {
+    if (chaos_is_sez() && (!cp_o.chaosLive || cp_o.chaosAsleep)) return;
     if (cp_o.chaosOffset <= 0) return; // Original frame zero is concealed.
     var cp_cap_y = cp_o.chaosBaseY-cp_o.chaosOffset;
     draw_set_color(make_color_rgb(230,230,230));
@@ -222,7 +224,7 @@ function SCR_chaos_object_spring_draw(cp_o) {
         draw_line_width(cp_o.chaosDrawX-cp_side,cp_y,cp_o.chaosDrawX+cp_side,cp_y+4,2);
     }
     draw_set_color(c_white);
-    draw_sprite(chaos_is_gpz() ? SPR_chaos_gpz_spring : SPR_chaos_object_26,0,cp_o.chaosDrawX,cp_cap_y+17);
+    draw_sprite(chaos_is_sez() ? SPR_chaos_sez_spring : (chaos_is_gpz() ? SPR_chaos_gpz_spring : SPR_chaos_object_26),0,cp_o.chaosDrawX,cp_cap_y+17);
 }
 
 function SCR_chaos_cancel_state11(cp_p) {
@@ -310,7 +312,7 @@ function SCR_chaos_apply_hazard_damage(cp_p) {
 // Four canonical THZ1 terrain cells only. This adapter does not reinterpret
 // type $10 objects or move the source cells; it changes $47 to empty $46.
 function SCR_chaos_block47_step(cp_p) {
-    if (chaos_is_gpz() || chaos_is_mghz()) return false; // GPZ uses canonical terrain dispatch, not the accepted THZ1 four-cell swept adapter.
+    if (chaos_is_gpz() || chaos_is_mghz() || chaos_is_sez()) return false; // GPZ uses canonical terrain dispatch, not the accepted THZ1 four-cell swept adapter.
     if (!variable_instance_exists(cp_p,"chaosCore")) return false;
     var cp_c = cp_p.chaosCore;
     // Breakable $47 needs the canonical attack bit and excludes the states $0F/$10/$15/$1A (spring audit); the legacy playerJump / spin-object predicates are gone.
@@ -457,12 +459,13 @@ function SCR_chaos_type10_reward(cp_parameter, cp_p) {
 }
 
 function SCR_chaos_spike_draw(cp_o) {
+    if (chaos_is_sez() && (!cp_o.chaosLive || cp_o.chaosAsleep)) return;
     // Mapping frame $0E is 24x32. The ROM moves it upward only 18 pixels;
     // presentation keeps the exposed portion bottom-aligned to the floor so
     // it grows upward from 18 pixels at rest to the complete raised frame.
     var cp_visible = min(32,18+cp_o.chaosOffset);
     draw_sprite_part(
-        chaos_is_mghz() ? SPR_chaos_mghz_spike : (chaos_is_gpz() ? SPR_chaos_gpz_spike : SPR_chaos_object_1B),0,
+        chaos_is_sez() ? SPR_chaos_sez_spike : (chaos_is_mghz() ? SPR_chaos_mghz_spike : (chaos_is_gpz() ? SPR_chaos_gpz_spike : SPR_chaos_object_1B)),0,
         4,4,24,cp_visible,
         cp_o.x-12,cp_o.chaosBaseY-cp_visible
     );
@@ -497,7 +500,8 @@ function SCR_chaos_break16_block(cp_index) {
     var cp_width=global.chaosMapWidth;
     var cp_fx=instance_create_depth((cp_index mod cp_width)*32+16,(cp_index div cp_width)*32+8,-20,OBJ_chaos_object_0F_transient);
     cp_fx.chaosParameter=$40;
-    if (chaos_is_gpz()) cp_fx.sprite_index=SPR_chaos_gpz_poof;
+    if (chaos_is_sez()) cp_fx.sprite_index=SPR_chaos_sez_poof;
+    else if (chaos_is_gpz()) cp_fx.sprite_index=SPR_chaos_gpz_poof;
 }
 
 /// Shared selector/timer ($D532 / $D44C) end-of-player-update step plus the queued Rocket reward ($D3A3 bit 3). Order inside one update: the old state's callback,

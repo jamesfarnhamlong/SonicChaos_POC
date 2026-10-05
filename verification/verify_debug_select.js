@@ -9,7 +9,7 @@ let nextRoom, writes = 0, controls, rings;
 Object.assign(c, {ROM_chaos_debug_select: 9001, ROM_menu_title: 9002,
     OBJ_chaos_controls: 9003, OBJ_chaos_ring_manager: 9004, OBJ_effect_fade_in: 9005,
     game_set_speed: () => {}, gamespeed_fps: 0, SCR_screen: () => {},
-    room_exists: v => [h.ids.ROM_chaos_thz1,h.ids.ROM_chaos_thz2,h.ids.ROM_chaos_thz3,h.ids.ROM_chaos_gpz1,h.ids.ROM_chaos_gpz2,h.ids.ROM_chaos_gpz3,h.ids.ROM_chaos_mghz1,h.ids.ROM_chaos_mghz2,h.ids.ROM_chaos_mghz3].includes(v),
+    room_exists: v => [h.ids.ROM_chaos_thz1,h.ids.ROM_chaos_thz2,h.ids.ROM_chaos_thz3,h.ids.ROM_chaos_gpz1,h.ids.ROM_chaos_gpz2,h.ids.ROM_chaos_gpz3,h.ids.ROM_chaos_mghz1,h.ids.ROM_chaos_mghz2,h.ids.ROM_chaos_mghz3,h.ids.ROM_chaos_sez1,h.ids.ROM_chaos_sez2,h.ids.ROM_chaos_sez3].includes(v),
     room_goto: v => {nextRoom = v;}, instance_activate_all: () => {}, audio_stop_all: () => {},
     ini_open: () => {writes++;}, ini_write_real: () => {}, ini_close: () => {},
     score: 0, string: String, vk_escape: 27, surface_exists: () => false});
@@ -37,7 +37,7 @@ const originalDepth = c.instance_create_depth;
 c.instance_create_depth = (x,y,d,o) => o === c.OBJ_chaos_ring_manager ? c.instance_create(x,y,o) : originalDepth(x,y,d,o);
 const entries = c.chaos_debug_entries();
 assert.equal(entries.length,21);
-assert.equal(entries.filter(e=>e.enabled).length,9);
+assert.equal(entries.filter(e=>e.enabled).length,12);
 assert.deepEqual(Array.from(entries.slice(0,18),e=>e.act),Array.from({length:18},(_,i)=>i%3+1));
 assert.equal(new Set(entries.slice(0,18).map(e=>e.zone)).size,6);
 assert(entries.slice(18).every(e=>e.classification==='test' && !e.enabled));
@@ -75,8 +75,8 @@ assert.equal(nextRoom,undefined); assert(c.message.includes('UNAVAILABLE'));
 g.btSpacePress=false; g.btAPress=true; eventStep(); assert.equal(nextRoom,c.ROM_menu_title); g.btAPress=false;
 g.zoneGoto=2; g.saveGame=1;
 const reports=[];
-for (const act of [1,4,2,5,3,6,1,6,2]) {
-    const gpz=act>3, local=gpz?act-3:act;
+for (const act of [1,4,2,5,3,6,7,8,9,1,6,2]) {
+    const sez=act>=7 && act<=9, gpz=act>3 && act<=6, imported=gpz||sez, zone=sez?"sez":gpz?"gpz":"thz", local=sez?act-6:gpz?act-3:act;
     // Dirty a prior room as if after footwear, goal, boss and checkpoint gameplay.
     Object.assign(g,{checkPoint:true,checkPointX:1900,checkPointY:240,chaosPowerCode:4,chaosPowerTimer:800,
         chaosType05Allocated:true,chaosComplete:true,chaosGoalContact:true,chaosHudSlide:-64,
@@ -88,19 +88,19 @@ for (const act of [1,4,2,5,3,6,1,6,2]) {
     enterSelector();
     assert(c.chaos_debug_launch(entries[act-1])); assert.equal(nextRoom,entries[act-1].room);
     c.room=nextRoom;
-    const roomName=`ROM_chaos_${gpz?'gpz':'thz'}${local}`, room=yy(`rooms/${roomName}/${roomName}.yy`);
+    const roomName=`ROM_chaos_${zone}${local}`, room=yy(`rooms/${roomName}/${roomName}.yy`);
     w.roomWidth=room.roomSettings.Width; w.roomHeight=room.roomSettings.Height;
     // Room-authored THZ1 populations are verified from the unchanged room resource;
     // THZ2/3 population creation is executed by the shipped canonical loader.
     const population=room.layers.flatMap(l=>l.instances||[]).map(i=>i.objectId.name);
     h.runEvent({alarm:[]},'objects/OBJ_chaos_zone/Create_0.gml');
     const p=w.player;
-    const manifest=gpz?yy('POC_notes/rom-cache/gpz/implementation-manifest.json').acts[`gpz${local}`]:null;
-    assert.deepEqual([p.x,p.y],gpz?manifest.start.player_anchor:act===1?[142,658]:act===2?[110,398]:[110,224]);
-    assert.equal(g.chaosMapWidth,gpz?manifest.descriptor.layout.width_cells:act===3?80:128);
-    assert.equal(w.cam.x,gpz?manifest.start.camera[0]:0); assert.equal(w.cam.y,gpz?manifest.start.camera[1]:Math.max(0,Math.min(Math.round(p.y-w.cam.h/1.5),w.roomHeight-w.cam.h)));
+    const manifest=imported?yy(`POC_notes/rom-cache/${zone}/implementation-manifest.json`).acts[`${zone}${local}`]:null;
+    assert.deepEqual([p.x,p.y],imported?manifest.start.player_anchor:act===1?[142,658]:act===2?[110,398]:[110,224]);
+    assert.equal(g.chaosMapWidth,imported?manifest.descriptor.layout.width_cells:act===3?80:128);
+    assert.equal(w.cam.x,imported?manifest.start.camera[0]:0); assert.equal(w.cam.y,imported?manifest.start.camera[1]:Math.max(0,Math.min(Math.round(p.y-w.cam.h/1.5),w.roomHeight-w.cam.h)));
     assert.equal(g.chaosConsumedPlatforms.length,0,'consumed placements reset');
-    assert.equal(p.chaosCore.zone,gpz?1:0,'spring zone resets');
+    assert.equal(p.chaosCore.zone,sez?2:gpz?1:0,'spring zone resets');
     for (const name of ['checkPoint','chaosComplete','chaosGoalContact','chaosBossSparkleOn','chaosType05Allocated','playerSpinDash']) assert.equal(g[name],false,name);
     assert.equal(g.chaosPowerCode,0); assert.equal(g.chaosPowerTimer,0); assert.equal(g.chaosHudSlide,0);
     assert.equal(p.chaosCore.state,1); assert.equal(p.chaosCore.next,1); assert.equal(p.chaosCore.vx,0);
@@ -110,7 +110,8 @@ for (const act of [1,4,2,5,3,6,1,6,2]) {
     if(gpz && local===3) {assert.equal(w.bosses[0].chaosBoss51.active,false);assert.equal(w.bosses[0].chaosBoss51.tick,0);}
     if(act===3) {assert.equal(w.bosses[0].chaosBoss.hp,8); assert.equal(w.bosses[0].chaosBoss.state,-1); assert.equal(w.bosses[0].chaosBoss.camera_mode,0);}
     if(act===1) {assert(population.includes('OBJ_chaos_object_18')); assert(!population.includes('OBJ_chaos_object_50'));}
-    else assert.equal(g.chaosSpawnedIndices.length,gpz?manifest.foundation.instantiate_indices.length+manifest.foundation.integrate_before_instantiating_indices.length-manifest.rings.object09.length+manifest.objects.filter(r=>[37,44].includes(parseInt(r.type_id,16))).length+(local===3?1:0):act===2?28:7);
+    else if(sez) { const records=yy('POC_notes/rom-cache/sez/object-census.json').acts[`sez${local}`].records; assert.equal(g.chaosSpawnedIndices.length,records.filter(r=>['0x10','0x18','0x1B','0x26','0x2F'].includes(r.type_id)||(r.type_id==='0x28'&&['0x83','0x84'].includes(r.parameter))).length); assert.equal(g.chaosSezEffects.tick,0); }
+    else assert.equal(g.chaosSpawnedIndices.length,imported?manifest.foundation.instantiate_indices.length+manifest.foundation.integrate_before_instantiating_indices.length-manifest.rings.object09.length+manifest.objects.filter(r=>[37,44].includes(parseInt(r.type_id,16))).length+(local===3?1:0):act===2?28:7);
     c.chaos_act_complete(); assert.equal(g.zoneGoto,2); c.SCR_save_game(); assert.equal(writes,0);
     reports.push({act,mapWidth:g.chaosMapWidth,spawn:[p.x,p.y],camera:[w.cam.x,w.cam.y],
         roomInstances:population.length,loadedObjects:g.chaosSpawnedIndices.length,rings:rings.chaosRingSourceCount,bosses:w.bosses.length});

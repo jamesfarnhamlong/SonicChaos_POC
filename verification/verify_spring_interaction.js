@@ -17,7 +17,7 @@ const s16 = v => (v & 0x8000) ? v - 0x10000 : v;
 
 // ---------- load the shipped scripts ----------
 const g = {music: 0};
-const base = {global: g, floor: Math.floor, round: Math.round, abs: Math.abs, min: Math.min, max: Math.max, sign: Math.sign, clamp: (v, a, b) => Math.min(Math.max(v, a), b),
+const base = {global: g, chaos_is_sez: () => false, floor: Math.floor, round: Math.round, abs: Math.abs, min: Math.min, max: Math.max, sign: Math.sign, clamp: (v, a, b) => Math.min(Math.max(v, a), b),
     array_create: (n, v) => Array(n).fill(v), array_length: a => a.length, array_push: (a, v) => a.push(v), array_copy: (d, di, s, si, n) => { for (let i = 0; i < n; i++) d[di + i] = s[si + i]; },
     variable_global_exists: k => k in g, variable_struct_exists: (o, k) => k in o, variable_instance_exists: (o, k) => k in o, is_array: Array.isArray, noone: -4};
 const cc = vm.createContext(Object.assign({}, base));

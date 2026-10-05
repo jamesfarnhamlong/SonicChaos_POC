@@ -3,6 +3,7 @@ global.chaosCrushDeathPhase=0;
 global.chaosMghzBossActive = false; // future $D44E boss framework hook
 global.chaosMghzPaletteControl = 0; // $D492 dispatcher gate
 global.chaosMghzEffects = chaos_mghz_effect_new();
+global.chaosSezEffects = chaos_sez_effect_new();
 chaos_lr_reset(); // recovered lost rings (type $06) never survive a room start / act restart
 global.chaosBeyondMapOpen = false; // GameMaker adapter flag: set only while player state $20 runs (SCR_cc_lookup)
 // Native fixed-point updates, not the old velocity*2 / acceleration*4 approximation.
@@ -55,7 +56,10 @@ if (global.checkPoint == true)
 }
 else
 {
-    if (chaos_is_mghz()) {
+    if (chaos_is_sez()) {
+        var cp_start=chaos_sez_start();
+        instance_create(cp_start[0],cp_start[1],OBJ_player_char);
+    } else if (chaos_is_mghz()) {
         var cp_start=chaos_mghz_start();
         instance_create(cp_start[0],cp_start[1],OBJ_player_char);
     } else if (chaos_is_gpz()) {
@@ -95,7 +99,11 @@ __view_set(e__VW.VBorder, 0, round(__view_get(e__VW.HView, 0) / 2));
 __view_set(e__VW.XView, 0, 0);
 __view_set(e__VW.YView, 0, 550);
 // Debug-only fresh camera, including THZ3's shorter room.
-if (chaos_is_mghz()) {
+if (chaos_is_sez()) {
+    var cp_camera=chaos_sez_camera();
+    __view_set(e__VW.XView,0,cp_camera[0]);
+    __view_set(e__VW.YView,0,cp_camera[1]);
+} else if (chaos_is_mghz()) {
     var cp_camera=chaos_mghz_camera();
     __view_set(e__VW.XView,0,cp_camera[0]);
     __view_set(e__VW.YView,0,cp_camera[1]);

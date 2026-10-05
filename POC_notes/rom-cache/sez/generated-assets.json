@@ -1,0 +1,342 @@
+{
+  "research_commit": "a20082675cdfc25289b9dd7fe49440c55877c14d",
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "assets": [
+    {
+      "resource": "SPR_chaos_sez1_terrain_0",
+      "frame": 0,
+      "rgba_sha256": "ffbc047d3007b161803007888d20ca884f7d177e13de6b766ea08ebc84383fb7"
+    },
+    {
+      "resource": "SPR_chaos_sez1_terrain_1",
+      "frame": 0,
+      "rgba_sha256": "3e8cc726a030fe90f1d86c23dd728174e28bad1cb13a465fc6cb4dac281b3b5b"
+    },
+    {
+      "resource": "SPR_chaos_sez1_terrain_2",
+      "frame": 0,
+      "rgba_sha256": "cbbb79fb275befd4b002f0c250de7f45a559860e82602a401f4765ebad9d3b7d"
+    },
+    {
+      "resource": "SPR_chaos_sez1_terrain_3",
+      "frame": 0,
+      "rgba_sha256": "b3a81cbc517f9f5bada043dbba928ff2ce8b3f89859adadaa7be3a78f1898fdb"
+    },
+    {
+      "resource": "SPR_chaos_sez2_terrain_0",
+      "frame": 0,
+      "rgba_sha256": "5a96e9cdd189768e7e9057b400b4beffeb904561359c2cc34c2c1bce03bc75e8"
+    },
+    {
+      "resource": "SPR_chaos_sez2_terrain_1",
+      "frame": 0,
+      "rgba_sha256": "c965cafb5d0dc3e420a8ab50ca13bb779af688e5771680eea0e377c19efc27dd"
+    },
+    {
+      "resource": "SPR_chaos_sez2_terrain_2",
+      "frame": 0,
+      "rgba_sha256": "af1186243f5e48cccba47f9a53a3593d95352d6df7aec69917455bbf4dd1bf55"
+    },
+    {
+      "resource": "SPR_chaos_sez2_terrain_3",
+      "frame": 0,
+      "rgba_sha256": "f50bf9ec391aa6eea6b747773b85128e4bb7f8328578242f44be644923286c97"
+    },
+    {
+      "resource": "SPR_chaos_sez3_terrain_0",
+      "frame": 0,
+      "rgba_sha256": "ffdab6a4e1fff8d31caad8e86e07724aa43668f86d3672bb4d31ec07333ef45b"
+    },
+    {
+      "resource": "SPR_chaos_sez3_terrain_1",
+      "frame": 0,
+      "rgba_sha256": "bb5a0c95f09f8a20ee18c1cf60296e38a85b87547b64d3ca75a80a1d9b002437"
+    },
+    {
+      "resource": "SPR_chaos_sez3_terrain_2",
+      "frame": 0,
+      "rgba_sha256": "51e18362cdcbd07ae5602bd48fbf84f21c472f07d906285503c5c95c89899be5"
+    },
+    {
+      "resource": "SPR_chaos_sez3_terrain_3",
+      "frame": 0,
+      "rgba_sha256": "0b032e9063a80eb5b2c4712393247348c36e1cf604deace5a8f23bfa9e27a478"
+    },
+    {
+      "resource": "SPR_chaos_sez_block_46",
+      "frame": 0,
+      "rgba_sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7"
+    },
+    {
+      "resource": "SPR_chaos_sez_block_47",
+      "frame": 0,
+      "rgba_sha256": "176c9aeadf3589443d68929d135a90387efbfa3c8e911a8403ee837c25314b90"
+    },
+    {
+      "resource": "SPR_chaos_sez_block_9b",
+      "frame": 0,
+      "rgba_sha256": "c759662bced195a8bc09f91a4a18ad5d3398130ccc933a72d146c3404205e00e"
+    },
+    {
+      "resource": "SPR_chaos_sez_block_9c",
+      "frame": 0,
+      "rgba_sha256": "501bf550df1660c670ba8b8265a569991e6271b9b9710dd72937cf680b7ba906"
+    },
+    {
+      "resource": "SPR_chaos_sez_block_9d",
+      "frame": 0,
+      "rgba_sha256": "12faa69b01ba9fa1a24789c2d3efef5c21d59427c0de34a60425d7ec6847d453"
+    },
+    {
+      "resource": "SPR_chaos_sez_blocks",
+      "frame": 0,
+      "rgba_sha256": "f5b220d2e257888c8584595c10d3b6f19f39e84523262418a33b024b41125d0d"
+    },
+    {
+      "resource": "SPR_chaos_sez_effect5",
+      "frame": 0,
+      "rgba_sha256": "f66db8c67e180486b887584ac03164582b72fe24b664c55a817b1e9104c4ffec"
+    },
+    {
+      "resource": "SPR_chaos_sez_effect5",
+      "frame": 1,
+      "rgba_sha256": "6db5d1c56168d014e68bed4af17bc0808bcb468fadbd827fb90b7698991686ed"
+    },
+    {
+      "resource": "SPR_chaos_sez_effect5",
+      "frame": 2,
+      "rgba_sha256": "f66db8c67e180486b887584ac03164582b72fe24b664c55a817b1e9104c4ffec"
+    },
+    {
+      "resource": "SPR_chaos_sez_effect5_front",
+      "frame": 0,
+      "rgba_sha256": "e35882e41b064ce34368858492a63768d651f63558cb9117e8ce528fd0bce6ce"
+    },
+    {
+      "resource": "SPR_chaos_sez_effect5_front",
+      "frame": 1,
+      "rgba_sha256": "251c1f01c85615750d4cdc829849c568c3e61401ba000a04ed37970d888ef6cf"
+    },
+    {
+      "resource": "SPR_chaos_sez_effect5_front",
+      "frame": 2,
+      "rgba_sha256": "e35882e41b064ce34368858492a63768d651f63558cb9117e8ce528fd0bce6ce"
+    },
+    {
+      "resource": "SPR_chaos_sez_foreground",
+      "frame": 0,
+      "rgba_sha256": "465ce3b3e68dd5558e5c00ade190021460aee0b582b5a0db3278b5dc3659115b"
+    },
+    {
+      "resource": "SPR_chaos_sez_monitor_01",
+      "frame": 0,
+      "rgba_sha256": "7c54075af06a66d42e7d543aa3b6d56c6bb314dceb63b1672f58a046e810d94b"
+    },
+    {
+      "resource": "SPR_chaos_sez_monitor_01",
+      "frame": 1,
+      "rgba_sha256": "5e56169ba9bdde13b30ad75b5d1dcb327640f3c1d2a5e2acfe77c5cf108866d2"
+    },
+    {
+      "resource": "SPR_chaos_sez_monitor_02",
+      "frame": 0,
+      "rgba_sha256": "f38115b6d65355b40364f341fb863ffc242f1d8ce45970fb5a6225bcc474beef"
+    },
+    {
+      "resource": "SPR_chaos_sez_monitor_02",
+      "frame": 1,
+      "rgba_sha256": "5e56169ba9bdde13b30ad75b5d1dcb327640f3c1d2a5e2acfe77c5cf108866d2"
+    },
+    {
+      "resource": "SPR_chaos_sez_monitor_04",
+      "frame": 0,
+      "rgba_sha256": "7ff49b4aec5dc588a6027ab7187b74bc9c26928b14b446d2be081c0b09aec66e"
+    },
+    {
+      "resource": "SPR_chaos_sez_monitor_04",
+      "frame": 1,
+      "rgba_sha256": "5e56169ba9bdde13b30ad75b5d1dcb327640f3c1d2a5e2acfe77c5cf108866d2"
+    },
+    {
+      "resource": "SPR_chaos_sez_monitor_06",
+      "frame": 0,
+      "rgba_sha256": "95b24bb5629f305f8346ed024d4aae8437886684705145157f9dba0cef584b26"
+    },
+    {
+      "resource": "SPR_chaos_sez_monitor_06",
+      "frame": 1,
+      "rgba_sha256": "5e56169ba9bdde13b30ad75b5d1dcb327640f3c1d2a5e2acfe77c5cf108866d2"
+    },
+    {
+      "resource": "SPR_chaos_sez_platform",
+      "frame": 0,
+      "rgba_sha256": "ce265c38ef5bb199e1980cb8a1b909dce229f62b7cf7613d925c5753413afc5c"
+    },
+    {
+      "resource": "SPR_chaos_sez_poof",
+      "frame": 0,
+      "rgba_sha256": "183a78d08a79b62520f974d306e4f527f049ff4c6c1c4f32d06927d1e10758f6"
+    },
+    {
+      "resource": "SPR_chaos_sez_poof",
+      "frame": 1,
+      "rgba_sha256": "2d3815a0efc12a46a3aaa2a8752525ea62c7828b08b74156c4a6bf8db065a2f7"
+    },
+    {
+      "resource": "SPR_chaos_sez_poof",
+      "frame": 2,
+      "rgba_sha256": "9793573b5f44dc98393556fdbf3ff79bc30fcfa46312870f0cd551b2c487c854"
+    },
+    {
+      "resource": "SPR_chaos_sez_puff",
+      "frame": 0,
+      "rgba_sha256": "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe"
+    },
+    {
+      "resource": "SPR_chaos_sez_puff",
+      "frame": 1,
+      "rgba_sha256": "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe"
+    },
+    {
+      "resource": "SPR_chaos_sez_puff",
+      "frame": 2,
+      "rgba_sha256": "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe"
+    },
+    {
+      "resource": "SPR_chaos_sez_puff",
+      "frame": 3,
+      "rgba_sha256": "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe"
+    },
+    {
+      "resource": "SPR_chaos_sez_ring",
+      "frame": 0,
+      "rgba_sha256": "4800ff23c70e20ffa39db4b3194f1a84092bba45ae7608fb379c31753acbb628"
+    },
+    {
+      "resource": "SPR_chaos_sez_ring",
+      "frame": 1,
+      "rgba_sha256": "888a7948a4858c4a39aa324ed5594a707d8dce2905e486bc5259a12083f5d337"
+    },
+    {
+      "resource": "SPR_chaos_sez_ring",
+      "frame": 2,
+      "rgba_sha256": "fe6a46239b98ed3c16273ed0e2e34d93046beb48144a2c9d0a05106206686b27"
+    },
+    {
+      "resource": "SPR_chaos_sez_ring",
+      "frame": 3,
+      "rgba_sha256": "4433456c41e88a1c7bf8d861c5b6e0c12f5ce71e5d8a06a023f52499d7d17ac3"
+    },
+    {
+      "resource": "SPR_chaos_sez_ring",
+      "frame": 4,
+      "rgba_sha256": "e2c1e7eafcd14cbe8a6719f35c5207adf41b7aadff009044c0fd0762ed9c1b74"
+    },
+    {
+      "resource": "SPR_chaos_sez_ring",
+      "frame": 5,
+      "rgba_sha256": "7ada550252c37381d52d9d6afddc15b69b36fbefd91d2c09254ed1f02158d186"
+    },
+    {
+      "resource": "SPR_chaos_sez_ring_sparkle",
+      "frame": 0,
+      "rgba_sha256": "1679f3185170be238322b95db488368e935abd06cc15c5666187d957c8e16aa8"
+    },
+    {
+      "resource": "SPR_chaos_sez_ring_sparkle",
+      "frame": 1,
+      "rgba_sha256": "ec77c5e8b9c5bb731c31ab3e88895c278853f131d6405a7b7189cc6fd92fe757"
+    },
+    {
+      "resource": "SPR_chaos_sez_shard",
+      "frame": 0,
+      "rgba_sha256": "e22324d4e4d8dced9ff8ffc65f77fc8fce0af18548839741672af9e6687226eb"
+    },
+    {
+      "resource": "SPR_chaos_sez_sign",
+      "frame": 0,
+      "rgba_sha256": "de3c9431b8ab987991f86c55e4d3800e7c2174e1a1afd5908a64ad0663843310"
+    },
+    {
+      "resource": "SPR_chaos_sez_sign",
+      "frame": 1,
+      "rgba_sha256": "46d7285cdd0dc02b1f71b665fc11e50f7f3e2a2aff2cbfa7d4db04c51cdd3435"
+    },
+    {
+      "resource": "SPR_chaos_sez_sign",
+      "frame": 2,
+      "rgba_sha256": "d1ae3fa36ac58da0efc71913b1b437db04cad57147db8e1bfcbe3557f6298e8b"
+    },
+    {
+      "resource": "SPR_chaos_sez_sign",
+      "frame": 3,
+      "rgba_sha256": "f815963df14f9494a7466e80b2e67bc97936754417519358d7cb251b05303ae7"
+    },
+    {
+      "resource": "SPR_chaos_sez_sign",
+      "frame": 4,
+      "rgba_sha256": "123cbc6539fc22e57f3f291d754a7339b7425b2182aca73dea8adef49c9b4105"
+    },
+    {
+      "resource": "SPR_chaos_sez_sparkle",
+      "frame": 0,
+      "rgba_sha256": "1679f3185170be238322b95db488368e935abd06cc15c5666187d957c8e16aa8"
+    },
+    {
+      "resource": "SPR_chaos_sez_sparkle",
+      "frame": 1,
+      "rgba_sha256": "ec77c5e8b9c5bb731c31ab3e88895c278853f131d6405a7b7189cc6fd92fe757"
+    },
+    {
+      "resource": "SPR_chaos_sez_spike",
+      "frame": 0,
+      "rgba_sha256": "c24712fcf27a9408da659bbfb138813eb5b8bcabfa3baa9d2a77333b7d8a6b2c"
+    },
+    {
+      "resource": "SPR_chaos_sez_spring",
+      "frame": 0,
+      "rgba_sha256": "9b60ca2ba13a4205ce6771f3ff09789b96b50e1363f1abf017493b060c3a850e"
+    },
+    {
+      "resource": "SPR_chaos_sez_spring_shoes",
+      "frame": 0,
+      "rgba_sha256": "17746d92010dce0b1ae84032b6411a52aeacb9f130165317e216a731e3ccc3ad"
+    },
+    {
+      "resource": "SPR_chaos_sez_spring_shoes",
+      "frame": 1,
+      "rgba_sha256": "c5c7d72c3ab920e9df4016da0dd3c25d74c78c1130c49b0b6162744e2004aeea"
+    },
+    {
+      "resource": "SPR_chaos_sez_spring_shoes",
+      "frame": 2,
+      "rgba_sha256": "9f571961b1adb31b2bd8eba2ec2e64725aef58b2b3839a180a46355111c26b73"
+    },
+    {
+      "resource": "SPR_chaos_sez_spring_shoes",
+      "frame": 3,
+      "rgba_sha256": "326385925bf4599f59b253d7338f6e02322fa311afc0bfc0c4dc8b8cd61d8585"
+    },
+    {
+      "resource": "SPR_chaos_sez_terrain_ring",
+      "frame": 0,
+      "rgba_sha256": "4800ff23c70e20ffa39db4b3194f1a84092bba45ae7608fb379c31753acbb628"
+    },
+    {
+      "resource": "SPR_chaos_sez_terrain_ring",
+      "frame": 1,
+      "rgba_sha256": "888a7948a4858c4a39aa324ed5594a707d8dce2905e486bc5259a12083f5d337"
+    },
+    {
+      "resource": "SPR_chaos_sez_terrain_ring",
+      "frame": 2,
+      "rgba_sha256": "4433456c41e88a1c7bf8d861c5b6e0c12f5ce71e5d8a06a023f52499d7d17ac3"
+    },
+    {
+      "resource": "SPR_chaos_sez_terrain_ring",
+      "frame": 3,
+      "rgba_sha256": "fe6a46239b98ed3c16273ed0e2e34d93046beb48144a2c9d0a05106206686b27"
+    }
+  ],
+  "approval_checked": true
+}

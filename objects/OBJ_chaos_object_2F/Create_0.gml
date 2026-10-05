@@ -6,5 +6,5 @@ chaosOriginX = x; chaosOriginY = y; chaosParameter = 0;
 chaosState = 0; chaosRequest = 0; chaosFrame = 1; chaosAnimTick = 0;
 chaosActive = false; chaosWoken = false; chaosAsleep = true; chaosScanTick = 0; chaosInitialFillDone = false; // generic placement lifecycle (SCR_chaos_placement)
 chaosYU = round(y*256); chaosVY = 0;
-sprite_index = SPR_chaos_mghz_spring_shoes;
+sprite_index = chaos_is_sez() ? SPR_chaos_sez_spring_shoes : SPR_chaos_mghz_spring_shoes;
 image_speed = 0; image_index = 0; visible = false;

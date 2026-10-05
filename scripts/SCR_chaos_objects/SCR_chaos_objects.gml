@@ -56,6 +56,16 @@ function SCR_chaos_objects_phase() {
     cp_count = instance_number(OBJ_chaos_spikes);
     for (var cp_k = 0; cp_k < cp_count; cp_k++) {
         var cp_spike = instance_find(OBJ_chaos_spikes,cp_k);
+        if (chaos_is_sez()) {
+            if (!chaos_sez_mapped_awake(cp_spike,cp_spike.chaosX,cp_spike.chaosY)) continue;
+            if (cp_spike.chaosSezRecreated) {
+                cp_spike.chaosActive=false; cp_spike.chaosY=cp_spike.chaosBaseY;
+                cp_spike.chaosOffset=0; cp_spike.chaosCooldown=0;
+                cp_spike.chaosSezRecreated=false;
+            }
+            if (chaos_spike1b_step(cp_spike,cp_c,cp_present,true)) cp_changed=true;
+            continue;
+        }
         if (chaos_spike1b_step(cp_spike, cp_c, cp_present, cp_spike.x >= cp_left && cp_spike.x <= cp_right)) cp_changed = true;
     }
     // M1/M2 lifetimes have now updated: their occupancy bridge is current.
@@ -91,7 +101,7 @@ function chaos_platform28_lifecycle(cp_o,cp_c,cp_have,cp_vp) {
         chaos_platform28_configure(cp_o,cp_o.chaosPlacementParameter,cp_o.chaosPlacementAux1);
         cp_o.chaosLive=true;
     }
-    var cp_cell=SCR_chaos_spawn_cell(cp_vp,cp_o.chaosX,cp_o.chaosY);
+    var cp_cell=chaos_is_sez() ? SCR_chaos_lifetime_cell(cp_o,cp_vp,cp_o.chaosX,cp_o.chaosY) : SCR_chaos_spawn_cell(cp_vp,cp_o.chaosX,cp_o.chaosY);
     // $8908 moving-platform keep-alive: canonical distance window, independent of viewport width.
     if (cp_o.chaosMode == 10 || cp_o.chaosMode == 6 || cp_o.chaosMode == 11) {
         if (cp_have && abs(cp_o.chaosX-floor(cp_c.xu/256)) < 640 && abs(cp_o.chaosY-chaos_signed_world_y(cp_c.yu)) < 672) cp_cell=0;

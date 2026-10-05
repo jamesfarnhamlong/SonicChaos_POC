@@ -355,13 +355,14 @@ function SCR_cc_floor(cp_c) {
     SCR_cc_project_floor(cp_c,cp_s);
     cp_c.previous = cp_s.flags;
     var cp_kind = cp_s.flags & 31;
+    if (cp_c.zone == 2 && (cp_kind == 12 || cp_kind == 26)) { cp_c.unsupported=cp_kind; return; } // S1: preserve geometry, leave action pending
     if (cp_kind == 16 && SCR_cc_route19_try(cp_c,cp_previous_block,cp_s.tile)) return;
     if (cp_kind == 18) SCR_cc_ramp(cp_c,cp_old_mod,cp_s.tile);
     else if (cp_kind == 5) {
         // $6ACE (docs/platform-spike-collision-audit.md 2.2): tile & $FE != $F4, floor flag $D522 bit 1 set (after the previous surface's projection above),
         // and +$03 bit 7 (invulnerable, move & 128) clear, then the hurt entry $48F7 DIRECTLY (not through the $48BC request gate). Nothing else: no state, no speed.
         if ((cp_s.tile & 254) != 244 && (cp_c.bg & 2) != 0 && (cp_c.move & 128) == 0) {
-            if (cp_c.zone == 3) { cp_c.hazard=1; SCR_cc_hurt_rom(cp_c); }
+            if (cp_c.zone == 3 || cp_c.zone == 2) { cp_c.hazard=1; SCR_cc_hurt_rom(cp_c); }
             else SCR_cc_terrain_hurt(cp_c);
         }
     }
