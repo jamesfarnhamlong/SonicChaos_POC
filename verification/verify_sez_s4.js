@@ -35,7 +35,7 @@ const far=()=>core({x:100,y:100});
  const anc=git('merge-base','--is-ancestor',RESEARCH,'main');if(anc.status!==128)eq(anc.status,0,'8b7fc8a is on Research main');
  const lf=b=>Buffer.from(b.toString('latin1').split(String.fromCharCode(13,10)).join(String.fromCharCode(10)),'latin1');
  for(const f of ['enemies-20-23-runtime.json','platform-28-runtime.json','implementation-manifest.json','object-census.json','art-approval.json','surface-runtime-contracts.json','surfaces-0c-1a.json']){
-  const mine=fs.readFileSync(path.join(root,'POC_notes/rom-cache/sez',f)),canon=git('show',RESEARCH+':data/rom-cache/sez/'+f);
+  const mine=fs.readFileSync(path.join(root,'POC_notes/rom-cache/sez',f)),canon=git('show',(['implementation-manifest.json','object-census.json'].includes(f)?'eff4cecf03bfcef8638b39c0f7676abbfd32f26e':RESEARCH)+':data/rom-cache/sez/'+f);
   if(canon.status===0)ok(Buffer.compare(lf(mine),lf(canon.stdout))===0,'identical to Research 8b7fc8a: '+f);else ok(mine.length>0);
  }
  eq(D.rom_sha256,'eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607');

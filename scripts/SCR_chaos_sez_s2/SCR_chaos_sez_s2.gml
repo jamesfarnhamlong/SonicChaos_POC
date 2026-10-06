@@ -10,7 +10,7 @@
 /// it sees the crumble parents, the shards and the accepted lost-ring structs. Other mapped SEZ objects are plain GameMaker instances and do not reserve slots here.
 
 function chaos_s2_slot() {
-    return {type:0,parameter:0,x:0,y:0,yu:0,raw_x:0,raw_y:0,cell:-1,state:0,requested:0,tick:0,age:0,frame:0,vy:0,asleep:false,woken:false,ring_ref:noone};
+    return {type:0,parameter:0,x:0,y:0,yu:0,raw_x:0,raw_y:0,cell:-1,state:0,requested:0,tick:0,age:0,frame:0,vy:0,asleep:false,woken:false,ring_ref:noone,boss:false};   // boss: S5 script slot (SCR_chaos_sez_boss), visited in this same ascending pass
 }
 function chaos_s2_new() {
     var cp_slots=[];
@@ -160,9 +160,14 @@ function chaos_s2_phase(cp_c,cp_have) {
     var cp_b=chaos_s2_state(),cp_vp=chaos_vp_current(),cp_hold=false;
     chaos_s2_ring_bridge(cp_b);
     cp_b.passes++;
+    var cp_boss=chaos_54_pass_begin(cp_vp);                                   // S5: SEZ3 boss $54 chain (noone in every other act)
     for (var cp_i=0;cp_i<19;cp_i++) {
         var cp_s=cp_b.slots[cp_i];
         if (cp_s.type == 0) continue;
+        if (cp_s.boss) {                                                       // boss, $55 children, $12 / $34 / $0A / $0F support: one ascending pass with the slots around them
+            if (cp_boss != noone) { chaos_54_visit(cp_boss,cp_b,cp_i,cp_c,cp_have,cp_vp); if (cp_have) cp_hold=true; }
+            continue;
+        }
         if (cp_s.ring_ref != noone) {
             if (!cp_s.ring_ref.alive) cp_s.type=$FF;
             if (cp_s.type == $FF) cp_b.slots[cp_i]=chaos_s2_slot();   // freed the visit after the ring ended
@@ -172,6 +177,7 @@ function chaos_s2_phase(cp_c,cp_have) {
         if (cp_s.type != $13) continue;   // occupancy-only placeholders (fixtures) are never run
         if (chaos_s2_step13(cp_b,cp_s,cp_i,cp_c,cp_have,cp_vp)) cp_hold=true;
     }
+    if (cp_boss != noone) { chaos_54_pass_end(cp_boss,cp_b,cp_c,cp_have,cp_vp); if (cp_boss.active && cp_have) cp_hold=true; }   // contact may have projected Sonic: the caller republishes the core
     return cp_hold;
 }
 /// Shards only (the parent is invisible: mapping frame 0 has no pieces). Sprite = the accepted SEZ shard art (type $07 frame 15 is the same mapping record as $13 frame 15).

@@ -27,7 +27,7 @@ check(sha(rom) == 'eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee
 cache = ROOT / 'POC_notes/rom-cache/sez'
 norm = lambda b: b.replace(b'\r\n', b'\n')
 for name in ('surface-runtime-contracts.json', 'surfaces-0c-1a.json', 'implementation-manifest.json', 'object-census.json', 'art-approval.json'):
-    check(norm((cache / name).read_bytes()) == norm(git('show', (('8b7fc8aeaec6f5a57f9aa9b6a58d9f579b62514c') if name in ('implementation-manifest.json', 'object-census.json') else COMMIT) + ':data/rom-cache/sez/' + name)), 'mirror ' + name)
+    check(norm((cache / name).read_bytes()) == norm(git('show', (('eff4cecf03bfcef8638b39c0f7676abbfd32f26e') if name in ('implementation-manifest.json', 'object-census.json') else COMMIT) + ':data/rom-cache/sez/' + name)), 'mirror ' + name)
 contract = read(cache / 'surface-runtime-contracts.json'); audit = read(cache / 'surfaces-0c-1a.json'); manifest = read(cache / 'implementation-manifest.json')
 def sprite(name, frame=0):
     d = ROOT / 'sprites' / name; s = read(d / (name + '.yy')); f = s['frames'][frame]['name']

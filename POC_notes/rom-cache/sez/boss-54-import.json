@@ -1,0 +1,309 @@
+{
+  "research_commit": "eff4cecf03bfcef8638b39c0f7676abbfd32f26e",
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "art_transformation": "NONE (no whole-image mirror)",
+  "registration": [
+    1,
+    18
+  ],
+  "canvas": [
+    48,
+    96
+  ],
+  "anchor": [
+    24,
+    80
+  ],
+  "palette_index": 14,
+  "scripts": {
+    "84": 13,
+    "85": 4,
+    "18": 2,
+    "52": 3,
+    "10": 3,
+    "15": 5
+  },
+  "records": {
+    "84": 64,
+    "85": 11,
+    "18": 4,
+    "52": 24,
+    "10": 18,
+    "15": 35
+  },
+  "approved_frame_hashes_checked": {
+    "1": "cccdae58fb31870ccc0244ad10a2d818962589cb5fc54190a61adf1965ab9ce5",
+    "2": "8a620e030051c08b78e18143927b25aa031bf0da09653980adcce401651ba120",
+    "3": "a4ea846166de5bc3edc67246c909b7226c31ca7daefb2896ade30588380b1df2",
+    "4": "656377c010792d51d6c9ec40801df65e10d13d15b10d9d40fd16782e908ad93f",
+    "5": "1ccc2419cc60be3dd40c405bc5026c5cc046746921ee64efae34a7d6c056d110",
+    "6": "8511bd19e090343e71c491ed75823930f6d23fbaa922773144354873841c5109",
+    "7": "1a0c5aa29aaf52e561ec00cb31a6847ba9bcaaa477cf34ec98d6bd5e2e48c809",
+    "8": "9431a4595cf2ec0714def27197d6a88e4c24097ceaded7d310648094eeb797a1",
+    "15": "4ff132afadb6a54f9c1ab3a63dc259636f1f4286a7f469ba6a672087b486bb03",
+    "16": "4a4db367dd2064942e8329fb86816e83d46d4fba5d1fe29501e59815b3af5d6b",
+    "17": "29eab71a06ac13ca7863a8174152552bf9f4bb81c84837c6de2a6ca5c2212bf8",
+    "18": "c2375f609d7afc101ffbf954f74c2a0138497c71d6e4fd933b5da992aa8963c5",
+    "19": "878b74a0d7d083dd0d6e36a06e70290b9c64920ee4de8a27d38ab96c80ee5cec"
+  },
+  "extents": {
+    "1": [
+      20,
+      80
+    ],
+    "2": [
+      20,
+      80
+    ],
+    "3": [
+      20,
+      80
+    ],
+    "4": [
+      20,
+      80
+    ],
+    "5": [
+      20,
+      80
+    ],
+    "6": [
+      20,
+      80
+    ],
+    "7": [
+      20,
+      80
+    ],
+    "8": [
+      20,
+      80
+    ],
+    "15": [
+      20,
+      64
+    ],
+    "16": [
+      20,
+      64
+    ],
+    "17": [
+      4,
+      16
+    ],
+    "18": [
+      4,
+      16
+    ],
+    "19": [
+      4,
+      16
+    ]
+  },
+  "assets": [
+    {
+      "resource": "SPR_chaos_sez_boss_54",
+      "sprite_frame": 0,
+      "mapping_frame": 1,
+      "source": "sez3 + selector $15 loads, sprite palette 14, boss mapping frames 1..8, 15, 16",
+      "rgba_sha256": "9eb63b183ea2c899f4f35ba579ccc1587070e320b5abd0e810ff1d0fa793f070"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_54",
+      "sprite_frame": 1,
+      "mapping_frame": 2,
+      "source": "sez3 + selector $15 loads, sprite palette 14, boss mapping frames 1..8, 15, 16",
+      "rgba_sha256": "ef418aaa84afcc5c4f452ac719a181e38e8d60a384899c63e362c9e3bc690d9b"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_54",
+      "sprite_frame": 2,
+      "mapping_frame": 3,
+      "source": "sez3 + selector $15 loads, sprite palette 14, boss mapping frames 1..8, 15, 16",
+      "rgba_sha256": "338bd94986409d8fe67113d8ddbe3ba8bb8ad92e75e49c3824ade03edcb258d3"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_54",
+      "sprite_frame": 3,
+      "mapping_frame": 4,
+      "source": "sez3 + selector $15 loads, sprite palette 14, boss mapping frames 1..8, 15, 16",
+      "rgba_sha256": "cee68ef7a38f634f15373aff08281aa58c8012d630353d1013f36bfda79efc40"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_54",
+      "sprite_frame": 4,
+      "mapping_frame": 5,
+      "source": "sez3 + selector $15 loads, sprite palette 14, boss mapping frames 1..8, 15, 16",
+      "rgba_sha256": "8e6975c44a2737e0c6c64c795fbd11718741fdfeddabed7009be03da435862a5"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_54",
+      "sprite_frame": 5,
+      "mapping_frame": 6,
+      "source": "sez3 + selector $15 loads, sprite palette 14, boss mapping frames 1..8, 15, 16",
+      "rgba_sha256": "72a038731f4114db60f5d1c7ef82eea2feb0e32771467f62f1bdaeb2fbbfc0b6"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_54",
+      "sprite_frame": 6,
+      "mapping_frame": 7,
+      "source": "sez3 + selector $15 loads, sprite palette 14, boss mapping frames 1..8, 15, 16",
+      "rgba_sha256": "e391e4eeefcd22cb7bb940c4230f11e2801b5795715059eb5633b1fcc00020a8"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_54",
+      "sprite_frame": 7,
+      "mapping_frame": 8,
+      "source": "sez3 + selector $15 loads, sprite palette 14, boss mapping frames 1..8, 15, 16",
+      "rgba_sha256": "9c5f0935a8a04bbfd19cbfab0471f851d59e9eda90991dc860f789171af0a3d9"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_54",
+      "sprite_frame": 8,
+      "mapping_frame": 15,
+      "source": "sez3 + selector $15 loads, sprite palette 14, boss mapping frames 1..8, 15, 16",
+      "rgba_sha256": "f57bc44ffd211efe17da5414d9b05aa6ec1a49363f8286fcf312fe4b80b5a545"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_54",
+      "sprite_frame": 9,
+      "mapping_frame": 16,
+      "source": "sez3 + selector $15 loads, sprite palette 14, boss mapping frames 1..8, 15, 16",
+      "rgba_sha256": "40c7a86294bf2c1ff98f432f80a3c3a070d422d7ba251140d9db4b95192674fa"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_54_flash",
+      "sprite_frame": 0,
+      "mapping_frame": 1,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F, boss mapping frames 1..8, 15, 16",
+      "rgba_sha256": "9f9a88eebcab9c5c37d98d81bba41146294ed3ca61d8c2bfc33ce4d150b7b0f7"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_54_flash",
+      "sprite_frame": 1,
+      "mapping_frame": 2,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F, boss mapping frames 1..8, 15, 16",
+      "rgba_sha256": "bdb4aecb07f36749cfe207546ecec0c8fdc99efc4e7a691bda398c56da0de255"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_54_flash",
+      "sprite_frame": 2,
+      "mapping_frame": 3,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F, boss mapping frames 1..8, 15, 16",
+      "rgba_sha256": "e07b801ba0f262977c22aa1f0307d659572578484a3352f2312ab8b60205813a"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_54_flash",
+      "sprite_frame": 3,
+      "mapping_frame": 4,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F, boss mapping frames 1..8, 15, 16",
+      "rgba_sha256": "d1776e937a9d8219a0c0bd63d80beceec1e059b8ecc7455ef7412ee712ed1a2c"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_54_flash",
+      "sprite_frame": 4,
+      "mapping_frame": 5,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F, boss mapping frames 1..8, 15, 16",
+      "rgba_sha256": "230c61ef827aff076fd5534c06b93669f4006e73495159a14114e40f0d0255d6"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_54_flash",
+      "sprite_frame": 5,
+      "mapping_frame": 6,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F, boss mapping frames 1..8, 15, 16",
+      "rgba_sha256": "4e56ca1091b82841aa249299464349870b85ed23d407ce55a1b3447a90292a74"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_54_flash",
+      "sprite_frame": 6,
+      "mapping_frame": 7,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F, boss mapping frames 1..8, 15, 16",
+      "rgba_sha256": "fb6e2dbbfb0b441dfb78baf4550e10cef3f29154c84ac7699952c37627034ffd"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_54_flash",
+      "sprite_frame": 7,
+      "mapping_frame": 8,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F, boss mapping frames 1..8, 15, 16",
+      "rgba_sha256": "97b25a29bbef1b22606ef55ac28f328f92fec5c0c904d442a336d6a29368f0c8"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_54_flash",
+      "sprite_frame": 8,
+      "mapping_frame": 15,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F, boss mapping frames 1..8, 15, 16",
+      "rgba_sha256": "f00f3dc9c76031ba8bd5b3cb647a795f9b78db126a6f53698f1a8982066b0551"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_54_flash",
+      "sprite_frame": 9,
+      "mapping_frame": 16,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F, boss mapping frames 1..8, 15, 16",
+      "rgba_sha256": "c63cb3ea234ab01c452636ef97fe0f1b36289a2b0da0053bc9d737943451defb"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_55",
+      "sprite_frame": 0,
+      "mapping_frame": 17,
+      "source": "sez3 + selector $15 loads, sprite palette 14, child mapping frames 17..19",
+      "rgba_sha256": "57cac0754738bb367442a810cb27759f16991c6c1ad683a75c91ba54a0114e62"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_55",
+      "sprite_frame": 1,
+      "mapping_frame": 18,
+      "source": "sez3 + selector $15 loads, sprite palette 14, child mapping frames 17..19",
+      "rgba_sha256": "3eee6357a027b3a18654e6712161cbcf60437377529e2552d1e44852e945a498"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_55",
+      "sprite_frame": 2,
+      "mapping_frame": 19,
+      "source": "sez3 + selector $15 loads, sprite palette 14, child mapping frames 17..19",
+      "rgba_sha256": "5791a522657b8b0d0961cbd68e459f8ccf29b403edda9bb92f06bcf1aed68925"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_55_flash",
+      "sprite_frame": 0,
+      "mapping_frame": 17,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F, child mapping frames 17..19",
+      "rgba_sha256": "57cac0754738bb367442a810cb27759f16991c6c1ad683a75c91ba54a0114e62"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_55_flash",
+      "sprite_frame": 1,
+      "mapping_frame": 18,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F, child mapping frames 17..19",
+      "rgba_sha256": "3eee6357a027b3a18654e6712161cbcf60437377529e2552d1e44852e945a498"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_55_flash",
+      "sprite_frame": 2,
+      "mapping_frame": 19,
+      "source": "same, command-7 flash: palette entries 13/14 = $3F, child mapping frames 17..19",
+      "rgba_sha256": "5791a522657b8b0d0961cbd68e459f8ccf29b403edda9bb92f06bcf1aed68925"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_poof",
+      "sprite_frame": 0,
+      "mapping_frame": 7,
+      "source": "type $0F frames 7..9 (shared mapping), +(1,18) registration like the rest of the boss chain (the S4 enemy poof keeps its own accepted registration)",
+      "rgba_sha256": "7352877617133c8e4f9e0b6c1520589c1c122909b602d2dfb03f9e638531a69f"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_poof",
+      "sprite_frame": 1,
+      "mapping_frame": 8,
+      "source": "type $0F frames 7..9 (shared mapping), +(1,18) registration like the rest of the boss chain (the S4 enemy poof keeps its own accepted registration)",
+      "rgba_sha256": "ab6a7046ce339a02210b9981b21caa9905be1b379e61e07cc8cbc64c09d54f60"
+    },
+    {
+      "resource": "SPR_chaos_sez_boss_poof",
+      "sprite_frame": 2,
+      "mapping_frame": 9,
+      "source": "type $0F frames 7..9 (shared mapping), +(1,18) registration like the rest of the boss chain (the S4 enemy poof keeps its own accepted registration)",
+      "rgba_sha256": "c9bfd6777b876b1b57fa5218a2b63b07318ef53595d785ddf402b1de94059b4a"
+    }
+  ],
+  "allocators": "script children $5EE1 slots 7..17 (11); HUD/bonus $5E9C slots 0..15; scheduler 19 slots (the S2 occupancy pool)"
+}

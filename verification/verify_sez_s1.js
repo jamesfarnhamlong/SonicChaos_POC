@@ -30,7 +30,8 @@ for(const [key,a] of Object.entries(M.acts)) {
  for(const t of [0x10,0x18,0x1b,0x26,0x2f])eq(g.chaosSpawnedByType[t],recs.filter(r=>parseInt(r.type_id,16)===t).length,'shared spawn '+key+' '+t);
  eq(g.chaosSpawnedByType[0x28],recs.filter(r=>r.type_id==='0x28'&&['0x83','0x84','0x86','0x04'].includes(r.parameter)).length);
  for(const t of [0x20,0x23])eq(g.chaosSpawnedByType[t],recs.filter(r=>parseInt(r.type_id,16)===t).length,'S4 enemy records '+key+' '+t);
- for(const t of [0x54,0x55,0x13])eq(g.chaosSpawnedByType[t],0,'pending type '+t);
+ for(const t of [0x55,0x13])eq(g.chaosSpawnedByType[t],0,'pending type '+t);
+ eq(g.chaosSpawnedByType[0x54],key==='sez3'?1:0,'S5 boss record: SEZ3 only');
  eq(g.chaosSkippedByType[0x28],recs.filter(r=>r.type_id==='0x28'&&!['0x83','0x84','0x86','0x04'].includes(r.parameter)).length);
  for(const b of a.blocks)for(let plane=0;plane<2;plane++){const d=b.headers[plane];eq(g[`chaosHeaders${plane}`][b.block_id],[d.flags,d.modifier,d.vertical,d.horizontal]);}
  // All loaded cells and all four quadrant boundaries; last cell is unreachable.

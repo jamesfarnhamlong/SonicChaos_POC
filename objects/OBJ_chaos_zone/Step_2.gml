@@ -3,7 +3,7 @@
 SCR_chaos_objects_phase();
 if (chaos_is_mghz()) __view_set(e__VW.VSpeed,0,0); // player instance changes must not re-enable uncapped automatic Y travel
 // Sign-pan mode (from $18 contact) disables the follow camera on both axes; chaos_goal_camera_step drives X and Y instead.
-if (instance_exists(OBJ_player) && !global.chaosPan.active && (!chaos_is_thz3() || !instance_exists(OBJ_chaos_object_50) || instance_find(OBJ_chaos_object_50,0).chaosBoss.camera_mode == 0) && (chaos_gpz_act()!=3 || !instance_exists(OBJ_chaos_object_51) || !instance_find(OBJ_chaos_object_51,0).chaosBoss51.active) && !chaos_56_owns_camera()) {
+if (instance_exists(OBJ_player) && !global.chaosPan.active && (!chaos_is_thz3() || !instance_exists(OBJ_chaos_object_50) || instance_find(OBJ_chaos_object_50,0).chaosBoss.camera_mode == 0) && (chaos_gpz_act()!=3 || !instance_exists(OBJ_chaos_object_51) || !instance_find(OBJ_chaos_object_51,0).chaosBoss51.active) && !chaos_56_owns_camera() && !chaos_54_owns_camera()) {
  var vh = __view_get(e__VW.HView,0);
  var cp_target_y=clamp(round(OBJ_player.y-vh/1.5),0,max(0,room_height-vh));
  if (chaos_is_mghz()) {
@@ -16,7 +16,8 @@ chaos_goal_camera_step();
 chaos_boss_camera_step();
 chaos_51_camera_step();
 chaos_56_camera_step();
+chaos_54_camera_step(); // SEZ3 boss $54 arena (S5)
 
 if (chaos_is_mghz()) chaos_mghz_effect_step(global.chaosMghzEffects,global.chaosMghzBossActive,global.chaosMghzPaletteControl);
 
-if (chaos_is_sez()) chaos_sez_effect_step(global.chaosSezEffects, global.chaosSezBossActive, 0); // no SEZ boss until S5; the $D44E pause is wired
+if (chaos_is_sez()) chaos_sez_effect_step(global.chaosSezEffects, global.chaosSezBossActive, 0); // $D44E: the SEZ3 boss shared init (chaos_54_callback $974C) sets chaosSezBossActive, which pauses effect 5

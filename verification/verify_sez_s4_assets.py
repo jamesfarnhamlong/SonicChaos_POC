@@ -22,7 +22,7 @@ git('merge-base', '--is-ancestor', COMMIT, 'main')
 norm = lambda b: b.replace(b'\r\n', b'\n')
 cache = ROOT / 'POC_notes/rom-cache/sez'
 for n in ('enemies-20-23-runtime.json', 'platform-28-runtime.json', 'implementation-manifest.json', 'object-census.json', 'art-approval.json', 'surface-runtime-contracts.json', 'surfaces-0c-1a.json'):
-    check(norm((cache / n).read_bytes()) == norm(git('show', COMMIT + ':data/rom-cache/sez/' + n)), 'mirror ' + n)
+    check(norm((cache / n).read_bytes()) == norm(git('show', ('eff4cecf03bfcef8638b39c0f7676abbfd32f26e' if n in ('implementation-manifest.json', 'object-census.json') else COMMIT) + ':data/rom-cache/sez/' + n)), 'mirror ' + n)
 rom = L.load_rom(ROOT.parent / 'source/Sonic Chaos (Europe).sms')
 check(sha(rom) == 'eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607')
 approval = read(cache / 'art-approval.json'); full = A.build(rom)

@@ -82,6 +82,7 @@ function chaos_level_install_layout() {
         array_copy(global.chaosTileIds,0,cp_ids,0,array_length(cp_ids));
         global.chaosBrokenCells = [];
         global.chaosS2 = chaos_s2_new(); // S2: the layout reload restores every $AF and the level clear ($297E) zeroes the remembered cell $D356 and the object slots
+        global.chaosSez54 = noone;       // S5: the boss controller (placement record, camera limits) is rebuilt by chaos_level_spawn_objects
         return;
     }
     if (chaos_is_mghz()) {
@@ -145,6 +146,7 @@ function chaos_level_spawn_objects() {
     global.chaosSkippedByType = array_create(256, 0);
     global.chaosSpawnedIndices = [];
     global.chaosSezEnemies = [];   // S4 enemy records: a room (re)start rebuilds them, so defeated placements return only with the act
+    global.chaosSez54 = noone;     // S5: the SEZ3 boss controller exists only when the act's record is registered below
     var cp_rows = chaos_level_object_rows();
     for (var cp_i = 0; cp_i < array_length(cp_rows); cp_i++) {
         var cp_r = cp_rows[cp_i];
@@ -154,7 +156,11 @@ function chaos_level_spawn_objects() {
             // S4: mapped enemies are struct records driven by SCR_chaos_sez_enemy (placement scan, occupancy and defeat retention live in the record).
             chaos_sez_enemy_register(cp_r); global.chaosSpawnedByType[cp_type]++; array_push(global.chaosSpawnedIndices,cp_r[0]); continue;
         }
-        if (chaos_is_sez() && (cp_type == $13 || cp_type == $54 || cp_type == $55 || (cp_type == $28 && cp_r[5] != $83 && cp_r[5] != $84 && cp_r[5] != $86 && cp_r[5] != $04))) { global.chaosSkippedByType[cp_type]++; continue; } // pending: no speculative runtime ($13 is never placed: S2 creates it only from the surface-$0C floor handler, SCR_chaos_sez_s2)
+        if (chaos_is_sez() && cp_type == $54) {
+            // S5: the mapped boss is a script slot of the shared 19-slot scheduler (SCR_chaos_sez_boss); the scan creates it, nothing is placed as a GameMaker instance.
+            chaos_54_register(cp_r); global.chaosSpawnedByType[cp_type]++; array_push(global.chaosSpawnedIndices,cp_r[0]); continue;
+        }
+        if (chaos_is_sez() && (cp_type == $13 || cp_type == $55 || (cp_type == $28 && cp_r[5] != $83 && cp_r[5] != $84 && cp_r[5] != $86 && cp_r[5] != $04))) { global.chaosSkippedByType[cp_type]++; continue; } // pending: no speculative runtime ($13 is never placed: S2 creates it only from the surface-$0C floor handler, SCR_chaos_sez_s2)
         var cp_inst = noone;
         switch (cp_type) {
             case $24:

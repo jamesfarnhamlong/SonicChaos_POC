@@ -1,7 +1,7 @@
 depth = -10; // draws the recovered lost rings (Draw_0): above the ring manager (0) and terrain, below the player (-50)
 global.chaosCrushDeathPhase=0;
 global.chaosMghzBossActive = false; // future $D44E boss framework hook
-global.chaosSezBossActive = false; // $D44E equivalent: SEZ boss (S5) is not implemented; effect 5 honours the pause
+global.chaosSezBossActive = false; // $D44E equivalent: set by the SEZ3 boss shared init (SCR_chaos_sez_boss $974C); effect 5 honours the pause
 global.chaosMghzPaletteControl = 0; // $D492 dispatcher gate
 global.chaosMghzEffects = chaos_mghz_effect_new();
 global.chaosSezEffects = chaos_sez_effect_new();

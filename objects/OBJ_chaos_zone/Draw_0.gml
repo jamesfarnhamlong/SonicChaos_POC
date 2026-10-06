@@ -11,3 +11,4 @@ for (var cp_lr_i=0; cp_lr_i<array_length(cp_lr_list); cp_lr_i++) {
     draw_sprite(chaos_is_sez() ? SPR_chaos_sez_ring : (chaos_is_mghz() ? SPR_chaos_mghz_ring : (chaos_is_gpz() ? SPR_chaos_gpz_ring : SPR_chaos_object_09)),cp_lr_frame,
         chaos_lr_pixel_x(cp_lr)+TYPE09_RENDER_X,chaos_lr_pixel_y(cp_lr)+TYPE09_RENDER_Y);
 }
+chaos_54_draw(); // SEZ3 boss $54, children $55 and the shared $12/$34/$0A/$0F support (S5); registration +(1,18) lives in the sprite origins
