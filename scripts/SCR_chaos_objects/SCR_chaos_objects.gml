@@ -44,6 +44,8 @@ function SCR_chaos_objects_phase() {
             }
         }
     }
+    // SEZ S4 mapped enemies $20/$23 (struct records), then the shared contact promotion below.
+    if (chaos_is_sez()) chaos_sez_enemy_phase(cp_c, cp_have);
     if (cp_have) chaos_contact_promote(cp_c);
     var cp_changed = cp_s2_hold;
     var cp_count = instance_number(OBJ_chaos_platform);

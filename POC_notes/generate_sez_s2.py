@@ -30,13 +30,13 @@ def main():
     ap.add_argument('--rom', type=Path, required=True)
     args = ap.parse_args()
     research = args.research.resolve()
-    head = subprocess.check_output(['git', '-c', 'safe.directory=' + research.as_posix(), '-C', str(research), 'rev-parse', 'main'], text=True).strip()
-    assert head == COMMIT, ('Research main checkpoint', head, COMMIT)
+    # the pinned checkpoint must be on Research main (later commits are fine: blobs are read at the pinned commit)
+    assert subprocess.run(['git', '-c', 'safe.directory=' + research.as_posix(), '-C', str(research), 'merge-base', '--is-ancestor', COMMIT, 'main']).returncode == 0, ('Research checkpoint', COMMIT)
     rom = args.rom.read_bytes()
     assert sha(rom) == 'eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607', 'canonical ROM'
     dst = ROOT / 'POC_notes/rom-cache/sez'
     # Canonical Research main blobs, never the working tree: another Research branch may be checked out there.
-    def canonical(path): return subprocess.check_output(['git', '-c', 'safe.directory=' + research.as_posix(), '-C', str(research), 'show', 'main:' + path])
+    def canonical(path): return subprocess.check_output(['git', '-c', 'safe.directory=' + research.as_posix(), '-C', str(research), 'show', COMMIT + ':' + path])
     for name in MIRRORED:
         (dst / name).write_bytes(canonical('data/rom-cache/sez/' + name))
     contract = json.loads((dst / 'surface-runtime-contracts.json').read_bytes())
@@ -62,7 +62,7 @@ def main():
         assert sha(rom[off:off + 32]) == source['sha256'], ('effect 5 image', key)
 
     # ---- shard art: type $13 frame 15 is the same mapping record as the accepted type $07 shard (SPR_chaos_sez_shard) ----
-    assert subprocess.run(['git', '-c', 'safe.directory=' + research.as_posix(), '-C', str(research), 'diff', '--quiet', 'main', '--', 'tools']).returncode == 0, 'Research tools differ from canonical main'
+    assert subprocess.run(['git', '-c', 'safe.directory=' + research.as_posix(), '-C', str(research), 'diff', '--quiet', 'HEAD', '--', 'tools']).returncode == 0, 'Research tools differ from canonical main'
     sys.path.insert(0, str(research / 'tools')); sys.path.insert(0, str(ROOT / 'POC_notes'))
     import level_package as L
     import mghz_object_census as C

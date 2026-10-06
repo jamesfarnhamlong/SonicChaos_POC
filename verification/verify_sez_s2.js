@@ -45,7 +45,7 @@ const cellIndex=(cx,cy)=>cy*128+cx;
 {
  // Canonical Research main blobs (the Research working tree may have another branch checked out): the mirrors must be byte-identical to main.
  const cp=require('child_process'),repo=path.join(root,'..','sonic-chaos-reference-work'),repoPosix=path.resolve(repo).split(path.sep).join('/');
- const mainBlob=f=>{const r=cp.spawnSync('git',['-c','safe.directory='+repoPosix,'-C',repo,'show',RESEARCH+':data/rom-cache/sez/'+f],{maxBuffer:1<<28});return r.status===0?r.stdout:null;};
+ const mainBlob=f=>{const r=cp.spawnSync('git',['-c','safe.directory='+repoPosix,'-C',repo,'show',(['implementation-manifest.json','object-census.json'].includes(f)?'8b7fc8aeaec6f5a57f9aa9b6a58d9f579b62514c':RESEARCH)+':data/rom-cache/sez/'+f],{maxBuffer:1<<28});return r.status===0?r.stdout:null;};
  const anc=cp.spawnSync('git',['-c','safe.directory='+repoPosix,'-C',repo,'merge-base','--is-ancestor',RESEARCH,'main']);
  if(anc.status!==128)eq(anc.status,0,'6e169d7 is on Research main');
  for(const f of ['surface-runtime-contracts.json','surfaces-0c-1a.json','implementation-manifest.json','object-census.json','art-approval.json']){

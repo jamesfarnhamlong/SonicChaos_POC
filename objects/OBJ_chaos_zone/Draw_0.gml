@@ -2,7 +2,8 @@
 // No alpha, blink or timer: only the canonical flight frames 1,2,4,3 and the pickup sparkle 5/6 (chaos_lr_frame). Depth is set in Create (between ring manager 0 and player -50).
 var cp_lr_list = chaos_lr_list();
 chaos_m3_draw();
-chaos_s2_draw(); // SEZ S2 crumble shards (type $13 frame 15); the parent is invisible
+chaos_s2_draw();
+chaos_sez_enemy_draw(); // SEZ S4 enemies $20/$23 // SEZ S2 crumble shards (type $13 frame 15); the parent is invisible
 for (var cp_lr_i=0; cp_lr_i<array_length(cp_lr_list); cp_lr_i++) {
     var cp_lr = cp_lr_list[cp_lr_i];
     var cp_lr_frame = chaos_lr_frame(cp_lr);

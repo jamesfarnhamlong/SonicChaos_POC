@@ -6,7 +6,7 @@ COMMIT = 'ed9122b3d5ac11442714ecaef4cc4316c4706342'
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('--research', type=Path, required=True); args = ap.parse_args()
     r = args.research.resolve(); g = ['git', '-c', 'safe.directory=' + r.as_posix(), '-C', str(r)]
-    assert subprocess.check_output(g + ['rev-parse', 'main'], text=True).strip() == COMMIT, 'Research main checkpoint'
+    assert subprocess.run(g + ['merge-base', '--is-ancestor', COMMIT, 'main']).returncode == 0, 'Research checkpoint on main'
     blob = subprocess.check_output(g + ['show', COMMIT + ':data/rom-cache/sez/platform-28-runtime.json'])
     d = json.loads(blob)
     assert d['rom_sha256'] == 'eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607' and d['research_base'].startswith('6e169d7')

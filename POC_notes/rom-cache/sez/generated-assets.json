@@ -1,5 +1,5 @@
 {
-  "research_commit": "ed9122b3d5ac11442714ecaef4cc4316c4706342",
+  "research_commit": "8b7fc8aeaec6f5a57f9aa9b6a58d9f579b62514c",
   "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
   "assets": [
     {
@@ -121,6 +121,36 @@
       "resource": "SPR_chaos_sez_effect5_front",
       "frame": 2,
       "rgba_sha256": "e35882e41b064ce34368858492a63768d651f63558cb9117e8ce528fd0bce6ce"
+    },
+    {
+      "resource": "SPR_chaos_sez_enemy_20",
+      "frame": 0,
+      "rgba_sha256": "7469eca722d9ea1bd0d061d7ad1722bbc8c87c524832b133a7b9e0c5a66725ba"
+    },
+    {
+      "resource": "SPR_chaos_sez_enemy_20",
+      "frame": 1,
+      "rgba_sha256": "d92909f9f2d75007d721530df27d75671ba75583a1f219bbcc9732eec61a197d"
+    },
+    {
+      "resource": "SPR_chaos_sez_enemy_20_conv",
+      "frame": 0,
+      "rgba_sha256": "b37f9e3418031a1e64269c7f5e60e51f0565827de32c7a7af6c30099b1444a90"
+    },
+    {
+      "resource": "SPR_chaos_sez_enemy_20_conv",
+      "frame": 1,
+      "rgba_sha256": "ce15f841e102ea1bee052b4e320dceaaca2de82d0305d632aefac9e3b59fa4d6"
+    },
+    {
+      "resource": "SPR_chaos_sez_enemy_23",
+      "frame": 0,
+      "rgba_sha256": "0f5200abcd17711539aa0aa1196e229493eef1664adda05d9e8af4e2d995f270"
+    },
+    {
+      "resource": "SPR_chaos_sez_enemy_23",
+      "frame": 1,
+      "rgba_sha256": "f6030fc052a4e7156e9a412bb4f9b7f7a9e6621abea1b7608ab79a3148b9d942"
     },
     {
       "resource": "SPR_chaos_sez_foreground",

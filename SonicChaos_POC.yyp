@@ -4917,6 +4917,30 @@
         "name": "SCR_chaos_sez_s2",
         "path": "scripts/SCR_chaos_sez_s2/SCR_chaos_sez_s2.yy"
       }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_enemy_20",
+        "path": "sprites/SPR_chaos_sez_enemy_20/SPR_chaos_sez_enemy_20.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_enemy_20_conv",
+        "path": "sprites/SPR_chaos_sez_enemy_20_conv/SPR_chaos_sez_enemy_20_conv.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_enemy_23",
+        "path": "sprites/SPR_chaos_sez_enemy_23/SPR_chaos_sez_enemy_23.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_sez_enemy",
+        "path": "scripts/SCR_chaos_sez_enemy/SCR_chaos_sez_enemy.yy"
+      }
     }
   ],
   "resourceType": "GMProject",

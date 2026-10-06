@@ -6,7 +6,7 @@ Research remains read-only. No placements, mappings, collision or art are author
 from pathlib import Path
 import json
 ROOT = Path(__file__).resolve().parents[1]
-COMMIT = 'ed9122b3d5ac11442714ecaef4cc4316c4706342'
+COMMIT = '8b7fc8aeaec6f5a57f9aa9b6a58d9f579b62514c'
 
 def main():
     source=(ROOT/'POC_notes/generate_gpz_foundation.py').read_text()
@@ -56,6 +56,10 @@ def extra_assets(args,rom,manifest,vram,bg,pal,L,sprite,dump,cache):
         subject=full['subjects'][str(t)]
         images=[compose(f['images'][0],pal) for f in subject['frames'] if f['frame'] != 0]
         sprite('SPR_chaos_sez_'+name,images,origin)
+    # S4: approved SEZ enemy compositions (art-approval boards type-20 / type-23); $20 runtime = bit4=1 (images[0], mirror flag true), its one-update conversion frame = bit4=0 (images[1]), $23 unmirrored. Frames 1 and 2 only.
+    for t,name,idx in ((0x20,'enemy_20',0),(0x20,'enemy_20_conv',1),(0x23,'enemy_23',0)):
+        subject=full['subjects'][str(t)]
+        sprite('SPR_chaos_sez_'+name,[compose(f['images'][idx],pal) for f in subject['frames'] if f['frame'] != 0],origin)
     # Shared support art under SEZ CRAM $08, including breakable shards.
     for t,frames,name in ((7,[15],'shard'),(0x34,[1,2,3,4],'puff'),(0x0A,[5,6],'sparkle'),(3,[1,2],'ring_sparkle')):
         images=[]
