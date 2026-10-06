@@ -1,5 +1,5 @@
 {
-  "research_commit": "a20082675cdfc25289b9dd7fe49440c55877c14d",
+  "research_commit": "6e169d78f0918c74db4f12d89e410dc50423e3e8",
   "review_status": "CANONICAL_RESEARCH_MATCH",
   "pointer_policy": "canonical Research level_package.block_mapping; bank-relative CPU pointer",
   "acts": {

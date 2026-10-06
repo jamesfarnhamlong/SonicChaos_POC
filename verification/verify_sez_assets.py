@@ -1,9 +1,10 @@
 """ROM-backed S1 pixel/mapping checks, including every backdrop cell and priority pass."""
 from pathlib import Path
-import hashlib,json,sys
+import hashlib,json,os,sys
 from PIL import Image,ImageDraw
 ROOT=Path(__file__).resolve().parents[1];BUILD=ROOT/'build/sez-s1';BUILD.mkdir(parents=True,exist_ok=True)
-sys.path.insert(0,str(ROOT.parent/'sonic-chaos-reference-work/tools'))
+RESEARCH=Path(os.environ.get('SONIC_RESEARCH_MAIN')or ROOT.parent/'sonic-chaos-reference-work')   # a clean canonical-main checkout (another Research branch may be checked out in the working tree)
+sys.path.insert(0,str(RESEARCH/'tools'))
 import level_package as L
 import thz1_object_assets as G
 import sez_art_approval as A
@@ -22,7 +23,7 @@ def sprite(name,frame=0):
 def crop(atlas,b):return atlas.crop(((b%16)*32,(b//16)*32,(b%16+1)*32,(b//16+1)*32))
 sha=lambda b:hashlib.sha256(b).hexdigest()
 rom=L.load_rom(ROOT.parent/'source/Sonic Chaos (Europe).sms')
-ref=ROOT.parent/'sonic-chaos-reference-work/data/rom-cache/sez';cache=ROOT/'POC_notes/rom-cache/sez'
+ref=RESEARCH/'data/rom-cache/sez';cache=ROOT/'POC_notes/rom-cache/sez'
 for n in ('implementation-manifest.json','art-approval.json','object-census.json'):check(read(ref/n)==read(cache/n),n+' canonical cache')
 m=read(ref/'implementation-manifest.json');check(sha(rom)==m['rom_sha256'])
 base,_=sprite('SPR_chaos_sez_blocks');front,_=sprite('SPR_chaos_sez_foreground')
@@ -46,10 +47,11 @@ for key,a in m['acts'].items():
             if attr&0x1000:
                 x,y=i%4*8,i//4*8;foreground.paste(im.crop((x,y,x+8,y+8)),(x,y))
         check(crop(front,bid).tobytes()==foreground.tobytes());blocks+=1
+    b0=L.block_pixel_maps(rom,vram,only=[176],mapping_rom=table)[176];check(not any(c for row in b0 for c in row),'$B0 is empty air');check(L.block_mapping(rom,table,176)['attributes']==[192]*16);expected[176]=Image.new('RGBA',(32,32))
     chunks=[sprite(f'SPR_chaos_{key}_terrain_{i}')[0]for i in range(4)]
     layout=[v for row in a['layout']['rows']for v in row]
     for i,b in enumerate(layout[:4095]):
-        visible=157 if b in (155,156)else 70 if b==71 or b in range(64,70)else b
+        visible=157 if b in (155,156)else 176 if b==175 else 70 if b==71 or b in range(64,70)else b
         x,y=i%128*32,i//128*32
         check(chunks[x//1024].crop((x%1024,y,x%1024+32,y+32)).tobytes()==expected[visible].tobytes(),key+' backdrop '+str(i));cells+=1
     check(chunks[3].crop((992,992,1024,1024)).getbbox() is None,'unloaded final cell never rendered')

@@ -19,6 +19,9 @@ function SCR_chaos_objects_phase() {
     // Recovered lost rings (type $06) occupy the first free object slots, so they run early in the scheduler: before the boss / enemy / platform objects below.
     // The player's whole pass has already run, so the pickup test sees the post-player-phase anchor. Independent of every player state (loop adapter, hurt, blink, ...).
     SCR_chaos_lost_rings_phase(cp_have, cp_c);
+    // SEZ S2 crumble objects ($13): scheduler slots 0..18 ascending, parents (slots 0..15) before the placement objects below. The rider hold moves the player's core Y after
+    // the terrain pass (republished at the end of this phase).
+    var cp_s2_hold = chaos_is_sez() ? chaos_s2_phase(cp_c, cp_have) : false;
     // $D520 / $D3B0 written by badnik Step events (and the sample-damage path) during this update become visible to the player's NEXT $48BC.
     // Boss contact runs in this object phase so its staged request reaches the next player update.
     chaos_boss_runtime_phase();
@@ -42,7 +45,7 @@ function SCR_chaos_objects_phase() {
         }
     }
     if (cp_have) chaos_contact_promote(cp_c);
-    var cp_changed = false;
+    var cp_changed = cp_s2_hold;
     var cp_count = instance_number(OBJ_chaos_platform);
     for (var cp_i = 0; cp_i < cp_count; cp_i++) {
         var cp_o=instance_find(OBJ_chaos_platform,cp_i);

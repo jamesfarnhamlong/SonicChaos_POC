@@ -18,7 +18,9 @@ function SCR_cc_new(cp_x, cp_y) {
         rings:0, shield:false, immune:false, invuln:0, damage_request:0, box_contacts:0, box_ready:0, contact:0, contact_nib:0, stage_contact:0, stage_nib:0, stage_request:0, hurt_rom:false,
         hurt_pending:false, hurt_death:false, hurt_rings_lost:0, hurt_scatter:0, hurt_shield:false, crush_death:false,
         // Footwear (docs/powerup-shoes-audit.md): queued reward mask $D3A3, Rocket hurt result, Spring Shoes owner events for the object adapter, relaunch snapshot for the object phase.
-        reward_queue:0, hurt_rocket:false, owner_event:0, shoe_bounced:false, shoe_prev_vy:0, state11_exit:false};
+        reward_queue:0, hurt_rocket:false, owner_event:0, shoe_bounced:false, shoe_prev_vy:0, state11_exit:false,
+        // SEZ S2: the +$07 animation counter the adapter computed for this update (parity picks the $753E probe depth) and the booster-pad effect count of this update.
+        probe_counter:0, booster:0};
 }
 function SCR_cc_merge(cp_c) {
     cp_c.contacts = cp_c.bg;
@@ -143,6 +145,11 @@ function SCR_cc_project_floor(cp_c, cp_s) {
         cp_c.modifier = cp_mod;
         SCR_cc_merge(cp_c);
     }
+}
+// SEZ S2 (SCR_chaos_sez_s2): the last step of the terrain pass is the $753E probe. Only zone 2 has a handler for it (surface $1A booster pad); every other zone keeps the accepted
+// behaviour. The shim lives here so the core stays executable without the SEZ scripts (verification/verify_core.js and the older control harnesses).
+function SCR_cc_terrain_probe(cp_c) {
+    return cp_c.zone == 2 ? chaos_sez_terrain_probe(cp_c) : 0;
 }
 function SCR_cc_stand(cp_c) {
     cp_c.move &= ~3; cp_c.next = 1; cp_c.vx = 0; cp_c.maximum = 1024;
@@ -355,7 +362,8 @@ function SCR_cc_floor(cp_c) {
     SCR_cc_project_floor(cp_c,cp_s);
     cp_c.previous = cp_s.flags;
     var cp_kind = cp_s.flags & 31;
-    if (cp_c.zone == 2 && (cp_kind == 12 || cp_kind == 26)) { cp_c.unsupported=cp_kind; return; } // S1: preserve geometry, leave action pending
+    // SEZ S2: surface $0C floor handler $6B79 (crumble ledge). Surface $1A's floor entry $69B1 is a bare RET: the booster is dispatched by the terrain-ring probe only (SCR_cc_booster_probe).
+    if (cp_c.zone == 2 && cp_kind == 12) { SCR_cc_crumble_floor(cp_c,cp_s); return; }
     if (cp_kind == 16 && SCR_cc_route19_try(cp_c,cp_previous_block,cp_s.tile)) return;
     if (cp_kind == 18) SCR_cc_ramp(cp_c,cp_old_mod,cp_s.tile);
     else if (cp_kind == 5) {
@@ -515,7 +523,7 @@ function SCR_cc_shared(cp_c) {
     SCR_cc_x(cp_c); SCR_cc_y(cp_c);
     SCR_cc_floor(cp_c);
     if (cp_c.terrain_escape) return; // original loop setter discards the terrain return.
-    SCR_cc_sides(cp_c); SCR_cc_ceiling(cp_c); SCR_cc_merge(cp_c);
+    SCR_cc_sides(cp_c); SCR_cc_ceiling(cp_c); SCR_cc_terrain_probe(cp_c); SCR_cc_merge(cp_c);
     if ((cp_c.pressed & 48) != 0) SCR_cc_jump(cp_c);
 }
 function SCR_cc_state11_enter(cp_c) {
@@ -655,7 +663,7 @@ function SCR_cc_state11_tick(cp_c) {
     }
 
     // Empty floor never requests falling in this state (SCR_cc_floor), so only the timer ends it. The state stays requested while the shared timer ($D44C) is nonzero.
-    if (cp_c.state11_active) cp_c.next = 17;
+    if (cp_c.state11_active && cp_c.booster == 0) cp_c.next = 17;   // the SEZ booster pad ($7646) cancels Rocket Shoes: it requests $10 inside the terrain pass and the timer/selector stay set
 
     var cp_phase = cp_c.state11_anim_tick % 24;
     cp_c.state11_frame = cp_phase < 8 ? 56 : (cp_phase < 12 ? 57 :
@@ -724,7 +732,7 @@ function SCR_cc_state32_body(cp_c) {
 }
 // Ordinary state wrappers. Animation-script scheduling and special states remain out of scope.
 function SCR_cc_tick(cp_c) {
-    cp_c.terrain_escape = false;
+    cp_c.terrain_escape = false; cp_c.booster = 0;
     cp_c.state = cp_c.next; cp_c.sound = 0; cp_c.unsupported = 0; cp_c.hazard = 0; cp_c.hurt_pending = false; cp_c.crush_death=false;
     cp_c.owner_event = 0; cp_c.shoe_bounced = false; cp_c.hurt_rocket = false; cp_c.state11_exit = false;
     if (cp_c.state == 34) { SCR_cc_twist_tick(cp_c); return; }
@@ -741,7 +749,7 @@ function SCR_cc_tick(cp_c) {
         cp_c.vx = 0; cp_c.move = (cp_c.move | 2) & ~64; cp_c.next = 15; return;
     }
     if (cp_c.state == 15) {
-        SCR_cc_floor(cp_c); SCR_cc_sides(cp_c); SCR_cc_ceiling(cp_c); SCR_cc_merge(cp_c);
+        SCR_cc_floor(cp_c); SCR_cc_sides(cp_c); SCR_cc_ceiling(cp_c); SCR_cc_terrain_probe(cp_c); SCR_cc_merge(cp_c);
         if ((cp_c.contacts & 8) != 0) cp_c.xu = (cp_c.xu+1024)&16777215;
         else if ((cp_c.contacts & 4) != 0) cp_c.xu = (cp_c.xu-1024)&16777215;
         if ((cp_c.held & 2) == 0) {

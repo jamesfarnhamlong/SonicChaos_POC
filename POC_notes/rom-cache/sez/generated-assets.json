@@ -1,36 +1,36 @@
 {
-  "research_commit": "a20082675cdfc25289b9dd7fe49440c55877c14d",
+  "research_commit": "6e169d78f0918c74db4f12d89e410dc50423e3e8",
   "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
   "assets": [
     {
       "resource": "SPR_chaos_sez1_terrain_0",
       "frame": 0,
-      "rgba_sha256": "ffbc047d3007b161803007888d20ca884f7d177e13de6b766ea08ebc84383fb7"
+      "rgba_sha256": "738b87f5c98d77b4d84e7c0aa459eae5252a2932235ec84934fef6812731e04d"
     },
     {
       "resource": "SPR_chaos_sez1_terrain_1",
       "frame": 0,
-      "rgba_sha256": "3e8cc726a030fe90f1d86c23dd728174e28bad1cb13a465fc6cb4dac281b3b5b"
+      "rgba_sha256": "06da0d6c3e1c3902d28b501f532e909b8ae01335230deb5e109f2045b16e7e9b"
     },
     {
       "resource": "SPR_chaos_sez1_terrain_2",
       "frame": 0,
-      "rgba_sha256": "cbbb79fb275befd4b002f0c250de7f45a559860e82602a401f4765ebad9d3b7d"
+      "rgba_sha256": "5e3525a273d159d228feb2d7c03a4cc44279e7b096f2723a56412e68aa1e1578"
     },
     {
       "resource": "SPR_chaos_sez1_terrain_3",
       "frame": 0,
-      "rgba_sha256": "b3a81cbc517f9f5bada043dbba928ff2ce8b3f89859adadaa7be3a78f1898fdb"
+      "rgba_sha256": "f047bcf8a2a052c8f95ac9c5e221a65dc3367c1662e2772128e1431bb415b962"
     },
     {
       "resource": "SPR_chaos_sez2_terrain_0",
       "frame": 0,
-      "rgba_sha256": "5a96e9cdd189768e7e9057b400b4beffeb904561359c2cc34c2c1bce03bc75e8"
+      "rgba_sha256": "2dc71c99bbdc11d33f112ec8a3eecb1379c00dd6ee1d12d51dd0067a08504912"
     },
     {
       "resource": "SPR_chaos_sez2_terrain_1",
       "frame": 0,
-      "rgba_sha256": "c965cafb5d0dc3e420a8ab50ca13bb779af688e5771680eea0e377c19efc27dd"
+      "rgba_sha256": "669ecdb44a1e621f2209c9384f0412615365a8642dfba594cb3bccc64d48ee23"
     },
     {
       "resource": "SPR_chaos_sez2_terrain_2",
@@ -40,12 +40,12 @@
     {
       "resource": "SPR_chaos_sez2_terrain_3",
       "frame": 0,
-      "rgba_sha256": "f50bf9ec391aa6eea6b747773b85128e4bb7f8328578242f44be644923286c97"
+      "rgba_sha256": "de79181776f91c65204ce644c2cadb4e370ed684b11cb52efd1d0ee1b9f2d8b9"
     },
     {
       "resource": "SPR_chaos_sez3_terrain_0",
       "frame": 0,
-      "rgba_sha256": "ffdab6a4e1fff8d31caad8e86e07724aa43668f86d3672bb4d31ec07333ef45b"
+      "rgba_sha256": "c2baccd254532d8ec6ae6ccd7c2e4681d975ddc036fccf244896a1fa44b452a0"
     },
     {
       "resource": "SPR_chaos_sez3_terrain_1",

@@ -19,4 +19,4 @@ chaos_56_camera_step();
 
 if (chaos_is_mghz()) chaos_mghz_effect_step(global.chaosMghzEffects,global.chaosMghzBossActive,global.chaosMghzPaletteControl);
 
-if (chaos_is_sez()) chaos_sez_effect_step(global.chaosSezEffects, false, 0); // boss runtime excluded in S1
+if (chaos_is_sez()) chaos_sez_effect_step(global.chaosSezEffects, global.chaosSezBossActive, 0); // no SEZ boss until S5; the $D44E pause is wired

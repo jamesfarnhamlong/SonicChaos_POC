@@ -6,20 +6,24 @@ Research remains read-only. No placements, mappings, collision or art are author
 from pathlib import Path
 import json
 ROOT = Path(__file__).resolve().parents[1]
-COMMIT = 'a20082675cdfc25289b9dd7fe49440c55877c14d'
+COMMIT = '6e169d78f0918c74db4f12d89e410dc50423e3e8'
 
 def main():
     source=(ROOT/'POC_notes/generate_gpz_foundation.py').read_text()
     source=source.replace('gpz','sez').replace('GPZ','SEZ')
     source=source.replace("COMMIT = 'bbcef38a4463b4054d5dbeeede197d9c7b1b8238'",f"COMMIT = '{COMMIT}'")
     source=source.replace("for dep in manifest['dependencies']:","for dep in []:")
-    source=source.replace("    sys.path.insert(0, str(args.research / 'tools'))", "    import subprocess\n    research_path=args.research.resolve().as_posix()\n    head=subprocess.check_output(['git','-c','safe.directory='+research_path,'-C',str(args.research),'rev-parse','main'],text=True).strip()\n    assert head==COMMIT,('Research main checkpoint',head,COMMIT)\n    sys.path.insert(0, str(args.research / 'tools'))")
+    source=source.replace("    sys.path.insert(0, str(args.research / 'tools'))", "    import subprocess\n    research_path=args.research.resolve().as_posix()\n    head=subprocess.check_output(['git','-c','safe.directory='+research_path,'-C',str(args.research),'rev-parse','main'],text=True).strip()\n    assert head==COMMIT,('Research main checkpoint',head,COMMIT)\n    assert subprocess.run(['git','-c','safe.directory='+research_path,'-C',str(args.research),'diff','--quiet','main']).returncode==0,'Research working tree differs from canonical main (another branch checked out?): import from a clean main checkout'\n    sys.path.insert(0, str(args.research / 'tools'))")
     start=source.index("    prizes=manifest['ordinary_sign_prize_tables']")
     end=source.index('    palettes =',start)
     source=source[:start]+source[end:]
     source=source.replace('    project_path =',"    census=json.loads((args.research/'data/rom-cache/sez/object-census.json').read_bytes())\n    for key,act in manifest['acts'].items():\n        act['objects']=[dict(r,status=r['classification']) for r in census['acts'][key]['records']]\n    for filename in ('object-census.json','art-approval.json'):\n        dump(cache/filename,json.loads((args.research/'data/rom-cache/sez'/filename).read_bytes()))\n    project_path =",1)
     # Do not bake destructible blocks into the immutable backdrop.
-    source=source.replace("visible = 70 if b == 71 or b in act['rings']['presence_and_replacement_tables']['ring_blocks'] else b", "visible = 157 if b in (155,156) else (70 if b == 71 or b in act['rings']['presence_and_replacement_tables']['ring_blocks'] else b)")
+    # S2: crumble ledge $AF is a dynamic layout cell too. The immutable backdrop shows its replacement $B0 (all 16 mapping cells = blank tile 192); the intact $AF art
+    # is drawn dynamically by chaos_sez_terrain_dynamic while the layout still holds $AF. The $B0 header comes from the Research static block-header table.
+    source=source.replace("visible = 70 if b == 71 or b in act['rings']['presence_and_replacement_tables']['ring_blocks'] else b", "visible = 157 if b in (155,156) else (176 if b == 175 else (70 if b == 71 or b in act['rings']['presence_and_replacement_tables']['ring_blocks'] else b))")
+    source=source.replace("        full = Image.new('RGBA',tuple(act['dimensions_pixels']))", "        b0_mapping=L.block_mapping(rom,act['descriptor']['header']['block_mapping_rom'],176)\n        assert b0_mapping['attributes']==[192]*16,'block $B0 mapping is 16 x blank tile 192'\n        b0_pixels=L.block_pixel_maps(rom,vram,only=[176],mapping_rom=act['descriptor']['header']['block_mapping_rom'])[176]\n        assert not any(c for row in b0_pixels for c in row),'block $B0 is empty air'\n        blocks[176]=Image.new('RGBA',(32,32))\n        full = Image.new('RGBA',tuple(act['dimensions_pixels']))",1)
+    source=source.replace("        text += '}\\n'\n        vram, loads", "        b0h=json.loads((args.research/'data/rom-cache/sez/surfaces-0c-1a.json').read_bytes())['static']['block_headers']['0xB0']\n        assert b0h['flags'] == '0x00' and b0h['modifier'] == 0 and b0h['vertical_profile_by_x'] == [0]*32 and b0h['horizontal_profile_distinct'] == [64]\n        for plane in (0,1): text += f' global.chaosHeaders{plane}[176] = {json.dumps([0,0,[0]*32,[64]*32])};\\n'\n        text += '}\\n'\n        vram, loads",1)
     start=source.index("        draws.append('for (var cp_cell")
     end=source.index('        obj =',start)
     source=source[:start]+"        draws.append('chaos_sez_terrain_dynamic(false);')\n"+source[end:]

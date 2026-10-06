@@ -6,7 +6,8 @@
 //   (DE = -26 / -16 plus the +18 terrain bias of $7725); block = (probeX >> 5, probeY >> 5) of the 32 px layout; quadrant = ((x>>4)&1) + 2*((y>>4)&1)
 //   The probe is a single integer point: no player extents, mask, velocity or state-specific offset. It runs after movement and terrain projection.
 //   Not called in the loop states $0C/$0D/$13, twist $22, act-clear $20 and the other states outside the 26-state list.
-//   Effect position = the probe point. Only surface $07 is implemented ($1D, $1A, $14 are unresolved in Research and deliberately absent).
+//   Effect position = the probe point. This function only publishes the point for surface $07 rings. SEZ surface $1A (booster pad, Research 6e169d7) is dispatched from the SAME point
+//   by chaos_sez_booster_update (SCR_chaos_sez_s2) in the adapter step; $1D and $14 remain unresolved in Research and deliberately absent.
 function chaos_ring_probe_eligible(cp_state) {
     var cp_list = SCR_chaos_anim_probe_states();
     for (var cp_i = 0; cp_i < array_length(cp_list); cp_i++) if (cp_list[cp_i] == cp_state) return true;

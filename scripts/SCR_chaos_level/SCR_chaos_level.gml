@@ -81,6 +81,7 @@ function chaos_level_install_layout() {
         global.chaosTileIds = array_create(array_length(cp_ids),0);
         array_copy(global.chaosTileIds,0,cp_ids,0,array_length(cp_ids));
         global.chaosBrokenCells = [];
+        global.chaosS2 = chaos_s2_new(); // S2: the layout reload restores every $AF and the level clear ($297E) zeroes the remembered cell $D356 and the object slots
         return;
     }
     if (chaos_is_mghz()) {
@@ -148,7 +149,7 @@ function chaos_level_spawn_objects() {
         var cp_r = cp_rows[cp_i];
         var cp_type = cp_r[3];
         if (chaos_is_mghz() && (cp_type == $57 || cp_type == $58 || (cp_type == $56 && chaos_mghz_act() != 3))) { global.chaosSkippedByType[cp_type]++; continue; } // $57/$58 exist only as script children of $56
-        if (chaos_is_sez() && (cp_type == $20 || cp_type == $23 || cp_type == $13 || cp_type == $54 || cp_type == $55 || (cp_type == $28 && cp_r[5] != $83 && cp_r[5] != $84))) { global.chaosSkippedByType[cp_type]++; continue; } // S1 pending: no speculative runtime
+        if (chaos_is_sez() && (cp_type == $20 || cp_type == $23 || cp_type == $13 || cp_type == $54 || cp_type == $55 || (cp_type == $28 && cp_r[5] != $83 && cp_r[5] != $84))) { global.chaosSkippedByType[cp_type]++; continue; } // pending: no speculative runtime ($13 is never placed: S2 creates it only from the surface-$0C floor handler, SCR_chaos_sez_s2)
         var cp_inst = noone;
         switch (cp_type) {
             case $24:

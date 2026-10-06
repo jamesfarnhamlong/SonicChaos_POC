@@ -41,7 +41,7 @@ function chaos_sez_terrain_dynamic(cp_front) {
             if (cp_block >= 64 && cp_block <= 69) cp_block=70;
             var cp_sx=(cp_block mod 16)*32,cp_sy=(cp_block div 16)*32;
             var cp_x=cp_col*32,cp_y=cp_row*32;
-            if (!cp_front && (cp_block == 155 || cp_block == 156 || cp_block == 71))
+            if (!cp_front && (cp_block == 155 || cp_block == 156 || cp_block == 71 || cp_block == 175))
                 draw_sprite_part(SPR_chaos_sez_blocks,0,cp_sx,cp_sy,32,32,cp_x,cp_y);
             draw_sprite_part(cp_effect,global.chaosSezEffects.image,cp_sx,cp_sy,32,32,cp_x,cp_y);
         }

@@ -162,6 +162,7 @@ function SCR_chaos_adapter_step(cp_p) {
     // Shadow +$07 animation counter (ROM engine $64FA, runs BEFORE the state callback). Inputs are what the previous update left behind: the requested
     // state, the X speed high byte, floor contact ($D522 bit 1) and side contacts ($D523 & $0C). Never driven by GameMaker image_index/image_speed.
     var cp_anim_t = SCR_cc_anim_update(cp_c);
+    cp_c.probe_counter = cp_anim_t; // $753E parity for the SEZ booster dispatch inside the terrain pass
     if (chaos_is_mghz()) cp_c.frame_counter = global.chaosMghzEffects.frame;
     if (chaos_is_sez()) cp_c.frame_counter = global.chaosSezEffects.frame;
     SCR_cc_tick(cp_c);
@@ -184,6 +185,7 @@ function SCR_chaos_adapter_step(cp_p) {
             cp_c.xu=cp_arena.xu; cp_c.vx=cp_arena.vx;
         }
     }
+    if (cp_c.booster > 0) chaos_sez_booster_post(cp_c); // SEZ S2: sound request of the booster launch made inside the terrain pass (SCR_cc_terrain_probe)
     SCR_chaos_core_publish(cp_p);
     // Terrain-ring probe ($753E): one integer point from the update's FINAL anchor (after movement, projection and the room/clamp adapters; the platform phase runs later, as in the ROM) using the
     // current +$07 counter. States outside the recovered 26-state list (loop, twist, act-clear, ...) never probe. The ring manager consumes it.
