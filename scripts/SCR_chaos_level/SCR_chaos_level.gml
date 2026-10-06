@@ -149,7 +149,7 @@ function chaos_level_spawn_objects() {
         var cp_r = cp_rows[cp_i];
         var cp_type = cp_r[3];
         if (chaos_is_mghz() && (cp_type == $57 || cp_type == $58 || (cp_type == $56 && chaos_mghz_act() != 3))) { global.chaosSkippedByType[cp_type]++; continue; } // $57/$58 exist only as script children of $56
-        if (chaos_is_sez() && (cp_type == $20 || cp_type == $23 || cp_type == $13 || cp_type == $54 || cp_type == $55 || (cp_type == $28 && cp_r[5] != $83 && cp_r[5] != $84))) { global.chaosSkippedByType[cp_type]++; continue; } // pending: no speculative runtime ($13 is never placed: S2 creates it only from the surface-$0C floor handler, SCR_chaos_sez_s2)
+        if (chaos_is_sez() && (cp_type == $20 || cp_type == $23 || cp_type == $13 || cp_type == $54 || cp_type == $55 || (cp_type == $28 && cp_r[5] != $83 && cp_r[5] != $84 && cp_r[5] != $86 && cp_r[5] != $04))) { global.chaosSkippedByType[cp_type]++; continue; } // pending: no speculative runtime ($13 is never placed: S2 creates it only from the surface-$0C floor handler, SCR_chaos_sez_s2)
         var cp_inst = noone;
         switch (cp_type) {
             case $24:
@@ -258,7 +258,7 @@ function chaos_spawn_type26(cp_r) {
 /// Type $28 from a canonical row (docs/platform-spike-collision-audit.md 1.1): parameter $0A = state 11 vertical lift (1 px/update, first leg up, reversal period 16 * aux1
 /// updates); parameter $84 = state 5 weight-sag platform. Any other parameter is a different ROM state this milestone does not support: never guessed.
 function chaos_spawn_type28(cp_r) {
-    if (cp_r[5] != $0A && cp_r[5] != $84 && cp_r[5] != $83 && cp_r[5] != $89 && cp_r[5] != $05) return noone;
+    if (cp_r[5] != $0A && cp_r[5] != $84 && cp_r[5] != $83 && cp_r[5] != $89 && cp_r[5] != $05 && cp_r[5] != $86 && cp_r[5] != $04) return noone;
     var cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_platform);
     chaos_platform28_configure(cp_inst, cp_r[5], cp_r[7]); // the THZ1 Create event keys off THZ1 X values; the canonical row replaces it
     if (chaos_is_gpz() || chaos_is_mghz() || chaos_is_sez()) {

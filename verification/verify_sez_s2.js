@@ -6,7 +6,7 @@ const {loadHost,root}=require('./chaos_world_harness');
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const CONTRACT=read('POC_notes/rom-cache/sez/surface-runtime-contracts.json'),AUDIT=read('POC_notes/rom-cache/sez/surfaces-0c-1a.json'),MANIFEST=read('POC_notes/rom-cache/sez/implementation-manifest.json');
 const CR=CONTRACT.crumble_0C_13,BO=CONTRACT.booster_1A,TV=CONTRACT.oracle_vectors.table_vectors,TRACES=Object.fromEntries(CONTRACT.oracle_vectors.trace_vectors.map(t=>[t.id,t]));
-const RESEARCH='6e169d78f0918c74db4f12d89e410dc50423e3e8';
+const RESEARCH='ed9122b3d5ac11442714ecaef4cc4316c4706342';
 let checks=0;
 const eq=(a,b,m)=>{assert.deepStrictEqual(JSON.parse(JSON.stringify(a)),JSON.parse(JSON.stringify(b)),m);checks++;};
 const ok=(v,m)=>{assert.ok(v,m);checks++;};

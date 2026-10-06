@@ -7,7 +7,7 @@ Run AFTER generate_sez_foundation.py (it bakes the $B0 replacement art and emits
 from pathlib import Path
 import argparse, hashlib, json, subprocess, sys
 ROOT = Path(__file__).resolve().parents[1]
-COMMIT = '6e169d78f0918c74db4f12d89e410dc50423e3e8'
+COMMIT = 'ed9122b3d5ac11442714ecaef4cc4316c4706342'
 MIRRORED = ('surface-runtime-contracts.json', 'surfaces-0c-1a.json')
 SCRIPTS = ('SCR_chaos_sez_s2_data', 'SCR_chaos_sez_s2')
 

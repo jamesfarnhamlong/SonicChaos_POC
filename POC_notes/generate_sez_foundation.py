@@ -6,7 +6,7 @@ Research remains read-only. No placements, mappings, collision or art are author
 from pathlib import Path
 import json
 ROOT = Path(__file__).resolve().parents[1]
-COMMIT = '6e169d78f0918c74db4f12d89e410dc50423e3e8'
+COMMIT = 'ed9122b3d5ac11442714ecaef4cc4316c4706342'
 
 def main():
     source=(ROOT/'POC_notes/generate_gpz_foundation.py').read_text()

@@ -110,7 +110,7 @@ for (const act of [1,4,2,5,3,6,7,8,9,1,6,2]) {
     if(gpz && local===3) {assert.equal(w.bosses[0].chaosBoss51.active,false);assert.equal(w.bosses[0].chaosBoss51.tick,0);}
     if(act===3) {assert.equal(w.bosses[0].chaosBoss.hp,8); assert.equal(w.bosses[0].chaosBoss.state,-1); assert.equal(w.bosses[0].chaosBoss.camera_mode,0);}
     if(act===1) {assert(population.includes('OBJ_chaos_object_18')); assert(!population.includes('OBJ_chaos_object_50'));}
-    else if(sez) { const records=yy('POC_notes/rom-cache/sez/object-census.json').acts[`sez${local}`].records; assert.equal(g.chaosSpawnedIndices.length,records.filter(r=>['0x10','0x18','0x1B','0x26','0x2F'].includes(r.type_id)||(r.type_id==='0x28'&&['0x83','0x84'].includes(r.parameter))).length); assert.equal(g.chaosSezEffects.tick,0); }
+    else if(sez) { const records=yy('POC_notes/rom-cache/sez/object-census.json').acts[`sez${local}`].records; assert.equal(g.chaosSpawnedIndices.length,records.filter(r=>['0x10','0x18','0x1B','0x26','0x2F'].includes(r.type_id)||(r.type_id==='0x28'&&['0x83','0x84','0x86','0x04'].includes(r.parameter))).length); assert.equal(g.chaosSezEffects.tick,0); }
     else assert.equal(g.chaosSpawnedIndices.length,imported?manifest.foundation.instantiate_indices.length+manifest.foundation.integrate_before_instantiating_indices.length-manifest.rings.object09.length+manifest.objects.filter(r=>[37,44].includes(parseInt(r.type_id,16))).length+(local===3?1:0):act===2?28:7);
     c.chaos_act_complete(); assert.equal(g.zoneGoto,2); c.SCR_save_game(); assert.equal(writes,0);
     reports.push({act,mapWidth:g.chaosMapWidth,spawn:[p.x,p.y],camera:[w.cam.x,w.cam.y],

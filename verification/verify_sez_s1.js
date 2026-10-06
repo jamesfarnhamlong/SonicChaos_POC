@@ -28,9 +28,9 @@ for(const [key,a] of Object.entries(M.acts)) {
  eq(rows.map(r=>r.slice(0,9)),recs.map(r=>[r.index,r.world_x,r.world_y,...['type_id','flags','parameter','aux0','aux1','rom_offset'].map(k=>parseInt(r[k],16))]));
  c.chaos_level_spawn_objects();
  for(const t of [0x10,0x18,0x1b,0x26,0x2f])eq(g.chaosSpawnedByType[t],recs.filter(r=>parseInt(r.type_id,16)===t).length,'shared spawn '+key+' '+t);
- eq(g.chaosSpawnedByType[0x28],recs.filter(r=>r.type_id==='0x28'&&['0x83','0x84'].includes(r.parameter)).length);
+ eq(g.chaosSpawnedByType[0x28],recs.filter(r=>r.type_id==='0x28'&&['0x83','0x84','0x86','0x04'].includes(r.parameter)).length);
  for(const t of [0x20,0x23,0x54,0x55,0x13])eq(g.chaosSpawnedByType[t],0,'pending type '+t);
- eq(g.chaosSkippedByType[0x28],recs.filter(r=>r.type_id==='0x28'&&!['0x83','0x84'].includes(r.parameter)).length);
+ eq(g.chaosSkippedByType[0x28],recs.filter(r=>r.type_id==='0x28'&&!['0x83','0x84','0x86','0x04'].includes(r.parameter)).length);
  for(const b of a.blocks)for(let plane=0;plane<2;plane++){const d=b.headers[plane];eq(g[`chaosHeaders${plane}`][b.block_id],[d.flags,d.modifier,d.vertical,d.horizontal]);}
  // All loaded cells and all four quadrant boundaries; last cell is unreachable.
  for(let i=0;i<4096;i++)for(const off of [0,15,16,31]) {

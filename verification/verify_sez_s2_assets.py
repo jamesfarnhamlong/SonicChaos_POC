@@ -8,7 +8,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 BUILD = ROOT / 'build/sez-s2'; BUILD.mkdir(parents=True, exist_ok=True)
 RESEARCH = Path(os.environ.get('SONIC_RESEARCH_MAIN') or ROOT.parent / 'sonic-chaos-reference-work')
-COMMIT = '6e169d78f0918c74db4f12d89e410dc50423e3e8'
+COMMIT = 'ed9122b3d5ac11442714ecaef4cc4316c4706342'
 sys.path.insert(0, str(RESEARCH / 'tools')); sys.path.insert(0, str(ROOT / 'POC_notes'))
 import level_package as L
 import mghz_object_census as C

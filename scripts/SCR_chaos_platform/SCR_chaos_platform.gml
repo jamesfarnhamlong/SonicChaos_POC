@@ -39,6 +39,15 @@ function chaos_platform28_configure(cp_o, cp_param, cp_aux1) {      // chaosOwne
     if (cp_param == $05) { cp_o.chaosMode=13; cp_o.chaosVY=0; cp_o.chaosPeriod=16*cp_aux1; return true; }
     if (cp_param == $0A) { cp_o.chaosMode = 11; cp_o.chaosVY = -256; cp_o.chaosPeriod = 16 * cp_aux1; return true; }
     if (cp_param == $84) { cp_o.chaosMode = 5; cp_o.chaosVY = 0; cp_o.chaosPeriod = 0; return true; }
+    // SEZ S3 (Research ed9122b, data/rom-cache/sez/platform-28-runtime.json). $04: the same state-5 callback as $84 with the sag enable (parameter bit 7) clear: stationary, aux unused.
+    if (cp_param == $04) { cp_o.chaosMode = 5; cp_o.chaosVY = 0; cp_o.chaosPeriod = 0; return true; }
+    // $86: state 7, contact-started right-and-return mover. +$30 = 16 callbacks per block, +$37 = aux1 blocks per leg (byte zero wraps to 256), latch 0 waiting / 1 outbound / 2 returning.
+    if (cp_param == $86) {
+        cp_o.chaosMode = 7; cp_o.chaosVX = 256; cp_o.chaosVY = 0;
+        cp_o.chaosAux = cp_aux1 & 255; cp_o.chaosPeriod = 16 * (cp_o.chaosAux == 0 ? 256 : cp_o.chaosAux);
+        cp_o.chaosC30 = 16; cp_o.chaosC37 = cp_o.chaosAux; cp_o.chaosLatch = 0; cp_o.chaosDistDelete = false;
+        return true;
+    }
     return false;
 }
 /// Contact test + claim / release of $D3C0 for one platform ($8814 / $8843 / $8866). cp_test_y is the platform Y the contact test sees.
@@ -54,6 +63,44 @@ function chaos_platform28_support(cp_o, cp_c, cp_test_y) {
     if (cp_owner == cp_o.chaosOwnerId) cp_c.support = 0;     // $8843: only the owner releases
     return false;
 }
+/// Same contact/claim/release with an explicit player half-width (state 7 uses 9 in player state $0F, 8 otherwise: Research trigger/support geometry).
+function chaos_platform28_support_ex(cp_o, cp_c, cp_test_y, cp_ex) {
+    var cp_px = floor(cp_c.xu / 256), cp_py = floor(cp_c.yu / 256);
+    var cp_owner = cp_c.support;
+    if (chaos_platform28_gate(cp_o.chaosVY, cp_c.vy) && (cp_owner == 0 || cp_owner == cp_o.chaosOwnerId) &&
+        SCR_chaos_box_contact(cp_px, cp_py, cp_o.chaosX, cp_test_y, cp_ex, 24, 16, 16) == 1) {
+        cp_c.support = cp_o.chaosOwnerId;
+        return true;
+    }
+    if (cp_owner == cp_o.chaosOwnerId) cp_c.support = 0;
+    return false;
+}
+/// SEZ type $28 state 7 ($87E2 / $8662 / $8925). Order: [$8908 PLAYER_DIST removal mark, done by the lifecycle] -> latch 0: shared overlap of the PRE-move anchor, any contact bit,
+/// no speed/state/floor/owner gate; no overlap returns before movement/support/counters -> move once (+-1 px) -> top support at the post-move anchor when player Y speed >= 0
+/// (else release) -> shared sag -> carry (X delta computed before the reversal) -> counters: +$30 16 -> +$37 aux1 -> reload and negate X speed -> latch 2 while moving left.
+/// Counter-derived travel (16 * aux1 per leg), no coordinate clamp. Runs while asleep (the keepalive bit is set from the first callback).
+function chaos_platform28_step7(cp_o, cp_c, cp_present) {
+    var cp_ex = (cp_present && cp_c.state == 15) ? 9 : 8;
+    if (cp_o.chaosLatch == 0) {
+        if (!cp_present || SCR_chaos_box_contact(floor(cp_c.xu/256), floor(cp_c.yu/256), cp_o.chaosX, cp_o.chaosY, cp_ex, 24, 16, 16) == 0) return false;
+        cp_o.chaosLatch = 1;
+    }
+    var cp_changed = false;
+    cp_o.chaosDeltaX = cp_o.chaosVX / 256;
+    cp_o.chaosX += cp_o.chaosDeltaX;
+    var cp_supported = cp_present && cp_c.vy >= 0 && chaos_platform28_support_ex(cp_o, cp_c, cp_o.chaosY, cp_ex);
+    if (cp_present && cp_c.vy < 0 && cp_c.support == cp_o.chaosOwnerId) cp_c.support = 0;
+    chaos_platform28_sag(cp_o, cp_supported);
+    if (cp_supported) { chaos_platform28_carry(cp_o, cp_c); cp_changed = true; }
+    cp_o.chaosC30--;
+    if (cp_o.chaosC30 == 0) {
+        cp_o.chaosC30 = 16; cp_o.chaosC37 = (cp_o.chaosC37 - 1) & 255;     // byte counter: aux1 zero wraps to 256 blocks
+        if (cp_o.chaosC37 == 0) { cp_o.chaosC37 = cp_o.chaosAux; cp_o.chaosVX = -cp_o.chaosVX; }
+    }
+    if (cp_o.chaosVX < 0) cp_o.chaosLatch = 2;
+    else if (cp_o.chaosLatch == 2) cp_o.chaosLatch = 0;
+    return cp_changed;
+}
 /// $88A0: player Y := platform Y - 14 (integer part; the fraction is kept), player X += the platform's X delta of this update.
 function chaos_platform28_carry(cp_o, cp_c) {
     cp_c.yu = ((cp_o.chaosY - CHAOS_PLATFORM_CARRY_DY) * 256 + (cp_c.yu & 255)) & 16777215;
@@ -63,6 +110,15 @@ function chaos_platform28_carry(cp_o, cp_c) {
 function chaos_platform28_step(cp_o, cp_c, cp_present) {
     var cp_changed = false;
     cp_o.chaosDeltaX = 0;
+    if (cp_o.chaosMode == 7) {
+        cp_changed = chaos_platform28_step7(cp_o, cp_c, cp_present);
+        if (cp_o.chaosDistDelete) {                           // $8908 marked the object $FE: this callback ran, cleanup follows; recreation starts from the canonical placement
+            cp_o.chaosDistDelete = false; cp_o.chaosLive = false;
+            if (cp_present && cp_c.support == cp_o.chaosOwnerId) cp_c.support = 0;
+        }
+        cp_o.y = cp_o.chaosY; cp_o.x = cp_o.chaosX;
+        return cp_changed;
+    }
     if (cp_o.chaosRequestedMode == 6) { cp_o.chaosMode=6; cp_o.chaosRequestedMode=0; cp_o.chaosVY=-256; }
     if (cp_o.chaosMode == 4) {
         if (cp_o.chaosPhase == 255) {
@@ -121,12 +177,14 @@ function chaos_platform28_step(cp_o, cp_c, cp_present) {
     } else {
         // $879A: gate, contact test at the PRE-sag Y ($8814), then the sag step, then the carry at the post-sag Y.
         var cp_supported = cp_present && chaos_platform28_support(cp_o, cp_c, cp_o.chaosY);
-        if (cp_supported && !cp_o.chaosSagReturning) {
-            if (cp_o.chaosSag < CHAOS_PLATFORM_SAG_LIMIT) cp_o.chaosSag++;
-            else cp_o.chaosSagReturning = true;                  // one hold update at 8
-        } else if (cp_o.chaosSag > 0) cp_o.chaosSag--;           // return 7..0 while still ridden, or after release
-        if (!cp_supported && cp_o.chaosSag == 0) cp_o.chaosSagReturning = false;
-        cp_o.chaosY = cp_o.chaosHomeY + cp_o.chaosSag;
+        if (cp_o.chaosWeight) {                                  // parameter bit 7 = sag enable ($84 sags; SEZ $04 is fixed)
+            if (cp_supported && !cp_o.chaosSagReturning) {
+                if (cp_o.chaosSag < CHAOS_PLATFORM_SAG_LIMIT) cp_o.chaosSag++;
+                else cp_o.chaosSagReturning = true;              // one hold update at 8
+            } else if (cp_o.chaosSag > 0) cp_o.chaosSag--;       // return 7..0 while still ridden, or after release
+            if (!cp_supported && cp_o.chaosSag == 0) cp_o.chaosSagReturning = false;
+            cp_o.chaosY = cp_o.chaosHomeY + cp_o.chaosSag;
+        }
         if (cp_supported) { chaos_platform28_carry(cp_o, cp_c); cp_changed = true; }
     }
     cp_o.y = cp_o.chaosY;

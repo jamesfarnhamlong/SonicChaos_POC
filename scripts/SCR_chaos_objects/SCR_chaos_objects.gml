@@ -105,6 +105,13 @@ function chaos_platform28_lifecycle(cp_o,cp_c,cp_have,cp_vp) {
         cp_o.chaosLive=true;
     }
     var cp_cell=chaos_is_sez() ? SCR_chaos_lifetime_cell(cp_o,cp_vp,cp_o.chaosX,cp_o.chaosY) : SCR_chaos_spawn_cell(cp_vp,cp_o.chaosX,cp_o.chaosY);
+    if (cp_o.chaosMode == 7) {
+        // SEZ $86 (state 7): keepalive from the first callback, so the generic lifetime never deletes it and it keeps running asleep (bit 6 only drives SAT eligibility / drawing).
+        // Its own $8908 PLAYER_DIST test (|dx| >= 640 or |dy| >= 672, never widened) marks removal; the callback still runs this update, then SCR_chaos_platform removes it.
+        cp_o.chaosAsleep = cp_cell >= 2;
+        cp_o.chaosDistDelete = cp_have && (abs(cp_o.chaosX-floor(cp_c.xu/256)) >= 640 || abs(cp_o.chaosY-chaos_signed_world_y(cp_c.yu)) >= 672);
+        return true;
+    }
     // $8908 moving-platform keep-alive: canonical distance window, independent of viewport width.
     if (cp_o.chaosMode == 10 || cp_o.chaosMode == 6 || cp_o.chaosMode == 11) {
         if (cp_have && abs(cp_o.chaosX-floor(cp_c.xu/256)) < 640 && abs(cp_o.chaosY-chaos_signed_world_y(cp_c.yu)) < 672) cp_cell=0;
