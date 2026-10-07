@@ -26,10 +26,7 @@
   "name":"SPR_knuckles_super_transform",
   "nineSlice":null,
   "origin":9,
-  "parent":{
-    "name":"Super",
-    "path":"folders/Sprites/Player/Knuckles/Super.yy",
-  },
+  "parent": {"name": "Knuckles", "path": "folders/Sprites/Characters/Future-Retained/Knuckles.yy"},
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",

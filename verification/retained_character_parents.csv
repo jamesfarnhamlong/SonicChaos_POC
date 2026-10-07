@@ -1,0 +1,72 @@
+name,path,parent
+SPR_knuckles_break,sprites/SPR_knuckles_break/SPR_knuckles_break.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_climbing,sprites/SPR_knuckles_climbing/SPR_knuckles_climbing.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_death,sprites/SPR_knuckles_death/SPR_knuckles_death.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_down,sprites/SPR_knuckles_down/SPR_knuckles_down.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_falling,sprites/SPR_knuckles_falling/SPR_knuckles_falling.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_fly,sprites/SPR_knuckles_fly/SPR_knuckles_fly.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_jump,sprites/SPR_knuckles_jump/SPR_knuckles_jump.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_run,sprites/SPR_knuckles_run/SPR_knuckles_run.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_spin_dash,sprites/SPR_knuckles_spin_dash/SPR_knuckles_spin_dash.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_spin,sprites/SPR_knuckles_spin/SPR_knuckles_spin.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_stop,sprites/SPR_knuckles_stop/SPR_knuckles_stop.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_super_break,sprites/SPR_knuckles_super_break/SPR_knuckles_super_break.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_super_climbing,sprites/SPR_knuckles_super_climbing/SPR_knuckles_super_climbing.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_super_down,sprites/SPR_knuckles_super_down/SPR_knuckles_super_down.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_super_falling,sprites/SPR_knuckles_super_falling/SPR_knuckles_super_falling.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_super_fly,sprites/SPR_knuckles_super_fly/SPR_knuckles_super_fly.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_super_jump,sprites/SPR_knuckles_super_jump/SPR_knuckles_super_jump.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_super_run,sprites/SPR_knuckles_super_run/SPR_knuckles_super_run.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_super_spin_dash,sprites/SPR_knuckles_super_spin_dash/SPR_knuckles_super_spin_dash.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_super_spin,sprites/SPR_knuckles_super_spin/SPR_knuckles_super_spin.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_super_stop,sprites/SPR_knuckles_super_stop/SPR_knuckles_super_stop.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_super_transform,sprites/SPR_knuckles_super_transform/SPR_knuckles_super_transform.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_super_up,sprites/SPR_knuckles_super_up/SPR_knuckles_super_up.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_super_wait,sprites/SPR_knuckles_super_wait/SPR_knuckles_super_wait.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_super_walk,sprites/SPR_knuckles_super_walk/SPR_knuckles_super_walk.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_up,sprites/SPR_knuckles_up/SPR_knuckles_up.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_wait,sprites/SPR_knuckles_wait/SPR_knuckles_wait.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_walk,sprites/SPR_knuckles_walk/SPR_knuckles_walk.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_water_air,sprites/SPR_knuckles_water_air/SPR_knuckles_water_air.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_knuckles_water_death,sprites/SPR_knuckles_water_death/SPR_knuckles_water_death.yy,folders/Sprites/Characters/Future-Retained/Knuckles.yy
+SPR_sonic_super_break,sprites/SPR_sonic_super_break/SPR_sonic_super_break.yy,folders/Sprites/Characters/Future-Retained/Super Sonic.yy
+SPR_sonic_super_down,sprites/SPR_sonic_super_down/SPR_sonic_super_down.yy,folders/Sprites/Characters/Future-Retained/Super Sonic.yy
+SPR_sonic_super_falling,sprites/SPR_sonic_super_falling/SPR_sonic_super_falling.yy,folders/Sprites/Characters/Future-Retained/Super Sonic.yy
+SPR_sonic_super_jump,sprites/SPR_sonic_super_jump/SPR_sonic_super_jump.yy,folders/Sprites/Characters/Future-Retained/Super Sonic.yy
+SPR_sonic_super_run,sprites/SPR_sonic_super_run/SPR_sonic_super_run.yy,folders/Sprites/Characters/Future-Retained/Super Sonic.yy
+SPR_sonic_super_spin_dash,sprites/SPR_sonic_super_spin_dash/SPR_sonic_super_spin_dash.yy,folders/Sprites/Characters/Future-Retained/Super Sonic.yy
+SPR_sonic_super_spin,sprites/SPR_sonic_super_spin/SPR_sonic_super_spin.yy,folders/Sprites/Characters/Future-Retained/Super Sonic.yy
+SPR_sonic_super_stop,sprites/SPR_sonic_super_stop/SPR_sonic_super_stop.yy,folders/Sprites/Characters/Future-Retained/Super Sonic.yy
+SPR_sonic_super_transform,sprites/SPR_sonic_super_transform/SPR_sonic_super_transform.yy,folders/Sprites/Characters/Future-Retained/Super Sonic.yy
+SPR_sonic_super_up,sprites/SPR_sonic_super_up/SPR_sonic_super_up.yy,folders/Sprites/Characters/Future-Retained/Super Sonic.yy
+SPR_sonic_super_wait,sprites/SPR_sonic_super_wait/SPR_sonic_super_wait.yy,folders/Sprites/Characters/Future-Retained/Super Sonic.yy
+SPR_sonic_super_walk,sprites/SPR_sonic_super_walk/SPR_sonic_super_walk.yy,folders/Sprites/Characters/Future-Retained/Super Sonic.yy
+SPR_tails_break,sprites/SPR_tails_break/SPR_tails_break.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_death,sprites/SPR_tails_death/SPR_tails_death.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_down,sprites/SPR_tails_down/SPR_tails_down.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_falling,sprites/SPR_tails_falling/SPR_tails_falling.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_fly,sprites/SPR_tails_fly/SPR_tails_fly.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_jump,sprites/SPR_tails_jump/SPR_tails_jump.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_run,sprites/SPR_tails_run/SPR_tails_run.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_spin_dash,sprites/SPR_tails_spin_dash/SPR_tails_spin_dash.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_spin,sprites/SPR_tails_spin/SPR_tails_spin.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_stop,sprites/SPR_tails_stop/SPR_tails_stop.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_super_break,sprites/SPR_tails_super_break/SPR_tails_super_break.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_super_down,sprites/SPR_tails_super_down/SPR_tails_super_down.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_super_falling,sprites/SPR_tails_super_falling/SPR_tails_super_falling.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_super_fly,sprites/SPR_tails_super_fly/SPR_tails_super_fly.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_super_jump,sprites/SPR_tails_super_jump/SPR_tails_super_jump.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_super_run,sprites/SPR_tails_super_run/SPR_tails_super_run.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_super_spin_dash,sprites/SPR_tails_super_spin_dash/SPR_tails_super_spin_dash.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_super_spin,sprites/SPR_tails_super_spin/SPR_tails_super_spin.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_super_stop,sprites/SPR_tails_super_stop/SPR_tails_super_stop.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_super_transform,sprites/SPR_tails_super_transform/SPR_tails_super_transform.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_super_up,sprites/SPR_tails_super_up/SPR_tails_super_up.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_super_wait,sprites/SPR_tails_super_wait/SPR_tails_super_wait.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_super_walk,sprites/SPR_tails_super_walk/SPR_tails_super_walk.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_super_water_swim,sprites/SPR_tails_super_water_swim/SPR_tails_super_water_swim.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_up,sprites/SPR_tails_up/SPR_tails_up.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_wait,sprites/SPR_tails_wait/SPR_tails_wait.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_walk,sprites/SPR_tails_walk/SPR_tails_walk.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_water_air,sprites/SPR_tails_water_air/SPR_tails_water_air.yy,folders/Sprites/Characters/Future-Retained/Tails.yy
+SPR_tails_water_swim,sprites/SPR_tails_water_swim/SPR_tails_water_swim.yy,folders/Sprites/Characters/Future-Retained/Tails.yy

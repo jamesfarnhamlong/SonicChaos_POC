@@ -26,10 +26,7 @@
   "name":"SPR_tails_super_transform",
   "nineSlice":null,
   "origin":9,
-  "parent":{
-    "name":"Super",
-    "path":"folders/Sprites/Player/Tails/Super.yy",
-  },
+  "parent": {"name": "Tails", "path": "folders/Sprites/Characters/Future-Retained/Tails.yy"},
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",

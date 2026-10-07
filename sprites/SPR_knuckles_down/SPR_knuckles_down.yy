@@ -24,10 +24,7 @@
   "name":"SPR_knuckles_down",
   "nineSlice":null,
   "origin":4,
-  "parent":{
-    "name":"Normal",
-    "path":"folders/Sprites/Player/Knuckles/Normal.yy",
-  },
+  "parent": {"name": "Knuckles", "path": "folders/Sprites/Characters/Future-Retained/Knuckles.yy"},
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",

@@ -18,6 +18,11 @@
   },
   "defaultScriptType": 1,
   "Folders": [
+    {"$GMFolder": "","%Name": "Characters","folderPath": "folders/Sprites/Characters.yy","name": "Characters","resourceType": "GMFolder","resourceVersion": "2.0"},
+    {"$GMFolder": "","%Name": "Future-Retained","folderPath": "folders/Sprites/Characters/Future-Retained.yy","name": "Future-Retained","resourceType": "GMFolder","resourceVersion": "2.0"},
+    {"$GMFolder": "","%Name": "Knuckles","folderPath": "folders/Sprites/Characters/Future-Retained/Knuckles.yy","name": "Knuckles","resourceType": "GMFolder","resourceVersion": "2.0"},
+    {"$GMFolder": "","%Name": "Super Sonic","folderPath": "folders/Sprites/Characters/Future-Retained/Super Sonic.yy","name": "Super Sonic","resourceType": "GMFolder","resourceVersion": "2.0"},
+    {"$GMFolder": "","%Name": "Tails","folderPath": "folders/Sprites/Characters/Future-Retained/Tails.yy","name": "Tails","resourceType": "GMFolder","resourceVersion": "2.0"},
     {"$GMFolder": "","%Name": "Sonic Chaos","folderPath": "folders/Objects/Sonic Chaos.yy","name": "Sonic Chaos","resourceType": "GMFolder","resourceVersion": "2.0"},
     {"$GMFolder": "","%Name": "Controllers","folderPath": "folders/Objects/Sonic Chaos/Controllers.yy","name": "Controllers","resourceType": "GMFolder","resourceVersion": "2.0"},
     {"$GMFolder": "","%Name": "Debug","folderPath": "folders/Objects/Sonic Chaos/Debug.yy","name": "Debug","resourceType": "GMFolder","resourceVersion": "2.0"},

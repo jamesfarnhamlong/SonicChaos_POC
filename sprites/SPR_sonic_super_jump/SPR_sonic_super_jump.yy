@@ -24,10 +24,7 @@
   "name":"SPR_sonic_super_jump",
   "nineSlice":null,
   "origin":9,
-  "parent":{
-    "name":"Super",
-    "path":"folders/Sprites/Player/Sonic/Super.yy",
-  },
+  "parent": {"name": "Super Sonic", "path": "folders/Sprites/Characters/Future-Retained/Super Sonic.yy"},
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",

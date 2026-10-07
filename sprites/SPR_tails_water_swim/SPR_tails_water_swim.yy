@@ -28,10 +28,7 @@
   "name":"SPR_tails_water_swim",
   "nineSlice":null,
   "origin":4,
-  "parent":{
-    "name":"Normal",
-    "path":"folders/Sprites/Player/Tails/Normal.yy",
-  },
+  "parent": {"name": "Tails", "path": "folders/Sprites/Characters/Future-Retained/Tails.yy"},
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",

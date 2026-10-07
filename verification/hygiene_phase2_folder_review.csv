@@ -1,0 +1,91 @@
+folder,direct_resources,descendant_resources,classification,reason
+folders/Extensions.yy,0,0,empty but harmless - retain,Standard upstream resource-type placeholder; removal offers no material clarity improvement.
+folders/Fonts.yy,0,0,empty but harmless - retain,Standard upstream resource-type placeholder; removal offers no material clarity improvement.
+folders/Notes.yy,2,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects.yy,0,196,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Badniks.yy,2,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Collisions.yy,13,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Controls.yy,6,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Effects.yy,6,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Level Objects.yy,0,21,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Level Objects/Chao Emeralds.yy,7,0,ambiguous - retain,Historical label spelling; unrelated object/art resources still populate it. No rename/removal in character scope.
+folders/Objects/Level Objects/Monitors.yy,9,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Level Objects/Plate.yy,1,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Level Objects/Rings.yy,2,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Level Objects/Spring.yy,2,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Menus.yy,0,13,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Menus/Data Select.yy,2,5,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Menus/Data Select/Slots.yy,5,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Menus/Game Over.yy,1,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Menus/Opening.yy,1,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Menus/Options.yy,1,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Menus/Point Counter.yy,1,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Menus/Title.yy,2,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Platforms.yy,7,5,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Platforms/Fake wall extended.yy,5,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Player.yy,1,14,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Player/Characters.yy,2,6,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Player/Characters/Extended.yy,6,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/Player/Powers.yy,6,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Objects/System.yy,4,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Paths.yy,0,0,empty but harmless - retain,Standard upstream resource-type placeholder; removal offers no material clarity improvement.
+folders/Rooms.yy,1,21,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Rooms/Menus.yy,6,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Rooms/Zones.yy,2,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Scripts.yy,0,77,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Scripts/Badniks.yy,1,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Scripts/compatibility.yy,2,8,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Scripts/compatibility/action.yy,2,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Scripts/compatibility/instance.yy,1,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Scripts/compatibility/object.yy,1,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Scripts/compatibility/view.yy,4,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Scripts/Data.yy,3,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Scripts/Monitors.yy,1,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Scripts/Player.yy,0,13,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Scripts/Player/Physics.yy,8,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Scripts/Player/Sprites.yy,4,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Scripts/Player/View.yy,1,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Scripts/System.yy,4,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sequences.yy,0,0,empty but harmless - retain,Standard upstream resource-type placeholder; removal offers no material clarity improvement.
+folders/Shaders.yy,0,0,empty but harmless - retain,Standard upstream resource-type placeholder; removal offers no material clarity improvement.
+folders/Sounds.yy,0,21,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sounds/Level Objects.yy,7,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sounds/Platforms.yy,2,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sounds/Player.yy,10,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sounds/System.yy,2,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites.yy,0,385,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Badniks.yy,1,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Collisions.yy,13,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Effects.yy,3,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Fonts.yy,4,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Icons.yy,4,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Level Objects.yy,0,16,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Level Objects/Chao Emeralds.yy,1,0,ambiguous - retain,Historical label spelling; unrelated object/art resources still populate it. No rename/removal in character scope.
+folders/Sprites/Level Objects/Monitors.yy,8,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Level Objects/Plate.yy,4,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Level Objects/Rings.yy,2,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Level Objects/Spring.yy,1,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Menus.yy,0,9,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Menus/Data Select.yy,5,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Menus/Game Over.yy,1,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Menus/Opening.yy,1,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Menus/Point Counter.yy,1,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Menus/Title.yy,1,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Platforms.yy,8,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Player.yy,1,20,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Player/Knuckles.yy,0,0,intentionally future-facing - retain,Empty upstream character folder skeleton after relocation; retained for engine provenance/future work.
+folders/Sprites/Player/Knuckles/Normal.yy,0,0,intentionally future-facing - retain,Empty upstream character folder skeleton after relocation; retained for engine provenance/future work.
+folders/Sprites/Player/Knuckles/Super.yy,0,0,intentionally future-facing - retain,Empty upstream character folder skeleton after relocation; retained for engine provenance/future work.
+folders/Sprites/Player/Powers.yy,6,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Player/Sonic.yy,0,14,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Player/Sonic/Normal.yy,14,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Player/Sonic/Super.yy,0,0,intentionally future-facing - retain,Empty upstream character folder skeleton after relocation; retained for engine provenance/future work.
+folders/Sprites/Player/Tails.yy,0,0,intentionally future-facing - retain,Empty upstream character folder skeleton after relocation; retained for engine provenance/future work.
+folders/Sprites/Player/Tails/Normal.yy,0,0,intentionally future-facing - retain,Empty upstream character folder skeleton after relocation; retained for engine provenance/future work.
+folders/Sprites/Player/Tails/Super.yy,0,0,intentionally future-facing - retain,Empty upstream character folder skeleton after relocation; retained for engine provenance/future work.
+folders/Sprites/tilesets.yy,0,1,clearly useful upstream structure - retain,"Source tile-art grouping; separate from actual Tile Sets resources, not a duplicate."
+folders/Sprites/tilesets/Zone 1.yy,1,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Sprites/Touch Buttons.yy,6,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Tile Sets.yy,0,1,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Tile Sets/Zone 1.yy,1,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
+folders/Timelines.yy,2,0,clearly useful upstream structure - retain,Populated upstream resources or ancestor of populated categories.
