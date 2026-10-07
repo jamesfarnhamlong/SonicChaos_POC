@@ -76,10 +76,7 @@
   "name": "SPR_chaos_object_09",
   "nineSlice": null,
   "origin": 9,
-  "parent": {
-    "name": "Rings",
-    "path": "folders/Sprites/Level Objects/Rings.yy"
-  },
+  "parent": {"name": "Objects", "path": "folders/Sprites/Sonic Chaos/Shared/Objects.yy"},
   "preMultiplyAlpha": false,
   "resourceType": "GMSprite",
   "resourceVersion": "2.0",

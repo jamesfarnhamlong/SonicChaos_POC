@@ -1,6 +1,7 @@
 """Register the boss's GameMaker resources without hand editing the large .yyp."""
 import json
 from pathlib import Path
+from chaos_asset_parents import chaos_parent, set_chaos_parent
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECT = ROOT / 'SonicChaos_POC.yyp'
@@ -22,7 +23,7 @@ for kind, name in resources:
     if kind == 'scripts':
         (folder / (name + '.yy')).write_text(json.dumps({
             '$GMScript': 'v1', '%Name': name, 'isCompatibility': False, 'isDnD': False,
-            'name': name, 'parent': {'name': 'Scripts', 'path': 'folders/Scripts.yy'},
+            'name': name, 'parent': chaos_parent(name),
             'resourceType': 'GMScript', 'resourceVersion': '2.0'}, indent=2) + '\n')
     if kind == 'objects':
         template = json.loads((ROOT / 'objects/OBJ_chaos_object_21/OBJ_chaos_object_21.yy').read_text())
@@ -30,6 +31,7 @@ for kind, name in resources:
         template['eventList'] = [e for e in template['eventList'] if e['eventType'] == 0 or (name == 'OBJ_chaos_boss_effect' and e['eventType'] == 3)]
         sprite = 'SPR_chaos_boss_50' if name == 'OBJ_chaos_object_50' else 'SPR_chaos_boss_puff_34'
         template['spriteId'] = {'name': sprite, 'path': f'sprites/{sprite}/{sprite}.yy'}
+        set_chaos_parent(template)
         (folder / (name + '.yy')).write_text(json.dumps(template, indent=2) + '\n')
     if name not in known:
         new_lines.append(f'    {{"id": {{"name": "{name}", "path": "{kind}/{name}/{name}.yy"}}}},')

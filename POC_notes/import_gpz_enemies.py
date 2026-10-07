@@ -4,6 +4,7 @@ Boss/support sprites are staged resources, not a gameplay implementation.
 """
 import copy, hashlib, json, shutil, uuid
 from pathlib import Path
+from chaos_asset_parents import set_chaos_parent
 from PIL import Image, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -12,6 +13,7 @@ COMMIT = 'd214c60ccf04f62634c4565f4abf38ec63ae77c6'
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 def guid(s): return str(uuid.uuid5(uuid.NAMESPACE_URL, 'sonic-chaos-gpz-enemies/' + s))
 def dump(p,d):
+    set_chaos_parent(d)
     p.parent.mkdir(parents=True,exist_ok=True)
     p.write_text(json.dumps(d,indent=2)+'\n',encoding='utf-8')
 

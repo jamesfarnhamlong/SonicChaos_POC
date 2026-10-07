@@ -98,10 +98,7 @@
     }
   ],
   "name": "ROM_chaos_debug_select",
-  "parent": {
-    "name": "Menus",
-    "path": "folders/Rooms/Menus.yy"
-  },
+  "parent": {"name": "Debug", "path": "folders/Rooms/Sonic Chaos/Debug.yy"},
   "parentRoom": null,
   "physicsSettings": {
     "inheritPhysicsSettings": false,

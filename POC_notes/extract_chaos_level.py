@@ -12,6 +12,7 @@ terrain quadrants byte for byte. `--act thz2 --project-root DIR` installs the fo
 THZ2 terrain sprites.
 """
 from pathlib import Path
+from chaos_asset_parents import parent_text
 from PIL import Image
 from collections import Counter
 import argparse, hashlib, json, re, struct, uuid
@@ -147,7 +148,7 @@ if args.project_root:
             .replace(old_layer, layer).replace(old_key, key)
         sprite_dir = project / 'sprites' / name
         (sprite_dir / 'layers' / frame).mkdir(parents=True, exist_ok=True)
-        (sprite_dir / f'{name}.yy').write_bytes(text.encode())
+        (sprite_dir / f'{name}.yy').write_bytes(parent_text(text, name).encode())
         root_png = sprite_dir / f'{frame}.png'; layer_png = sprite_dir / 'layers' / frame / f'{layer}.png'
         quad.save(root_png, optimize=True); quad.save(layer_png, optimize=True)
         raw = root_png.read_bytes(); assert raw == layer_png.read_bytes()
@@ -167,7 +168,7 @@ if args.project_root:
                     .replace('46000000-0000-4000-8000-000000000000', layer))
             sprite_dir = project / 'sprites' / name
             (sprite_dir / 'layers' / frame).mkdir(parents=True, exist_ok=True)
-            (sprite_dir / f'{name}.yy').write_bytes(text.encode())
+            (sprite_dir / f'{name}.yy').write_bytes(parent_text(text, name).encode())
             root_png = sprite_dir / f'{frame}.png'; layer_png = sprite_dir / 'layers' / frame / f'{layer}.png'
             blocks[block].save(root_png, optimize=True); blocks[block].save(layer_png, optimize=True)
             raw = root_png.read_bytes(); assert raw == layer_png.read_bytes()

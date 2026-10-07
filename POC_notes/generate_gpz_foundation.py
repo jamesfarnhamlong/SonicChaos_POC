@@ -8,6 +8,7 @@ import copy
 import hashlib
 import json
 from pathlib import Path
+from chaos_asset_parents import set_chaos_parent
 import sys
 import uuid
 from PIL import Image
@@ -15,6 +16,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 COMMIT = 'bbcef38a4463b4054d5dbeeede197d9c7b1b8238'
 def dump(path, value):
+    set_chaos_parent(value)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, indent=2) + '\n', encoding='utf-8')
 def sha(raw): return hashlib.sha256(raw).hexdigest()

@@ -185,8 +185,8 @@ for (const [key, b] of Object.entries(S.terrain_horizontal.blocks)) {
     ok(!/cp_p\.x|cp_p\.y/.test(spr.slice(spr.indexOf('function SCR_chaos_object_spring_step'))), 'type $26 step contact uses the core anchors, not the GameMaker position');
     const core = strip(rd('scripts/SCR_chaos_core/SCR_chaos_core.gml')), springSrc = core.slice(core.indexOf('function SCR_cc_terrain_spring_state'), core.indexOf('function SCR_cc_twist_enter'));
     ok(!/bbox_|place_meeting|mask_index|camera|view_/.test(springSrc), 'terrain springs read no mask or viewport');
-    const dirty = cp.spawnSync('git', ['diff', '--quiet', 'HEAD', '--', 'rooms/ROM_chaos_thz1', 'scripts/SCR_chaos_level_thz2_data', 'scripts/SCR_chaos_core_data', 'scripts/SCR_chaos_motion_data', 'objects/OBJ_chaos_object_spring_26_normal', 'objects/OBJ_chaos_object_spring_26_weak', 'objects/OBJ_chaos_object_spring_26_span'], {cwd: root}).status;
-    eq(dirty, 0, 'canonical rooms, spring placements and terrain/level data are byte-identical to HEAD');
+    const dirty = require('./asset_parent_invariant.js').unchangedExceptAssetParents(root, 'HEAD', ['rooms/ROM_chaos_thz1', 'scripts/SCR_chaos_level_thz2_data', 'scripts/SCR_chaos_core_data', 'scripts/SCR_chaos_motion_data', 'objects/OBJ_chaos_object_spring_26_normal', 'objects/OBJ_chaos_object_spring_26_weak', 'objects/OBJ_chaos_object_spring_26_span']);
+    eq(dirty, 0, 'canonical rooms, spring placements and terrain/level data are identical to HEAD except approved virtual parents');
     const l1 = rd('rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy');
     for (const [nm, key] of [['OBJ_chaos_object_spring_26_normal', 'strong'], ['OBJ_chaos_object_spring_26_weak', 'weak'], ['OBJ_chaos_object_spring_26_span', 'span']]) {
         const pos = []; const needle = '\"name\": \"' + nm + '\",'; const objDir = 'objects/' + nm; let at = -1;

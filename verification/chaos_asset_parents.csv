@@ -1,0 +1,391 @@
+name,path,parent
+SCR_chaos_debug_select,scripts/SCR_chaos_debug_select/SCR_chaos_debug_select.yy,folders/Scripts/Sonic Chaos/Debug.yy
+OBJ_chaos_debug_select,objects/OBJ_chaos_debug_select/OBJ_chaos_debug_select.yy,folders/Objects/Sonic Chaos/Debug.yy
+ROM_chaos_debug_select,rooms/ROM_chaos_debug_select/ROM_chaos_debug_select.yy,folders/Rooms/Sonic Chaos/Debug.yy
+SPR_chaos_boss_50_flash,sprites/SPR_chaos_boss_50_flash/SPR_chaos_boss_50_flash.yy,folders/Sprites/Sonic Chaos/THZ/Bosses.yy
+SPR_chaos_boss_50_mirror_flash,sprites/SPR_chaos_boss_50_mirror_flash/SPR_chaos_boss_50_mirror_flash.yy,folders/Sprites/Sonic Chaos/THZ/Bosses.yy
+SCR_chaos_boss_data,scripts/SCR_chaos_boss_data/SCR_chaos_boss_data.yy,folders/Scripts/Sonic Chaos/THZ/Data.yy
+SCR_chaos_boss,scripts/SCR_chaos_boss/SCR_chaos_boss.yy,folders/Scripts/Sonic Chaos/THZ/Runtime.yy
+OBJ_chaos_object_50,objects/OBJ_chaos_object_50/OBJ_chaos_object_50.yy,folders/Objects/Sonic Chaos/GameMaker Objects.yy
+OBJ_chaos_boss_effect,objects/OBJ_chaos_boss_effect/OBJ_chaos_boss_effect.yy,folders/Objects/Sonic Chaos/GameMaker Objects.yy
+SPR_chaos_boss_50,sprites/SPR_chaos_boss_50/SPR_chaos_boss_50.yy,folders/Sprites/Sonic Chaos/THZ/Bosses.yy
+SPR_chaos_boss_50_mirror,sprites/SPR_chaos_boss_50_mirror/SPR_chaos_boss_50_mirror.yy,folders/Sprites/Sonic Chaos/THZ/Bosses.yy
+SPR_chaos_boss_puff_34,sprites/SPR_chaos_boss_puff_34/SPR_chaos_boss_puff_34.yy,folders/Sprites/Sonic Chaos/THZ/Effects.yy
+SPR_chaos_boss_sparkle_0A,sprites/SPR_chaos_boss_sparkle_0A/SPR_chaos_boss_sparkle_0A.yy,folders/Sprites/Sonic Chaos/THZ/Effects.yy
+SPR_chaos_boss_poof_0F,sprites/SPR_chaos_boss_poof_0F/SPR_chaos_boss_poof_0F.yy,folders/Sprites/Sonic Chaos/THZ/Effects.yy
+SCR_chaos_core,scripts/SCR_chaos_core/SCR_chaos_core.yy,folders/Scripts/Sonic Chaos/Core.yy
+SCR_chaos_core_data,scripts/SCR_chaos_core_data/SCR_chaos_core_data.yy,folders/Scripts/Sonic Chaos/Core.yy
+SCR_chaos_adapter,scripts/SCR_chaos_adapter/SCR_chaos_adapter.yy,folders/Scripts/Sonic Chaos/Core.yy
+SCR_chaos_render_adapter,scripts/SCR_chaos_render_adapter/SCR_chaos_render_adapter.yy,folders/Scripts/Sonic Chaos/Core.yy
+ROM_chaos_thz2,rooms/ROM_chaos_thz2/ROM_chaos_thz2.yy,folders/Rooms/Sonic Chaos/THZ.yy
+ROM_chaos_thz3,rooms/ROM_chaos_thz3/ROM_chaos_thz3.yy,folders/Rooms/Sonic Chaos/THZ.yy
+OBJ_chaos_thz3_terrain,objects/OBJ_chaos_thz3_terrain/OBJ_chaos_thz3_terrain.yy,folders/Objects/Sonic Chaos/Terrain Hosts/THZ.yy
+OBJ_chaos_thz2_terrain,objects/OBJ_chaos_thz2_terrain/OBJ_chaos_thz2_terrain.yy,folders/Objects/Sonic Chaos/Terrain Hosts/THZ.yy
+SCR_chaos_level,scripts/SCR_chaos_level/SCR_chaos_level.yy,folders/Scripts/Sonic Chaos/Level-Import.yy
+SCR_chaos_lost_ring,scripts/SCR_chaos_lost_ring/SCR_chaos_lost_ring.yy,folders/Scripts/Sonic Chaos/Shared Objects.yy
+SCR_chaos_loop_layout,scripts/SCR_chaos_loop_layout/SCR_chaos_loop_layout.yy,folders/Scripts/Sonic Chaos/Level-Import.yy
+SCR_chaos_box_contact,scripts/SCR_chaos_box_contact/SCR_chaos_box_contact.yy,folders/Scripts/Sonic Chaos/Player-Collision.yy
+SCR_chaos_goal,scripts/SCR_chaos_goal/SCR_chaos_goal.yy,folders/Scripts/Sonic Chaos/Shared Objects.yy
+SCR_chaos_viewport,scripts/SCR_chaos_viewport/SCR_chaos_viewport.yy,folders/Scripts/Sonic Chaos/Core.yy
+SCR_chaos_anim_counter_data,scripts/SCR_chaos_anim_counter_data/SCR_chaos_anim_counter_data.yy,folders/Scripts/Sonic Chaos/Core.yy
+SCR_chaos_anim_counter,scripts/SCR_chaos_anim_counter/SCR_chaos_anim_counter.yy,folders/Scripts/Sonic Chaos/Core.yy
+SCR_chaos_terrain_ring,scripts/SCR_chaos_terrain_ring/SCR_chaos_terrain_ring.yy,folders/Scripts/Sonic Chaos/Shared Objects.yy
+SCR_chaos_attack,scripts/SCR_chaos_attack/SCR_chaos_attack.yy,folders/Scripts/Sonic Chaos/Player-Collision.yy
+SCR_chaos_level_thz3_data,scripts/SCR_chaos_level_thz3_data/SCR_chaos_level_thz3_data.yy,folders/Scripts/Sonic Chaos/THZ/Data.yy
+SCR_chaos_objects,scripts/SCR_chaos_objects/SCR_chaos_objects.yy,folders/Scripts/Sonic Chaos/Shared Objects.yy
+SCR_chaos_platform,scripts/SCR_chaos_platform/SCR_chaos_platform.yy,folders/Scripts/Sonic Chaos/Shared Objects.yy
+SCR_chaos_spike1b,scripts/SCR_chaos_spike1b/SCR_chaos_spike1b.yy,folders/Scripts/Sonic Chaos/Shared Objects.yy
+SCR_chaos_spring,scripts/SCR_chaos_spring/SCR_chaos_spring.yy,folders/Scripts/Sonic Chaos/Shared Objects.yy
+SCR_chaos_placement,scripts/SCR_chaos_placement/SCR_chaos_placement.yy,folders/Scripts/Sonic Chaos/Level-Import.yy
+SCR_chaos_level_thz2_data,scripts/SCR_chaos_level_thz2_data/SCR_chaos_level_thz2_data.yy,folders/Scripts/Sonic Chaos/THZ/Data.yy
+SPR_chaos_thz2_terrain_0,sprites/SPR_chaos_thz2_terrain_0/SPR_chaos_thz2_terrain_0.yy,folders/Sprites/Sonic Chaos/THZ/Terrain.yy
+SPR_chaos_thz2_terrain_1,sprites/SPR_chaos_thz2_terrain_1/SPR_chaos_thz2_terrain_1.yy,folders/Sprites/Sonic Chaos/THZ/Terrain.yy
+SPR_chaos_thz2_terrain_2,sprites/SPR_chaos_thz2_terrain_2/SPR_chaos_thz2_terrain_2.yy,folders/Sprites/Sonic Chaos/THZ/Terrain.yy
+SPR_chaos_thz2_terrain_3,sprites/SPR_chaos_thz2_terrain_3/SPR_chaos_thz2_terrain_3.yy,folders/Sprites/Sonic Chaos/THZ/Terrain.yy
+SPR_chaos_thz2_block_9d,sprites/SPR_chaos_thz2_block_9d/SPR_chaos_thz2_block_9d.yy,folders/Sprites/Sonic Chaos/THZ/Terrain.yy
+SPR_chaos_thz3_terrain_0,sprites/SPR_chaos_thz3_terrain_0/SPR_chaos_thz3_terrain_0.yy,folders/Sprites/Sonic Chaos/THZ/Terrain.yy
+SPR_chaos_thz3_terrain_1,sprites/SPR_chaos_thz3_terrain_1/SPR_chaos_thz3_terrain_1.yy,folders/Sprites/Sonic Chaos/THZ/Terrain.yy
+SPR_chaos_thz3_terrain_2,sprites/SPR_chaos_thz3_terrain_2/SPR_chaos_thz3_terrain_2.yy,folders/Sprites/Sonic Chaos/THZ/Terrain.yy
+SPR_chaos_object_10_03,sprites/SPR_chaos_object_10_03/SPR_chaos_object_10_03.yy,folders/Sprites/Sonic Chaos/Shared/Objects.yy
+SPR_chaos_object_10_01,sprites/SPR_chaos_object_10_01/SPR_chaos_object_10_01.yy,folders/Sprites/Sonic Chaos/Shared/Objects.yy
+SPR_chaos_object_09,sprites/SPR_chaos_object_09/SPR_chaos_object_09.yy,folders/Sprites/Sonic Chaos/Shared/Objects.yy
+SPR_CHAOS_mask_00,sprites/SPR_CHAOS_mask_00/SPR_CHAOS_mask_00.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_CHAOS_mask_00,objects/OBJ_CHAOS_mask_00/OBJ_CHAOS_mask_00.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_CHAOS_mask_01,sprites/SPR_CHAOS_mask_01/SPR_CHAOS_mask_01.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_CHAOS_mask_01,objects/OBJ_CHAOS_mask_01/OBJ_CHAOS_mask_01.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_CHAOS_mask_02,sprites/SPR_CHAOS_mask_02/SPR_CHAOS_mask_02.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_CHAOS_mask_02,objects/OBJ_CHAOS_mask_02/OBJ_CHAOS_mask_02.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_CHAOS_mask_03,sprites/SPR_CHAOS_mask_03/SPR_CHAOS_mask_03.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_CHAOS_mask_03,objects/OBJ_CHAOS_mask_03/OBJ_CHAOS_mask_03.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_CHAOS_mask_04,sprites/SPR_CHAOS_mask_04/SPR_CHAOS_mask_04.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_CHAOS_mask_04,objects/OBJ_CHAOS_mask_04/OBJ_CHAOS_mask_04.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_CHAOS_mask_05,sprites/SPR_CHAOS_mask_05/SPR_CHAOS_mask_05.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_CHAOS_mask_05,objects/OBJ_CHAOS_mask_05/OBJ_CHAOS_mask_05.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_CHAOS_mask_06,sprites/SPR_CHAOS_mask_06/SPR_CHAOS_mask_06.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_CHAOS_mask_06,objects/OBJ_CHAOS_mask_06/OBJ_CHAOS_mask_06.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_CHAOS_mask_07,sprites/SPR_CHAOS_mask_07/SPR_CHAOS_mask_07.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_CHAOS_mask_07,objects/OBJ_CHAOS_mask_07/OBJ_CHAOS_mask_07.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_CHAOS_mask_08,sprites/SPR_CHAOS_mask_08/SPR_CHAOS_mask_08.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_CHAOS_mask_08,objects/OBJ_CHAOS_mask_08/OBJ_CHAOS_mask_08.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_CHAOS_mask_09,sprites/SPR_CHAOS_mask_09/SPR_CHAOS_mask_09.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_CHAOS_mask_09,objects/OBJ_CHAOS_mask_09/OBJ_CHAOS_mask_09.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_CHAOS_mask_10,sprites/SPR_CHAOS_mask_10/SPR_CHAOS_mask_10.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_CHAOS_mask_10,objects/OBJ_CHAOS_mask_10/OBJ_CHAOS_mask_10.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_CHAOS_mask_11,sprites/SPR_CHAOS_mask_11/SPR_CHAOS_mask_11.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_CHAOS_mask_11,objects/OBJ_CHAOS_mask_11/OBJ_CHAOS_mask_11.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_CHAOS_mask_12,sprites/SPR_CHAOS_mask_12/SPR_CHAOS_mask_12.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_CHAOS_mask_12,objects/OBJ_CHAOS_mask_12/OBJ_CHAOS_mask_12.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_CHAOS_mask_13,sprites/SPR_CHAOS_mask_13/SPR_CHAOS_mask_13.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_CHAOS_mask_13,objects/OBJ_CHAOS_mask_13/OBJ_CHAOS_mask_13.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_terrain_0,sprites/SPR_chaos_terrain_0/SPR_chaos_terrain_0.yy,folders/Sprites/Sonic Chaos/Shared/Terrain.yy
+OBJ_chaos_terrain_0,objects/OBJ_chaos_terrain_0/OBJ_chaos_terrain_0.yy,folders/Objects/Sonic Chaos/Terrain Hosts/Shared.yy
+SPR_chaos_terrain_1,sprites/SPR_chaos_terrain_1/SPR_chaos_terrain_1.yy,folders/Sprites/Sonic Chaos/Shared/Terrain.yy
+OBJ_chaos_terrain_1,objects/OBJ_chaos_terrain_1/OBJ_chaos_terrain_1.yy,folders/Objects/Sonic Chaos/Terrain Hosts/Shared.yy
+SPR_chaos_terrain_2,sprites/SPR_chaos_terrain_2/SPR_chaos_terrain_2.yy,folders/Sprites/Sonic Chaos/Shared/Terrain.yy
+OBJ_chaos_terrain_2,objects/OBJ_chaos_terrain_2/OBJ_chaos_terrain_2.yy,folders/Objects/Sonic Chaos/Terrain Hosts/Shared.yy
+SPR_chaos_terrain_3,sprites/SPR_chaos_terrain_3/SPR_chaos_terrain_3.yy,folders/Sprites/Sonic Chaos/Shared/Terrain.yy
+OBJ_chaos_terrain_3,objects/OBJ_chaos_terrain_3/OBJ_chaos_terrain_3.yy,folders/Objects/Sonic Chaos/Terrain Hosts/Shared.yy
+SPR_chaos_block_46,sprites/SPR_chaos_block_46/SPR_chaos_block_46.yy,folders/Sprites/Sonic Chaos/Shared/Terrain.yy
+SPR_chaos_block_47,sprites/SPR_chaos_block_47/SPR_chaos_block_47.yy,folders/Sprites/Sonic Chaos/Shared/Terrain.yy
+OBJ_chaos_object_0F_transient,objects/OBJ_chaos_object_0F_transient/OBJ_chaos_object_0F_transient.yy,folders/Objects/Sonic Chaos/GameMaker Objects.yy
+OBJ_chaos_object_19,objects/OBJ_chaos_object_19/OBJ_chaos_object_19.yy,folders/Objects/Sonic Chaos/GameMaker Objects.yy
+SPR_chaos_pixel,sprites/SPR_chaos_pixel/SPR_chaos_pixel.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_wall,objects/OBJ_chaos_wall/OBJ_chaos_wall.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+OBJ_chaos_roof,objects/OBJ_chaos_roof/OBJ_chaos_roof.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_spring_48,sprites/SPR_chaos_spring_48/SPR_chaos_spring_48.yy,folders/Sprites/Sonic Chaos/Shared/Objects.yy
+OBJ_chaos_spring_48,objects/OBJ_chaos_spring_48/OBJ_chaos_spring_48.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_spring_49,sprites/SPR_chaos_spring_49/SPR_chaos_spring_49.yy,folders/Sprites/Sonic Chaos/Shared/Objects.yy
+OBJ_chaos_spring_49,objects/OBJ_chaos_spring_49/OBJ_chaos_spring_49.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_spring_54,sprites/SPR_chaos_spring_54/SPR_chaos_spring_54.yy,folders/Sprites/Sonic Chaos/Shared/Objects.yy
+OBJ_chaos_spring_54,objects/OBJ_chaos_spring_54/OBJ_chaos_spring_54.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_spring_56,sprites/SPR_chaos_spring_56/SPR_chaos_spring_56.yy,folders/Sprites/Sonic Chaos/Shared/Objects.yy
+OBJ_chaos_spring_56,objects/OBJ_chaos_spring_56/OBJ_chaos_spring_56.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+OBJ_chaos_spikes,objects/OBJ_chaos_spikes/OBJ_chaos_spikes.yy,folders/Objects/Sonic Chaos/GameMaker Objects.yy
+SPR_chaos_object_1B,sprites/SPR_chaos_object_1B/SPR_chaos_object_1B.yy,folders/Sprites/Sonic Chaos/Shared/Objects.yy
+SPR_chaos_object_27,sprites/SPR_chaos_object_27/SPR_chaos_object_27.yy,folders/Sprites/Sonic Chaos/Shared/Enemies.yy
+SPR_chaos_object_21,sprites/SPR_chaos_object_21/SPR_chaos_object_21.yy,folders/Sprites/Sonic Chaos/Shared/Enemies.yy
+SPR_chaos_object_18,sprites/SPR_chaos_object_18/SPR_chaos_object_18.yy,folders/Sprites/Sonic Chaos/Shared/Objects.yy
+SPR_chaos_object_10,sprites/SPR_chaos_object_10/SPR_chaos_object_10.yy,folders/Sprites/Sonic Chaos/Shared/Objects.yy
+SPR_chaos_object_10_04,sprites/SPR_chaos_object_10_04/SPR_chaos_object_10_04.yy,folders/Sprites/Sonic Chaos/Shared/Objects.yy
+SPR_chaos_object_10_06,sprites/SPR_chaos_object_10_06/SPR_chaos_object_10_06.yy,folders/Sprites/Sonic Chaos/Shared/Objects.yy
+SPR_chaos_object_05,sprites/SPR_chaos_object_05/SPR_chaos_object_05.yy,folders/Sprites/Sonic Chaos/Shared/Effects.yy
+SPR_chaos_player_state_11,sprites/SPR_chaos_player_state_11/SPR_chaos_player_state_11.yy,folders/Sprites/Sonic Chaos/Shared/Player.yy
+SPR_chaos_object_0F,sprites/SPR_chaos_object_0F/SPR_chaos_object_0F.yy,folders/Sprites/Sonic Chaos/Shared/Effects.yy
+OBJ_chaos_object_10,objects/OBJ_chaos_object_10/OBJ_chaos_object_10.yy,folders/Objects/Sonic Chaos/GameMaker Objects.yy
+OBJ_chaos_object_05_effect,objects/OBJ_chaos_object_05_effect/OBJ_chaos_object_05_effect.yy,folders/Objects/Sonic Chaos/GameMaker Objects.yy
+OBJ_chaos_object_21,objects/OBJ_chaos_object_21/OBJ_chaos_object_21.yy,folders/Objects/Sonic Chaos/GameMaker Objects.yy
+OBJ_chaos_object_18,objects/OBJ_chaos_object_18/OBJ_chaos_object_18.yy,folders/Objects/Sonic Chaos/GameMaker Objects.yy
+OBJ_chaos_object_27,objects/OBJ_chaos_object_27/OBJ_chaos_object_27.yy,folders/Objects/Sonic Chaos/GameMaker Objects.yy
+OBJ_chaos_zone,objects/OBJ_chaos_zone/OBJ_chaos_zone.yy,folders/Objects/Sonic Chaos/Controllers.yy
+OBJ_chaos_controls,objects/OBJ_chaos_controls/OBJ_chaos_controls.yy,folders/Objects/Sonic Chaos/Controllers.yy
+ROM_chaos_thz1,rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy,folders/Rooms/Sonic Chaos/THZ.yy
+SPR_chaos_contour_72,sprites/SPR_chaos_contour_72/SPR_chaos_contour_72.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_72,objects/OBJ_chaos_contour_72/OBJ_chaos_contour_72.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_73,sprites/SPR_chaos_contour_73/SPR_chaos_contour_73.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_73,objects/OBJ_chaos_contour_73/OBJ_chaos_contour_73.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_74,sprites/SPR_chaos_contour_74/SPR_chaos_contour_74.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_74,objects/OBJ_chaos_contour_74/OBJ_chaos_contour_74.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_75,sprites/SPR_chaos_contour_75/SPR_chaos_contour_75.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_75,objects/OBJ_chaos_contour_75/OBJ_chaos_contour_75.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_76,sprites/SPR_chaos_contour_76/SPR_chaos_contour_76.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_76,objects/OBJ_chaos_contour_76/OBJ_chaos_contour_76.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_77,sprites/SPR_chaos_contour_77/SPR_chaos_contour_77.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_77,objects/OBJ_chaos_contour_77/OBJ_chaos_contour_77.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_78,sprites/SPR_chaos_contour_78/SPR_chaos_contour_78.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_78,objects/OBJ_chaos_contour_78/OBJ_chaos_contour_78.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_79,sprites/SPR_chaos_contour_79/SPR_chaos_contour_79.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_79,objects/OBJ_chaos_contour_79/OBJ_chaos_contour_79.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_80,sprites/SPR_chaos_contour_80/SPR_chaos_contour_80.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_80,objects/OBJ_chaos_contour_80/OBJ_chaos_contour_80.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_81,sprites/SPR_chaos_contour_81/SPR_chaos_contour_81.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_81,objects/OBJ_chaos_contour_81/OBJ_chaos_contour_81.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_82,sprites/SPR_chaos_contour_82/SPR_chaos_contour_82.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_82,objects/OBJ_chaos_contour_82/OBJ_chaos_contour_82.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_83,sprites/SPR_chaos_contour_83/SPR_chaos_contour_83.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_83,objects/OBJ_chaos_contour_83/OBJ_chaos_contour_83.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_84,sprites/SPR_chaos_contour_84/SPR_chaos_contour_84.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_84,objects/OBJ_chaos_contour_84/OBJ_chaos_contour_84.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_85,sprites/SPR_chaos_contour_85/SPR_chaos_contour_85.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_85,objects/OBJ_chaos_contour_85/OBJ_chaos_contour_85.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_88,sprites/SPR_chaos_contour_88/SPR_chaos_contour_88.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_88,objects/OBJ_chaos_contour_88/OBJ_chaos_contour_88.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_89,sprites/SPR_chaos_contour_89/SPR_chaos_contour_89.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_89,objects/OBJ_chaos_contour_89/OBJ_chaos_contour_89.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_90,sprites/SPR_chaos_contour_90/SPR_chaos_contour_90.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_90,objects/OBJ_chaos_contour_90/OBJ_chaos_contour_90.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_91,sprites/SPR_chaos_contour_91/SPR_chaos_contour_91.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_91,objects/OBJ_chaos_contour_91/OBJ_chaos_contour_91.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_92,sprites/SPR_chaos_contour_92/SPR_chaos_contour_92.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_92,objects/OBJ_chaos_contour_92/OBJ_chaos_contour_92.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_93,sprites/SPR_chaos_contour_93/SPR_chaos_contour_93.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_93,objects/OBJ_chaos_contour_93/OBJ_chaos_contour_93.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_94,sprites/SPR_chaos_contour_94/SPR_chaos_contour_94.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_94,objects/OBJ_chaos_contour_94/OBJ_chaos_contour_94.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_95,sprites/SPR_chaos_contour_95/SPR_chaos_contour_95.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_95,objects/OBJ_chaos_contour_95/OBJ_chaos_contour_95.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_96,sprites/SPR_chaos_contour_96/SPR_chaos_contour_96.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_96,objects/OBJ_chaos_contour_96/OBJ_chaos_contour_96.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_97,sprites/SPR_chaos_contour_97/SPR_chaos_contour_97.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_97,objects/OBJ_chaos_contour_97/OBJ_chaos_contour_97.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_98,sprites/SPR_chaos_contour_98/SPR_chaos_contour_98.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_98,objects/OBJ_chaos_contour_98/OBJ_chaos_contour_98.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_99,sprites/SPR_chaos_contour_99/SPR_chaos_contour_99.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_99,objects/OBJ_chaos_contour_99/OBJ_chaos_contour_99.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_100,sprites/SPR_chaos_contour_100/SPR_chaos_contour_100.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_100,objects/OBJ_chaos_contour_100/OBJ_chaos_contour_100.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_101,sprites/SPR_chaos_contour_101/SPR_chaos_contour_101.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_101,objects/OBJ_chaos_contour_101/OBJ_chaos_contour_101.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_102,sprites/SPR_chaos_contour_102/SPR_chaos_contour_102.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_102,objects/OBJ_chaos_contour_102/OBJ_chaos_contour_102.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_103,sprites/SPR_chaos_contour_103/SPR_chaos_contour_103.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_103,objects/OBJ_chaos_contour_103/OBJ_chaos_contour_103.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_104,sprites/SPR_chaos_contour_104/SPR_chaos_contour_104.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_104,objects/OBJ_chaos_contour_104/OBJ_chaos_contour_104.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_105,sprites/SPR_chaos_contour_105/SPR_chaos_contour_105.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_105,objects/OBJ_chaos_contour_105/OBJ_chaos_contour_105.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_106,sprites/SPR_chaos_contour_106/SPR_chaos_contour_106.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_106,objects/OBJ_chaos_contour_106/OBJ_chaos_contour_106.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_107,sprites/SPR_chaos_contour_107/SPR_chaos_contour_107.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_107,objects/OBJ_chaos_contour_107/OBJ_chaos_contour_107.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_108,sprites/SPR_chaos_contour_108/SPR_chaos_contour_108.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_108,objects/OBJ_chaos_contour_108/OBJ_chaos_contour_108.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_contour_115,sprites/SPR_chaos_contour_115/SPR_chaos_contour_115.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_contour_115,objects/OBJ_chaos_contour_115/OBJ_chaos_contour_115.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_spring_51,sprites/SPR_chaos_spring_51/SPR_chaos_spring_51.yy,folders/Sprites/Sonic Chaos/Shared/Objects.yy
+OBJ_chaos_spring_51,objects/OBJ_chaos_spring_51/OBJ_chaos_spring_51.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_platform,sprites/SPR_chaos_platform/SPR_chaos_platform.yy,folders/Sprites/Sonic Chaos/Shared/Objects.yy
+SPR_chaos_platform_mask,sprites/SPR_chaos_platform_mask/SPR_chaos_platform_mask.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_platform,objects/OBJ_chaos_platform/OBJ_chaos_platform.yy,folders/Objects/Sonic Chaos/GameMaker Objects.yy
+SPR_chaos_loop_80_0,sprites/SPR_chaos_loop_80_0/SPR_chaos_loop_80_0.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+SPR_chaos_loop_80_1,sprites/SPR_chaos_loop_80_1/SPR_chaos_loop_80_1.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_loop_floor_80,objects/OBJ_chaos_loop_floor_80/OBJ_chaos_loop_floor_80.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_loop_81_0,sprites/SPR_chaos_loop_81_0/SPR_chaos_loop_81_0.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+SPR_chaos_loop_81_1,sprites/SPR_chaos_loop_81_1/SPR_chaos_loop_81_1.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_loop_floor_81,objects/OBJ_chaos_loop_floor_81/OBJ_chaos_loop_floor_81.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_loop_82_0,sprites/SPR_chaos_loop_82_0/SPR_chaos_loop_82_0.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+SPR_chaos_loop_82_1,sprites/SPR_chaos_loop_82_1/SPR_chaos_loop_82_1.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_loop_floor_82,objects/OBJ_chaos_loop_floor_82/OBJ_chaos_loop_floor_82.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_loop_83_0,sprites/SPR_chaos_loop_83_0/SPR_chaos_loop_83_0.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+SPR_chaos_loop_83_1,sprites/SPR_chaos_loop_83_1/SPR_chaos_loop_83_1.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_loop_floor_83,objects/OBJ_chaos_loop_floor_83/OBJ_chaos_loop_floor_83.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_loop_161_0,sprites/SPR_chaos_loop_161_0/SPR_chaos_loop_161_0.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+SPR_chaos_loop_161_1,sprites/SPR_chaos_loop_161_1/SPR_chaos_loop_161_1.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_loop_floor_161,objects/OBJ_chaos_loop_floor_161/OBJ_chaos_loop_floor_161.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_loop_162_0,sprites/SPR_chaos_loop_162_0/SPR_chaos_loop_162_0.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+SPR_chaos_loop_162_1,sprites/SPR_chaos_loop_162_1/SPR_chaos_loop_162_1.yy,folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy
+OBJ_chaos_loop_floor_162,objects/OBJ_chaos_loop_floor_162/OBJ_chaos_loop_floor_162.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SCR_chaos_motion_data,scripts/SCR_chaos_motion_data/SCR_chaos_motion_data.yy,folders/Scripts/Sonic Chaos/Core.yy
+SCR_chaos_ring_data,scripts/SCR_chaos_ring_data/SCR_chaos_ring_data.yy,folders/Scripts/Sonic Chaos/Level-Import.yy
+SCR_chaos_type09_data,scripts/SCR_chaos_type09_data/SCR_chaos_type09_data.yy,folders/Scripts/Sonic Chaos/Level-Import.yy
+OBJ_chaos_ring_manager,objects/OBJ_chaos_ring_manager/OBJ_chaos_ring_manager.yy,folders/Objects/Sonic Chaos/GameMaker Objects.yy
+SCR_chaos_motion,scripts/SCR_chaos_motion/SCR_chaos_motion.yy,folders/Scripts/Sonic Chaos/Core.yy
+OBJ_chaos_loop_base,objects/OBJ_chaos_loop_base/OBJ_chaos_loop_base.yy,folders/Objects/Sonic Chaos/Legacy-Prototypes.yy
+SPR_chaos_object_26,sprites/SPR_chaos_object_26/SPR_chaos_object_26.yy,folders/Sprites/Sonic Chaos/Shared/Objects.yy
+OBJ_chaos_object_spring_26_normal,objects/OBJ_chaos_object_spring_26_normal/OBJ_chaos_object_spring_26_normal.yy,folders/Objects/Sonic Chaos/GameMaker Objects.yy
+OBJ_chaos_object_spring_26_weak,objects/OBJ_chaos_object_spring_26_weak/OBJ_chaos_object_spring_26_weak.yy,folders/Objects/Sonic Chaos/GameMaker Objects.yy
+OBJ_chaos_object_spring_26_span,objects/OBJ_chaos_object_spring_26_span/OBJ_chaos_object_spring_26_span.yy,folders/Objects/Sonic Chaos/GameMaker Objects.yy
+SPR_chaos_gpz1_terrain_0,sprites/SPR_chaos_gpz1_terrain_0/SPR_chaos_gpz1_terrain_0.yy,folders/Sprites/Sonic Chaos/GPZ/Terrain.yy
+SPR_chaos_gpz1_terrain_1,sprites/SPR_chaos_gpz1_terrain_1/SPR_chaos_gpz1_terrain_1.yy,folders/Sprites/Sonic Chaos/GPZ/Terrain.yy
+SPR_chaos_gpz1_terrain_2,sprites/SPR_chaos_gpz1_terrain_2/SPR_chaos_gpz1_terrain_2.yy,folders/Sprites/Sonic Chaos/GPZ/Terrain.yy
+SPR_chaos_gpz1_terrain_3,sprites/SPR_chaos_gpz1_terrain_3/SPR_chaos_gpz1_terrain_3.yy,folders/Sprites/Sonic Chaos/GPZ/Terrain.yy
+SPR_chaos_gpz1_terrain_4,sprites/SPR_chaos_gpz1_terrain_4/SPR_chaos_gpz1_terrain_4.yy,folders/Sprites/Sonic Chaos/GPZ/Terrain.yy
+OBJ_chaos_gpz1_terrain,objects/OBJ_chaos_gpz1_terrain/OBJ_chaos_gpz1_terrain.yy,folders/Objects/Sonic Chaos/Terrain Hosts/GPZ.yy
+ROM_chaos_gpz1,rooms/ROM_chaos_gpz1/ROM_chaos_gpz1.yy,folders/Rooms/Sonic Chaos/GPZ.yy
+SPR_chaos_gpz2_terrain_0,sprites/SPR_chaos_gpz2_terrain_0/SPR_chaos_gpz2_terrain_0.yy,folders/Sprites/Sonic Chaos/GPZ/Terrain.yy
+SPR_chaos_gpz2_terrain_1,sprites/SPR_chaos_gpz2_terrain_1/SPR_chaos_gpz2_terrain_1.yy,folders/Sprites/Sonic Chaos/GPZ/Terrain.yy
+SPR_chaos_gpz2_terrain_2,sprites/SPR_chaos_gpz2_terrain_2/SPR_chaos_gpz2_terrain_2.yy,folders/Sprites/Sonic Chaos/GPZ/Terrain.yy
+SPR_chaos_gpz2_terrain_3,sprites/SPR_chaos_gpz2_terrain_3/SPR_chaos_gpz2_terrain_3.yy,folders/Sprites/Sonic Chaos/GPZ/Terrain.yy
+OBJ_chaos_gpz2_terrain,objects/OBJ_chaos_gpz2_terrain/OBJ_chaos_gpz2_terrain.yy,folders/Objects/Sonic Chaos/Terrain Hosts/GPZ.yy
+ROM_chaos_gpz2,rooms/ROM_chaos_gpz2/ROM_chaos_gpz2.yy,folders/Rooms/Sonic Chaos/GPZ.yy
+SPR_chaos_gpz3_terrain_0,sprites/SPR_chaos_gpz3_terrain_0/SPR_chaos_gpz3_terrain_0.yy,folders/Sprites/Sonic Chaos/GPZ/Terrain.yy
+SPR_chaos_gpz3_terrain_1,sprites/SPR_chaos_gpz3_terrain_1/SPR_chaos_gpz3_terrain_1.yy,folders/Sprites/Sonic Chaos/GPZ/Terrain.yy
+SPR_chaos_gpz3_terrain_2,sprites/SPR_chaos_gpz3_terrain_2/SPR_chaos_gpz3_terrain_2.yy,folders/Sprites/Sonic Chaos/GPZ/Terrain.yy
+OBJ_chaos_gpz3_terrain,objects/OBJ_chaos_gpz3_terrain/OBJ_chaos_gpz3_terrain.yy,folders/Objects/Sonic Chaos/Terrain Hosts/GPZ.yy
+ROM_chaos_gpz3,rooms/ROM_chaos_gpz3/ROM_chaos_gpz3.yy,folders/Rooms/Sonic Chaos/GPZ.yy
+SPR_chaos_gpz_block_46,sprites/SPR_chaos_gpz_block_46/SPR_chaos_gpz_block_46.yy,folders/Sprites/Sonic Chaos/GPZ/Terrain.yy
+SPR_chaos_gpz_block_9d,sprites/SPR_chaos_gpz_block_9d/SPR_chaos_gpz_block_9d.yy,folders/Sprites/Sonic Chaos/GPZ/Terrain.yy
+SPR_chaos_gpz_platform,sprites/SPR_chaos_gpz_platform/SPR_chaos_gpz_platform.yy,folders/Sprites/Sonic Chaos/GPZ/Objects.yy
+SPR_chaos_gpz_ring,sprites/SPR_chaos_gpz_ring/SPR_chaos_gpz_ring.yy,folders/Sprites/Sonic Chaos/GPZ/Objects.yy
+SPR_chaos_gpz_monitor_01,sprites/SPR_chaos_gpz_monitor_01/SPR_chaos_gpz_monitor_01.yy,folders/Sprites/Sonic Chaos/GPZ/Objects.yy
+SPR_chaos_gpz_monitor_02,sprites/SPR_chaos_gpz_monitor_02/SPR_chaos_gpz_monitor_02.yy,folders/Sprites/Sonic Chaos/GPZ/Objects.yy
+SPR_chaos_gpz_monitor_03,sprites/SPR_chaos_gpz_monitor_03/SPR_chaos_gpz_monitor_03.yy,folders/Sprites/Sonic Chaos/GPZ/Objects.yy
+SPR_chaos_gpz_monitor_04,sprites/SPR_chaos_gpz_monitor_04/SPR_chaos_gpz_monitor_04.yy,folders/Sprites/Sonic Chaos/GPZ/Objects.yy
+SPR_chaos_gpz_monitor_06,sprites/SPR_chaos_gpz_monitor_06/SPR_chaos_gpz_monitor_06.yy,folders/Sprites/Sonic Chaos/GPZ/Objects.yy
+SCR_chaos_gpz_data,scripts/SCR_chaos_gpz_data/SCR_chaos_gpz_data.yy,folders/Scripts/Sonic Chaos/GPZ/Data.yy
+SPR_chaos_gpz_terrain_ring,sprites/SPR_chaos_gpz_terrain_ring/SPR_chaos_gpz_terrain_ring.yy,folders/Sprites/Sonic Chaos/GPZ/Terrain.yy
+SPR_chaos_gpz_spring,sprites/SPR_chaos_gpz_spring/SPR_chaos_gpz_spring.yy,folders/Sprites/Sonic Chaos/GPZ/Objects.yy
+SPR_chaos_gpz_spike,sprites/SPR_chaos_gpz_spike/SPR_chaos_gpz_spike.yy,folders/Sprites/Sonic Chaos/GPZ/Objects.yy
+SPR_chaos_gpz_poof,sprites/SPR_chaos_gpz_poof/SPR_chaos_gpz_poof.yy,folders/Sprites/Sonic Chaos/GPZ/Effects.yy
+SPR_chaos_gpz_sign,sprites/SPR_chaos_gpz_sign/SPR_chaos_gpz_sign.yy,folders/Sprites/Sonic Chaos/GPZ/Objects.yy
+SPR_chaos_gpz_block_47,sprites/SPR_chaos_gpz_block_47/SPR_chaos_gpz_block_47.yy,folders/Sprites/Sonic Chaos/GPZ/Terrain.yy
+SPR_chaos_gpz_foreground,sprites/SPR_chaos_gpz_foreground/SPR_chaos_gpz_foreground.yy,folders/Sprites/Sonic Chaos/GPZ/Terrain.yy
+OBJ_chaos_terrain_foreground,objects/OBJ_chaos_terrain_foreground/OBJ_chaos_terrain_foreground.yy,folders/Objects/Sonic Chaos/Terrain Hosts/Shared.yy
+SPR_chaos_gpz_enemy_25,sprites/SPR_chaos_gpz_enemy_25/SPR_chaos_gpz_enemy_25.yy,folders/Sprites/Sonic Chaos/GPZ/Enemies.yy
+SPR_chaos_gpz_enemy_25_mirror,sprites/SPR_chaos_gpz_enemy_25_mirror/SPR_chaos_gpz_enemy_25_mirror.yy,folders/Sprites/Sonic Chaos/GPZ/Enemies.yy
+SPR_chaos_gpz_enemy_2C,sprites/SPR_chaos_gpz_enemy_2C/SPR_chaos_gpz_enemy_2C.yy,folders/Sprites/Sonic Chaos/GPZ/Enemies.yy
+SPR_chaos_gpz_smoke_0F,sprites/SPR_chaos_gpz_smoke_0F/SPR_chaos_gpz_smoke_0F.yy,folders/Sprites/Sonic Chaos/GPZ/Effects.yy
+SPR_chaos_gpz_support_34,sprites/SPR_chaos_gpz_support_34/SPR_chaos_gpz_support_34.yy,folders/Sprites/Sonic Chaos/GPZ/Effects.yy
+SPR_chaos_gpz_support_0A,sprites/SPR_chaos_gpz_support_0A/SPR_chaos_gpz_support_0A.yy,folders/Sprites/Sonic Chaos/GPZ/Effects.yy
+SPR_chaos_gpz_boss_51,sprites/SPR_chaos_gpz_boss_51/SPR_chaos_gpz_boss_51.yy,folders/Sprites/Sonic Chaos/GPZ/Bosses.yy
+SCR_chaos_gpz_enemy_data,scripts/SCR_chaos_gpz_enemy_data/SCR_chaos_gpz_enemy_data.yy,folders/Scripts/Sonic Chaos/GPZ/Data.yy
+OBJ_chaos_object_25,objects/OBJ_chaos_object_25/OBJ_chaos_object_25.yy,folders/Objects/Sonic Chaos/GameMaker Objects.yy
+OBJ_chaos_object_2C,objects/OBJ_chaos_object_2C/OBJ_chaos_object_2C.yy,folders/Objects/Sonic Chaos/GameMaker Objects.yy
+OBJ_chaos_object_2F,objects/OBJ_chaos_object_2F/OBJ_chaos_object_2F.yy,folders/Objects/Sonic Chaos/GameMaker Objects.yy
+OBJ_chaos_gpz_smoke_0F,objects/OBJ_chaos_gpz_smoke_0F/OBJ_chaos_gpz_smoke_0F.yy,folders/Objects/Sonic Chaos/GameMaker Objects.yy
+SCR_chaos_gpz_enemy,scripts/SCR_chaos_gpz_enemy/SCR_chaos_gpz_enemy.yy,folders/Scripts/Sonic Chaos/GPZ/Runtime.yy
+SCR_chaos_gpz_boss_data,scripts/SCR_chaos_gpz_boss_data/SCR_chaos_gpz_boss_data.yy,folders/Scripts/Sonic Chaos/GPZ/Data.yy
+SCR_chaos_gpz_boss,scripts/SCR_chaos_gpz_boss/SCR_chaos_gpz_boss.yy,folders/Scripts/Sonic Chaos/GPZ/Runtime.yy
+OBJ_chaos_object_51,objects/OBJ_chaos_object_51/OBJ_chaos_object_51.yy,folders/Objects/Sonic Chaos/GameMaker Objects.yy
+SPR_chaos_mghz1_terrain_0,sprites/SPR_chaos_mghz1_terrain_0/SPR_chaos_mghz1_terrain_0.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+SPR_chaos_mghz1_terrain_1,sprites/SPR_chaos_mghz1_terrain_1/SPR_chaos_mghz1_terrain_1.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+SPR_chaos_mghz1_terrain_2,sprites/SPR_chaos_mghz1_terrain_2/SPR_chaos_mghz1_terrain_2.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+SPR_chaos_mghz1_terrain_3,sprites/SPR_chaos_mghz1_terrain_3/SPR_chaos_mghz1_terrain_3.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+OBJ_chaos_mghz1_terrain,objects/OBJ_chaos_mghz1_terrain/OBJ_chaos_mghz1_terrain.yy,folders/Objects/Sonic Chaos/Terrain Hosts/MGHZ.yy
+ROM_chaos_mghz1,rooms/ROM_chaos_mghz1/ROM_chaos_mghz1.yy,folders/Rooms/Sonic Chaos/MGHZ.yy
+SPR_chaos_mghz2_terrain_0,sprites/SPR_chaos_mghz2_terrain_0/SPR_chaos_mghz2_terrain_0.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+SPR_chaos_mghz2_terrain_1,sprites/SPR_chaos_mghz2_terrain_1/SPR_chaos_mghz2_terrain_1.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+SPR_chaos_mghz2_terrain_2,sprites/SPR_chaos_mghz2_terrain_2/SPR_chaos_mghz2_terrain_2.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+SPR_chaos_mghz2_terrain_3,sprites/SPR_chaos_mghz2_terrain_3/SPR_chaos_mghz2_terrain_3.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+OBJ_chaos_mghz2_terrain,objects/OBJ_chaos_mghz2_terrain/OBJ_chaos_mghz2_terrain.yy,folders/Objects/Sonic Chaos/Terrain Hosts/MGHZ.yy
+ROM_chaos_mghz2,rooms/ROM_chaos_mghz2/ROM_chaos_mghz2.yy,folders/Rooms/Sonic Chaos/MGHZ.yy
+SPR_chaos_mghz3_terrain_0,sprites/SPR_chaos_mghz3_terrain_0/SPR_chaos_mghz3_terrain_0.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+SPR_chaos_mghz3_terrain_1,sprites/SPR_chaos_mghz3_terrain_1/SPR_chaos_mghz3_terrain_1.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+SPR_chaos_mghz3_terrain_2,sprites/SPR_chaos_mghz3_terrain_2/SPR_chaos_mghz3_terrain_2.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+SPR_chaos_mghz3_terrain_3,sprites/SPR_chaos_mghz3_terrain_3/SPR_chaos_mghz3_terrain_3.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+OBJ_chaos_mghz3_terrain,objects/OBJ_chaos_mghz3_terrain/OBJ_chaos_mghz3_terrain.yy,folders/Objects/Sonic Chaos/Terrain Hosts/MGHZ.yy
+ROM_chaos_mghz3,rooms/ROM_chaos_mghz3/ROM_chaos_mghz3.yy,folders/Rooms/Sonic Chaos/MGHZ.yy
+SPR_chaos_mghz_block_9b,sprites/SPR_chaos_mghz_block_9b/SPR_chaos_mghz_block_9b.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+SPR_chaos_mghz_block_9c,sprites/SPR_chaos_mghz_block_9c/SPR_chaos_mghz_block_9c.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+SPR_chaos_mghz_block_9d,sprites/SPR_chaos_mghz_block_9d/SPR_chaos_mghz_block_9d.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+SPR_chaos_mghz_foreground,sprites/SPR_chaos_mghz_foreground/SPR_chaos_mghz_foreground.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+SPR_chaos_mghz_platform,sprites/SPR_chaos_mghz_platform/SPR_chaos_mghz_platform.yy,folders/Sprites/Sonic Chaos/MGHZ/Objects.yy
+SPR_chaos_mghz_ring,sprites/SPR_chaos_mghz_ring/SPR_chaos_mghz_ring.yy,folders/Sprites/Sonic Chaos/MGHZ/Objects.yy
+SPR_chaos_mghz_terrain_ring,sprites/SPR_chaos_mghz_terrain_ring/SPR_chaos_mghz_terrain_ring.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+SPR_chaos_mghz_spring,sprites/SPR_chaos_mghz_spring/SPR_chaos_mghz_spring.yy,folders/Sprites/Sonic Chaos/MGHZ/Objects.yy
+SPR_chaos_mghz_spike,sprites/SPR_chaos_mghz_spike/SPR_chaos_mghz_spike.yy,folders/Sprites/Sonic Chaos/MGHZ/Objects.yy
+SPR_chaos_mghz_poof,sprites/SPR_chaos_mghz_poof/SPR_chaos_mghz_poof.yy,folders/Sprites/Sonic Chaos/MGHZ/Effects.yy
+SPR_chaos_mghz_sign,sprites/SPR_chaos_mghz_sign/SPR_chaos_mghz_sign.yy,folders/Sprites/Sonic Chaos/MGHZ/Objects.yy
+SPR_chaos_mghz_monitor_01,sprites/SPR_chaos_mghz_monitor_01/SPR_chaos_mghz_monitor_01.yy,folders/Sprites/Sonic Chaos/MGHZ/Objects.yy
+SPR_chaos_mghz_monitor_02,sprites/SPR_chaos_mghz_monitor_02/SPR_chaos_mghz_monitor_02.yy,folders/Sprites/Sonic Chaos/MGHZ/Objects.yy
+SPR_chaos_mghz_monitor_06,sprites/SPR_chaos_mghz_monitor_06/SPR_chaos_mghz_monitor_06.yy,folders/Sprites/Sonic Chaos/MGHZ/Objects.yy
+SCR_chaos_mghz_data,scripts/SCR_chaos_mghz_data/SCR_chaos_mghz_data.yy,folders/Scripts/Sonic Chaos/MGHZ/Data.yy
+SPR_chaos_mghz_palette_11,sprites/SPR_chaos_mghz_palette_11/SPR_chaos_mghz_palette_11.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+SPR_chaos_mghz_palette_11_front,sprites/SPR_chaos_mghz_palette_11_front/SPR_chaos_mghz_palette_11_front.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+SPR_chaos_mghz_palette_4,sprites/SPR_chaos_mghz_palette_4/SPR_chaos_mghz_palette_4.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+SPR_chaos_mghz_palette_4_front,sprites/SPR_chaos_mghz_palette_4_front/SPR_chaos_mghz_palette_4_front.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+SPR_chaos_mghz_strip,sprites/SPR_chaos_mghz_strip/SPR_chaos_mghz_strip.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+SPR_chaos_mghz_strip_front,sprites/SPR_chaos_mghz_strip_front/SPR_chaos_mghz_strip_front.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+SCR_chaos_mghz_effects,scripts/SCR_chaos_mghz_effects/SCR_chaos_mghz_effects.yy,folders/Scripts/Sonic Chaos/MGHZ/Runtime.yy
+SPR_chaos_mghz_blocks,sprites/SPR_chaos_mghz_blocks/SPR_chaos_mghz_blocks.yy,folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy
+SPR_chaos_mghz_object_21,sprites/SPR_chaos_mghz_object_21/SPR_chaos_mghz_object_21.yy,folders/Sprites/Sonic Chaos/MGHZ/Enemies.yy
+SPR_chaos_mghz_spring_shoes,sprites/SPR_chaos_mghz_spring_shoes/SPR_chaos_mghz_spring_shoes.yy,folders/Sprites/Sonic Chaos/MGHZ/Objects.yy
+SPR_chaos_mghz_monitor_04,sprites/SPR_chaos_mghz_monitor_04/SPR_chaos_mghz_monitor_04.yy,folders/Sprites/Sonic Chaos/MGHZ/Objects.yy
+SPR_chaos_mghz_object_24,sprites/SPR_chaos_mghz_object_24/SPR_chaos_mghz_object_24.yy,folders/Sprites/Sonic Chaos/MGHZ/Enemies.yy
+SPR_chaos_mghz_object_2E,sprites/SPR_chaos_mghz_object_2E/SPR_chaos_mghz_object_2E.yy,folders/Sprites/Sonic Chaos/MGHZ/Enemies.yy
+SCR_chaos_mghz_m3,scripts/SCR_chaos_mghz_m3/SCR_chaos_mghz_m3.yy,folders/Scripts/Sonic Chaos/MGHZ/Runtime.yy
+SPR_chaos_mghz_boss_56,sprites/SPR_chaos_mghz_boss_56/SPR_chaos_mghz_boss_56.yy,folders/Sprites/Sonic Chaos/MGHZ/Bosses.yy
+SPR_chaos_mghz_boss_56_flash,sprites/SPR_chaos_mghz_boss_56_flash/SPR_chaos_mghz_boss_56_flash.yy,folders/Sprites/Sonic Chaos/MGHZ/Bosses.yy
+SPR_chaos_mghz_boss_puff_34,sprites/SPR_chaos_mghz_boss_puff_34/SPR_chaos_mghz_boss_puff_34.yy,folders/Sprites/Sonic Chaos/MGHZ/Effects.yy
+SPR_chaos_mghz_boss_sparkle_0A,sprites/SPR_chaos_mghz_boss_sparkle_0A/SPR_chaos_mghz_boss_sparkle_0A.yy,folders/Sprites/Sonic Chaos/MGHZ/Effects.yy
+SCR_chaos_mghz_boss_data,scripts/SCR_chaos_mghz_boss_data/SCR_chaos_mghz_boss_data.yy,folders/Scripts/Sonic Chaos/MGHZ/Data.yy
+SCR_chaos_mghz_boss,scripts/SCR_chaos_mghz_boss/SCR_chaos_mghz_boss.yy,folders/Scripts/Sonic Chaos/MGHZ/Runtime.yy
+OBJ_chaos_object_56,objects/OBJ_chaos_object_56/OBJ_chaos_object_56.yy,folders/Objects/Sonic Chaos/GameMaker Objects.yy
+SPR_chaos_mghz_boss_poof_0F,sprites/SPR_chaos_mghz_boss_poof_0F/SPR_chaos_mghz_boss_poof_0F.yy,folders/Sprites/Sonic Chaos/MGHZ/Effects.yy
+SPR_chaos_sez1_terrain_0,sprites/SPR_chaos_sez1_terrain_0/SPR_chaos_sez1_terrain_0.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+SPR_chaos_sez1_terrain_1,sprites/SPR_chaos_sez1_terrain_1/SPR_chaos_sez1_terrain_1.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+SPR_chaos_sez1_terrain_2,sprites/SPR_chaos_sez1_terrain_2/SPR_chaos_sez1_terrain_2.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+SPR_chaos_sez1_terrain_3,sprites/SPR_chaos_sez1_terrain_3/SPR_chaos_sez1_terrain_3.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+OBJ_chaos_sez1_terrain,objects/OBJ_chaos_sez1_terrain/OBJ_chaos_sez1_terrain.yy,folders/Objects/Sonic Chaos/Terrain Hosts/SEZ.yy
+ROM_chaos_sez1,rooms/ROM_chaos_sez1/ROM_chaos_sez1.yy,folders/Rooms/Sonic Chaos/SEZ.yy
+SPR_chaos_sez2_terrain_0,sprites/SPR_chaos_sez2_terrain_0/SPR_chaos_sez2_terrain_0.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+SPR_chaos_sez2_terrain_1,sprites/SPR_chaos_sez2_terrain_1/SPR_chaos_sez2_terrain_1.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+SPR_chaos_sez2_terrain_2,sprites/SPR_chaos_sez2_terrain_2/SPR_chaos_sez2_terrain_2.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+SPR_chaos_sez2_terrain_3,sprites/SPR_chaos_sez2_terrain_3/SPR_chaos_sez2_terrain_3.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+OBJ_chaos_sez2_terrain,objects/OBJ_chaos_sez2_terrain/OBJ_chaos_sez2_terrain.yy,folders/Objects/Sonic Chaos/Terrain Hosts/SEZ.yy
+ROM_chaos_sez2,rooms/ROM_chaos_sez2/ROM_chaos_sez2.yy,folders/Rooms/Sonic Chaos/SEZ.yy
+SPR_chaos_sez3_terrain_0,sprites/SPR_chaos_sez3_terrain_0/SPR_chaos_sez3_terrain_0.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+SPR_chaos_sez3_terrain_1,sprites/SPR_chaos_sez3_terrain_1/SPR_chaos_sez3_terrain_1.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+SPR_chaos_sez3_terrain_2,sprites/SPR_chaos_sez3_terrain_2/SPR_chaos_sez3_terrain_2.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+SPR_chaos_sez3_terrain_3,sprites/SPR_chaos_sez3_terrain_3/SPR_chaos_sez3_terrain_3.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+OBJ_chaos_sez3_terrain,objects/OBJ_chaos_sez3_terrain/OBJ_chaos_sez3_terrain.yy,folders/Objects/Sonic Chaos/Terrain Hosts/SEZ.yy
+ROM_chaos_sez3,rooms/ROM_chaos_sez3/ROM_chaos_sez3.yy,folders/Rooms/Sonic Chaos/SEZ.yy
+SPR_chaos_sez_block_46,sprites/SPR_chaos_sez_block_46/SPR_chaos_sez_block_46.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+SPR_chaos_sez_block_47,sprites/SPR_chaos_sez_block_47/SPR_chaos_sez_block_47.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+SPR_chaos_sez_block_9b,sprites/SPR_chaos_sez_block_9b/SPR_chaos_sez_block_9b.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+SPR_chaos_sez_block_9c,sprites/SPR_chaos_sez_block_9c/SPR_chaos_sez_block_9c.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+SPR_chaos_sez_block_9d,sprites/SPR_chaos_sez_block_9d/SPR_chaos_sez_block_9d.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+SPR_chaos_sez_foreground,sprites/SPR_chaos_sez_foreground/SPR_chaos_sez_foreground.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+SPR_chaos_sez_platform,sprites/SPR_chaos_sez_platform/SPR_chaos_sez_platform.yy,folders/Sprites/Sonic Chaos/SEZ/Objects.yy
+SPR_chaos_sez_ring,sprites/SPR_chaos_sez_ring/SPR_chaos_sez_ring.yy,folders/Sprites/Sonic Chaos/SEZ/Objects.yy
+SPR_chaos_sez_terrain_ring,sprites/SPR_chaos_sez_terrain_ring/SPR_chaos_sez_terrain_ring.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+SPR_chaos_sez_spring,sprites/SPR_chaos_sez_spring/SPR_chaos_sez_spring.yy,folders/Sprites/Sonic Chaos/SEZ/Objects.yy
+SPR_chaos_sez_spike,sprites/SPR_chaos_sez_spike/SPR_chaos_sez_spike.yy,folders/Sprites/Sonic Chaos/SEZ/Objects.yy
+SPR_chaos_sez_poof,sprites/SPR_chaos_sez_poof/SPR_chaos_sez_poof.yy,folders/Sprites/Sonic Chaos/SEZ/Effects.yy
+SPR_chaos_sez_sign,sprites/SPR_chaos_sez_sign/SPR_chaos_sez_sign.yy,folders/Sprites/Sonic Chaos/SEZ/Objects.yy
+SPR_chaos_sez_monitor_01,sprites/SPR_chaos_sez_monitor_01/SPR_chaos_sez_monitor_01.yy,folders/Sprites/Sonic Chaos/SEZ/Objects.yy
+SPR_chaos_sez_monitor_02,sprites/SPR_chaos_sez_monitor_02/SPR_chaos_sez_monitor_02.yy,folders/Sprites/Sonic Chaos/SEZ/Objects.yy
+SPR_chaos_sez_monitor_04,sprites/SPR_chaos_sez_monitor_04/SPR_chaos_sez_monitor_04.yy,folders/Sprites/Sonic Chaos/SEZ/Objects.yy
+SPR_chaos_sez_monitor_06,sprites/SPR_chaos_sez_monitor_06/SPR_chaos_sez_monitor_06.yy,folders/Sprites/Sonic Chaos/SEZ/Objects.yy
+SCR_chaos_sez_data,scripts/SCR_chaos_sez_data/SCR_chaos_sez_data.yy,folders/Scripts/Sonic Chaos/SEZ/Data.yy
+SPR_chaos_sez_blocks,sprites/SPR_chaos_sez_blocks/SPR_chaos_sez_blocks.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+SPR_chaos_sez_effect5,sprites/SPR_chaos_sez_effect5/SPR_chaos_sez_effect5.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+SPR_chaos_sez_effect5_front,sprites/SPR_chaos_sez_effect5_front/SPR_chaos_sez_effect5_front.yy,folders/Sprites/Sonic Chaos/SEZ/Terrain.yy
+SPR_chaos_sez_puff,sprites/SPR_chaos_sez_puff/SPR_chaos_sez_puff.yy,folders/Sprites/Sonic Chaos/SEZ/Effects.yy
+SPR_chaos_sez_ring_sparkle,sprites/SPR_chaos_sez_ring_sparkle/SPR_chaos_sez_ring_sparkle.yy,folders/Sprites/Sonic Chaos/SEZ/Effects.yy
+SPR_chaos_sez_shard,sprites/SPR_chaos_sez_shard/SPR_chaos_sez_shard.yy,folders/Sprites/Sonic Chaos/SEZ/Effects.yy
+SPR_chaos_sez_sparkle,sprites/SPR_chaos_sez_sparkle/SPR_chaos_sez_sparkle.yy,folders/Sprites/Sonic Chaos/SEZ/Effects.yy
+SPR_chaos_sez_spring_shoes,sprites/SPR_chaos_sez_spring_shoes/SPR_chaos_sez_spring_shoes.yy,folders/Sprites/Sonic Chaos/SEZ/Objects.yy
+SCR_chaos_sez_effects,scripts/SCR_chaos_sez_effects/SCR_chaos_sez_effects.yy,folders/Scripts/Sonic Chaos/SEZ/Runtime.yy
+SCR_chaos_sez_s2_data,scripts/SCR_chaos_sez_s2_data/SCR_chaos_sez_s2_data.yy,folders/Scripts/Sonic Chaos/SEZ/Data.yy
+SCR_chaos_sez_s2,scripts/SCR_chaos_sez_s2/SCR_chaos_sez_s2.yy,folders/Scripts/Sonic Chaos/SEZ/Runtime.yy
+SPR_chaos_sez_enemy_20,sprites/SPR_chaos_sez_enemy_20/SPR_chaos_sez_enemy_20.yy,folders/Sprites/Sonic Chaos/SEZ/Enemies.yy
+SPR_chaos_sez_enemy_20_conv,sprites/SPR_chaos_sez_enemy_20_conv/SPR_chaos_sez_enemy_20_conv.yy,folders/Sprites/Sonic Chaos/SEZ/Enemies.yy
+SPR_chaos_sez_enemy_23,sprites/SPR_chaos_sez_enemy_23/SPR_chaos_sez_enemy_23.yy,folders/Sprites/Sonic Chaos/SEZ/Enemies.yy
+SCR_chaos_sez_enemy,scripts/SCR_chaos_sez_enemy/SCR_chaos_sez_enemy.yy,folders/Scripts/Sonic Chaos/SEZ/Runtime.yy
+SPR_chaos_sez_boss_54,sprites/SPR_chaos_sez_boss_54/SPR_chaos_sez_boss_54.yy,folders/Sprites/Sonic Chaos/SEZ/Bosses.yy
+SPR_chaos_sez_boss_54_flash,sprites/SPR_chaos_sez_boss_54_flash/SPR_chaos_sez_boss_54_flash.yy,folders/Sprites/Sonic Chaos/SEZ/Bosses.yy
+SPR_chaos_sez_boss_55,sprites/SPR_chaos_sez_boss_55/SPR_chaos_sez_boss_55.yy,folders/Sprites/Sonic Chaos/SEZ/Bosses.yy
+SPR_chaos_sez_boss_55_flash,sprites/SPR_chaos_sez_boss_55_flash/SPR_chaos_sez_boss_55_flash.yy,folders/Sprites/Sonic Chaos/SEZ/Bosses.yy
+SCR_chaos_sez_boss_data,scripts/SCR_chaos_sez_boss_data/SCR_chaos_sez_boss_data.yy,folders/Scripts/Sonic Chaos/SEZ/Data.yy
+SCR_chaos_sez_boss,scripts/SCR_chaos_sez_boss/SCR_chaos_sez_boss.yy,folders/Scripts/Sonic Chaos/SEZ/Runtime.yy
+SPR_chaos_sez_boss_poof,sprites/SPR_chaos_sez_boss_poof/SPR_chaos_sez_boss_poof.yy,folders/Sprites/Sonic Chaos/SEZ/Effects.yy

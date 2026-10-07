@@ -17,10 +17,7 @@
   "managed": true,
   "name": "OBJ_chaos_loop_floor_162",
   "overriddenProperties": [],
-  "parent": {
-    "name": "Collisions",
-    "path": "folders/Objects/Collisions.yy"
-  },
+  "parent": {"name": "Legacy-Prototypes", "path": "folders/Objects/Sonic Chaos/Legacy-Prototypes.yy"},
   "parentObjectId": {
     "name": "OBJ_chaos_loop_base",
     "path": "objects/OBJ_chaos_loop_base/OBJ_chaos_loop_base.yy"

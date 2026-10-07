@@ -76,10 +76,7 @@
   "name": "SPR_chaos_boss_50_flash",
   "nineSlice": null,
   "origin": 9,
-  "parent": {
-    "name": "Badniks",
-    "path": "folders/Sprites/Badniks.yy"
-  },
+  "parent": {"name": "Bosses", "path": "folders/Sprites/Sonic Chaos/THZ/Bosses.yy"},
   "preMultiplyAlpha": false,
   "resourceType": "GMSprite",
   "resourceVersion": "2.0",

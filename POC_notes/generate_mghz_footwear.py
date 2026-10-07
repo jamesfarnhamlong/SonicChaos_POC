@@ -7,6 +7,7 @@ frame is checked against the approved ``art-approval.json`` hashes before it is 
 """
 import argparse, copy, hashlib, json, sys, uuid
 from pathlib import Path
+from chaos_asset_parents import set_chaos_parent
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,6 +19,7 @@ REGISTRATION = (1, 18)     # accepted terrain-relative presentation of SAT-relat
 def sha(raw): return hashlib.sha256(raw).hexdigest()
 def guid(value): return str(uuid.uuid5(uuid.NAMESPACE_URL, 'sonic-chaos-mghz-footwear/' + value))
 def dump(path, value):
+    set_chaos_parent(value)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, indent=2) + '\n', encoding='utf-8')
 

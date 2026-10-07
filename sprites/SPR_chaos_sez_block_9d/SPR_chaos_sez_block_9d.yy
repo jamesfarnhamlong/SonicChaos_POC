@@ -41,10 +41,7 @@
   "name": "SPR_chaos_sez_block_9d",
   "nineSlice": null,
   "origin": 9,
-  "parent": {
-    "name": "Collisions",
-    "path": "folders/Sprites/Collisions.yy"
-  },
+  "parent": {"name": "Terrain", "path": "folders/Sprites/Sonic Chaos/SEZ/Terrain.yy"},
   "preMultiplyAlpha": false,
   "resourceType": "GMSprite",
   "resourceVersion": "2.0",

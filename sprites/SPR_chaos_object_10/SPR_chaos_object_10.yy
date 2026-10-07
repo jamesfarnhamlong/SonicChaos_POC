@@ -48,10 +48,7 @@
   "name": "SPR_chaos_object_10",
   "nineSlice": null,
   "origin": 9,
-  "parent": {
-    "name": "Badniks",
-    "path": "folders/Sprites/Badniks.yy"
-  },
+  "parent": {"name": "Objects", "path": "folders/Sprites/Sonic Chaos/Shared/Objects.yy"},
   "preMultiplyAlpha": false,
   "resourceType": "GMSprite",
   "resourceVersion": "2.0",

@@ -50,10 +50,7 @@
   "managed": true,
   "name": "OBJ_chaos_zone",
   "overriddenProperties": [],
-  "parent": {
-    "name": "Collisions",
-    "path": "folders/Objects/Collisions.yy"
-  },
+  "parent": {"name": "Controllers", "path": "folders/Objects/Sonic Chaos/Controllers.yy"},
   "parentObjectId": {
     "name": "OBJ_system_zone",
     "path": "objects/OBJ_system_zone/OBJ_system_zone.yy"

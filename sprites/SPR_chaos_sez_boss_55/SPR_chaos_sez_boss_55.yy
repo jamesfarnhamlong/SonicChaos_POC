@@ -55,10 +55,7 @@
   "name": "SPR_chaos_sez_boss_55",
   "nineSlice": null,
   "origin": 9,
-  "parent": {
-    "name": "Collisions",
-    "path": "folders/Sprites/Collisions.yy"
-  },
+  "parent": {"name": "Bosses", "path": "folders/Sprites/Sonic Chaos/SEZ/Bosses.yy"},
   "preMultiplyAlpha": false,
   "resourceType": "GMSprite",
   "resourceVersion": "2.0",

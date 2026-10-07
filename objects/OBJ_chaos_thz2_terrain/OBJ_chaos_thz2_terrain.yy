@@ -28,10 +28,7 @@
   "managed": true,
   "name": "OBJ_chaos_thz2_terrain",
   "overriddenProperties": [],
-  "parent": {
-    "name": "Collisions",
-    "path": "folders/Objects/Collisions.yy"
-  },
+  "parent": {"name": "THZ", "path": "folders/Objects/Sonic Chaos/Terrain Hosts/THZ.yy"},
   "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,

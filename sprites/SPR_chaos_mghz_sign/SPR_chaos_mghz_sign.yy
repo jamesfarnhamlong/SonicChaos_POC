@@ -69,10 +69,7 @@
   "name": "SPR_chaos_mghz_sign",
   "nineSlice": null,
   "origin": 9,
-  "parent": {
-    "name": "Collisions",
-    "path": "folders/Sprites/Collisions.yy"
-  },
+  "parent": {"name": "Objects", "path": "folders/Sprites/Sonic Chaos/MGHZ/Objects.yy"},
   "preMultiplyAlpha": false,
   "resourceType": "GMSprite",
   "resourceVersion": "2.0",

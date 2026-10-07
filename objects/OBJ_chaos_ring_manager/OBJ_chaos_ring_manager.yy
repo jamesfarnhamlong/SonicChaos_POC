@@ -12,7 +12,7 @@
   "managed":true,
   "name":"OBJ_chaos_ring_manager",
   "overriddenProperties":[],
-  "parent":{"name":"Rings","path":"folders/Objects/Level Objects/Rings.yy"},
+  "parent": {"name": "GameMaker Objects", "path": "folders/Objects/Sonic Chaos/GameMaker Objects.yy"},
   "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,

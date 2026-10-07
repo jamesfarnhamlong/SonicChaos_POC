@@ -3,6 +3,8 @@ Usage: python verification/make_anim_counter_data.py [path-to-research player-an
 Writes POC_notes/rom-cache/player-animation-counter.json (trimmed mirror) and scripts/SCR_chaos_anim_counter_data/SCR_chaos_anim_counter_data.gml."""
 import hashlib, json, sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "POC_notes"))
+from chaos_asset_parents import parent_text
 root = Path(__file__).resolve().parents[1]
 src = Path(sys.argv[1]) if len(sys.argv) > 1 else root.parent / "sonic-chaos-reference-work" / "data" / "rom-cache" / "player-animation-counter.json"
 raw = src.read_bytes()
@@ -64,7 +66,7 @@ out = root / "scripts/SCR_chaos_anim_counter_data"
 out.mkdir(exist_ok=True)
 (out / "SCR_chaos_anim_counter_data.gml").write_text("\n".join(lines))
 yy = (root / "scripts/SCR_chaos_goal/SCR_chaos_goal.yy").read_text().replace("SCR_chaos_goal", "SCR_chaos_anim_counter_data")
-(out / "SCR_chaos_anim_counter_data.yy").write_text(yy)
+(out / "SCR_chaos_anim_counter_data.yy").write_text(parent_text(yy, "SCR_chaos_anim_counter_data"))
 print("ok", sha)
 
 # ---- terrain-ring collection cache (trimmed mirror) ----

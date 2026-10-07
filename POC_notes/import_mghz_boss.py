@@ -17,6 +17,7 @@ local ROM (same decoder policy as import_gpz_boss.py).
 """
 import argparse, copy, hashlib, json, shutil, subprocess, sys, uuid
 from pathlib import Path
+from chaos_asset_parents import set_chaos_parent
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,6 +41,7 @@ def num(v): return int(v, 0) if isinstance(v, str) else int(v)
 
 
 def dump(path, value):
+    set_chaos_parent(value)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, indent=2) + '\n', encoding='utf-8')
 

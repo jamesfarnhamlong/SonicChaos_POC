@@ -96,10 +96,7 @@
     }
   ],
   "name": "ROM_chaos_mghz1",
-  "parent": {
-    "name": "Zones",
-    "path": "folders/Rooms/Zones.yy"
-  },
+  "parent": {"name": "MGHZ", "path": "folders/Rooms/Sonic Chaos/MGHZ.yy"},
   "parentRoom": null,
   "physicsSettings": {
     "inheritPhysicsSettings": false,

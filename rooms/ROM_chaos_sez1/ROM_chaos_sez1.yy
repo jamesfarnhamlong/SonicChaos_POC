@@ -96,10 +96,7 @@
     }
   ],
   "name": "ROM_chaos_sez1",
-  "parent": {
-    "name": "Zones",
-    "path": "folders/Rooms/Zones.yy"
-  },
+  "parent": {"name": "SEZ", "path": "folders/Rooms/Sonic Chaos/SEZ.yy"},
   "parentRoom": null,
   "physicsSettings": {
     "inheritPhysicsSettings": false,

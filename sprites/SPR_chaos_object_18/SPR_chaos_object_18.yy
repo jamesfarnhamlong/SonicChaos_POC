@@ -12,7 +12,7 @@
   "gridX":0,"gridY":0,"height":48,"HTile":false,
   "layers":[{"$GMImageLayer":"","%Name":"18000000-0000-4000-8000-000000000000","blendMode":0,"displayName":"default","isLocked":false,"name":"18000000-0000-4000-8000-000000000000","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true}],
   "name":"SPR_chaos_object_18","nineSlice":null,"origin":9,
-  "parent":{"name":"Badniks","path":"folders/Sprites/Badniks.yy"},
+  "parent": {"name": "Objects", "path": "folders/Sprites/Sonic Chaos/Shared/Objects.yy"},
   "preMultiplyAlpha":false,"resourceType":"GMSprite","resourceVersion":"2.0",
   "sequence":{"$GMSequence":"v1","%Name":"SPR_chaos_object_18","autoRecord":true,"backdropHeight":1080,"backdropImageOpacity":0.5,"backdropImagePath":"","backdropWidth":1920,"backdropXOffset":0.0,"backdropYOffset":0.0,
     "events":{"$KeyframeStore<MessageEventKeyframe>":"","Keyframes":[],"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"2.0"},"eventStubScript":null,"eventToFunction":{},"length":5.0,"lockOrigin":false,

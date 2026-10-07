@@ -114,8 +114,8 @@ const ctx = host.ctx;
     eq(legacy, '', 'legacy sample badnik / monitor objects are untouched');
     const attackBit = /cp_c\.move & 2\) != 0, \(cp_c\.move & 2\)|\(cp_c\.move & 2\) != 0/.test(spk); ok(attackBit, '$1B reads only the canonical attack posture bit (D503 bit 1 = move & 2)');
     // canonical placements byte-identical
-    const dirty = cp.spawnSync('git', ['diff', '--quiet', 'HEAD', '--', 'rooms/ROM_chaos_thz1', 'rooms/ROM_chaos_thz2', 'scripts/SCR_chaos_level_thz2_data', 'scripts/SCR_chaos_core_data', 'scripts/SCR_chaos_motion_data', 'POC_notes/rom-cache/object-records.json', 'POC_notes/rom-cache/object-census.json'], {cwd: root}).status;
-    eq(dirty, 0, 'canonical rooms, THZ2 object records and terrain/level data are byte-identical to HEAD');
+    const dirty = require('./asset_parent_invariant.js').unchangedExceptAssetParents(root, 'HEAD', ['rooms/ROM_chaos_thz1', 'rooms/ROM_chaos_thz2', 'scripts/SCR_chaos_level_thz2_data', 'scripts/SCR_chaos_core_data', 'scripts/SCR_chaos_motion_data', 'POC_notes/rom-cache/object-records.json', 'POC_notes/rom-cache/object-census.json']);
+    eq(dirty, 0, 'canonical rooms, THZ2 object records and terrain/level data are identical to HEAD except approved virtual parents');
     // placements: the six THZ1 platforms and four spikes are still the canonical records (room instances)
     const l1 = rd('rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy'), pos = nm => { const out = []; let at = -1; const needle = '"name": "' + nm + '",'; while ((at = l1.indexOf(needle, at + 1)) >= 0) { const xi = l1.indexOf('"x": ', at), yi = l1.indexOf('"y": ', xi), pi = l1.indexOf('"path"', at); if (pi < 0 || l1.slice(pi, pi + 120).indexOf('objects/' + nm) < 0) continue; out.push([parseFloat(l1.slice(xi + 5)), parseFloat(l1.slice(yi + 5))]); } return out; };
     const pl = pos('OBJ_chaos_platform').sort(), sp = pos('OBJ_chaos_spikes').sort();

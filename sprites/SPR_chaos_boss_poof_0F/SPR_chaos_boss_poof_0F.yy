@@ -55,10 +55,7 @@
   "name": "SPR_chaos_boss_poof_0F",
   "nineSlice": null,
   "origin": 9,
-  "parent": {
-    "name": "Badniks",
-    "path": "folders/Sprites/Badniks.yy"
-  },
+  "parent": {"name": "Effects", "path": "folders/Sprites/Sonic Chaos/THZ/Effects.yy"},
   "preMultiplyAlpha": false,
   "resourceType": "GMSprite",
   "resourceVersion": "2.0",

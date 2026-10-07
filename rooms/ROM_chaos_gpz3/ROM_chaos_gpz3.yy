@@ -96,10 +96,7 @@
     }
   ],
   "name": "ROM_chaos_gpz3",
-  "parent": {
-    "name": "Zones",
-    "path": "folders/Rooms/Zones.yy"
-  },
+  "parent": {"name": "GPZ", "path": "folders/Rooms/Sonic Chaos/GPZ.yy"},
   "parentRoom": null,
   "physicsSettings": {
     "inheritPhysicsSettings": false,

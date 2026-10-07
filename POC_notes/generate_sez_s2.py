@@ -5,6 +5,7 @@ data/rom-cache/sez/surface-runtime-contracts.json and asserted against the ROM w
 Run AFTER generate_sez_foundation.py (it bakes the $B0 replacement art and emits the $B0 header).
 """
 from pathlib import Path
+from chaos_asset_parents import set_chaos_parent
 import argparse, hashlib, json, subprocess, sys
 ROOT = Path(__file__).resolve().parents[1]
 COMMIT = 'ed9122b3d5ac11442714ecaef4cc4316c4706342'
@@ -110,6 +111,7 @@ def main():
     project = json.loads(project_path.read_text())
     for name in SCRIPTS:
         yy = dict(template); yy['%Name'] = yy['name'] = name
+        set_chaos_parent(yy)
         (ROOT / 'scripts' / name).mkdir(exist_ok=True)
         (ROOT / 'scripts' / name / (name + '.yy')).write_text(json.dumps(yy, indent=2) + '\n', encoding='utf-8')
         rel = f'scripts/{name}/{name}.yy'

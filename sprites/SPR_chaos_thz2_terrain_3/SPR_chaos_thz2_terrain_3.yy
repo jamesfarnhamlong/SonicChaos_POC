@@ -41,10 +41,7 @@
   "name": "SPR_chaos_thz2_terrain_3",
   "nineSlice": null,
   "origin": 0,
-  "parent": {
-    "name": "Collisions",
-    "path": "folders/Sprites/Collisions.yy"
-  },
+  "parent": {"name": "Terrain", "path": "folders/Sprites/Sonic Chaos/THZ/Terrain.yy"},
   "preMultiplyAlpha": false,
   "resourceType": "GMSprite",
   "resourceVersion": "2.0",

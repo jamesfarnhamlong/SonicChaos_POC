@@ -4,10 +4,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "name": "SCR_chaos_motion",
-  "parent": {
-    "name": "Physics",
-    "path": "folders/Scripts/Player/Physics.yy"
-  },
+  "parent": {"name": "Core", "path": "folders/Scripts/Sonic Chaos/Core.yy"},
   "resourceType": "GMScript",
   "resourceVersion": "2.0"
 }

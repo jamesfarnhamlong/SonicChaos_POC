@@ -96,10 +96,7 @@
     }
   ],
   "name": "ROM_chaos_thz3",
-  "parent": {
-    "name": "Zones",
-    "path": "folders/Rooms/Zones.yy"
-  },
+  "parent": {"name": "THZ", "path": "folders/Rooms/Sonic Chaos/THZ.yy"},
   "parentRoom": null,
   "physicsSettings": {
     "inheritPhysicsSettings": false,

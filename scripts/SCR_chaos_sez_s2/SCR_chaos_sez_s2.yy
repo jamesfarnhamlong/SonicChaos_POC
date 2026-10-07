@@ -4,10 +4,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "name": "SCR_chaos_sez_s2",
-  "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy"
-  },
+  "parent": {"name": "Runtime", "path": "folders/Scripts/Sonic Chaos/SEZ/Runtime.yy"},
   "resourceType": "GMScript",
   "resourceVersion": "2.0"
 }

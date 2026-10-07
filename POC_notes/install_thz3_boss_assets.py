@@ -9,6 +9,7 @@ import json
 import sys
 import uuid
 from pathlib import Path
+from chaos_asset_parents import chaos_parent
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -64,7 +65,7 @@ for name, (files, width, height, ox, oy) in SETS.items():
     sprite['sequence']['yorigin'] = oy
     sprite['sequence']['length'] = float(len(files))
     sprite['sequence']['playbackSpeed'] = 0.0
-    sprite['parent'] = {'name': 'Badniks', 'path': 'folders/Sprites/Badniks.yy'}
+    sprite['parent'] = chaos_parent(name)
     layer = guid(name + '/layer')
     sprite['layers'][0]['%Name'] = sprite['layers'][0]['name'] = layer
     dest = ROOT / 'sprites' / name

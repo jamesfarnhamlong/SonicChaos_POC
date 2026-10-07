@@ -28,10 +28,7 @@
   "managed": true,
   "name": "OBJ_chaos_terrain_0",
   "overriddenProperties": [],
-  "parent": {
-    "name": "Collisions",
-    "path": "folders/Objects/Collisions.yy"
-  },
+  "parent": {"name": "Shared", "path": "folders/Objects/Sonic Chaos/Terrain Hosts/Shared.yy"},
   "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,

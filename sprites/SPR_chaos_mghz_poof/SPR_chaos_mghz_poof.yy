@@ -55,10 +55,7 @@
   "name": "SPR_chaos_mghz_poof",
   "nineSlice": null,
   "origin": 9,
-  "parent": {
-    "name": "Collisions",
-    "path": "folders/Sprites/Collisions.yy"
-  },
+  "parent": {"name": "Effects", "path": "folders/Sprites/Sonic Chaos/MGHZ/Effects.yy"},
   "preMultiplyAlpha": false,
   "resourceType": "GMSprite",
   "resourceVersion": "2.0",

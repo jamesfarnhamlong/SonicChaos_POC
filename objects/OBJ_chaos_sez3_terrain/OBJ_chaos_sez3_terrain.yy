@@ -28,10 +28,7 @@
   "managed": true,
   "name": "OBJ_chaos_sez3_terrain",
   "overriddenProperties": [],
-  "parent": {
-    "name": "Collisions",
-    "path": "folders/Objects/Collisions.yy"
-  },
+  "parent": {"name": "SEZ", "path": "folders/Objects/Sonic Chaos/Terrain Hosts/SEZ.yy"},
   "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,

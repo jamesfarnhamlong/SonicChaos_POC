@@ -18,7 +18,7 @@
   "gridX":0,"gridY":0,"height":24,"HTile":false,
   "layers":[{"$GMImageLayer":"","%Name":"27272727-2727-4272-8272-272727272700","blendMode":0,"displayName":"default","isLocked":false,"name":"27272727-2727-4272-8272-272727272700","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true}],
   "name":"SPR_chaos_object_27","nineSlice":null,"origin":9,
-  "parent":{"name":"Badniks","path":"folders/Sprites/Badniks.yy"},
+  "parent": {"name": "Enemies", "path": "folders/Sprites/Sonic Chaos/Shared/Enemies.yy"},
   "preMultiplyAlpha":false,"resourceType":"GMSprite","resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1","%Name":"SPR_chaos_object_27","autoRecord":true,

@@ -6,6 +6,7 @@ ROM revision, palette, dimensions, origin and unscaled RGBA hashes before it
 writes the sprite resource.  The ROM itself is never copied into the POC.
 """
 from pathlib import Path
+from chaos_asset_parents import chaos_parent
 from PIL import Image
 import argparse
 import hashlib
@@ -65,7 +66,7 @@ def sprite_yy(frame_ids):
             "opacity": 100.0, "resourceType": "GMImageLayer",
             "resourceVersion": "2.0", "visible": True}],
         "name": RESOURCE, "nineSlice": None, "origin": 9,
-        "parent": {"name": "Normal", "path": "folders/Sprites/Player/Sonic/Normal.yy"},
+        "parent": chaos_parent(RESOURCE),
         "preMultiplyAlpha": False, "resourceType": "GMSprite",
         "resourceVersion": "2.0",
         "sequence": {"$GMSequence": "v1", "%Name": RESOURCE, "autoRecord": True,

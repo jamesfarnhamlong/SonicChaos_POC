@@ -41,10 +41,7 @@
   "name": "SPR_chaos_contour_89",
   "nineSlice": null,
   "origin": 0,
-  "parent": {
-    "name": "Collisions",
-    "path": "folders/Sprites/Collisions.yy"
-  },
+  "parent": {"name": "Collision Helpers", "path": "folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy"},
   "preMultiplyAlpha": false,
   "resourceType": "GMSprite",
   "resourceVersion": "2.0",

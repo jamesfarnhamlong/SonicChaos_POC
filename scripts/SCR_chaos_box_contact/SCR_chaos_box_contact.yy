@@ -4,7 +4,7 @@
   "isCompatibility":false,
   "isDnD":false,
   "name":"SCR_chaos_box_contact",
-  "parent":{"name":"Scripts","path":"folders/Scripts.yy"},
+  "parent": {"name": "Player-Collision", "path": "folders/Scripts/Sonic Chaos/Player-Collision.yy"},
   "resourceType":"GMScript",
   "resourceVersion":"2.0"
 }

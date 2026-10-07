@@ -1,5 +1,6 @@
 """Install ROM-derived type-$09 frames 1-6 into a mapped-object canvas."""
 from pathlib import Path
+from chaos_asset_parents import chaos_parent
 from PIL import Image
 import argparse, hashlib, json, shutil, uuid
 
@@ -48,7 +49,7 @@ def sprite_yy():
             "opacity": 100.0, "resourceType": "GMImageLayer",
             "resourceVersion": "2.0", "visible": True}],
         "name": RESOURCE, "nineSlice": None, "origin": 9,
-        "parent": {"name": "Rings", "path": "folders/Sprites/Level Objects/Rings.yy"},
+        "parent": chaos_parent(RESOURCE),
         "preMultiplyAlpha": False, "resourceType": "GMSprite", "resourceVersion": "2.0",
         "sequence": {"$GMSequence": "v1", "%Name": RESOURCE, "autoRecord": True,
             "backdropHeight": 1080, "backdropImageOpacity": 0.5,

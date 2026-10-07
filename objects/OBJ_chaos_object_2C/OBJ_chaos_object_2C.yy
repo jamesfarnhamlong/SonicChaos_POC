@@ -39,10 +39,7 @@
   "managed": true,
   "name": "OBJ_chaos_object_2C",
   "overriddenProperties": [],
-  "parent": {
-    "name": "Badniks",
-    "path": "folders/Objects/Badniks.yy"
-  },
+  "parent": {"name": "GameMaker Objects", "path": "folders/Objects/Sonic Chaos/GameMaker Objects.yy"},
   "parentObjectId": {
     "name": "OBJ_chaos_object_27",
     "path": "objects/OBJ_chaos_object_27/OBJ_chaos_object_27.yy"

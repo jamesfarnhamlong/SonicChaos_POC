@@ -48,10 +48,7 @@
   "name": "SPR_chaos_sez_enemy_20",
   "nineSlice": null,
   "origin": 9,
-  "parent": {
-    "name": "Collisions",
-    "path": "folders/Sprites/Collisions.yy"
-  },
+  "parent": {"name": "Enemies", "path": "folders/Sprites/Sonic Chaos/SEZ/Enemies.yy"},
   "preMultiplyAlpha": false,
   "resourceType": "GMSprite",
   "resourceVersion": "2.0",

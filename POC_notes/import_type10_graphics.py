@@ -6,6 +6,7 @@ neighbour audit PNGs; this importer verifies their canonical RGBA hashes,
 reduces them to logical GameMaker pixels, and writes reproducible resources.
 """
 from pathlib import Path
+from chaos_asset_parents import chaos_parent
 from PIL import Image
 import argparse, hashlib, json, shutil, uuid
 
@@ -78,7 +79,7 @@ def sprite_yy(name, frame_ids, layer_id, width, height, xorigin, yorigin, bbox):
             "opacity": 100.0, "resourceType": "GMImageLayer",
             "resourceVersion": "2.0", "visible": True}],
         "name": name, "nineSlice": None, "origin": 9,
-        "parent": {"name": "Badniks", "path": "folders/Sprites/Badniks.yy"},
+        "parent": chaos_parent(name),
         "preMultiplyAlpha": False, "resourceType": "GMSprite",
         "resourceVersion": "2.0",
         "sequence": {"$GMSequence": "v1", "%Name": name, "autoRecord": True,

@@ -62,10 +62,7 @@
   "name": "SPR_chaos_mghz_boss_puff_34",
   "nineSlice": null,
   "origin": 9,
-  "parent": {
-    "name": "Collisions",
-    "path": "folders/Sprites/Collisions.yy"
-  },
+  "parent": {"name": "Effects", "path": "folders/Sprites/Sonic Chaos/MGHZ/Effects.yy"},
   "preMultiplyAlpha": false,
   "resourceType": "GMSprite",
   "resourceVersion": "2.0",

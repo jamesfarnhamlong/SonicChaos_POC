@@ -28,10 +28,7 @@
   "managed": true,
   "name": "OBJ_chaos_spring_51",
   "overriddenProperties": [],
-  "parent": {
-    "name": "Collisions",
-    "path": "folders/Objects/Collisions.yy"
-  },
+  "parent": {"name": "Legacy-Prototypes", "path": "folders/Objects/Sonic Chaos/Legacy-Prototypes.yy"},
   "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,

@@ -5,6 +5,7 @@ verified local ROM using Research's decoder. ROM bytes are never exported.
 """
 import json,sys,shutil
 from pathlib import Path
+from chaos_asset_parents import set_chaos_parent
 ROOT=Path(__file__).resolve().parents[1]
 RESEARCH=ROOT.parent/'sonic-chaos-reference-work'
 sys.path.insert(0,str(RESEARCH/'tools'))
@@ -12,6 +13,7 @@ import rom as R
 import gpz_enemy_approval as A
 COMMIT='44e0714d16185f213ab1b73822c67e50546ce3f6'
 def dump(p,d):
+    set_chaos_parent(d)
     p.parent.mkdir(parents=True,exist_ok=True)
     p.write_text(json.dumps(d,indent=2)+'\n')
 def main():

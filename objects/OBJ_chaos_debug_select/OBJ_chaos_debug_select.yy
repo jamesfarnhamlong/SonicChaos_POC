@@ -39,10 +39,7 @@
   "managed": true,
   "name": "OBJ_chaos_debug_select",
   "overriddenProperties": [],
-  "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy"
-  },
+  "parent": {"name": "Debug", "path": "folders/Objects/Sonic Chaos/Debug.yy"},
   "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,

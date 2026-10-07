@@ -28,10 +28,7 @@
   "managed": true,
   "name": "OBJ_chaos_gpz1_terrain",
   "overriddenProperties": [],
-  "parent": {
-    "name": "Collisions",
-    "path": "folders/Objects/Collisions.yy"
-  },
+  "parent": {"name": "GPZ", "path": "folders/Objects/Sonic Chaos/Terrain Hosts/GPZ.yy"},
   "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,

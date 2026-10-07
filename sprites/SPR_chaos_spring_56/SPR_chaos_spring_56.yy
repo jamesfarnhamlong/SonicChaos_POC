@@ -41,10 +41,7 @@
   "name": "SPR_chaos_spring_56",
   "nineSlice": null,
   "origin": 0,
-  "parent": {
-    "name": "Collisions",
-    "path": "folders/Sprites/Collisions.yy"
-  },
+  "parent": {"name": "Objects", "path": "folders/Sprites/Sonic Chaos/Shared/Objects.yy"},
   "preMultiplyAlpha": false,
   "resourceType": "GMSprite",
   "resourceVersion": "2.0",

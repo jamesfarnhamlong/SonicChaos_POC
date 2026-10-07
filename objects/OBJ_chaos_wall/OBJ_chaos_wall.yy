@@ -5,10 +5,7 @@
   "managed": true,
   "name": "OBJ_chaos_wall",
   "overriddenProperties": [],
-  "parent": {
-    "name": "Collisions",
-    "path": "folders/Objects/Collisions.yy"
-  },
+  "parent": {"name": "Legacy-Prototypes", "path": "folders/Objects/Sonic Chaos/Legacy-Prototypes.yy"},
   "parentObjectId": {
     "name": "OBJ_collision_wall",
     "path": "objects/OBJ_collision_wall/OBJ_collision_wall.yy"

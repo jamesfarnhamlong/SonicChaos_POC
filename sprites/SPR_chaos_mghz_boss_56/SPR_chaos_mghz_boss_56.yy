@@ -111,10 +111,7 @@
   "name": "SPR_chaos_mghz_boss_56",
   "nineSlice": null,
   "origin": 9,
-  "parent": {
-    "name": "Collisions",
-    "path": "folders/Sprites/Collisions.yy"
-  },
+  "parent": {"name": "Bosses", "path": "folders/Sprites/Sonic Chaos/MGHZ/Bosses.yy"},
   "preMultiplyAlpha": false,
   "resourceType": "GMSprite",
   "resourceVersion": "2.0",

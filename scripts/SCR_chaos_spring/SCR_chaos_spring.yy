@@ -4,7 +4,7 @@
   "isCompatibility":false,
   "isDnD":false,
   "name":"SCR_chaos_spring",
-  "parent":{"name":"Scripts","path":"folders/Scripts.yy"},
+  "parent": {"name": "Shared Objects", "path": "folders/Scripts/Sonic Chaos/Shared Objects.yy"},
   "resourceType":"GMScript",
   "resourceVersion":"2.0"
 }

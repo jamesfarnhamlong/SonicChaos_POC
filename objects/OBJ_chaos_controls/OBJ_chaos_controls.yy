@@ -50,10 +50,7 @@
   "managed": true,
   "name": "OBJ_chaos_controls",
   "overriddenProperties": [],
-  "parent": {
-    "name": "Collisions",
-    "path": "folders/Objects/Collisions.yy"
-  },
+  "parent": {"name": "Controllers", "path": "folders/Objects/Sonic Chaos/Controllers.yy"},
   "parentObjectId": null,
   "persistent": true,
   "physicsAngularDamping": 0.1,

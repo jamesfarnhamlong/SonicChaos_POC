@@ -28,10 +28,7 @@
   "managed": true,
   "name": "OBJ_chaos_mghz3_terrain",
   "overriddenProperties": [],
-  "parent": {
-    "name": "Collisions",
-    "path": "folders/Objects/Collisions.yy"
-  },
+  "parent": {"name": "MGHZ", "path": "folders/Objects/Sonic Chaos/Terrain Hosts/MGHZ.yy"},
   "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,

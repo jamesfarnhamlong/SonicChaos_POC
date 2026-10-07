@@ -1,5 +1,6 @@
 """SEZ S4 importer: mirror Research data/rom-cache/sez/enemies-20-23-runtime.json (pinned commit blob) and register the enemy script. Run after generate_sez_foundation.py."""
 from pathlib import Path
+from chaos_asset_parents import set_chaos_parent
 import argparse, hashlib, json, subprocess
 ROOT = Path(__file__).resolve().parents[1]
 COMMIT = '8b7fc8aeaec6f5a57f9aa9b6a58d9f579b62514c'
@@ -19,6 +20,7 @@ def main():
     project_path = ROOT / 'SonicChaos_POC.yyp'; project = json.loads(project_path.read_text())
     name = 'SCR_chaos_sez_enemy'
     yy = dict(template); yy['%Name'] = yy['name'] = name
+    set_chaos_parent(yy)
     (ROOT / 'scripts' / name / (name + '.yy')).write_text(json.dumps(yy, indent=2) + '\n', encoding='utf-8')
     rel = f'scripts/{name}/{name}.yy'
     if not any(x['id']['path'] == rel for x in project['resources']): project['resources'].append({'id': {'name': name, 'path': rel}})

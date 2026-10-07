@@ -55,10 +55,7 @@
   "name": "SPR_chaos_player_state_11",
   "nineSlice": null,
   "origin": 9,
-  "parent": {
-    "name": "Normal",
-    "path": "folders/Sprites/Player/Sonic/Normal.yy"
-  },
+  "parent": {"name": "Player", "path": "folders/Sprites/Sonic Chaos/Shared/Player.yy"},
   "preMultiplyAlpha": false,
   "resourceType": "GMSprite",
   "resourceVersion": "2.0",

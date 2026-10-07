@@ -28,10 +28,7 @@
   "managed": true,
   "name": "OBJ_chaos_boss_effect",
   "overriddenProperties": [],
-  "parent": {
-    "name": "Badniks",
-    "path": "folders/Objects/Badniks.yy"
-  },
+  "parent": {"name": "GameMaker Objects", "path": "folders/Objects/Sonic Chaos/GameMaker Objects.yy"},
   "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,
