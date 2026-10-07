@@ -24,6 +24,7 @@ function chaos_debug_entries() {
     return cp_entries;
 }
 function chaos_debug_open() {
+    global.chaosDebugReturnTicks = -1;
     instance_activate_all();
     audio_stop_all();
     global.chaosDebugSession = true;
@@ -32,6 +33,7 @@ function chaos_debug_open() {
 function chaos_debug_reset() {
     // Debug launches only. Room transition destroys nonpersistent player/core,
     // boss/arena controllers, objects, ring flags/surfaces and placement ownership.
+    global.chaosDebugReturnTicks = -1;
     global.checkPoint = false;
     global.checkPointX = 0;
     global.checkPointY = 0;
@@ -65,5 +67,16 @@ function chaos_debug_launch(cp_entry) {
     var cp_index = chaos_act_index_for_room(cp_entry.room);
     if (cp_index > 0) global.selectedAct = cp_index;
     room_goto(cp_entry.room);
+    return true;
+}
+
+// Shared developer completion return. Only in-level controls tick this path.
+function chaos_debug_return_tick() {
+    if (!variable_global_exists("chaosDebugSession") || !global.chaosDebugSession
+        || !variable_global_exists("chaosDebugReturnTicks")
+        || global.chaosDebugReturnTicks <= 0) return false;
+    global.chaosDebugReturnTicks--;
+    if (global.chaosDebugReturnTicks != 0) return false;
+    chaos_debug_open();
     return true;
 }

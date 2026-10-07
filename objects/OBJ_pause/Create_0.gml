@@ -11,6 +11,7 @@ pause = false;
 
 c1 = c_white;
 c2 = c_white;
+c3 = c_white;
 
 c_yellow_dark = make_colour_rgb(255,201,14);
 

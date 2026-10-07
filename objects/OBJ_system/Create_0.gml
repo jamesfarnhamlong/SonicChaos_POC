@@ -1,5 +1,6 @@
 /// @description  System
 
+global.chaosDebugReturnTicks = -1;
 global.chaosDebugSession = false; // Title reload ends developer sessions before loading the save.
 
 // Settings

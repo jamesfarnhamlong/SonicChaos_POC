@@ -340,8 +340,14 @@ function chaos_current_act_number() {
 /// ($152F..$153E); those systems are not implemented, so saved progression advances here, through chaos_act_progress(),
 /// and never earlier.
 function chaos_act_complete() {
+    var cp_first_complete = !global.chaosComplete;
     global.chaosComplete = true;
     global.chaosFinishRings = global.ring;
+    // Developer UI adapter: 90 updates (1.5 seconds at the Chaos 60 Hz clock).
+    if (cp_first_complete && variable_global_exists("chaosDebugSession") && global.chaosDebugSession
+        && (!variable_global_exists("chaosDebugReturnTicks") || global.chaosDebugReturnTicks == -1)) {
+        global.chaosDebugReturnTicks = 90;
+    }
     var cp_act = chaos_act_index_for_room(room);
     if (cp_act > 0 && (!variable_global_exists("chaosDebugSession") || !global.chaosDebugSession)) {
         global.zoneGoto = chaos_act_progress(global.zoneGoto, cp_act);

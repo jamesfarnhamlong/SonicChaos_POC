@@ -22,32 +22,17 @@ if (fade == "in")
 
 /// Controls
 
-// Selected Colors
-switch(option)
-{
-    case 1:
-        c1 = c_yellow_dark;
-        c2 = c_white;
-        break;
-    case 2:
-        c1 = c_white;
-        c2 = c_yellow_dark;
-        break;
-}
-
-// Limits
-if (option > 2)
-{
-    option = 1;
-}
-
-// Buttons
+// Buttons and three-entry wrap navigation.
 SCR_buttons();
-
-if (global.btUpPress || global.btDownPress) 
-{
-    option++;
+if (!press) {
+    if (global.btUpPress) option--;
+    if (global.btDownPress) option++;
+    if (option > 3) option = 1;
+    if (option < 1) option = 3;
 }
+c1 = (option == 1) ? c_yellow_dark : c_white;
+c2 = (option == 2) ? c_yellow_dark : c_white;
+c3 = (option == 3) ? c_yellow_dark : c_white;
 
 // Actions
 if (global.btSpacePress && press == false)
@@ -60,8 +45,15 @@ if (global.btSpacePress && press == false)
         fade = "in";
         press = true;
     }
-    // Back to menu
-    if (option == 2)
+    // Level Select safely reactivates the paused world.
+    if (option == 2 && pause == true)
+    {
+        press = true;
+        chaos_debug_open();
+        exit;
+    }
+    // Back to title
+    if (option == 3)
     {
         alarm[1] = 8;
         press = true;

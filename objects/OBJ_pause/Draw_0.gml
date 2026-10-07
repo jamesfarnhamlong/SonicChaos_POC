@@ -30,7 +30,9 @@ draw_set_halign(fa_center);
 draw_set_colour(c1);
 draw_text(__view_get( e__VW.XView, 0 )+__view_get( e__VW.WView, 0 )/2, __view_get( e__VW.YView, 0 )+__view_get( e__VW.HView, 0 )-60, string_hash_to_newline("resume game"));
 draw_set_colour(c2);
-draw_text(__view_get( e__VW.XView, 0 )+__view_get( e__VW.WView, 0 )/2, __view_get( e__VW.YView, 0 )+__view_get( e__VW.HView, 0 )-45, string_hash_to_newline("back to menu"));
+draw_text(__view_get( e__VW.XView, 0 )+__view_get( e__VW.WView, 0 )/2, __view_get( e__VW.YView, 0 )+__view_get( e__VW.HView, 0 )-45, string_hash_to_newline("level select"));
+draw_set_colour(c3);
+draw_text(__view_get( e__VW.XView, 0 )+__view_get( e__VW.WView, 0 )/2, __view_get( e__VW.YView, 0 )+__view_get( e__VW.HView, 0 )-30, string_hash_to_newline("back to title"));
 draw_set_colour(c_white);
 draw_set_halign(fa_left);
 

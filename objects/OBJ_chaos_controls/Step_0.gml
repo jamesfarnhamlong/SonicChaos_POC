@@ -1,3 +1,4 @@
+if (chaos_in_level() && chaos_debug_return_tick()) exit;
 // F10 opens the explicit developer selector. Unpause first.
 if (chaos_in_level() && keyboard_check_pressed(vk_f10)) { chaos_debug_open(); exit; }
 // R restarts the Chaos test. F2 switches between Chaos and the engine sample.

@@ -5,11 +5,11 @@ SCR_buttons();
 
 
 // Up, Down
-if (global.btUpPress)
+if (!press && global.btUpPress)
 {
     option -= 1;
 }
-if (global.btDownPress) 
+if (!press && global.btDownPress)
 {
     option += 1;
 }
@@ -45,6 +45,8 @@ else
     c2 = c_white;
 }
 
+c3 = (option == 3) ? c_yellow_dark : c_white;
+
 /// Actions (Go to...)
 
 if (global.btSpacePress && press == false)
@@ -55,7 +57,11 @@ if (global.btSpacePress && press == false)
     {
         alarm[1] = 30;
     }
-    if (option == 2) // Options
+    if (option == 2) // Level Select
+    {
+        alarm[2] = 30;
+    }
+    if (option == 3) // Options
     {
         alarm[2] = 30;
     }

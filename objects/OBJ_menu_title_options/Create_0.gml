@@ -1,7 +1,7 @@
 /// @description  Variables
 
 option = 1;
-optionLimit = 2; // how many options?
+optionLimit = 3; // how many options?
 
 press = false;
 
