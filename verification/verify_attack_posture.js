@@ -188,7 +188,8 @@ function scenario(kind, o) {
     ok(/chaos_attack_or_invincible\(chaosCore,global\.powerInv\)/.test(ad) && !/place_meeting\(x,y,OBJ_badniks\)[^\n]*playerJump/.test(ad), 'sample badnik contact keys on the canonical bit and the shared request path');
     ok(!/SCR_chaos_apply_hazard_damage/.test(code('objects/OBJ_chaos_object_21/Step_0.gml') + code('objects/OBJ_chaos_object_27/Step_0.gml')), 'enemy contact uses the shared $48BC path, not the legacy hazard function');
     ok(/global\.playerJump\s*=\s*!cp_state11/.test(ad), 'global.playerJump keeps its airborne/physics definition for genuine airborne consumers');
-    ok(/global\.playerJump == false/.test(rd('objects/OBJ_chaos_controls/Step_0.gml')), 'checkpoint gate (airborne consumer) keeps playerJump');
+    for (const f of ['objects/OBJ_chaos_controls/Step_0.gml', 'objects/OBJ_chaos_controls/Draw_0.gml', 'objects/OBJ_chaos_zone/Create_0.gml', 'scripts/SCR_chaos_debug_select/SCR_chaos_debug_select.gml'])
+        ok(!/chaosCheckpointIndex|chaosNotice|CHECKPOINT SAVED/.test(rd(f)), f + ': artificial THZ1 checkpoint helper removed');
     const phys = cp => cp; for (const f of ['scripts/SCR_physics_speed/SCR_physics_speed.gml', 'scripts/SCR_physics_ramp/SCR_physics_ramp.gml', 'scripts/SCR_physics_ramp_spin/SCR_physics_ramp_spin.gml'])
         eq(require('child_process').spawnSync('git', ['diff', '--quiet', 'HEAD', '--', f], {cwd: root}).status, 0, `${f} (airborne/physics consumer) untouched`);
 }

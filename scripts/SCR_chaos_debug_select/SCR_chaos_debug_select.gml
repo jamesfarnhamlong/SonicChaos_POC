@@ -37,7 +37,6 @@ function chaos_debug_reset() {
     global.checkPoint = false;
     global.checkPointX = 0;
     global.checkPointY = 0;
-    global.chaosCheckpointIndex = 0;
     global.player = 1;
     global.life = 3;
     global.playerSprite = 0;

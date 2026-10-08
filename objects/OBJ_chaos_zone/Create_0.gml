@@ -125,8 +125,6 @@ global.chaosHudSlide = 0;
 global.chaosBossNextAct = noone;
 global.chaosTraceFrame = 0;
 global.chaosTraceLastCam = -1;
-global.chaosNotice = 0;
-if (!global.checkPoint) global.chaosCheckpointIndex = 0;
 
 global.chaosLoopFrames = 0;
 global.chaosLoopLast = -1;

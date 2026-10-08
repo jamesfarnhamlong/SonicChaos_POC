@@ -23,19 +23,6 @@ if (chaos_in_level() && instance_exists(OBJ_player)) {
 
 if (chaos_in_level()) {
  // The shared power selector/timer ($D532/$D44C) now counts down inside the player update (SCR_chaos_power_tick), where the ROM does it.
- if (global.chaosNotice > 0) global.chaosNotice--;
- if (room == ROM_chaos_thz1 && instance_exists(OBJ_player_char) && !global.chaosComplete) {
-  var p = instance_find(OBJ_player_char,0);
-  // Save a safe ground position after each section, whichever route was chosen.
-  var section = min(3,floor(p.x/1024));
-  if (section > global.chaosCheckpointIndex && abs(p.vspeed)<0.1 && global.playerJump == false && (!variable_instance_exists(p,"chaosSupport") || p.chaosSupport == noone)) {
-   global.chaosCheckpointIndex = section;
-   global.checkPoint = true;
-   global.checkPointX = p.x;
-   global.checkPointY = p.y;
-   global.chaosNotice = 120;
-  }
- }
  // Act clear arrives only from player state $20 (type $18 -> $19 -> $20); contact alone never completes the act.
  if (!global.chaosComplete && instance_exists(chaos_goal_player()) && variable_instance_exists(chaos_goal_player(),"chaosCore") && chaos_goal_player().chaosCore.act_clear) {
   chaos_act_complete();
