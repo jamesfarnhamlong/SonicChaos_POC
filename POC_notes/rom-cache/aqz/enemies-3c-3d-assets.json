@@ -1,0 +1,26 @@
+{
+  "research": "89641f8093e62401cd81f94e6ac889422f600472",
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "rgba_sha256": {
+    "3c": [
+      "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe",
+      "1022909a2c9585205ae1d583fdf9bb1050e88aee6fbc7a73bc3c45588fc28b50",
+      "4f28ec4d4bec61996e878d4bbdbc54fb2c13e5ce111853181ea285376f051cd0"
+    ],
+    "3d": [
+      "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe",
+      "679f38041b8e30c57f1839e5ae73cd1b61e8c4cd265def2a957b488dad24d1ad",
+      "8fd99edaa2cf6a33def4335868e3b2873f81713a4b1b02599df03a73b32ad7c5",
+      "7942b5889e6909dd0984bac28b1386c718f83990f1a6ff7beb1b1b4992870d68",
+      "3b6d092fc2504dba9924b29eb20b97929c3a8d41cc42c83afa5c7b5815c9d11b"
+    ]
+  },
+  "origin": [
+    31,
+    14
+  ],
+  "registration": [
+    1,
+    18
+  ]
+}

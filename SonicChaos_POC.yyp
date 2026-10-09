@@ -6255,6 +6255,24 @@
         "name": "SPR_chaos_aqz_platform",
         "path": "sprites/SPR_chaos_aqz_platform/SPR_chaos_aqz_platform.yy"
       }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_aqz_enemy",
+        "path": "scripts/SCR_chaos_aqz_enemy/SCR_chaos_aqz_enemy.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_enemy_3c",
+        "path": "sprites/SPR_chaos_aqz_enemy_3c/SPR_chaos_aqz_enemy_3c.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_enemy_3d",
+        "path": "sprites/SPR_chaos_aqz_enemy_3d/SPR_chaos_aqz_enemy_3d.yy"
+      }
     }
   ],
   "resourceType": "GMProject",

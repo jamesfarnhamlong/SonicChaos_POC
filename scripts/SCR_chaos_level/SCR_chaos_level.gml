@@ -195,6 +195,9 @@ function chaos_level_spawn_objects() {
             chaos_54_register(cp_r); global.chaosSpawnedByType[cp_type]++; array_push(global.chaosSpawnedIndices,cp_r[0]); continue;
         }
         if (chaos_is_sez() && (cp_type == $13 || cp_type == $55 || (cp_type == $28 && cp_r[5] != $83 && cp_r[5] != $84 && cp_r[5] != $86 && cp_r[5] != $04))) { global.chaosSkippedByType[cp_type]++; continue; } // pending: no speculative runtime ($13 is never placed: S2 creates it only from the surface-$0C floor handler, SCR_chaos_sez_s2)
+        if (chaos_is_aqz() && (cp_type == $3C || cp_type == $3D)) {
+            chaos_aqz_enemy_register(cp_r);global.chaosSpawnedByType[cp_type]++;array_push(global.chaosSpawnedIndices,cp_r[0]);continue;
+        }
         if (chaos_is_aqz() && cp_type == $0C) {
             array_push(global.chaosAqzEnv.emitters,{record:cp_r,occupied:false,slot:-1,chaosScanTick:0,chaosInitialFillDone:false});
             global.chaosSpawnedByType[cp_type]++;array_push(global.chaosSpawnedIndices,cp_r[0]);continue;

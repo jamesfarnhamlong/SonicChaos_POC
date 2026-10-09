@@ -5,7 +5,7 @@ function chaos_aqz_env_new(cp_act) {
     return {act:cp_act,line:cp_act < 3 ? 768 : 0,fine:0,coarse:0,calls:0,passes:0,
         enabled:0,raster:255,palette:0,requests:[0,0],camera_bottom:-1,death:false,
         d12f:0,d2e2:0,refresh:0,sound:0,spawns:[],publications:[],emitters:[],
-        effect5_tick:0,effect5_image:0,effect11_tick:0,effect11_image:0};
+        enemies:[],effect5_tick:0,effect5_image:0,effect11_tick:0,effect11_image:0};
 }
 function chaos_aqz_slot(cp_type,cp_param,cp_x,cp_y,cp_token) {
     var cp_s=chaos_s2_slot();
@@ -187,6 +187,7 @@ function chaos_aqz_mapped_scan() {
         if (variable_instance_exists(cp_platform,"chaosType3f") && cp_platform.chaosType3f)
             chaos_platform3f_scan(cp_platform,cp_b,cp_vp);
     }
+    chaos_aqz_enemy_scan(cp_e,cp_b,cp_vp);
     for (var cp_i=0;cp_i<array_length(cp_e.emitters);cp_i++) {
         var cp_r=cp_e.emitters[cp_i];
         if (cp_r.occupied && cp_b.slots[cp_r.slot].type == 0) cp_r.occupied=false;
@@ -210,8 +211,13 @@ function chaos_aqz_draw() {
         if (variable_struct_exists(cp_s,"aqz") && cp_s.aqz && cp_s.type == $0C && (cp_s.frame == 0 || cp_s.asleep || cp_s.hidden))
             chaos_aqz_trace("draw_skipped",{slot:cp_i,parameter:cp_s.parameter,state:cp_s.state,x:cp_s.x,y:cp_s.y,asleep:cp_s.asleep,frame:cp_s.frame,reason:cp_s.asleep ? "asleep" : (cp_s.hidden ? "hidden" : "frame_zero")});
         if (!variable_struct_exists(cp_s,"aqz") || !cp_s.aqz || cp_s.type == 0 || cp_s.type >= $FE || cp_s.frame == 0 || cp_s.asleep || cp_s.hidden) continue;
+        if (variable_struct_exists(cp_s,"enemy") && cp_s.enemy && cp_s.type == $0F) {
+            if (cp_s.smoke_tick < 0) draw_sprite(cp_s.src_type == $3D ? SPR_chaos_aqz_enemy_3d : SPR_chaos_aqz_enemy_3c,cp_s.frame,cp_s.x,cp_s.y);
+            else draw_sprite(SPR_chaos_sez_poof,cp_s.frame-7,cp_s.x+1,cp_s.y+18);
+            continue;
+        }
         var cp_sprite=noone;
-        switch (cp_s.type) { case $0C:cp_sprite=SPR_chaos_aqz_bubble;break;case $0D:cp_sprite=SPR_chaos_aqz_waterline;break;case $0E:cp_sprite=SPR_chaos_aqz_splash;break;case $32:cp_sprite=SPR_chaos_aqz_countdown;break; }
+        switch (cp_s.type) { case $3C:cp_sprite=SPR_chaos_aqz_enemy_3c;break;case $3D:cp_sprite=SPR_chaos_aqz_enemy_3d;break;case $0C:cp_sprite=SPR_chaos_aqz_bubble;break;case $0D:cp_sprite=SPR_chaos_aqz_waterline;break;case $0E:cp_sprite=SPR_chaos_aqz_splash;break;case $32:cp_sprite=SPR_chaos_aqz_countdown;break; }
         if (cp_sprite != noone) {
             chaos_aqz_trace("draw",{slot:cp_i,type:cp_s.type,parameter:cp_s.parameter,state:cp_s.state,x:cp_s.x,y:cp_s.y,asleep:cp_s.asleep,frame:cp_s.frame,sprite:sprite_get_name(cp_sprite)});
             if (cp_s.type == $0D) chaos_aqz_water_strip_draw(cp_sprite,cp_s.frame,cp_s.x,cp_s.y);

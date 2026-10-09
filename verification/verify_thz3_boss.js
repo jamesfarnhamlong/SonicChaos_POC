@@ -10,7 +10,7 @@ for(const [local,remote] of [['POC_notes/rom-cache/thz3/implementation-manifest.
     assert.equal(sha(read(local)),sha(fs.readFileSync(path.join(research,remote))),`${local} mirrors Research main`);
 const generated=read('scripts/SCR_chaos_boss_data/SCR_chaos_boss_data.gml');
 assert.equal(cp.spawnSync('node',['POC_notes/generate_thz3_boss_data.js'],{cwd:root}).status,0);
-assert.equal(sha(generated),sha(read('scripts/SCR_chaos_boss_data/SCR_chaos_boss_data.gml')),'manifest generator reproducible');
+assert.equal(sha(generated.toString().replace(/\r\n/g,'\n')),sha(read('scripts/SCR_chaos_boss_data/SCR_chaos_boss_data.gml').toString().replace(/\r\n/g,'\n')),'manifest generator reproducible');
 const translate=t=>t.replace(/(?<![\w"])(\$[0-9A-Fa-f]+)/g,(_,h)=>'0x'+h.slice(1)).replace(/#macro (\w+) (\S+)/g,'var $1 = $2;').replace(/\bmod\b/g,'%').replace(/\bdiv\b/g,'/');
 const g={}; const ctx=vm.createContext({global:g,variable_global_exists:k=>Object.hasOwn(g,k),floor:Math.floor,abs:Math.abs,max:Math.max,min:Math.min,sign:Math.sign,clamp:(x,a,b)=>Math.max(a,Math.min(b,x)),array_length:a=>a.length,noone:-4});
 for(const n of ['SCR_chaos_viewport','SCR_chaos_box_contact','SCR_chaos_attack','SCR_chaos_goal','SCR_chaos_boss_data','SCR_chaos_boss'])

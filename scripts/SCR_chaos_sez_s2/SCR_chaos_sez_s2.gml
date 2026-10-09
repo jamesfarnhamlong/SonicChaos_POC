@@ -168,6 +168,7 @@ function chaos_s2_phase(cp_c,cp_have) {
             if (chaos_platform3f_visit(cp_s,cp_b,cp_i,cp_c,cp_have,cp_vp)) cp_hold=true;
             continue;
         }
+        if (variable_struct_exists(cp_s,"enemy") && cp_s.enemy) { chaos_aqz_enemy_visit(global.chaosAqzEnv,cp_b,cp_s,cp_c,cp_have,cp_vp);continue; }
         if (cp_s.boss) {                                                       // boss, $55 children, $12 / $34 / $0A / $0F support: one ascending pass with the slots around them
             if (cp_boss != noone) { chaos_54_visit(cp_boss,cp_b,cp_i,cp_c,cp_have,cp_vp); if (cp_have) cp_hold=true; }
             continue;

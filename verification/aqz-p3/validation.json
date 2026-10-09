@@ -1,0 +1,746 @@
+{
+  "base": "d4705ce63ddafcfcab663c5bc75da493cdd297bd",
+  "research": "89641f8093e62401cd81f94e6ac889422f600472",
+  "runtime": {
+    "assertions": 224050,
+    "oracle_rows": 7200,
+    "natural_rows": 5399
+  },
+  "assets": {
+    "status": "PASS",
+    "assertions": 32823,
+    "research": "89641f8093e62401cd81f94e6ac889422f600472"
+  },
+  "checks": [
+    {
+      "check": "verify_aqz_p1_f",
+      "command": [
+        "node",
+        "verification/verify_aqz_p1_f.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_aqz_p1_e",
+      "command": [
+        "node",
+        "verification/verify_aqz_p1_e.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_aqz_p1_d",
+      "command": [
+        "node",
+        "verification/verify_aqz_p1_d.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_aqz_p1_c",
+      "command": [
+        "node",
+        "verification/verify_aqz_p1_c.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_aqz_p1_followup",
+      "command": [
+        "node",
+        "verification/verify_aqz_p1_followup.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_aqz_p1",
+      "command": [
+        "node",
+        "verification/verify_aqz_p1.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_aqz_p1_integration",
+      "command": [
+        "node",
+        "verification/verify_aqz_p1_integration.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_portable_navigation",
+      "command": [
+        "node",
+        "verification/verify_portable_navigation.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_sez_s5",
+      "command": [
+        "node",
+        "verification/verify_sez_s5.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_sez_s4",
+      "command": [
+        "node",
+        "verification/verify_sez_s4.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "explore_sez_s4_pool",
+      "command": [
+        "node",
+        "verification/explore_sez_s4_pool.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_sez_s3",
+      "command": [
+        "node",
+        "verification/verify_sez_s3.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_sez_s2",
+      "command": [
+        "node",
+        "verification/verify_sez_s2.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_sez_s1",
+      "command": [
+        "node",
+        "verification/verify_sez_s1.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_mghz_boss",
+      "command": [
+        "node",
+        "verification/verify_mghz_boss.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_mghz_boss_integration",
+      "command": [
+        "node",
+        "verification/verify_mghz_boss_integration.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_mghz_boss_wide",
+      "command": [
+        "node",
+        "verification/verify_mghz_boss_wide.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_mghz_m3",
+      "command": [
+        "node",
+        "verification/verify_mghz_m3.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_mghz_footwear",
+      "command": [
+        "node",
+        "verification/verify_mghz_footwear.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "capture_spring_shoes_presentation",
+      "command": [
+        "node",
+        "verification/capture_spring_shoes_presentation.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_mghz",
+      "command": [
+        "node",
+        "verification/verify_mghz.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_mghz_closure",
+      "command": [
+        "node",
+        "verification/verify_mghz_closure.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_mghz_platform_crush",
+      "command": [
+        "node",
+        "verification/verify_mghz_platform_crush.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_lost_rings",
+      "command": [
+        "node",
+        "verification/verify_lost_rings.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_terrain_ring_probe",
+      "command": [
+        "node",
+        "verification/verify_terrain_ring_probe.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_spring_interaction",
+      "command": [
+        "node",
+        "verification/verify_spring_interaction.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_platform_spike",
+      "command": [
+        "node",
+        "verification/verify_platform_spike.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_attack_posture",
+      "command": [
+        "node",
+        "verification/verify_attack_posture.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_death_boundary",
+      "command": [
+        "node",
+        "verification/verify_death_boundary.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_viewport_adapter",
+      "command": [
+        "node",
+        "verification/verify_viewport_adapter.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_placement_lifecycle",
+      "command": [
+        "node",
+        "verification/verify_placement_lifecycle.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_type10_step",
+      "command": [
+        "node",
+        "verification/verify_type10_step.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_type10_contact",
+      "command": [
+        "node",
+        "verification/verify_type10_contact.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_thz2_objects",
+      "command": [
+        "node",
+        "verification/verify_thz2_objects.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_v185_task06",
+      "command": [
+        "node",
+        "verification/verify_v185_task06.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_v186_task07",
+      "command": [
+        "node",
+        "verification/verify_v186_task07.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_thz2_breakable",
+      "command": [
+        "node",
+        "verification/verify_thz2_breakable.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_thz2_loops_twist",
+      "command": [
+        "node",
+        "verification/verify_thz2_loops_twist.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_gpz_foundation",
+      "command": [
+        "node",
+        "verification/verify_gpz_foundation.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_gpz_closure",
+      "command": [
+        "node",
+        "verification/verify_gpz_closure.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_gpz_presentation",
+      "command": [
+        "node",
+        "verification/verify_gpz_presentation.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_gpz_enemies",
+      "command": [
+        "node",
+        "verification/verify_gpz_enemies.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_gpz_boss",
+      "command": [
+        "node",
+        "verification/verify_gpz_boss.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_thz3_boss",
+      "command": [
+        "node",
+        "verification/verify_thz3_boss.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_thz_closure",
+      "command": [
+        "node",
+        "verification/verify_thz_closure.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_debug_select",
+      "command": [
+        "node",
+        "verification/verify_debug_select.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_act_completion",
+      "command": [
+        "node",
+        "verification/verify_act_completion.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_aqz_strip_pixels",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "verification/verify_aqz_strip_pixels.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_aqz_palette_adapter",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "verification/verify_aqz_palette_adapter.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_aqz_p1_assets",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "verification/verify_aqz_p1_assets.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_sez_assets",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "verification/verify_sez_assets.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_sez_s5_assets",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "verification/verify_sez_s5_assets.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_sez_s4_assets",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "verification/verify_sez_s4_assets.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_sez_s2_assets",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "verification/verify_sez_s2_assets.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_mghz_boss_assets",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "verification/verify_mghz_boss_assets.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_mghz_assets",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "verification/verify_mghz_assets.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_mghz_footwear_assets",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "verification/verify_mghz_footwear_assets.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_mghz_m3_assets",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "verification/verify_mghz_m3_assets.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "lint_mghz_boss_gml",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "verification/lint_mghz_boss_gml.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "lint_sez_s2_gml",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "verification/lint_sez_s2_gml.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "lint_sez_s4_gml",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "verification/lint_sez_s4_gml.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "lint_sez_s5_gml",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "verification/lint_sez_s5_gml.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "research-test_sez_foundation",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_sez_foundation.py",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "research-test_sez_surfaces",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_sez_surfaces.py",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "research-test_sez_platform_28",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_sez_platform_28.py",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "research-test_sez_enemies_20_23",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_sez_enemies_20_23.py",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "research-test_sez54_runtime",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_sez54_runtime.py",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "research-test_sez54_safe_zone",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_sez54_safe_zone.py",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "git-diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_project_hygiene",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "verification/verify_project_hygiene.py",
+        "--generated-root",
+        "E:\\AI\\Codex\\Sonic Chaos\\SonicChaos_POC_aqz_p3"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "research-test_aqz_foundation",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_aqz_foundation.py",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "research-test_aqz_water",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_aqz_water.py",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_player_animation_assets",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "verification/verify_player_animation_assets.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "research-test_player_spring_airborne",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_player_spring_airborne.py",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_player_registration_native",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "verification/verify_player_registration_native.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_aqz_p2",
+      "command": [
+        "node",
+        "verification/verify_aqz_p2.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_aqz_p2_assets",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "verification/verify_aqz_p2_assets.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_aqz_p3",
+      "command": [
+        "node",
+        "verification/verify_aqz_p3.js"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "verify_aqz_p3_assets",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "verification/verify_aqz_p3_assets.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "research-test_aqz_enemies",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_aqz_enemies.py",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "research-test_aqz_platform_3f",
+      "command": [
+        "E:\\AI\\Codex\\Sonic Chaos\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_aqz_platform_3f.py",
+        "-v"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "Windows_acceptance": "PENDING",
+  "commit": "UNCOMMITTED"
+}
