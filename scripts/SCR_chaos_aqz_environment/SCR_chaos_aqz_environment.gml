@@ -180,6 +180,13 @@ function chaos_aqz_pass_begin() {
 function chaos_aqz_mapped_scan() {
     var cp_e=global.chaosAqzEnv,cp_b=chaos_s2_state(),cp_vp=chaos_vp_current();
     if ((cp_e.d2e2&3) != 0) return;
+    // Natural $3F tokens precede the AQZ bubble-emitter records. Reserve their
+    // first-free mapped slots before scanning emitters on this same loader pass.
+    for (var cp_pi=0;cp_pi<instance_number(OBJ_chaos_platform);cp_pi++) {
+        var cp_platform=instance_find(OBJ_chaos_platform,cp_pi);
+        if (variable_instance_exists(cp_platform,"chaosType3f") && cp_platform.chaosType3f)
+            chaos_platform3f_scan(cp_platform,cp_b,cp_vp);
+    }
     for (var cp_i=0;cp_i<array_length(cp_e.emitters);cp_i++) {
         var cp_r=cp_e.emitters[cp_i];
         if (cp_r.occupied && cp_b.slots[cp_r.slot].type == 0) cp_r.occupied=false;

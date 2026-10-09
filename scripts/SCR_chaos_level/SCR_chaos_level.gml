@@ -219,6 +219,7 @@ function chaos_level_spawn_objects() {
             case $26: cp_inst = chaos_spawn_type26(cp_r); break;
             case $27: cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_object_27); break;
             case $28: cp_inst = chaos_spawn_type28(cp_r); break;
+            case $3F: if (chaos_is_aqz()) cp_inst = chaos_spawn_type3f(cp_r); break;
             case $2F: if ((chaos_is_mghz() || chaos_is_sez()) && cp_r[5] == $00) { cp_inst = instance_create(cp_r[1], cp_r[2], OBJ_chaos_object_2F); cp_inst.chaosParameter = cp_r[5]; } break; // Spring Shoes, numeric parameter $00 only
             case $2C: if (chaos_is_gpz()) cp_inst = instance_create(cp_r[1],cp_r[2],OBJ_chaos_object_2C); break;
             case $50: if (chaos_is_thz3()) cp_inst = instance_create(cp_r[1],cp_r[2],OBJ_chaos_object_50); break;
@@ -449,4 +450,20 @@ function chaos_goal_trace(cp_core, cp_sign_x) {
     file_text_write_string(cp_f, cp_row);
     file_text_close(cp_f);
     global.chaosTraceLastCam = cp_vp.left;
+}
+
+/// AQZ P2 placement factory; rendering resources never enter the platform rules.
+function chaos_spawn_type3f(cp_r) {
+    if (cp_r[5] != $83 && cp_r[5] != $86 && cp_r[5] != $8B) return noone;
+    var cp_o=instance_create(cp_r[1],cp_r[2],OBJ_chaos_platform);
+    cp_o.chaosType3f=true; cp_o.chaosGpzLifecycle=true;
+    cp_o.chaosPlacementX=cp_r[1]; cp_o.chaosPlacementY=cp_r[2];
+    cp_o.chaosPlacementParameter=cp_r[5]; cp_o.chaosPlacementAux1=cp_r[7];
+    cp_o.chaosPlacementIndex=cp_r[0]; cp_o.chaosScanTick=0; cp_o.chaosInitialFillDone=false;
+    cp_o.chaosConsumed=false; cp_o.chaosLive=false; cp_o.chaosAsleep=true;
+    cp_o.chaosOccupied=false; cp_o.chaosSlot=-1;
+    cp_o.chaosAct=chaos_aqz_act()-1; // ROM $D298; core.level is a legacy zone selector
+    cp_o.sprite_index=SPR_chaos_aqz_platform; cp_o.image_speed=0;
+    chaos_platform3f_reset(cp_o);
+    return cp_o;
 }

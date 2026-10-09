@@ -202,3 +202,192 @@ function chaos_platform28_sag(cp_o,cp_supported) {
     if (!cp_supported && cp_o.chaosSag == 0) cp_o.chaosSagReturning=false;
     cp_o.chaosY=cp_o.chaosHomeY+cp_o.chaosSag;
 }
+/// AQZ P2. Same bank-$1E contracts, separate script/lifecycle driver so accepted
+/// $28 adapters keep their scheduling. Scripts below are decoded A3 records.
+function chaos_platform3f_reset(cp_o) {
+    cp_o.x=cp_o.chaosPlacementX; cp_o.y=cp_o.chaosPlacementY;
+    var cp_p=cp_o.chaosPlacementParameter;
+    // Shared initializer defaults, then the script engine enters state0.
+    chaos_platform28_configure(cp_o,cp_p == $8B ? $05 : cp_p,cp_o.chaosPlacementAux1);
+    cp_o.chaosWeight=(cp_p & $80) != 0;
+    cp_o.chaosSavedMode=(cp_p & $3F)+1;
+    cp_o.chaosMode=0; cp_o.chaosRequestedMode=0; cp_o.chaosScriptMode=-1;
+    cp_o.chaosPC=0; cp_o.chaosCounter=0; cp_o.chaosCallback=0;
+    cp_o.chaosFrame=0; cp_o.chaosDeltaY=0; cp_o.chaosXU=cp_o.x*256;
+    cp_o.chaosToken=cp_o.chaosPlacementIndex; cp_o.chaosRuntimeParameter=cp_p;
+    cp_o.chaosDelay=0; cp_o.chaosKeepalive=false;
+    cp_o.chaosVX=0; cp_o.chaosVY=0;
+}
+/// $64FA: decrement duration before reading another record; state requests enter
+/// on the next object phase. Script14 jumps into $8489 without changing state.
+function chaos_platform3f_script(cp_o) {
+    if (cp_o.chaosScriptMode != cp_o.chaosRequestedMode) {
+        cp_o.chaosMode=cp_o.chaosRequestedMode; cp_o.chaosScriptMode=cp_o.chaosMode;
+        cp_o.chaosPC=0; cp_o.chaosCounter=0;
+    } else if (cp_o.chaosCounter > 0) cp_o.chaosCounter--;
+    if (cp_o.chaosCounter > 0) return;
+    var cp_script=chaos_platform3f_scripts()[cp_o.chaosMode];
+    for (var cp_guard=0; cp_guard<64; cp_guard++) {
+        var cp_op=cp_script[cp_o.chaosPC]; cp_o.chaosPC++;
+        switch (cp_op[0]) {
+            case 0: cp_o.chaosPC=0; break;
+            case 1:
+                cp_o.chaosCounter=cp_op[1]; cp_o.chaosFrame=cp_op[2]; cp_o.chaosCallback=cp_op[3]; return;
+            case 2: cp_o.chaosVX=cp_op[1]; cp_o.chaosVY=cp_op[2]; break;
+            case 3: cp_o.chaosDeltaX=0; cp_o.chaosDeltaY=0; break; // $8577
+            case 4:
+                if (cp_op[1] == 30) cp_o.chaosDelay=cp_op[2];
+                if (cp_op[1] == 39) cp_o.chaosPhase=cp_op[2];
+                break;
+            case 5: cp_o.chaosKeepalive=true; break; // +$04 bit1
+            case 6: cp_o.chaosPC=cp_op[1]; break;
+        }
+    }
+}
+/// $8814/$88A0: geometry/owner and projection; velocity gating is the caller's
+/// job. Contact flags are staged for the NEXT player pass, never floor-forced.
+function chaos_platform3f_support(cp_o,cp_c,cp_present,cp_gate) {
+    if (!cp_present) return false;
+    var cp_owner=cp_c.support, cp_ex=cp_c.state == $0F ? 9 : 8;
+    var cp_bits=0;
+    if (cp_gate && (cp_owner == 0 || cp_owner == cp_o.chaosOwnerId))
+        cp_bits=SCR_chaos_box_contact(floor(cp_c.xu/256),chaos_signed_world_y(cp_c.yu),cp_o.chaosX,cp_o.chaosY,cp_ex,24,16,16);
+    chaos_platform3f_contact_flags(cp_c,cp_bits);
+    if ((cp_bits & 12) != 0) cp_c.box_ready &= $33; // $8843 removes side walls
+    if (cp_bits == 1) { cp_c.support=cp_o.chaosOwnerId; return true; }
+    if (cp_owner == cp_o.chaosOwnerId) cp_c.support=0;
+    return false;
+}
+function chaos_platform3f_contact_flags(cp_c,cp_bits) {
+    if (cp_bits != 0) cp_c.box_ready=(cp_c.box_ready & 15) | ((cp_bits ^ ((cp_bits & 3) != 0 ? 3 : 12)) << 4);
+}
+/// Shared sag operates on the moving anchor, independent of route/fall velocity.
+function chaos_platform3f_sag(cp_o,cp_supported) {
+    var cp_home=cp_o.chaosHomeY;
+    if (!cp_supported) cp_o.chaosSagReturning=false; // $8843 clears +$33 immediately
+    cp_o.chaosHomeY=cp_o.chaosY-cp_o.chaosSag;
+    chaos_platform28_sag(cp_o,cp_supported);
+    cp_o.chaosHomeY=cp_home;
+    cp_o.chaosYU=cp_o.chaosY*256+(cp_o.chaosYU & 255);
+}
+function chaos_platform3f_move(cp_o) {
+    var cp_x=cp_o.chaosX, cp_y=cp_o.chaosY;
+    cp_o.chaosXU=(cp_o.chaosXU+cp_o.chaosVX) & 16777215;
+    cp_o.chaosYU=(cp_o.chaosYU+cp_o.chaosVY) & 16777215;
+    cp_o.chaosX=floor(cp_o.chaosXU/256); cp_o.chaosY=floor(cp_o.chaosYU/256);
+    cp_o.chaosDeltaX=cp_o.chaosX-cp_x; cp_o.chaosDeltaY=cp_o.chaosY-cp_y;
+}
+/// One original callback, prior asleep flag still intact. Test entry also used
+/// by the deterministic oracle runner. No terrain/water reads in this routine.
+function chaos_platform3f_callback(cp_o,cp_c,cp_present) {
+    var cp_cb=cp_o.chaosCallback, cp_supported=false;
+    if (cp_cb == $8585) {
+        cp_o.chaosRequestedMode=(cp_o.chaosPlacementParameter & $7F) == 11 ? 13 : cp_o.chaosSavedMode;
+        return false;
+    }
+    if (cp_cb == $85FE) {
+        if (cp_o.chaosAsleep || !cp_present || cp_c.vy < 0) return false;
+        var cp_ex=cp_c.state == $0F ? 9 : 8;
+        var cp_bits=SCR_chaos_box_contact(floor(cp_c.xu/256),chaos_signed_world_y(cp_c.yu),cp_o.chaosX,cp_o.chaosY,cp_ex,24,16,16);
+        chaos_platform3f_contact_flags(cp_c,cp_bits);
+        if (cp_bits == 1) cp_o.chaosRequestedMode=(cp_c.zone == 4 && cp_o.chaosAct == 1) ? 14 : cp_o.chaosSavedMode;
+        return false;
+    }
+    if (cp_cb == $87E2) {
+        // Shared state7 callback: overlap, first movement, carry, counters and
+        // reversal exactly as accepted SEZ. Own removal is PLAYER_DIST.
+        var cp_delete=cp_present && (abs(cp_o.chaosX-floor(cp_c.xu/256)) >= 640 || abs(cp_o.chaosY-chaos_signed_world_y(cp_c.yu)) >= 672);
+        if (cp_present) {
+            var cp_ex=cp_c.state == $0F ? 9 : 8;
+            var cp_px=floor(cp_c.xu/256), cp_py=chaos_signed_world_y(cp_c.yu);
+            var cp_trigger=cp_o.chaosLatch != 0;
+            if (!cp_trigger) {
+                var cp_bits=SCR_chaos_box_contact(cp_px,cp_py,cp_o.chaosX,cp_o.chaosY,cp_ex,24,16,16);
+                chaos_platform3f_contact_flags(cp_c,cp_bits); cp_trigger=cp_bits != 0;
+            }
+            if (cp_trigger && cp_c.vy >= 0 && (cp_c.support == 0 || cp_c.support == cp_o.chaosOwnerId)) {
+                var cp_bits=SCR_chaos_box_contact(cp_px,cp_py,cp_o.chaosX+cp_o.chaosVX/256,cp_o.chaosY,cp_ex,24,16,16);
+                chaos_platform3f_contact_flags(cp_c,cp_bits);
+                if ((cp_bits & 12) != 0) cp_c.box_ready &= $33;
+            }
+        }
+        var cp_xbefore=cp_o.chaosX;
+        var cp_changed=chaos_platform28_step7(cp_o,cp_c,cp_present);
+        if (!cp_changed && cp_o.chaosX != cp_xbefore) cp_o.chaosSagReturning=false;
+        cp_o.chaosXU=cp_o.chaosX*256; cp_o.chaosYU=cp_o.chaosY*256;
+        if (cp_delete) { cp_o.chaosLive=false; cp_o.chaosToken=0; }
+        return cp_changed;
+    }
+    if (cp_cb == $8719) {
+        if (cp_o.chaosAsleep) {
+            if (cp_o.chaosPhase != 0) {
+                cp_o.chaosConsumed=true; cp_o.chaosLive=false;
+                cp_o.chaosRuntimeParameter=$80; cp_o.chaosToken=0;
+                array_push(global.chaosConsumedPlatforms,cp_o.chaosPlacementIndex);
+            }
+            return false;
+        }
+        if (cp_o.chaosPhase == 255) {
+            cp_o.chaosVY=SCR_cc_s16(cp_o.chaosVY+48);
+            chaos_platform3f_move(cp_o);
+        } else if (cp_o.chaosPhase == 128) {
+            if (cp_o.chaosDelay == 0) cp_o.chaosPhase=255;
+            else cp_o.chaosDelay--;
+        }
+        cp_supported=chaos_platform3f_support(cp_o,cp_c,cp_present,cp_present && cp_c.vy >= 0);
+        chaos_platform3f_sag(cp_o,cp_supported);
+        if (cp_supported && cp_o.chaosPhase == 0) cp_o.chaosPhase=128;
+    } else if (cp_cb == $8628 || cp_cb == $86A1) {
+        if (cp_o.chaosAsleep) chaos_platform3f_move(cp_o); // original double integration
+        chaos_platform3f_move(cp_o);
+        var cp_gate=cp_present && (cp_cb == $8628 ? cp_c.vy >= 0 : cp_o.chaosVY <= cp_c.vy);
+        cp_supported=chaos_platform3f_support(cp_o,cp_c,cp_present,cp_gate);
+        chaos_platform3f_sag(cp_o,cp_supported);
+    }
+    if (cp_supported) chaos_platform28_carry(cp_o,cp_c);
+    return cp_supported;
+}
+/// Scheduler callback -> generic lifetime -> mapped creation. No retention
+/// extension. Spent occupancy is kept in the shell until act restart.
+function chaos_platform3f_phase(cp_o,cp_c,cp_present,cp_vp) {
+    if (cp_o.chaosConsumed) return false;
+    if (!cp_o.chaosLive) return false;
+    chaos_platform3f_script(cp_o);
+    var cp_changed=chaos_platform3f_callback(cp_o,cp_c,cp_present);
+    if (cp_o.chaosLive && cp_o.chaosCallback != $8585) {
+        var cp_cell=SCR_chaos_spawn_cell(cp_vp,cp_o.chaosX,cp_o.chaosY);
+        cp_o.chaosAsleep=cp_cell >= 2;
+        if (cp_cell == 3 && !cp_o.chaosKeepalive) { cp_o.chaosLive=false; cp_o.chaosToken=0; }
+    }
+    if (!cp_o.chaosLive && cp_present && cp_c.support == cp_o.chaosOwnerId) cp_c.support=0;
+    cp_o.x=cp_o.chaosX; cp_o.y=cp_o.chaosY;
+    return cp_changed;
+}
+function chaos_platform3f_scan(cp_o,cp_pool,cp_vp) {
+    if (cp_o.chaosOccupied || cp_o.chaosConsumed) return;
+    var cp_cell=SCR_chaos_spawn_cell(cp_vp,cp_o.chaosPlacementX,cp_o.chaosPlacementY);
+    var cp_fill=!cp_o.chaosInitialFillDone;
+    cp_o.chaosInitialFillDone=true;
+    if (!(cp_cell == 2 || (cp_cell < 2 && cp_fill))) return;
+    var cp_slot=chaos_object_free_slot(cp_pool.slots,7,18);
+    if (cp_slot < 0) return;
+    chaos_platform3f_reset(cp_o);
+    cp_o.chaosLive=true; cp_o.chaosAsleep=true; cp_o.chaosOccupied=true; cp_o.chaosSlot=cp_slot;
+    var cp_s=chaos_s2_slot(); cp_s.type=$3F; cp_s.platform3f=cp_o;
+    cp_pool.slots[cp_slot]=cp_s;
+}
+/// Cleanup $FE->$FF->zero. Cleared-token fall paths keep occupancy spent; normal
+/// deletion releases the shell only on cleanup and allows original recreation.
+function chaos_platform3f_visit(cp_s,cp_pool,cp_i,cp_c,cp_have,cp_vp) {
+    var cp_o=cp_s.platform3f;
+    if (cp_s.type == $FE) { cp_s.type=$FF; return false; }
+    if (cp_s.type == $FF) {
+        if (!cp_o.chaosConsumed) cp_o.chaosOccupied=false;
+        cp_o.chaosSlot=-1; cp_pool.slots[cp_i]=chaos_s2_slot(); return false;
+    }
+    var cp_changed=chaos_platform3f_phase(cp_o,cp_c,cp_have,cp_vp);
+    if (!cp_o.chaosLive) cp_s.type=$FE;
+    return cp_changed;
+}
+/// Generated from reviewed AQZ A3; only states 0/4/7/13/14 are registered.
+function chaos_platform3f_scripts() { return [[[1,224,0,34181],[0]],[[2,256,0],[1,224,1,34344],[6,1]],[[2,0,-256],[1,224,1,34465],[6,1]],[[1,224,1,34584],[0]],[[2,0,0],[4,30,80],[1,224,1,34585],[6,2]],[[1,224,1,34714],[0]],[[5,4,2],[2,0,-256],[1,224,1,34738],[6,2]],[[5,4,2],[2,256,0],[1,224,1,34786],[6,2]],[[1,224,1,34834],[0]],[[1,224,1,34835],[0]],[[5,4,2],[2,256,0],[1,224,1,34402],[6,2]],[[5,4,2],[2,0,-256],[1,224,1,34522],[6,2]],[[3,34167],[2,0,256],[1,32,1,34465],[3,34167],[2,256,0],[1,128,1,34344],[1,144,1,34344],[4,30,80],[4,39,128],[2,0,0],[6,11],[1,224,1,34585],[6,11]],[[2,0,0],[1,32,1,34302],[0]],[[3,34167],[2,256,0],[1,160,1,34344],[3,34167],[2,0,256],[1,64,1,34465],[3,34167],[2,256,0],[1,96,1,34344],[3,34167],[2,0,-256],[1,128,1,34465],[1,128,1,34465],[4,30,80],[4,39,128],[2,0,0],[6,17],[1,224,1,34585],[6,17]]]; }

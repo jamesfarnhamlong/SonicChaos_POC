@@ -53,7 +53,9 @@ function SCR_chaos_objects_phase() {
     var cp_count = instance_number(OBJ_chaos_platform);
     for (var cp_i = 0; cp_i < cp_count; cp_i++) {
         var cp_o=instance_find(OBJ_chaos_platform,cp_i);
-        if (variable_instance_exists(cp_o,"chaosGpzLifecycle") && cp_o.chaosGpzLifecycle) {
+        if (variable_instance_exists(cp_o,"chaosType3f") && cp_o.chaosType3f) {
+            continue; // $3F visits its reserved slot in the ascending AQZ pool above
+        } else if (variable_instance_exists(cp_o,"chaosGpzLifecycle") && cp_o.chaosGpzLifecycle) {
             if (chaos_platform28_lifecycle(cp_o,cp_c,cp_have,chaos_vp_current()) && chaos_platform28_step(cp_o,cp_c,cp_present)) cp_changed=true;
         } else if (chaos_platform28_step(cp_o, cp_c, cp_present)) cp_changed = true;
     }

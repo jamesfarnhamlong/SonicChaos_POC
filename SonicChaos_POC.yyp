@@ -6249,6 +6249,12 @@
         "name": "SCR_chaos_player_animation_data",
         "path": "scripts/SCR_chaos_player_animation_data/SCR_chaos_player_animation_data.yy"
       }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_platform",
+        "path": "sprites/SPR_chaos_aqz_platform/SPR_chaos_aqz_platform.yy"
+      }
     }
   ],
   "resourceType": "GMProject",

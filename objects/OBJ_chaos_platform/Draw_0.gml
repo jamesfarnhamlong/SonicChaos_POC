@@ -2,4 +2,10 @@
 // The collision anchor (x, y) is never offset.
 // SEZ's approved SAT canvas already embeds the +1,+18 registration; its first
 // opaque row is anchor+2. The older trimmed sprites add that row offset here.
-if (!variable_instance_exists(id,"chaosGpzLifecycle") || !chaosGpzLifecycle || (chaosLive && !chaosAsleep && !chaosConsumed)) draw_sprite(sprite_index, image_index, x, chaos_is_sez() ? y : y + 2);
+if (variable_instance_exists(id,"chaosType3f") && chaosType3f) {
+    if (chaosLive && !chaosAsleep && !chaosConsumed) {
+        chaos_aqz_palette_begin(false);
+        draw_sprite(sprite_index,chaosFrame,chaosX,chaosY);
+        chaos_aqz_palette_end();
+    }
+} else if (!variable_instance_exists(id,"chaosGpzLifecycle") || !chaosGpzLifecycle || (chaosLive && !chaosAsleep && !chaosConsumed)) draw_sprite(sprite_index, image_index, x, chaos_is_sez() ? y : y + 2);
