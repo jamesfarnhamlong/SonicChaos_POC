@@ -46,15 +46,17 @@ function chaos_boss_move(cp_b) { cp_b.xu += cp_b.vx; }
 function chaos_boss_contact(cp_b, cp_c, cp_can_hit) {
     if (cp_b.cooldown > 0) { cp_b.cooldown--; return 0; }
     var cp_bits = chaos_boss_contact_bits(cp_b,cp_c);
+    if (variable_global_exists("chaosPlayerTrace") && global.chaosPlayerTrace) chaos_player_trace("thz3_contact",{bits:cp_bits,can_hit:cp_can_hit,state:cp_c.state,next:cp_c.next,d448:variable_struct_exists(cp_c,"d448") ? cp_c.d448 : -1,d503:cp_c.move,x:floor(cp_c.xu/256),y:floor(cp_c.yu/256),vx:cp_c.vx,vy:cp_c.vy});
     if (cp_bits == 0) return 0;
     var cp_project = SCR_chaos_box_projection(cp_bits,floor(cp_c.xu/256),floor(cp_c.yu/256),chaos_boss_x(cp_b),cp_b.y,
         CHAOS_BOSS_PLAYER_EXT_X,CHAOS_BOSS_PLAYER_EXT_Y,CHAOS_BOSS_EXT_X,CHAOS_BOSS_EXT_Y);
     cp_c.xu=cp_project[0]*256; cp_c.yu=cp_project[1]*256;
     if (cp_bits == 1 && cp_can_hit) {
         if (cp_c.vy < 0) return 0; // rising attack does not bounce
-        cp_c.vy=-1024; cp_c.next=11; cp_c.move=(cp_c.move|1)&~2;
+        cp_c.vy=-1024; cp_c.d448=0; cp_c.next=11; cp_c.move=(cp_c.move|1)&~2;
         cp_c.bg &= ~2; cp_c.contacts &= ~2;
         global.chaosLastSoundRequest=$A6;
+        if (variable_global_exists("chaosPlayerTrace") && global.chaosPlayerTrace) chaos_player_trace("thz3_top_bounce",{state:cp_c.state,next:cp_c.next,d448:variable_struct_exists(cp_c,"d448") ? cp_c.d448 : -1,d503:cp_c.move,vy:cp_c.vy});
         return 2;
     }
     // Unlike ordinary badniks, +$03 bit 7 bypasses the player's hurt bit 6.

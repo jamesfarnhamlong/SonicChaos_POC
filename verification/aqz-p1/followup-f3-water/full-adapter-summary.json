@@ -1,0 +1,138 @@
+{
+  "result": "PASS",
+  "native_full_adapter_updates": 2880,
+  "assertions": 31688,
+  "unique_original_Z80_controls": 753,
+  "controls": {
+    "aqz1-dry": {
+      "updates": 600,
+      "first_threshold_update": 60,
+      "first_3_accelerations": [
+        32,
+        32,
+        32
+      ],
+      "first_3_states": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "cap": 1024,
+      "water": 0.0
+    },
+    "aqz1-dry-brake": {
+      "updates": 120,
+      "first_threshold_update": 75,
+      "first_3_accelerations": [
+        -16,
+        -32,
+        -32
+      ],
+      "first_3_states": [
+        5.0,
+        7.0,
+        7.0
+      ],
+      "cap": 1024,
+      "water": 0.0
+    },
+    "aqz1-wet": {
+      "updates": 600,
+      "first_threshold_update": 480,
+      "first_3_accelerations": [
+        4,
+        4,
+        4
+      ],
+      "first_3_states": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "cap": 1024,
+      "water": 255.0
+    },
+    "aqz1-wet-brake": {
+      "updates": 120,
+      "first_threshold_update": null,
+      "first_3_accelerations": [
+        -2,
+        -4,
+        -4
+      ],
+      "first_3_states": [
+        5.0,
+        7.0,
+        7.0
+      ],
+      "cap": 1024,
+      "water": 255.0
+    },
+    "aqz2-dry": {
+      "updates": 600,
+      "first_threshold_update": 60,
+      "first_3_accelerations": [
+        32,
+        32,
+        32
+      ],
+      "first_3_states": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "cap": 1024,
+      "water": 0.0
+    },
+    "aqz2-dry-brake": {
+      "updates": 120,
+      "first_threshold_update": 75,
+      "first_3_accelerations": [
+        -16,
+        -32,
+        -32
+      ],
+      "first_3_states": [
+        5.0,
+        7.0,
+        7.0
+      ],
+      "cap": 1024,
+      "water": 0.0
+    },
+    "aqz2-wet": {
+      "updates": 600,
+      "first_threshold_update": 480,
+      "first_3_accelerations": [
+        4,
+        4,
+        4
+      ],
+      "first_3_states": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "cap": 1024,
+      "water": 255.0
+    },
+    "aqz2-wet-brake": {
+      "updates": 120,
+      "first_threshold_update": null,
+      "first_3_accelerations": [
+        -2,
+        -4,
+        -4
+      ],
+      "first_3_states": [
+        5.0,
+        7.0,
+        7.0
+      ],
+      "cap": 1024,
+      "water": 255.0
+    }
+  },
+  "shipping_behavior_changed": false,
+  "scope": "Actual room, core attach zone, player Step/adapter, native tables, water controllers/publication. Empty terrain and synthetic flat support plus X retention only in excluded diagnostic copy."
+}

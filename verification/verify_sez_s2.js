@@ -608,7 +608,7 @@ function padRun(start,input,n,opt={}){
  const writes=new Set([...code.matchAll(/cp_c\.(\w+)\s*=[^=]/g)].map(m=>m[1]));
  eq([...writes].sort(),['booster','maximum','move','next','vx','vy','yu'].sort(),'player core fields written by S2: rider hold (yu, vy) and booster (vx, maximum, move, next, booster counter)');
  const coreSrc=fs.readFileSync(path.join(root,'scripts/SCR_chaos_core/SCR_chaos_core.gml'),'utf8');
- ok(coreSrc.includes('if (cp_c.zone == 2 && cp_kind == 12) { SCR_cc_crumble_floor(cp_c,cp_s); return; }'),'floor dispatch for surface $0C (zone 2)');
+ ok(coreSrc.includes('if ((cp_c.zone == 2 || cp_c.zone == 4) && cp_kind == 12) { SCR_cc_crumble_floor(cp_c,cp_s); return; }'),'floor dispatch for surface $0C (zone 2)');
  ok(!coreSrc.split(String.fromCharCode(10)).some(l=>l.includes('cp_kind == 26')&&l.includes('SCR_cc')),'surface $1A has no floor-pass action (bare RET)');
  ok(fs.readFileSync(path.join(root,'scripts/SCR_chaos_adapter/SCR_chaos_adapter.gml'),'utf8').includes('cp_c.probe_counter = cp_anim_t;'),'booster uses the shared +$07 parity of the terrain-ring probe');
 }

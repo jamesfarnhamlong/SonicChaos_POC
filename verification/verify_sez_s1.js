@@ -13,7 +13,7 @@ h.runEvent({x:784,y:384,sprite_index:c.SPR_chaos_sez_platform,image_index:0,chao
 eq(platformDraw,[c.SPR_chaos_sez_platform,0,784,384],'SEZ approved SAT canvas draws at its canonical anchor');
 vm.runInContext(hex(fs.readFileSync(path.join(root,'scripts/SCR_chaos_debug_select/SCR_chaos_debug_select.gml'),'utf8')),c);
 c.room_exists=id=>Object.keys(h.ids).some(n=>n.startsWith('ROM_chaos_')&&h.ids[n]===id);
-const entries=c.chaos_debug_entries();eq(entries.length,21);eq(entries.filter(e=>e.enabled).length,12);
+const entries=c.chaos_debug_entries();eq(entries.length,21);eq(entries.filter(e=>e.enabled).length,15);
 eq(entries.slice(6,9).map(e=>[e.enabled,e.room]),[1,2,3].map(n=>[true,c[`ROM_chaos_sez${n}`]]));
 for(const [key,a] of Object.entries(M.acts)) {
  h.reset(); c.room=c[`ROM_chaos_${key}`];c.chaos_level_install_layout();

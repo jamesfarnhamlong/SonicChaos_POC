@@ -17,7 +17,7 @@ const s16 = v => (v & 0x8000) ? v - 0x10000 : v;
 
 // ---------- load the shipped scripts ----------
 const g = {music: 0};
-const base = {global: g, chaos_is_sez: () => false, floor: Math.floor, round: Math.round, abs: Math.abs, min: Math.min, max: Math.max, sign: Math.sign, clamp: (v, a, b) => Math.min(Math.max(v, a), b),
+const base = {global: g, chaos_is_sez: () => false, chaos_is_aqz: () => false, floor: Math.floor, round: Math.round, abs: Math.abs, min: Math.min, max: Math.max, sign: Math.sign, clamp: (v, a, b) => Math.min(Math.max(v, a), b),
     array_create: (n, v) => Array(n).fill(v), array_length: a => a.length, array_push: (a, v) => a.push(v), array_copy: (d, di, s, si, n) => { for (let i = 0; i < n; i++) d[di + i] = s[si + i]; },
     variable_global_exists: k => k in g, variable_struct_exists: (o, k) => k in o, variable_instance_exists: (o, k) => k in o, is_array: Array.isArray, noone: -4};
 const cc = vm.createContext(Object.assign({}, base));
@@ -185,8 +185,13 @@ for (const [key, b] of Object.entries(S.terrain_horizontal.blocks)) {
     ok(!/cp_p\.x|cp_p\.y/.test(spr.slice(spr.indexOf('function SCR_chaos_object_spring_step'))), 'type $26 step contact uses the core anchors, not the GameMaker position');
     const core = strip(rd('scripts/SCR_chaos_core/SCR_chaos_core.gml')), springSrc = core.slice(core.indexOf('function SCR_cc_terrain_spring_state'), core.indexOf('function SCR_cc_twist_enter'));
     ok(!/bbox_|place_meeting|mask_index|camera|view_/.test(springSrc), 'terrain springs read no mask or viewport');
-    const dirty = require('./asset_parent_invariant.js').unchangedExceptAssetParents(root, 'HEAD', ['rooms/ROM_chaos_thz1', 'scripts/SCR_chaos_level_thz2_data', 'scripts/SCR_chaos_core_data', 'scripts/SCR_chaos_motion_data', 'objects/OBJ_chaos_object_spring_26_normal', 'objects/OBJ_chaos_object_spring_26_weak', 'objects/OBJ_chaos_object_spring_26_span']);
+    const springDirs=['normal','weak','span'].map(k=>'objects/OBJ_chaos_object_spring_26_'+k);
+    const unchangedSpringFiles=cp.execFileSync('git',['ls-files','--',...springDirs],{cwd:root,encoding:'utf8'}).trim().split(/\r?\n/).filter(p=>!p.endsWith('/Step_0.gml'));
+    const dirty = require('./asset_parent_invariant.js').unchangedExceptAssetParents(root, 'HEAD', ['rooms/ROM_chaos_thz1', 'scripts/SCR_chaos_level_thz2_data', 'scripts/SCR_chaos_core_data', 'scripts/SCR_chaos_motion_data', ...unchangedSpringFiles]);
     eq(dirty, 0, 'canonical rooms, spring placements and terrain/level data are identical to HEAD except approved virtual parents');
+    // E moves callbacks to the canonical post-player phase; no contact/placement edits in events.
+    for(const dir of springDirs)eq(strip(rd(dir+'/Step_0.gml')).replace(/\s+/g,''),'if(chaos_in_level())exit;SCR_chaos_object_spring_step(id);');
+    ok(rd('scripts/SCR_chaos_objects/SCR_chaos_objects.gml').includes('chaos_spring26_phase(cp_c,cp_have)'), 'canonical post-player callback phase');
     const l1 = rd('rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy');
     for (const [nm, key] of [['OBJ_chaos_object_spring_26_normal', 'strong'], ['OBJ_chaos_object_spring_26_weak', 'weak'], ['OBJ_chaos_object_spring_26_span', 'span']]) {
         const pos = []; const needle = '\"name\": \"' + nm + '\",'; const objDir = 'objects/' + nm; let at = -1;

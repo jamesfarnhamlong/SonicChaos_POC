@@ -14,7 +14,7 @@ const ctx = vm.createContext({global: {}, array_create: (n, v) => Array(n).fill(
     OBJ_chaos_object_spring_26_normal: obj('26n'), OBJ_chaos_object_spring_26_weak: obj('26w'), OBJ_chaos_object_spring_26_span: obj('26s'),
     OBJ_chaos_platform: obj('28'), SPR_chaos_object_10: 'spr10', SPR_chaos_object_10_03: 'spr10_03', SPR_chaos_object_10_04: 'spr10_04',
     SPR_chaos_object_10_06: 'spr10_06', chaos_is_thz2: () => true, chaos_is_thz3: () => false,
-    chaos_sez_act: () => 0, chaos_is_sez: () => false, chaos_mghz_act: () => 0, chaos_gpz_act: () => 0, chaos_is_mghz: () => false, chaos_is_gpz: () => false});   // Shared loader act helpers; this is the THZ2 control fixture
+    chaos_aqz_act: () => 0, chaos_is_aqz: () => false, chaos_sez_act: () => 0, chaos_is_sez: () => false, chaos_mghz_act: () => 0, chaos_gpz_act: () => 0, chaos_is_mghz: () => false, chaos_is_gpz: () => false});   // Shared loader act helpers; this is the THZ2 control fixture
 vm.runInContext(hex(read('SCR_chaos_level_thz2_data')), ctx);
 vm.runInContext(hex(read('SCR_chaos_platform')).replace(/#macro (\w+) (\S+)/g, 'var $1 = $2;'), ctx);   // chaos_platform28_configure (recovered type $28 model)
 vm.runInContext(loaderSrc, ctx);

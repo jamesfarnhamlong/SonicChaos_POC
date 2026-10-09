@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = ['scripts/SCR_chaos_sez_boss/SCR_chaos_sez_boss.gml', 'scripts/SCR_chaos_sez_boss_data/SCR_chaos_sez_boss_data.gml', 'scripts/SCR_chaos_sez_s2/SCR_chaos_sez_s2.gml', 'scripts/SCR_chaos_sez_enemy/SCR_chaos_sez_enemy.gml']
-BUILTIN = set('''__view_set e__VW floor ceil round abs min max sign clamp string array_push array_length array_create variable_global_exists variable_instance_exists instance_exists
+BUILTIN = set('''__view_set e__VW floor ceil round abs min max sign clamp string array_push array_length array_create variable_struct_exists variable_global_exists variable_instance_exists instance_exists
 instance_find instance_create draw_sprite show_debug_message __view_set function var if else for while switch case return break continue exit with repeat do
 true false noone global self id'''.split())
 text = {p: (ROOT / p).read_text(encoding='utf-8') for p in FILES}

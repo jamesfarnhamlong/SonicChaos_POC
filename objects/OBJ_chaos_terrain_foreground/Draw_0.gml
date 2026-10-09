@@ -1,5 +1,6 @@
+chaos_aqz_palette_begin(false);
 /// Nontransparent pixels in SMS $1000 mapping cells draw above player depth -50.
-if (chaosTerrainForegroundSprite == -1) exit;
+if (chaosTerrainForegroundSprite == -1) { chaos_aqz_palette_end(); exit; }
 // MGHZ transparent atlas parts must not sample the neighbouring block's
 // priority pixels. Restore the caller's filter after this complete pass.
 var cp_mghz_filter=gpu_get_texfilter();
@@ -24,3 +25,7 @@ if (chaos_is_mghz()) chaos_mghz_terrain_dynamic(true);
 if (chaos_is_mghz() || chaos_is_sez()) gpu_set_texfilter(cp_mghz_filter);
 
 if (chaos_is_sez()) chaos_sez_terrain_dynamic(true);
+
+if (chaos_is_aqz()) chaos_aqz_terrain_dynamic(true);
+
+chaos_aqz_palette_end();

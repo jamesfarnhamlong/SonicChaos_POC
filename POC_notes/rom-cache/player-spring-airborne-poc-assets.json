@@ -1,0 +1,438 @@
+{
+  "research": "81b82941e7f44865e0d551484bee82d28d600d43",
+  "approval_board_sha256": "494d56e0918f9cad64e3d00d1c14ff9515bf490cfb1b2f15f0aa2699da824078",
+  "assets": [
+    {
+      "frame": 2,
+      "resource": "SPR_chaos_player_frame_02",
+      "aqz_indexed": false,
+      "origin": [
+        15,
+        31
+      ],
+      "rgba_sha256": "34549bf4e1ba6ec4344dff63f3aaf3468ce7d4e69e407d2b0e9e94cc7ee13b9d",
+      "png_sha256": "402f2c27675dd53d67d19c2aa671d00a9b651d0b3a89911c7b6934d1a9fb66ac",
+      "png": "sprites/SPR_chaos_player_frame_02/aefecefb-11fa-5862-b43e-f880286e58fd.png"
+    },
+    {
+      "frame": 2,
+      "resource": "SPR_chaos_aqz_player_frame_02",
+      "aqz_indexed": true,
+      "origin": [
+        15,
+        31
+      ],
+      "rgba_sha256": "55b52e7b1d9a8cec30a19fae11b0f3c47e61fb7574d76d393816b50dc1728b44",
+      "png_sha256": "7f6745b2fba791e342830dcd0bea146944098f24762288493b5fedb2e315838d",
+      "png": "sprites/SPR_chaos_aqz_player_frame_02/35c95b5e-110c-5396-9a6b-960e263285a7.png"
+    },
+    {
+      "frame": 3,
+      "resource": "SPR_chaos_player_frame_03",
+      "aqz_indexed": false,
+      "origin": [
+        14,
+        31
+      ],
+      "rgba_sha256": "85dd1bea5fe072a5da9c26fcf5f3d38efd406c9a32e576abb0bc2e408e5831be",
+      "png_sha256": "3c8df9325d1b8a7a28dbabb890d10d47fa722de1faaeba51a045160bddbe50fd",
+      "png": "sprites/SPR_chaos_player_frame_03/18c3d17e-55ea-5feb-abb7-39e83f04e5bc.png"
+    },
+    {
+      "frame": 3,
+      "resource": "SPR_chaos_aqz_player_frame_03",
+      "aqz_indexed": true,
+      "origin": [
+        14,
+        31
+      ],
+      "rgba_sha256": "bae675a70ddbbf2bf3ad6bedecd8a42b0ddaaa7094006ae6f1fe037b9a155833",
+      "png_sha256": "c9a0e98279ebfda388c2a694805898f436b296999d74c9452c4cda4eeaadbc5a",
+      "png": "sprites/SPR_chaos_aqz_player_frame_03/702777dc-2c0a-5986-80d1-0fe6e082e5dc.png"
+    },
+    {
+      "frame": 4,
+      "resource": "SPR_chaos_player_frame_04",
+      "aqz_indexed": false,
+      "origin": [
+        14,
+        31
+      ],
+      "rgba_sha256": "162e2c4679ab1702263fcb2b7a76e38a5973dc1b8eeafbf04ee266f6db6abd26",
+      "png_sha256": "dfbd61a6339c74d44a0bea00ebc2f8ab105893089f8df03bc5b7b69375811dd1",
+      "png": "sprites/SPR_chaos_player_frame_04/9956740c-8e30-508c-9ab3-bd17dfb59fa3.png"
+    },
+    {
+      "frame": 4,
+      "resource": "SPR_chaos_aqz_player_frame_04",
+      "aqz_indexed": true,
+      "origin": [
+        14,
+        31
+      ],
+      "rgba_sha256": "cd0b00becb2d999f69c67ac0154c186f4757783a7c5f264f201c841b1c5546bf",
+      "png_sha256": "e18227c0e102d851332c3a8bfe7f01bf22d3042f9ced9523bc2f38f0795345bb",
+      "png": "sprites/SPR_chaos_aqz_player_frame_04/5a79b53f-c20c-52d8-8001-78e802620617.png"
+    },
+    {
+      "frame": 5,
+      "resource": "SPR_chaos_player_frame_05",
+      "aqz_indexed": false,
+      "origin": [
+        15,
+        31
+      ],
+      "rgba_sha256": "5d68ee0f9dbd61e68fb4729cff4f5026096034242c32f8f00a8f7a9912c43f10",
+      "png_sha256": "3354282fede78638831852b32facce63054d523e87001446f62070229143e3c6",
+      "png": "sprites/SPR_chaos_player_frame_05/2010f1db-b3fd-5e8e-979c-040195c06c44.png"
+    },
+    {
+      "frame": 5,
+      "resource": "SPR_chaos_aqz_player_frame_05",
+      "aqz_indexed": true,
+      "origin": [
+        15,
+        31
+      ],
+      "rgba_sha256": "6ad9e74f578ec6075e40ebbf5a38ab1571a4b39ee9ea4e50a40e951a99ebb33a",
+      "png_sha256": "20ca69b3dfe11a713554d6ac27e64470933882518f78741f829db551ceede12f",
+      "png": "sprites/SPR_chaos_aqz_player_frame_05/d38e5b2e-1136-5fcd-ac89-192f7f9a8538.png"
+    },
+    {
+      "frame": 6,
+      "resource": "SPR_chaos_player_frame_06",
+      "aqz_indexed": false,
+      "origin": [
+        16,
+        31
+      ],
+      "rgba_sha256": "62036fe587c2deaf42e82bf9c858df915128c078109827c584e80133197275a6",
+      "png_sha256": "ecdaefab2806c27933d8d2401ed6dfa7e7ec623fb162a50b4b549adeb95b7854",
+      "png": "sprites/SPR_chaos_player_frame_06/ae6f4a2d-4eba-5dc1-8693-2e1bee000a80.png"
+    },
+    {
+      "frame": 6,
+      "resource": "SPR_chaos_aqz_player_frame_06",
+      "aqz_indexed": true,
+      "origin": [
+        16,
+        31
+      ],
+      "rgba_sha256": "58e4e79228886a355f644616b53181811b586ad9af022fa4cf2a494e1d755348",
+      "png_sha256": "ddc6ea29f1438a2968a64adf9f1f76bf72e2868a57d3470e2dec86f0546479c3",
+      "png": "sprites/SPR_chaos_aqz_player_frame_06/4e7d026c-6183-5d30-bbbf-ec00e687b3f2.png"
+    },
+    {
+      "frame": 1,
+      "resource": "SPR_chaos_player_frame_01",
+      "aqz_indexed": false,
+      "origin": [
+        16,
+        31
+      ],
+      "rgba_sha256": "1c03e423ba8e3c972767f3b9b709ffc598c7afd399c9bd522bfabbdf7979c748",
+      "png_sha256": "7855b1edc23f0e4646ccdf160255ba4dc84a1d6d8dd66c411cff07d3de9f4dfb",
+      "png": "sprites/SPR_chaos_player_frame_01/cd622ec3-efa8-58d6-88f7-d6973ec86821.png"
+    },
+    {
+      "frame": 1,
+      "resource": "SPR_chaos_aqz_player_frame_01",
+      "aqz_indexed": true,
+      "origin": [
+        16,
+        31
+      ],
+      "rgba_sha256": "392dfe42e9254349eea1ed0d88df965cb709457eb2387ff1c0e6d50ffa8fa92b",
+      "png_sha256": "ac64894332a4c61d12b1f89ec4f8c58241a9872e904d0819b85f2a5b178bbdc3",
+      "png": "sprites/SPR_chaos_aqz_player_frame_01/c49ea39d-e13a-5197-90a7-a73b62f4f144.png"
+    },
+    {
+      "frame": 28,
+      "resource": "SPR_chaos_player_frame_1C",
+      "aqz_indexed": false,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "2a90f63e986959087dd2ef5954bcb838587289a17391912c1b96d2e55648ea12",
+      "png_sha256": "a615e074ba993088020538aaac505f4da58eae5ff8b6b51723486ee3e8559c30",
+      "png": "sprites/SPR_chaos_player_frame_1C/acc396b5-9b62-5bb0-abd9-3a587f01eb84.png"
+    },
+    {
+      "frame": 28,
+      "resource": "SPR_chaos_aqz_player_frame_1C",
+      "aqz_indexed": true,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "4e7eec70475d91b849ac97f67da0d88d98179d2cf9473b70ad6654f4a3cf2adf",
+      "png_sha256": "c21df9e0f7183bae2820c953a785aec5124da6fde0754f74e8a08252cd48f636",
+      "png": "sprites/SPR_chaos_aqz_player_frame_1C/40d3bcac-fc8e-5602-8fa7-c5262dcd5c8a.png"
+    },
+    {
+      "frame": 29,
+      "resource": "SPR_chaos_player_frame_1D",
+      "aqz_indexed": false,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "40d9958df3fd87b2bba7aa12b792f312d4910fe7fed7fdddfe079fca2e106330",
+      "png_sha256": "2d30170850b6f3fdd037a1ac50d1e0c6335486deddeaee12971cf42fa0a4cb4f",
+      "png": "sprites/SPR_chaos_player_frame_1D/67fc696d-f816-5bf5-a0a4-c103162088d7.png"
+    },
+    {
+      "frame": 29,
+      "resource": "SPR_chaos_aqz_player_frame_1D",
+      "aqz_indexed": true,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "13c2debdc3ac020f32d2c67956e195793c50ef9e1690b5a6369d1b9acaeff8d9",
+      "png_sha256": "b572b4ba7f68ace8d78c00b75d61df8c2e00735a19c73b4fd6b6b09b8c85bcb0",
+      "png": "sprites/SPR_chaos_aqz_player_frame_1D/3465a259-914c-57c6-9b0a-803ad7418ac0.png"
+    },
+    {
+      "frame": 30,
+      "resource": "SPR_chaos_player_frame_1E",
+      "aqz_indexed": false,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "1e434ec97472df078589ca7b229081292a4fb1f21dc8a2e6e26de15478fa2309",
+      "png_sha256": "48fbaa3a1cdffc59736018a358d52def3f5b8c98b78cf39e7584f3c33bda6761",
+      "png": "sprites/SPR_chaos_player_frame_1E/8b553a6d-4de4-55d6-8426-3bbecfa59c3f.png"
+    },
+    {
+      "frame": 30,
+      "resource": "SPR_chaos_aqz_player_frame_1E",
+      "aqz_indexed": true,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "79bb99e9ab3db3cfa52dcf5af47e6f1cba3d4382b57766b7a24d79884fe47e14",
+      "png_sha256": "1385d5bb555c47ec3cebd9444cb5bb5b475f6bc54893435ba1759af444cfc596",
+      "png": "sprites/SPR_chaos_aqz_player_frame_1E/eef8b42f-0c37-5c44-8080-bc592f41d016.png"
+    },
+    {
+      "frame": 31,
+      "resource": "SPR_chaos_player_frame_1F",
+      "aqz_indexed": false,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "78cba96b77774d9ad59b3b13902d81218c526a550d365be70bb51735be9f92fa",
+      "png_sha256": "5c40c14a487fc3412fed54d0409cf0736fa74223b3d3933928c1afd59c342a8d",
+      "png": "sprites/SPR_chaos_player_frame_1F/9d3d80d3-b1a0-5946-a5a0-acb05a62a229.png"
+    },
+    {
+      "frame": 31,
+      "resource": "SPR_chaos_aqz_player_frame_1F",
+      "aqz_indexed": true,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "46389b8b7790b627137f1a43d77af778584d70f16b3b5d1984bdc7c9cfdc4a27",
+      "png_sha256": "8fdfbad56d3cce1787bb52991c7355ac43eea01f1a5180e5be835cbfea82ec8c",
+      "png": "sprites/SPR_chaos_aqz_player_frame_1F/07125d48-7e47-586b-83bc-82764afbe8d1.png"
+    },
+    {
+      "frame": 32,
+      "resource": "SPR_chaos_player_frame_20",
+      "aqz_indexed": false,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "da7322ce2f76e2e2259c0a5b0c3ffa61476d3cf58c3b3bc4ecacd46019abe9b3",
+      "png_sha256": "159739fe0c1373c5b5eb485bb8b054ed62e68ad4ee7974fe1e551f105ba3c7d1",
+      "png": "sprites/SPR_chaos_player_frame_20/80970fb6-53fd-5a79-9af9-7586cef81b67.png"
+    },
+    {
+      "frame": 32,
+      "resource": "SPR_chaos_aqz_player_frame_20",
+      "aqz_indexed": true,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "e437fb954feb1065b2367aa2fb73fe0a1e6303c01c9a25fea6d4b42a5fc4de27",
+      "png_sha256": "3ab8e093f287d32f72552722e8c149de45213e01a43f493b84085475332fc8ff",
+      "png": "sprites/SPR_chaos_aqz_player_frame_20/8fedb824-3538-5f21-a814-bea6ae371bbe.png"
+    },
+    {
+      "frame": 33,
+      "resource": "SPR_chaos_player_frame_21",
+      "aqz_indexed": false,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "2bb8033ff62ecca033a83aa3986cae84040e013b78525828e92ddaf6ca6b7d51",
+      "png_sha256": "3aeb1d0cd56f37dd9d508b01e43b2972e538ea1cf183ff11e757ee3bfc4fba11",
+      "png": "sprites/SPR_chaos_player_frame_21/00003c0a-4d78-5bb7-9812-a1f63e8dbe47.png"
+    },
+    {
+      "frame": 33,
+      "resource": "SPR_chaos_aqz_player_frame_21",
+      "aqz_indexed": true,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "1a5f4281919a0bf8ded80a9124a740b1f7733de5b3d9e6fc32f342387c2e8706",
+      "png_sha256": "78cdbdc0079e7a09d6631c75fce864d7e91a6af84415725b890e2b8c31eed1bc",
+      "png": "sprites/SPR_chaos_aqz_player_frame_21/e78f8bc3-23bb-5a97-a143-c5f031942252.png"
+    },
+    {
+      "frame": 97,
+      "resource": "SPR_chaos_player_frame_61",
+      "aqz_indexed": false,
+      "origin": [
+        9,
+        44
+      ],
+      "rgba_sha256": "b9112eda599ef627bee70f6b6e47473382fa501e2ada0b867a6ae090b36f0bae",
+      "png_sha256": "c17d306434267921f456e472718ed74b7d431e06958216f6377a071f1d7deae6",
+      "png": "sprites/SPR_chaos_player_frame_61/23b45bff-687f-5395-ada0-d204d758b4e0.png"
+    },
+    {
+      "frame": 97,
+      "resource": "SPR_chaos_aqz_player_frame_61",
+      "aqz_indexed": true,
+      "origin": [
+        9,
+        44
+      ],
+      "rgba_sha256": "2b708b5ee103126cd522009ccd672e47f1fe2d7b84a2caa14bda2eef8ec783b8",
+      "png_sha256": "767fe72094fe828def4ec7278eac7cd79d7643f936b9eca746bb9024e2e55eb9",
+      "png": "sprites/SPR_chaos_aqz_player_frame_61/b8b2aa28-a4b5-56a1-9c94-db73d0002015.png"
+    },
+    {
+      "frame": 37,
+      "resource": "SPR_chaos_player_frame_25",
+      "aqz_indexed": false,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "56f3a95e8fa58853db58f8a3cc9477a9d1cfa4f690ae861ce1d46a2f35b983b7",
+      "png_sha256": "652aaa4e0c5695e0b8b1f983e2c790004df0df27336fa69050d9a0bbc56d0a6e",
+      "png": "sprites/SPR_chaos_player_frame_25/4d6ee827-f025-52b6-a355-cc467980825b.png"
+    },
+    {
+      "frame": 37,
+      "resource": "SPR_chaos_aqz_player_frame_25",
+      "aqz_indexed": true,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "edc3e91472e5a13225ac952a6129b56f57e575f1357725b8351433d7def67531",
+      "png_sha256": "558d2915c29b30532417259b47ba8ccc5e5a401888539450d384d3b8063c69d3",
+      "png": "sprites/SPR_chaos_aqz_player_frame_25/c6083804-1650-52a2-875c-731180b65ba0.png"
+    },
+    {
+      "frame": 38,
+      "resource": "SPR_chaos_player_frame_26",
+      "aqz_indexed": false,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "4a289080db8537cd7b15b03e47bc0006d026659df8e0770b3124fd78109ff7a7",
+      "png_sha256": "b22a4d22c981fcb0fb045911e2a325d4ddfe8a4b835f74412900d1caefab3c97",
+      "png": "sprites/SPR_chaos_player_frame_26/509fe28c-2639-52af-861d-0327ee6d4d82.png"
+    },
+    {
+      "frame": 38,
+      "resource": "SPR_chaos_aqz_player_frame_26",
+      "aqz_indexed": true,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "0333ed904f90ba4929b434bea14678a6a6279cf1321278ff8d47754ab2b456d0",
+      "png_sha256": "7dc48d4d740c9b8cb58570d9c2e0a2dfc4a5ffee188441db87d1000cb6698078",
+      "png": "sprites/SPR_chaos_aqz_player_frame_26/ffebf145-fea3-5645-9346-d32d7b442a72.png"
+    },
+    {
+      "frame": 39,
+      "resource": "SPR_chaos_player_frame_27",
+      "aqz_indexed": false,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "6ecdda2c3387faebc29379e5abe4b7ee7068db0d3dbb83bfae84684cb8a07ffd",
+      "png_sha256": "cebc64b053b2d2c055792d08abb773c88d1a85f294386a562d96dc359d7e4171",
+      "png": "sprites/SPR_chaos_player_frame_27/8147e729-90ff-5018-912f-529e480e444c.png"
+    },
+    {
+      "frame": 39,
+      "resource": "SPR_chaos_aqz_player_frame_27",
+      "aqz_indexed": true,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "2691c78cbb42217e566597e13a6b5efe4fdb094c154ea773e14c3326793517b3",
+      "png_sha256": "d77961b9415095ae4e840e3764156b91a6677a17bdefa3aab77ad2d37a8915d9",
+      "png": "sprites/SPR_chaos_aqz_player_frame_27/6ab0e7d0-790b-5f81-a702-4b20723efbcc.png"
+    },
+    {
+      "frame": 40,
+      "resource": "SPR_chaos_player_frame_28",
+      "aqz_indexed": false,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "19c1e8e6342b30c6b97a52983f40e3cdfea4fe9d95bfc9209590715035b409b0",
+      "png_sha256": "65a17c42a6491f609cd260798877ef209d8e690a8368572f404117cd04c861f5",
+      "png": "sprites/SPR_chaos_player_frame_28/b01d53b6-42c7-5cec-861b-f5659eb91514.png"
+    },
+    {
+      "frame": 40,
+      "resource": "SPR_chaos_aqz_player_frame_28",
+      "aqz_indexed": true,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "79cf98c8e6a29b19bcec84f8ee08b26bc0559fd7815726c4f28ac59da9d0e5bb",
+      "png_sha256": "e618125d8b1c4cc9adde5c68002883eb86efabafd3f10ea5dff070128a59a074",
+      "png": "sprites/SPR_chaos_aqz_player_frame_28/4eb393a0-5887-5dca-a93d-c2cdbb1eb21d.png"
+    },
+    {
+      "frame": 41,
+      "resource": "SPR_chaos_player_frame_29",
+      "aqz_indexed": false,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "a70af7ee89a2fa6c4089ef1767d01e614e074b6b1708fc99d2559cca155a2e9c",
+      "png_sha256": "b8f6a2313cee7992b58cd7a8c69741fbcd65673165e00b692dd6d02932355a39",
+      "png": "sprites/SPR_chaos_player_frame_29/8775cc80-13d1-5b3c-a8c4-a94e7509f889.png"
+    },
+    {
+      "frame": 41,
+      "resource": "SPR_chaos_aqz_player_frame_29",
+      "aqz_indexed": true,
+      "origin": [
+        12,
+        32
+      ],
+      "rgba_sha256": "f70c7ae3cc167c0c294b04f6120ce05d145e5cb930cdd491d9f8791b4bc0ccd6",
+      "png_sha256": "4b90b458012345c57e4f4a81a41e0b539a7014b6201758fcdd4343bc1ef1a2e1",
+      "png": "sprites/SPR_chaos_aqz_player_frame_29/63d9e7d2-96e5-5799-8a9b-0782f0aa5b4a.png"
+    }
+  ]
+}

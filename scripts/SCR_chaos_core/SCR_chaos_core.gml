@@ -20,7 +20,7 @@ function SCR_cc_new(cp_x, cp_y) {
         // Footwear (docs/powerup-shoes-audit.md): queued reward mask $D3A3, Rocket hurt result, Spring Shoes owner events for the object adapter, relaunch snapshot for the object phase.
         reward_queue:0, hurt_rocket:false, owner_event:0, shoe_bounced:false, shoe_prev_vy:0, state11_exit:false,
         // SEZ S2: the +$07 animation counter the adapter computed for this update (parity picks the $753E probe depth) and the booster-pad effect count of this update.
-        probe_counter:0, booster:0};
+        probe_counter:0, presentation_counter:-1, terrain_vertical:0, booster:0, camera_y:0, air_active:false, air_ticks:0};
 }
 function SCR_cc_merge(cp_c) {
     cp_c.contacts = cp_c.bg;
@@ -146,10 +146,23 @@ function SCR_cc_project_floor(cp_c, cp_s) {
         SCR_cc_merge(cp_c);
     }
 }
-// SEZ S2 (SCR_chaos_sez_s2): the last step of the terrain pass is the $753E probe. Only zone 2 has a handler for it (surface $1A booster pad); every other zone keeps the accepted
-// behaviour. The shim lives here so the core stays executable without the SEZ scripts (verification/verify_core.js and the older control harnesses).
+// $753E final special probe: ceiling $3A/$3B dispatch precedes the existing SEZ/AQZ
+// booster adapter. Tile lookup and last terrain profile are separate ROM registers.
 function SCR_cc_terrain_probe(cp_c) {
-    return cp_c.zone == 2 ? chaos_sez_terrain_probe(cp_c) : 0;
+    var cp_states=[0,1,2,3,4,5,6,7,8,9,10,11,14,15,16,17,18,20,21,23,25,26,27,28,29,30];
+    var cp_eligible=false;for (var cp_i=0;cp_i<array_length(cp_states);cp_i++) if (cp_states[cp_i] == cp_c.state) cp_eligible=true;
+    if (!cp_eligible) return 0;
+    // $753E -> $749D: the tile is sampled at the counter-parity point, but
+    // D368 is the vertical profile left by the last $7666 terrain sample.
+    var cp_counter=cp_c.probe_counter;
+    if (cp_c.presentation_counter >= 0) cp_counter=cp_c.presentation_counter;
+    var cp_point=[floor(cp_c.xu/256),max(0,floor(cp_c.yu/256)+((cp_counter & 1) != 0 ? 2 : -8))];
+    var cp_s=SCR_cc_lookup(cp_point[0],cp_point[1],cp_c.plane);
+    if ((cp_s.tile & 254) == 58) {
+        cp_s.vertical=cp_c.terrain_vertical;
+        SCR_cc_ceiling_spring(cp_c,cp_s);
+    }
+    return (cp_c.zone == 2 || cp_c.zone == 4) ? chaos_sez_terrain_probe(cp_c) : 0;
 }
 function SCR_cc_stand(cp_c) {
     cp_c.move &= ~3; cp_c.next = 1; cp_c.vx = 0; cp_c.maximum = 1024;
@@ -357,20 +370,21 @@ function SCR_cc_floor(cp_c) {
     var cp_old_mod = cp_c.modifier; cp_c.modifier = 0;
     var cp_dy = cp_c.state == 33 ? -14 : (cp_c.state == 18 ? 8 : 0);
     var cp_s = SCR_cc_lookup(floor(cp_c.xu/256),floor(cp_c.yu/256)+18+cp_dy,cp_c.plane);
+    cp_c.terrain_vertical=cp_s.vertical;
     cp_c.tile = cp_s.tile;
     cp_c.foot_block = cp_s.tile; // $D497/$D36B are foot samples, never side/ceiling samples.
     SCR_cc_project_floor(cp_c,cp_s);
     cp_c.previous = cp_s.flags;
     var cp_kind = cp_s.flags & 31;
     // SEZ S2: surface $0C floor handler $6B79 (crumble ledge). Surface $1A's floor entry $69B1 is a bare RET: the booster is dispatched by the terrain-ring probe only (SCR_cc_booster_probe).
-    if (cp_c.zone == 2 && cp_kind == 12) { SCR_cc_crumble_floor(cp_c,cp_s); return; }
+    if ((cp_c.zone == 2 || cp_c.zone == 4) && cp_kind == 12) { SCR_cc_crumble_floor(cp_c,cp_s); return; }
     if (cp_kind == 16 && SCR_cc_route19_try(cp_c,cp_previous_block,cp_s.tile)) return;
     if (cp_kind == 18) SCR_cc_ramp(cp_c,cp_old_mod,cp_s.tile);
     else if (cp_kind == 5) {
         // $6ACE (docs/platform-spike-collision-audit.md 2.2): tile & $FE != $F4, floor flag $D522 bit 1 set (after the previous surface's projection above),
         // and +$03 bit 7 (invulnerable, move & 128) clear, then the hurt entry $48F7 DIRECTLY (not through the $48BC request gate). Nothing else: no state, no speed.
         if ((cp_s.tile & 254) != 244 && (cp_c.bg & 2) != 0 && (cp_c.move & 128) == 0) {
-            if (cp_c.zone == 3 || cp_c.zone == 2) { cp_c.hazard=1; SCR_cc_hurt_rom(cp_c); }
+            if (cp_c.zone == 3 || cp_c.zone == 2 || cp_c.zone == 4) { cp_c.hazard=1; SCR_cc_hurt_rom(cp_c); }
             else SCR_cc_terrain_hurt(cp_c);
         }
     }
@@ -424,6 +438,7 @@ function SCR_cc_sides(cp_c) {
     for (var cp_side = 0; cp_side < 2; cp_side++) {
         var cp_right = cp_side == 0;
         var cp_s = SCR_cc_lookup(floor(cp_c.xu/256)+(cp_right ? 9 : -9),floor(cp_c.yu/256)+6,cp_c.plane);
+    cp_c.terrain_vertical=cp_s.vertical;
         if (cp_right && cp_s.tile == 161 && cp_c.plane != 0) { cp_c.plane = 0; continue; }
         if (!cp_right && cp_s.tile == 162 && cp_c.plane == 0) { cp_c.plane = 1; continue; }
         var cp_kind = cp_s.flags & 31;
@@ -457,6 +472,7 @@ function SCR_cc_ceiling(cp_c) {
     if (cp_c.support == 0 && ((cp_c.bg & 2) != 0 || cp_c.vy >= 0)) return;
     var cp_y = floor(cp_c.yu/256);
     var cp_s = SCR_cc_lookup(floor(cp_c.xu/256),cp_y-6,cp_c.plane);
+    cp_c.terrain_vertical=cp_s.vertical;
     var cp_kind = cp_s.flags & 31;
     if (cp_kind == 13) {
         // $7464: owner clear -> $7898; supported rider -> direct $4984.
@@ -518,6 +534,7 @@ function SCR_cc_break16_floor(cp_c,cp_s) {
     SCR_chaos_break16_block(cp_s.index);
 }
 function SCR_cc_shared(cp_c) {
+    if (cp_c.zone == 4 && global.chaosAqzEnv.act < 3) chaos_aqz_water_update(global.chaosAqzEnv,cp_c,chaos_s2_state());
     SCR_cc_input(cp_c);
     if (cp_c.state < 5) cp_c.surface_delta = 0;
     SCR_cc_x(cp_c); SCR_cc_y(cp_c);
@@ -735,6 +752,7 @@ function SCR_cc_tick(cp_c) {
     cp_c.terrain_escape = false; cp_c.booster = 0;
     cp_c.state = cp_c.next; cp_c.sound = 0; cp_c.unsupported = 0; cp_c.hazard = 0; cp_c.hurt_pending = false; cp_c.crush_death=false;
     cp_c.owner_event = 0; cp_c.shoe_bounced = false; cp_c.hurt_rocket = false; cp_c.state11_exit = false;
+    if (cp_c.zone == 4 && (cp_c.state == $25 || cp_c.state == $1F || cp_c.state == $28)) { chaos_aqz_air_tick(global.chaosAqzEnv,cp_c);return; }
     if (cp_c.state == 34) { SCR_cc_twist_tick(cp_c); return; }
     if (cp_c.state == 19) { SCR_cc_route19_tick(cp_c); return; }
     if (cp_c.state == 17) { SCR_cc_state11_tick(cp_c); return; }
@@ -778,7 +796,7 @@ function SCR_cc_tick(cp_c) {
         else if ((cp_c.held & 2) != 0) { cp_c.vx = 0; cp_c.next = 4; cp_c.move &= ~66; }
         else if (cp_c.state == 3 || cp_c.state == 4) SCR_cc_stand(cp_c);
     } else if (cp_c.state == 5 || cp_c.state == 6 || cp_c.state == 7 || cp_c.state == 8) {
-        if ((cp_c.special&1) != 0 && SCR_cc_strip_suffix(cp_c)) return;
+        if (!cp_c.water && (cp_c.special&1) != 0 && SCR_cc_strip_suffix(cp_c)) return;
         if ((cp_c.held & 2) != 0 && (cp_c.state == 6 || (cp_c.state == 5 && ((cp_c.vx >> 8)+1 & 255) >= 2))) { SCR_cc_roll(cp_c); return; }
         if (cp_c.state != 6 && (cp_c.held & 12) == 0 && cp_speed < 32 && abs(cp_c.surface_delta) < 24) { SCR_cc_stand(cp_c); return; }
         if (cp_c.state == 5 && !cp_c.water && floor(cp_speed/256) == (cp_c.maximum >> 8)) {
@@ -803,6 +821,7 @@ function SCR_cc_tick(cp_c) {
     } else if (cp_c.state == 11 || cp_c.state == 28) {
         if (cp_ground) SCR_cc_walk(cp_c);
         else if (cp_c.vy >= 0) SCR_cc_fall(cp_c);
+        else if (cp_c.state == 11) {if ((cp_c.held&4) != 0) cp_c.player_flags |= 16;else if ((cp_c.held&8) != 0) cp_c.player_flags &= ~16;}
     } else if ((cp_c.state == 10 || cp_c.state == 14 || cp_c.state == 20 || cp_c.state == 29) && cp_ground) SCR_cc_walk(cp_c);
 }
 

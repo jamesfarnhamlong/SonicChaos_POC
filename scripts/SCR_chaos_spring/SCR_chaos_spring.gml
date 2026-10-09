@@ -33,17 +33,25 @@ function chaos_spring26_launch(cp_c, cp_strong) {
 /// GameMaker-only presentation/support side of a launch (sprite pose, support release); never part of the recovered gameplay values.
 function chaos_spring26_launch_presentation(cp_p) {
     cp_p.chaosSupport = noone; cp_p.chaosGrounded = false;
-    cp_p.chaosSpringVisual = true;
-    with (cp_p) {
-        SCR_player_sprites(); sprite_index = SPR_player_jump;
-        image_index = 0; image_speed = 0; image_angle = 0;
+    // A launch requests the next state; it must not redraw/restart the executing animation.
+}
+/// $26/$30 object callbacks see this update's final player terrain projection.
+/// GameMaker Step order must not delay contact until the following player update.
+function chaos_spring26_phase(cp_c,cp_have) {
+    var cp_types=[OBJ_chaos_object_spring_26_normal,OBJ_chaos_object_spring_26_weak,OBJ_chaos_object_spring_26_span];
+    var cp_before=cp_have ? cp_c.next : -1;
+    var cp_vy=cp_have ? cp_c.vy : 0;
+    for (var cp_t=0;cp_t<array_length(cp_types);cp_t++) {
+        for (var cp_i=0;cp_i<instance_number(cp_types[cp_t]);cp_i++)
+            SCR_chaos_object_spring_step(instance_find(cp_types[cp_t],cp_i));
     }
+    return cp_have && (cp_c.next != cp_before || cp_c.vy != cp_vy);
 }
 /// One object update. State 7 = fixed rest, 8 = span rest, 9 = span launch (pending), 1/3 extend, 2/4 hold, 5/6 retract (strong 1/2/5, weak 3/4/6).
 /// The extension timeline reproduces the emulated original: 4 extension updates, hold, 4 retract updates, contact evaluated again 42 (strong) / 20 (weak)
 /// updates after the launch update.
 function SCR_chaos_object_spring_step(cp_o) {
-    if (chaos_is_sez()) {
+    if ((chaos_is_sez() || chaos_is_aqz())) {
         if (!chaos_sez_mapped_awake(cp_o,cp_o.chaosBaseX,cp_o.chaosLayoutY+12)) return;
         if (cp_o.chaosSezRecreated) {
             cp_o.chaosState=cp_o.chaosRestState; cp_o.chaosTimer=0; cp_o.chaosOffset=0;

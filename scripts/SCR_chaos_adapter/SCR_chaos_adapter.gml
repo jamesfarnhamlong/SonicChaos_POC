@@ -4,10 +4,11 @@ function SCR_chaos_core_attach(cp_p) {
     if (!variable_global_exists("chaosMovementTables")) SCR_chaos_core_data();
     // Stable sprite-to-ROM anchor; never derive physics probes from animated bbox.
     cp_p.chaosAnchorOffset = 18 - (sprite_get_bbox_bottom(SPR_player_mask)-sprite_get_yoffset(SPR_player_mask));
+    cp_p.mask_index = SPR_player_mask; // presentation changes never replace the retained engine collision mask
     cp_p.chaosCore = SCR_cc_new(cp_p.x, cp_p.y-cp_p.chaosAnchorOffset);
-    cp_p.chaosCore.zone = chaos_is_sez() ? 2 : (chaos_is_mghz() ? 3 : (chaos_is_gpz() ? 1 : 0));
+    cp_p.chaosCore.zone = chaos_is_aqz() ? 4 : (chaos_is_sez() ? 2 : (chaos_is_mghz() ? 3 : (chaos_is_gpz() ? 1 : 0)));
     cp_p.chaosCore.level = cp_p.chaosCore.zone;
-    if (chaos_is_gpz() || chaos_is_mghz() || chaos_is_sez()) cp_p.chaosCore.yu=round(cp_p.y*256); // Research loader start is the canonical anchor, before the sprite adapter.
+    if (chaos_is_gpz() || chaos_is_mghz() || chaos_is_sez() || chaos_is_aqz()) cp_p.chaosCore.yu=round(cp_p.y*256); // Research loader start is the canonical anchor, before the sprite adapter.
     cp_p.chaosCore.previous = SCR_cc_lookup(cp_p.x,cp_p.chaosCore.yu/256+18,0).flags;
     cp_p.chaosCore.vx = round(cp_p.hspeed*256);
     cp_p.chaosCore.vy = round(cp_p.vspeed*256);
@@ -45,6 +46,7 @@ function SCR_chaos_core_publish(cp_p) {
 }
 function SCR_chaos_core_sprites(cp_p) {
     var cp_c = cp_p.chaosCore;
+    if (chaos_player_animation_present(cp_p)) return;
     with (cp_p) {
         SCR_player_sprites();
         var cp_footwear = cp_c.state == $11 || cp_c.next == $11 || cp_c.state == $12 || cp_c.next == $12;
@@ -58,7 +60,8 @@ function SCR_chaos_core_sprites(cp_p) {
         var cp_hurt_visual = cp_c.state == $1E || cp_c.next == $1E;
         // Task 07: exact ROM frames $38/$39/$3A. The core owns the canonical
         // 8/4/8/4 timing; GameMaker animation timing is deliberately disabled.
-        if (cp_state11_visual) cp_sprite = SPR_chaos_player_state_11;
+        if (chaos_is_aqz() && cp_c.state == $25) cp_sprite=SPR_chaos_aqz_air_recovery;
+        else if (cp_state11_visual) cp_sprite = SPR_chaos_player_state_11;
         else if (cp_state12_visual) cp_sprite = SPR_player_jump;   // state $12's script is the single spring-pose record $0B
         else if (cp_hurt_visual) cp_sprite = SPR_player_falling;
         // State $20 owns the run-off animation. The ROM handoff can retain
@@ -151,6 +154,7 @@ function SCR_chaos_adapter_step(cp_p) {
     SCR_cc_merge(cp_c);
     cp_c.state11_active = global.chaosPowerTimer > 0;   // $D44C != 0 (the callback tests the shared timer, not the selector)
     cp_c.state11_camera_y = floor(camera_get_view_y(view_camera[0]));
+    cp_c.camera_y = floor(camera_get_view_y(view_camera[0]));
     cp_c.camera_x = floor(camera_get_view_x(view_camera[0])); // state $20 act-clear threshold input
     cp_c.clear_dx = chaos_goal_clear_dx(camera_get_view_width(view_camera[0])); // widescreen adapter: view right edge + 33 (canonical $121 on the 256 px screen)
     // Dedicated GameMaker adapter resolves breakable $47 before the ordinary
@@ -165,7 +169,11 @@ function SCR_chaos_adapter_step(cp_p) {
     cp_c.probe_counter = cp_anim_t; // $753E parity for the SEZ booster dispatch inside the terrain pass
     if (chaos_is_mghz()) cp_c.frame_counter = global.chaosMghzEffects.frame;
     if (chaos_is_sez()) cp_c.frame_counter = global.chaosSezEffects.frame;
+    if (chaos_is_aqz()) cp_c.frame_counter=global.chaosAqzEnv.d12f;
+    chaos_player_animation_update(cp_c); // executing-state program, before movement/callback
+    cp_c.presentation_counter=cp_c.visual_anim.active ? cp_c.visual_anim.counter : -1;
     SCR_cc_tick(cp_c);
+    if (chaos_is_aqz()) global.playerWater=cp_c.water != 0;
     SCR_chaos_footwear_phase(cp_p,cp_c);
     // Widescreen room boundary adapter. Original camera-relative 256px clipping is omitted.
     // State $20 runs past the map edge exactly as the ROM does (shared terrain lookup), so the boundary adapter yields to it.
@@ -197,7 +205,7 @@ function SCR_chaos_adapter_step(cp_p) {
     }
     // $48BC: the damage gate runs once at the end of every player update (a static-spike hurt already ran inside the terrain pass). Recovered hurt consequences are applied
     // to the GameMaker side here; every other damage source keeps the sample-engine path (SCR_chaos_sample_damage -> SCR_chaos_apply_hazard_damage), outside this milestone.
-    if (!cp_c.crush_death && cp_c.state != 19) SCR_cc_damage_gate(cp_c); // direct $4984 bypasses the hurt gate
+    if (!cp_c.crush_death && cp_c.state != 19 && cp_c.state != $25 && cp_c.state != $1F && cp_c.state != $28) SCR_cc_damage_gate(cp_c); // direct $4984 bypasses the hurt gate
     SCR_chaos_hurt_apply(cp_p);
     if (!cp_c.hurt_pending) with (cp_p) { SCR_chaos_sample_damage(); }
 }
@@ -217,7 +225,7 @@ function SCR_chaos_adapter_end(cp_p) {
 }
 // Mapped type $26 spring logic lives in SCR_chaos_spring (recovered ROM model); only its drawing remains here.
 function SCR_chaos_object_spring_draw(cp_o) {
-    if (chaos_is_sez() && (!cp_o.chaosLive || cp_o.chaosAsleep)) return;
+    if ((chaos_is_sez() || chaos_is_aqz()) && (!cp_o.chaosLive || cp_o.chaosAsleep)) return;
     if (cp_o.chaosOffset <= 0) return; // Original frame zero is concealed.
     var cp_cap_y = cp_o.chaosBaseY-cp_o.chaosOffset;
     draw_set_color(make_color_rgb(230,230,230));
@@ -226,7 +234,9 @@ function SCR_chaos_object_spring_draw(cp_o) {
         draw_line_width(cp_o.chaosDrawX-cp_side,cp_y,cp_o.chaosDrawX+cp_side,cp_y+4,2);
     }
     draw_set_color(c_white);
-    draw_sprite(chaos_is_sez() ? SPR_chaos_sez_spring : (chaos_is_gpz() ? SPR_chaos_gpz_spring : SPR_chaos_object_26),0,cp_o.chaosDrawX,cp_cap_y+17);
+    chaos_aqz_palette_begin(false);
+    draw_sprite(chaos_is_aqz() ? SPR_chaos_aqz_spring : (chaos_is_sez() ? SPR_chaos_sez_spring : (chaos_is_gpz() ? SPR_chaos_gpz_spring : SPR_chaos_object_26)),0,cp_o.chaosDrawX,cp_cap_y+17);
+    chaos_aqz_palette_end();
 }
 
 function SCR_chaos_cancel_state11(cp_p) {
@@ -379,7 +389,7 @@ function SCR_chaos_object_floor_project(cp_x, cp_y) {
 function SCR_chaos_type21_top_bounce(cp_p) {
     if (!variable_instance_exists(cp_p,"chaosCore")) SCR_chaos_core_attach(cp_p);
     var cp_c = cp_p.chaosCore;
-    cp_c.vy = -1728;
+    cp_c.vy = -1728; cp_c.d448=255;
     cp_c.next = 11;
     cp_c.move = (cp_c.move|1)&~2;
     cp_c.bg &= ~2; cp_c.contacts &= ~2;
@@ -476,6 +486,10 @@ function SCR_chaos_spike_draw(cp_o) {
 function SCR_chaos_sample_damage() {
     if (place_meeting(x,y,OBJ_collision_death)) SCR_chaos_apply_hazard_damage(id);
     // Recovered death rule ($401A): fatal iff the SIGNED screen Y (anchor Y - camera Y) is >= $D0. Above the camera is never fatal. (Non-core objects keep the room test.)
+    if (chaos_is_aqz() && variable_instance_exists(id,"chaosCore") && (chaosCore.state == $25 || chaosCore.state == $1F || chaosCore.state == $28 || chaosCore.next == $1F)) {
+        if (global.chaosAqzEnv.death) { instance_change(OBJ_player_death,true); }
+        return;
+    }
     var cp_fatal = variable_instance_exists(id,"chaosCore") ? chaos_vertical_death(chaosCore.yu, camera_get_view_y(view_camera[0])) : (y > room_height);
     if (cp_fatal) { instance_change(OBJ_player_death,true); return; }
     // Shared recovered damage path: stage the request $D3B0; $48BC hurts Sonic in his next update.
@@ -502,7 +516,8 @@ function SCR_chaos_break16_block(cp_index) {
     var cp_width=global.chaosMapWidth;
     var cp_fx=instance_create_depth((cp_index mod cp_width)*32+16,(cp_index div cp_width)*32+8,-20,OBJ_chaos_object_0F_transient);
     cp_fx.chaosParameter=$40;
-    if (chaos_is_sez()) cp_fx.sprite_index=SPR_chaos_sez_poof;
+    if (chaos_is_aqz()) cp_fx.sprite_index=SPR_chaos_aqz_poof;
+    else if (chaos_is_sez()) cp_fx.sprite_index=SPR_chaos_sez_poof;
     else if (chaos_is_gpz()) cp_fx.sprite_index=SPR_chaos_gpz_poof;
 }
 

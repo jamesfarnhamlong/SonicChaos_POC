@@ -2,7 +2,7 @@
   "$GMSprite": "v2",
   "%Name": "SPR_CHAOS_mask_07",
   "bboxMode": 1,
-  "bbox_bottom": 23,
+  "bbox_bottom": 31,
   "bbox_left": 0,
   "bbox_right": 31,
   "bbox_top": 0,
@@ -41,7 +41,10 @@
   "name": "SPR_CHAOS_mask_07",
   "nineSlice": null,
   "origin": 0,
-  "parent": {"name": "Collision Helpers", "path": "folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy"},
+  "parent": {
+    "name": "Collision Helpers",
+    "path": "folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy"
+  },
   "preMultiplyAlpha": false,
   "resourceType": "GMSprite",
   "resourceVersion": "2.0",

@@ -1,0 +1,2896 @@
+{
+  "evidence": "CONTROLLED ORIGINAL Z80 ROUTINE; accepted Research RenderOracle and aqz_water.lab",
+  "research": "81b82941e7f44865e0d551484bee82d28d600d43",
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "water": [
+    {
+      "vx": 767,
+      "high_signed": 2,
+      "vy_before": -768,
+      "attack": 0,
+      "vy_after": -768
+    },
+    {
+      "vx": 767,
+      "high_signed": 2,
+      "vy_before": -768,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": 767,
+      "high_signed": 2,
+      "vy_before": -1,
+      "attack": 0,
+      "vy_after": -1
+    },
+    {
+      "vx": 767,
+      "high_signed": 2,
+      "vy_before": -1,
+      "attack": 2,
+      "vy_after": -1
+    },
+    {
+      "vx": 767,
+      "high_signed": 2,
+      "vy_before": 0,
+      "attack": 0,
+      "vy_after": 0
+    },
+    {
+      "vx": 767,
+      "high_signed": 2,
+      "vy_before": 0,
+      "attack": 2,
+      "vy_after": 0
+    },
+    {
+      "vx": 767,
+      "high_signed": 2,
+      "vy_before": 1,
+      "attack": 0,
+      "vy_after": 1
+    },
+    {
+      "vx": 767,
+      "high_signed": 2,
+      "vy_before": 1,
+      "attack": 2,
+      "vy_after": 1
+    },
+    {
+      "vx": 767,
+      "high_signed": 2,
+      "vy_before": 256,
+      "attack": 0,
+      "vy_after": 256
+    },
+    {
+      "vx": 767,
+      "high_signed": 2,
+      "vy_before": 256,
+      "attack": 2,
+      "vy_after": 256
+    },
+    {
+      "vx": 768,
+      "high_signed": 3,
+      "vy_before": -768,
+      "attack": 0,
+      "vy_after": -768
+    },
+    {
+      "vx": 768,
+      "high_signed": 3,
+      "vy_before": -768,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": 768,
+      "high_signed": 3,
+      "vy_before": -1,
+      "attack": 0,
+      "vy_after": -1
+    },
+    {
+      "vx": 768,
+      "high_signed": 3,
+      "vy_before": -1,
+      "attack": 2,
+      "vy_after": -1
+    },
+    {
+      "vx": 768,
+      "high_signed": 3,
+      "vy_before": 0,
+      "attack": 0,
+      "vy_after": 0
+    },
+    {
+      "vx": 768,
+      "high_signed": 3,
+      "vy_before": 0,
+      "attack": 2,
+      "vy_after": 0
+    },
+    {
+      "vx": 768,
+      "high_signed": 3,
+      "vy_before": 1,
+      "attack": 0,
+      "vy_after": 1
+    },
+    {
+      "vx": 768,
+      "high_signed": 3,
+      "vy_before": 1,
+      "attack": 2,
+      "vy_after": 1
+    },
+    {
+      "vx": 768,
+      "high_signed": 3,
+      "vy_before": 256,
+      "attack": 0,
+      "vy_after": 256
+    },
+    {
+      "vx": 768,
+      "high_signed": 3,
+      "vy_before": 256,
+      "attack": 2,
+      "vy_after": 256
+    },
+    {
+      "vx": 769,
+      "high_signed": 3,
+      "vy_before": -768,
+      "attack": 0,
+      "vy_after": -768
+    },
+    {
+      "vx": 769,
+      "high_signed": 3,
+      "vy_before": -768,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": 769,
+      "high_signed": 3,
+      "vy_before": -1,
+      "attack": 0,
+      "vy_after": -1
+    },
+    {
+      "vx": 769,
+      "high_signed": 3,
+      "vy_before": -1,
+      "attack": 2,
+      "vy_after": -1
+    },
+    {
+      "vx": 769,
+      "high_signed": 3,
+      "vy_before": 0,
+      "attack": 0,
+      "vy_after": 0
+    },
+    {
+      "vx": 769,
+      "high_signed": 3,
+      "vy_before": 0,
+      "attack": 2,
+      "vy_after": 0
+    },
+    {
+      "vx": 769,
+      "high_signed": 3,
+      "vy_before": 1,
+      "attack": 0,
+      "vy_after": 1
+    },
+    {
+      "vx": 769,
+      "high_signed": 3,
+      "vy_before": 1,
+      "attack": 2,
+      "vy_after": 1
+    },
+    {
+      "vx": 769,
+      "high_signed": 3,
+      "vy_before": 256,
+      "attack": 0,
+      "vy_after": 256
+    },
+    {
+      "vx": 769,
+      "high_signed": 3,
+      "vy_before": 256,
+      "attack": 2,
+      "vy_after": 256
+    },
+    {
+      "vx": 1023,
+      "high_signed": 3,
+      "vy_before": -768,
+      "attack": 0,
+      "vy_after": -768
+    },
+    {
+      "vx": 1023,
+      "high_signed": 3,
+      "vy_before": -768,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": 1023,
+      "high_signed": 3,
+      "vy_before": -1,
+      "attack": 0,
+      "vy_after": -1
+    },
+    {
+      "vx": 1023,
+      "high_signed": 3,
+      "vy_before": -1,
+      "attack": 2,
+      "vy_after": -1
+    },
+    {
+      "vx": 1023,
+      "high_signed": 3,
+      "vy_before": 0,
+      "attack": 0,
+      "vy_after": 0
+    },
+    {
+      "vx": 1023,
+      "high_signed": 3,
+      "vy_before": 0,
+      "attack": 2,
+      "vy_after": 0
+    },
+    {
+      "vx": 1023,
+      "high_signed": 3,
+      "vy_before": 1,
+      "attack": 0,
+      "vy_after": 1
+    },
+    {
+      "vx": 1023,
+      "high_signed": 3,
+      "vy_before": 1,
+      "attack": 2,
+      "vy_after": 1
+    },
+    {
+      "vx": 1023,
+      "high_signed": 3,
+      "vy_before": 256,
+      "attack": 0,
+      "vy_after": 256
+    },
+    {
+      "vx": 1023,
+      "high_signed": 3,
+      "vy_before": 256,
+      "attack": 2,
+      "vy_after": 256
+    },
+    {
+      "vx": 1024,
+      "high_signed": 4,
+      "vy_before": -768,
+      "attack": 0,
+      "vy_after": -768
+    },
+    {
+      "vx": 1024,
+      "high_signed": 4,
+      "vy_before": -768,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": 1024,
+      "high_signed": 4,
+      "vy_before": -1,
+      "attack": 0,
+      "vy_after": -1
+    },
+    {
+      "vx": 1024,
+      "high_signed": 4,
+      "vy_before": -1,
+      "attack": 2,
+      "vy_after": -1
+    },
+    {
+      "vx": 1024,
+      "high_signed": 4,
+      "vy_before": 0,
+      "attack": 0,
+      "vy_after": 0
+    },
+    {
+      "vx": 1024,
+      "high_signed": 4,
+      "vy_before": 0,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": 1024,
+      "high_signed": 4,
+      "vy_before": 1,
+      "attack": 0,
+      "vy_after": 1
+    },
+    {
+      "vx": 1024,
+      "high_signed": 4,
+      "vy_before": 1,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": 1024,
+      "high_signed": 4,
+      "vy_before": 256,
+      "attack": 0,
+      "vy_after": 256
+    },
+    {
+      "vx": 1024,
+      "high_signed": 4,
+      "vy_before": 256,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": 1025,
+      "high_signed": 4,
+      "vy_before": -768,
+      "attack": 0,
+      "vy_after": -768
+    },
+    {
+      "vx": 1025,
+      "high_signed": 4,
+      "vy_before": -768,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": 1025,
+      "high_signed": 4,
+      "vy_before": -1,
+      "attack": 0,
+      "vy_after": -1
+    },
+    {
+      "vx": 1025,
+      "high_signed": 4,
+      "vy_before": -1,
+      "attack": 2,
+      "vy_after": -1
+    },
+    {
+      "vx": 1025,
+      "high_signed": 4,
+      "vy_before": 0,
+      "attack": 0,
+      "vy_after": 0
+    },
+    {
+      "vx": 1025,
+      "high_signed": 4,
+      "vy_before": 0,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": 1025,
+      "high_signed": 4,
+      "vy_before": 1,
+      "attack": 0,
+      "vy_after": 1
+    },
+    {
+      "vx": 1025,
+      "high_signed": 4,
+      "vy_before": 1,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": 1025,
+      "high_signed": 4,
+      "vy_before": 256,
+      "attack": 0,
+      "vy_after": 256
+    },
+    {
+      "vx": 1025,
+      "high_signed": 4,
+      "vy_before": 256,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": 1279,
+      "high_signed": 4,
+      "vy_before": -768,
+      "attack": 0,
+      "vy_after": -768
+    },
+    {
+      "vx": 1279,
+      "high_signed": 4,
+      "vy_before": -768,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": 1279,
+      "high_signed": 4,
+      "vy_before": -1,
+      "attack": 0,
+      "vy_after": -1
+    },
+    {
+      "vx": 1279,
+      "high_signed": 4,
+      "vy_before": -1,
+      "attack": 2,
+      "vy_after": -1
+    },
+    {
+      "vx": 1279,
+      "high_signed": 4,
+      "vy_before": 0,
+      "attack": 0,
+      "vy_after": 0
+    },
+    {
+      "vx": 1279,
+      "high_signed": 4,
+      "vy_before": 0,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": 1279,
+      "high_signed": 4,
+      "vy_before": 1,
+      "attack": 0,
+      "vy_after": 1
+    },
+    {
+      "vx": 1279,
+      "high_signed": 4,
+      "vy_before": 1,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": 1279,
+      "high_signed": 4,
+      "vy_before": 256,
+      "attack": 0,
+      "vy_after": 256
+    },
+    {
+      "vx": 1279,
+      "high_signed": 4,
+      "vy_before": 256,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": 1280,
+      "high_signed": 5,
+      "vy_before": -768,
+      "attack": 0,
+      "vy_after": -768
+    },
+    {
+      "vx": 1280,
+      "high_signed": 5,
+      "vy_before": -768,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": 1280,
+      "high_signed": 5,
+      "vy_before": -1,
+      "attack": 0,
+      "vy_after": -1
+    },
+    {
+      "vx": 1280,
+      "high_signed": 5,
+      "vy_before": -1,
+      "attack": 2,
+      "vy_after": -1
+    },
+    {
+      "vx": 1280,
+      "high_signed": 5,
+      "vy_before": 0,
+      "attack": 0,
+      "vy_after": 0
+    },
+    {
+      "vx": 1280,
+      "high_signed": 5,
+      "vy_before": 0,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": 1280,
+      "high_signed": 5,
+      "vy_before": 1,
+      "attack": 0,
+      "vy_after": 1
+    },
+    {
+      "vx": 1280,
+      "high_signed": 5,
+      "vy_before": 1,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": 1280,
+      "high_signed": 5,
+      "vy_before": 256,
+      "attack": 0,
+      "vy_after": 256
+    },
+    {
+      "vx": 1280,
+      "high_signed": 5,
+      "vy_before": 256,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -767,
+      "high_signed": -3,
+      "vy_before": -768,
+      "attack": 0,
+      "vy_after": -768
+    },
+    {
+      "vx": -767,
+      "high_signed": -3,
+      "vy_before": -768,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -767,
+      "high_signed": -3,
+      "vy_before": -1,
+      "attack": 0,
+      "vy_after": -1
+    },
+    {
+      "vx": -767,
+      "high_signed": -3,
+      "vy_before": -1,
+      "attack": 2,
+      "vy_after": -1
+    },
+    {
+      "vx": -767,
+      "high_signed": -3,
+      "vy_before": 0,
+      "attack": 0,
+      "vy_after": 0
+    },
+    {
+      "vx": -767,
+      "high_signed": -3,
+      "vy_before": 0,
+      "attack": 2,
+      "vy_after": 0
+    },
+    {
+      "vx": -767,
+      "high_signed": -3,
+      "vy_before": 1,
+      "attack": 0,
+      "vy_after": 1
+    },
+    {
+      "vx": -767,
+      "high_signed": -3,
+      "vy_before": 1,
+      "attack": 2,
+      "vy_after": 1
+    },
+    {
+      "vx": -767,
+      "high_signed": -3,
+      "vy_before": 256,
+      "attack": 0,
+      "vy_after": 256
+    },
+    {
+      "vx": -767,
+      "high_signed": -3,
+      "vy_before": 256,
+      "attack": 2,
+      "vy_after": 256
+    },
+    {
+      "vx": -768,
+      "high_signed": -3,
+      "vy_before": -768,
+      "attack": 0,
+      "vy_after": -768
+    },
+    {
+      "vx": -768,
+      "high_signed": -3,
+      "vy_before": -768,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -768,
+      "high_signed": -3,
+      "vy_before": -1,
+      "attack": 0,
+      "vy_after": -1
+    },
+    {
+      "vx": -768,
+      "high_signed": -3,
+      "vy_before": -1,
+      "attack": 2,
+      "vy_after": -1
+    },
+    {
+      "vx": -768,
+      "high_signed": -3,
+      "vy_before": 0,
+      "attack": 0,
+      "vy_after": 0
+    },
+    {
+      "vx": -768,
+      "high_signed": -3,
+      "vy_before": 0,
+      "attack": 2,
+      "vy_after": 0
+    },
+    {
+      "vx": -768,
+      "high_signed": -3,
+      "vy_before": 1,
+      "attack": 0,
+      "vy_after": 1
+    },
+    {
+      "vx": -768,
+      "high_signed": -3,
+      "vy_before": 1,
+      "attack": 2,
+      "vy_after": 1
+    },
+    {
+      "vx": -768,
+      "high_signed": -3,
+      "vy_before": 256,
+      "attack": 0,
+      "vy_after": 256
+    },
+    {
+      "vx": -768,
+      "high_signed": -3,
+      "vy_before": 256,
+      "attack": 2,
+      "vy_after": 256
+    },
+    {
+      "vx": -769,
+      "high_signed": -4,
+      "vy_before": -768,
+      "attack": 0,
+      "vy_after": -768
+    },
+    {
+      "vx": -769,
+      "high_signed": -4,
+      "vy_before": -768,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -769,
+      "high_signed": -4,
+      "vy_before": -1,
+      "attack": 0,
+      "vy_after": -1
+    },
+    {
+      "vx": -769,
+      "high_signed": -4,
+      "vy_before": -1,
+      "attack": 2,
+      "vy_after": -1
+    },
+    {
+      "vx": -769,
+      "high_signed": -4,
+      "vy_before": 0,
+      "attack": 0,
+      "vy_after": 0
+    },
+    {
+      "vx": -769,
+      "high_signed": -4,
+      "vy_before": 0,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -769,
+      "high_signed": -4,
+      "vy_before": 1,
+      "attack": 0,
+      "vy_after": 1
+    },
+    {
+      "vx": -769,
+      "high_signed": -4,
+      "vy_before": 1,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -769,
+      "high_signed": -4,
+      "vy_before": 256,
+      "attack": 0,
+      "vy_after": 256
+    },
+    {
+      "vx": -769,
+      "high_signed": -4,
+      "vy_before": 256,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -1023,
+      "high_signed": -4,
+      "vy_before": -768,
+      "attack": 0,
+      "vy_after": -768
+    },
+    {
+      "vx": -1023,
+      "high_signed": -4,
+      "vy_before": -768,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -1023,
+      "high_signed": -4,
+      "vy_before": -1,
+      "attack": 0,
+      "vy_after": -1
+    },
+    {
+      "vx": -1023,
+      "high_signed": -4,
+      "vy_before": -1,
+      "attack": 2,
+      "vy_after": -1
+    },
+    {
+      "vx": -1023,
+      "high_signed": -4,
+      "vy_before": 0,
+      "attack": 0,
+      "vy_after": 0
+    },
+    {
+      "vx": -1023,
+      "high_signed": -4,
+      "vy_before": 0,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -1023,
+      "high_signed": -4,
+      "vy_before": 1,
+      "attack": 0,
+      "vy_after": 1
+    },
+    {
+      "vx": -1023,
+      "high_signed": -4,
+      "vy_before": 1,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -1023,
+      "high_signed": -4,
+      "vy_before": 256,
+      "attack": 0,
+      "vy_after": 256
+    },
+    {
+      "vx": -1023,
+      "high_signed": -4,
+      "vy_before": 256,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -1024,
+      "high_signed": -4,
+      "vy_before": -768,
+      "attack": 0,
+      "vy_after": -768
+    },
+    {
+      "vx": -1024,
+      "high_signed": -4,
+      "vy_before": -768,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -1024,
+      "high_signed": -4,
+      "vy_before": -1,
+      "attack": 0,
+      "vy_after": -1
+    },
+    {
+      "vx": -1024,
+      "high_signed": -4,
+      "vy_before": -1,
+      "attack": 2,
+      "vy_after": -1
+    },
+    {
+      "vx": -1024,
+      "high_signed": -4,
+      "vy_before": 0,
+      "attack": 0,
+      "vy_after": 0
+    },
+    {
+      "vx": -1024,
+      "high_signed": -4,
+      "vy_before": 0,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -1024,
+      "high_signed": -4,
+      "vy_before": 1,
+      "attack": 0,
+      "vy_after": 1
+    },
+    {
+      "vx": -1024,
+      "high_signed": -4,
+      "vy_before": 1,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -1024,
+      "high_signed": -4,
+      "vy_before": 256,
+      "attack": 0,
+      "vy_after": 256
+    },
+    {
+      "vx": -1024,
+      "high_signed": -4,
+      "vy_before": 256,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -1025,
+      "high_signed": -5,
+      "vy_before": -768,
+      "attack": 0,
+      "vy_after": -768
+    },
+    {
+      "vx": -1025,
+      "high_signed": -5,
+      "vy_before": -768,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -1025,
+      "high_signed": -5,
+      "vy_before": -1,
+      "attack": 0,
+      "vy_after": -1
+    },
+    {
+      "vx": -1025,
+      "high_signed": -5,
+      "vy_before": -1,
+      "attack": 2,
+      "vy_after": -1
+    },
+    {
+      "vx": -1025,
+      "high_signed": -5,
+      "vy_before": 0,
+      "attack": 0,
+      "vy_after": 0
+    },
+    {
+      "vx": -1025,
+      "high_signed": -5,
+      "vy_before": 0,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -1025,
+      "high_signed": -5,
+      "vy_before": 1,
+      "attack": 0,
+      "vy_after": 1
+    },
+    {
+      "vx": -1025,
+      "high_signed": -5,
+      "vy_before": 1,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -1025,
+      "high_signed": -5,
+      "vy_before": 256,
+      "attack": 0,
+      "vy_after": 256
+    },
+    {
+      "vx": -1025,
+      "high_signed": -5,
+      "vy_before": 256,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -1279,
+      "high_signed": -5,
+      "vy_before": -768,
+      "attack": 0,
+      "vy_after": -768
+    },
+    {
+      "vx": -1279,
+      "high_signed": -5,
+      "vy_before": -768,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -1279,
+      "high_signed": -5,
+      "vy_before": -1,
+      "attack": 0,
+      "vy_after": -1
+    },
+    {
+      "vx": -1279,
+      "high_signed": -5,
+      "vy_before": -1,
+      "attack": 2,
+      "vy_after": -1
+    },
+    {
+      "vx": -1279,
+      "high_signed": -5,
+      "vy_before": 0,
+      "attack": 0,
+      "vy_after": 0
+    },
+    {
+      "vx": -1279,
+      "high_signed": -5,
+      "vy_before": 0,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -1279,
+      "high_signed": -5,
+      "vy_before": 1,
+      "attack": 0,
+      "vy_after": 1
+    },
+    {
+      "vx": -1279,
+      "high_signed": -5,
+      "vy_before": 1,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -1279,
+      "high_signed": -5,
+      "vy_before": 256,
+      "attack": 0,
+      "vy_after": 256
+    },
+    {
+      "vx": -1279,
+      "high_signed": -5,
+      "vy_before": 256,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -1280,
+      "high_signed": -5,
+      "vy_before": -768,
+      "attack": 0,
+      "vy_after": -768
+    },
+    {
+      "vx": -1280,
+      "high_signed": -5,
+      "vy_before": -768,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -1280,
+      "high_signed": -5,
+      "vy_before": -1,
+      "attack": 0,
+      "vy_after": -1
+    },
+    {
+      "vx": -1280,
+      "high_signed": -5,
+      "vy_before": -1,
+      "attack": 2,
+      "vy_after": -1
+    },
+    {
+      "vx": -1280,
+      "high_signed": -5,
+      "vy_before": 0,
+      "attack": 0,
+      "vy_after": 0
+    },
+    {
+      "vx": -1280,
+      "high_signed": -5,
+      "vy_before": 0,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -1280,
+      "high_signed": -5,
+      "vy_before": 1,
+      "attack": 0,
+      "vy_after": 1
+    },
+    {
+      "vx": -1280,
+      "high_signed": -5,
+      "vy_before": 1,
+      "attack": 2,
+      "vy_after": -768
+    },
+    {
+      "vx": -1280,
+      "high_signed": -5,
+      "vy_before": 256,
+      "attack": 0,
+      "vy_after": 256
+    },
+    {
+      "vx": -1280,
+      "high_signed": -5,
+      "vy_before": 256,
+      "attack": 2,
+      "vy_after": -768
+    }
+  ],
+  "renderer": [
+    {
+      "frame": 1,
+      "facing": 0,
+      "result": {
+        "piece_count": 7,
+        "frame_record_field_2A": "0x8191",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          69,
+          69,
+          69,
+          85,
+          85,
+          85,
+          85
+        ],
+        "sat_x": [
+          112,
+          120,
+          128,
+          112,
+          120,
+          128,
+          136
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12
+        ]
+      }
+    },
+    {
+      "frame": 1,
+      "facing": 16,
+      "result": {
+        "piece_count": 7,
+        "frame_record_field_2A": "0x8191",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          69,
+          69,
+          69,
+          85,
+          85,
+          85,
+          85
+        ],
+        "sat_x": [
+          136,
+          128,
+          120,
+          136,
+          128,
+          120,
+          112
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12
+        ]
+      }
+    },
+    {
+      "frame": 2,
+      "facing": 0,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x819C",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          69,
+          69,
+          69,
+          85,
+          85,
+          85
+        ],
+        "sat_x": [
+          113,
+          121,
+          129,
+          113,
+          121,
+          129
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 2,
+      "facing": 16,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x819C",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          69,
+          69,
+          69,
+          85,
+          85,
+          85
+        ],
+        "sat_x": [
+          135,
+          127,
+          119,
+          135,
+          127,
+          119
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 3,
+      "facing": 0,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x81A7",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          69,
+          69,
+          69,
+          85,
+          85,
+          85
+        ],
+        "sat_x": [
+          114,
+          122,
+          130,
+          114,
+          122,
+          130
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 3,
+      "facing": 16,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x81A7",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          69,
+          69,
+          69,
+          85,
+          85,
+          85
+        ],
+        "sat_x": [
+          134,
+          126,
+          118,
+          134,
+          126,
+          118
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 4,
+      "facing": 0,
+      "result": {
+        "piece_count": 7,
+        "frame_record_field_2A": "0x81B2",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          69,
+          69,
+          69,
+          85,
+          85,
+          85,
+          85
+        ],
+        "sat_x": [
+          114,
+          122,
+          130,
+          114,
+          122,
+          130,
+          138
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12
+        ]
+      }
+    },
+    {
+      "frame": 4,
+      "facing": 16,
+      "result": {
+        "piece_count": 7,
+        "frame_record_field_2A": "0x81B2",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          69,
+          69,
+          69,
+          85,
+          85,
+          85,
+          85
+        ],
+        "sat_x": [
+          134,
+          126,
+          118,
+          134,
+          126,
+          118,
+          110
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12
+        ]
+      }
+    },
+    {
+      "frame": 5,
+      "facing": 0,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x81BD",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          69,
+          69,
+          69,
+          85,
+          85,
+          85
+        ],
+        "sat_x": [
+          113,
+          121,
+          129,
+          113,
+          121,
+          129
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 5,
+      "facing": 16,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x81BD",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          69,
+          69,
+          69,
+          85,
+          85,
+          85
+        ],
+        "sat_x": [
+          135,
+          127,
+          119,
+          135,
+          127,
+          119
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 6,
+      "facing": 0,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x81C8",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          69,
+          69,
+          69,
+          85,
+          85,
+          85
+        ],
+        "sat_x": [
+          112,
+          120,
+          128,
+          112,
+          120,
+          128
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 6,
+      "facing": 16,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x81C8",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          69,
+          69,
+          69,
+          85,
+          85,
+          85
+        ],
+        "sat_x": [
+          136,
+          128,
+          120,
+          136,
+          128,
+          120
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 28,
+      "facing": 0,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x82BA",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          116,
+          124,
+          132,
+          116,
+          124,
+          132
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 28,
+      "facing": 16,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x82BA",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          132,
+          124,
+          116,
+          132,
+          124,
+          116
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 29,
+      "facing": 0,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x82C5",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          116,
+          124,
+          132,
+          116,
+          124,
+          132
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 29,
+      "facing": 16,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x82C5",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          132,
+          124,
+          116,
+          132,
+          124,
+          116
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 30,
+      "facing": 0,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x82D0",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          116,
+          124,
+          132,
+          116,
+          124,
+          132
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 30,
+      "facing": 16,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x82D0",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          132,
+          124,
+          116,
+          132,
+          124,
+          116
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 31,
+      "facing": 0,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x82DB",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          116,
+          124,
+          132,
+          116,
+          124,
+          132
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 31,
+      "facing": 16,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x82DB",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          132,
+          124,
+          116,
+          132,
+          124,
+          116
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 32,
+      "facing": 0,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x82E6",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          116,
+          124,
+          132,
+          116,
+          124,
+          132
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 32,
+      "facing": 16,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x82E6",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          132,
+          124,
+          116,
+          132,
+          124,
+          116
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 33,
+      "facing": 0,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x82F1",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          116,
+          124,
+          132,
+          116,
+          124,
+          132
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 33,
+      "facing": 16,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x82F1",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          132,
+          124,
+          116,
+          132,
+          124,
+          116
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 37,
+      "facing": 0,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x831D",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          116,
+          124,
+          132,
+          116,
+          124,
+          132
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 37,
+      "facing": 16,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x831D",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          132,
+          124,
+          116,
+          132,
+          124,
+          116
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 38,
+      "facing": 0,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x8328",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          116,
+          124,
+          132,
+          116,
+          124,
+          132
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 38,
+      "facing": 16,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x8328",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          132,
+          124,
+          116,
+          132,
+          124,
+          116
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 39,
+      "facing": 0,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x8333",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          116,
+          124,
+          132,
+          116,
+          124,
+          132
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 39,
+      "facing": 16,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x8333",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          132,
+          124,
+          116,
+          132,
+          124,
+          116
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 40,
+      "facing": 0,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x833E",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          116,
+          124,
+          132,
+          116,
+          124,
+          132
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 40,
+      "facing": 16,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x833E",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          132,
+          124,
+          116,
+          132,
+          124,
+          116
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 41,
+      "facing": 0,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x8349",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          116,
+          124,
+          132,
+          116,
+          124,
+          132
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 41,
+      "facing": 16,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x8349",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          132,
+          124,
+          116,
+          132,
+          124,
+          116
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 56,
+      "facing": 0,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x83EE",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          112,
+          120,
+          128,
+          112,
+          120,
+          128
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 56,
+      "facing": 16,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x83EE",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          136,
+          128,
+          120,
+          136,
+          128,
+          120
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 57,
+      "facing": 0,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x83F9",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          112,
+          120,
+          128,
+          112,
+          120,
+          128
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 57,
+      "facing": 16,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x83F9",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          136,
+          128,
+          120,
+          136,
+          128,
+          120
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 58,
+      "facing": 0,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x8404",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          112,
+          120,
+          128,
+          112,
+          120,
+          128
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 58,
+      "facing": 16,
+      "result": {
+        "piece_count": 6,
+        "frame_record_field_2A": "0x8404",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          68,
+          68,
+          68,
+          84,
+          84,
+          84
+        ],
+        "sat_x": [
+          136,
+          128,
+          120,
+          136,
+          128,
+          120
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      }
+    },
+    {
+      "frame": 97,
+      "facing": 0,
+      "result": {
+        "piece_count": 5,
+        "frame_record_field_2A": "0x85B1",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          56,
+          56,
+          72,
+          72,
+          88
+        ],
+        "sat_x": [
+          119,
+          127,
+          119,
+          127,
+          119
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8
+        ]
+      }
+    },
+    {
+      "frame": 97,
+      "facing": 16,
+      "result": {
+        "piece_count": 5,
+        "frame_record_field_2A": "0x85B1",
+        "screen_xy_after_3FC8": [
+          128,
+          100
+        ],
+        "sat_y": [
+          56,
+          56,
+          72,
+          72,
+          88
+        ],
+        "sat_x": [
+          129,
+          121,
+          129,
+          121,
+          129
+        ],
+        "sat_tile": [
+          0,
+          2,
+          4,
+          6,
+          8
+        ]
+      }
+    }
+  ],
+  "registration": {
+    "registration_rule": {
+      "evidence": "BYTE-VERIFIED ASSEMBLY + CONTROLLED ROUTINE RESULT + EMULATED ORIGINAL FRAME",
+      "shared_renderer": "one generic path for every slot object: $220E -> $3FC8 -> $226A -> $22B6",
+      "other_sat_writers": "none: every reference to $D36F/$D371 in the whole ROM lies inside $220E..$2334",
+      "equations": {
+        "screen_y": "anchor_y - cam_y  (16-bit; $3FC8: IX+$14 - $D176 -> IX+$1C)",
+        "sat_y_word": "screen_y + frame_y_origin + piece_y   ($226A)",
+        "sat_y_visible_if": "-16 <= sat_y_word <= 191   ($229A..$22A6; else SAT Y byte = $E0)",
+        "sat_x_word": "anchor_x - cam_x + x_origin' + piece_x'   ($22B6; flip negates x_origin and uses the +$0D08 mirrored table)",
+        "sat_x_clip": "high byte != 0 -> SAT X byte = 0   ($2306..$230C); R0 bit 5 blanks columns 0..7",
+        "vdp_sprite_top_line": "SAT_Y + 1",
+        "vdp_r9_vscroll": "(cam_y + 17) mod 224   ($4D3E: ADD HL,$0011 ... mod $00E0 -> $D173 -> R9 at $053E)",
+        "vdp_r8_hscroll": "(-(cam_x + 1)) & $FF   ($4D3E: ADD A,1; NEG -> $D172 -> R8)",
+        "background_world_row_at_line_L": "cam_y + 17 + L",
+        "background_world_col_at_screen_x": "cam_x + 1 + x"
+      },
+      "consequence": {
+        "y": "a sprite pixel with mapping row m appears at terrain-space row anchor_y + y_origin + m + 1 + 17 = anchor_y + y_origin + m + 18",
+        "x": "a sprite pixel with mapping column m appears at terrain-space column anchor_x + x_origin' + m + 1",
+        "object_anchor_space": "object anchors are terrain-space minus (1, 18); the collision floor probe adds the same 18 at $7690"
+      }
+    },
+    "poc_comparison": {
+      "poc_checkpoint": {
+        "repository": "SonicChaos_POC",
+        "branch": "poc/thz1-cleanup",
+        "commit": "6819722201b169c4dac136efdb4236c5cf470327",
+        "note": "sprite geometry read from sprites/*/*.yy and PNG alpha; adapters from SCR_chaos_render_adapter.gml"
+      },
+      "rows": [
+        {
+          "type": "0x09",
+          "evidence": "GAMEMAKER ADAPTER ONLY (POC) vs EMULATED ORIGINAL FRAME",
+          "poc": {
+            "sprite": "SPR_chaos_object_09 (frames 0-3 = mapping frames 1,2,4,3)",
+            "origin": [
+              8,
+              15
+            ],
+            "canvas": [
+              16,
+              16
+            ],
+            "y_adapter": 0,
+            "draw": "draw_sprite(spr, frame, x, y)"
+          },
+          "poc_opaque_rows_rel_anchor": [
+            -15,
+            0
+          ],
+          "original_opaque_rows_rel_anchor": [
+            2,
+            17
+          ],
+          "predicted_poc_minus_original_top": -17,
+          "predicted_poc_minus_original_bottom": -17
+        },
+        {
+          "type": "0x10",
+          "evidence": "GAMEMAKER ADAPTER ONLY (POC) vs EMULATED ORIGINAL FRAME",
+          "poc": {
+            "sprite": "SPR_chaos_object_10_04 / _06",
+            "origin": [
+              16,
+              28
+            ],
+            "canvas": [
+              32,
+              40
+            ],
+            "y_adapter": 18,
+            "draw": "draw_sprite_ext(spr, frame, x, y + 18, ...)"
+          },
+          "poc_opaque_rows_rel_anchor": [
+            -6,
+            17
+          ],
+          "original_opaque_rows_rel_anchor": [
+            -6,
+            17
+          ],
+          "predicted_poc_minus_original_top": 0,
+          "predicted_poc_minus_original_bottom": 0
+        },
+        {
+          "type": "0x21",
+          "evidence": "GAMEMAKER ADAPTER ONLY (POC) vs EMULATED ORIGINAL FRAME",
+          "poc": {
+            "sprite": "SPR_chaos_object_21",
+            "origin": [
+              16,
+              36
+            ],
+            "canvas": [
+              32,
+              40
+            ],
+            "y_adapter": 18,
+            "draw": "draw_sprite_ext(spr, frame, x, y + 18, xscale -1)"
+          },
+          "poc_opaque_rows_rel_anchor": [
+            -14,
+            17
+          ],
+          "original_opaque_rows_rel_anchor": [
+            -14,
+            17
+          ],
+          "predicted_poc_minus_original_top": 0,
+          "predicted_poc_minus_original_bottom": 0
+        },
+        {
+          "type": "0x27",
+          "evidence": "GAMEMAKER ADAPTER ONLY (POC) vs EMULATED ORIGINAL FRAME",
+          "poc": {
+            "sprite": "SPR_chaos_object_27",
+            "origin": [
+              16,
+              20
+            ],
+            "canvas": [
+              32,
+              24
+            ],
+            "y_adapter": 0,
+            "draw": "draw_self() (object has no Draw event)"
+          },
+          "poc_opaque_rows_rel_anchor": [
+            -15,
+            -1
+          ],
+          "original_opaque_rows_rel_anchor": [
+            3,
+            17
+          ],
+          "predicted_poc_minus_original_top": -18,
+          "predicted_poc_minus_original_bottom": -18
+        },
+        {
+          "type": "0x28",
+          "evidence": "GAMEMAKER ADAPTER ONLY (POC) vs EMULATED ORIGINAL FRAME",
+          "poc": {
+            "sprite": "SPR_chaos_platform",
+            "origin": [
+              16,
+              0
+            ],
+            "canvas": [
+              32,
+              16
+            ],
+            "y_adapter": 0,
+            "draw": "instance draws its own sprite at y"
+          },
+          "poc_opaque_rows_rel_anchor": [
+            0,
+            15
+          ],
+          "original_opaque_rows_rel_anchor": [
+            2,
+            17
+          ],
+          "predicted_poc_minus_original_top": -2,
+          "predicted_poc_minus_original_bottom": -2
+        },
+        {
+          "type": "0x18",
+          "evidence": "GAMEMAKER ADAPTER ONLY (POC) vs EMULATED ORIGINAL FRAME",
+          "poc": {
+            "sprite": "SPR_chaos_object_18",
+            "origin": [
+              16,
+              48
+            ],
+            "canvas": [
+              32,
+              48
+            ],
+            "y_adapter": 22,
+            "draw": "draw_sprite(spr, frame, x, y + 22)"
+          },
+          "poc_opaque_rows_rel_anchor": [
+            -26,
+            17
+          ],
+          "original_opaque_rows_rel_anchor": [
+            -30,
+            17
+          ],
+          "predicted_poc_minus_original_top": 4,
+          "predicted_poc_minus_original_bottom": 0
+        },
+        {
+          "type": "0x1B",
+          "evidence": "GAMEMAKER ADAPTER ONLY (POC) vs EMULATED ORIGINAL FRAME",
+          "poc": {
+            "sprite": "SPR_chaos_object_1B (crop of canvas rows 4.., cols 4..27)",
+            "origin": [
+              16,
+              36
+            ],
+            "canvas": [
+              32,
+              40
+            ],
+            "y_adapter": 0,
+            "draw": "draw_sprite_part(spr, 0, 4, 4, 24, visible, x-12, baseY-visible), visible = min(32, 18 + raise)"
+          },
+          "original_visible_tip_rows_above_terrain_by_raise": {
+            "0": 6,
+            "6": 12,
+            "12": 18,
+            "18": 24
+          },
+          "poc_visible_opaque_rows_above_floor_by_raise": {
+            "0": 10,
+            "6": 16,
+            "12": 22,
+            "18": 24
+          }
+        },
+        {
+          "type": "0x26",
+          "evidence": "GAMEMAKER ADAPTER ONLY (POC) vs EMULATED ORIGINAL FRAME",
+          "poc": {
+            "sprite": "SPR_chaos_object_26 cap + drawn coil lines",
+            "origin": [
+              16,
+              24
+            ],
+            "canvas": [
+              32,
+              32
+            ],
+            "y_adapter": 0,
+            "draw": "cap sprite at (x, capY + 17), capY = (placement_y + 12) - raise; coil lines from capY + 7"
+          },
+          "poc_cap_top_rel_anchor": 9,
+          "original_opaque_rows_rel_anchor_frame2": [
+            -6,
+            17
+          ],
+          "predicted_poc_minus_original_top": 15,
+          "note": "POC composes its own cap+coil; ROM frame 2 is one 32x24 mapped image"
+        }
+      ]
+    }
+  }
+}

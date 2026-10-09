@@ -70,6 +70,14 @@
     "object-09-poc-assets.json": {
       "sha256": "6f4ca867c97ded7274866fc2c4cd11ceafd4967bf9edeeef1fabd891c494d1e5",
       "bytes": 9279
+    },
+    "player-spring-airborne.json": {
+      "sha256": "2ce8525382bc27ef96c1a5f6c64d67164a592060e4afe4e87563f458808cee65",
+      "bytes": 783664
+    },
+    "player-spring-airborne-poc-assets.json": {
+      "sha256": "2ed9655d0c6421086547e018443ca0bdefdcdd7e08c944c8686208aaf161d12a",
+      "bytes": 15988
     }
   }
 }

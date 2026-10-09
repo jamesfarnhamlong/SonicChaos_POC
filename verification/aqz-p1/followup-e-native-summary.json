@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "assertions": 7625,
+  "native_updates": 980,
+  "oracle_updates": 480,
+  "oracle_numeric_values": 6240,
+  "oracle_mismatches": 0,
+  "weak_launch": -5,
+  "thz3_launch": -4,
+  "mapped_spring_phase": "after player",
+  "visual_acceptance": "PENDING WINDOWS"
+}

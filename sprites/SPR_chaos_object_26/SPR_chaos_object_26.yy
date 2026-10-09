@@ -41,7 +41,10 @@
   "name": "SPR_chaos_object_26",
   "nineSlice": null,
   "origin": 0,
-  "parent": {"name": "Objects", "path": "folders/Sprites/Sonic Chaos/Shared/Objects.yy"},
+  "parent": {
+    "name": "Objects",
+    "path": "folders/Sprites/Sonic Chaos/Shared/Objects.yy"
+  },
   "preMultiplyAlpha": false,
   "resourceType": "GMSprite",
   "resourceVersion": "2.0",
@@ -97,7 +100,7 @@
                 "0": {
                   "$SpriteFrameKeyframe": "",
                   "Id": {
-                    "name": "SPR_chaos_object_26",
+                    "name": "ac1052c4-031a-4d63-9f3f-f87087e5476a",
                     "path": "sprites/SPR_chaos_object_26/SPR_chaos_object_26.yy"
                   },
                   "resourceType": "SpriteFrameKeyframe",

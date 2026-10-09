@@ -1,0 +1,6343 @@
+{
+  "research_commit": "eb4bf953dcb2f1ad57c629543b55c8536eb688cb",
+  "review_status": "CANONICAL_RESEARCH_MATCH",
+  "pointer_policy": "canonical Research level_package.block_mapping; bank-relative CPU pointer",
+  "acts": {
+    "aqz1": [
+      {
+        "block_id": 1,
+        "mapping": {
+          "pointer_entry_rom": 332578,
+          "cpu": 38208,
+          "rom": 333120,
+          "attributes": [
+            193,
+            194,
+            194,
+            705,
+            195,
+            196,
+            197,
+            707,
+            198,
+            1733,
+            199,
+            710,
+            200,
+            201,
+            201,
+            712
+          ]
+        },
+        "mapping_sha256": "4728bab00358a0e00d200769a9b1ddc55ea0cca0d406b109085dd06f6f7fc80c",
+        "index_sha256": "68116fd241c0aec97d37cf40c58c6cd6b92601e34eb14e0dfc36fe685e151656",
+        "rgba_sha256": "91a2cc303bd309535d8132c82a96a165dbf09033c6888b071acb33f5e575c960",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 3,
+        "mapping": {
+          "pointer_entry_rom": 332582,
+          "cpu": 38272,
+          "rom": 333184,
+          "attributes": [
+            202,
+            203,
+            203,
+            714,
+            195,
+            196,
+            197,
+            707,
+            198,
+            1733,
+            199,
+            710,
+            200,
+            201,
+            201,
+            712
+          ]
+        },
+        "mapping_sha256": "8e33198e5765a62d4003fa9529c1674be6caee0a7938f8c17308382ab07707af",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 4,
+        "mapping": {
+          "pointer_entry_rom": 332584,
+          "cpu": 38304,
+          "rom": 333216,
+          "attributes": [
+            204,
+            205,
+            717,
+            716,
+            206,
+            207,
+            719,
+            718,
+            1230,
+            1231,
+            1743,
+            1742,
+            1228,
+            1229,
+            1741,
+            1740
+          ]
+        },
+        "mapping_sha256": "440db45969dae160411a44f6aa4b2cfc7a9cf77682702989b1357400a8679cea",
+        "index_sha256": "fa8ef75b5e626380bc44e97bcbd9e66b2fbc3dba6cc27d0a92b58fcf78b62451",
+        "rgba_sha256": "6a12873013ba3be81e23a6c386bdc1a321b6c10d4e334e0ff9b08671f52ffb78",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 5,
+        "mapping": {
+          "pointer_entry_rom": 332586,
+          "cpu": 38336,
+          "rom": 333248,
+          "attributes": [
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223
+          ]
+        },
+        "mapping_sha256": "e38f78753409f3e188654178ff7aa2b5daab626d1d88d6887ab0872079358fa9",
+        "index_sha256": "1a9569f27d3a795058f7313e91ea3a099fe4f09bcfa5d2706af84fc36661e6e1",
+        "rgba_sha256": "55ff440adb4abb727d2ce3d63a9907e65694bb17be2345b3482706e5a424d4cd",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 7,
+        "mapping": {
+          "pointer_entry_rom": 332590,
+          "cpu": 38400,
+          "rom": 333312,
+          "attributes": [
+            4298,
+            4299,
+            4299,
+            4810,
+            4291,
+            4292,
+            4293,
+            4803,
+            4294,
+            5829,
+            4295,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "52189d6fbab2a44b34952453ce2385df5f883323c6ff31723f4e5fe17b9d26b6",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 8,
+        "mapping": {
+          "pointer_entry_rom": 332592,
+          "cpu": 38432,
+          "rom": 333344,
+          "attributes": [
+            4289,
+            4290,
+            4290,
+            4801,
+            4330,
+            4331,
+            4332,
+            4333,
+            4294,
+            5829,
+            4295,
+            4806,
+            4334,
+            4297,
+            4297,
+            4335
+          ]
+        },
+        "mapping_sha256": "4b44e82eb9064503dbf91b031feda643db6b8021e350d8ce5f70e12e41c76662",
+        "index_sha256": "422a9405bafa1eebc82800f0f137c9b66045f5c310fa299d8a16a8ddb0b4f833",
+        "rgba_sha256": "1aa0944d0fcc4b4785a72da7a9d21a4f91a7c88c5c2fcc6e43c15467a95f3c61",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 9,
+        "mapping": {
+          "pointer_entry_rom": 332594,
+          "cpu": 38464,
+          "rom": 333376,
+          "attributes": [
+            4298,
+            4299,
+            4299,
+            4810,
+            4330,
+            4331,
+            4332,
+            4333,
+            4294,
+            5829,
+            4295,
+            4806,
+            4334,
+            4297,
+            4297,
+            4335
+          ]
+        },
+        "mapping_sha256": "d4eebdbfcea852b61ad211d6dead468915a8b459434b9e607ecaedc55b5f5020",
+        "index_sha256": "419fbd0a9f198005f2d5aaa92297eccf191710adc53650b7b1445014e8919028",
+        "rgba_sha256": "20a2a4c73eb7f86ac2ecb6dce03835054859359498423235751705e08376939d",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 10,
+        "mapping": {
+          "pointer_entry_rom": 332596,
+          "cpu": 38496,
+          "rom": 333408,
+          "attributes": [
+            4289,
+            4290,
+            4290,
+            4801,
+            4291,
+            4292,
+            4293,
+            4803,
+            4294,
+            5829,
+            4295,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "1aeab21068fe0dea4e3dde5f07c1e464a0666524530a39f2eef9031e17742390",
+        "index_sha256": "68116fd241c0aec97d37cf40c58c6cd6b92601e34eb14e0dfc36fe685e151656",
+        "rgba_sha256": "91a2cc303bd309535d8132c82a96a165dbf09033c6888b071acb33f5e575c960",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 17,
+        "mapping": {
+          "pointer_entry_rom": 332610,
+          "cpu": 38624,
+          "rom": 333536,
+          "attributes": [
+            202,
+            203,
+            203,
+            714,
+            195,
+            196,
+            197,
+            707,
+            198,
+            1733,
+            199,
+            710,
+            200,
+            201,
+            201,
+            712
+          ]
+        },
+        "mapping_sha256": "8e33198e5765a62d4003fa9529c1674be6caee0a7938f8c17308382ab07707af",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 18,
+        "mapping": {
+          "pointer_entry_rom": 332612,
+          "cpu": 38656,
+          "rom": 333568,
+          "attributes": [
+            192,
+            192,
+            248,
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            244,
+            200,
+            713,
+            713,
+            712
+          ]
+        },
+        "mapping_sha256": "697a5de2ba7a51d34952cc8dce8d6de1585486f8265aa9361647589ae3f8e971",
+        "index_sha256": "48e4a9e64212737356e1f94888115df3066605868bc5d8834f4ebe5cf7ac42b5",
+        "rgba_sha256": "704cc45a37bbcfc541e3c0546928aa7e1c74c3c16a4d381369fd6fc655c3acdf",
+        "opaque_pixels": 784
+      },
+      {
+        "block_id": 19,
+        "mapping": {
+          "pointer_entry_rom": 332614,
+          "cpu": 38688,
+          "rom": 333600,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            257,
+            258,
+            259,
+            260,
+            261,
+            262
+          ]
+        },
+        "mapping_sha256": "7ee5c14fdf52693c150840659614cd1b713f549e783c2b7cdf1c1e69f803ced8",
+        "index_sha256": "f99abec36f11da091cf5dd68acf8877c20ce3465c480b17d1db8002b9a5b5a41",
+        "rgba_sha256": "1d70ec0a34faf8da7d77655a933cc700534cf4f5f6c694750b3115778b6d927d",
+        "opaque_pixels": 273
+      },
+      {
+        "block_id": 20,
+        "mapping": {
+          "pointer_entry_rom": 332616,
+          "cpu": 38720,
+          "rom": 333632,
+          "attributes": [
+            202,
+            203,
+            203,
+            714,
+            195,
+            196,
+            197,
+            707,
+            198,
+            1733,
+            199,
+            710,
+            200,
+            201,
+            201,
+            712
+          ]
+        },
+        "mapping_sha256": "8e33198e5765a62d4003fa9529c1674be6caee0a7938f8c17308382ab07707af",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 21,
+        "mapping": {
+          "pointer_entry_rom": 332618,
+          "cpu": 38752,
+          "rom": 333664,
+          "attributes": [
+            752,
+            192,
+            192,
+            192,
+            754,
+            753,
+            192,
+            192,
+            756,
+            755,
+            753,
+            192,
+            200,
+            759,
+            758,
+            757
+          ]
+        },
+        "mapping_sha256": "a5aa1f83af4a22bcba131e9f74bd8d0d1e6d6e10fabe3232e80569c66b7326a2",
+        "index_sha256": "ca84a6db36d9c6ebcf38e6e82c4330c8a9435800227d7bf8706f6fdc30bed6e7",
+        "rgba_sha256": "cd50ec86cda4a0670672369cb5cf10d2fa355779abaa0509060337f266acd5c7",
+        "opaque_pixels": 528
+      },
+      {
+        "block_id": 22,
+        "mapping": {
+          "pointer_entry_rom": 332620,
+          "cpu": 38784,
+          "rom": 333696,
+          "attributes": [
+            202,
+            203,
+            203,
+            714,
+            195,
+            196,
+            197,
+            707,
+            198,
+            1733,
+            199,
+            710,
+            200,
+            201,
+            201,
+            712
+          ]
+        },
+        "mapping_sha256": "8e33198e5765a62d4003fa9529c1674be6caee0a7938f8c17308382ab07707af",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 23,
+        "mapping": {
+          "pointer_entry_rom": 332622,
+          "cpu": 38816,
+          "rom": 333728,
+          "attributes": [
+            761,
+            760,
+            192,
+            192,
+            765,
+            764,
+            763,
+            762,
+            756,
+            1792,
+            767,
+            766,
+            200,
+            201,
+            201,
+            712
+          ]
+        },
+        "mapping_sha256": "1c640e0e24fa155489f1bb98e60c0432c58ad30465e2c7262dc7d860b2cb81be",
+        "index_sha256": "44e5a2157ad0fa76116c9d0031d4ba2309de751b46deaa0eca23b5067df1dc62",
+        "rgba_sha256": "068ad96ecd437c6b124a6e3ce6fcef79ac4bad986f48dfad454211035885b84c",
+        "opaque_pixels": 784
+      },
+      {
+        "block_id": 24,
+        "mapping": {
+          "pointer_entry_rom": 332624,
+          "cpu": 38848,
+          "rom": 333760,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            770,
+            769,
+            192,
+            192,
+            774,
+            773,
+            772,
+            771
+          ]
+        },
+        "mapping_sha256": "0655c0302f98089ad891d7d24e1a5a8e7b7629b9a95d7f29e172b497f9fcd602",
+        "index_sha256": "76c13517b0b07a09af3bc22546d5789680aebd2cd8d8fd6c5dfb21da8e45ede5",
+        "rgba_sha256": "f22a1e3720b4e15e89c80672f03e06352810993da03cefe53292ddf8c03b0824",
+        "opaque_pixels": 273
+      },
+      {
+        "block_id": 28,
+        "mapping": {
+          "pointer_entry_rom": 332632,
+          "cpu": 38976,
+          "rom": 333888,
+          "attributes": [
+            269,
+            270,
+            269,
+            271,
+            270,
+            269,
+            272,
+            242,
+            269,
+            272,
+            243,
+            244,
+            273,
+            246,
+            247,
+            712
+          ]
+        },
+        "mapping_sha256": "3c11f1b2a38b97ca9a9a96b716c56a4d1e49abb0c917388f04abfee4fc884648",
+        "index_sha256": "77251ced392fe28306735a75ae3394548b9844e1efbcb4fe3debb0b3900f4f1c",
+        "rgba_sha256": "160707676e3a2997d3d0ba82b5a7c91f480303e8077ef8e4f20f83e06fe0b2b7",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 29,
+        "mapping": {
+          "pointer_entry_rom": 332634,
+          "cpu": 39008,
+          "rom": 333920,
+          "attributes": [
+            274,
+            270,
+            269,
+            270,
+            754,
+            275,
+            270,
+            269,
+            756,
+            755,
+            275,
+            270,
+            200,
+            759,
+            758,
+            276
+          ]
+        },
+        "mapping_sha256": "81b1cbccc0796edf8995932ad2dd7b46dc0efef437aba221c98f5ac8f771c394",
+        "index_sha256": "1ed505c87bb7eea1df4e3620d70a34489237e33509e910728defa5cb80a9847d",
+        "rgba_sha256": "67e1a0a38c1dcd4b3c92bf870a89e64fdf9347d7164581ca2228a16c70a98bb8",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 37,
+        "mapping": {
+          "pointer_entry_rom": 332650,
+          "cpu": 39264,
+          "rom": 334176,
+          "attributes": [
+            292,
+            804,
+            292,
+            804,
+            293,
+            294,
+            293,
+            294,
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269
+          ]
+        },
+        "mapping_sha256": "5215fceb4663c897b82d0ea12714e767cc8488c73c2a0a388fcf7f483376acef",
+        "index_sha256": "c9d5b2fbeab1164cfce8f1d7ada4a5c684a1bb4178957e28cf4d9e4f9ec3a525",
+        "rgba_sha256": "a9e3ffab00ca59e376d6d2488a29b7e5f03b3715215cd700f6abdd25862c858b",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 38,
+        "mapping": {
+          "pointer_entry_rom": 332652,
+          "cpu": 39296,
+          "rom": 334208,
+          "attributes": [
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269,
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269
+          ]
+        },
+        "mapping_sha256": "a1a33c34c5e5eb35447030253aa7ee1dc11c1c22642e2b3b205bdd46a7212f48",
+        "index_sha256": "30e06b45db0462fbc73b9b61db058015ab014e71ec240b8f3822ddccaa2dda5d",
+        "rgba_sha256": "5fc02f73de6b12cb37bc44c62bc274bd05a36cb80ddf59858cf470fc47108ace",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 41,
+        "mapping": {
+          "pointer_entry_rom": 332658,
+          "cpu": 39392,
+          "rom": 334304,
+          "attributes": [
+            204,
+            205,
+            717,
+            716,
+            1228,
+            1229,
+            1741,
+            1740,
+            202,
+            714,
+            202,
+            203,
+            200,
+            712,
+            200,
+            201
+          ]
+        },
+        "mapping_sha256": "6db086a9e46c0d679a2d85da5984dfb5e1101232bae4ed9aadc448124c8ff505",
+        "index_sha256": "4eea540ca6602ecb2521dbbafb5e96134aec89e4cd86becc20b1bbc3537ac43f",
+        "rgba_sha256": "2ece62a340f73bd7d9b20d40c3eb324f595b8b0f7ae86101f9395f5c17972092",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 43,
+        "mapping": {
+          "pointer_entry_rom": 332662,
+          "cpu": 39456,
+          "rom": 334368,
+          "attributes": [
+            202,
+            715,
+            715,
+            714,
+            200,
+            713,
+            713,
+            712,
+            715,
+            714,
+            202,
+            714,
+            713,
+            712,
+            200,
+            712
+          ]
+        },
+        "mapping_sha256": "1833e9cf91ae97b814837832f1808a8caffb230bc285369921e7de4b10b7ea99",
+        "index_sha256": "f34fc83d1ff4ef0f6c63b456d8d3cbb717b46b7e512ef3dd5ae3fe1051022593",
+        "rgba_sha256": "3a60477aeb22c058b7101777ad99ba53f47f29fa86854276de17755298414a5e",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 44,
+        "mapping": {
+          "pointer_entry_rom": 332664,
+          "cpu": 39488,
+          "rom": 334400,
+          "attributes": [
+            4298,
+            4299,
+            4299,
+            4810,
+            4291,
+            4292,
+            4293,
+            4803,
+            4294,
+            5829,
+            4295,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "52189d6fbab2a44b34952453ce2385df5f883323c6ff31723f4e5fe17b9d26b6",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 45,
+        "mapping": {
+          "pointer_entry_rom": 332666,
+          "cpu": 39520,
+          "rom": 334432,
+          "attributes": [
+            4393,
+            4394,
+            4906,
+            4905,
+            4395,
+            4396,
+            4908,
+            4907,
+            4359,
+            4360,
+            4872,
+            4871,
+            4359,
+            4360,
+            4872,
+            4871
+          ]
+        },
+        "mapping_sha256": "bb7f64aec0d7aa1325b6686a7c471678197834ef8271559645c4318b9a73b391",
+        "index_sha256": "3104e6c0a53acdda073ca7620a0b7894adf5ffa45c126851a107b59d755ded8a",
+        "rgba_sha256": "a1be20a8481c5fe3414f282bbbf830cfacfae0e80221c1ca73e3e9c5b81ca7fa",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 46,
+        "mapping": {
+          "pointer_entry_rom": 332668,
+          "cpu": 39552,
+          "rom": 334464,
+          "attributes": [
+            4359,
+            4360,
+            4872,
+            4871,
+            4359,
+            4360,
+            4872,
+            4871,
+            4359,
+            4360,
+            4872,
+            4871,
+            4359,
+            4360,
+            4872,
+            4871
+          ]
+        },
+        "mapping_sha256": "a1a6ca6fe1cfd73ea6587c7341e654c9c4ae6384976b7c350420271bda7e5f1b",
+        "index_sha256": "699864d92cedede1f67f8668ba02fef88976aa16441d8a662cef66a46cbe40b8",
+        "rgba_sha256": "01638e5ec34fa90c750fc22b11d23011d109963c2504ca480c86c5e30ebe1a06",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 47,
+        "mapping": {
+          "pointer_entry_rom": 332670,
+          "cpu": 39584,
+          "rom": 334496,
+          "attributes": [
+            4359,
+            4360,
+            4872,
+            4871,
+            4359,
+            4360,
+            4872,
+            4871,
+            5419,
+            5420,
+            5932,
+            5931,
+            5417,
+            5418,
+            5930,
+            5929
+          ]
+        },
+        "mapping_sha256": "ebc042bb22295f96c8aeaaba4fbc7462caf09cffe1e990d488e90ae398942480",
+        "index_sha256": "cd7ca43eb861c4c047d1b8e353740bd01b31b8a4435bbee346a79e6bac1ec736",
+        "rgba_sha256": "fa95b3400f7ba0dadcd0a237495abc7d98562a483d62ac2abed41d77097b690d",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 48,
+        "mapping": {
+          "pointer_entry_rom": 332672,
+          "cpu": 39616,
+          "rom": 334528,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            301,
+            813,
+            192,
+            192,
+            302,
+            814,
+            192
+          ]
+        },
+        "mapping_sha256": "182d30d342fd2a364d5fef32babb6f2759e81a400b23438082ebfb5018727e0e",
+        "index_sha256": "a32328d5d2d64ee00716f88678bab5a323df2045ba768097aaf748400ea0dfdc",
+        "rgba_sha256": "e508ab0025821fd2b2da302681495f93a37e92e5b8ad4853b23b8fd46d56f3c7",
+        "opaque_pixels": 168
+      },
+      {
+        "block_id": 51,
+        "mapping": {
+          "pointer_entry_rom": 332678,
+          "cpu": 39712,
+          "rom": 334624,
+          "attributes": [
+            269,
+            270,
+            269,
+            270,
+            307,
+            306,
+            270,
+            269,
+            1331,
+            1330,
+            269,
+            270,
+            293,
+            294,
+            270,
+            269
+          ]
+        },
+        "mapping_sha256": "aebdd1fec89b0fd81a022293f7a29d7e33798c05773600e4bc77e9daf847fc31",
+        "index_sha256": "a8f50c65d91be62c7cef671f9670c22c10e87da177fbdcc90aaf6da4182a9da4",
+        "rgba_sha256": "e17b1f075f805fb0609b3fcfc922dac2f30cf9ec03b03ceef19b0ed9fd232773",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 54,
+        "mapping": {
+          "pointer_entry_rom": 332684,
+          "cpu": 39808,
+          "rom": 334720,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            309,
+            310,
+            192,
+            192,
+            311,
+            1845,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "c149145eb287734f0a2d266f86a3f69f96223ad30d2070550fa1a5a5a7ac73f0",
+        "index_sha256": "d515b2684f353dd5a81731b9321949a1e95370b4cc4bb0a524e9d727ed6d8514",
+        "rgba_sha256": "150ed09e636feb489a7e617b8bdc2fc1eb9b15f5b4c847f8838d9fe18c8a7858",
+        "opaque_pixels": 170
+      },
+      {
+        "block_id": 60,
+        "mapping": {
+          "pointer_entry_rom": 332696,
+          "cpu": 40000,
+          "rom": 334912,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            319,
+            319,
+            319,
+            319,
+            320,
+            320,
+            320,
+            320,
+            321,
+            321,
+            321,
+            321
+          ]
+        },
+        "mapping_sha256": "b26b065712625a8848e32e53408431dbc78523da28c2eb8f128be7baccb09036",
+        "index_sha256": "9f161e320885cfda60dfb67d2cb9871f7eb1ff75128d2aedb6373f4515087798",
+        "rgba_sha256": "465c12ecfc7f83322966c22a4582cceaedbdddf241263eea246c7d5e9d064128",
+        "opaque_pixels": 384
+      },
+      {
+        "block_id": 64,
+        "mapping": {
+          "pointer_entry_rom": 332704,
+          "cpu": 40096,
+          "rom": 335008,
+          "attributes": [
+            2374,
+            2375,
+            2374,
+            2375,
+            2376,
+            2377,
+            2376,
+            2377,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "b6c1d74d916f5e0aa8b193ba86112180eef53e52462de379c6947818f353f5e8",
+        "index_sha256": "bd8b92a56ee441f43fc705b238efc1180e4b57fc003dbc251616588db7634279",
+        "rgba_sha256": "bf4a7bdc2bd84aac2a54a23fa08b3557c4dd9417f046558ab616326ba2c51ab0",
+        "opaque_pixels": 232
+      },
+      {
+        "block_id": 65,
+        "mapping": {
+          "pointer_entry_rom": 332706,
+          "cpu": 40128,
+          "rom": 335040,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            2374,
+            2375,
+            2374,
+            2375,
+            2376,
+            2377,
+            2376,
+            2377
+          ]
+        },
+        "mapping_sha256": "a3db8b8db1bdde7fb7b1cca651fb3074f171ea5a12b32a2331db52565d71357c",
+        "index_sha256": "c07b6ada0b6c76d036b9bc9d457530b1265e7c0dac9ed78552cbcb8cb841f03e",
+        "rgba_sha256": "130b2cdcaee51e685a8a7eecad25681568e79dc11bdc9dd7c243558749f7e884",
+        "opaque_pixels": 232
+      },
+      {
+        "block_id": 66,
+        "mapping": {
+          "pointer_entry_rom": 332708,
+          "cpu": 40160,
+          "rom": 335072,
+          "attributes": [
+            2374,
+            2375,
+            192,
+            192,
+            2376,
+            2377,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "a35447546ed8ab1c56ce70be9e1d60108ab1992c6b5ca9f8a10aa7a7961f9178",
+        "index_sha256": "324ba8178378919712f21a8551077470eb2a35cec75891b0f58e800ec15dafce",
+        "rgba_sha256": "73e62f9a6e102a022ac6d1cdb4ea3a4b8b2a2864d0593d896ad62b58e509f2f5",
+        "opaque_pixels": 116
+      },
+      {
+        "block_id": 67,
+        "mapping": {
+          "pointer_entry_rom": 332710,
+          "cpu": 40192,
+          "rom": 335104,
+          "attributes": [
+            192,
+            192,
+            2374,
+            2375,
+            192,
+            192,
+            2376,
+            2377,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "98ec568eb2082f907c9222c4400fbb930f2c882c9a9db1beb31ecb1faecf911c",
+        "index_sha256": "f8a8fb775c6f5887c605b80928263a82159a2d8cc00f5befebc255d38ecfaf39",
+        "rgba_sha256": "3c3305c317b8975b51506b76e05d3de59af4045415187914147fbb0285c91231",
+        "opaque_pixels": 116
+      },
+      {
+        "block_id": 68,
+        "mapping": {
+          "pointer_entry_rom": 332712,
+          "cpu": 40224,
+          "rom": 335136,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            2374,
+            2375,
+            192,
+            192,
+            2376,
+            2377,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "61d86d987f7c6ff63a85e2b556a649235f7b97543c020d1debb53d587400f881",
+        "index_sha256": "7570374f0341cc4cf343b4e98c22abca4437acaf5271d3206ba25c1a677574b2",
+        "rgba_sha256": "1159ac426a2d0a885e1c2087e28bdbfebfb8a95d588af2a836834e8d3322fa61",
+        "opaque_pixels": 116
+      },
+      {
+        "block_id": 69,
+        "mapping": {
+          "pointer_entry_rom": 332714,
+          "cpu": 40256,
+          "rom": 335168,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            2374,
+            2375,
+            192,
+            192,
+            2376,
+            2377
+          ]
+        },
+        "mapping_sha256": "435371f09b2e2b5b050ccaf92af82c853b6cf2fec3be2c0a7b8f3fdd7fdb1888",
+        "index_sha256": "837905c22ef60e55c8876e361f84f6594b563fdd66f00d5e09b8822db453028e",
+        "rgba_sha256": "4dc227ea6d4f0dbd7b33fa23017f4a61e61b9a6a166ce31ff71a61f18d442c9b",
+        "opaque_pixels": 116
+      },
+      {
+        "block_id": 70,
+        "mapping": {
+          "pointer_entry_rom": 332716,
+          "cpu": 42176,
+          "rom": 337088,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "4febf4d8ae22d8edd29b5ca6def38950d0ae1b1deb23e24a28b7965ca77817c7",
+        "index_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "rgba_sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+        "opaque_pixels": 0
+      },
+      {
+        "block_id": 71,
+        "mapping": {
+          "pointer_entry_rom": 332718,
+          "cpu": 40288,
+          "rom": 335200,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            2378,
+            2379,
+            2890,
+            192,
+            2380,
+            2381,
+            2892,
+            192,
+            2382,
+            2383,
+            2384,
+            192
+          ]
+        },
+        "mapping_sha256": "06eac70c3945fd84b5c01033c9f2a8d4fd3874282a3024a51ca063e6db5325cf",
+        "index_sha256": "37263cc9997115e75dfe92aba87e8bbcf5fe2ed45af01a93aaac77859377df2a",
+        "rgba_sha256": "0e171bc99c5b59d56cfd045d4f6129f2e7e6a66a2e9e9edeb2f4e87728d42071",
+        "opaque_pixels": 475
+      },
+      {
+        "block_id": 72,
+        "mapping": {
+          "pointer_entry_rom": 332720,
+          "cpu": 40320,
+          "rom": 335232,
+          "attributes": [
+            1224,
+            1225,
+            1225,
+            1736,
+            1222,
+            768,
+            1309,
+            1310,
+            1219,
+            1307,
+            1308,
+            192,
+            1226,
+            1306,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "2fe50dead8a9588628690b4ef9fb138b5e4af0c4dde0980fffc17f50b049fa84",
+        "index_sha256": "94ebb9a95c433f34f4f0d146568afd7a0af5c5fd94efa9a2836b29d6df6c02b0",
+        "rgba_sha256": "c0a475ae8220322d21bdd5b64dd3672141b428d5310d9dc6d98e066013f0f6a5",
+        "opaque_pixels": 723
+      },
+      {
+        "block_id": 73,
+        "mapping": {
+          "pointer_entry_rom": 332722,
+          "cpu": 40352,
+          "rom": 335264,
+          "attributes": [
+            1312,
+            1313,
+            1314,
+            1315,
+            1311,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "ec93bbf37a8646657c684138ca6071f1310dd8ae4518d7abd8b729e0a2d49ef8",
+        "index_sha256": "bbe381ad84b80170069f206de8f4ee7643a3a1e02a0a822a7028727a610c7406",
+        "rgba_sha256": "bd6f36cf2945bc2d16ccf979bf54ee230ba429bd4e4a973a9d51182d2ac7dbb2",
+        "opaque_pixels": 119
+      },
+      {
+        "block_id": 74,
+        "mapping": {
+          "pointer_entry_rom": 332724,
+          "cpu": 40384,
+          "rom": 335296,
+          "attributes": [
+            5411,
+            5922,
+            5921,
+            5920,
+            4288,
+            4288,
+            4288,
+            5919,
+            4288,
+            4288,
+            4288,
+            4288,
+            4288,
+            4288,
+            4288,
+            4288
+          ]
+        },
+        "mapping_sha256": "e3b70065e69100dfec4c1ae62d171e5cb3d51e0963b5808af7ee7049d48393d3",
+        "index_sha256": "c106aef2a9f71d9c74ac9f07b72b791de387bcefd00057b53a8ee748bf6f9a96",
+        "rgba_sha256": "18500fa3da2b67f589c6a301fcb4f02e822f3b99dfdb53157761bbcd98a1ff01",
+        "opaque_pixels": 119
+      },
+      {
+        "block_id": 75,
+        "mapping": {
+          "pointer_entry_rom": 332726,
+          "cpu": 40416,
+          "rom": 335328,
+          "attributes": [
+            5320,
+            5833,
+            5833,
+            5832,
+            5918,
+            5917,
+            4352,
+            5830,
+            4288,
+            5916,
+            5915,
+            5827,
+            4288,
+            4288,
+            5914,
+            5834
+          ]
+        },
+        "mapping_sha256": "cbece2725996a329604125709da02fd94cf3028055259d7d268b884483b95e87",
+        "index_sha256": "5e1c4fed0d614ed15d97b89c96d305df692212c516431eaab42af2446753c62c",
+        "rgba_sha256": "92566d40f1c3c0ffd6f6ac89ad407ad582fade6c16cb50c94fea892e0f31ead7",
+        "opaque_pixels": 723
+      },
+      {
+        "block_id": 76,
+        "mapping": {
+          "pointer_entry_rom": 332728,
+          "cpu": 40448,
+          "rom": 335360,
+          "attributes": [
+            1304,
+            1305,
+            192,
+            192,
+            1303,
+            192,
+            192,
+            192,
+            1302,
+            192,
+            192,
+            192,
+            277,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "6af15599e79945c666f3cab1ccde1cfc9a1863e57bf41333783d09b3db6e2b5b",
+        "index_sha256": "0957e150e458b428535be8ed1bd9408f47863ef2c9133fb6db1e51c736cc631a",
+        "rgba_sha256": "7d3de25126644aa861b5039143d114bae3452be13ad40ddbc647aba6bec0a7b4",
+        "opaque_pixels": 119
+      },
+      {
+        "block_id": 77,
+        "mapping": {
+          "pointer_entry_rom": 332730,
+          "cpu": 40480,
+          "rom": 335392,
+          "attributes": [
+            4288,
+            4288,
+            5913,
+            5912,
+            4288,
+            4288,
+            4288,
+            5911,
+            4288,
+            4288,
+            4288,
+            5910,
+            4288,
+            4288,
+            4288,
+            4885
+          ]
+        },
+        "mapping_sha256": "e5d0427757a386b9d37f509173528320a8b393c07adb358e86c6a0d8af4ceadd",
+        "index_sha256": "b81abdfad854c463fd5705e308fbe101855e0bfa306997a1bef739efc881e832",
+        "rgba_sha256": "9e4fb221d3cba69f463762420dd5698281c96ff952eca9338aa57ebc06bccf04",
+        "opaque_pixels": 119
+      },
+      {
+        "block_id": 78,
+        "mapping": {
+          "pointer_entry_rom": 332732,
+          "cpu": 40512,
+          "rom": 335424,
+          "attributes": [
+            277,
+            192,
+            192,
+            192,
+            277,
+            192,
+            192,
+            192,
+            337,
+            192,
+            192,
+            192,
+            338,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "d3ea040b70f751ae7b291e738408c7b73274406199eee59b2e4f032b766ff58f",
+        "index_sha256": "31260d0898888f82a48f8af10b3b049eb228f1b1206e89d12fcbecafc753f717",
+        "rgba_sha256": "c902491d4ddb982456104b27bb8b6cb20ba707c62a4be06d04e94aee8af45fe1",
+        "opaque_pixels": 59
+      },
+      {
+        "block_id": 79,
+        "mapping": {
+          "pointer_entry_rom": 332734,
+          "cpu": 40544,
+          "rom": 335456,
+          "attributes": [
+            4288,
+            4288,
+            4288,
+            4885,
+            4288,
+            4288,
+            4288,
+            4885,
+            4288,
+            4288,
+            4288,
+            4945,
+            4288,
+            4288,
+            4288,
+            4946
+          ]
+        },
+        "mapping_sha256": "e755a5f0d073a2f8e05b3ccde993776153ec186594088087d6b9d7e2b2dd803a",
+        "index_sha256": "e3e0f0798c7156561e361e95c10ee52b9912ec345144677b2c3537ab61676974",
+        "rgba_sha256": "618aacd8d3a5a2ecb8d4e677f63db4176c26137bf3e6bc5cb8a170a815cf3bd8",
+        "opaque_pixels": 59
+      },
+      {
+        "block_id": 80,
+        "mapping": {
+          "pointer_entry_rom": 332736,
+          "cpu": 40576,
+          "rom": 335488,
+          "attributes": [
+            202,
+            203,
+            339,
+            340,
+            195,
+            1792,
+            341,
+            342,
+            198,
+            1280,
+            256,
+            710,
+            200,
+            343,
+            344,
+            345
+          ]
+        },
+        "mapping_sha256": "da87b11b4d00feb5f3e39ef01694f005f684e9adf2e3377751f5e9a85d7bea62",
+        "index_sha256": "0b816acafb860312b66b664c9eabe21deb25f740a53163d9d883e9bdb312214c",
+        "rgba_sha256": "b30c3d24cb4e4a9e408a7665dcc8bacc289da96cd4fb5389c4127af021ecd4b5",
+        "opaque_pixels": 943
+      },
+      {
+        "block_id": 81,
+        "mapping": {
+          "pointer_entry_rom": 332738,
+          "cpu": 40608,
+          "rom": 335520,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            346,
+            192,
+            192,
+            192,
+            347,
+            348,
+            349,
+            350,
+            351,
+            352,
+            353,
+            354
+          ]
+        },
+        "mapping_sha256": "8344500b146a0cc3d2b45309f1362011d061c44ec2ce3afd65b001eb28421dc9",
+        "index_sha256": "b3d69fe4884e3678817fc6a93625935ddde4e11e82e4b3b6f1d4efd5153260b6",
+        "rgba_sha256": "e48b96b5e29cbf66b143b898fbbfcfa2d99cf63027516dd4ad4261fd89b411c4",
+        "opaque_pixels": 457
+      },
+      {
+        "block_id": 82,
+        "mapping": {
+          "pointer_entry_rom": 332740,
+          "cpu": 40640,
+          "rom": 335552,
+          "attributes": [
+            4288,
+            4288,
+            4288,
+            4288,
+            4288,
+            4288,
+            4288,
+            4954,
+            4451,
+            4452,
+            4956,
+            4955,
+            4453,
+            4454,
+            4455,
+            4808
+          ]
+        },
+        "mapping_sha256": "86c7256632bc58d5f95608d46e4abbdc451cc10788739507467a9c7196d6e9e5",
+        "index_sha256": "44f01178e8e03ca8f18c658f01937b8527c0251148934e725017a3fd2aeb9439",
+        "rgba_sha256": "7db9b3da2f0c203b7da3333f9ec19696a232c0a95265737d9742eaa03afdc2da",
+        "opaque_pixels": 458
+      },
+      {
+        "block_id": 83,
+        "mapping": {
+          "pointer_entry_rom": 332742,
+          "cpu": 40672,
+          "rom": 335584,
+          "attributes": [
+            4948,
+            4947,
+            4811,
+            4810,
+            4950,
+            4949,
+            4864,
+            4803,
+            4294,
+            4864,
+            5376,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "16ef391016b861879440403da0b76977c349d92a2f30ae69baff262e1b630c9b",
+        "index_sha256": "e3c5a8790b7eeb5be81da980df365f7f4f59763b0d666795b0ebfc39c918cff3",
+        "rgba_sha256": "5e6ecb3dcc4316035fbaa3104689d2f8be80d785c2c7a4adb8146e238aea45cb",
+        "opaque_pixels": 943
+      },
+      {
+        "block_id": 84,
+        "mapping": {
+          "pointer_entry_rom": 332744,
+          "cpu": 40704,
+          "rom": 335616,
+          "attributes": [
+            360,
+            192,
+            192,
+            192,
+            361,
+            362,
+            192,
+            192,
+            363,
+            364,
+            192,
+            192,
+            200,
+            365,
+            366,
+            192
+          ]
+        },
+        "mapping_sha256": "2dc4721f74c6f17a2173284d5fa791ed071bdd391f322b25851f14936a0a8670",
+        "index_sha256": "b0866a1155ba6f7745c68e752aa5cfbd6349b435e5ef5d167bfd49a8cd11d70b",
+        "rgba_sha256": "ec055b84cfcef5fede4e9fd74e96597fe1c1ec224239cea51dfbb3826deddf52",
+        "opaque_pixels": 314
+      },
+      {
+        "block_id": 85,
+        "mapping": {
+          "pointer_entry_rom": 332746,
+          "cpu": 40736,
+          "rom": 335648,
+          "attributes": [
+            4288,
+            4288,
+            4288,
+            4968,
+            4288,
+            4288,
+            4970,
+            4969,
+            4288,
+            4288,
+            4972,
+            4971,
+            4288,
+            4974,
+            4973,
+            4808
+          ]
+        },
+        "mapping_sha256": "dd08ee1cbd7e00964e75a8b2cecf16f5dbca3067c56b8550f81bf08d4455c3f3",
+        "index_sha256": "eda83c0cbfb89af8ae7ab7b1d7eda1321133bc63a4d26fffb4613d876b3814a3",
+        "rgba_sha256": "abf6dfe6a5eb722880148c7a571922118f57b7ded0d96a98d52d01fcd7b1d44b",
+        "opaque_pixels": 314
+      },
+      {
+        "block_id": 152,
+        "mapping": {
+          "pointer_entry_rom": 332880,
+          "cpu": 40768,
+          "rom": 335680,
+          "attributes": [
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269,
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269
+          ]
+        },
+        "mapping_sha256": "a1a33c34c5e5eb35447030253aa7ee1dc11c1c22642e2b3b205bdd46a7212f48",
+        "index_sha256": "30e06b45db0462fbc73b9b61db058015ab014e71ec240b8f3822ddccaa2dda5d",
+        "rgba_sha256": "5fc02f73de6b12cb37bc44c62bc274bd05a36cb80ddf59858cf470fc47108ace",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 153,
+        "mapping": {
+          "pointer_entry_rom": 332882,
+          "cpu": 42176,
+          "rom": 337088,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "4febf4d8ae22d8edd29b5ca6def38950d0ae1b1deb23e24a28b7965ca77817c7",
+        "index_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "rgba_sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+        "opaque_pixels": 0
+      },
+      {
+        "block_id": 155,
+        "mapping": {
+          "pointer_entry_rom": 332886,
+          "cpu": 40800,
+          "rom": 335712,
+          "attributes": [
+            4289,
+            4290,
+            4290,
+            4801,
+            4291,
+            4292,
+            4293,
+            4803,
+            4294,
+            5829,
+            4295,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "1aeab21068fe0dea4e3dde5f07c1e464a0666524530a39f2eef9031e17742390",
+        "index_sha256": "68116fd241c0aec97d37cf40c58c6cd6b92601e34eb14e0dfc36fe685e151656",
+        "rgba_sha256": "91a2cc303bd309535d8132c82a96a165dbf09033c6888b071acb33f5e575c960",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 156,
+        "mapping": {
+          "pointer_entry_rom": 332888,
+          "cpu": 40832,
+          "rom": 335744,
+          "attributes": [
+            4298,
+            4299,
+            4299,
+            4810,
+            4291,
+            4292,
+            4293,
+            4803,
+            4294,
+            5829,
+            4295,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "52189d6fbab2a44b34952453ce2385df5f883323c6ff31723f4e5fe17b9d26b6",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 161,
+        "mapping": {
+          "pointer_entry_rom": 332898,
+          "cpu": 40896,
+          "rom": 335808,
+          "attributes": [
+            202,
+            203,
+            203,
+            714,
+            195,
+            196,
+            197,
+            707,
+            198,
+            1733,
+            199,
+            710,
+            200,
+            201,
+            201,
+            712
+          ]
+        },
+        "mapping_sha256": "8e33198e5765a62d4003fa9529c1674be6caee0a7938f8c17308382ab07707af",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 162,
+        "mapping": {
+          "pointer_entry_rom": 332900,
+          "cpu": 40928,
+          "rom": 335840,
+          "attributes": [
+            4298,
+            4299,
+            4299,
+            4810,
+            4291,
+            4292,
+            4293,
+            4803,
+            4294,
+            5829,
+            4295,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "52189d6fbab2a44b34952453ce2385df5f883323c6ff31723f4e5fe17b9d26b6",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 163,
+        "mapping": {
+          "pointer_entry_rom": 332902,
+          "cpu": 40960,
+          "rom": 335872,
+          "attributes": [
+            4289,
+            4290,
+            4290,
+            4801,
+            4291,
+            4292,
+            4293,
+            4803,
+            4294,
+            5829,
+            4295,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "1aeab21068fe0dea4e3dde5f07c1e464a0666524530a39f2eef9031e17742390",
+        "index_sha256": "68116fd241c0aec97d37cf40c58c6cd6b92601e34eb14e0dfc36fe685e151656",
+        "rgba_sha256": "91a2cc303bd309535d8132c82a96a165dbf09033c6888b071acb33f5e575c960",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 167,
+        "mapping": {
+          "pointer_entry_rom": 332910,
+          "cpu": 40992,
+          "rom": 335904,
+          "attributes": [
+            4288,
+            4288,
+            4288,
+            4288,
+            4465,
+            4977,
+            4465,
+            4977,
+            4465,
+            4977,
+            4465,
+            4977,
+            4466,
+            4467,
+            4979,
+            4978
+          ]
+        },
+        "mapping_sha256": "9976f61413675200218d8c30eef1fe7074d15d0b9a9550a6f5800e93af775936",
+        "index_sha256": "4a89573fe1a47aba9b38c9ffaa539e9a457b20f39b11f3457b5351a31d9c9e25",
+        "rgba_sha256": "7d34247ae2eab6a259d18a71de905c77cb5de00ec527b702c18d3a938add3c82",
+        "opaque_pixels": 370
+      },
+      {
+        "block_id": 175,
+        "mapping": {
+          "pointer_entry_rom": 332926,
+          "cpu": 41024,
+          "rom": 335936,
+          "attributes": [
+            193,
+            194,
+            194,
+            705,
+            195,
+            196,
+            197,
+            707,
+            198,
+            1733,
+            199,
+            710,
+            200,
+            201,
+            201,
+            712
+          ]
+        },
+        "mapping_sha256": "4728bab00358a0e00d200769a9b1ddc55ea0cca0d406b109085dd06f6f7fc80c",
+        "index_sha256": "68116fd241c0aec97d37cf40c58c6cd6b92601e34eb14e0dfc36fe685e151656",
+        "rgba_sha256": "91a2cc303bd309535d8132c82a96a165dbf09033c6888b071acb33f5e575c960",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 179,
+        "mapping": {
+          "pointer_entry_rom": 332934,
+          "cpu": 41056,
+          "rom": 335968,
+          "attributes": [
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269,
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269
+          ]
+        },
+        "mapping_sha256": "a1a33c34c5e5eb35447030253aa7ee1dc11c1c22642e2b3b205bdd46a7212f48",
+        "index_sha256": "30e06b45db0462fbc73b9b61db058015ab014e71ec240b8f3822ddccaa2dda5d",
+        "rgba_sha256": "5fc02f73de6b12cb37bc44c62bc274bd05a36cb80ddf59858cf470fc47108ace",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 180,
+        "mapping": {
+          "pointer_entry_rom": 332936,
+          "cpu": 41088,
+          "rom": 336000,
+          "attributes": [
+            269,
+            375,
+            887,
+            270,
+            270,
+            376,
+            888,
+            269,
+            269,
+            1400,
+            1912,
+            270,
+            270,
+            1399,
+            1911,
+            269
+          ]
+        },
+        "mapping_sha256": "763f3e26721e9547289c571889bd7a944ee8a2d2deb53c590c865b1a50bc60d9",
+        "index_sha256": "b25ea13bc928003d57fd754f3fca3960905bfdb2ba952ebcc84c6536f0fd3e94",
+        "rgba_sha256": "963f1e65a4c066e365514c2fd80ebe3dfe33c4541b903553152769cde624c50d",
+        "opaque_pixels": 1012
+      },
+      {
+        "block_id": 183,
+        "mapping": {
+          "pointer_entry_rom": 332942,
+          "cpu": 41184,
+          "rom": 336096,
+          "attributes": [
+            269,
+            375,
+            887,
+            270,
+            270,
+            376,
+            888,
+            269,
+            269,
+            1400,
+            1912,
+            270,
+            270,
+            1399,
+            1911,
+            269
+          ]
+        },
+        "mapping_sha256": "763f3e26721e9547289c571889bd7a944ee8a2d2deb53c590c865b1a50bc60d9",
+        "index_sha256": "b25ea13bc928003d57fd754f3fca3960905bfdb2ba952ebcc84c6536f0fd3e94",
+        "rgba_sha256": "963f1e65a4c066e365514c2fd80ebe3dfe33c4541b903553152769cde624c50d",
+        "opaque_pixels": 1012
+      },
+      {
+        "block_id": 197,
+        "mapping": {
+          "pointer_entry_rom": 332970,
+          "cpu": 41312,
+          "rom": 336224,
+          "attributes": [
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383
+          ]
+        },
+        "mapping_sha256": "9bac29d0c845e21afe75d96609ed2e43042312851cab9770c5509ca514e635f8",
+        "index_sha256": "5a648d8015900d89664e00e125df179636301a2d8fa191c1aa2bd9358ea53a69",
+        "rgba_sha256": "918d310c46ff7ee14bba0fc377b98a43d4ef4e211c682e4f767e33c7eb5e582e",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 198,
+        "mapping": {
+          "pointer_entry_rom": 332972,
+          "cpu": 41344,
+          "rom": 336256,
+          "attributes": [
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            384,
+            385,
+            384,
+            385
+          ]
+        },
+        "mapping_sha256": "dd35a48561c17a40f0778866698f89e2995fefb0cd3f9c294a64cad29bd0cdd7",
+        "index_sha256": "4dede5d195f4e700257fa6180a3294154aedade09fe1fe54cdbd0ec6e8f0980c",
+        "rgba_sha256": "11f36ccf983614b1f8d509276a1221f06a1def1a69ec923d2a30b7fbedace371",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 199,
+        "mapping": {
+          "pointer_entry_rom": 332974,
+          "cpu": 41376,
+          "rom": 336288,
+          "attributes": [
+            386,
+            387,
+            386,
+            387,
+            388,
+            389,
+            388,
+            389,
+            390,
+            391,
+            390,
+            391,
+            392,
+            393,
+            392,
+            393
+          ]
+        },
+        "mapping_sha256": "332546814b2b6b737d1141eff702e4706dcd5fd2ed6e1a93588625b3269d9b76",
+        "index_sha256": "1f8303a88cf2b3bdbc50de64a1be852006433e6976d8fa28bb967a85ee42cb44",
+        "rgba_sha256": "c278083c1b44adca6f3d1dd6e84e63b0ec8d4206a0b29913246c2f11fcd9b6ea",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 200,
+        "mapping": {
+          "pointer_entry_rom": 332976,
+          "cpu": 41408,
+          "rom": 336320,
+          "attributes": [
+            394,
+            395,
+            394,
+            395,
+            396,
+            396,
+            396,
+            396,
+            397,
+            397,
+            397,
+            397,
+            398,
+            398,
+            398,
+            398
+          ]
+        },
+        "mapping_sha256": "593ab25b8dc9bc42aa0e7ed41d67e174abd0c03f28aab13c88e81568b6cdedf9",
+        "index_sha256": "e17b35b4b2649a07a219213f003545abd0562d1798e38b259397042b5116787a",
+        "rgba_sha256": "893a532c7b44c5777a43cb364b4b5c526304b07741a3e4b6affa0e9e2d410252",
+        "opaque_pixels": 840
+      },
+      {
+        "block_id": 203,
+        "mapping": {
+          "pointer_entry_rom": 332982,
+          "cpu": 41504,
+          "rom": 336416,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            399,
+            400,
+            401,
+            402,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "e1b0a5b530d16d3cb678d8719b595a525c2b1c2eae43cc44036e1a535db2dd8f",
+        "index_sha256": "2c5f2944f1904aa968f23eb1ce8d5f61e032ccd168d13793645959e9c8d92cdc",
+        "rgba_sha256": "5e1b38f1eab8f11c2a1ffaf424abbd02f72fbd7f65f0c3047d4bf8dbfc11b93f",
+        "opaque_pixels": 64
+      },
+      {
+        "block_id": 204,
+        "mapping": {
+          "pointer_entry_rom": 332984,
+          "cpu": 41536,
+          "rom": 336448,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            399,
+            400,
+            401,
+            402,
+            914,
+            403,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "9bb72944b77b246feb237d063469a50851067ed63f57aed0731553e247565e09",
+        "index_sha256": "4bebac8a1c448b660d2deed572706055f5ec1b459919fbc81f39673d11bef44f",
+        "rgba_sha256": "87b51d565bfddc0ed6e7b56f562e08de9b113e072718d3fdab7f233fda168187",
+        "opaque_pixels": 80
+      },
+      {
+        "block_id": 205,
+        "mapping": {
+          "pointer_entry_rom": 332986,
+          "cpu": 41568,
+          "rom": 336480,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            404,
+            192,
+            192,
+            192,
+            405,
+            406,
+            192,
+            192,
+            407,
+            408,
+            409
+          ]
+        },
+        "mapping_sha256": "67a69e28930e38fad42f9d223bd3d478df9661cb93ef376494c3e094965f67a0",
+        "index_sha256": "26c2fe7a4db3214977667f3542e37f6df10be95bd1d892d717ccb1dbe7b95b56",
+        "rgba_sha256": "ad1e2edfe5f5ee9f878b8af8a336d6d6d0e5fa6d0ea6b532f40d2f98a7b80046",
+        "opaque_pixels": 206
+      },
+      {
+        "block_id": 206,
+        "mapping": {
+          "pointer_entry_rom": 332988,
+          "cpu": 41600,
+          "rom": 336512,
+          "attributes": [
+            410,
+            411,
+            412,
+            413,
+            414,
+            415,
+            414,
+            415,
+            416,
+            417,
+            416,
+            417,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "bcc93276720c412bf2a3d3a5e98276141d25f0cec36f3dc0c43f7810daf6a533",
+        "index_sha256": "fd89d213d843c329b85f1c76fe808aeb9cca19f9c3da843d414e7221da56f7de",
+        "rgba_sha256": "9a6d69110518dfa886a732f445d31e07b9c9f4fd9bf132b5b5266d6d9db34601",
+        "opaque_pixels": 541
+      },
+      {
+        "block_id": 207,
+        "mapping": {
+          "pointer_entry_rom": 332990,
+          "cpu": 41632,
+          "rom": 336544,
+          "attributes": [
+            414,
+            415,
+            416,
+            417,
+            416,
+            417,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "1b01a4befc0a36d7132f70064b873ee11a6b2ea2933acad171809c2a0a91e148",
+        "index_sha256": "55406a2de43527fa0ff38f530fcf251771012c00cc33c37dd6b6fd83e4512f09",
+        "rgba_sha256": "ae85209a3e986cb77ea23de88a6bb4844df18c2e271a8a9ef24bb694b6f7d835",
+        "opaque_pixels": 221
+      },
+      {
+        "block_id": 208,
+        "mapping": {
+          "pointer_entry_rom": 332992,
+          "cpu": 41664,
+          "rom": 336576,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            404,
+            192,
+            418,
+            418,
+            405,
+            410,
+            419
+          ]
+        },
+        "mapping_sha256": "83fc0ac16f964a85b84286f9a5fe2086f3d401866425bf0904d279308f2b5192",
+        "index_sha256": "3d6e348b0dd49563e929606b7810065bb0d1a101b3c24a40125ce74991e956b9",
+        "rgba_sha256": "8d4f8b04c3e0e4b3b7558f660f77f66dddc844a2025897185fd549d102da39c2",
+        "opaque_pixels": 204
+      },
+      {
+        "block_id": 209,
+        "mapping": {
+          "pointer_entry_rom": 332994,
+          "cpu": 41696,
+          "rom": 336608,
+          "attributes": [
+            410,
+            411,
+            412,
+            413,
+            414,
+            415,
+            414,
+            415,
+            416,
+            417,
+            416,
+            417,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "bcc93276720c412bf2a3d3a5e98276141d25f0cec36f3dc0c43f7810daf6a533",
+        "index_sha256": "fd89d213d843c329b85f1c76fe808aeb9cca19f9c3da843d414e7221da56f7de",
+        "rgba_sha256": "9a6d69110518dfa886a732f445d31e07b9c9f4fd9bf132b5b5266d6d9db34601",
+        "opaque_pixels": 541
+      },
+      {
+        "block_id": 210,
+        "mapping": {
+          "pointer_entry_rom": 332996,
+          "cpu": 41728,
+          "rom": 336640,
+          "attributes": [
+            414,
+            415,
+            414,
+            415,
+            416,
+            417,
+            416,
+            417,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "b63a49f7a54a74488d1309c89503e3e7343c9e573e53cc5bb9c27364e7b2461e",
+        "index_sha256": "13bdce417c3c108b3f97e24154f3d9f43e176c81fda74f925739b9e2b4108c30",
+        "rgba_sha256": "61c2f05c4ddae0e94ccdfbeeefda6b103ca1b816fb1075b186d0026111c7e7c3",
+        "opaque_pixels": 342
+      },
+      {
+        "block_id": 211,
+        "mapping": {
+          "pointer_entry_rom": 332998,
+          "cpu": 41760,
+          "rom": 336672,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            418,
+            410,
+            418,
+            410,
+            419,
+            414,
+            415
+          ]
+        },
+        "mapping_sha256": "4a96d229597dbf8e307c5320081a33a22db088e40dae6d1963a4ae49870db9ae",
+        "index_sha256": "007530b5265ef6d4bdd171f3f54ae99163dac191347b19922009e999af2018b3",
+        "rgba_sha256": "835912f5023921936a308f101c520b934f29b184ca8a98779dd31d01c232c98c",
+        "opaque_pixels": 266
+      },
+      {
+        "block_id": 212,
+        "mapping": {
+          "pointer_entry_rom": 333000,
+          "cpu": 41792,
+          "rom": 336704,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            404,
+            192,
+            192,
+            192,
+            405,
+            406,
+            192,
+            192,
+            407,
+            408,
+            409
+          ]
+        },
+        "mapping_sha256": "67a69e28930e38fad42f9d223bd3d478df9661cb93ef376494c3e094965f67a0",
+        "index_sha256": "26c2fe7a4db3214977667f3542e37f6df10be95bd1d892d717ccb1dbe7b95b56",
+        "rgba_sha256": "ad1e2edfe5f5ee9f878b8af8a336d6d6d0e5fa6d0ea6b532f40d2f98a7b80046",
+        "opaque_pixels": 206
+      },
+      {
+        "block_id": 214,
+        "mapping": {
+          "pointer_entry_rom": 333004,
+          "cpu": 41856,
+          "rom": 336768,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            418,
+            410,
+            418,
+            410,
+            419,
+            414,
+            415
+          ]
+        },
+        "mapping_sha256": "4a96d229597dbf8e307c5320081a33a22db088e40dae6d1963a4ae49870db9ae",
+        "index_sha256": "007530b5265ef6d4bdd171f3f54ae99163dac191347b19922009e999af2018b3",
+        "rgba_sha256": "835912f5023921936a308f101c520b934f29b184ca8a98779dd31d01c232c98c",
+        "opaque_pixels": 266
+      },
+      {
+        "block_id": 215,
+        "mapping": {
+          "pointer_entry_rom": 333006,
+          "cpu": 41888,
+          "rom": 336800,
+          "attributes": [
+            414,
+            415,
+            416,
+            417,
+            416,
+            417,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "1b01a4befc0a36d7132f70064b873ee11a6b2ea2933acad171809c2a0a91e148",
+        "index_sha256": "55406a2de43527fa0ff38f530fcf251771012c00cc33c37dd6b6fd83e4512f09",
+        "rgba_sha256": "ae85209a3e986cb77ea23de88a6bb4844df18c2e271a8a9ef24bb694b6f7d835",
+        "opaque_pixels": 221
+      },
+      {
+        "block_id": 248,
+        "mapping": {
+          "pointer_entry_rom": 333072,
+          "cpu": 42144,
+          "rom": 337056,
+          "attributes": [
+            4289,
+            4290,
+            4290,
+            4801,
+            4291,
+            4292,
+            4293,
+            4803,
+            4294,
+            5829,
+            4295,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "1aeab21068fe0dea4e3dde5f07c1e464a0666524530a39f2eef9031e17742390",
+        "index_sha256": "68116fd241c0aec97d37cf40c58c6cd6b92601e34eb14e0dfc36fe685e151656",
+        "rgba_sha256": "91a2cc303bd309535d8132c82a96a165dbf09033c6888b071acb33f5e575c960",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 254,
+        "mapping": {
+          "pointer_entry_rom": 333084,
+          "cpu": 42176,
+          "rom": 337088,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "4febf4d8ae22d8edd29b5ca6def38950d0ae1b1deb23e24a28b7965ca77817c7",
+        "index_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "rgba_sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+        "opaque_pixels": 0
+      },
+      {
+        "block_id": 157,
+        "mapping": {
+          "pointer_entry_rom": 332890,
+          "cpu": 40864,
+          "rom": 335776,
+          "attributes": [
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269,
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269
+          ]
+        },
+        "mapping_sha256": "a1a33c34c5e5eb35447030253aa7ee1dc11c1c22642e2b3b205bdd46a7212f48",
+        "index_sha256": "30e06b45db0462fbc73b9b61db058015ab014e71ec240b8f3822ddccaa2dda5d",
+        "rgba_sha256": "5fc02f73de6b12cb37bc44c62bc274bd05a36cb80ddf59858cf470fc47108ace",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 176,
+        "mapping": {
+          "pointer_entry_rom": 332928,
+          "cpu": 42176,
+          "rom": 337088,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "4febf4d8ae22d8edd29b5ca6def38950d0ae1b1deb23e24a28b7965ca77817c7",
+        "index_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "rgba_sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+        "opaque_pixels": 0
+      }
+    ],
+    "aqz2": [
+      {
+        "block_id": 1,
+        "mapping": {
+          "pointer_entry_rom": 332578,
+          "cpu": 38208,
+          "rom": 333120,
+          "attributes": [
+            193,
+            194,
+            194,
+            705,
+            195,
+            196,
+            197,
+            707,
+            198,
+            1733,
+            199,
+            710,
+            200,
+            201,
+            201,
+            712
+          ]
+        },
+        "mapping_sha256": "4728bab00358a0e00d200769a9b1ddc55ea0cca0d406b109085dd06f6f7fc80c",
+        "index_sha256": "68116fd241c0aec97d37cf40c58c6cd6b92601e34eb14e0dfc36fe685e151656",
+        "rgba_sha256": "91a2cc303bd309535d8132c82a96a165dbf09033c6888b071acb33f5e575c960",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 3,
+        "mapping": {
+          "pointer_entry_rom": 332582,
+          "cpu": 38272,
+          "rom": 333184,
+          "attributes": [
+            202,
+            203,
+            203,
+            714,
+            195,
+            196,
+            197,
+            707,
+            198,
+            1733,
+            199,
+            710,
+            200,
+            201,
+            201,
+            712
+          ]
+        },
+        "mapping_sha256": "8e33198e5765a62d4003fa9529c1674be6caee0a7938f8c17308382ab07707af",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 4,
+        "mapping": {
+          "pointer_entry_rom": 332584,
+          "cpu": 38304,
+          "rom": 333216,
+          "attributes": [
+            204,
+            205,
+            717,
+            716,
+            206,
+            207,
+            719,
+            718,
+            1230,
+            1231,
+            1743,
+            1742,
+            1228,
+            1229,
+            1741,
+            1740
+          ]
+        },
+        "mapping_sha256": "440db45969dae160411a44f6aa4b2cfc7a9cf77682702989b1357400a8679cea",
+        "index_sha256": "fa8ef75b5e626380bc44e97bcbd9e66b2fbc3dba6cc27d0a92b58fcf78b62451",
+        "rgba_sha256": "6a12873013ba3be81e23a6c386bdc1a321b6c10d4e334e0ff9b08671f52ffb78",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 5,
+        "mapping": {
+          "pointer_entry_rom": 332586,
+          "cpu": 38336,
+          "rom": 333248,
+          "attributes": [
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223
+          ]
+        },
+        "mapping_sha256": "e38f78753409f3e188654178ff7aa2b5daab626d1d88d6887ab0872079358fa9",
+        "index_sha256": "1a9569f27d3a795058f7313e91ea3a099fe4f09bcfa5d2706af84fc36661e6e1",
+        "rgba_sha256": "55ff440adb4abb727d2ce3d63a9907e65694bb17be2345b3482706e5a424d4cd",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 7,
+        "mapping": {
+          "pointer_entry_rom": 332590,
+          "cpu": 38400,
+          "rom": 333312,
+          "attributes": [
+            4298,
+            4299,
+            4299,
+            4810,
+            4291,
+            4292,
+            4293,
+            4803,
+            4294,
+            5829,
+            4295,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "52189d6fbab2a44b34952453ce2385df5f883323c6ff31723f4e5fe17b9d26b6",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 8,
+        "mapping": {
+          "pointer_entry_rom": 332592,
+          "cpu": 38432,
+          "rom": 333344,
+          "attributes": [
+            4289,
+            4290,
+            4290,
+            4801,
+            4330,
+            4331,
+            4332,
+            4333,
+            4294,
+            5829,
+            4295,
+            4806,
+            4334,
+            4297,
+            4297,
+            4335
+          ]
+        },
+        "mapping_sha256": "4b44e82eb9064503dbf91b031feda643db6b8021e350d8ce5f70e12e41c76662",
+        "index_sha256": "422a9405bafa1eebc82800f0f137c9b66045f5c310fa299d8a16a8ddb0b4f833",
+        "rgba_sha256": "1aa0944d0fcc4b4785a72da7a9d21a4f91a7c88c5c2fcc6e43c15467a95f3c61",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 9,
+        "mapping": {
+          "pointer_entry_rom": 332594,
+          "cpu": 38464,
+          "rom": 333376,
+          "attributes": [
+            4298,
+            4299,
+            4299,
+            4810,
+            4330,
+            4331,
+            4332,
+            4333,
+            4294,
+            5829,
+            4295,
+            4806,
+            4334,
+            4297,
+            4297,
+            4335
+          ]
+        },
+        "mapping_sha256": "d4eebdbfcea852b61ad211d6dead468915a8b459434b9e607ecaedc55b5f5020",
+        "index_sha256": "419fbd0a9f198005f2d5aaa92297eccf191710adc53650b7b1445014e8919028",
+        "rgba_sha256": "20a2a4c73eb7f86ac2ecb6dce03835054859359498423235751705e08376939d",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 10,
+        "mapping": {
+          "pointer_entry_rom": 332596,
+          "cpu": 38496,
+          "rom": 333408,
+          "attributes": [
+            4289,
+            4290,
+            4290,
+            4801,
+            4291,
+            4292,
+            4293,
+            4803,
+            4294,
+            5829,
+            4295,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "1aeab21068fe0dea4e3dde5f07c1e464a0666524530a39f2eef9031e17742390",
+        "index_sha256": "68116fd241c0aec97d37cf40c58c6cd6b92601e34eb14e0dfc36fe685e151656",
+        "rgba_sha256": "91a2cc303bd309535d8132c82a96a165dbf09033c6888b071acb33f5e575c960",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 13,
+        "mapping": {
+          "pointer_entry_rom": 332602,
+          "cpu": 38528,
+          "rom": 333440,
+          "attributes": [
+            193,
+            194,
+            194,
+            705,
+            200,
+            201,
+            201,
+            712,
+            202,
+            714,
+            202,
+            714,
+            200,
+            712,
+            200,
+            712
+          ]
+        },
+        "mapping_sha256": "efc8050a95368262a69994f798593ad4b66e16aebc6e01d9052f0dbad31f9e51",
+        "index_sha256": "b0f71775a560a8c07eb6b92cd5dd6c01cc24a02d5e0ae20b190159f2e97f4fc9",
+        "rgba_sha256": "6c86aed2780b6d81a239497b76530e9f203b193ac68b538c815bd488137b42de",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 18,
+        "mapping": {
+          "pointer_entry_rom": 332612,
+          "cpu": 38656,
+          "rom": 333568,
+          "attributes": [
+            192,
+            192,
+            248,
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            244,
+            200,
+            713,
+            713,
+            712
+          ]
+        },
+        "mapping_sha256": "697a5de2ba7a51d34952cc8dce8d6de1585486f8265aa9361647589ae3f8e971",
+        "index_sha256": "48e4a9e64212737356e1f94888115df3066605868bc5d8834f4ebe5cf7ac42b5",
+        "rgba_sha256": "704cc45a37bbcfc541e3c0546928aa7e1c74c3c16a4d381369fd6fc655c3acdf",
+        "opaque_pixels": 784
+      },
+      {
+        "block_id": 19,
+        "mapping": {
+          "pointer_entry_rom": 332614,
+          "cpu": 38688,
+          "rom": 333600,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            257,
+            258,
+            259,
+            260,
+            261,
+            262
+          ]
+        },
+        "mapping_sha256": "7ee5c14fdf52693c150840659614cd1b713f549e783c2b7cdf1c1e69f803ced8",
+        "index_sha256": "f99abec36f11da091cf5dd68acf8877c20ce3465c480b17d1db8002b9a5b5a41",
+        "rgba_sha256": "1d70ec0a34faf8da7d77655a933cc700534cf4f5f6c694750b3115778b6d927d",
+        "opaque_pixels": 273
+      },
+      {
+        "block_id": 20,
+        "mapping": {
+          "pointer_entry_rom": 332616,
+          "cpu": 38720,
+          "rom": 333632,
+          "attributes": [
+            202,
+            203,
+            203,
+            714,
+            195,
+            196,
+            197,
+            707,
+            198,
+            1733,
+            199,
+            710,
+            200,
+            201,
+            201,
+            712
+          ]
+        },
+        "mapping_sha256": "8e33198e5765a62d4003fa9529c1674be6caee0a7938f8c17308382ab07707af",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 22,
+        "mapping": {
+          "pointer_entry_rom": 332620,
+          "cpu": 38784,
+          "rom": 333696,
+          "attributes": [
+            202,
+            203,
+            203,
+            714,
+            195,
+            196,
+            197,
+            707,
+            198,
+            1733,
+            199,
+            710,
+            200,
+            201,
+            201,
+            712
+          ]
+        },
+        "mapping_sha256": "8e33198e5765a62d4003fa9529c1674be6caee0a7938f8c17308382ab07707af",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 23,
+        "mapping": {
+          "pointer_entry_rom": 332622,
+          "cpu": 38816,
+          "rom": 333728,
+          "attributes": [
+            761,
+            760,
+            192,
+            192,
+            765,
+            764,
+            763,
+            762,
+            756,
+            1792,
+            767,
+            766,
+            200,
+            201,
+            201,
+            712
+          ]
+        },
+        "mapping_sha256": "1c640e0e24fa155489f1bb98e60c0432c58ad30465e2c7262dc7d860b2cb81be",
+        "index_sha256": "44e5a2157ad0fa76116c9d0031d4ba2309de751b46deaa0eca23b5067df1dc62",
+        "rgba_sha256": "068ad96ecd437c6b124a6e3ce6fcef79ac4bad986f48dfad454211035885b84c",
+        "opaque_pixels": 784
+      },
+      {
+        "block_id": 24,
+        "mapping": {
+          "pointer_entry_rom": 332624,
+          "cpu": 38848,
+          "rom": 333760,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            770,
+            769,
+            192,
+            192,
+            774,
+            773,
+            772,
+            771
+          ]
+        },
+        "mapping_sha256": "0655c0302f98089ad891d7d24e1a5a8e7b7629b9a95d7f29e172b497f9fcd602",
+        "index_sha256": "76c13517b0b07a09af3bc22546d5789680aebd2cd8d8fd6c5dfb21da8e45ede5",
+        "rgba_sha256": "f22a1e3720b4e15e89c80672f03e06352810993da03cefe53292ddf8c03b0824",
+        "opaque_pixels": 273
+      },
+      {
+        "block_id": 25,
+        "mapping": {
+          "pointer_entry_rom": 332626,
+          "cpu": 38880,
+          "rom": 333792,
+          "attributes": [
+            202,
+            203,
+            203,
+            714,
+            195,
+            196,
+            197,
+            707,
+            198,
+            1733,
+            199,
+            710,
+            200,
+            201,
+            201,
+            712
+          ]
+        },
+        "mapping_sha256": "8e33198e5765a62d4003fa9529c1674be6caee0a7938f8c17308382ab07707af",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 29,
+        "mapping": {
+          "pointer_entry_rom": 332634,
+          "cpu": 39008,
+          "rom": 333920,
+          "attributes": [
+            274,
+            270,
+            269,
+            270,
+            754,
+            275,
+            270,
+            269,
+            756,
+            755,
+            275,
+            270,
+            200,
+            759,
+            758,
+            276
+          ]
+        },
+        "mapping_sha256": "81b1cbccc0796edf8995932ad2dd7b46dc0efef437aba221c98f5ac8f771c394",
+        "index_sha256": "1ed505c87bb7eea1df4e3620d70a34489237e33509e910728defa5cb80a9847d",
+        "rgba_sha256": "67e1a0a38c1dcd4b3c92bf870a89e64fdf9347d7164581ca2228a16c70a98bb8",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 31,
+        "mapping": {
+          "pointer_entry_rom": 332638,
+          "cpu": 39072,
+          "rom": 333984,
+          "attributes": [
+            192,
+            192,
+            192,
+            789,
+            192,
+            192,
+            192,
+            790,
+            192,
+            192,
+            192,
+            791,
+            192,
+            192,
+            793,
+            792
+          ]
+        },
+        "mapping_sha256": "121b34a21551568167a9876c9e4c71986ed3016092dd43151fe2931c4070c8b1",
+        "index_sha256": "cbbb07528b2a5f1f4c4fe67eb9983168d78ce64b3d434eaed17b732b61ee5b9e",
+        "rgba_sha256": "09c39f45837e122c9ecd89f220a33f9c7215dbfb4298e493445f35d0f350acda",
+        "opaque_pixels": 119
+      },
+      {
+        "block_id": 34,
+        "mapping": {
+          "pointer_entry_rom": 332644,
+          "cpu": 39168,
+          "rom": 334080,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            799,
+            291,
+            802,
+            801,
+            800
+          ]
+        },
+        "mapping_sha256": "198dcf64ae5c63bf7e8d8d6987369d4703af2885010866f1c264a43dab7d6fac",
+        "index_sha256": "c56e0a7bdf2c98f2075f8deb53d5e13cd463033e2110faf406e9eeb401cfd784",
+        "rgba_sha256": "1eb8aaa197276e46c19f38271550845781604f8381bb87d95ffecfb1ec72b358",
+        "opaque_pixels": 119
+      },
+      {
+        "block_id": 35,
+        "mapping": {
+          "pointer_entry_rom": 332646,
+          "cpu": 39200,
+          "rom": 334112,
+          "attributes": [
+            192,
+            192,
+            794,
+            714,
+            192,
+            796,
+            795,
+            707,
+            798,
+            797,
+            1280,
+            710,
+            200,
+            713,
+            713,
+            712
+          ]
+        },
+        "mapping_sha256": "83922d5921f5410ef2279f48ace52a8db869e4bae947071fd223ea56b46031d8",
+        "index_sha256": "81818fdaa6c6cb7be4435e63e0736a7480eaa89e553dcfb54ced2b81f8c4c3a1",
+        "rgba_sha256": "935a337fa28deb9881f60996f777eef2f2a7b8983578fd8bfe789d90927b3541",
+        "opaque_pixels": 723
+      },
+      {
+        "block_id": 37,
+        "mapping": {
+          "pointer_entry_rom": 332650,
+          "cpu": 39264,
+          "rom": 334176,
+          "attributes": [
+            292,
+            804,
+            292,
+            804,
+            293,
+            294,
+            293,
+            294,
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269
+          ]
+        },
+        "mapping_sha256": "5215fceb4663c897b82d0ea12714e767cc8488c73c2a0a388fcf7f483376acef",
+        "index_sha256": "c9d5b2fbeab1164cfce8f1d7ada4a5c684a1bb4178957e28cf4d9e4f9ec3a525",
+        "rgba_sha256": "a9e3ffab00ca59e376d6d2488a29b7e5f03b3715215cd700f6abdd25862c858b",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 38,
+        "mapping": {
+          "pointer_entry_rom": 332652,
+          "cpu": 39296,
+          "rom": 334208,
+          "attributes": [
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269,
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269
+          ]
+        },
+        "mapping_sha256": "a1a33c34c5e5eb35447030253aa7ee1dc11c1c22642e2b3b205bdd46a7212f48",
+        "index_sha256": "30e06b45db0462fbc73b9b61db058015ab014e71ec240b8f3822ddccaa2dda5d",
+        "rgba_sha256": "5fc02f73de6b12cb37bc44c62bc274bd05a36cb80ddf59858cf470fc47108ace",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 41,
+        "mapping": {
+          "pointer_entry_rom": 332658,
+          "cpu": 39392,
+          "rom": 334304,
+          "attributes": [
+            204,
+            205,
+            717,
+            716,
+            1228,
+            1229,
+            1741,
+            1740,
+            202,
+            714,
+            202,
+            203,
+            200,
+            712,
+            200,
+            201
+          ]
+        },
+        "mapping_sha256": "6db086a9e46c0d679a2d85da5984dfb5e1101232bae4ed9aadc448124c8ff505",
+        "index_sha256": "4eea540ca6602ecb2521dbbafb5e96134aec89e4cd86becc20b1bbc3537ac43f",
+        "rgba_sha256": "2ece62a340f73bd7d9b20d40c3eb324f595b8b0f7ae86101f9395f5c17972092",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 42,
+        "mapping": {
+          "pointer_entry_rom": 332660,
+          "cpu": 39424,
+          "rom": 334336,
+          "attributes": [
+            202,
+            203,
+            203,
+            714,
+            200,
+            201,
+            201,
+            712,
+            202,
+            714,
+            202,
+            203,
+            200,
+            712,
+            200,
+            201
+          ]
+        },
+        "mapping_sha256": "d2565fde630d15e0acb611feaf331980efd132024601bce88d0a7eb22b62577e",
+        "index_sha256": "e1b897bc0434d5cba9cbc8e40a7ca53e5f8f94de7d525d2c5bd8b6f965492501",
+        "rgba_sha256": "014b3291e6d3512bc24e9fbc4a61c4194f863ae6846b3d6d464a7d380c137c9d",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 43,
+        "mapping": {
+          "pointer_entry_rom": 332662,
+          "cpu": 39456,
+          "rom": 334368,
+          "attributes": [
+            202,
+            715,
+            715,
+            714,
+            200,
+            713,
+            713,
+            712,
+            715,
+            714,
+            202,
+            714,
+            713,
+            712,
+            200,
+            712
+          ]
+        },
+        "mapping_sha256": "1833e9cf91ae97b814837832f1808a8caffb230bc285369921e7de4b10b7ea99",
+        "index_sha256": "f34fc83d1ff4ef0f6c63b456d8d3cbb717b46b7e512ef3dd5ae3fe1051022593",
+        "rgba_sha256": "3a60477aeb22c058b7101777ad99ba53f47f29fa86854276de17755298414a5e",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 45,
+        "mapping": {
+          "pointer_entry_rom": 332666,
+          "cpu": 39520,
+          "rom": 334432,
+          "attributes": [
+            4393,
+            4394,
+            4906,
+            4905,
+            4395,
+            4396,
+            4908,
+            4907,
+            4359,
+            4360,
+            4872,
+            4871,
+            4359,
+            4360,
+            4872,
+            4871
+          ]
+        },
+        "mapping_sha256": "bb7f64aec0d7aa1325b6686a7c471678197834ef8271559645c4318b9a73b391",
+        "index_sha256": "3104e6c0a53acdda073ca7620a0b7894adf5ffa45c126851a107b59d755ded8a",
+        "rgba_sha256": "a1be20a8481c5fe3414f282bbbf830cfacfae0e80221c1ca73e3e9c5b81ca7fa",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 46,
+        "mapping": {
+          "pointer_entry_rom": 332668,
+          "cpu": 39552,
+          "rom": 334464,
+          "attributes": [
+            4359,
+            4360,
+            4872,
+            4871,
+            4359,
+            4360,
+            4872,
+            4871,
+            4359,
+            4360,
+            4872,
+            4871,
+            4359,
+            4360,
+            4872,
+            4871
+          ]
+        },
+        "mapping_sha256": "a1a6ca6fe1cfd73ea6587c7341e654c9c4ae6384976b7c350420271bda7e5f1b",
+        "index_sha256": "699864d92cedede1f67f8668ba02fef88976aa16441d8a662cef66a46cbe40b8",
+        "rgba_sha256": "01638e5ec34fa90c750fc22b11d23011d109963c2504ca480c86c5e30ebe1a06",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 47,
+        "mapping": {
+          "pointer_entry_rom": 332670,
+          "cpu": 39584,
+          "rom": 334496,
+          "attributes": [
+            4359,
+            4360,
+            4872,
+            4871,
+            4359,
+            4360,
+            4872,
+            4871,
+            5419,
+            5420,
+            5932,
+            5931,
+            5417,
+            5418,
+            5930,
+            5929
+          ]
+        },
+        "mapping_sha256": "ebc042bb22295f96c8aeaaba4fbc7462caf09cffe1e990d488e90ae398942480",
+        "index_sha256": "cd7ca43eb861c4c047d1b8e353740bd01b31b8a4435bbee346a79e6bac1ec736",
+        "rgba_sha256": "fa95b3400f7ba0dadcd0a237495abc7d98562a483d62ac2abed41d77097b690d",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 48,
+        "mapping": {
+          "pointer_entry_rom": 332672,
+          "cpu": 39616,
+          "rom": 334528,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            301,
+            813,
+            192,
+            192,
+            302,
+            814,
+            192
+          ]
+        },
+        "mapping_sha256": "182d30d342fd2a364d5fef32babb6f2759e81a400b23438082ebfb5018727e0e",
+        "index_sha256": "a32328d5d2d64ee00716f88678bab5a323df2045ba768097aaf748400ea0dfdc",
+        "rgba_sha256": "e508ab0025821fd2b2da302681495f93a37e92e5b8ad4853b23b8fd46d56f3c7",
+        "opaque_pixels": 168
+      },
+      {
+        "block_id": 49,
+        "mapping": {
+          "pointer_entry_rom": 332674,
+          "cpu": 39648,
+          "rom": 334560,
+          "attributes": [
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269,
+            269,
+            303,
+            815,
+            270,
+            270,
+            304,
+            816,
+            269
+          ]
+        },
+        "mapping_sha256": "1226595adb2c0b74101415807dd354b48b9e21c2053c52c9dac2199d54fb2f7a",
+        "index_sha256": "87efa7c5a827e8db7cf0f59fb56a0988f85e9e33d8a6cc2b66b28083d2503d4e",
+        "rgba_sha256": "249897acb7f9d93f7d252b2fce987b46f0c3403af346c0abd9bc9212cf621730",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 51,
+        "mapping": {
+          "pointer_entry_rom": 332678,
+          "cpu": 39712,
+          "rom": 334624,
+          "attributes": [
+            269,
+            270,
+            269,
+            270,
+            307,
+            306,
+            270,
+            269,
+            1331,
+            1330,
+            269,
+            270,
+            293,
+            294,
+            270,
+            269
+          ]
+        },
+        "mapping_sha256": "aebdd1fec89b0fd81a022293f7a29d7e33798c05773600e4bc77e9daf847fc31",
+        "index_sha256": "a8f50c65d91be62c7cef671f9670c22c10e87da177fbdcc90aaf6da4182a9da4",
+        "rgba_sha256": "e17b1f075f805fb0609b3fcfc922dac2f30cf9ec03b03ceef19b0ed9fd232773",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 53,
+        "mapping": {
+          "pointer_entry_rom": 332682,
+          "cpu": 39776,
+          "rom": 334688,
+          "attributes": [
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            306,
+            819,
+            269,
+            270,
+            1330,
+            1843,
+            270,
+            269,
+            293,
+            294
+          ]
+        },
+        "mapping_sha256": "a4fa7d1384d5bfa29920f21105eba7eb9c5497f8fd5ea6fd39846a0522dafd78",
+        "index_sha256": "1b1bcdab71f42c8d8eb355d11ddc74514b02b58610c8a4c90e5fc70d58b4da6b",
+        "rgba_sha256": "8c28363d24f680516557d13da3855c136f8ef556ab844e9bfc49d378012def76",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 54,
+        "mapping": {
+          "pointer_entry_rom": 332684,
+          "cpu": 39808,
+          "rom": 334720,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            309,
+            310,
+            192,
+            192,
+            311,
+            1845,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "c149145eb287734f0a2d266f86a3f69f96223ad30d2070550fa1a5a5a7ac73f0",
+        "index_sha256": "d515b2684f353dd5a81731b9321949a1e95370b4cc4bb0a524e9d727ed6d8514",
+        "rgba_sha256": "150ed09e636feb489a7e617b8bdc2fc1eb9b15f5b4c847f8838d9fe18c8a7858",
+        "opaque_pixels": 170
+      },
+      {
+        "block_id": 55,
+        "mapping": {
+          "pointer_entry_rom": 332686,
+          "cpu": 39840,
+          "rom": 334752,
+          "attributes": [
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269,
+            312,
+            313,
+            269,
+            270,
+            314,
+            1848,
+            270,
+            269
+          ]
+        },
+        "mapping_sha256": "b393aca103c7a921b9cd5739c43568223bfb763820d55d309e59ea01dbbeacd1",
+        "index_sha256": "4d862d1def600f0eb71e0f86673589124ad17265dc14797a57527abc2fa63643",
+        "rgba_sha256": "41ee684e066ca0e95e043a2a6af122062cd7c3321138fb0cf6ab16b8713b70bb",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 57,
+        "mapping": {
+          "pointer_entry_rom": 332690,
+          "cpu": 39904,
+          "rom": 334816,
+          "attributes": [
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269,
+            269,
+            270,
+            825,
+            824,
+            270,
+            269,
+            1336,
+            826
+          ]
+        },
+        "mapping_sha256": "da8a790a7ad1a2b941767def149d2a669553b2d4350a155b3509a0eb9a5baed0",
+        "index_sha256": "063fa221265c3314a61637c00ad559898c3bda88a76b68222978e49539260051",
+        "rgba_sha256": "283e2dfecce3561cb6ebee13f4a0a8226b4f9cc2457c39238046dbc31d3c4b74",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 61,
+        "mapping": {
+          "pointer_entry_rom": 332698,
+          "cpu": 40032,
+          "rom": 334944,
+          "attributes": [
+            269,
+            270,
+            269,
+            270,
+            322,
+            323,
+            322,
+            323,
+            324,
+            324,
+            324,
+            324,
+            325,
+            325,
+            325,
+            325
+          ]
+        },
+        "mapping_sha256": "939b4c911f5996d62cf3d4f3b96d1352d8c763ec3ebbcffa1b9f0d56074cfa7b",
+        "index_sha256": "d311ef83f139da60c7b91e8fafda09548fa130e776a16b0c0d0224866802b4c2",
+        "rgba_sha256": "e6d44bbaf2e43ae6718dc29f04d29e1fe1c64c69eba1aee56f8bf9ba6ca3c8ef",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 64,
+        "mapping": {
+          "pointer_entry_rom": 332704,
+          "cpu": 40096,
+          "rom": 335008,
+          "attributes": [
+            2374,
+            2375,
+            2374,
+            2375,
+            2376,
+            2377,
+            2376,
+            2377,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "b6c1d74d916f5e0aa8b193ba86112180eef53e52462de379c6947818f353f5e8",
+        "index_sha256": "bd8b92a56ee441f43fc705b238efc1180e4b57fc003dbc251616588db7634279",
+        "rgba_sha256": "bf4a7bdc2bd84aac2a54a23fa08b3557c4dd9417f046558ab616326ba2c51ab0",
+        "opaque_pixels": 232
+      },
+      {
+        "block_id": 65,
+        "mapping": {
+          "pointer_entry_rom": 332706,
+          "cpu": 40128,
+          "rom": 335040,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            2374,
+            2375,
+            2374,
+            2375,
+            2376,
+            2377,
+            2376,
+            2377
+          ]
+        },
+        "mapping_sha256": "a3db8b8db1bdde7fb7b1cca651fb3074f171ea5a12b32a2331db52565d71357c",
+        "index_sha256": "c07b6ada0b6c76d036b9bc9d457530b1265e7c0dac9ed78552cbcb8cb841f03e",
+        "rgba_sha256": "130b2cdcaee51e685a8a7eecad25681568e79dc11bdc9dd7c243558749f7e884",
+        "opaque_pixels": 232
+      },
+      {
+        "block_id": 66,
+        "mapping": {
+          "pointer_entry_rom": 332708,
+          "cpu": 40160,
+          "rom": 335072,
+          "attributes": [
+            2374,
+            2375,
+            192,
+            192,
+            2376,
+            2377,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "a35447546ed8ab1c56ce70be9e1d60108ab1992c6b5ca9f8a10aa7a7961f9178",
+        "index_sha256": "324ba8178378919712f21a8551077470eb2a35cec75891b0f58e800ec15dafce",
+        "rgba_sha256": "73e62f9a6e102a022ac6d1cdb4ea3a4b8b2a2864d0593d896ad62b58e509f2f5",
+        "opaque_pixels": 116
+      },
+      {
+        "block_id": 67,
+        "mapping": {
+          "pointer_entry_rom": 332710,
+          "cpu": 40192,
+          "rom": 335104,
+          "attributes": [
+            192,
+            192,
+            2374,
+            2375,
+            192,
+            192,
+            2376,
+            2377,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "98ec568eb2082f907c9222c4400fbb930f2c882c9a9db1beb31ecb1faecf911c",
+        "index_sha256": "f8a8fb775c6f5887c605b80928263a82159a2d8cc00f5befebc255d38ecfaf39",
+        "rgba_sha256": "3c3305c317b8975b51506b76e05d3de59af4045415187914147fbb0285c91231",
+        "opaque_pixels": 116
+      },
+      {
+        "block_id": 68,
+        "mapping": {
+          "pointer_entry_rom": 332712,
+          "cpu": 40224,
+          "rom": 335136,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            2374,
+            2375,
+            192,
+            192,
+            2376,
+            2377,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "61d86d987f7c6ff63a85e2b556a649235f7b97543c020d1debb53d587400f881",
+        "index_sha256": "7570374f0341cc4cf343b4e98c22abca4437acaf5271d3206ba25c1a677574b2",
+        "rgba_sha256": "1159ac426a2d0a885e1c2087e28bdbfebfb8a95d588af2a836834e8d3322fa61",
+        "opaque_pixels": 116
+      },
+      {
+        "block_id": 69,
+        "mapping": {
+          "pointer_entry_rom": 332714,
+          "cpu": 40256,
+          "rom": 335168,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            2374,
+            2375,
+            192,
+            192,
+            2376,
+            2377
+          ]
+        },
+        "mapping_sha256": "435371f09b2e2b5b050ccaf92af82c853b6cf2fec3be2c0a7b8f3fdd7fdb1888",
+        "index_sha256": "837905c22ef60e55c8876e361f84f6594b563fdd66f00d5e09b8822db453028e",
+        "rgba_sha256": "4dc227ea6d4f0dbd7b33fa23017f4a61e61b9a6a166ce31ff71a61f18d442c9b",
+        "opaque_pixels": 116
+      },
+      {
+        "block_id": 70,
+        "mapping": {
+          "pointer_entry_rom": 332716,
+          "cpu": 42176,
+          "rom": 337088,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "4febf4d8ae22d8edd29b5ca6def38950d0ae1b1deb23e24a28b7965ca77817c7",
+        "index_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "rgba_sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+        "opaque_pixels": 0
+      },
+      {
+        "block_id": 71,
+        "mapping": {
+          "pointer_entry_rom": 332718,
+          "cpu": 40288,
+          "rom": 335200,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            2378,
+            2379,
+            2890,
+            192,
+            2380,
+            2381,
+            2892,
+            192,
+            2382,
+            2383,
+            2384,
+            192
+          ]
+        },
+        "mapping_sha256": "06eac70c3945fd84b5c01033c9f2a8d4fd3874282a3024a51ca063e6db5325cf",
+        "index_sha256": "37263cc9997115e75dfe92aba87e8bbcf5fe2ed45af01a93aaac77859377df2a",
+        "rgba_sha256": "0e171bc99c5b59d56cfd045d4f6129f2e7e6a66a2e9e9edeb2f4e87728d42071",
+        "opaque_pixels": 475
+      },
+      {
+        "block_id": 72,
+        "mapping": {
+          "pointer_entry_rom": 332720,
+          "cpu": 40320,
+          "rom": 335232,
+          "attributes": [
+            1224,
+            1225,
+            1225,
+            1736,
+            1222,
+            768,
+            1309,
+            1310,
+            1219,
+            1307,
+            1308,
+            192,
+            1226,
+            1306,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "2fe50dead8a9588628690b4ef9fb138b5e4af0c4dde0980fffc17f50b049fa84",
+        "index_sha256": "94ebb9a95c433f34f4f0d146568afd7a0af5c5fd94efa9a2836b29d6df6c02b0",
+        "rgba_sha256": "c0a475ae8220322d21bdd5b64dd3672141b428d5310d9dc6d98e066013f0f6a5",
+        "opaque_pixels": 723
+      },
+      {
+        "block_id": 73,
+        "mapping": {
+          "pointer_entry_rom": 332722,
+          "cpu": 40352,
+          "rom": 335264,
+          "attributes": [
+            1312,
+            1313,
+            1314,
+            1315,
+            1311,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "ec93bbf37a8646657c684138ca6071f1310dd8ae4518d7abd8b729e0a2d49ef8",
+        "index_sha256": "bbe381ad84b80170069f206de8f4ee7643a3a1e02a0a822a7028727a610c7406",
+        "rgba_sha256": "bd6f36cf2945bc2d16ccf979bf54ee230ba429bd4e4a973a9d51182d2ac7dbb2",
+        "opaque_pixels": 119
+      },
+      {
+        "block_id": 74,
+        "mapping": {
+          "pointer_entry_rom": 332724,
+          "cpu": 40384,
+          "rom": 335296,
+          "attributes": [
+            5411,
+            5922,
+            5921,
+            5920,
+            4288,
+            4288,
+            4288,
+            5919,
+            4288,
+            4288,
+            4288,
+            4288,
+            4288,
+            4288,
+            4288,
+            4288
+          ]
+        },
+        "mapping_sha256": "e3b70065e69100dfec4c1ae62d171e5cb3d51e0963b5808af7ee7049d48393d3",
+        "index_sha256": "c106aef2a9f71d9c74ac9f07b72b791de387bcefd00057b53a8ee748bf6f9a96",
+        "rgba_sha256": "18500fa3da2b67f589c6a301fcb4f02e822f3b99dfdb53157761bbcd98a1ff01",
+        "opaque_pixels": 119
+      },
+      {
+        "block_id": 75,
+        "mapping": {
+          "pointer_entry_rom": 332726,
+          "cpu": 40416,
+          "rom": 335328,
+          "attributes": [
+            5320,
+            5833,
+            5833,
+            5832,
+            5918,
+            5917,
+            4352,
+            5830,
+            4288,
+            5916,
+            5915,
+            5827,
+            4288,
+            4288,
+            5914,
+            5834
+          ]
+        },
+        "mapping_sha256": "cbece2725996a329604125709da02fd94cf3028055259d7d268b884483b95e87",
+        "index_sha256": "5e1c4fed0d614ed15d97b89c96d305df692212c516431eaab42af2446753c62c",
+        "rgba_sha256": "92566d40f1c3c0ffd6f6ac89ad407ad582fade6c16cb50c94fea892e0f31ead7",
+        "opaque_pixels": 723
+      },
+      {
+        "block_id": 76,
+        "mapping": {
+          "pointer_entry_rom": 332728,
+          "cpu": 40448,
+          "rom": 335360,
+          "attributes": [
+            1304,
+            1305,
+            192,
+            192,
+            1303,
+            192,
+            192,
+            192,
+            1302,
+            192,
+            192,
+            192,
+            277,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "6af15599e79945c666f3cab1ccde1cfc9a1863e57bf41333783d09b3db6e2b5b",
+        "index_sha256": "0957e150e458b428535be8ed1bd9408f47863ef2c9133fb6db1e51c736cc631a",
+        "rgba_sha256": "7d3de25126644aa861b5039143d114bae3452be13ad40ddbc647aba6bec0a7b4",
+        "opaque_pixels": 119
+      },
+      {
+        "block_id": 77,
+        "mapping": {
+          "pointer_entry_rom": 332730,
+          "cpu": 40480,
+          "rom": 335392,
+          "attributes": [
+            4288,
+            4288,
+            5913,
+            5912,
+            4288,
+            4288,
+            4288,
+            5911,
+            4288,
+            4288,
+            4288,
+            5910,
+            4288,
+            4288,
+            4288,
+            4885
+          ]
+        },
+        "mapping_sha256": "e5d0427757a386b9d37f509173528320a8b393c07adb358e86c6a0d8af4ceadd",
+        "index_sha256": "b81abdfad854c463fd5705e308fbe101855e0bfa306997a1bef739efc881e832",
+        "rgba_sha256": "9e4fb221d3cba69f463762420dd5698281c96ff952eca9338aa57ebc06bccf04",
+        "opaque_pixels": 119
+      },
+      {
+        "block_id": 78,
+        "mapping": {
+          "pointer_entry_rom": 332732,
+          "cpu": 40512,
+          "rom": 335424,
+          "attributes": [
+            277,
+            192,
+            192,
+            192,
+            277,
+            192,
+            192,
+            192,
+            337,
+            192,
+            192,
+            192,
+            338,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "d3ea040b70f751ae7b291e738408c7b73274406199eee59b2e4f032b766ff58f",
+        "index_sha256": "31260d0898888f82a48f8af10b3b049eb228f1b1206e89d12fcbecafc753f717",
+        "rgba_sha256": "c902491d4ddb982456104b27bb8b6cb20ba707c62a4be06d04e94aee8af45fe1",
+        "opaque_pixels": 59
+      },
+      {
+        "block_id": 79,
+        "mapping": {
+          "pointer_entry_rom": 332734,
+          "cpu": 40544,
+          "rom": 335456,
+          "attributes": [
+            4288,
+            4288,
+            4288,
+            4885,
+            4288,
+            4288,
+            4288,
+            4885,
+            4288,
+            4288,
+            4288,
+            4945,
+            4288,
+            4288,
+            4288,
+            4946
+          ]
+        },
+        "mapping_sha256": "e755a5f0d073a2f8e05b3ccde993776153ec186594088087d6b9d7e2b2dd803a",
+        "index_sha256": "e3e0f0798c7156561e361e95c10ee52b9912ec345144677b2c3537ab61676974",
+        "rgba_sha256": "618aacd8d3a5a2ecb8d4e677f63db4176c26137bf3e6bc5cb8a170a815cf3bd8",
+        "opaque_pixels": 59
+      },
+      {
+        "block_id": 80,
+        "mapping": {
+          "pointer_entry_rom": 332736,
+          "cpu": 40576,
+          "rom": 335488,
+          "attributes": [
+            202,
+            203,
+            339,
+            340,
+            195,
+            1792,
+            341,
+            342,
+            198,
+            1280,
+            256,
+            710,
+            200,
+            343,
+            344,
+            345
+          ]
+        },
+        "mapping_sha256": "da87b11b4d00feb5f3e39ef01694f005f684e9adf2e3377751f5e9a85d7bea62",
+        "index_sha256": "0b816acafb860312b66b664c9eabe21deb25f740a53163d9d883e9bdb312214c",
+        "rgba_sha256": "b30c3d24cb4e4a9e408a7665dcc8bacc289da96cd4fb5389c4127af021ecd4b5",
+        "opaque_pixels": 943
+      },
+      {
+        "block_id": 81,
+        "mapping": {
+          "pointer_entry_rom": 332738,
+          "cpu": 40608,
+          "rom": 335520,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            346,
+            192,
+            192,
+            192,
+            347,
+            348,
+            349,
+            350,
+            351,
+            352,
+            353,
+            354
+          ]
+        },
+        "mapping_sha256": "8344500b146a0cc3d2b45309f1362011d061c44ec2ce3afd65b001eb28421dc9",
+        "index_sha256": "b3d69fe4884e3678817fc6a93625935ddde4e11e82e4b3b6f1d4efd5153260b6",
+        "rgba_sha256": "e48b96b5e29cbf66b143b898fbbfcfa2d99cf63027516dd4ad4261fd89b411c4",
+        "opaque_pixels": 457
+      },
+      {
+        "block_id": 82,
+        "mapping": {
+          "pointer_entry_rom": 332740,
+          "cpu": 40640,
+          "rom": 335552,
+          "attributes": [
+            4288,
+            4288,
+            4288,
+            4288,
+            4288,
+            4288,
+            4288,
+            4954,
+            4451,
+            4452,
+            4956,
+            4955,
+            4453,
+            4454,
+            4455,
+            4808
+          ]
+        },
+        "mapping_sha256": "86c7256632bc58d5f95608d46e4abbdc451cc10788739507467a9c7196d6e9e5",
+        "index_sha256": "44f01178e8e03ca8f18c658f01937b8527c0251148934e725017a3fd2aeb9439",
+        "rgba_sha256": "7db9b3da2f0c203b7da3333f9ec19696a232c0a95265737d9742eaa03afdc2da",
+        "opaque_pixels": 458
+      },
+      {
+        "block_id": 83,
+        "mapping": {
+          "pointer_entry_rom": 332742,
+          "cpu": 40672,
+          "rom": 335584,
+          "attributes": [
+            4948,
+            4947,
+            4811,
+            4810,
+            4950,
+            4949,
+            4864,
+            4803,
+            4294,
+            4864,
+            5376,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "16ef391016b861879440403da0b76977c349d92a2f30ae69baff262e1b630c9b",
+        "index_sha256": "e3c5a8790b7eeb5be81da980df365f7f4f59763b0d666795b0ebfc39c918cff3",
+        "rgba_sha256": "5e6ecb3dcc4316035fbaa3104689d2f8be80d785c2c7a4adb8146e238aea45cb",
+        "opaque_pixels": 943
+      },
+      {
+        "block_id": 84,
+        "mapping": {
+          "pointer_entry_rom": 332744,
+          "cpu": 40704,
+          "rom": 335616,
+          "attributes": [
+            360,
+            192,
+            192,
+            192,
+            361,
+            362,
+            192,
+            192,
+            363,
+            364,
+            192,
+            192,
+            200,
+            365,
+            366,
+            192
+          ]
+        },
+        "mapping_sha256": "2dc4721f74c6f17a2173284d5fa791ed071bdd391f322b25851f14936a0a8670",
+        "index_sha256": "b0866a1155ba6f7745c68e752aa5cfbd6349b435e5ef5d167bfd49a8cd11d70b",
+        "rgba_sha256": "ec055b84cfcef5fede4e9fd74e96597fe1c1ec224239cea51dfbb3826deddf52",
+        "opaque_pixels": 314
+      },
+      {
+        "block_id": 85,
+        "mapping": {
+          "pointer_entry_rom": 332746,
+          "cpu": 40736,
+          "rom": 335648,
+          "attributes": [
+            4288,
+            4288,
+            4288,
+            4968,
+            4288,
+            4288,
+            4970,
+            4969,
+            4288,
+            4288,
+            4972,
+            4971,
+            4288,
+            4974,
+            4973,
+            4808
+          ]
+        },
+        "mapping_sha256": "dd08ee1cbd7e00964e75a8b2cecf16f5dbca3067c56b8550f81bf08d4455c3f3",
+        "index_sha256": "eda83c0cbfb89af8ae7ab7b1d7eda1321133bc63a4d26fffb4613d876b3814a3",
+        "rgba_sha256": "abf6dfe6a5eb722880148c7a571922118f57b7ded0d96a98d52d01fcd7b1d44b",
+        "opaque_pixels": 314
+      },
+      {
+        "block_id": 152,
+        "mapping": {
+          "pointer_entry_rom": 332880,
+          "cpu": 40768,
+          "rom": 335680,
+          "attributes": [
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269,
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269
+          ]
+        },
+        "mapping_sha256": "a1a33c34c5e5eb35447030253aa7ee1dc11c1c22642e2b3b205bdd46a7212f48",
+        "index_sha256": "30e06b45db0462fbc73b9b61db058015ab014e71ec240b8f3822ddccaa2dda5d",
+        "rgba_sha256": "5fc02f73de6b12cb37bc44c62bc274bd05a36cb80ddf59858cf470fc47108ace",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 155,
+        "mapping": {
+          "pointer_entry_rom": 332886,
+          "cpu": 40800,
+          "rom": 335712,
+          "attributes": [
+            4289,
+            4290,
+            4290,
+            4801,
+            4291,
+            4292,
+            4293,
+            4803,
+            4294,
+            5829,
+            4295,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "1aeab21068fe0dea4e3dde5f07c1e464a0666524530a39f2eef9031e17742390",
+        "index_sha256": "68116fd241c0aec97d37cf40c58c6cd6b92601e34eb14e0dfc36fe685e151656",
+        "rgba_sha256": "91a2cc303bd309535d8132c82a96a165dbf09033c6888b071acb33f5e575c960",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 156,
+        "mapping": {
+          "pointer_entry_rom": 332888,
+          "cpu": 40832,
+          "rom": 335744,
+          "attributes": [
+            4298,
+            4299,
+            4299,
+            4810,
+            4291,
+            4292,
+            4293,
+            4803,
+            4294,
+            5829,
+            4295,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "52189d6fbab2a44b34952453ce2385df5f883323c6ff31723f4e5fe17b9d26b6",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 161,
+        "mapping": {
+          "pointer_entry_rom": 332898,
+          "cpu": 40896,
+          "rom": 335808,
+          "attributes": [
+            202,
+            203,
+            203,
+            714,
+            195,
+            196,
+            197,
+            707,
+            198,
+            1733,
+            199,
+            710,
+            200,
+            201,
+            201,
+            712
+          ]
+        },
+        "mapping_sha256": "8e33198e5765a62d4003fa9529c1674be6caee0a7938f8c17308382ab07707af",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 162,
+        "mapping": {
+          "pointer_entry_rom": 332900,
+          "cpu": 40928,
+          "rom": 335840,
+          "attributes": [
+            4298,
+            4299,
+            4299,
+            4810,
+            4291,
+            4292,
+            4293,
+            4803,
+            4294,
+            5829,
+            4295,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "52189d6fbab2a44b34952453ce2385df5f883323c6ff31723f4e5fe17b9d26b6",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 163,
+        "mapping": {
+          "pointer_entry_rom": 332902,
+          "cpu": 40960,
+          "rom": 335872,
+          "attributes": [
+            4289,
+            4290,
+            4290,
+            4801,
+            4291,
+            4292,
+            4293,
+            4803,
+            4294,
+            5829,
+            4295,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "1aeab21068fe0dea4e3dde5f07c1e464a0666524530a39f2eef9031e17742390",
+        "index_sha256": "68116fd241c0aec97d37cf40c58c6cd6b92601e34eb14e0dfc36fe685e151656",
+        "rgba_sha256": "91a2cc303bd309535d8132c82a96a165dbf09033c6888b071acb33f5e575c960",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 167,
+        "mapping": {
+          "pointer_entry_rom": 332910,
+          "cpu": 40992,
+          "rom": 335904,
+          "attributes": [
+            4288,
+            4288,
+            4288,
+            4288,
+            4465,
+            4977,
+            4465,
+            4977,
+            4465,
+            4977,
+            4465,
+            4977,
+            4466,
+            4467,
+            4979,
+            4978
+          ]
+        },
+        "mapping_sha256": "9976f61413675200218d8c30eef1fe7074d15d0b9a9550a6f5800e93af775936",
+        "index_sha256": "4a89573fe1a47aba9b38c9ffaa539e9a457b20f39b11f3457b5351a31d9c9e25",
+        "rgba_sha256": "7d34247ae2eab6a259d18a71de905c77cb5de00ec527b702c18d3a938add3c82",
+        "opaque_pixels": 370
+      },
+      {
+        "block_id": 175,
+        "mapping": {
+          "pointer_entry_rom": 332926,
+          "cpu": 41024,
+          "rom": 335936,
+          "attributes": [
+            193,
+            194,
+            194,
+            705,
+            195,
+            196,
+            197,
+            707,
+            198,
+            1733,
+            199,
+            710,
+            200,
+            201,
+            201,
+            712
+          ]
+        },
+        "mapping_sha256": "4728bab00358a0e00d200769a9b1ddc55ea0cca0d406b109085dd06f6f7fc80c",
+        "index_sha256": "68116fd241c0aec97d37cf40c58c6cd6b92601e34eb14e0dfc36fe685e151656",
+        "rgba_sha256": "91a2cc303bd309535d8132c82a96a165dbf09033c6888b071acb33f5e575c960",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 179,
+        "mapping": {
+          "pointer_entry_rom": 332934,
+          "cpu": 41056,
+          "rom": 335968,
+          "attributes": [
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269,
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269
+          ]
+        },
+        "mapping_sha256": "a1a33c34c5e5eb35447030253aa7ee1dc11c1c22642e2b3b205bdd46a7212f48",
+        "index_sha256": "30e06b45db0462fbc73b9b61db058015ab014e71ec240b8f3822ddccaa2dda5d",
+        "rgba_sha256": "5fc02f73de6b12cb37bc44c62bc274bd05a36cb80ddf59858cf470fc47108ace",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 180,
+        "mapping": {
+          "pointer_entry_rom": 332936,
+          "cpu": 41088,
+          "rom": 336000,
+          "attributes": [
+            269,
+            375,
+            887,
+            270,
+            270,
+            376,
+            888,
+            269,
+            269,
+            1400,
+            1912,
+            270,
+            270,
+            1399,
+            1911,
+            269
+          ]
+        },
+        "mapping_sha256": "763f3e26721e9547289c571889bd7a944ee8a2d2deb53c590c865b1a50bc60d9",
+        "index_sha256": "b25ea13bc928003d57fd754f3fca3960905bfdb2ba952ebcc84c6536f0fd3e94",
+        "rgba_sha256": "963f1e65a4c066e365514c2fd80ebe3dfe33c4541b903553152769cde624c50d",
+        "opaque_pixels": 1012
+      },
+      {
+        "block_id": 183,
+        "mapping": {
+          "pointer_entry_rom": 332942,
+          "cpu": 41184,
+          "rom": 336096,
+          "attributes": [
+            269,
+            375,
+            887,
+            270,
+            270,
+            376,
+            888,
+            269,
+            269,
+            1400,
+            1912,
+            270,
+            270,
+            1399,
+            1911,
+            269
+          ]
+        },
+        "mapping_sha256": "763f3e26721e9547289c571889bd7a944ee8a2d2deb53c590c865b1a50bc60d9",
+        "index_sha256": "b25ea13bc928003d57fd754f3fca3960905bfdb2ba952ebcc84c6536f0fd3e94",
+        "rgba_sha256": "963f1e65a4c066e365514c2fd80ebe3dfe33c4541b903553152769cde624c50d",
+        "opaque_pixels": 1012
+      },
+      {
+        "block_id": 197,
+        "mapping": {
+          "pointer_entry_rom": 332970,
+          "cpu": 41312,
+          "rom": 336224,
+          "attributes": [
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383
+          ]
+        },
+        "mapping_sha256": "9bac29d0c845e21afe75d96609ed2e43042312851cab9770c5509ca514e635f8",
+        "index_sha256": "5a648d8015900d89664e00e125df179636301a2d8fa191c1aa2bd9358ea53a69",
+        "rgba_sha256": "918d310c46ff7ee14bba0fc377b98a43d4ef4e211c682e4f767e33c7eb5e582e",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 198,
+        "mapping": {
+          "pointer_entry_rom": 332972,
+          "cpu": 41344,
+          "rom": 336256,
+          "attributes": [
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            384,
+            385,
+            384,
+            385
+          ]
+        },
+        "mapping_sha256": "dd35a48561c17a40f0778866698f89e2995fefb0cd3f9c294a64cad29bd0cdd7",
+        "index_sha256": "4dede5d195f4e700257fa6180a3294154aedade09fe1fe54cdbd0ec6e8f0980c",
+        "rgba_sha256": "11f36ccf983614b1f8d509276a1221f06a1def1a69ec923d2a30b7fbedace371",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 199,
+        "mapping": {
+          "pointer_entry_rom": 332974,
+          "cpu": 41376,
+          "rom": 336288,
+          "attributes": [
+            386,
+            387,
+            386,
+            387,
+            388,
+            389,
+            388,
+            389,
+            390,
+            391,
+            390,
+            391,
+            392,
+            393,
+            392,
+            393
+          ]
+        },
+        "mapping_sha256": "332546814b2b6b737d1141eff702e4706dcd5fd2ed6e1a93588625b3269d9b76",
+        "index_sha256": "1f8303a88cf2b3bdbc50de64a1be852006433e6976d8fa28bb967a85ee42cb44",
+        "rgba_sha256": "c278083c1b44adca6f3d1dd6e84e63b0ec8d4206a0b29913246c2f11fcd9b6ea",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 200,
+        "mapping": {
+          "pointer_entry_rom": 332976,
+          "cpu": 41408,
+          "rom": 336320,
+          "attributes": [
+            394,
+            395,
+            394,
+            395,
+            396,
+            396,
+            396,
+            396,
+            397,
+            397,
+            397,
+            397,
+            398,
+            398,
+            398,
+            398
+          ]
+        },
+        "mapping_sha256": "593ab25b8dc9bc42aa0e7ed41d67e174abd0c03f28aab13c88e81568b6cdedf9",
+        "index_sha256": "e17b35b4b2649a07a219213f003545abd0562d1798e38b259397042b5116787a",
+        "rgba_sha256": "893a532c7b44c5777a43cb364b4b5c526304b07741a3e4b6affa0e9e2d410252",
+        "opaque_pixels": 840
+      },
+      {
+        "block_id": 203,
+        "mapping": {
+          "pointer_entry_rom": 332982,
+          "cpu": 41504,
+          "rom": 336416,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            399,
+            400,
+            401,
+            402,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "e1b0a5b530d16d3cb678d8719b595a525c2b1c2eae43cc44036e1a535db2dd8f",
+        "index_sha256": "2c5f2944f1904aa968f23eb1ce8d5f61e032ccd168d13793645959e9c8d92cdc",
+        "rgba_sha256": "5e1b38f1eab8f11c2a1ffaf424abbd02f72fbd7f65f0c3047d4bf8dbfc11b93f",
+        "opaque_pixels": 64
+      },
+      {
+        "block_id": 204,
+        "mapping": {
+          "pointer_entry_rom": 332984,
+          "cpu": 41536,
+          "rom": 336448,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            399,
+            400,
+            401,
+            402,
+            914,
+            403,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "9bb72944b77b246feb237d063469a50851067ed63f57aed0731553e247565e09",
+        "index_sha256": "4bebac8a1c448b660d2deed572706055f5ec1b459919fbc81f39673d11bef44f",
+        "rgba_sha256": "87b51d565bfddc0ed6e7b56f562e08de9b113e072718d3fdab7f233fda168187",
+        "opaque_pixels": 80
+      },
+      {
+        "block_id": 205,
+        "mapping": {
+          "pointer_entry_rom": 332986,
+          "cpu": 41568,
+          "rom": 336480,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            404,
+            192,
+            192,
+            192,
+            405,
+            406,
+            192,
+            192,
+            407,
+            408,
+            409
+          ]
+        },
+        "mapping_sha256": "67a69e28930e38fad42f9d223bd3d478df9661cb93ef376494c3e094965f67a0",
+        "index_sha256": "26c2fe7a4db3214977667f3542e37f6df10be95bd1d892d717ccb1dbe7b95b56",
+        "rgba_sha256": "ad1e2edfe5f5ee9f878b8af8a336d6d6d0e5fa6d0ea6b532f40d2f98a7b80046",
+        "opaque_pixels": 206
+      },
+      {
+        "block_id": 206,
+        "mapping": {
+          "pointer_entry_rom": 332988,
+          "cpu": 41600,
+          "rom": 336512,
+          "attributes": [
+            410,
+            411,
+            412,
+            413,
+            414,
+            415,
+            414,
+            415,
+            416,
+            417,
+            416,
+            417,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "bcc93276720c412bf2a3d3a5e98276141d25f0cec36f3dc0c43f7810daf6a533",
+        "index_sha256": "fd89d213d843c329b85f1c76fe808aeb9cca19f9c3da843d414e7221da56f7de",
+        "rgba_sha256": "9a6d69110518dfa886a732f445d31e07b9c9f4fd9bf132b5b5266d6d9db34601",
+        "opaque_pixels": 541
+      },
+      {
+        "block_id": 207,
+        "mapping": {
+          "pointer_entry_rom": 332990,
+          "cpu": 41632,
+          "rom": 336544,
+          "attributes": [
+            414,
+            415,
+            416,
+            417,
+            416,
+            417,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "1b01a4befc0a36d7132f70064b873ee11a6b2ea2933acad171809c2a0a91e148",
+        "index_sha256": "55406a2de43527fa0ff38f530fcf251771012c00cc33c37dd6b6fd83e4512f09",
+        "rgba_sha256": "ae85209a3e986cb77ea23de88a6bb4844df18c2e271a8a9ef24bb694b6f7d835",
+        "opaque_pixels": 221
+      },
+      {
+        "block_id": 208,
+        "mapping": {
+          "pointer_entry_rom": 332992,
+          "cpu": 41664,
+          "rom": 336576,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            404,
+            192,
+            418,
+            418,
+            405,
+            410,
+            419
+          ]
+        },
+        "mapping_sha256": "83fc0ac16f964a85b84286f9a5fe2086f3d401866425bf0904d279308f2b5192",
+        "index_sha256": "3d6e348b0dd49563e929606b7810065bb0d1a101b3c24a40125ce74991e956b9",
+        "rgba_sha256": "8d4f8b04c3e0e4b3b7558f660f77f66dddc844a2025897185fd549d102da39c2",
+        "opaque_pixels": 204
+      },
+      {
+        "block_id": 210,
+        "mapping": {
+          "pointer_entry_rom": 332996,
+          "cpu": 41728,
+          "rom": 336640,
+          "attributes": [
+            414,
+            415,
+            414,
+            415,
+            416,
+            417,
+            416,
+            417,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "b63a49f7a54a74488d1309c89503e3e7343c9e573e53cc5bb9c27364e7b2461e",
+        "index_sha256": "13bdce417c3c108b3f97e24154f3d9f43e176c81fda74f925739b9e2b4108c30",
+        "rgba_sha256": "61c2f05c4ddae0e94ccdfbeeefda6b103ca1b816fb1075b186d0026111c7e7c3",
+        "opaque_pixels": 342
+      },
+      {
+        "block_id": 211,
+        "mapping": {
+          "pointer_entry_rom": 332998,
+          "cpu": 41760,
+          "rom": 336672,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            418,
+            410,
+            418,
+            410,
+            419,
+            414,
+            415
+          ]
+        },
+        "mapping_sha256": "4a96d229597dbf8e307c5320081a33a22db088e40dae6d1963a4ae49870db9ae",
+        "index_sha256": "007530b5265ef6d4bdd171f3f54ae99163dac191347b19922009e999af2018b3",
+        "rgba_sha256": "835912f5023921936a308f101c520b934f29b184ca8a98779dd31d01c232c98c",
+        "opaque_pixels": 266
+      },
+      {
+        "block_id": 216,
+        "mapping": {
+          "pointer_entry_rom": 333008,
+          "cpu": 41920,
+          "rom": 336832,
+          "attributes": [
+            420,
+            421,
+            421,
+            932,
+            422,
+            423,
+            423,
+            934,
+            715,
+            714,
+            420,
+            421,
+            713,
+            712,
+            422,
+            423
+          ]
+        },
+        "mapping_sha256": "51634d0469638b85ed19b09cec1fe77b0a3c7adf085c187a4244a4842ad8f7cc",
+        "index_sha256": "774b7f2b35bd7e86dff17065296c6d5cb0a04da8f7ec53c1648cb981c60226a0",
+        "rgba_sha256": "6392ebc2fa107eb09361a15693744ec8d36c15cc8150dcf5c5a3a1117df6a023",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 217,
+        "mapping": {
+          "pointer_entry_rom": 333010,
+          "cpu": 41952,
+          "rom": 336864,
+          "attributes": [
+            420,
+            933,
+            933,
+            932,
+            422,
+            935,
+            935,
+            934,
+            933,
+            932,
+            202,
+            203,
+            935,
+            934,
+            200,
+            201
+          ]
+        },
+        "mapping_sha256": "8a54a8884aa76ad38f69c997fac83bb3042d3de84c60386a72a76bf6db842448",
+        "index_sha256": "b1d881ecb372fc17bee8135c889c6ad41ae2bd554cd9f6dd0125d8eea766020a",
+        "rgba_sha256": "735dee6d833e9028ba21f7c896e0693d44cf1898d53cc5986fc041ce966a30c1",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 222,
+        "mapping": {
+          "pointer_entry_rom": 333020,
+          "cpu": 42112,
+          "rom": 337024,
+          "attributes": [
+            420,
+            421,
+            421,
+            932,
+            422,
+            423,
+            423,
+            934,
+            933,
+            932,
+            420,
+            421,
+            935,
+            934,
+            422,
+            423
+          ]
+        },
+        "mapping_sha256": "7228e046f3673f9920b8ff263e98822e8cbf7db5117f618b87898e82275d620f",
+        "index_sha256": "242f6383fd9796cf2c5ea7dbede639286f24dc287e6163cfb0973deaff371b80",
+        "rgba_sha256": "ba16690b04c6bf010d277fc41a4b91076809672e68abf4209f9d24005f7fe630",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 248,
+        "mapping": {
+          "pointer_entry_rom": 333072,
+          "cpu": 42144,
+          "rom": 337056,
+          "attributes": [
+            4289,
+            4290,
+            4290,
+            4801,
+            4291,
+            4292,
+            4293,
+            4803,
+            4294,
+            5829,
+            4295,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "1aeab21068fe0dea4e3dde5f07c1e464a0666524530a39f2eef9031e17742390",
+        "index_sha256": "68116fd241c0aec97d37cf40c58c6cd6b92601e34eb14e0dfc36fe685e151656",
+        "rgba_sha256": "91a2cc303bd309535d8132c82a96a165dbf09033c6888b071acb33f5e575c960",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 254,
+        "mapping": {
+          "pointer_entry_rom": 333084,
+          "cpu": 42176,
+          "rom": 337088,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "4febf4d8ae22d8edd29b5ca6def38950d0ae1b1deb23e24a28b7965ca77817c7",
+        "index_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "rgba_sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+        "opaque_pixels": 0
+      },
+      {
+        "block_id": 157,
+        "mapping": {
+          "pointer_entry_rom": 332890,
+          "cpu": 40864,
+          "rom": 335776,
+          "attributes": [
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269,
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269
+          ]
+        },
+        "mapping_sha256": "a1a33c34c5e5eb35447030253aa7ee1dc11c1c22642e2b3b205bdd46a7212f48",
+        "index_sha256": "30e06b45db0462fbc73b9b61db058015ab014e71ec240b8f3822ddccaa2dda5d",
+        "rgba_sha256": "5fc02f73de6b12cb37bc44c62bc274bd05a36cb80ddf59858cf470fc47108ace",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 176,
+        "mapping": {
+          "pointer_entry_rom": 332928,
+          "cpu": 42176,
+          "rom": 337088,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "4febf4d8ae22d8edd29b5ca6def38950d0ae1b1deb23e24a28b7965ca77817c7",
+        "index_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "rgba_sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+        "opaque_pixels": 0
+      }
+    ],
+    "aqz3": [
+      {
+        "block_id": 1,
+        "mapping": {
+          "pointer_entry_rom": 332578,
+          "cpu": 38208,
+          "rom": 333120,
+          "attributes": [
+            193,
+            194,
+            194,
+            705,
+            195,
+            196,
+            197,
+            707,
+            198,
+            1733,
+            199,
+            710,
+            200,
+            201,
+            201,
+            712
+          ]
+        },
+        "mapping_sha256": "4728bab00358a0e00d200769a9b1ddc55ea0cca0d406b109085dd06f6f7fc80c",
+        "index_sha256": "68116fd241c0aec97d37cf40c58c6cd6b92601e34eb14e0dfc36fe685e151656",
+        "rgba_sha256": "91a2cc303bd309535d8132c82a96a165dbf09033c6888b071acb33f5e575c960",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 3,
+        "mapping": {
+          "pointer_entry_rom": 332582,
+          "cpu": 38272,
+          "rom": 333184,
+          "attributes": [
+            202,
+            203,
+            203,
+            714,
+            195,
+            196,
+            197,
+            707,
+            198,
+            1733,
+            199,
+            710,
+            200,
+            201,
+            201,
+            712
+          ]
+        },
+        "mapping_sha256": "8e33198e5765a62d4003fa9529c1674be6caee0a7938f8c17308382ab07707af",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 4,
+        "mapping": {
+          "pointer_entry_rom": 332584,
+          "cpu": 38304,
+          "rom": 333216,
+          "attributes": [
+            204,
+            205,
+            717,
+            716,
+            206,
+            207,
+            719,
+            718,
+            1230,
+            1231,
+            1743,
+            1742,
+            1228,
+            1229,
+            1741,
+            1740
+          ]
+        },
+        "mapping_sha256": "440db45969dae160411a44f6aa4b2cfc7a9cf77682702989b1357400a8679cea",
+        "index_sha256": "fa8ef75b5e626380bc44e97bcbd9e66b2fbc3dba6cc27d0a92b58fcf78b62451",
+        "rgba_sha256": "6a12873013ba3be81e23a6c386bdc1a321b6c10d4e334e0ff9b08671f52ffb78",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 5,
+        "mapping": {
+          "pointer_entry_rom": 332586,
+          "cpu": 38336,
+          "rom": 333248,
+          "attributes": [
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223
+          ]
+        },
+        "mapping_sha256": "e38f78753409f3e188654178ff7aa2b5daab626d1d88d6887ab0872079358fa9",
+        "index_sha256": "1a9569f27d3a795058f7313e91ea3a099fe4f09bcfa5d2706af84fc36661e6e1",
+        "rgba_sha256": "55ff440adb4abb727d2ce3d63a9907e65694bb17be2345b3482706e5a424d4cd",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 7,
+        "mapping": {
+          "pointer_entry_rom": 332590,
+          "cpu": 38400,
+          "rom": 333312,
+          "attributes": [
+            4298,
+            4299,
+            4299,
+            4810,
+            4291,
+            4292,
+            4293,
+            4803,
+            4294,
+            5829,
+            4295,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "52189d6fbab2a44b34952453ce2385df5f883323c6ff31723f4e5fe17b9d26b6",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 10,
+        "mapping": {
+          "pointer_entry_rom": 332596,
+          "cpu": 38496,
+          "rom": 333408,
+          "attributes": [
+            4289,
+            4290,
+            4290,
+            4801,
+            4291,
+            4292,
+            4293,
+            4803,
+            4294,
+            5829,
+            4295,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "1aeab21068fe0dea4e3dde5f07c1e464a0666524530a39f2eef9031e17742390",
+        "index_sha256": "68116fd241c0aec97d37cf40c58c6cd6b92601e34eb14e0dfc36fe685e151656",
+        "rgba_sha256": "91a2cc303bd309535d8132c82a96a165dbf09033c6888b071acb33f5e575c960",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 21,
+        "mapping": {
+          "pointer_entry_rom": 332618,
+          "cpu": 38752,
+          "rom": 333664,
+          "attributes": [
+            752,
+            192,
+            192,
+            192,
+            754,
+            753,
+            192,
+            192,
+            756,
+            755,
+            753,
+            192,
+            200,
+            759,
+            758,
+            757
+          ]
+        },
+        "mapping_sha256": "a5aa1f83af4a22bcba131e9f74bd8d0d1e6d6e10fabe3232e80569c66b7326a2",
+        "index_sha256": "ca84a6db36d9c6ebcf38e6e82c4330c8a9435800227d7bf8706f6fdc30bed6e7",
+        "rgba_sha256": "cd50ec86cda4a0670672369cb5cf10d2fa355779abaa0509060337f266acd5c7",
+        "opaque_pixels": 528
+      },
+      {
+        "block_id": 22,
+        "mapping": {
+          "pointer_entry_rom": 332620,
+          "cpu": 38784,
+          "rom": 333696,
+          "attributes": [
+            202,
+            203,
+            203,
+            714,
+            195,
+            196,
+            197,
+            707,
+            198,
+            1733,
+            199,
+            710,
+            200,
+            201,
+            201,
+            712
+          ]
+        },
+        "mapping_sha256": "8e33198e5765a62d4003fa9529c1674be6caee0a7938f8c17308382ab07707af",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 37,
+        "mapping": {
+          "pointer_entry_rom": 332650,
+          "cpu": 39264,
+          "rom": 334176,
+          "attributes": [
+            292,
+            804,
+            292,
+            804,
+            293,
+            294,
+            293,
+            294,
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269
+          ]
+        },
+        "mapping_sha256": "5215fceb4663c897b82d0ea12714e767cc8488c73c2a0a388fcf7f483376acef",
+        "index_sha256": "c9d5b2fbeab1164cfce8f1d7ada4a5c684a1bb4178957e28cf4d9e4f9ec3a525",
+        "rgba_sha256": "a9e3ffab00ca59e376d6d2488a29b7e5f03b3715215cd700f6abdd25862c858b",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 38,
+        "mapping": {
+          "pointer_entry_rom": 332652,
+          "cpu": 39296,
+          "rom": 334208,
+          "attributes": [
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269,
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269
+          ]
+        },
+        "mapping_sha256": "a1a33c34c5e5eb35447030253aa7ee1dc11c1c22642e2b3b205bdd46a7212f48",
+        "index_sha256": "30e06b45db0462fbc73b9b61db058015ab014e71ec240b8f3822ddccaa2dda5d",
+        "rgba_sha256": "5fc02f73de6b12cb37bc44c62bc274bd05a36cb80ddf59858cf470fc47108ace",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 41,
+        "mapping": {
+          "pointer_entry_rom": 332658,
+          "cpu": 39392,
+          "rom": 334304,
+          "attributes": [
+            204,
+            205,
+            717,
+            716,
+            1228,
+            1229,
+            1741,
+            1740,
+            202,
+            714,
+            202,
+            203,
+            200,
+            712,
+            200,
+            201
+          ]
+        },
+        "mapping_sha256": "6db086a9e46c0d679a2d85da5984dfb5e1101232bae4ed9aadc448124c8ff505",
+        "index_sha256": "4eea540ca6602ecb2521dbbafb5e96134aec89e4cd86becc20b1bbc3537ac43f",
+        "rgba_sha256": "2ece62a340f73bd7d9b20d40c3eb324f595b8b0f7ae86101f9395f5c17972092",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 43,
+        "mapping": {
+          "pointer_entry_rom": 332662,
+          "cpu": 39456,
+          "rom": 334368,
+          "attributes": [
+            202,
+            715,
+            715,
+            714,
+            200,
+            713,
+            713,
+            712,
+            715,
+            714,
+            202,
+            714,
+            713,
+            712,
+            200,
+            712
+          ]
+        },
+        "mapping_sha256": "1833e9cf91ae97b814837832f1808a8caffb230bc285369921e7de4b10b7ea99",
+        "index_sha256": "f34fc83d1ff4ef0f6c63b456d8d3cbb717b46b7e512ef3dd5ae3fe1051022593",
+        "rgba_sha256": "3a60477aeb22c058b7101777ad99ba53f47f29fa86854276de17755298414a5e",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 44,
+        "mapping": {
+          "pointer_entry_rom": 332664,
+          "cpu": 39488,
+          "rom": 334400,
+          "attributes": [
+            4298,
+            4299,
+            4299,
+            4810,
+            4291,
+            4292,
+            4293,
+            4803,
+            4294,
+            5829,
+            4295,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "52189d6fbab2a44b34952453ce2385df5f883323c6ff31723f4e5fe17b9d26b6",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 51,
+        "mapping": {
+          "pointer_entry_rom": 332678,
+          "cpu": 39712,
+          "rom": 334624,
+          "attributes": [
+            269,
+            270,
+            269,
+            270,
+            307,
+            306,
+            270,
+            269,
+            1331,
+            1330,
+            269,
+            270,
+            293,
+            294,
+            270,
+            269
+          ]
+        },
+        "mapping_sha256": "aebdd1fec89b0fd81a022293f7a29d7e33798c05773600e4bc77e9daf847fc31",
+        "index_sha256": "a8f50c65d91be62c7cef671f9670c22c10e87da177fbdcc90aaf6da4182a9da4",
+        "rgba_sha256": "e17b1f075f805fb0609b3fcfc922dac2f30cf9ec03b03ceef19b0ed9fd232773",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 55,
+        "mapping": {
+          "pointer_entry_rom": 332686,
+          "cpu": 39840,
+          "rom": 334752,
+          "attributes": [
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269,
+            312,
+            313,
+            269,
+            270,
+            314,
+            1848,
+            270,
+            269
+          ]
+        },
+        "mapping_sha256": "b393aca103c7a921b9cd5739c43568223bfb763820d55d309e59ea01dbbeacd1",
+        "index_sha256": "4d862d1def600f0eb71e0f86673589124ad17265dc14797a57527abc2fa63643",
+        "rgba_sha256": "41ee684e066ca0e95e043a2a6af122062cd7c3321138fb0cf6ab16b8713b70bb",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 57,
+        "mapping": {
+          "pointer_entry_rom": 332690,
+          "cpu": 39904,
+          "rom": 334816,
+          "attributes": [
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269,
+            269,
+            270,
+            825,
+            824,
+            270,
+            269,
+            1336,
+            826
+          ]
+        },
+        "mapping_sha256": "da8a790a7ad1a2b941767def149d2a669553b2d4350a155b3509a0eb9a5baed0",
+        "index_sha256": "063fa221265c3314a61637c00ad559898c3bda88a76b68222978e49539260051",
+        "rgba_sha256": "283e2dfecce3561cb6ebee13f4a0a8226b4f9cc2457c39238046dbc31d3c4b74",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 59,
+        "mapping": {
+          "pointer_entry_rom": 332694,
+          "cpu": 39968,
+          "rom": 334880,
+          "attributes": [
+            1338,
+            824,
+            269,
+            270,
+            1336,
+            318,
+            270,
+            269,
+            292,
+            804,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269
+          ]
+        },
+        "mapping_sha256": "2037ca16ad5f6d3a584325467b387c62ebc297340b92f974a449757a55536ca2",
+        "index_sha256": "d39e4e60aa0d92b092474e08aaf1f25ddd39a25fb57cd2a319a23720e077d3b5",
+        "rgba_sha256": "5b24ad495f823abe5c1171d8ba0e68129f26e199e42f6bc1af9fb0171b06a065",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 66,
+        "mapping": {
+          "pointer_entry_rom": 332708,
+          "cpu": 40160,
+          "rom": 335072,
+          "attributes": [
+            2374,
+            2375,
+            192,
+            192,
+            2376,
+            2377,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "a35447546ed8ab1c56ce70be9e1d60108ab1992c6b5ca9f8a10aa7a7961f9178",
+        "index_sha256": "324ba8178378919712f21a8551077470eb2a35cec75891b0f58e800ec15dafce",
+        "rgba_sha256": "73e62f9a6e102a022ac6d1cdb4ea3a4b8b2a2864d0593d896ad62b58e509f2f5",
+        "opaque_pixels": 116
+      },
+      {
+        "block_id": 67,
+        "mapping": {
+          "pointer_entry_rom": 332710,
+          "cpu": 40192,
+          "rom": 335104,
+          "attributes": [
+            192,
+            192,
+            2374,
+            2375,
+            192,
+            192,
+            2376,
+            2377,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "98ec568eb2082f907c9222c4400fbb930f2c882c9a9db1beb31ecb1faecf911c",
+        "index_sha256": "f8a8fb775c6f5887c605b80928263a82159a2d8cc00f5befebc255d38ecfaf39",
+        "rgba_sha256": "3c3305c317b8975b51506b76e05d3de59af4045415187914147fbb0285c91231",
+        "opaque_pixels": 116
+      },
+      {
+        "block_id": 68,
+        "mapping": {
+          "pointer_entry_rom": 332712,
+          "cpu": 40224,
+          "rom": 335136,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            2374,
+            2375,
+            192,
+            192,
+            2376,
+            2377,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "61d86d987f7c6ff63a85e2b556a649235f7b97543c020d1debb53d587400f881",
+        "index_sha256": "7570374f0341cc4cf343b4e98c22abca4437acaf5271d3206ba25c1a677574b2",
+        "rgba_sha256": "1159ac426a2d0a885e1c2087e28bdbfebfb8a95d588af2a836834e8d3322fa61",
+        "opaque_pixels": 116
+      },
+      {
+        "block_id": 69,
+        "mapping": {
+          "pointer_entry_rom": 332714,
+          "cpu": 40256,
+          "rom": 335168,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            2374,
+            2375,
+            192,
+            192,
+            2376,
+            2377
+          ]
+        },
+        "mapping_sha256": "435371f09b2e2b5b050ccaf92af82c853b6cf2fec3be2c0a7b8f3fdd7fdb1888",
+        "index_sha256": "837905c22ef60e55c8876e361f84f6594b563fdd66f00d5e09b8822db453028e",
+        "rgba_sha256": "4dc227ea6d4f0dbd7b33fa23017f4a61e61b9a6a166ce31ff71a61f18d442c9b",
+        "opaque_pixels": 116
+      },
+      {
+        "block_id": 70,
+        "mapping": {
+          "pointer_entry_rom": 332716,
+          "cpu": 42176,
+          "rom": 337088,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "4febf4d8ae22d8edd29b5ca6def38950d0ae1b1deb23e24a28b7965ca77817c7",
+        "index_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "rgba_sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+        "opaque_pixels": 0
+      },
+      {
+        "block_id": 155,
+        "mapping": {
+          "pointer_entry_rom": 332886,
+          "cpu": 40800,
+          "rom": 335712,
+          "attributes": [
+            4289,
+            4290,
+            4290,
+            4801,
+            4291,
+            4292,
+            4293,
+            4803,
+            4294,
+            5829,
+            4295,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "1aeab21068fe0dea4e3dde5f07c1e464a0666524530a39f2eef9031e17742390",
+        "index_sha256": "68116fd241c0aec97d37cf40c58c6cd6b92601e34eb14e0dfc36fe685e151656",
+        "rgba_sha256": "91a2cc303bd309535d8132c82a96a165dbf09033c6888b071acb33f5e575c960",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 197,
+        "mapping": {
+          "pointer_entry_rom": 332970,
+          "cpu": 41312,
+          "rom": 336224,
+          "attributes": [
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383,
+            383
+          ]
+        },
+        "mapping_sha256": "9bac29d0c845e21afe75d96609ed2e43042312851cab9770c5509ca514e635f8",
+        "index_sha256": "5a648d8015900d89664e00e125df179636301a2d8fa191c1aa2bd9358ea53a69",
+        "rgba_sha256": "918d310c46ff7ee14bba0fc377b98a43d4ef4e211c682e4f767e33c7eb5e582e",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 199,
+        "mapping": {
+          "pointer_entry_rom": 332974,
+          "cpu": 41376,
+          "rom": 336288,
+          "attributes": [
+            386,
+            387,
+            386,
+            387,
+            388,
+            389,
+            388,
+            389,
+            390,
+            391,
+            390,
+            391,
+            392,
+            393,
+            392,
+            393
+          ]
+        },
+        "mapping_sha256": "332546814b2b6b737d1141eff702e4706dcd5fd2ed6e1a93588625b3269d9b76",
+        "index_sha256": "1f8303a88cf2b3bdbc50de64a1be852006433e6976d8fa28bb967a85ee42cb44",
+        "rgba_sha256": "c278083c1b44adca6f3d1dd6e84e63b0ec8d4206a0b29913246c2f11fcd9b6ea",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 200,
+        "mapping": {
+          "pointer_entry_rom": 332976,
+          "cpu": 41408,
+          "rom": 336320,
+          "attributes": [
+            394,
+            395,
+            394,
+            395,
+            396,
+            396,
+            396,
+            396,
+            397,
+            397,
+            397,
+            397,
+            398,
+            398,
+            398,
+            398
+          ]
+        },
+        "mapping_sha256": "593ab25b8dc9bc42aa0e7ed41d67e174abd0c03f28aab13c88e81568b6cdedf9",
+        "index_sha256": "e17b35b4b2649a07a219213f003545abd0562d1798e38b259397042b5116787a",
+        "rgba_sha256": "893a532c7b44c5777a43cb364b4b5c526304b07741a3e4b6affa0e9e2d410252",
+        "opaque_pixels": 840
+      },
+      {
+        "block_id": 203,
+        "mapping": {
+          "pointer_entry_rom": 332982,
+          "cpu": 41504,
+          "rom": 336416,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            399,
+            400,
+            401,
+            402,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "e1b0a5b530d16d3cb678d8719b595a525c2b1c2eae43cc44036e1a535db2dd8f",
+        "index_sha256": "2c5f2944f1904aa968f23eb1ce8d5f61e032ccd168d13793645959e9c8d92cdc",
+        "rgba_sha256": "5e1b38f1eab8f11c2a1ffaf424abbd02f72fbd7f65f0c3047d4bf8dbfc11b93f",
+        "opaque_pixels": 64
+      },
+      {
+        "block_id": 204,
+        "mapping": {
+          "pointer_entry_rom": 332984,
+          "cpu": 41536,
+          "rom": 336448,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            399,
+            400,
+            401,
+            402,
+            914,
+            403,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "9bb72944b77b246feb237d063469a50851067ed63f57aed0731553e247565e09",
+        "index_sha256": "4bebac8a1c448b660d2deed572706055f5ec1b459919fbc81f39673d11bef44f",
+        "rgba_sha256": "87b51d565bfddc0ed6e7b56f562e08de9b113e072718d3fdab7f233fda168187",
+        "opaque_pixels": 80
+      },
+      {
+        "block_id": 205,
+        "mapping": {
+          "pointer_entry_rom": 332986,
+          "cpu": 41568,
+          "rom": 336480,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            404,
+            192,
+            192,
+            192,
+            405,
+            406,
+            192,
+            192,
+            407,
+            408,
+            409
+          ]
+        },
+        "mapping_sha256": "67a69e28930e38fad42f9d223bd3d478df9661cb93ef376494c3e094965f67a0",
+        "index_sha256": "26c2fe7a4db3214977667f3542e37f6df10be95bd1d892d717ccb1dbe7b95b56",
+        "rgba_sha256": "ad1e2edfe5f5ee9f878b8af8a336d6d6d0e5fa6d0ea6b532f40d2f98a7b80046",
+        "opaque_pixels": 206
+      },
+      {
+        "block_id": 206,
+        "mapping": {
+          "pointer_entry_rom": 332988,
+          "cpu": 41600,
+          "rom": 336512,
+          "attributes": [
+            410,
+            411,
+            412,
+            413,
+            414,
+            415,
+            414,
+            415,
+            416,
+            417,
+            416,
+            417,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "bcc93276720c412bf2a3d3a5e98276141d25f0cec36f3dc0c43f7810daf6a533",
+        "index_sha256": "fd89d213d843c329b85f1c76fe808aeb9cca19f9c3da843d414e7221da56f7de",
+        "rgba_sha256": "9a6d69110518dfa886a732f445d31e07b9c9f4fd9bf132b5b5266d6d9db34601",
+        "opaque_pixels": 541
+      },
+      {
+        "block_id": 207,
+        "mapping": {
+          "pointer_entry_rom": 332990,
+          "cpu": 41632,
+          "rom": 336544,
+          "attributes": [
+            414,
+            415,
+            416,
+            417,
+            416,
+            417,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "1b01a4befc0a36d7132f70064b873ee11a6b2ea2933acad171809c2a0a91e148",
+        "index_sha256": "55406a2de43527fa0ff38f530fcf251771012c00cc33c37dd6b6fd83e4512f09",
+        "rgba_sha256": "ae85209a3e986cb77ea23de88a6bb4844df18c2e271a8a9ef24bb694b6f7d835",
+        "opaque_pixels": 221
+      },
+      {
+        "block_id": 208,
+        "mapping": {
+          "pointer_entry_rom": 332992,
+          "cpu": 41664,
+          "rom": 336576,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            404,
+            192,
+            418,
+            418,
+            405,
+            410,
+            419
+          ]
+        },
+        "mapping_sha256": "83fc0ac16f964a85b84286f9a5fe2086f3d401866425bf0904d279308f2b5192",
+        "index_sha256": "3d6e348b0dd49563e929606b7810065bb0d1a101b3c24a40125ce74991e956b9",
+        "rgba_sha256": "8d4f8b04c3e0e4b3b7558f660f77f66dddc844a2025897185fd549d102da39c2",
+        "opaque_pixels": 204
+      },
+      {
+        "block_id": 210,
+        "mapping": {
+          "pointer_entry_rom": 332996,
+          "cpu": 41728,
+          "rom": 336640,
+          "attributes": [
+            414,
+            415,
+            414,
+            415,
+            416,
+            417,
+            416,
+            417,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "b63a49f7a54a74488d1309c89503e3e7343c9e573e53cc5bb9c27364e7b2461e",
+        "index_sha256": "13bdce417c3c108b3f97e24154f3d9f43e176c81fda74f925739b9e2b4108c30",
+        "rgba_sha256": "61c2f05c4ddae0e94ccdfbeeefda6b103ca1b816fb1075b186d0026111c7e7c3",
+        "opaque_pixels": 342
+      },
+      {
+        "block_id": 211,
+        "mapping": {
+          "pointer_entry_rom": 332998,
+          "cpu": 41760,
+          "rom": 336672,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            418,
+            410,
+            418,
+            410,
+            419,
+            414,
+            415
+          ]
+        },
+        "mapping_sha256": "4a96d229597dbf8e307c5320081a33a22db088e40dae6d1963a4ae49870db9ae",
+        "index_sha256": "007530b5265ef6d4bdd171f3f54ae99163dac191347b19922009e999af2018b3",
+        "rgba_sha256": "835912f5023921936a308f101c520b934f29b184ca8a98779dd31d01c232c98c",
+        "opaque_pixels": 266
+      },
+      {
+        "block_id": 254,
+        "mapping": {
+          "pointer_entry_rom": 333084,
+          "cpu": 42176,
+          "rom": 337088,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "4febf4d8ae22d8edd29b5ca6def38950d0ae1b1deb23e24a28b7965ca77817c7",
+        "index_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "rgba_sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+        "opaque_pixels": 0
+      },
+      {
+        "block_id": 71,
+        "mapping": {
+          "pointer_entry_rom": 332718,
+          "cpu": 40288,
+          "rom": 335200,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            2378,
+            2379,
+            2890,
+            192,
+            2380,
+            2381,
+            2892,
+            192,
+            2382,
+            2383,
+            2384,
+            192
+          ]
+        },
+        "mapping_sha256": "06eac70c3945fd84b5c01033c9f2a8d4fd3874282a3024a51ca063e6db5325cf",
+        "index_sha256": "37263cc9997115e75dfe92aba87e8bbcf5fe2ed45af01a93aaac77859377df2a",
+        "rgba_sha256": "0e171bc99c5b59d56cfd045d4f6129f2e7e6a66a2e9e9edeb2f4e87728d42071",
+        "opaque_pixels": 475
+      },
+      {
+        "block_id": 156,
+        "mapping": {
+          "pointer_entry_rom": 332888,
+          "cpu": 40832,
+          "rom": 335744,
+          "attributes": [
+            4298,
+            4299,
+            4299,
+            4810,
+            4291,
+            4292,
+            4293,
+            4803,
+            4294,
+            5829,
+            4295,
+            4806,
+            4296,
+            4297,
+            4297,
+            4808
+          ]
+        },
+        "mapping_sha256": "52189d6fbab2a44b34952453ce2385df5f883323c6ff31723f4e5fe17b9d26b6",
+        "index_sha256": "a4ab5563fd1f0807a748f437affb2ff7dafedf9cfc3b914b2602ce03050778b0",
+        "rgba_sha256": "109f0c1bf839ef17d5cc22ffeb6970084ae915accd5a41946c8988dc280090c3",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 157,
+        "mapping": {
+          "pointer_entry_rom": 332890,
+          "cpu": 40864,
+          "rom": 335776,
+          "attributes": [
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269,
+            269,
+            270,
+            269,
+            270,
+            270,
+            269,
+            270,
+            269
+          ]
+        },
+        "mapping_sha256": "a1a33c34c5e5eb35447030253aa7ee1dc11c1c22642e2b3b205bdd46a7212f48",
+        "index_sha256": "30e06b45db0462fbc73b9b61db058015ab014e71ec240b8f3822ddccaa2dda5d",
+        "rgba_sha256": "5fc02f73de6b12cb37bc44c62bc274bd05a36cb80ddf59858cf470fc47108ace",
+        "opaque_pixels": 1024
+      },
+      {
+        "block_id": 176,
+        "mapping": {
+          "pointer_entry_rom": 332928,
+          "cpu": 42176,
+          "rom": 337088,
+          "attributes": [
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        "mapping_sha256": "4febf4d8ae22d8edd29b5ca6def38950d0ae1b1deb23e24a28b7965ca77817c7",
+        "index_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "rgba_sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+        "opaque_pixels": 0
+      }
+    ]
+  }
+}

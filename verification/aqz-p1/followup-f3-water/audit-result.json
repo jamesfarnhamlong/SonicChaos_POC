@@ -1,0 +1,21 @@
+{
+  "result": "NO MOVEMENT SELECTOR DISCREPANCY FOUND",
+  "kernel_native_updates": 16800,
+  "kernel_assertions": 117600,
+  "full_adapter_native_updates": 2880,
+  "full_adapter_assertions": 31688,
+  "new_assertions_total": 149288,
+  "full_regression": "75/75 PASS",
+  "native_replay_assertions": 7625,
+  "aqz3_oracle_updates": 480,
+  "aqz3_oracle_values": 6240,
+  "aqz3_mismatches": 0,
+  "shipping_files_byte_identical_to_F2": 3699,
+  "behavior_changes": 0,
+  "new_gameplay_package": null,
+  "branch": "poc/aqz-p1-foundation-water",
+  "base": "5d99a38d1f439ac02cd9d3010d09f70cc57aa575",
+  "rom_sha256": "eabc8db59746714262d2f91a921d054823484349099a9fcd04fd6e84a1fee607",
+  "commit": "UNCOMMITTED",
+  "P2": "UNTOUCHED"
+}

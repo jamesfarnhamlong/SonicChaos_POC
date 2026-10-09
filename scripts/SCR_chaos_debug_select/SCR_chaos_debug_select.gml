@@ -12,6 +12,7 @@ function chaos_debug_entries() {
             }
             if (cp_z == 2) { switch (cp_a) { case 1: cp_room=ROM_chaos_sez1; break; case 2: cp_room=ROM_chaos_sez2; break; case 3: cp_room=ROM_chaos_sez3; break; } }
             if (cp_z == 3) { switch (cp_a) { case 1: cp_room=ROM_chaos_mghz1; break; case 2: cp_room=ROM_chaos_mghz2; break; case 3: cp_room=ROM_chaos_mghz3; break; } }
+            if (cp_z == 4) { switch (cp_a) { case 1:cp_room=ROM_chaos_aqz1;break;case 2:cp_room=ROM_chaos_aqz2;break;case 3:cp_room=ROM_chaos_aqz3;break; } }
             array_push(cp_entries, {zone: cp_zones[cp_z], act: cp_a, room: cp_room,
                 enabled: cp_room != noone && room_exists(cp_room), classification: "act"});
         }

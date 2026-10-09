@@ -21,7 +21,9 @@ function SCR_chaos_objects_phase() {
     SCR_chaos_lost_rings_phase(cp_have, cp_c);
     // SEZ S2 crumble objects ($13): scheduler slots 0..18 ascending, parents (slots 0..15) before the placement objects below. The rider hold moves the player's core Y after
     // the terrain pass (republished at the end of this phase).
-    var cp_s2_hold = chaos_is_sez() ? chaos_s2_phase(cp_c, cp_have) : false;
+    if (chaos_is_aqz()) chaos_aqz_pass_begin();
+    var cp_s2_hold = (chaos_is_sez() || chaos_is_aqz()) ? chaos_s2_phase(cp_c, cp_have) : false;
+    if (chaos_is_aqz()) chaos_aqz_mapped_scan();
     // $D520 / $D3B0 written by badnik Step events (and the sample-damage path) during this update become visible to the player's NEXT $48BC.
     // Boss contact runs in this object phase so its staged request reaches the next player update.
     chaos_boss_runtime_phase();
@@ -47,7 +49,7 @@ function SCR_chaos_objects_phase() {
     // SEZ S4 mapped enemies $20/$23 (struct records), then the shared contact promotion below.
     if (chaos_is_sez()) chaos_sez_enemy_phase(cp_c, cp_have);
     if (cp_have) chaos_contact_promote(cp_c);
-    var cp_changed = cp_s2_hold;
+    var cp_changed = chaos_spring26_phase(cp_c,cp_have) || cp_s2_hold;
     var cp_count = instance_number(OBJ_chaos_platform);
     for (var cp_i = 0; cp_i < cp_count; cp_i++) {
         var cp_o=instance_find(OBJ_chaos_platform,cp_i);

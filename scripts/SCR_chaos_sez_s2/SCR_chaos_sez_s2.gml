@@ -156,7 +156,7 @@ function chaos_s2_ring_bridge(cp_b) {
 }
 /// The object scheduler pass for the S2 pool. Returns true when the player's core was moved (the caller republishes it).
 function chaos_s2_phase(cp_c,cp_have) {
-    if (!chaos_is_sez()) return false;
+    if (!chaos_is_sez() && !chaos_is_aqz()) return false;
     var cp_b=chaos_s2_state(),cp_vp=chaos_vp_current(),cp_hold=false;
     chaos_s2_ring_bridge(cp_b);
     cp_b.passes++;
@@ -168,6 +168,7 @@ function chaos_s2_phase(cp_c,cp_have) {
             if (cp_boss != noone) { chaos_54_visit(cp_boss,cp_b,cp_i,cp_c,cp_have,cp_vp); if (cp_have) cp_hold=true; }
             continue;
         }
+        if (variable_struct_exists(cp_s,"aqz") && cp_s.aqz) { chaos_aqz_visit(global.chaosAqzEnv,cp_b,cp_s,cp_c,cp_have,cp_vp);continue; }
         if (cp_s.ring_ref != noone) {
             if (!cp_s.ring_ref.alive) cp_s.type=$FF;
             if (cp_s.type == $FF) cp_b.slots[cp_i]=chaos_s2_slot();   // freed the visit after the ring ended
@@ -182,11 +183,11 @@ function chaos_s2_phase(cp_c,cp_have) {
 }
 /// Shards only (the parent is invisible: mapping frame 0 has no pieces). Sprite = the accepted SEZ shard art (type $07 frame 15 is the same mapping record as $13 frame 15).
 function chaos_s2_draw() {
-    if (!chaos_is_sez() || !variable_global_exists("chaosS2")) return;
+    if ((!chaos_is_sez() && !chaos_is_aqz()) || !variable_global_exists("chaosS2")) return;
     for (var cp_i=0;cp_i<19;cp_i++) {
         var cp_s=global.chaosS2.slots[cp_i];
         if (cp_s.type != $13 || cp_s.frame != 15 || cp_s.asleep) continue;
-        draw_sprite(SPR_chaos_sez_shard,0,cp_s.x,cp_s.y);
+        draw_sprite(chaos_is_aqz() ? SPR_chaos_aqz_shard : SPR_chaos_sez_shard,0,cp_s.x,cp_s.y);
     }
 }
 

@@ -12,7 +12,7 @@ function source(ref, rel) {
     const r = cp.spawnSync('git', ['show', `${ref}:${rel}`], {cwd: root, maxBuffer: 1 << 28});
     return r.status === 0 ? r.stdout.toString('utf8') : null;
 }
-const SCRIPTS = ['SCR_chaos_motion_data', 'SCR_chaos_core_data', 'SCR_chaos_core', 'SCR_chaos_level_thz2_data', 'SCR_chaos_level_thz3_data', 'SCR_chaos_gpz_data', 'SCR_chaos_mghz_data', 'SCR_chaos_sez_data', 'SCR_chaos_sez_effects', 'SCR_chaos_sez_s2_data', 'SCR_chaos_sez_s2', 'SCR_chaos_sez_enemy', 'SCR_chaos_sez_boss_data', 'SCR_chaos_sez_boss', 'SCR_chaos_mghz_effects', 'SCR_chaos_anim_counter_data', 'SCR_chaos_anim_counter',
+const SCRIPTS = ['SCR_chaos_player_animation_data','SCR_chaos_player_animation','SCR_chaos_motion_data', 'SCR_chaos_core_data', 'SCR_chaos_core', 'SCR_chaos_level_thz2_data', 'SCR_chaos_level_thz3_data', 'SCR_chaos_gpz_data', 'SCR_chaos_mghz_data', 'SCR_chaos_sez_data', 'SCR_chaos_aqz_data', 'SCR_chaos_aqz_environment_data', 'SCR_chaos_aqz_environment', 'SCR_chaos_sez_effects', 'SCR_chaos_sez_s2_data', 'SCR_chaos_sez_s2', 'SCR_chaos_sez_enemy', 'SCR_chaos_sez_boss_data', 'SCR_chaos_sez_boss', 'SCR_chaos_mghz_effects', 'SCR_chaos_anim_counter_data', 'SCR_chaos_anim_counter',
     'SCR_chaos_mghz_m3', 'SCR_chaos_mghz_boss_data', 'SCR_chaos_mghz_boss', 'SCR_chaos_terrain_ring', 'SCR_chaos_viewport', 'SCR_chaos_lost_ring', 'SCR_chaos_placement', 'SCR_chaos_goal', 'SCR_chaos_box_contact', 'SCR_chaos_attack', 'SCR_chaos_spring', 'SCR_chaos_platform', 'SCR_chaos_damage', 'SCR_chaos_spike1b',
     'SCR_chaos_gpz_enemy', 'SCR_chaos_gpz_enemy_data', 'SCR_chaos_motion', 'SCR_chaos_adapter', 'SCR_chaos_objects', 'SCR_chaos_level', 'SCR_chaos_boss_data', 'SCR_chaos_boss', 'SCR_chaos_gpz_boss_data', 'SCR_chaos_gpz_boss'];
 
@@ -22,14 +22,14 @@ function loadHost(ref) {
     const texts = {};
     for (const n of SCRIPTS) { const t = source(ref, `scripts/${n}/${n}.gml`); if (t !== null) texts[n] = t; }
     const consts = new Set();
-    for (const nm of ['OBJ_chaos_object_25','OBJ_chaos_object_2C','OBJ_chaos_gpz_smoke_0F','OBJ_chaos_object_51','OBJ_chaos_object_56','OBJ_chaos_object_21','OBJ_chaos_object_2F','OBJ_chaos_object_10','OBJ_chaos_object_19','OBJ_chaos_object_18']) for (const ev of ['Create_0','Step_0','Draw_0']) { const t=source(ref,`objects/${nm}/${ev}.gml`); if(t) for(const m of t.matchAll(/\b(OBJ|SPR|SFX|ROM|TIME|MUS)_\w+/g)) consts.add(m[0]); }
-    for (const t of Object.values(texts)) for (const m of t.matchAll(/\b(OBJ|SPR|SFX|ROM|TIME|MUS)_\w+/g)) consts.add(m[0]);
-    const world = {player: null, platforms: [], spikes: [], bosses: [], cam: {x: 0, y: 0, w: 256, h: 192}, events: [], audio: 0, created: [], badniks: [], gpzEnemies: [], smoke: [], input: {}, roomWidth: 4096, roomHeight: 1024};
+    for (const nm of ['OBJ_chaos_object_25','OBJ_chaos_object_2C','OBJ_chaos_gpz_smoke_0F','OBJ_chaos_object_51','OBJ_chaos_object_56','OBJ_chaos_object_21','OBJ_chaos_object_2F','OBJ_chaos_object_10','OBJ_chaos_object_19','OBJ_chaos_object_18']) for (const ev of ['Create_0','Step_0','Draw_0']) { const t=source(ref,`objects/${nm}/${ev}.gml`); if(t) for(const m of t.matchAll(/\b(OBJ|SPR|SFX|ROM|TIME|MUS|SHD)_\w+/g)) consts.add(m[0]); }
+    for (const t of Object.values(texts)) for (const m of t.matchAll(/\b(OBJ|SPR|SFX|ROM|TIME|MUS|SHD)_\w+/g)) consts.add(m[0]);
+    const world = {player: null, springs: [], platforms: [], spikes: [], bosses: [], cam: {x: 0, y: 0, w: 256, h: 192}, events: [], audio: 0, created: [], badniks: [], gpzEnemies: [], smoke: [], input: {}, roomWidth: 4096, roomHeight: 1024};
     for (const c of ['OBJ_chaos_spikes', 'OBJ_chaos_platform', 'OBJ_ring_stars', 'OBJ_chaos_ring_manager', 'OBJ_player', 'OBJ_player_char', 'OBJ_player_char_spin', 'ROM_chaos_thz1', 'ROM_chaos_thz2', 'ROM_chaos_thz3']) consts.add(c);
     const ids = {}; let n = 1000; for (const c of consts) ids[c] = n++;
-    const objectsByType = () => ({[ids.OBJ_player]: world.player ? [world.player] : [], [ids.OBJ_player_char]: world.player ? [world.player] : [], [ids.OBJ_chaos_platform]: world.platforms, [ids.OBJ_chaos_spikes]: world.spikes, [ids.OBJ_chaos_object_50]: world.bosses.filter(o=>o.object_index===ids.OBJ_chaos_object_50), [ids.OBJ_chaos_object_51]: world.bosses.filter(o=>o.object_index===ids.OBJ_chaos_object_51), [ids.OBJ_chaos_object_56]: world.bosses.filter(o=>o.object_index===ids.OBJ_chaos_object_56), [ids.OBJ_chaos_object_25]: world.gpzEnemies.filter(o=>o.object_index===ids.OBJ_chaos_object_25&&!o.destroyed), [ids.OBJ_chaos_object_2C]: world.gpzEnemies.filter(o=>o.object_index===ids.OBJ_chaos_object_2C&&!o.destroyed)});
+    const objectsByType = () => ({...Object.fromEntries(["OBJ_chaos_object_spring_26_normal","OBJ_chaos_object_spring_26_weak","OBJ_chaos_object_spring_26_span"].map(n=>[ids[n],world.springs.filter(s=>s.object_index===ids[n])])),[ids.OBJ_player]: world.player ? [world.player] : [], [ids.OBJ_player_char]: world.player ? [world.player] : [], [ids.OBJ_chaos_platform]: world.platforms, [ids.OBJ_chaos_spikes]: world.spikes, [ids.OBJ_chaos_object_50]: world.bosses.filter(o=>o.object_index===ids.OBJ_chaos_object_50), [ids.OBJ_chaos_object_51]: world.bosses.filter(o=>o.object_index===ids.OBJ_chaos_object_51), [ids.OBJ_chaos_object_56]: world.bosses.filter(o=>o.object_index===ids.OBJ_chaos_object_56), [ids.OBJ_chaos_object_25]: world.gpzEnemies.filter(o=>o.object_index===ids.OBJ_chaos_object_25&&!o.destroyed), [ids.OBJ_chaos_object_2C]: world.gpzEnemies.filter(o=>o.object_index===ids.OBJ_chaos_object_2C&&!o.destroyed)});
     const sandbox = Object.assign({}, ids, {
-        ev_step:3, ev_step_normal:0,
+        ev_step:3, ev_step_normal:0, json_parse:JSON.parse, string:String, variable_struct_get:(o,k)=>o[k], variable_struct_exists:(o,k)=>Object.hasOwn(o,k),
         event_perform:()=>host.runEvent(host.self,`objects/${nameOf[host.self.object_index]}/Step_0.gml`),
         event_inherited:()=>host.runEvent(host.self,host.activeEvent.replace("OBJ_chaos_object_2C","OBJ_chaos_object_27")),
         global: g, score:0, floor: Math.floor, ceil: Math.ceil, string: v=>String(v), show_debug_message: ()=>{}, round: Math.round, abs: Math.abs, min: Math.min, max: Math.max, sign: Math.sign, clamp: (v, a, b) => Math.min(Math.max(v, a), b),
@@ -48,6 +48,7 @@ function loadHost(ref) {
         e__VW: {Object:0,XView:1,YView:2}, __view_set: (field,view,value) => { if(field===1) world.cam.x=value; if(field===2) world.cam.y=value; },
         SCR_buttons: () => { const i = world.input; g.btUp = !!i.up; g.btDown = !!i.down; g.btLeft = !!i.left; g.btRight = !!i.right; g.btSpace = !!i.jump; g.btSpacePress = !!i.jumpPress; },
         SCR_player_sprites: () => {}, draw_sprite: () => {}, draw_sprite_part: () => {}, draw_set_color: () => {}, draw_line_width: () => {}, make_color_rgb: () => 0, c_white: 0,
+        shader_set:()=>{},shader_reset:()=>{},shader_set_uniform_f_array:()=>{},shader_get_uniform:()=>0,shader_set_uniform_f:()=>{},
         gpu_get_texfilter:()=>world.texfilter??true,gpu_set_texfilter:value=>{world.texfilter=value;},draw_sprite_part_ext:()=>{},
         keyboard_check_pressed: () => false, ord: () => 0, vk_f2: 0, parameter_count: () => 0, parameter_string: () => '',
         get room_width() { return world.roomWidth; }, get room_height() { return world.roomHeight; }, room: ids.ROM_chaos_thz1,
@@ -72,6 +73,7 @@ function loadHost(ref) {
     /// instance_create for the objects this harness hosts (runs the shipped Create_0); anything else is only recorded.
     host.create = (o, x, y) => {
         const nm = nameOf[o];
+        if (["OBJ_chaos_object_spring_26_normal","OBJ_chaos_object_spring_26_weak","OBJ_chaos_object_spring_26_span"].includes(nm)) {const s=host.newInstance(nm,x,y);world.springs.push(s);return s;}
         if (["OBJ_chaos_object_25","OBJ_chaos_object_2C","OBJ_chaos_gpz_smoke_0F"].includes(nm)) { const i=host.newInstance(nm,x,y); (nm==="OBJ_chaos_gpz_smoke_0F"?world.smoke:world.gpzEnemies).push(i);return i; }
         // M2: mapped footwear/enemy/monitor objects created by the level loader run their shipped Create event and Step event inside frame() (after the player, as in the ROM).
         if (['OBJ_chaos_object_21','OBJ_chaos_object_2F','OBJ_chaos_object_10','OBJ_chaos_object_19','OBJ_chaos_object_18'].includes(nm)) { const i=host.newInstance(nm,x,y); i.stepPath=`objects/${nm}/Step_0.gml`; world.badniks.push(i); return i; }
@@ -125,7 +127,7 @@ function loadHost(ref) {
         for (const [cx, cy] of keep) { const i = cy * 128 + cx; iso[i] = ids1[i]; }
         g.chaosTileIds = iso; g.chaosBrokenCells = [];
     };
-    host.reset = () => { world.gpzEnemies.length=0;world.smoke.length=0;world.badniks.length = 0; world.platforms.length = 0; world.spikes.length = 0; world.bosses.length = 0; world.events.length = 0; world.created.length = 0; world.player = null; world.frameNo = 0;
+    host.reset = () => { world.springs.length=0;world.gpzEnemies.length=0;world.smoke.length=0;world.badniks.length = 0; world.platforms.length = 0; world.spikes.length = 0; world.bosses.length = 0; world.events.length = 0; world.created.length = 0; world.player = null; world.frameNo = 0;
         if (ctx.chaos_lr_reset) ctx.chaos_lr_reset(); g.ring = 0; g.playerBlink = false; g.chaosDamageBlinkTimer = 0; g.powerShield = false; g.powerInv = false; g.playerSuper = false; g.chaosAttackPosture = false; };
     return host;
 }

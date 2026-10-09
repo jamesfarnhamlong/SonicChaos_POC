@@ -28,6 +28,7 @@ global.playerBlink = false;
 /// Jump
 
 vspeed = -12;
+if (chaos_is_aqz() && variable_global_exists("chaosAqzEnv") && global.chaosAqzEnv.death) { vspeed=0;global.chaosAqzEnv.camera_bottom=__view_get(e__VW.YView,0); }
 // Direct $4984 crush entry supplies the canonical -5.0 launch; other accepted
 // death presentations retain their existing adapter behavior.
 if (chaos_in_level() && variable_instance_exists(id,"chaosCore") && chaosCore.crush_death) vspeed=chaosCore.vy/256;

@@ -57,7 +57,10 @@ if (global.checkPoint == true)
 }
 else
 {
-    if (chaos_is_sez()) {
+    if (chaos_is_aqz()) {
+        var cp_start=chaos_aqz_start();
+        instance_create(cp_start[0],cp_start[1],OBJ_player_char);
+    } else if (chaos_is_sez()) {
         var cp_start=chaos_sez_start();
         instance_create(cp_start[0],cp_start[1],OBJ_player_char);
     } else if (chaos_is_mghz()) {
@@ -92,7 +95,7 @@ else if (global.powerShield == true)
 /// Player View X
 
 SCR_player_view();
-if (chaos_is_mghz()) __view_set(e__VW.VSpeed,0,0); // horizontal automatic follow stays; vertical is the capped End Step adapter
+if (chaos_is_mghz() || chaos_is_aqz()) __view_set(e__VW.VSpeed,0,0); // horizontal automatic follow stays; vertical is the capped End Step adapter
 
 
 // Keep the opening terrain in view on entry.
@@ -100,7 +103,11 @@ __view_set(e__VW.VBorder, 0, round(__view_get(e__VW.HView, 0) / 2));
 __view_set(e__VW.XView, 0, 0);
 __view_set(e__VW.YView, 0, 550);
 // Debug-only fresh camera, including THZ3's shorter room.
-if (chaos_is_sez()) {
+if (chaos_is_aqz()) {
+    var cp_camera=chaos_aqz_camera();
+    __view_set(e__VW.XView,0,cp_camera[0]);
+    __view_set(e__VW.YView,0,cp_camera[1]);
+} else if (chaos_is_sez()) {
     var cp_camera=chaos_sez_camera();
     __view_set(e__VW.XView,0,cp_camera[0]);
     __view_set(e__VW.YView,0,cp_camera[1]);

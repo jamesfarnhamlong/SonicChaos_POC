@@ -1,0 +1,65 @@
+{
+  "method": "Immutable original RGB; alpha=nearest canonical above sprite index+1; transparent alpha=0; no runtime RGB conversion",
+  "copies": [
+    {
+      "source": "SPR_sonic_break",
+      "adapter": "SPR_chaos_aqz_base_sonic_break"
+    },
+    {
+      "source": "SPR_sonic_death",
+      "adapter": "SPR_chaos_aqz_base_sonic_death"
+    },
+    {
+      "source": "SPR_sonic_down",
+      "adapter": "SPR_chaos_aqz_base_sonic_down"
+    },
+    {
+      "source": "SPR_sonic_falling",
+      "adapter": "SPR_chaos_aqz_base_sonic_falling"
+    },
+    {
+      "source": "SPR_sonic_jump",
+      "adapter": "SPR_chaos_aqz_base_sonic_jump"
+    },
+    {
+      "source": "SPR_sonic_run",
+      "adapter": "SPR_chaos_aqz_base_sonic_run"
+    },
+    {
+      "source": "SPR_sonic_spin",
+      "adapter": "SPR_chaos_aqz_base_sonic_spin"
+    },
+    {
+      "source": "SPR_sonic_spin_dash",
+      "adapter": "SPR_chaos_aqz_base_sonic_spin_dash"
+    },
+    {
+      "source": "SPR_sonic_stop",
+      "adapter": "SPR_chaos_aqz_base_sonic_stop"
+    },
+    {
+      "source": "SPR_sonic_up",
+      "adapter": "SPR_chaos_aqz_base_sonic_up"
+    },
+    {
+      "source": "SPR_sonic_wait",
+      "adapter": "SPR_chaos_aqz_base_sonic_wait"
+    },
+    {
+      "source": "SPR_sonic_walk",
+      "adapter": "SPR_chaos_aqz_base_sonic_walk"
+    },
+    {
+      "source": "SPR_sonic_water_air",
+      "adapter": "SPR_chaos_aqz_base_sonic_water_air"
+    },
+    {
+      "source": "SPR_sonic_water_death",
+      "adapter": "SPR_chaos_aqz_base_sonic_water_death"
+    },
+    {
+      "source": "SPR_chaos_player_state_11",
+      "adapter": "SPR_chaos_aqz_base_chaos_player_state_11"
+    }
+  ]
+}

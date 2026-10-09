@@ -1,0 +1,740 @@
+{
+  "evidence": "actual compiled Windows VM traces; verification-only synthetic position/camera alignment, not shipped gameplay",
+  "before": {
+    "palette_states": [
+      {
+        "cameraY": 552.0,
+        "mode": 0.0,
+        "draws": 6
+      },
+      {
+        "cameraY": 552.0,
+        "mode": 2.0,
+        "draws": 925
+      },
+      {
+        "cameraY": 572.0,
+        "mode": 2.0,
+        "draws": 7
+      },
+      {
+        "cameraY": 572.0,
+        "mode": 1.0,
+        "draws": 551
+      }
+    ]
+  },
+  "after": [
+    {
+      "act": 1,
+      "anchor": [
+        768,
+        686
+      ],
+      "passes": 850.0,
+      "camera_max": 519.3333129882812,
+      "canonical_camera_max": 528,
+      "palette_states": [
+        {
+          "cameraY": 519.3333129882812,
+          "mode": 0.0,
+          "draws": 6
+        },
+        {
+          "cameraY": 519.3333129882812,
+          "mode": 2.0,
+          "draws": 5445
+        },
+        {
+          "cameraY": 419.3333435058594,
+          "mode": 2.0,
+          "draws": 350
+        }
+      ],
+      "emitter": {
+        "act": 1.0,
+        "event": "allocate",
+        "pass": 65.0,
+        "data": {
+          "slot": 7.0,
+          "type": 12.0,
+          "x": 768.0,
+          "parameter": 0.0,
+          "y": 686.0
+        }
+      },
+      "children": [
+        {
+          "act": 1.0,
+          "event": "allocate",
+          "pass": 195.0,
+          "data": {
+            "slot": 8.0,
+            "type": 12.0,
+            "x": 768.0,
+            "parameter": 1.0,
+            "y": 686.0
+          }
+        },
+        {
+          "act": 1.0,
+          "event": "allocate",
+          "pass": 315.0,
+          "data": {
+            "slot": 9.0,
+            "type": 12.0,
+            "x": 768.0,
+            "parameter": 1.0,
+            "y": 686.0
+          }
+        },
+        {
+          "act": 1.0,
+          "event": "allocate",
+          "pass": 427.0,
+          "data": {
+            "slot": 8.0,
+            "type": 12.0,
+            "x": 768.0,
+            "parameter": 2.0,
+            "y": 686.0
+          }
+        },
+        {
+          "act": 1.0,
+          "event": "allocate",
+          "pass": 555.0,
+          "data": {
+            "slot": 9.0,
+            "type": 12.0,
+            "x": 768.0,
+            "parameter": 1.0,
+            "y": 686.0
+          }
+        },
+        {
+          "act": 1.0,
+          "event": "allocate",
+          "pass": 675.0,
+          "data": {
+            "slot": 8.0,
+            "type": 12.0,
+            "x": 768.0,
+            "parameter": 1.0,
+            "y": 686.0
+          }
+        },
+        {
+          "act": 1.0,
+          "event": "allocate",
+          "pass": 787.0,
+          "data": {
+            "slot": 9.0,
+            "type": 12.0,
+            "x": 768.0,
+            "parameter": 2.0,
+            "y": 686.0
+          }
+        }
+      ],
+      "draw_counts": [
+        {
+          "parameter": 3.0,
+          "frame": 1.0,
+          "count": 399
+        },
+        {
+          "parameter": 1.0,
+          "frame": 1.0,
+          "count": 552
+        },
+        {
+          "parameter": 2.0,
+          "frame": 1.0,
+          "count": 32
+        },
+        {
+          "parameter": 2.0,
+          "frame": 2.0,
+          "count": 32
+        },
+        {
+          "parameter": 2.0,
+          "frame": 3.0,
+          "count": 136
+        }
+      ],
+      "child_draw_samples": [
+        {
+          "act": 1.0,
+          "event": "draw",
+          "pass": 196.0,
+          "data": {
+            "slot": 8.0,
+            "type": 12.0,
+            "x": 767.0,
+            "parameter": 1.0,
+            "y": 685.0,
+            "sprite": "SPR_chaos_aqz_bubble",
+            "frame": 1.0,
+            "state": 2.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 1.0,
+          "event": "draw",
+          "pass": 460.0,
+          "data": {
+            "slot": 8.0,
+            "type": 12.0,
+            "x": 769.0,
+            "parameter": 2.0,
+            "y": 661.0,
+            "sprite": "SPR_chaos_aqz_bubble",
+            "frame": 3.0,
+            "state": 3.0,
+            "asleep": false
+          }
+        }
+      ],
+      "delete_samples": [
+        {
+          "act": 1.0,
+          "event": "callback_delete",
+          "pass": 16.0,
+          "data": {
+            "slot": 2.0,
+            "x": 136.0,
+            "reason": "waterline_or_script_end",
+            "parameter": 0.0,
+            "y": 568.0,
+            "frame": 0.0,
+            "callback": 866.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 1.0,
+          "event": "callback_delete",
+          "pass": 188.0,
+          "data": {
+            "slot": 2.0,
+            "x": 818.0,
+            "reason": "waterline_or_script_end",
+            "parameter": 3.0,
+            "y": 583.0,
+            "frame": 1.0,
+            "callback": 40272.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 1.0,
+          "event": "callback_delete",
+          "pass": 310.0,
+          "data": {
+            "slot": 2.0,
+            "x": 826.0,
+            "reason": "waterline_or_script_end",
+            "parameter": 3.0,
+            "y": 582.0,
+            "frame": 1.0,
+            "callback": 40272.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 1.0,
+          "event": "callback_delete",
+          "pass": 334.0,
+          "data": {
+            "slot": 8.0,
+            "x": 757.0,
+            "reason": "waterline_or_script_end",
+            "parameter": 1.0,
+            "y": 582.0,
+            "frame": 1.0,
+            "callback": 40272.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 1.0,
+          "event": "callback_delete",
+          "pass": 430.0,
+          "data": {
+            "slot": 2.0,
+            "x": 821.0,
+            "reason": "waterline_or_script_end",
+            "parameter": 3.0,
+            "y": 582.0,
+            "frame": 1.0,
+            "callback": 40272.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 1.0,
+          "event": "callback_delete",
+          "pass": 454.0,
+          "data": {
+            "slot": 9.0,
+            "x": 762.0,
+            "reason": "waterline_or_script_end",
+            "parameter": 1.0,
+            "y": 582.0,
+            "frame": 1.0,
+            "callback": 40272.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 1.0,
+          "event": "callback_delete",
+          "pass": 550.0,
+          "data": {
+            "slot": 2.0,
+            "x": 813.0,
+            "reason": "waterline_or_script_end",
+            "parameter": 3.0,
+            "y": 582.0,
+            "frame": 1.0,
+            "callback": 40272.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 1.0,
+          "event": "callback_delete",
+          "pass": 566.0,
+          "data": {
+            "slot": 8.0,
+            "x": 773.0,
+            "reason": "large_contact_or_waterline",
+            "parameter": 2.0,
+            "y": 582.0,
+            "frame": 3.0,
+            "callback": 40249.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 1.0,
+          "event": "callback_delete",
+          "pass": 670.0,
+          "data": {
+            "slot": 2.0,
+            "x": 818.0,
+            "reason": "waterline_or_script_end",
+            "parameter": 3.0,
+            "y": 582.0,
+            "frame": 1.0,
+            "callback": 40272.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 1.0,
+          "event": "callback_delete",
+          "pass": 694.0,
+          "data": {
+            "slot": 9.0,
+            "x": 773.0,
+            "reason": "waterline_or_script_end",
+            "parameter": 1.0,
+            "y": 582.0,
+            "frame": 1.0,
+            "callback": 40272.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 1.0,
+          "event": "callback_delete",
+          "pass": 764.0,
+          "data": {
+            "slot": 2.0,
+            "x": 820.0,
+            "reason": "waterline_or_script_end",
+            "parameter": 0.0,
+            "y": 568.0,
+            "frame": 0.0,
+            "callback": 866.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 1.0,
+          "event": "callback_delete",
+          "pass": 814.0,
+          "data": {
+            "slot": 8.0,
+            "x": 757.0,
+            "reason": "waterline_or_script_end",
+            "parameter": 1.0,
+            "y": 582.0,
+            "frame": 1.0,
+            "callback": 40272.0,
+            "asleep": false
+          }
+        }
+      ]
+    },
+    {
+      "act": 2,
+      "anchor": [
+        2496,
+        942
+      ],
+      "passes": 850.0,
+      "camera_max": 784.0,
+      "canonical_camera_max": 784,
+      "palette_states": [
+        {
+          "cameraY": 749.3333129882812,
+          "mode": 0.0,
+          "draws": 6
+        },
+        {
+          "cameraY": 749.3333129882812,
+          "mode": 2.0,
+          "draws": 1427
+        },
+        {
+          "cameraY": 784.0,
+          "mode": 2.0,
+          "draws": 3360
+        },
+        {
+          "cameraY": 639.3333129882812,
+          "mode": 2.0,
+          "draws": 300
+        }
+      ],
+      "emitter": {
+        "act": 2.0,
+        "event": "allocate",
+        "pass": 57.0,
+        "data": {
+          "slot": 7.0,
+          "type": 12.0,
+          "x": 2496.0,
+          "parameter": 0.0,
+          "y": 942.0
+        }
+      },
+      "children": [
+        {
+          "act": 2.0,
+          "event": "allocate",
+          "pass": 187.0,
+          "data": {
+            "slot": 8.0,
+            "type": 12.0,
+            "x": 2496.0,
+            "parameter": 1.0,
+            "y": 942.0
+          }
+        },
+        {
+          "act": 2.0,
+          "event": "allocate",
+          "pass": 307.0,
+          "data": {
+            "slot": 9.0,
+            "type": 12.0,
+            "x": 2496.0,
+            "parameter": 1.0,
+            "y": 942.0
+          }
+        },
+        {
+          "act": 2.0,
+          "event": "allocate",
+          "pass": 419.0,
+          "data": {
+            "slot": 8.0,
+            "type": 12.0,
+            "x": 2496.0,
+            "parameter": 2.0,
+            "y": 942.0
+          }
+        },
+        {
+          "act": 2.0,
+          "event": "allocate",
+          "pass": 547.0,
+          "data": {
+            "slot": 9.0,
+            "type": 12.0,
+            "x": 2496.0,
+            "parameter": 1.0,
+            "y": 942.0
+          }
+        },
+        {
+          "act": 2.0,
+          "event": "allocate",
+          "pass": 667.0,
+          "data": {
+            "slot": 8.0,
+            "type": 12.0,
+            "x": 2496.0,
+            "parameter": 1.0,
+            "y": 942.0
+          }
+        },
+        {
+          "act": 2.0,
+          "event": "allocate",
+          "pass": 779.0,
+          "data": {
+            "slot": 9.0,
+            "type": 12.0,
+            "x": 2496.0,
+            "parameter": 2.0,
+            "y": 942.0
+          }
+        }
+      ],
+      "draw_counts": [
+        {
+          "parameter": 3.0,
+          "frame": 1.0,
+          "count": 814
+        },
+        {
+          "parameter": 1.0,
+          "frame": 1.0,
+          "count": 740
+        },
+        {
+          "parameter": 2.0,
+          "frame": 1.0,
+          "count": 32
+        },
+        {
+          "parameter": 2.0,
+          "frame": 2.0,
+          "count": 32
+        },
+        {
+          "parameter": 2.0,
+          "frame": 3.0,
+          "count": 192
+        }
+      ],
+      "child_draw_samples": [
+        {
+          "act": 2.0,
+          "event": "draw",
+          "pass": 188.0,
+          "data": {
+            "slot": 8.0,
+            "type": 12.0,
+            "x": 2496.0,
+            "parameter": 1.0,
+            "y": 941.0,
+            "sprite": "SPR_chaos_aqz_bubble",
+            "frame": 1.0,
+            "state": 2.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 2.0,
+          "event": "draw",
+          "pass": 452.0,
+          "data": {
+            "slot": 8.0,
+            "type": 12.0,
+            "x": 2493.0,
+            "parameter": 2.0,
+            "y": 917.0,
+            "sprite": "SPR_chaos_aqz_bubble",
+            "frame": 3.0,
+            "state": 3.0,
+            "asleep": false
+          }
+        }
+      ],
+      "delete_samples": [
+        {
+          "act": 2.0,
+          "event": "callback_delete",
+          "pass": 15.0,
+          "data": {
+            "slot": 2.0,
+            "x": 1896.0,
+            "reason": "waterline_or_script_end",
+            "parameter": 0.0,
+            "y": 788.0,
+            "frame": 0.0,
+            "callback": 866.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 2.0,
+          "event": "callback_delete",
+          "pass": 202.0,
+          "data": {
+            "slot": 2.0,
+            "x": 2549.0,
+            "reason": "waterline_or_script_end",
+            "parameter": 3.0,
+            "y": 803.0,
+            "frame": 1.0,
+            "callback": 40272.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 2.0,
+          "event": "callback_delete",
+          "pass": 374.0,
+          "data": {
+            "slot": 8.0,
+            "x": 2487.0,
+            "reason": "waterline_or_script_end",
+            "parameter": 1.0,
+            "y": 802.0,
+            "frame": 1.0,
+            "callback": 40272.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 2.0,
+          "event": "callback_delete",
+          "pass": 406.0,
+          "data": {
+            "slot": 2.0,
+            "x": 2567.0,
+            "reason": "waterline_or_script_end",
+            "parameter": 3.0,
+            "y": 803.0,
+            "frame": 1.0,
+            "callback": 40272.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 2.0,
+          "event": "callback_delete",
+          "pass": 494.0,
+          "data": {
+            "slot": 9.0,
+            "x": 2511.0,
+            "reason": "waterline_or_script_end",
+            "parameter": 1.0,
+            "y": 802.0,
+            "frame": 1.0,
+            "callback": 40272.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 2.0,
+          "event": "callback_delete",
+          "pass": 526.0,
+          "data": {
+            "slot": 3.0,
+            "x": 2552.0,
+            "reason": "waterline_or_script_end",
+            "parameter": 3.0,
+            "y": 803.0,
+            "frame": 1.0,
+            "callback": 40272.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 2.0,
+          "event": "callback_delete",
+          "pass": 606.0,
+          "data": {
+            "slot": 8.0,
+            "x": 2480.0,
+            "reason": "large_contact_or_waterline",
+            "parameter": 2.0,
+            "y": 802.0,
+            "frame": 3.0,
+            "callback": 40249.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 2.0,
+          "event": "callback_delete",
+          "pass": 646.0,
+          "data": {
+            "slot": 2.0,
+            "x": 2532.0,
+            "reason": "waterline_or_script_end",
+            "parameter": 3.0,
+            "y": 803.0,
+            "frame": 1.0,
+            "callback": 40272.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 2.0,
+          "event": "callback_delete",
+          "pass": 734.0,
+          "data": {
+            "slot": 9.0,
+            "x": 2480.0,
+            "reason": "waterline_or_script_end",
+            "parameter": 1.0,
+            "y": 802.0,
+            "frame": 1.0,
+            "callback": 40272.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 2.0,
+          "event": "callback_delete",
+          "pass": 764.0,
+          "data": {
+            "slot": 2.0,
+            "x": 2550.0,
+            "reason": "waterline_or_script_end",
+            "parameter": 0.0,
+            "y": 788.0,
+            "frame": 0.0,
+            "callback": 866.0,
+            "asleep": false
+          }
+        },
+        {
+          "act": 2.0,
+          "event": "callback_delete",
+          "pass": 766.0,
+          "data": {
+            "slot": 3.0,
+            "x": 2547.0,
+            "reason": "waterline_or_script_end",
+            "parameter": 3.0,
+            "y": 803.0,
+            "frame": 1.0,
+            "callback": 40272.0,
+            "asleep": false
+          }
+        }
+      ]
+    }
+  ],
+  "deep_aqz1": {
+    "evidence": "held Y650 then706, canonical camera aligned on synthetic movement; automatic post-EndStep follow disabled by shipped code",
+    "camera_max": 528.0,
+    "modes": {
+      "0.0": 6,
+      "2.0": 5795
+    },
+    "indexed_whole_screen_draws": 0
+  }
+}

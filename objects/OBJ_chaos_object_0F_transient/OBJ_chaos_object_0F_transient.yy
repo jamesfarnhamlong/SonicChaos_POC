@@ -1,1 +1,59 @@
-{"$GMObject":"","%Name":"OBJ_chaos_object_0F_transient","eventList":[{"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0"},{"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0"}],"managed":true,"name":"OBJ_chaos_object_0F_transient","overriddenProperties":[],"parent": {"name": "GameMaker Objects", "path": "folders/Objects/Sonic Chaos/GameMaker Objects.yy"},"parentObjectId":null,"persistent":false,"physicsAngularDamping":0.1,"physicsDensity":0.5,"physicsFriction":0.2,"physicsGroup":0,"physicsKinematic":false,"physicsLinearDamping":0.1,"physicsObject":false,"physicsRestitution":0.1,"physicsSensor":false,"physicsShape":0,"physicsShapePoints":[],"physicsStartAwake":true,"properties":[],"resourceType":"GMObject","resourceVersion":"2.0","solid":false,"spriteId":{"name":"SPR_chaos_object_0F","path":"sprites/SPR_chaos_object_0F/SPR_chaos_object_0F.yy"},"spriteMaskId":null,"visible":true}
+{
+  "$GMObject": "",
+  "%Name": "OBJ_chaos_object_0F_transient",
+  "eventList": [
+    {
+      "$GMEvent": "v1",
+      "%Name": "",
+      "collisionObjectId": null,
+      "eventNum": 0,
+      "eventType": 0,
+      "isDnD": false,
+      "name": "",
+      "resourceType": "GMEvent",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMEvent": "v1",
+      "%Name": "",
+      "collisionObjectId": null,
+      "eventNum": 0,
+      "eventType": 3,
+      "isDnD": false,
+      "name": "",
+      "resourceType": "GMEvent",
+      "resourceVersion": "2.0"
+    }
+  ],
+  "managed": true,
+  "name": "OBJ_chaos_object_0F_transient",
+  "overriddenProperties": [],
+  "parent": {
+    "name": "GameMaker Objects",
+    "path": "folders/Objects/Sonic Chaos/GameMaker Objects.yy"
+  },
+  "parentObjectId": null,
+  "persistent": false,
+  "physicsAngularDamping": 0.1,
+  "physicsDensity": 0.5,
+  "physicsFriction": 0.2,
+  "physicsGroup": 0,
+  "physicsKinematic": false,
+  "physicsLinearDamping": 0.1,
+  "physicsObject": false,
+  "physicsRestitution": 0.1,
+  "physicsSensor": false,
+  "physicsShape": 0,
+  "physicsShapePoints": [],
+  "physicsStartAwake": true,
+  "properties": [],
+  "resourceType": "GMObject",
+  "resourceVersion": "2.0",
+  "solid": false,
+  "spriteId": {
+    "name": "SPR_chaos_object_0F",
+    "path": "sprites/SPR_chaos_object_0F/SPR_chaos_object_0F.yy"
+  },
+  "spriteMaskId": null,
+  "visible": true
+}

@@ -19,6 +19,12 @@ def set_chaos_parent(value):
     if isinstance(value, dict) and value.get('name') in PARENTS:
         if value.get('resourceType') in ('GMSprite', 'GMObject', 'GMScript', 'GMRoom'):
             value['parent'] = chaos_parent(value['name'])
+    if isinstance(value,dict) and 'chaos_aqz' in value.get('name',''):
+        category={'GMSprite':'Sprites','GMObject':'Objects','GMScript':'Scripts','GMRoom':'Rooms'}.get(value.get('resourceType'))
+        if category:
+            suffix='/Data' if category=='Scripts' and value['name'].endswith('data') else '/Environment' if category=='Scripts' else ''
+            target='folders/'+category+'/Sonic Chaos/AQZ'+suffix+'.yy'
+            value['parent']={'name':target.rsplit('/',1)[1][:-3],'path':target}
     return value
 
 

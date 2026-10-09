@@ -1,7 +1,7 @@
 // Object phase of the update: the player's whole pass (Step) has run, so type $28 platforms and type $1B spikes now move / test / carry (the ROM order), BEFORE the camera
 // reads the player's position below. Runs here rather than in OBJ_chaos_controls so the camera is guaranteed to see the carried position.
 SCR_chaos_objects_phase();
-if (chaos_is_mghz()) __view_set(e__VW.VSpeed,0,0); // player instance changes must not re-enable uncapped automatic Y travel
+if (chaos_is_mghz() || chaos_is_aqz()) __view_set(e__VW.VSpeed,0,0); // player instance changes must not re-enable uncapped automatic Y travel
 // Sign-pan mode (from $18 contact) disables the follow camera on both axes; chaos_goal_camera_step drives X and Y instead.
 if (instance_exists(OBJ_player) && !global.chaosPan.active && (!chaos_is_thz3() || !instance_exists(OBJ_chaos_object_50) || instance_find(OBJ_chaos_object_50,0).chaosBoss.camera_mode == 0) && (chaos_gpz_act()!=3 || !instance_exists(OBJ_chaos_object_51) || !instance_find(OBJ_chaos_object_51,0).chaosBoss51.active) && !chaos_56_owns_camera() && !chaos_54_owns_camera()) {
  var vh = __view_get(e__VW.HView,0);
@@ -21,3 +21,15 @@ chaos_54_camera_step(); // SEZ3 boss $54 arena (S5)
 if (chaos_is_mghz()) chaos_mghz_effect_step(global.chaosMghzEffects,global.chaosMghzBossActive,global.chaosMghzPaletteControl);
 
 if (chaos_is_sez()) chaos_sez_effect_step(global.chaosSezEffects, global.chaosSezBossActive, 0); // $D44E: the SEZ3 boss shared init (chaos_54_callback $974C) sets chaosSezBossActive, which pauses effect 5
+
+if (chaos_is_aqz()) {
+    if (keyboard_check_pressed(vk_f6)) global.chaosAqzTrace=variable_global_exists("chaosAqzTrace") ? !global.chaosAqzTrace : true;
+    var cp_bounds=chaos_aqz_bounds(),cp_cam=view_camera[0];
+    var cp_bottom=global.chaosAqzEnv.camera_bottom >= 0 ? global.chaosAqzEnv.camera_bottom : cp_bounds[3];
+    // Widescreen camera framing adapter: canonical WORLD right edge, maxX - excess width.
+    __view_set(e__VW.XView,0,clamp(camera_get_view_x(cp_cam),cp_bounds[0],max(cp_bounds[0],cp_bounds[2]-max(0,camera_get_view_width(cp_cam)-256))));
+    __view_set(e__VW.YView,0,clamp(camera_get_view_y(cp_cam),cp_bounds[1],cp_bottom));
+    chaos_aqz_effect_step(global.chaosAqzEnv,false);
+}
+
+if (keyboard_check_pressed(vk_f7)) global.chaosPlayerTrace=variable_global_exists("chaosPlayerTrace") ? !global.chaosPlayerTrace : true;

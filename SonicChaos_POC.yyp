@@ -18,77 +18,6 @@
   },
   "defaultScriptType": 1,
   "Folders": [
-    {"$GMFolder": "","%Name": "Characters","folderPath": "folders/Sprites/Characters.yy","name": "Characters","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Future-Retained","folderPath": "folders/Sprites/Characters/Future-Retained.yy","name": "Future-Retained","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Knuckles","folderPath": "folders/Sprites/Characters/Future-Retained/Knuckles.yy","name": "Knuckles","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Super Sonic","folderPath": "folders/Sprites/Characters/Future-Retained/Super Sonic.yy","name": "Super Sonic","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Tails","folderPath": "folders/Sprites/Characters/Future-Retained/Tails.yy","name": "Tails","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Sonic Chaos","folderPath": "folders/Objects/Sonic Chaos.yy","name": "Sonic Chaos","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Controllers","folderPath": "folders/Objects/Sonic Chaos/Controllers.yy","name": "Controllers","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Debug","folderPath": "folders/Objects/Sonic Chaos/Debug.yy","name": "Debug","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "GameMaker Objects","folderPath": "folders/Objects/Sonic Chaos/GameMaker Objects.yy","name": "GameMaker Objects","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Legacy-Prototypes","folderPath": "folders/Objects/Sonic Chaos/Legacy-Prototypes.yy","name": "Legacy-Prototypes","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Terrain Hosts","folderPath": "folders/Objects/Sonic Chaos/Terrain Hosts.yy","name": "Terrain Hosts","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "GPZ","folderPath": "folders/Objects/Sonic Chaos/Terrain Hosts/GPZ.yy","name": "GPZ","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "MGHZ","folderPath": "folders/Objects/Sonic Chaos/Terrain Hosts/MGHZ.yy","name": "MGHZ","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "SEZ","folderPath": "folders/Objects/Sonic Chaos/Terrain Hosts/SEZ.yy","name": "SEZ","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Shared","folderPath": "folders/Objects/Sonic Chaos/Terrain Hosts/Shared.yy","name": "Shared","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "THZ","folderPath": "folders/Objects/Sonic Chaos/Terrain Hosts/THZ.yy","name": "THZ","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Sonic Chaos","folderPath": "folders/Rooms/Sonic Chaos.yy","name": "Sonic Chaos","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Debug","folderPath": "folders/Rooms/Sonic Chaos/Debug.yy","name": "Debug","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "GPZ","folderPath": "folders/Rooms/Sonic Chaos/GPZ.yy","name": "GPZ","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "MGHZ","folderPath": "folders/Rooms/Sonic Chaos/MGHZ.yy","name": "MGHZ","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "SEZ","folderPath": "folders/Rooms/Sonic Chaos/SEZ.yy","name": "SEZ","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "THZ","folderPath": "folders/Rooms/Sonic Chaos/THZ.yy","name": "THZ","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Sonic Chaos","folderPath": "folders/Scripts/Sonic Chaos.yy","name": "Sonic Chaos","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Core","folderPath": "folders/Scripts/Sonic Chaos/Core.yy","name": "Core","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Debug","folderPath": "folders/Scripts/Sonic Chaos/Debug.yy","name": "Debug","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "GPZ","folderPath": "folders/Scripts/Sonic Chaos/GPZ.yy","name": "GPZ","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Data","folderPath": "folders/Scripts/Sonic Chaos/GPZ/Data.yy","name": "Data","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Runtime","folderPath": "folders/Scripts/Sonic Chaos/GPZ/Runtime.yy","name": "Runtime","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Level-Import","folderPath": "folders/Scripts/Sonic Chaos/Level-Import.yy","name": "Level-Import","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "MGHZ","folderPath": "folders/Scripts/Sonic Chaos/MGHZ.yy","name": "MGHZ","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Data","folderPath": "folders/Scripts/Sonic Chaos/MGHZ/Data.yy","name": "Data","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Runtime","folderPath": "folders/Scripts/Sonic Chaos/MGHZ/Runtime.yy","name": "Runtime","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Player-Collision","folderPath": "folders/Scripts/Sonic Chaos/Player-Collision.yy","name": "Player-Collision","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "SEZ","folderPath": "folders/Scripts/Sonic Chaos/SEZ.yy","name": "SEZ","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Data","folderPath": "folders/Scripts/Sonic Chaos/SEZ/Data.yy","name": "Data","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Runtime","folderPath": "folders/Scripts/Sonic Chaos/SEZ/Runtime.yy","name": "Runtime","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Shared Objects","folderPath": "folders/Scripts/Sonic Chaos/Shared Objects.yy","name": "Shared Objects","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "THZ","folderPath": "folders/Scripts/Sonic Chaos/THZ.yy","name": "THZ","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Data","folderPath": "folders/Scripts/Sonic Chaos/THZ/Data.yy","name": "Data","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Runtime","folderPath": "folders/Scripts/Sonic Chaos/THZ/Runtime.yy","name": "Runtime","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Sonic Chaos","folderPath": "folders/Sprites/Sonic Chaos.yy","name": "Sonic Chaos","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "GPZ","folderPath": "folders/Sprites/Sonic Chaos/GPZ.yy","name": "GPZ","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Bosses","folderPath": "folders/Sprites/Sonic Chaos/GPZ/Bosses.yy","name": "Bosses","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Effects","folderPath": "folders/Sprites/Sonic Chaos/GPZ/Effects.yy","name": "Effects","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Enemies","folderPath": "folders/Sprites/Sonic Chaos/GPZ/Enemies.yy","name": "Enemies","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Objects","folderPath": "folders/Sprites/Sonic Chaos/GPZ/Objects.yy","name": "Objects","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Terrain","folderPath": "folders/Sprites/Sonic Chaos/GPZ/Terrain.yy","name": "Terrain","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "MGHZ","folderPath": "folders/Sprites/Sonic Chaos/MGHZ.yy","name": "MGHZ","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Bosses","folderPath": "folders/Sprites/Sonic Chaos/MGHZ/Bosses.yy","name": "Bosses","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Effects","folderPath": "folders/Sprites/Sonic Chaos/MGHZ/Effects.yy","name": "Effects","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Enemies","folderPath": "folders/Sprites/Sonic Chaos/MGHZ/Enemies.yy","name": "Enemies","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Objects","folderPath": "folders/Sprites/Sonic Chaos/MGHZ/Objects.yy","name": "Objects","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Terrain","folderPath": "folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy","name": "Terrain","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "SEZ","folderPath": "folders/Sprites/Sonic Chaos/SEZ.yy","name": "SEZ","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Bosses","folderPath": "folders/Sprites/Sonic Chaos/SEZ/Bosses.yy","name": "Bosses","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Effects","folderPath": "folders/Sprites/Sonic Chaos/SEZ/Effects.yy","name": "Effects","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Enemies","folderPath": "folders/Sprites/Sonic Chaos/SEZ/Enemies.yy","name": "Enemies","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Objects","folderPath": "folders/Sprites/Sonic Chaos/SEZ/Objects.yy","name": "Objects","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Terrain","folderPath": "folders/Sprites/Sonic Chaos/SEZ/Terrain.yy","name": "Terrain","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Shared","folderPath": "folders/Sprites/Sonic Chaos/Shared.yy","name": "Shared","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Effects","folderPath": "folders/Sprites/Sonic Chaos/Shared/Effects.yy","name": "Effects","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Enemies","folderPath": "folders/Sprites/Sonic Chaos/Shared/Enemies.yy","name": "Enemies","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Legacy-Prototypes","folderPath": "folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes.yy","name": "Legacy-Prototypes","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Collision Helpers","folderPath": "folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy","name": "Collision Helpers","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Objects","folderPath": "folders/Sprites/Sonic Chaos/Shared/Objects.yy","name": "Objects","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Player","folderPath": "folders/Sprites/Sonic Chaos/Shared/Player.yy","name": "Player","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Terrain","folderPath": "folders/Sprites/Sonic Chaos/Shared/Terrain.yy","name": "Terrain","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "THZ","folderPath": "folders/Sprites/Sonic Chaos/THZ.yy","name": "THZ","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Bosses","folderPath": "folders/Sprites/Sonic Chaos/THZ/Bosses.yy","name": "Bosses","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Effects","folderPath": "folders/Sprites/Sonic Chaos/THZ/Effects.yy","name": "Effects","resourceType": "GMFolder","resourceVersion": "2.0"},
-    {"$GMFolder": "","%Name": "Terrain","folderPath": "folders/Sprites/Sonic Chaos/THZ/Terrain.yy","name": "Terrain","resourceType": "GMFolder","resourceVersion": "2.0"},
     {
       "$GMFolder": "",
       "%Name": "Extensions",
@@ -315,6 +244,102 @@
     },
     {
       "$GMFolder": "",
+      "%Name": "Sonic Chaos",
+      "folderPath": "folders/Objects/Sonic Chaos.yy",
+      "name": "Sonic Chaos",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "AQZ",
+      "folderPath": "folders/Objects/Sonic Chaos/AQZ.yy",
+      "name": "AQZ",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Controllers",
+      "folderPath": "folders/Objects/Sonic Chaos/Controllers.yy",
+      "name": "Controllers",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Debug",
+      "folderPath": "folders/Objects/Sonic Chaos/Debug.yy",
+      "name": "Debug",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "GameMaker Objects",
+      "folderPath": "folders/Objects/Sonic Chaos/GameMaker Objects.yy",
+      "name": "GameMaker Objects",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Legacy-Prototypes",
+      "folderPath": "folders/Objects/Sonic Chaos/Legacy-Prototypes.yy",
+      "name": "Legacy-Prototypes",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Terrain Hosts",
+      "folderPath": "folders/Objects/Sonic Chaos/Terrain Hosts.yy",
+      "name": "Terrain Hosts",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "GPZ",
+      "folderPath": "folders/Objects/Sonic Chaos/Terrain Hosts/GPZ.yy",
+      "name": "GPZ",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "MGHZ",
+      "folderPath": "folders/Objects/Sonic Chaos/Terrain Hosts/MGHZ.yy",
+      "name": "MGHZ",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "SEZ",
+      "folderPath": "folders/Objects/Sonic Chaos/Terrain Hosts/SEZ.yy",
+      "name": "SEZ",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Shared",
+      "folderPath": "folders/Objects/Sonic Chaos/Terrain Hosts/Shared.yy",
+      "name": "Shared",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "THZ",
+      "folderPath": "folders/Objects/Sonic Chaos/Terrain Hosts/THZ.yy",
+      "name": "THZ",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
       "%Name": "System",
       "folderPath": "folders/Objects/System.yy",
       "name": "System",
@@ -342,6 +367,62 @@
       "%Name": "Menus",
       "folderPath": "folders/Rooms/Menus.yy",
       "name": "Menus",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Sonic Chaos",
+      "folderPath": "folders/Rooms/Sonic Chaos.yy",
+      "name": "Sonic Chaos",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "AQZ",
+      "folderPath": "folders/Rooms/Sonic Chaos/AQZ.yy",
+      "name": "AQZ",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Debug",
+      "folderPath": "folders/Rooms/Sonic Chaos/Debug.yy",
+      "name": "Debug",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "GPZ",
+      "folderPath": "folders/Rooms/Sonic Chaos/GPZ.yy",
+      "name": "GPZ",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "MGHZ",
+      "folderPath": "folders/Rooms/Sonic Chaos/MGHZ.yy",
+      "name": "MGHZ",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "SEZ",
+      "folderPath": "folders/Rooms/Sonic Chaos/SEZ.yy",
+      "name": "SEZ",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "THZ",
+      "folderPath": "folders/Rooms/Sonic Chaos/THZ.yy",
+      "name": "THZ",
       "resourceType": "GMFolder",
       "resourceVersion": "2.0"
     },
@@ -459,6 +540,174 @@
     },
     {
       "$GMFolder": "",
+      "%Name": "Sonic Chaos",
+      "folderPath": "folders/Scripts/Sonic Chaos.yy",
+      "name": "Sonic Chaos",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "AQZ",
+      "folderPath": "folders/Scripts/Sonic Chaos/AQZ.yy",
+      "name": "AQZ",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Data",
+      "folderPath": "folders/Scripts/Sonic Chaos/AQZ/Data.yy",
+      "name": "Data",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Environment",
+      "folderPath": "folders/Scripts/Sonic Chaos/AQZ/Environment.yy",
+      "name": "Environment",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Core",
+      "folderPath": "folders/Scripts/Sonic Chaos/Core.yy",
+      "name": "Core",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Debug",
+      "folderPath": "folders/Scripts/Sonic Chaos/Debug.yy",
+      "name": "Debug",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "GPZ",
+      "folderPath": "folders/Scripts/Sonic Chaos/GPZ.yy",
+      "name": "GPZ",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Data",
+      "folderPath": "folders/Scripts/Sonic Chaos/GPZ/Data.yy",
+      "name": "Data",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Runtime",
+      "folderPath": "folders/Scripts/Sonic Chaos/GPZ/Runtime.yy",
+      "name": "Runtime",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Level-Import",
+      "folderPath": "folders/Scripts/Sonic Chaos/Level-Import.yy",
+      "name": "Level-Import",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "MGHZ",
+      "folderPath": "folders/Scripts/Sonic Chaos/MGHZ.yy",
+      "name": "MGHZ",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Data",
+      "folderPath": "folders/Scripts/Sonic Chaos/MGHZ/Data.yy",
+      "name": "Data",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Runtime",
+      "folderPath": "folders/Scripts/Sonic Chaos/MGHZ/Runtime.yy",
+      "name": "Runtime",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Player-Collision",
+      "folderPath": "folders/Scripts/Sonic Chaos/Player-Collision.yy",
+      "name": "Player-Collision",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "SEZ",
+      "folderPath": "folders/Scripts/Sonic Chaos/SEZ.yy",
+      "name": "SEZ",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Data",
+      "folderPath": "folders/Scripts/Sonic Chaos/SEZ/Data.yy",
+      "name": "Data",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Runtime",
+      "folderPath": "folders/Scripts/Sonic Chaos/SEZ/Runtime.yy",
+      "name": "Runtime",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Shared Objects",
+      "folderPath": "folders/Scripts/Sonic Chaos/Shared Objects.yy",
+      "name": "Shared Objects",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "THZ",
+      "folderPath": "folders/Scripts/Sonic Chaos/THZ.yy",
+      "name": "THZ",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Data",
+      "folderPath": "folders/Scripts/Sonic Chaos/THZ/Data.yy",
+      "name": "Data",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Runtime",
+      "folderPath": "folders/Scripts/Sonic Chaos/THZ/Runtime.yy",
+      "name": "Runtime",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
       "%Name": "System",
       "folderPath": "folders/Scripts/System.yy",
       "name": "System",
@@ -478,6 +727,14 @@
       "%Name": "Shaders",
       "folderPath": "folders/Shaders.yy",
       "name": "Shaders",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Sonic Chaos",
+      "folderPath": "folders/Shaders/Sonic Chaos.yy",
+      "name": "Sonic Chaos",
       "resourceType": "GMFolder",
       "resourceVersion": "2.0"
     },
@@ -534,6 +791,46 @@
       "%Name": "Badniks",
       "folderPath": "folders/Sprites/Badniks.yy",
       "name": "Badniks",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Characters",
+      "folderPath": "folders/Sprites/Characters.yy",
+      "name": "Characters",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Future-Retained",
+      "folderPath": "folders/Sprites/Characters/Future-Retained.yy",
+      "name": "Future-Retained",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Knuckles",
+      "folderPath": "folders/Sprites/Characters/Future-Retained/Knuckles.yy",
+      "name": "Knuckles",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Super Sonic",
+      "folderPath": "folders/Sprites/Characters/Future-Retained/Super Sonic.yy",
+      "name": "Super Sonic",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Tails",
+      "folderPath": "folders/Sprites/Characters/Future-Retained/Tails.yy",
+      "name": "Tails",
       "resourceType": "GMFolder",
       "resourceVersion": "2.0"
     },
@@ -763,6 +1060,262 @@
     },
     {
       "$GMFolder": "",
+      "%Name": "Sonic Chaos",
+      "folderPath": "folders/Sprites/Sonic Chaos.yy",
+      "name": "Sonic Chaos",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "AQZ",
+      "folderPath": "folders/Sprites/Sonic Chaos/AQZ.yy",
+      "name": "AQZ",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "GPZ",
+      "folderPath": "folders/Sprites/Sonic Chaos/GPZ.yy",
+      "name": "GPZ",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Bosses",
+      "folderPath": "folders/Sprites/Sonic Chaos/GPZ/Bosses.yy",
+      "name": "Bosses",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Effects",
+      "folderPath": "folders/Sprites/Sonic Chaos/GPZ/Effects.yy",
+      "name": "Effects",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Enemies",
+      "folderPath": "folders/Sprites/Sonic Chaos/GPZ/Enemies.yy",
+      "name": "Enemies",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Objects",
+      "folderPath": "folders/Sprites/Sonic Chaos/GPZ/Objects.yy",
+      "name": "Objects",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Terrain",
+      "folderPath": "folders/Sprites/Sonic Chaos/GPZ/Terrain.yy",
+      "name": "Terrain",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "MGHZ",
+      "folderPath": "folders/Sprites/Sonic Chaos/MGHZ.yy",
+      "name": "MGHZ",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Bosses",
+      "folderPath": "folders/Sprites/Sonic Chaos/MGHZ/Bosses.yy",
+      "name": "Bosses",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Effects",
+      "folderPath": "folders/Sprites/Sonic Chaos/MGHZ/Effects.yy",
+      "name": "Effects",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Enemies",
+      "folderPath": "folders/Sprites/Sonic Chaos/MGHZ/Enemies.yy",
+      "name": "Enemies",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Objects",
+      "folderPath": "folders/Sprites/Sonic Chaos/MGHZ/Objects.yy",
+      "name": "Objects",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Terrain",
+      "folderPath": "folders/Sprites/Sonic Chaos/MGHZ/Terrain.yy",
+      "name": "Terrain",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "SEZ",
+      "folderPath": "folders/Sprites/Sonic Chaos/SEZ.yy",
+      "name": "SEZ",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Bosses",
+      "folderPath": "folders/Sprites/Sonic Chaos/SEZ/Bosses.yy",
+      "name": "Bosses",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Effects",
+      "folderPath": "folders/Sprites/Sonic Chaos/SEZ/Effects.yy",
+      "name": "Effects",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Enemies",
+      "folderPath": "folders/Sprites/Sonic Chaos/SEZ/Enemies.yy",
+      "name": "Enemies",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Objects",
+      "folderPath": "folders/Sprites/Sonic Chaos/SEZ/Objects.yy",
+      "name": "Objects",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Terrain",
+      "folderPath": "folders/Sprites/Sonic Chaos/SEZ/Terrain.yy",
+      "name": "Terrain",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Shared",
+      "folderPath": "folders/Sprites/Sonic Chaos/Shared.yy",
+      "name": "Shared",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Effects",
+      "folderPath": "folders/Sprites/Sonic Chaos/Shared/Effects.yy",
+      "name": "Effects",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Enemies",
+      "folderPath": "folders/Sprites/Sonic Chaos/Shared/Enemies.yy",
+      "name": "Enemies",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Legacy-Prototypes",
+      "folderPath": "folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes.yy",
+      "name": "Legacy-Prototypes",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Collision Helpers",
+      "folderPath": "folders/Sprites/Sonic Chaos/Shared/Legacy-Prototypes/Collision Helpers.yy",
+      "name": "Collision Helpers",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Objects",
+      "folderPath": "folders/Sprites/Sonic Chaos/Shared/Objects.yy",
+      "name": "Objects",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Player",
+      "folderPath": "folders/Sprites/Sonic Chaos/Shared/Player.yy",
+      "name": "Player",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Terrain",
+      "folderPath": "folders/Sprites/Sonic Chaos/Shared/Terrain.yy",
+      "name": "Terrain",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "THZ",
+      "folderPath": "folders/Sprites/Sonic Chaos/THZ.yy",
+      "name": "THZ",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Bosses",
+      "folderPath": "folders/Sprites/Sonic Chaos/THZ/Bosses.yy",
+      "name": "Bosses",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Effects",
+      "folderPath": "folders/Sprites/Sonic Chaos/THZ/Effects.yy",
+      "name": "Effects",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
+      "%Name": "Terrain",
+      "folderPath": "folders/Sprites/Sonic Chaos/THZ/Terrain.yy",
+      "name": "Terrain",
+      "resourceType": "GMFolder",
+      "resourceVersion": "2.0"
+    },
+    {
+      "$GMFolder": "",
       "%Name": "tilesets",
       "folderPath": "folders/Sprites/tilesets.yy",
       "name": "tilesets",
@@ -819,300 +1372,6 @@
   },
   "name": "SonicChaos_POC",
   "resources": [
-    {
-      "id": {
-        "name": "SCR_chaos_debug_select",
-        "path": "scripts/SCR_chaos_debug_select/SCR_chaos_debug_select.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_debug_select",
-        "path": "objects/OBJ_chaos_debug_select/OBJ_chaos_debug_select.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "ROM_chaos_debug_select",
-        "path": "rooms/ROM_chaos_debug_select/ROM_chaos_debug_select.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_boss_50_flash",
-        "path": "sprites/SPR_chaos_boss_50_flash/SPR_chaos_boss_50_flash.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_boss_50_mirror_flash",
-        "path": "sprites/SPR_chaos_boss_50_mirror_flash/SPR_chaos_boss_50_mirror_flash.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_boss_data",
-        "path": "scripts/SCR_chaos_boss_data/SCR_chaos_boss_data.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_boss",
-        "path": "scripts/SCR_chaos_boss/SCR_chaos_boss.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_object_50",
-        "path": "objects/OBJ_chaos_object_50/OBJ_chaos_object_50.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_boss_effect",
-        "path": "objects/OBJ_chaos_boss_effect/OBJ_chaos_boss_effect.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_boss_50",
-        "path": "sprites/SPR_chaos_boss_50/SPR_chaos_boss_50.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_boss_50_mirror",
-        "path": "sprites/SPR_chaos_boss_50_mirror/SPR_chaos_boss_50_mirror.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_boss_puff_34",
-        "path": "sprites/SPR_chaos_boss_puff_34/SPR_chaos_boss_puff_34.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_boss_sparkle_0A",
-        "path": "sprites/SPR_chaos_boss_sparkle_0A/SPR_chaos_boss_sparkle_0A.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_boss_poof_0F",
-        "path": "sprites/SPR_chaos_boss_poof_0F/SPR_chaos_boss_poof_0F.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_core",
-        "path": "scripts/SCR_chaos_core/SCR_chaos_core.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_core_data",
-        "path": "scripts/SCR_chaos_core_data/SCR_chaos_core_data.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_adapter",
-        "path": "scripts/SCR_chaos_adapter/SCR_chaos_adapter.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_render_adapter",
-        "path": "scripts/SCR_chaos_render_adapter/SCR_chaos_render_adapter.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "ROM_chaos_thz2",
-        "path": "rooms/ROM_chaos_thz2/ROM_chaos_thz2.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "ROM_chaos_thz3",
-        "path": "rooms/ROM_chaos_thz3/ROM_chaos_thz3.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_thz3_terrain",
-        "path": "objects/OBJ_chaos_thz3_terrain/OBJ_chaos_thz3_terrain.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_thz2_terrain",
-        "path": "objects/OBJ_chaos_thz2_terrain/OBJ_chaos_thz2_terrain.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_level",
-        "path": "scripts/SCR_chaos_level/SCR_chaos_level.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_lost_ring",
-        "path": "scripts/SCR_chaos_lost_ring/SCR_chaos_lost_ring.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_loop_layout",
-        "path": "scripts/SCR_chaos_loop_layout/SCR_chaos_loop_layout.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_box_contact",
-        "path": "scripts/SCR_chaos_box_contact/SCR_chaos_box_contact.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_goal",
-        "path": "scripts/SCR_chaos_goal/SCR_chaos_goal.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_viewport",
-        "path": "scripts/SCR_chaos_viewport/SCR_chaos_viewport.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_anim_counter_data",
-        "path": "scripts/SCR_chaos_anim_counter_data/SCR_chaos_anim_counter_data.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_anim_counter",
-        "path": "scripts/SCR_chaos_anim_counter/SCR_chaos_anim_counter.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_terrain_ring",
-        "path": "scripts/SCR_chaos_terrain_ring/SCR_chaos_terrain_ring.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_attack",
-        "path": "scripts/SCR_chaos_attack/SCR_chaos_attack.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_level_thz3_data",
-        "path": "scripts/SCR_chaos_level_thz3_data/SCR_chaos_level_thz3_data.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_objects",
-        "path": "scripts/SCR_chaos_objects/SCR_chaos_objects.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_platform",
-        "path": "scripts/SCR_chaos_platform/SCR_chaos_platform.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_spike1b",
-        "path": "scripts/SCR_chaos_spike1b/SCR_chaos_spike1b.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_spring",
-        "path": "scripts/SCR_chaos_spring/SCR_chaos_spring.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_placement",
-        "path": "scripts/SCR_chaos_placement/SCR_chaos_placement.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_level_thz2_data",
-        "path": "scripts/SCR_chaos_level_thz2_data/SCR_chaos_level_thz2_data.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_thz2_terrain_0",
-        "path": "sprites/SPR_chaos_thz2_terrain_0/SPR_chaos_thz2_terrain_0.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_thz2_terrain_1",
-        "path": "sprites/SPR_chaos_thz2_terrain_1/SPR_chaos_thz2_terrain_1.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_thz2_terrain_2",
-        "path": "sprites/SPR_chaos_thz2_terrain_2/SPR_chaos_thz2_terrain_2.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_thz2_terrain_3",
-        "path": "sprites/SPR_chaos_thz2_terrain_3/SPR_chaos_thz2_terrain_3.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_thz2_block_9d",
-        "path": "sprites/SPR_chaos_thz2_block_9d/SPR_chaos_thz2_block_9d.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_thz3_terrain_0",
-        "path": "sprites/SPR_chaos_thz3_terrain_0/SPR_chaos_thz3_terrain_0.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_thz3_terrain_1",
-        "path": "sprites/SPR_chaos_thz3_terrain_1/SPR_chaos_thz3_terrain_1.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_thz3_terrain_2",
-        "path": "sprites/SPR_chaos_thz3_terrain_2/SPR_chaos_thz3_terrain_2.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_object_10_03",
-        "path": "sprites/SPR_chaos_object_10_03/SPR_chaos_object_10_03.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_object_10_01",
-        "path": "sprites/SPR_chaos_object_10_01/SPR_chaos_object_10_01.yy"
-      }
-    },
     {
       "id": {
         "name": "compatibility_report_190926_1658555855",
@@ -1177,6 +1436,648 @@
       "id": {
         "name": "OBJ_chao_emerald_7",
         "path": "objects/OBJ_chao_emerald_7/OBJ_chao_emerald_7.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_aqz1_terrain",
+        "path": "objects/OBJ_chaos_aqz1_terrain/OBJ_chaos_aqz1_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_aqz2_terrain",
+        "path": "objects/OBJ_chaos_aqz2_terrain/OBJ_chaos_aqz2_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_aqz3_terrain",
+        "path": "objects/OBJ_chaos_aqz3_terrain/OBJ_chaos_aqz3_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_boss_effect",
+        "path": "objects/OBJ_chaos_boss_effect/OBJ_chaos_boss_effect.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_100",
+        "path": "objects/OBJ_chaos_contour_100/OBJ_chaos_contour_100.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_101",
+        "path": "objects/OBJ_chaos_contour_101/OBJ_chaos_contour_101.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_102",
+        "path": "objects/OBJ_chaos_contour_102/OBJ_chaos_contour_102.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_103",
+        "path": "objects/OBJ_chaos_contour_103/OBJ_chaos_contour_103.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_104",
+        "path": "objects/OBJ_chaos_contour_104/OBJ_chaos_contour_104.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_105",
+        "path": "objects/OBJ_chaos_contour_105/OBJ_chaos_contour_105.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_106",
+        "path": "objects/OBJ_chaos_contour_106/OBJ_chaos_contour_106.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_107",
+        "path": "objects/OBJ_chaos_contour_107/OBJ_chaos_contour_107.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_108",
+        "path": "objects/OBJ_chaos_contour_108/OBJ_chaos_contour_108.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_115",
+        "path": "objects/OBJ_chaos_contour_115/OBJ_chaos_contour_115.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_72",
+        "path": "objects/OBJ_chaos_contour_72/OBJ_chaos_contour_72.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_73",
+        "path": "objects/OBJ_chaos_contour_73/OBJ_chaos_contour_73.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_74",
+        "path": "objects/OBJ_chaos_contour_74/OBJ_chaos_contour_74.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_75",
+        "path": "objects/OBJ_chaos_contour_75/OBJ_chaos_contour_75.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_76",
+        "path": "objects/OBJ_chaos_contour_76/OBJ_chaos_contour_76.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_77",
+        "path": "objects/OBJ_chaos_contour_77/OBJ_chaos_contour_77.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_78",
+        "path": "objects/OBJ_chaos_contour_78/OBJ_chaos_contour_78.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_79",
+        "path": "objects/OBJ_chaos_contour_79/OBJ_chaos_contour_79.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_80",
+        "path": "objects/OBJ_chaos_contour_80/OBJ_chaos_contour_80.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_81",
+        "path": "objects/OBJ_chaos_contour_81/OBJ_chaos_contour_81.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_82",
+        "path": "objects/OBJ_chaos_contour_82/OBJ_chaos_contour_82.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_83",
+        "path": "objects/OBJ_chaos_contour_83/OBJ_chaos_contour_83.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_84",
+        "path": "objects/OBJ_chaos_contour_84/OBJ_chaos_contour_84.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_85",
+        "path": "objects/OBJ_chaos_contour_85/OBJ_chaos_contour_85.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_88",
+        "path": "objects/OBJ_chaos_contour_88/OBJ_chaos_contour_88.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_89",
+        "path": "objects/OBJ_chaos_contour_89/OBJ_chaos_contour_89.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_90",
+        "path": "objects/OBJ_chaos_contour_90/OBJ_chaos_contour_90.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_91",
+        "path": "objects/OBJ_chaos_contour_91/OBJ_chaos_contour_91.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_92",
+        "path": "objects/OBJ_chaos_contour_92/OBJ_chaos_contour_92.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_93",
+        "path": "objects/OBJ_chaos_contour_93/OBJ_chaos_contour_93.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_94",
+        "path": "objects/OBJ_chaos_contour_94/OBJ_chaos_contour_94.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_95",
+        "path": "objects/OBJ_chaos_contour_95/OBJ_chaos_contour_95.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_96",
+        "path": "objects/OBJ_chaos_contour_96/OBJ_chaos_contour_96.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_97",
+        "path": "objects/OBJ_chaos_contour_97/OBJ_chaos_contour_97.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_98",
+        "path": "objects/OBJ_chaos_contour_98/OBJ_chaos_contour_98.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_contour_99",
+        "path": "objects/OBJ_chaos_contour_99/OBJ_chaos_contour_99.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_controls",
+        "path": "objects/OBJ_chaos_controls/OBJ_chaos_controls.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_debug_select",
+        "path": "objects/OBJ_chaos_debug_select/OBJ_chaos_debug_select.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_gpz_smoke_0F",
+        "path": "objects/OBJ_chaos_gpz_smoke_0F/OBJ_chaos_gpz_smoke_0F.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_gpz1_terrain",
+        "path": "objects/OBJ_chaos_gpz1_terrain/OBJ_chaos_gpz1_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_gpz2_terrain",
+        "path": "objects/OBJ_chaos_gpz2_terrain/OBJ_chaos_gpz2_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_gpz3_terrain",
+        "path": "objects/OBJ_chaos_gpz3_terrain/OBJ_chaos_gpz3_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_loop_base",
+        "path": "objects/OBJ_chaos_loop_base/OBJ_chaos_loop_base.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_loop_floor_161",
+        "path": "objects/OBJ_chaos_loop_floor_161/OBJ_chaos_loop_floor_161.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_loop_floor_162",
+        "path": "objects/OBJ_chaos_loop_floor_162/OBJ_chaos_loop_floor_162.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_loop_floor_80",
+        "path": "objects/OBJ_chaos_loop_floor_80/OBJ_chaos_loop_floor_80.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_loop_floor_81",
+        "path": "objects/OBJ_chaos_loop_floor_81/OBJ_chaos_loop_floor_81.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_loop_floor_82",
+        "path": "objects/OBJ_chaos_loop_floor_82/OBJ_chaos_loop_floor_82.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_loop_floor_83",
+        "path": "objects/OBJ_chaos_loop_floor_83/OBJ_chaos_loop_floor_83.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_00",
+        "path": "objects/OBJ_CHAOS_mask_00/OBJ_CHAOS_mask_00.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_01",
+        "path": "objects/OBJ_CHAOS_mask_01/OBJ_CHAOS_mask_01.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_02",
+        "path": "objects/OBJ_CHAOS_mask_02/OBJ_CHAOS_mask_02.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_03",
+        "path": "objects/OBJ_CHAOS_mask_03/OBJ_CHAOS_mask_03.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_04",
+        "path": "objects/OBJ_CHAOS_mask_04/OBJ_CHAOS_mask_04.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_05",
+        "path": "objects/OBJ_CHAOS_mask_05/OBJ_CHAOS_mask_05.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_06",
+        "path": "objects/OBJ_CHAOS_mask_06/OBJ_CHAOS_mask_06.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_07",
+        "path": "objects/OBJ_CHAOS_mask_07/OBJ_CHAOS_mask_07.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_08",
+        "path": "objects/OBJ_CHAOS_mask_08/OBJ_CHAOS_mask_08.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_09",
+        "path": "objects/OBJ_CHAOS_mask_09/OBJ_CHAOS_mask_09.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_10",
+        "path": "objects/OBJ_CHAOS_mask_10/OBJ_CHAOS_mask_10.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_11",
+        "path": "objects/OBJ_CHAOS_mask_11/OBJ_CHAOS_mask_11.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_12",
+        "path": "objects/OBJ_CHAOS_mask_12/OBJ_CHAOS_mask_12.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_CHAOS_mask_13",
+        "path": "objects/OBJ_CHAOS_mask_13/OBJ_CHAOS_mask_13.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_mghz1_terrain",
+        "path": "objects/OBJ_chaos_mghz1_terrain/OBJ_chaos_mghz1_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_mghz2_terrain",
+        "path": "objects/OBJ_chaos_mghz2_terrain/OBJ_chaos_mghz2_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_mghz3_terrain",
+        "path": "objects/OBJ_chaos_mghz3_terrain/OBJ_chaos_mghz3_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_05_effect",
+        "path": "objects/OBJ_chaos_object_05_effect/OBJ_chaos_object_05_effect.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_0F_transient",
+        "path": "objects/OBJ_chaos_object_0F_transient/OBJ_chaos_object_0F_transient.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_10",
+        "path": "objects/OBJ_chaos_object_10/OBJ_chaos_object_10.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_18",
+        "path": "objects/OBJ_chaos_object_18/OBJ_chaos_object_18.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_19",
+        "path": "objects/OBJ_chaos_object_19/OBJ_chaos_object_19.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_21",
+        "path": "objects/OBJ_chaos_object_21/OBJ_chaos_object_21.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_25",
+        "path": "objects/OBJ_chaos_object_25/OBJ_chaos_object_25.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_27",
+        "path": "objects/OBJ_chaos_object_27/OBJ_chaos_object_27.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_2C",
+        "path": "objects/OBJ_chaos_object_2C/OBJ_chaos_object_2C.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_2F",
+        "path": "objects/OBJ_chaos_object_2F/OBJ_chaos_object_2F.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_50",
+        "path": "objects/OBJ_chaos_object_50/OBJ_chaos_object_50.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_51",
+        "path": "objects/OBJ_chaos_object_51/OBJ_chaos_object_51.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_56",
+        "path": "objects/OBJ_chaos_object_56/OBJ_chaos_object_56.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_spring_26_normal",
+        "path": "objects/OBJ_chaos_object_spring_26_normal/OBJ_chaos_object_spring_26_normal.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_spring_26_span",
+        "path": "objects/OBJ_chaos_object_spring_26_span/OBJ_chaos_object_spring_26_span.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_object_spring_26_weak",
+        "path": "objects/OBJ_chaos_object_spring_26_weak/OBJ_chaos_object_spring_26_weak.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_platform",
+        "path": "objects/OBJ_chaos_platform/OBJ_chaos_platform.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_ring_manager",
+        "path": "objects/OBJ_chaos_ring_manager/OBJ_chaos_ring_manager.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_roof",
+        "path": "objects/OBJ_chaos_roof/OBJ_chaos_roof.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_sez1_terrain",
+        "path": "objects/OBJ_chaos_sez1_terrain/OBJ_chaos_sez1_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_sez2_terrain",
+        "path": "objects/OBJ_chaos_sez2_terrain/OBJ_chaos_sez2_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_sez3_terrain",
+        "path": "objects/OBJ_chaos_sez3_terrain/OBJ_chaos_sez3_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_spikes",
+        "path": "objects/OBJ_chaos_spikes/OBJ_chaos_spikes.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_spring_48",
+        "path": "objects/OBJ_chaos_spring_48/OBJ_chaos_spring_48.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_spring_49",
+        "path": "objects/OBJ_chaos_spring_49/OBJ_chaos_spring_49.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_spring_51",
+        "path": "objects/OBJ_chaos_spring_51/OBJ_chaos_spring_51.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_spring_54",
+        "path": "objects/OBJ_chaos_spring_54/OBJ_chaos_spring_54.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_spring_56",
+        "path": "objects/OBJ_chaos_spring_56/OBJ_chaos_spring_56.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_terrain_0",
+        "path": "objects/OBJ_chaos_terrain_0/OBJ_chaos_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_terrain_1",
+        "path": "objects/OBJ_chaos_terrain_1/OBJ_chaos_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_terrain_2",
+        "path": "objects/OBJ_chaos_terrain_2/OBJ_chaos_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_terrain_3",
+        "path": "objects/OBJ_chaos_terrain_3/OBJ_chaos_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_terrain_foreground",
+        "path": "objects/OBJ_chaos_terrain_foreground/OBJ_chaos_terrain_foreground.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_thz2_terrain",
+        "path": "objects/OBJ_chaos_thz2_terrain/OBJ_chaos_thz2_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_thz3_terrain",
+        "path": "objects/OBJ_chaos_thz3_terrain/OBJ_chaos_thz3_terrain.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_wall",
+        "path": "objects/OBJ_chaos_wall/OBJ_chaos_wall.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "OBJ_chaos_zone",
+        "path": "objects/OBJ_chaos_zone/OBJ_chaos_zone.yy"
       }
     },
     {
@@ -1679,6 +2580,102 @@
     },
     {
       "id": {
+        "name": "ROM_chaos_aqz1",
+        "path": "rooms/ROM_chaos_aqz1/ROM_chaos_aqz1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_aqz2",
+        "path": "rooms/ROM_chaos_aqz2/ROM_chaos_aqz2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_aqz3",
+        "path": "rooms/ROM_chaos_aqz3/ROM_chaos_aqz3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_debug_select",
+        "path": "rooms/ROM_chaos_debug_select/ROM_chaos_debug_select.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_gpz1",
+        "path": "rooms/ROM_chaos_gpz1/ROM_chaos_gpz1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_gpz2",
+        "path": "rooms/ROM_chaos_gpz2/ROM_chaos_gpz2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_gpz3",
+        "path": "rooms/ROM_chaos_gpz3/ROM_chaos_gpz3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_mghz1",
+        "path": "rooms/ROM_chaos_mghz1/ROM_chaos_mghz1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_mghz2",
+        "path": "rooms/ROM_chaos_mghz2/ROM_chaos_mghz2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_mghz3",
+        "path": "rooms/ROM_chaos_mghz3/ROM_chaos_mghz3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_sez1",
+        "path": "rooms/ROM_chaos_sez1/ROM_chaos_sez1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_sez2",
+        "path": "rooms/ROM_chaos_sez2/ROM_chaos_sez2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_sez3",
+        "path": "rooms/ROM_chaos_sez3/ROM_chaos_sez3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_thz1",
+        "path": "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_thz2",
+        "path": "rooms/ROM_chaos_thz2/ROM_chaos_thz2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "ROM_chaos_thz3",
+        "path": "rooms/ROM_chaos_thz3/ROM_chaos_thz3.yy"
+      }
+    },
+    {
+      "id": {
         "name": "ROM_menu_data_select",
         "path": "rooms/ROM_menu_data_select/ROM_menu_data_select.yy"
       }
@@ -1805,6 +2802,294 @@
     },
     {
       "id": {
+        "name": "SCR_chaos_adapter",
+        "path": "scripts/SCR_chaos_adapter/SCR_chaos_adapter.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_anim_counter_data",
+        "path": "scripts/SCR_chaos_anim_counter_data/SCR_chaos_anim_counter_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_anim_counter",
+        "path": "scripts/SCR_chaos_anim_counter/SCR_chaos_anim_counter.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_aqz_data",
+        "path": "scripts/SCR_chaos_aqz_data/SCR_chaos_aqz_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_aqz_environment_data",
+        "path": "scripts/SCR_chaos_aqz_environment_data/SCR_chaos_aqz_environment_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_aqz_environment",
+        "path": "scripts/SCR_chaos_aqz_environment/SCR_chaos_aqz_environment.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_attack",
+        "path": "scripts/SCR_chaos_attack/SCR_chaos_attack.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_boss_data",
+        "path": "scripts/SCR_chaos_boss_data/SCR_chaos_boss_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_boss",
+        "path": "scripts/SCR_chaos_boss/SCR_chaos_boss.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_box_contact",
+        "path": "scripts/SCR_chaos_box_contact/SCR_chaos_box_contact.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_core_data",
+        "path": "scripts/SCR_chaos_core_data/SCR_chaos_core_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_core",
+        "path": "scripts/SCR_chaos_core/SCR_chaos_core.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_debug_select",
+        "path": "scripts/SCR_chaos_debug_select/SCR_chaos_debug_select.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_goal",
+        "path": "scripts/SCR_chaos_goal/SCR_chaos_goal.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_gpz_boss_data",
+        "path": "scripts/SCR_chaos_gpz_boss_data/SCR_chaos_gpz_boss_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_gpz_boss",
+        "path": "scripts/SCR_chaos_gpz_boss/SCR_chaos_gpz_boss.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_gpz_data",
+        "path": "scripts/SCR_chaos_gpz_data/SCR_chaos_gpz_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_gpz_enemy_data",
+        "path": "scripts/SCR_chaos_gpz_enemy_data/SCR_chaos_gpz_enemy_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_gpz_enemy",
+        "path": "scripts/SCR_chaos_gpz_enemy/SCR_chaos_gpz_enemy.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_level_thz2_data",
+        "path": "scripts/SCR_chaos_level_thz2_data/SCR_chaos_level_thz2_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_level_thz3_data",
+        "path": "scripts/SCR_chaos_level_thz3_data/SCR_chaos_level_thz3_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_level",
+        "path": "scripts/SCR_chaos_level/SCR_chaos_level.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_loop_layout",
+        "path": "scripts/SCR_chaos_loop_layout/SCR_chaos_loop_layout.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_lost_ring",
+        "path": "scripts/SCR_chaos_lost_ring/SCR_chaos_lost_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_mghz_boss_data",
+        "path": "scripts/SCR_chaos_mghz_boss_data/SCR_chaos_mghz_boss_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_mghz_boss",
+        "path": "scripts/SCR_chaos_mghz_boss/SCR_chaos_mghz_boss.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_mghz_data",
+        "path": "scripts/SCR_chaos_mghz_data/SCR_chaos_mghz_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_mghz_effects",
+        "path": "scripts/SCR_chaos_mghz_effects/SCR_chaos_mghz_effects.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_mghz_m3",
+        "path": "scripts/SCR_chaos_mghz_m3/SCR_chaos_mghz_m3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_motion_data",
+        "path": "scripts/SCR_chaos_motion_data/SCR_chaos_motion_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_motion",
+        "path": "scripts/SCR_chaos_motion/SCR_chaos_motion.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_objects",
+        "path": "scripts/SCR_chaos_objects/SCR_chaos_objects.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_placement",
+        "path": "scripts/SCR_chaos_placement/SCR_chaos_placement.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_platform",
+        "path": "scripts/SCR_chaos_platform/SCR_chaos_platform.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_render_adapter",
+        "path": "scripts/SCR_chaos_render_adapter/SCR_chaos_render_adapter.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_ring_data",
+        "path": "scripts/SCR_chaos_ring_data/SCR_chaos_ring_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_sez_boss_data",
+        "path": "scripts/SCR_chaos_sez_boss_data/SCR_chaos_sez_boss_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_sez_boss",
+        "path": "scripts/SCR_chaos_sez_boss/SCR_chaos_sez_boss.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_sez_data",
+        "path": "scripts/SCR_chaos_sez_data/SCR_chaos_sez_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_sez_effects",
+        "path": "scripts/SCR_chaos_sez_effects/SCR_chaos_sez_effects.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_sez_enemy",
+        "path": "scripts/SCR_chaos_sez_enemy/SCR_chaos_sez_enemy.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_sez_s2_data",
+        "path": "scripts/SCR_chaos_sez_s2_data/SCR_chaos_sez_s2_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_sez_s2",
+        "path": "scripts/SCR_chaos_sez_s2/SCR_chaos_sez_s2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_spike1b",
+        "path": "scripts/SCR_chaos_spike1b/SCR_chaos_spike1b.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_spring",
+        "path": "scripts/SCR_chaos_spring/SCR_chaos_spring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_terrain_ring",
+        "path": "scripts/SCR_chaos_terrain_ring/SCR_chaos_terrain_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_type09_data",
+        "path": "scripts/SCR_chaos_type09_data/SCR_chaos_type09_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_viewport",
+        "path": "scripts/SCR_chaos_viewport/SCR_chaos_viewport.yy"
+      }
+    },
+    {
+      "id": {
         "name": "SCR_load_cards",
         "path": "scripts/SCR_load_cards/SCR_load_cards.yy"
       }
@@ -1921,6 +3206,12 @@
       "id": {
         "name": "SCR_zone_goto",
         "path": "scripts/SCR_zone_goto/SCR_zone_goto.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SHD_chaos_aqz_palette",
+        "path": "shaders/SHD_chaos_aqz_palette/SHD_chaos_aqz_palette.yy"
       }
     },
     {
@@ -2107,6 +3398,1638 @@
       "id": {
         "name": "SPR_chao_emeralds",
         "path": "sprites/SPR_chao_emeralds/SPR_chao_emeralds.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_air_recovery",
+        "path": "sprites/SPR_chaos_aqz_air_recovery/SPR_chaos_aqz_air_recovery.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_block_46",
+        "path": "sprites/SPR_chaos_aqz_block_46/SPR_chaos_aqz_block_46.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_block_47",
+        "path": "sprites/SPR_chaos_aqz_block_47/SPR_chaos_aqz_block_47.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_block_9b",
+        "path": "sprites/SPR_chaos_aqz_block_9b/SPR_chaos_aqz_block_9b.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_block_9c",
+        "path": "sprites/SPR_chaos_aqz_block_9c/SPR_chaos_aqz_block_9c.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_block_9d",
+        "path": "sprites/SPR_chaos_aqz_block_9d/SPR_chaos_aqz_block_9d.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_blocks",
+        "path": "sprites/SPR_chaos_aqz_blocks/SPR_chaos_aqz_blocks.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_bubble",
+        "path": "sprites/SPR_chaos_aqz_bubble/SPR_chaos_aqz_bubble.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_countdown",
+        "path": "sprites/SPR_chaos_aqz_countdown/SPR_chaos_aqz_countdown.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_effect11_front",
+        "path": "sprites/SPR_chaos_aqz_effect11_front/SPR_chaos_aqz_effect11_front.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_effect11",
+        "path": "sprites/SPR_chaos_aqz_effect11/SPR_chaos_aqz_effect11.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_effect5_front",
+        "path": "sprites/SPR_chaos_aqz_effect5_front/SPR_chaos_aqz_effect5_front.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_effect5",
+        "path": "sprites/SPR_chaos_aqz_effect5/SPR_chaos_aqz_effect5.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_foreground",
+        "path": "sprites/SPR_chaos_aqz_foreground/SPR_chaos_aqz_foreground.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_monitor_01",
+        "path": "sprites/SPR_chaos_aqz_monitor_01/SPR_chaos_aqz_monitor_01.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_monitor_02",
+        "path": "sprites/SPR_chaos_aqz_monitor_02/SPR_chaos_aqz_monitor_02.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_monitor_03",
+        "path": "sprites/SPR_chaos_aqz_monitor_03/SPR_chaos_aqz_monitor_03.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_monitor_04",
+        "path": "sprites/SPR_chaos_aqz_monitor_04/SPR_chaos_aqz_monitor_04.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_monitor_06",
+        "path": "sprites/SPR_chaos_aqz_monitor_06/SPR_chaos_aqz_monitor_06.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_poof",
+        "path": "sprites/SPR_chaos_aqz_poof/SPR_chaos_aqz_poof.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_puff",
+        "path": "sprites/SPR_chaos_aqz_puff/SPR_chaos_aqz_puff.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_ring_sparkle",
+        "path": "sprites/SPR_chaos_aqz_ring_sparkle/SPR_chaos_aqz_ring_sparkle.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_ring",
+        "path": "sprites/SPR_chaos_aqz_ring/SPR_chaos_aqz_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_shard",
+        "path": "sprites/SPR_chaos_aqz_shard/SPR_chaos_aqz_shard.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_sign",
+        "path": "sprites/SPR_chaos_aqz_sign/SPR_chaos_aqz_sign.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_sparkle",
+        "path": "sprites/SPR_chaos_aqz_sparkle/SPR_chaos_aqz_sparkle.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_spike",
+        "path": "sprites/SPR_chaos_aqz_spike/SPR_chaos_aqz_spike.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_splash",
+        "path": "sprites/SPR_chaos_aqz_splash/SPR_chaos_aqz_splash.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_spring",
+        "path": "sprites/SPR_chaos_aqz_spring/SPR_chaos_aqz_spring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_terrain_ring",
+        "path": "sprites/SPR_chaos_aqz_terrain_ring/SPR_chaos_aqz_terrain_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_waterline",
+        "path": "sprites/SPR_chaos_aqz_waterline/SPR_chaos_aqz_waterline.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz1_terrain_0",
+        "path": "sprites/SPR_chaos_aqz1_terrain_0/SPR_chaos_aqz1_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz1_terrain_1",
+        "path": "sprites/SPR_chaos_aqz1_terrain_1/SPR_chaos_aqz1_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz1_terrain_2",
+        "path": "sprites/SPR_chaos_aqz1_terrain_2/SPR_chaos_aqz1_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz1_terrain_3",
+        "path": "sprites/SPR_chaos_aqz1_terrain_3/SPR_chaos_aqz1_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz1_terrain_4",
+        "path": "sprites/SPR_chaos_aqz1_terrain_4/SPR_chaos_aqz1_terrain_4.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz1_terrain_5",
+        "path": "sprites/SPR_chaos_aqz1_terrain_5/SPR_chaos_aqz1_terrain_5.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz2_terrain_0",
+        "path": "sprites/SPR_chaos_aqz2_terrain_0/SPR_chaos_aqz2_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz2_terrain_1",
+        "path": "sprites/SPR_chaos_aqz2_terrain_1/SPR_chaos_aqz2_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz2_terrain_2",
+        "path": "sprites/SPR_chaos_aqz2_terrain_2/SPR_chaos_aqz2_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz2_terrain_3",
+        "path": "sprites/SPR_chaos_aqz2_terrain_3/SPR_chaos_aqz2_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz3_terrain_0",
+        "path": "sprites/SPR_chaos_aqz3_terrain_0/SPR_chaos_aqz3_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz3_terrain_1",
+        "path": "sprites/SPR_chaos_aqz3_terrain_1/SPR_chaos_aqz3_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz3_terrain_2",
+        "path": "sprites/SPR_chaos_aqz3_terrain_2/SPR_chaos_aqz3_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_block_46",
+        "path": "sprites/SPR_chaos_block_46/SPR_chaos_block_46.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_block_47",
+        "path": "sprites/SPR_chaos_block_47/SPR_chaos_block_47.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_boss_50_flash",
+        "path": "sprites/SPR_chaos_boss_50_flash/SPR_chaos_boss_50_flash.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_boss_50_mirror_flash",
+        "path": "sprites/SPR_chaos_boss_50_mirror_flash/SPR_chaos_boss_50_mirror_flash.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_boss_50_mirror",
+        "path": "sprites/SPR_chaos_boss_50_mirror/SPR_chaos_boss_50_mirror.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_boss_50",
+        "path": "sprites/SPR_chaos_boss_50/SPR_chaos_boss_50.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_boss_poof_0F",
+        "path": "sprites/SPR_chaos_boss_poof_0F/SPR_chaos_boss_poof_0F.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_boss_puff_34",
+        "path": "sprites/SPR_chaos_boss_puff_34/SPR_chaos_boss_puff_34.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_boss_sparkle_0A",
+        "path": "sprites/SPR_chaos_boss_sparkle_0A/SPR_chaos_boss_sparkle_0A.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_100",
+        "path": "sprites/SPR_chaos_contour_100/SPR_chaos_contour_100.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_101",
+        "path": "sprites/SPR_chaos_contour_101/SPR_chaos_contour_101.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_102",
+        "path": "sprites/SPR_chaos_contour_102/SPR_chaos_contour_102.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_103",
+        "path": "sprites/SPR_chaos_contour_103/SPR_chaos_contour_103.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_104",
+        "path": "sprites/SPR_chaos_contour_104/SPR_chaos_contour_104.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_105",
+        "path": "sprites/SPR_chaos_contour_105/SPR_chaos_contour_105.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_106",
+        "path": "sprites/SPR_chaos_contour_106/SPR_chaos_contour_106.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_107",
+        "path": "sprites/SPR_chaos_contour_107/SPR_chaos_contour_107.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_108",
+        "path": "sprites/SPR_chaos_contour_108/SPR_chaos_contour_108.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_115",
+        "path": "sprites/SPR_chaos_contour_115/SPR_chaos_contour_115.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_72",
+        "path": "sprites/SPR_chaos_contour_72/SPR_chaos_contour_72.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_73",
+        "path": "sprites/SPR_chaos_contour_73/SPR_chaos_contour_73.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_74",
+        "path": "sprites/SPR_chaos_contour_74/SPR_chaos_contour_74.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_75",
+        "path": "sprites/SPR_chaos_contour_75/SPR_chaos_contour_75.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_76",
+        "path": "sprites/SPR_chaos_contour_76/SPR_chaos_contour_76.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_77",
+        "path": "sprites/SPR_chaos_contour_77/SPR_chaos_contour_77.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_78",
+        "path": "sprites/SPR_chaos_contour_78/SPR_chaos_contour_78.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_79",
+        "path": "sprites/SPR_chaos_contour_79/SPR_chaos_contour_79.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_80",
+        "path": "sprites/SPR_chaos_contour_80/SPR_chaos_contour_80.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_81",
+        "path": "sprites/SPR_chaos_contour_81/SPR_chaos_contour_81.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_82",
+        "path": "sprites/SPR_chaos_contour_82/SPR_chaos_contour_82.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_83",
+        "path": "sprites/SPR_chaos_contour_83/SPR_chaos_contour_83.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_84",
+        "path": "sprites/SPR_chaos_contour_84/SPR_chaos_contour_84.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_85",
+        "path": "sprites/SPR_chaos_contour_85/SPR_chaos_contour_85.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_88",
+        "path": "sprites/SPR_chaos_contour_88/SPR_chaos_contour_88.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_89",
+        "path": "sprites/SPR_chaos_contour_89/SPR_chaos_contour_89.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_90",
+        "path": "sprites/SPR_chaos_contour_90/SPR_chaos_contour_90.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_91",
+        "path": "sprites/SPR_chaos_contour_91/SPR_chaos_contour_91.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_92",
+        "path": "sprites/SPR_chaos_contour_92/SPR_chaos_contour_92.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_93",
+        "path": "sprites/SPR_chaos_contour_93/SPR_chaos_contour_93.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_94",
+        "path": "sprites/SPR_chaos_contour_94/SPR_chaos_contour_94.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_95",
+        "path": "sprites/SPR_chaos_contour_95/SPR_chaos_contour_95.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_96",
+        "path": "sprites/SPR_chaos_contour_96/SPR_chaos_contour_96.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_97",
+        "path": "sprites/SPR_chaos_contour_97/SPR_chaos_contour_97.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_98",
+        "path": "sprites/SPR_chaos_contour_98/SPR_chaos_contour_98.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_contour_99",
+        "path": "sprites/SPR_chaos_contour_99/SPR_chaos_contour_99.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_block_46",
+        "path": "sprites/SPR_chaos_gpz_block_46/SPR_chaos_gpz_block_46.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_block_47",
+        "path": "sprites/SPR_chaos_gpz_block_47/SPR_chaos_gpz_block_47.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_block_9d",
+        "path": "sprites/SPR_chaos_gpz_block_9d/SPR_chaos_gpz_block_9d.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_boss_51",
+        "path": "sprites/SPR_chaos_gpz_boss_51/SPR_chaos_gpz_boss_51.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_enemy_25_mirror",
+        "path": "sprites/SPR_chaos_gpz_enemy_25_mirror/SPR_chaos_gpz_enemy_25_mirror.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_enemy_25",
+        "path": "sprites/SPR_chaos_gpz_enemy_25/SPR_chaos_gpz_enemy_25.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_enemy_2C",
+        "path": "sprites/SPR_chaos_gpz_enemy_2C/SPR_chaos_gpz_enemy_2C.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_foreground",
+        "path": "sprites/SPR_chaos_gpz_foreground/SPR_chaos_gpz_foreground.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_monitor_01",
+        "path": "sprites/SPR_chaos_gpz_monitor_01/SPR_chaos_gpz_monitor_01.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_monitor_02",
+        "path": "sprites/SPR_chaos_gpz_monitor_02/SPR_chaos_gpz_monitor_02.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_monitor_03",
+        "path": "sprites/SPR_chaos_gpz_monitor_03/SPR_chaos_gpz_monitor_03.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_monitor_04",
+        "path": "sprites/SPR_chaos_gpz_monitor_04/SPR_chaos_gpz_monitor_04.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_monitor_06",
+        "path": "sprites/SPR_chaos_gpz_monitor_06/SPR_chaos_gpz_monitor_06.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_platform",
+        "path": "sprites/SPR_chaos_gpz_platform/SPR_chaos_gpz_platform.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_poof",
+        "path": "sprites/SPR_chaos_gpz_poof/SPR_chaos_gpz_poof.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_ring",
+        "path": "sprites/SPR_chaos_gpz_ring/SPR_chaos_gpz_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_sign",
+        "path": "sprites/SPR_chaos_gpz_sign/SPR_chaos_gpz_sign.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_smoke_0F",
+        "path": "sprites/SPR_chaos_gpz_smoke_0F/SPR_chaos_gpz_smoke_0F.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_spike",
+        "path": "sprites/SPR_chaos_gpz_spike/SPR_chaos_gpz_spike.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_spring",
+        "path": "sprites/SPR_chaos_gpz_spring/SPR_chaos_gpz_spring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_support_0A",
+        "path": "sprites/SPR_chaos_gpz_support_0A/SPR_chaos_gpz_support_0A.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_support_34",
+        "path": "sprites/SPR_chaos_gpz_support_34/SPR_chaos_gpz_support_34.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz_terrain_ring",
+        "path": "sprites/SPR_chaos_gpz_terrain_ring/SPR_chaos_gpz_terrain_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz1_terrain_0",
+        "path": "sprites/SPR_chaos_gpz1_terrain_0/SPR_chaos_gpz1_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz1_terrain_1",
+        "path": "sprites/SPR_chaos_gpz1_terrain_1/SPR_chaos_gpz1_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz1_terrain_2",
+        "path": "sprites/SPR_chaos_gpz1_terrain_2/SPR_chaos_gpz1_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz1_terrain_3",
+        "path": "sprites/SPR_chaos_gpz1_terrain_3/SPR_chaos_gpz1_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz1_terrain_4",
+        "path": "sprites/SPR_chaos_gpz1_terrain_4/SPR_chaos_gpz1_terrain_4.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz2_terrain_0",
+        "path": "sprites/SPR_chaos_gpz2_terrain_0/SPR_chaos_gpz2_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz2_terrain_1",
+        "path": "sprites/SPR_chaos_gpz2_terrain_1/SPR_chaos_gpz2_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz2_terrain_2",
+        "path": "sprites/SPR_chaos_gpz2_terrain_2/SPR_chaos_gpz2_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz2_terrain_3",
+        "path": "sprites/SPR_chaos_gpz2_terrain_3/SPR_chaos_gpz2_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz3_terrain_0",
+        "path": "sprites/SPR_chaos_gpz3_terrain_0/SPR_chaos_gpz3_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz3_terrain_1",
+        "path": "sprites/SPR_chaos_gpz3_terrain_1/SPR_chaos_gpz3_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_gpz3_terrain_2",
+        "path": "sprites/SPR_chaos_gpz3_terrain_2/SPR_chaos_gpz3_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_161_0",
+        "path": "sprites/SPR_chaos_loop_161_0/SPR_chaos_loop_161_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_161_1",
+        "path": "sprites/SPR_chaos_loop_161_1/SPR_chaos_loop_161_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_162_0",
+        "path": "sprites/SPR_chaos_loop_162_0/SPR_chaos_loop_162_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_162_1",
+        "path": "sprites/SPR_chaos_loop_162_1/SPR_chaos_loop_162_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_80_0",
+        "path": "sprites/SPR_chaos_loop_80_0/SPR_chaos_loop_80_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_80_1",
+        "path": "sprites/SPR_chaos_loop_80_1/SPR_chaos_loop_80_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_81_0",
+        "path": "sprites/SPR_chaos_loop_81_0/SPR_chaos_loop_81_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_81_1",
+        "path": "sprites/SPR_chaos_loop_81_1/SPR_chaos_loop_81_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_82_0",
+        "path": "sprites/SPR_chaos_loop_82_0/SPR_chaos_loop_82_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_82_1",
+        "path": "sprites/SPR_chaos_loop_82_1/SPR_chaos_loop_82_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_83_0",
+        "path": "sprites/SPR_chaos_loop_83_0/SPR_chaos_loop_83_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_loop_83_1",
+        "path": "sprites/SPR_chaos_loop_83_1/SPR_chaos_loop_83_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_00",
+        "path": "sprites/SPR_CHAOS_mask_00/SPR_CHAOS_mask_00.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_01",
+        "path": "sprites/SPR_CHAOS_mask_01/SPR_CHAOS_mask_01.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_02",
+        "path": "sprites/SPR_CHAOS_mask_02/SPR_CHAOS_mask_02.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_03",
+        "path": "sprites/SPR_CHAOS_mask_03/SPR_CHAOS_mask_03.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_04",
+        "path": "sprites/SPR_CHAOS_mask_04/SPR_CHAOS_mask_04.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_05",
+        "path": "sprites/SPR_CHAOS_mask_05/SPR_CHAOS_mask_05.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_06",
+        "path": "sprites/SPR_CHAOS_mask_06/SPR_CHAOS_mask_06.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_07",
+        "path": "sprites/SPR_CHAOS_mask_07/SPR_CHAOS_mask_07.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_08",
+        "path": "sprites/SPR_CHAOS_mask_08/SPR_CHAOS_mask_08.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_09",
+        "path": "sprites/SPR_CHAOS_mask_09/SPR_CHAOS_mask_09.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_10",
+        "path": "sprites/SPR_CHAOS_mask_10/SPR_CHAOS_mask_10.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_11",
+        "path": "sprites/SPR_CHAOS_mask_11/SPR_CHAOS_mask_11.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_12",
+        "path": "sprites/SPR_CHAOS_mask_12/SPR_CHAOS_mask_12.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_CHAOS_mask_13",
+        "path": "sprites/SPR_CHAOS_mask_13/SPR_CHAOS_mask_13.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_block_9b",
+        "path": "sprites/SPR_chaos_mghz_block_9b/SPR_chaos_mghz_block_9b.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_block_9c",
+        "path": "sprites/SPR_chaos_mghz_block_9c/SPR_chaos_mghz_block_9c.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_block_9d",
+        "path": "sprites/SPR_chaos_mghz_block_9d/SPR_chaos_mghz_block_9d.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_blocks",
+        "path": "sprites/SPR_chaos_mghz_blocks/SPR_chaos_mghz_blocks.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_boss_56_flash",
+        "path": "sprites/SPR_chaos_mghz_boss_56_flash/SPR_chaos_mghz_boss_56_flash.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_boss_56",
+        "path": "sprites/SPR_chaos_mghz_boss_56/SPR_chaos_mghz_boss_56.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_boss_poof_0F",
+        "path": "sprites/SPR_chaos_mghz_boss_poof_0F/SPR_chaos_mghz_boss_poof_0F.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_boss_puff_34",
+        "path": "sprites/SPR_chaos_mghz_boss_puff_34/SPR_chaos_mghz_boss_puff_34.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_boss_sparkle_0A",
+        "path": "sprites/SPR_chaos_mghz_boss_sparkle_0A/SPR_chaos_mghz_boss_sparkle_0A.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_foreground",
+        "path": "sprites/SPR_chaos_mghz_foreground/SPR_chaos_mghz_foreground.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_monitor_01",
+        "path": "sprites/SPR_chaos_mghz_monitor_01/SPR_chaos_mghz_monitor_01.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_monitor_02",
+        "path": "sprites/SPR_chaos_mghz_monitor_02/SPR_chaos_mghz_monitor_02.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_monitor_04",
+        "path": "sprites/SPR_chaos_mghz_monitor_04/SPR_chaos_mghz_monitor_04.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_monitor_06",
+        "path": "sprites/SPR_chaos_mghz_monitor_06/SPR_chaos_mghz_monitor_06.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_object_21",
+        "path": "sprites/SPR_chaos_mghz_object_21/SPR_chaos_mghz_object_21.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_object_24",
+        "path": "sprites/SPR_chaos_mghz_object_24/SPR_chaos_mghz_object_24.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_object_2E",
+        "path": "sprites/SPR_chaos_mghz_object_2E/SPR_chaos_mghz_object_2E.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_palette_11_front",
+        "path": "sprites/SPR_chaos_mghz_palette_11_front/SPR_chaos_mghz_palette_11_front.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_palette_11",
+        "path": "sprites/SPR_chaos_mghz_palette_11/SPR_chaos_mghz_palette_11.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_palette_4_front",
+        "path": "sprites/SPR_chaos_mghz_palette_4_front/SPR_chaos_mghz_palette_4_front.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_palette_4",
+        "path": "sprites/SPR_chaos_mghz_palette_4/SPR_chaos_mghz_palette_4.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_platform",
+        "path": "sprites/SPR_chaos_mghz_platform/SPR_chaos_mghz_platform.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_poof",
+        "path": "sprites/SPR_chaos_mghz_poof/SPR_chaos_mghz_poof.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_ring",
+        "path": "sprites/SPR_chaos_mghz_ring/SPR_chaos_mghz_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_sign",
+        "path": "sprites/SPR_chaos_mghz_sign/SPR_chaos_mghz_sign.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_spike",
+        "path": "sprites/SPR_chaos_mghz_spike/SPR_chaos_mghz_spike.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_spring_shoes",
+        "path": "sprites/SPR_chaos_mghz_spring_shoes/SPR_chaos_mghz_spring_shoes.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_spring",
+        "path": "sprites/SPR_chaos_mghz_spring/SPR_chaos_mghz_spring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_strip_front",
+        "path": "sprites/SPR_chaos_mghz_strip_front/SPR_chaos_mghz_strip_front.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_strip",
+        "path": "sprites/SPR_chaos_mghz_strip/SPR_chaos_mghz_strip.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz_terrain_ring",
+        "path": "sprites/SPR_chaos_mghz_terrain_ring/SPR_chaos_mghz_terrain_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz1_terrain_0",
+        "path": "sprites/SPR_chaos_mghz1_terrain_0/SPR_chaos_mghz1_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz1_terrain_1",
+        "path": "sprites/SPR_chaos_mghz1_terrain_1/SPR_chaos_mghz1_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz1_terrain_2",
+        "path": "sprites/SPR_chaos_mghz1_terrain_2/SPR_chaos_mghz1_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz1_terrain_3",
+        "path": "sprites/SPR_chaos_mghz1_terrain_3/SPR_chaos_mghz1_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz2_terrain_0",
+        "path": "sprites/SPR_chaos_mghz2_terrain_0/SPR_chaos_mghz2_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz2_terrain_1",
+        "path": "sprites/SPR_chaos_mghz2_terrain_1/SPR_chaos_mghz2_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz2_terrain_2",
+        "path": "sprites/SPR_chaos_mghz2_terrain_2/SPR_chaos_mghz2_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz2_terrain_3",
+        "path": "sprites/SPR_chaos_mghz2_terrain_3/SPR_chaos_mghz2_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz3_terrain_0",
+        "path": "sprites/SPR_chaos_mghz3_terrain_0/SPR_chaos_mghz3_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz3_terrain_1",
+        "path": "sprites/SPR_chaos_mghz3_terrain_1/SPR_chaos_mghz3_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz3_terrain_2",
+        "path": "sprites/SPR_chaos_mghz3_terrain_2/SPR_chaos_mghz3_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_mghz3_terrain_3",
+        "path": "sprites/SPR_chaos_mghz3_terrain_3/SPR_chaos_mghz3_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_05",
+        "path": "sprites/SPR_chaos_object_05/SPR_chaos_object_05.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_09",
+        "path": "sprites/SPR_chaos_object_09/SPR_chaos_object_09.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_0F",
+        "path": "sprites/SPR_chaos_object_0F/SPR_chaos_object_0F.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_10_01",
+        "path": "sprites/SPR_chaos_object_10_01/SPR_chaos_object_10_01.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_10_03",
+        "path": "sprites/SPR_chaos_object_10_03/SPR_chaos_object_10_03.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_10_04",
+        "path": "sprites/SPR_chaos_object_10_04/SPR_chaos_object_10_04.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_10_06",
+        "path": "sprites/SPR_chaos_object_10_06/SPR_chaos_object_10_06.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_10",
+        "path": "sprites/SPR_chaos_object_10/SPR_chaos_object_10.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_18",
+        "path": "sprites/SPR_chaos_object_18/SPR_chaos_object_18.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_1B",
+        "path": "sprites/SPR_chaos_object_1B/SPR_chaos_object_1B.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_21",
+        "path": "sprites/SPR_chaos_object_21/SPR_chaos_object_21.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_26",
+        "path": "sprites/SPR_chaos_object_26/SPR_chaos_object_26.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_object_27",
+        "path": "sprites/SPR_chaos_object_27/SPR_chaos_object_27.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_pixel",
+        "path": "sprites/SPR_chaos_pixel/SPR_chaos_pixel.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_platform_mask",
+        "path": "sprites/SPR_chaos_platform_mask/SPR_chaos_platform_mask.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_platform",
+        "path": "sprites/SPR_chaos_platform/SPR_chaos_platform.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_player_state_11",
+        "path": "sprites/SPR_chaos_player_state_11/SPR_chaos_player_state_11.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_block_46",
+        "path": "sprites/SPR_chaos_sez_block_46/SPR_chaos_sez_block_46.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_block_47",
+        "path": "sprites/SPR_chaos_sez_block_47/SPR_chaos_sez_block_47.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_block_9b",
+        "path": "sprites/SPR_chaos_sez_block_9b/SPR_chaos_sez_block_9b.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_block_9c",
+        "path": "sprites/SPR_chaos_sez_block_9c/SPR_chaos_sez_block_9c.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_block_9d",
+        "path": "sprites/SPR_chaos_sez_block_9d/SPR_chaos_sez_block_9d.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_blocks",
+        "path": "sprites/SPR_chaos_sez_blocks/SPR_chaos_sez_blocks.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_boss_54_flash",
+        "path": "sprites/SPR_chaos_sez_boss_54_flash/SPR_chaos_sez_boss_54_flash.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_boss_54",
+        "path": "sprites/SPR_chaos_sez_boss_54/SPR_chaos_sez_boss_54.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_boss_55_flash",
+        "path": "sprites/SPR_chaos_sez_boss_55_flash/SPR_chaos_sez_boss_55_flash.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_boss_55",
+        "path": "sprites/SPR_chaos_sez_boss_55/SPR_chaos_sez_boss_55.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_boss_poof",
+        "path": "sprites/SPR_chaos_sez_boss_poof/SPR_chaos_sez_boss_poof.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_effect5_front",
+        "path": "sprites/SPR_chaos_sez_effect5_front/SPR_chaos_sez_effect5_front.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_effect5",
+        "path": "sprites/SPR_chaos_sez_effect5/SPR_chaos_sez_effect5.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_enemy_20_conv",
+        "path": "sprites/SPR_chaos_sez_enemy_20_conv/SPR_chaos_sez_enemy_20_conv.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_enemy_20",
+        "path": "sprites/SPR_chaos_sez_enemy_20/SPR_chaos_sez_enemy_20.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_enemy_23",
+        "path": "sprites/SPR_chaos_sez_enemy_23/SPR_chaos_sez_enemy_23.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_foreground",
+        "path": "sprites/SPR_chaos_sez_foreground/SPR_chaos_sez_foreground.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_monitor_01",
+        "path": "sprites/SPR_chaos_sez_monitor_01/SPR_chaos_sez_monitor_01.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_monitor_02",
+        "path": "sprites/SPR_chaos_sez_monitor_02/SPR_chaos_sez_monitor_02.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_monitor_04",
+        "path": "sprites/SPR_chaos_sez_monitor_04/SPR_chaos_sez_monitor_04.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_monitor_06",
+        "path": "sprites/SPR_chaos_sez_monitor_06/SPR_chaos_sez_monitor_06.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_platform",
+        "path": "sprites/SPR_chaos_sez_platform/SPR_chaos_sez_platform.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_poof",
+        "path": "sprites/SPR_chaos_sez_poof/SPR_chaos_sez_poof.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_puff",
+        "path": "sprites/SPR_chaos_sez_puff/SPR_chaos_sez_puff.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_ring_sparkle",
+        "path": "sprites/SPR_chaos_sez_ring_sparkle/SPR_chaos_sez_ring_sparkle.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_ring",
+        "path": "sprites/SPR_chaos_sez_ring/SPR_chaos_sez_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_shard",
+        "path": "sprites/SPR_chaos_sez_shard/SPR_chaos_sez_shard.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_sign",
+        "path": "sprites/SPR_chaos_sez_sign/SPR_chaos_sez_sign.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_sparkle",
+        "path": "sprites/SPR_chaos_sez_sparkle/SPR_chaos_sez_sparkle.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_spike",
+        "path": "sprites/SPR_chaos_sez_spike/SPR_chaos_sez_spike.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_spring_shoes",
+        "path": "sprites/SPR_chaos_sez_spring_shoes/SPR_chaos_sez_spring_shoes.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_spring",
+        "path": "sprites/SPR_chaos_sez_spring/SPR_chaos_sez_spring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez_terrain_ring",
+        "path": "sprites/SPR_chaos_sez_terrain_ring/SPR_chaos_sez_terrain_ring.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez1_terrain_0",
+        "path": "sprites/SPR_chaos_sez1_terrain_0/SPR_chaos_sez1_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez1_terrain_1",
+        "path": "sprites/SPR_chaos_sez1_terrain_1/SPR_chaos_sez1_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez1_terrain_2",
+        "path": "sprites/SPR_chaos_sez1_terrain_2/SPR_chaos_sez1_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez1_terrain_3",
+        "path": "sprites/SPR_chaos_sez1_terrain_3/SPR_chaos_sez1_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez2_terrain_0",
+        "path": "sprites/SPR_chaos_sez2_terrain_0/SPR_chaos_sez2_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez2_terrain_1",
+        "path": "sprites/SPR_chaos_sez2_terrain_1/SPR_chaos_sez2_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez2_terrain_2",
+        "path": "sprites/SPR_chaos_sez2_terrain_2/SPR_chaos_sez2_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez2_terrain_3",
+        "path": "sprites/SPR_chaos_sez2_terrain_3/SPR_chaos_sez2_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez3_terrain_0",
+        "path": "sprites/SPR_chaos_sez3_terrain_0/SPR_chaos_sez3_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez3_terrain_1",
+        "path": "sprites/SPR_chaos_sez3_terrain_1/SPR_chaos_sez3_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez3_terrain_2",
+        "path": "sprites/SPR_chaos_sez3_terrain_2/SPR_chaos_sez3_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_sez3_terrain_3",
+        "path": "sprites/SPR_chaos_sez3_terrain_3/SPR_chaos_sez3_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_spring_48",
+        "path": "sprites/SPR_chaos_spring_48/SPR_chaos_spring_48.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_spring_49",
+        "path": "sprites/SPR_chaos_spring_49/SPR_chaos_spring_49.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_spring_51",
+        "path": "sprites/SPR_chaos_spring_51/SPR_chaos_spring_51.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_spring_54",
+        "path": "sprites/SPR_chaos_spring_54/SPR_chaos_spring_54.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_spring_56",
+        "path": "sprites/SPR_chaos_spring_56/SPR_chaos_spring_56.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_terrain_0",
+        "path": "sprites/SPR_chaos_terrain_0/SPR_chaos_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_terrain_1",
+        "path": "sprites/SPR_chaos_terrain_1/SPR_chaos_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_terrain_2",
+        "path": "sprites/SPR_chaos_terrain_2/SPR_chaos_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_terrain_3",
+        "path": "sprites/SPR_chaos_terrain_3/SPR_chaos_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_thz2_block_9d",
+        "path": "sprites/SPR_chaos_thz2_block_9d/SPR_chaos_thz2_block_9d.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_thz2_terrain_0",
+        "path": "sprites/SPR_chaos_thz2_terrain_0/SPR_chaos_thz2_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_thz2_terrain_1",
+        "path": "sprites/SPR_chaos_thz2_terrain_1/SPR_chaos_thz2_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_thz2_terrain_2",
+        "path": "sprites/SPR_chaos_thz2_terrain_2/SPR_chaos_thz2_terrain_2.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_thz2_terrain_3",
+        "path": "sprites/SPR_chaos_thz2_terrain_3/SPR_chaos_thz2_terrain_3.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_thz3_terrain_0",
+        "path": "sprites/SPR_chaos_thz3_terrain_0/SPR_chaos_thz3_terrain_0.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_thz3_terrain_1",
+        "path": "sprites/SPR_chaos_thz3_terrain_1/SPR_chaos_thz3_terrain_1.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_thz3_terrain_2",
+        "path": "sprites/SPR_chaos_thz3_terrain_2/SPR_chaos_thz3_terrain_2.yy"
       }
     },
     {
@@ -2651,12 +5574,6 @@
     },
     {
       "id": {
-        "name": "SPR_chaos_object_09",
-        "path": "sprites/SPR_chaos_object_09/SPR_chaos_object_09.yy"
-      }
-    },
-    {
-      "id": {
         "name": "SPR_sonic_break",
         "path": "sprites/SPR_sonic_break/SPR_sonic_break.yy"
       }
@@ -3017,2042 +5934,320 @@
     },
     {
       "id": {
-        "name": "SPR_CHAOS_mask_00",
-        "path": "sprites/SPR_CHAOS_mask_00/SPR_CHAOS_mask_00.yy"
+        "name": "SPR_chaos_aqz_base_chaos_player_state_11",
+        "path": "sprites/SPR_chaos_aqz_base_chaos_player_state_11/SPR_chaos_aqz_base_chaos_player_state_11.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_CHAOS_mask_00",
-        "path": "objects/OBJ_CHAOS_mask_00/OBJ_CHAOS_mask_00.yy"
+        "name": "SPR_chaos_aqz_base_sonic_break",
+        "path": "sprites/SPR_chaos_aqz_base_sonic_break/SPR_chaos_aqz_base_sonic_break.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_CHAOS_mask_01",
-        "path": "sprites/SPR_CHAOS_mask_01/SPR_CHAOS_mask_01.yy"
+        "name": "SPR_chaos_aqz_base_sonic_death",
+        "path": "sprites/SPR_chaos_aqz_base_sonic_death/SPR_chaos_aqz_base_sonic_death.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_CHAOS_mask_01",
-        "path": "objects/OBJ_CHAOS_mask_01/OBJ_CHAOS_mask_01.yy"
+        "name": "SPR_chaos_aqz_base_sonic_down",
+        "path": "sprites/SPR_chaos_aqz_base_sonic_down/SPR_chaos_aqz_base_sonic_down.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_CHAOS_mask_02",
-        "path": "sprites/SPR_CHAOS_mask_02/SPR_CHAOS_mask_02.yy"
+        "name": "SPR_chaos_aqz_base_sonic_falling",
+        "path": "sprites/SPR_chaos_aqz_base_sonic_falling/SPR_chaos_aqz_base_sonic_falling.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_CHAOS_mask_02",
-        "path": "objects/OBJ_CHAOS_mask_02/OBJ_CHAOS_mask_02.yy"
+        "name": "SPR_chaos_aqz_base_sonic_jump",
+        "path": "sprites/SPR_chaos_aqz_base_sonic_jump/SPR_chaos_aqz_base_sonic_jump.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_CHAOS_mask_03",
-        "path": "sprites/SPR_CHAOS_mask_03/SPR_CHAOS_mask_03.yy"
+        "name": "SPR_chaos_aqz_base_sonic_run",
+        "path": "sprites/SPR_chaos_aqz_base_sonic_run/SPR_chaos_aqz_base_sonic_run.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_CHAOS_mask_03",
-        "path": "objects/OBJ_CHAOS_mask_03/OBJ_CHAOS_mask_03.yy"
+        "name": "SPR_chaos_aqz_base_sonic_spin",
+        "path": "sprites/SPR_chaos_aqz_base_sonic_spin/SPR_chaos_aqz_base_sonic_spin.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_CHAOS_mask_04",
-        "path": "sprites/SPR_CHAOS_mask_04/SPR_CHAOS_mask_04.yy"
+        "name": "SPR_chaos_aqz_base_sonic_spin_dash",
+        "path": "sprites/SPR_chaos_aqz_base_sonic_spin_dash/SPR_chaos_aqz_base_sonic_spin_dash.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_CHAOS_mask_04",
-        "path": "objects/OBJ_CHAOS_mask_04/OBJ_CHAOS_mask_04.yy"
+        "name": "SPR_chaos_aqz_base_sonic_stop",
+        "path": "sprites/SPR_chaos_aqz_base_sonic_stop/SPR_chaos_aqz_base_sonic_stop.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_CHAOS_mask_05",
-        "path": "sprites/SPR_CHAOS_mask_05/SPR_CHAOS_mask_05.yy"
+        "name": "SPR_chaos_aqz_base_sonic_up",
+        "path": "sprites/SPR_chaos_aqz_base_sonic_up/SPR_chaos_aqz_base_sonic_up.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_CHAOS_mask_05",
-        "path": "objects/OBJ_CHAOS_mask_05/OBJ_CHAOS_mask_05.yy"
+        "name": "SPR_chaos_aqz_base_sonic_wait",
+        "path": "sprites/SPR_chaos_aqz_base_sonic_wait/SPR_chaos_aqz_base_sonic_wait.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_CHAOS_mask_06",
-        "path": "sprites/SPR_CHAOS_mask_06/SPR_CHAOS_mask_06.yy"
+        "name": "SPR_chaos_aqz_base_sonic_walk",
+        "path": "sprites/SPR_chaos_aqz_base_sonic_walk/SPR_chaos_aqz_base_sonic_walk.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_CHAOS_mask_06",
-        "path": "objects/OBJ_CHAOS_mask_06/OBJ_CHAOS_mask_06.yy"
+        "name": "SPR_chaos_aqz_base_sonic_water_air",
+        "path": "sprites/SPR_chaos_aqz_base_sonic_water_air/SPR_chaos_aqz_base_sonic_water_air.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_CHAOS_mask_07",
-        "path": "sprites/SPR_CHAOS_mask_07/SPR_CHAOS_mask_07.yy"
+        "name": "SPR_chaos_aqz_base_sonic_water_death",
+        "path": "sprites/SPR_chaos_aqz_base_sonic_water_death/SPR_chaos_aqz_base_sonic_water_death.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_CHAOS_mask_07",
-        "path": "objects/OBJ_CHAOS_mask_07/OBJ_CHAOS_mask_07.yy"
+        "name": "SPR_chaos_player_frame_02",
+        "path": "sprites/SPR_chaos_player_frame_02/SPR_chaos_player_frame_02.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_CHAOS_mask_08",
-        "path": "sprites/SPR_CHAOS_mask_08/SPR_CHAOS_mask_08.yy"
+        "name": "SPR_chaos_aqz_player_frame_02",
+        "path": "sprites/SPR_chaos_aqz_player_frame_02/SPR_chaos_aqz_player_frame_02.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_CHAOS_mask_08",
-        "path": "objects/OBJ_CHAOS_mask_08/OBJ_CHAOS_mask_08.yy"
+        "name": "SPR_chaos_player_frame_03",
+        "path": "sprites/SPR_chaos_player_frame_03/SPR_chaos_player_frame_03.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_CHAOS_mask_09",
-        "path": "sprites/SPR_CHAOS_mask_09/SPR_CHAOS_mask_09.yy"
+        "name": "SPR_chaos_aqz_player_frame_03",
+        "path": "sprites/SPR_chaos_aqz_player_frame_03/SPR_chaos_aqz_player_frame_03.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_CHAOS_mask_09",
-        "path": "objects/OBJ_CHAOS_mask_09/OBJ_CHAOS_mask_09.yy"
+        "name": "SPR_chaos_player_frame_04",
+        "path": "sprites/SPR_chaos_player_frame_04/SPR_chaos_player_frame_04.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_CHAOS_mask_10",
-        "path": "sprites/SPR_CHAOS_mask_10/SPR_CHAOS_mask_10.yy"
+        "name": "SPR_chaos_aqz_player_frame_04",
+        "path": "sprites/SPR_chaos_aqz_player_frame_04/SPR_chaos_aqz_player_frame_04.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_CHAOS_mask_10",
-        "path": "objects/OBJ_CHAOS_mask_10/OBJ_CHAOS_mask_10.yy"
+        "name": "SPR_chaos_player_frame_05",
+        "path": "sprites/SPR_chaos_player_frame_05/SPR_chaos_player_frame_05.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_CHAOS_mask_11",
-        "path": "sprites/SPR_CHAOS_mask_11/SPR_CHAOS_mask_11.yy"
+        "name": "SPR_chaos_aqz_player_frame_05",
+        "path": "sprites/SPR_chaos_aqz_player_frame_05/SPR_chaos_aqz_player_frame_05.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_CHAOS_mask_11",
-        "path": "objects/OBJ_CHAOS_mask_11/OBJ_CHAOS_mask_11.yy"
+        "name": "SPR_chaos_player_frame_06",
+        "path": "sprites/SPR_chaos_player_frame_06/SPR_chaos_player_frame_06.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_CHAOS_mask_12",
-        "path": "sprites/SPR_CHAOS_mask_12/SPR_CHAOS_mask_12.yy"
+        "name": "SPR_chaos_aqz_player_frame_06",
+        "path": "sprites/SPR_chaos_aqz_player_frame_06/SPR_chaos_aqz_player_frame_06.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_CHAOS_mask_12",
-        "path": "objects/OBJ_CHAOS_mask_12/OBJ_CHAOS_mask_12.yy"
+        "name": "SPR_chaos_player_frame_01",
+        "path": "sprites/SPR_chaos_player_frame_01/SPR_chaos_player_frame_01.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_CHAOS_mask_13",
-        "path": "sprites/SPR_CHAOS_mask_13/SPR_CHAOS_mask_13.yy"
+        "name": "SPR_chaos_aqz_player_frame_01",
+        "path": "sprites/SPR_chaos_aqz_player_frame_01/SPR_chaos_aqz_player_frame_01.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_CHAOS_mask_13",
-        "path": "objects/OBJ_CHAOS_mask_13/OBJ_CHAOS_mask_13.yy"
+        "name": "SPR_chaos_player_frame_1C",
+        "path": "sprites/SPR_chaos_player_frame_1C/SPR_chaos_player_frame_1C.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_chaos_terrain_0",
-        "path": "sprites/SPR_chaos_terrain_0/SPR_chaos_terrain_0.yy"
+        "name": "SPR_chaos_aqz_player_frame_1C",
+        "path": "sprites/SPR_chaos_aqz_player_frame_1C/SPR_chaos_aqz_player_frame_1C.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_chaos_terrain_0",
-        "path": "objects/OBJ_chaos_terrain_0/OBJ_chaos_terrain_0.yy"
+        "name": "SPR_chaos_player_frame_1D",
+        "path": "sprites/SPR_chaos_player_frame_1D/SPR_chaos_player_frame_1D.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_chaos_terrain_1",
-        "path": "sprites/SPR_chaos_terrain_1/SPR_chaos_terrain_1.yy"
+        "name": "SPR_chaos_aqz_player_frame_1D",
+        "path": "sprites/SPR_chaos_aqz_player_frame_1D/SPR_chaos_aqz_player_frame_1D.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_chaos_terrain_1",
-        "path": "objects/OBJ_chaos_terrain_1/OBJ_chaos_terrain_1.yy"
+        "name": "SPR_chaos_player_frame_1E",
+        "path": "sprites/SPR_chaos_player_frame_1E/SPR_chaos_player_frame_1E.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_chaos_terrain_2",
-        "path": "sprites/SPR_chaos_terrain_2/SPR_chaos_terrain_2.yy"
+        "name": "SPR_chaos_aqz_player_frame_1E",
+        "path": "sprites/SPR_chaos_aqz_player_frame_1E/SPR_chaos_aqz_player_frame_1E.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_chaos_terrain_2",
-        "path": "objects/OBJ_chaos_terrain_2/OBJ_chaos_terrain_2.yy"
+        "name": "SPR_chaos_player_frame_1F",
+        "path": "sprites/SPR_chaos_player_frame_1F/SPR_chaos_player_frame_1F.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_chaos_terrain_3",
-        "path": "sprites/SPR_chaos_terrain_3/SPR_chaos_terrain_3.yy"
+        "name": "SPR_chaos_aqz_player_frame_1F",
+        "path": "sprites/SPR_chaos_aqz_player_frame_1F/SPR_chaos_aqz_player_frame_1F.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_chaos_terrain_3",
-        "path": "objects/OBJ_chaos_terrain_3/OBJ_chaos_terrain_3.yy"
+        "name": "SPR_chaos_player_frame_20",
+        "path": "sprites/SPR_chaos_player_frame_20/SPR_chaos_player_frame_20.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_chaos_block_46",
-        "path": "sprites/SPR_chaos_block_46/SPR_chaos_block_46.yy"
+        "name": "SPR_chaos_aqz_player_frame_20",
+        "path": "sprites/SPR_chaos_aqz_player_frame_20/SPR_chaos_aqz_player_frame_20.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_chaos_block_47",
-        "path": "sprites/SPR_chaos_block_47/SPR_chaos_block_47.yy"
+        "name": "SPR_chaos_player_frame_21",
+        "path": "sprites/SPR_chaos_player_frame_21/SPR_chaos_player_frame_21.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_chaos_object_0F_transient",
-        "path": "objects/OBJ_chaos_object_0F_transient/OBJ_chaos_object_0F_transient.yy"
+        "name": "SPR_chaos_aqz_player_frame_21",
+        "path": "sprites/SPR_chaos_aqz_player_frame_21/SPR_chaos_aqz_player_frame_21.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_chaos_object_19",
-        "path": "objects/OBJ_chaos_object_19/OBJ_chaos_object_19.yy"
+        "name": "SPR_chaos_player_frame_61",
+        "path": "sprites/SPR_chaos_player_frame_61/SPR_chaos_player_frame_61.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_chaos_pixel",
-        "path": "sprites/SPR_chaos_pixel/SPR_chaos_pixel.yy"
+        "name": "SPR_chaos_aqz_player_frame_61",
+        "path": "sprites/SPR_chaos_aqz_player_frame_61/SPR_chaos_aqz_player_frame_61.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_chaos_wall",
-        "path": "objects/OBJ_chaos_wall/OBJ_chaos_wall.yy"
+        "name": "SPR_chaos_player_frame_25",
+        "path": "sprites/SPR_chaos_player_frame_25/SPR_chaos_player_frame_25.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_chaos_roof",
-        "path": "objects/OBJ_chaos_roof/OBJ_chaos_roof.yy"
+        "name": "SPR_chaos_aqz_player_frame_25",
+        "path": "sprites/SPR_chaos_aqz_player_frame_25/SPR_chaos_aqz_player_frame_25.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_chaos_spring_48",
-        "path": "sprites/SPR_chaos_spring_48/SPR_chaos_spring_48.yy"
+        "name": "SPR_chaos_player_frame_26",
+        "path": "sprites/SPR_chaos_player_frame_26/SPR_chaos_player_frame_26.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_chaos_spring_48",
-        "path": "objects/OBJ_chaos_spring_48/OBJ_chaos_spring_48.yy"
+        "name": "SPR_chaos_aqz_player_frame_26",
+        "path": "sprites/SPR_chaos_aqz_player_frame_26/SPR_chaos_aqz_player_frame_26.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_chaos_spring_49",
-        "path": "sprites/SPR_chaos_spring_49/SPR_chaos_spring_49.yy"
+        "name": "SPR_chaos_player_frame_27",
+        "path": "sprites/SPR_chaos_player_frame_27/SPR_chaos_player_frame_27.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_chaos_spring_49",
-        "path": "objects/OBJ_chaos_spring_49/OBJ_chaos_spring_49.yy"
+        "name": "SPR_chaos_aqz_player_frame_27",
+        "path": "sprites/SPR_chaos_aqz_player_frame_27/SPR_chaos_aqz_player_frame_27.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_chaos_spring_54",
-        "path": "sprites/SPR_chaos_spring_54/SPR_chaos_spring_54.yy"
+        "name": "SPR_chaos_player_frame_28",
+        "path": "sprites/SPR_chaos_player_frame_28/SPR_chaos_player_frame_28.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_chaos_spring_54",
-        "path": "objects/OBJ_chaos_spring_54/OBJ_chaos_spring_54.yy"
+        "name": "SPR_chaos_aqz_player_frame_28",
+        "path": "sprites/SPR_chaos_aqz_player_frame_28/SPR_chaos_aqz_player_frame_28.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_chaos_spring_56",
-        "path": "sprites/SPR_chaos_spring_56/SPR_chaos_spring_56.yy"
+        "name": "SPR_chaos_player_frame_29",
+        "path": "sprites/SPR_chaos_player_frame_29/SPR_chaos_player_frame_29.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_chaos_spring_56",
-        "path": "objects/OBJ_chaos_spring_56/OBJ_chaos_spring_56.yy"
+        "name": "SPR_chaos_aqz_player_frame_29",
+        "path": "sprites/SPR_chaos_aqz_player_frame_29/SPR_chaos_aqz_player_frame_29.yy"
       }
     },
     {
       "id": {
-        "name": "OBJ_chaos_spikes",
-        "path": "objects/OBJ_chaos_spikes/OBJ_chaos_spikes.yy"
+        "name": "SCR_chaos_player_animation",
+        "path": "scripts/SCR_chaos_player_animation/SCR_chaos_player_animation.yy"
       }
     },
     {
       "id": {
-        "name": "SPR_chaos_object_1B",
-        "path": "sprites/SPR_chaos_object_1B/SPR_chaos_object_1B.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_object_27",
-        "path": "sprites/SPR_chaos_object_27/SPR_chaos_object_27.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_object_21",
-        "path": "sprites/SPR_chaos_object_21/SPR_chaos_object_21.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_object_18",
-        "path": "sprites/SPR_chaos_object_18/SPR_chaos_object_18.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_object_10",
-        "path": "sprites/SPR_chaos_object_10/SPR_chaos_object_10.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_object_10_04",
-        "path": "sprites/SPR_chaos_object_10_04/SPR_chaos_object_10_04.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_object_10_06",
-        "path": "sprites/SPR_chaos_object_10_06/SPR_chaos_object_10_06.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_object_05",
-        "path": "sprites/SPR_chaos_object_05/SPR_chaos_object_05.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_player_state_11",
-        "path": "sprites/SPR_chaos_player_state_11/SPR_chaos_player_state_11.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_object_0F",
-        "path": "sprites/SPR_chaos_object_0F/SPR_chaos_object_0F.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_object_10",
-        "path": "objects/OBJ_chaos_object_10/OBJ_chaos_object_10.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_object_05_effect",
-        "path": "objects/OBJ_chaos_object_05_effect/OBJ_chaos_object_05_effect.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_object_21",
-        "path": "objects/OBJ_chaos_object_21/OBJ_chaos_object_21.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_object_18",
-        "path": "objects/OBJ_chaos_object_18/OBJ_chaos_object_18.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_object_27",
-        "path": "objects/OBJ_chaos_object_27/OBJ_chaos_object_27.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_zone",
-        "path": "objects/OBJ_chaos_zone/OBJ_chaos_zone.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_controls",
-        "path": "objects/OBJ_chaos_controls/OBJ_chaos_controls.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "ROM_chaos_thz1",
-        "path": "rooms/ROM_chaos_thz1/ROM_chaos_thz1.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_72",
-        "path": "sprites/SPR_chaos_contour_72/SPR_chaos_contour_72.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_72",
-        "path": "objects/OBJ_chaos_contour_72/OBJ_chaos_contour_72.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_73",
-        "path": "sprites/SPR_chaos_contour_73/SPR_chaos_contour_73.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_73",
-        "path": "objects/OBJ_chaos_contour_73/OBJ_chaos_contour_73.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_74",
-        "path": "sprites/SPR_chaos_contour_74/SPR_chaos_contour_74.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_74",
-        "path": "objects/OBJ_chaos_contour_74/OBJ_chaos_contour_74.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_75",
-        "path": "sprites/SPR_chaos_contour_75/SPR_chaos_contour_75.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_75",
-        "path": "objects/OBJ_chaos_contour_75/OBJ_chaos_contour_75.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_76",
-        "path": "sprites/SPR_chaos_contour_76/SPR_chaos_contour_76.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_76",
-        "path": "objects/OBJ_chaos_contour_76/OBJ_chaos_contour_76.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_77",
-        "path": "sprites/SPR_chaos_contour_77/SPR_chaos_contour_77.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_77",
-        "path": "objects/OBJ_chaos_contour_77/OBJ_chaos_contour_77.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_78",
-        "path": "sprites/SPR_chaos_contour_78/SPR_chaos_contour_78.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_78",
-        "path": "objects/OBJ_chaos_contour_78/OBJ_chaos_contour_78.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_79",
-        "path": "sprites/SPR_chaos_contour_79/SPR_chaos_contour_79.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_79",
-        "path": "objects/OBJ_chaos_contour_79/OBJ_chaos_contour_79.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_80",
-        "path": "sprites/SPR_chaos_contour_80/SPR_chaos_contour_80.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_80",
-        "path": "objects/OBJ_chaos_contour_80/OBJ_chaos_contour_80.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_81",
-        "path": "sprites/SPR_chaos_contour_81/SPR_chaos_contour_81.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_81",
-        "path": "objects/OBJ_chaos_contour_81/OBJ_chaos_contour_81.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_82",
-        "path": "sprites/SPR_chaos_contour_82/SPR_chaos_contour_82.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_82",
-        "path": "objects/OBJ_chaos_contour_82/OBJ_chaos_contour_82.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_83",
-        "path": "sprites/SPR_chaos_contour_83/SPR_chaos_contour_83.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_83",
-        "path": "objects/OBJ_chaos_contour_83/OBJ_chaos_contour_83.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_84",
-        "path": "sprites/SPR_chaos_contour_84/SPR_chaos_contour_84.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_84",
-        "path": "objects/OBJ_chaos_contour_84/OBJ_chaos_contour_84.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_85",
-        "path": "sprites/SPR_chaos_contour_85/SPR_chaos_contour_85.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_85",
-        "path": "objects/OBJ_chaos_contour_85/OBJ_chaos_contour_85.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_88",
-        "path": "sprites/SPR_chaos_contour_88/SPR_chaos_contour_88.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_88",
-        "path": "objects/OBJ_chaos_contour_88/OBJ_chaos_contour_88.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_89",
-        "path": "sprites/SPR_chaos_contour_89/SPR_chaos_contour_89.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_89",
-        "path": "objects/OBJ_chaos_contour_89/OBJ_chaos_contour_89.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_90",
-        "path": "sprites/SPR_chaos_contour_90/SPR_chaos_contour_90.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_90",
-        "path": "objects/OBJ_chaos_contour_90/OBJ_chaos_contour_90.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_91",
-        "path": "sprites/SPR_chaos_contour_91/SPR_chaos_contour_91.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_91",
-        "path": "objects/OBJ_chaos_contour_91/OBJ_chaos_contour_91.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_92",
-        "path": "sprites/SPR_chaos_contour_92/SPR_chaos_contour_92.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_92",
-        "path": "objects/OBJ_chaos_contour_92/OBJ_chaos_contour_92.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_93",
-        "path": "sprites/SPR_chaos_contour_93/SPR_chaos_contour_93.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_93",
-        "path": "objects/OBJ_chaos_contour_93/OBJ_chaos_contour_93.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_94",
-        "path": "sprites/SPR_chaos_contour_94/SPR_chaos_contour_94.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_94",
-        "path": "objects/OBJ_chaos_contour_94/OBJ_chaos_contour_94.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_95",
-        "path": "sprites/SPR_chaos_contour_95/SPR_chaos_contour_95.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_95",
-        "path": "objects/OBJ_chaos_contour_95/OBJ_chaos_contour_95.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_96",
-        "path": "sprites/SPR_chaos_contour_96/SPR_chaos_contour_96.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_96",
-        "path": "objects/OBJ_chaos_contour_96/OBJ_chaos_contour_96.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_97",
-        "path": "sprites/SPR_chaos_contour_97/SPR_chaos_contour_97.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_97",
-        "path": "objects/OBJ_chaos_contour_97/OBJ_chaos_contour_97.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_98",
-        "path": "sprites/SPR_chaos_contour_98/SPR_chaos_contour_98.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_98",
-        "path": "objects/OBJ_chaos_contour_98/OBJ_chaos_contour_98.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_99",
-        "path": "sprites/SPR_chaos_contour_99/SPR_chaos_contour_99.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_99",
-        "path": "objects/OBJ_chaos_contour_99/OBJ_chaos_contour_99.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_100",
-        "path": "sprites/SPR_chaos_contour_100/SPR_chaos_contour_100.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_100",
-        "path": "objects/OBJ_chaos_contour_100/OBJ_chaos_contour_100.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_101",
-        "path": "sprites/SPR_chaos_contour_101/SPR_chaos_contour_101.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_101",
-        "path": "objects/OBJ_chaos_contour_101/OBJ_chaos_contour_101.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_102",
-        "path": "sprites/SPR_chaos_contour_102/SPR_chaos_contour_102.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_102",
-        "path": "objects/OBJ_chaos_contour_102/OBJ_chaos_contour_102.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_103",
-        "path": "sprites/SPR_chaos_contour_103/SPR_chaos_contour_103.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_103",
-        "path": "objects/OBJ_chaos_contour_103/OBJ_chaos_contour_103.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_104",
-        "path": "sprites/SPR_chaos_contour_104/SPR_chaos_contour_104.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_104",
-        "path": "objects/OBJ_chaos_contour_104/OBJ_chaos_contour_104.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_105",
-        "path": "sprites/SPR_chaos_contour_105/SPR_chaos_contour_105.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_105",
-        "path": "objects/OBJ_chaos_contour_105/OBJ_chaos_contour_105.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_106",
-        "path": "sprites/SPR_chaos_contour_106/SPR_chaos_contour_106.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_106",
-        "path": "objects/OBJ_chaos_contour_106/OBJ_chaos_contour_106.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_107",
-        "path": "sprites/SPR_chaos_contour_107/SPR_chaos_contour_107.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_107",
-        "path": "objects/OBJ_chaos_contour_107/OBJ_chaos_contour_107.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_108",
-        "path": "sprites/SPR_chaos_contour_108/SPR_chaos_contour_108.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_108",
-        "path": "objects/OBJ_chaos_contour_108/OBJ_chaos_contour_108.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_contour_115",
-        "path": "sprites/SPR_chaos_contour_115/SPR_chaos_contour_115.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_contour_115",
-        "path": "objects/OBJ_chaos_contour_115/OBJ_chaos_contour_115.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_spring_51",
-        "path": "sprites/SPR_chaos_spring_51/SPR_chaos_spring_51.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_spring_51",
-        "path": "objects/OBJ_chaos_spring_51/OBJ_chaos_spring_51.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_platform",
-        "path": "sprites/SPR_chaos_platform/SPR_chaos_platform.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_platform_mask",
-        "path": "sprites/SPR_chaos_platform_mask/SPR_chaos_platform_mask.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_platform",
-        "path": "objects/OBJ_chaos_platform/OBJ_chaos_platform.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_loop_80_0",
-        "path": "sprites/SPR_chaos_loop_80_0/SPR_chaos_loop_80_0.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_loop_80_1",
-        "path": "sprites/SPR_chaos_loop_80_1/SPR_chaos_loop_80_1.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_loop_floor_80",
-        "path": "objects/OBJ_chaos_loop_floor_80/OBJ_chaos_loop_floor_80.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_loop_81_0",
-        "path": "sprites/SPR_chaos_loop_81_0/SPR_chaos_loop_81_0.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_loop_81_1",
-        "path": "sprites/SPR_chaos_loop_81_1/SPR_chaos_loop_81_1.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_loop_floor_81",
-        "path": "objects/OBJ_chaos_loop_floor_81/OBJ_chaos_loop_floor_81.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_loop_82_0",
-        "path": "sprites/SPR_chaos_loop_82_0/SPR_chaos_loop_82_0.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_loop_82_1",
-        "path": "sprites/SPR_chaos_loop_82_1/SPR_chaos_loop_82_1.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_loop_floor_82",
-        "path": "objects/OBJ_chaos_loop_floor_82/OBJ_chaos_loop_floor_82.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_loop_83_0",
-        "path": "sprites/SPR_chaos_loop_83_0/SPR_chaos_loop_83_0.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_loop_83_1",
-        "path": "sprites/SPR_chaos_loop_83_1/SPR_chaos_loop_83_1.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_loop_floor_83",
-        "path": "objects/OBJ_chaos_loop_floor_83/OBJ_chaos_loop_floor_83.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_loop_161_0",
-        "path": "sprites/SPR_chaos_loop_161_0/SPR_chaos_loop_161_0.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_loop_161_1",
-        "path": "sprites/SPR_chaos_loop_161_1/SPR_chaos_loop_161_1.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_loop_floor_161",
-        "path": "objects/OBJ_chaos_loop_floor_161/OBJ_chaos_loop_floor_161.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_loop_162_0",
-        "path": "sprites/SPR_chaos_loop_162_0/SPR_chaos_loop_162_0.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_loop_162_1",
-        "path": "sprites/SPR_chaos_loop_162_1/SPR_chaos_loop_162_1.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_loop_floor_162",
-        "path": "objects/OBJ_chaos_loop_floor_162/OBJ_chaos_loop_floor_162.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_motion_data",
-        "path": "scripts/SCR_chaos_motion_data/SCR_chaos_motion_data.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_ring_data",
-        "path": "scripts/SCR_chaos_ring_data/SCR_chaos_ring_data.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_type09_data",
-        "path": "scripts/SCR_chaos_type09_data/SCR_chaos_type09_data.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_ring_manager",
-        "path": "objects/OBJ_chaos_ring_manager/OBJ_chaos_ring_manager.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_motion",
-        "path": "scripts/SCR_chaos_motion/SCR_chaos_motion.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_loop_base",
-        "path": "objects/OBJ_chaos_loop_base/OBJ_chaos_loop_base.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_object_26",
-        "path": "sprites/SPR_chaos_object_26/SPR_chaos_object_26.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_object_spring_26_normal",
-        "path": "objects/OBJ_chaos_object_spring_26_normal/OBJ_chaos_object_spring_26_normal.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_object_spring_26_weak",
-        "path": "objects/OBJ_chaos_object_spring_26_weak/OBJ_chaos_object_spring_26_weak.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_object_spring_26_span",
-        "path": "objects/OBJ_chaos_object_spring_26_span/OBJ_chaos_object_spring_26_span.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz1_terrain_0",
-        "path": "sprites/SPR_chaos_gpz1_terrain_0/SPR_chaos_gpz1_terrain_0.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz1_terrain_1",
-        "path": "sprites/SPR_chaos_gpz1_terrain_1/SPR_chaos_gpz1_terrain_1.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz1_terrain_2",
-        "path": "sprites/SPR_chaos_gpz1_terrain_2/SPR_chaos_gpz1_terrain_2.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz1_terrain_3",
-        "path": "sprites/SPR_chaos_gpz1_terrain_3/SPR_chaos_gpz1_terrain_3.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz1_terrain_4",
-        "path": "sprites/SPR_chaos_gpz1_terrain_4/SPR_chaos_gpz1_terrain_4.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_gpz1_terrain",
-        "path": "objects/OBJ_chaos_gpz1_terrain/OBJ_chaos_gpz1_terrain.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "ROM_chaos_gpz1",
-        "path": "rooms/ROM_chaos_gpz1/ROM_chaos_gpz1.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz2_terrain_0",
-        "path": "sprites/SPR_chaos_gpz2_terrain_0/SPR_chaos_gpz2_terrain_0.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz2_terrain_1",
-        "path": "sprites/SPR_chaos_gpz2_terrain_1/SPR_chaos_gpz2_terrain_1.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz2_terrain_2",
-        "path": "sprites/SPR_chaos_gpz2_terrain_2/SPR_chaos_gpz2_terrain_2.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz2_terrain_3",
-        "path": "sprites/SPR_chaos_gpz2_terrain_3/SPR_chaos_gpz2_terrain_3.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_gpz2_terrain",
-        "path": "objects/OBJ_chaos_gpz2_terrain/OBJ_chaos_gpz2_terrain.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "ROM_chaos_gpz2",
-        "path": "rooms/ROM_chaos_gpz2/ROM_chaos_gpz2.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz3_terrain_0",
-        "path": "sprites/SPR_chaos_gpz3_terrain_0/SPR_chaos_gpz3_terrain_0.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz3_terrain_1",
-        "path": "sprites/SPR_chaos_gpz3_terrain_1/SPR_chaos_gpz3_terrain_1.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz3_terrain_2",
-        "path": "sprites/SPR_chaos_gpz3_terrain_2/SPR_chaos_gpz3_terrain_2.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_gpz3_terrain",
-        "path": "objects/OBJ_chaos_gpz3_terrain/OBJ_chaos_gpz3_terrain.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "ROM_chaos_gpz3",
-        "path": "rooms/ROM_chaos_gpz3/ROM_chaos_gpz3.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_block_46",
-        "path": "sprites/SPR_chaos_gpz_block_46/SPR_chaos_gpz_block_46.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_block_9d",
-        "path": "sprites/SPR_chaos_gpz_block_9d/SPR_chaos_gpz_block_9d.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_platform",
-        "path": "sprites/SPR_chaos_gpz_platform/SPR_chaos_gpz_platform.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_ring",
-        "path": "sprites/SPR_chaos_gpz_ring/SPR_chaos_gpz_ring.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_monitor_01",
-        "path": "sprites/SPR_chaos_gpz_monitor_01/SPR_chaos_gpz_monitor_01.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_monitor_02",
-        "path": "sprites/SPR_chaos_gpz_monitor_02/SPR_chaos_gpz_monitor_02.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_monitor_03",
-        "path": "sprites/SPR_chaos_gpz_monitor_03/SPR_chaos_gpz_monitor_03.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_monitor_04",
-        "path": "sprites/SPR_chaos_gpz_monitor_04/SPR_chaos_gpz_monitor_04.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_monitor_06",
-        "path": "sprites/SPR_chaos_gpz_monitor_06/SPR_chaos_gpz_monitor_06.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_gpz_data",
-        "path": "scripts/SCR_chaos_gpz_data/SCR_chaos_gpz_data.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_terrain_ring",
-        "path": "sprites/SPR_chaos_gpz_terrain_ring/SPR_chaos_gpz_terrain_ring.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_spring",
-        "path": "sprites/SPR_chaos_gpz_spring/SPR_chaos_gpz_spring.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_spike",
-        "path": "sprites/SPR_chaos_gpz_spike/SPR_chaos_gpz_spike.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_poof",
-        "path": "sprites/SPR_chaos_gpz_poof/SPR_chaos_gpz_poof.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_sign",
-        "path": "sprites/SPR_chaos_gpz_sign/SPR_chaos_gpz_sign.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_block_47",
-        "path": "sprites/SPR_chaos_gpz_block_47/SPR_chaos_gpz_block_47.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_foreground",
-        "path": "sprites/SPR_chaos_gpz_foreground/SPR_chaos_gpz_foreground.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_terrain_foreground",
-        "path": "objects/OBJ_chaos_terrain_foreground/OBJ_chaos_terrain_foreground.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_enemy_25",
-        "path": "sprites/SPR_chaos_gpz_enemy_25/SPR_chaos_gpz_enemy_25.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_enemy_25_mirror",
-        "path": "sprites/SPR_chaos_gpz_enemy_25_mirror/SPR_chaos_gpz_enemy_25_mirror.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_enemy_2C",
-        "path": "sprites/SPR_chaos_gpz_enemy_2C/SPR_chaos_gpz_enemy_2C.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_smoke_0F",
-        "path": "sprites/SPR_chaos_gpz_smoke_0F/SPR_chaos_gpz_smoke_0F.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_support_34",
-        "path": "sprites/SPR_chaos_gpz_support_34/SPR_chaos_gpz_support_34.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_support_0A",
-        "path": "sprites/SPR_chaos_gpz_support_0A/SPR_chaos_gpz_support_0A.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_gpz_boss_51",
-        "path": "sprites/SPR_chaos_gpz_boss_51/SPR_chaos_gpz_boss_51.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_gpz_enemy_data",
-        "path": "scripts/SCR_chaos_gpz_enemy_data/SCR_chaos_gpz_enemy_data.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_object_25",
-        "path": "objects/OBJ_chaos_object_25/OBJ_chaos_object_25.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_object_2C",
-        "path": "objects/OBJ_chaos_object_2C/OBJ_chaos_object_2C.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_object_2F",
-        "path": "objects/OBJ_chaos_object_2F/OBJ_chaos_object_2F.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_gpz_smoke_0F",
-        "path": "objects/OBJ_chaos_gpz_smoke_0F/OBJ_chaos_gpz_smoke_0F.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_gpz_enemy",
-        "path": "scripts/SCR_chaos_gpz_enemy/SCR_chaos_gpz_enemy.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_gpz_boss_data",
-        "path": "scripts/SCR_chaos_gpz_boss_data/SCR_chaos_gpz_boss_data.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_gpz_boss",
-        "path": "scripts/SCR_chaos_gpz_boss/SCR_chaos_gpz_boss.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_object_51",
-        "path": "objects/OBJ_chaos_object_51/OBJ_chaos_object_51.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz1_terrain_0",
-        "path": "sprites/SPR_chaos_mghz1_terrain_0/SPR_chaos_mghz1_terrain_0.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz1_terrain_1",
-        "path": "sprites/SPR_chaos_mghz1_terrain_1/SPR_chaos_mghz1_terrain_1.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz1_terrain_2",
-        "path": "sprites/SPR_chaos_mghz1_terrain_2/SPR_chaos_mghz1_terrain_2.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz1_terrain_3",
-        "path": "sprites/SPR_chaos_mghz1_terrain_3/SPR_chaos_mghz1_terrain_3.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_mghz1_terrain",
-        "path": "objects/OBJ_chaos_mghz1_terrain/OBJ_chaos_mghz1_terrain.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "ROM_chaos_mghz1",
-        "path": "rooms/ROM_chaos_mghz1/ROM_chaos_mghz1.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz2_terrain_0",
-        "path": "sprites/SPR_chaos_mghz2_terrain_0/SPR_chaos_mghz2_terrain_0.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz2_terrain_1",
-        "path": "sprites/SPR_chaos_mghz2_terrain_1/SPR_chaos_mghz2_terrain_1.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz2_terrain_2",
-        "path": "sprites/SPR_chaos_mghz2_terrain_2/SPR_chaos_mghz2_terrain_2.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz2_terrain_3",
-        "path": "sprites/SPR_chaos_mghz2_terrain_3/SPR_chaos_mghz2_terrain_3.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_mghz2_terrain",
-        "path": "objects/OBJ_chaos_mghz2_terrain/OBJ_chaos_mghz2_terrain.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "ROM_chaos_mghz2",
-        "path": "rooms/ROM_chaos_mghz2/ROM_chaos_mghz2.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz3_terrain_0",
-        "path": "sprites/SPR_chaos_mghz3_terrain_0/SPR_chaos_mghz3_terrain_0.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz3_terrain_1",
-        "path": "sprites/SPR_chaos_mghz3_terrain_1/SPR_chaos_mghz3_terrain_1.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz3_terrain_2",
-        "path": "sprites/SPR_chaos_mghz3_terrain_2/SPR_chaos_mghz3_terrain_2.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz3_terrain_3",
-        "path": "sprites/SPR_chaos_mghz3_terrain_3/SPR_chaos_mghz3_terrain_3.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_mghz3_terrain",
-        "path": "objects/OBJ_chaos_mghz3_terrain/OBJ_chaos_mghz3_terrain.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "ROM_chaos_mghz3",
-        "path": "rooms/ROM_chaos_mghz3/ROM_chaos_mghz3.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_block_9b",
-        "path": "sprites/SPR_chaos_mghz_block_9b/SPR_chaos_mghz_block_9b.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_block_9c",
-        "path": "sprites/SPR_chaos_mghz_block_9c/SPR_chaos_mghz_block_9c.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_block_9d",
-        "path": "sprites/SPR_chaos_mghz_block_9d/SPR_chaos_mghz_block_9d.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_foreground",
-        "path": "sprites/SPR_chaos_mghz_foreground/SPR_chaos_mghz_foreground.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_platform",
-        "path": "sprites/SPR_chaos_mghz_platform/SPR_chaos_mghz_platform.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_ring",
-        "path": "sprites/SPR_chaos_mghz_ring/SPR_chaos_mghz_ring.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_terrain_ring",
-        "path": "sprites/SPR_chaos_mghz_terrain_ring/SPR_chaos_mghz_terrain_ring.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_spring",
-        "path": "sprites/SPR_chaos_mghz_spring/SPR_chaos_mghz_spring.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_spike",
-        "path": "sprites/SPR_chaos_mghz_spike/SPR_chaos_mghz_spike.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_poof",
-        "path": "sprites/SPR_chaos_mghz_poof/SPR_chaos_mghz_poof.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_sign",
-        "path": "sprites/SPR_chaos_mghz_sign/SPR_chaos_mghz_sign.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_monitor_01",
-        "path": "sprites/SPR_chaos_mghz_monitor_01/SPR_chaos_mghz_monitor_01.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_monitor_02",
-        "path": "sprites/SPR_chaos_mghz_monitor_02/SPR_chaos_mghz_monitor_02.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_monitor_06",
-        "path": "sprites/SPR_chaos_mghz_monitor_06/SPR_chaos_mghz_monitor_06.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_mghz_data",
-        "path": "scripts/SCR_chaos_mghz_data/SCR_chaos_mghz_data.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_palette_11",
-        "path": "sprites/SPR_chaos_mghz_palette_11/SPR_chaos_mghz_palette_11.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_palette_11_front",
-        "path": "sprites/SPR_chaos_mghz_palette_11_front/SPR_chaos_mghz_palette_11_front.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_palette_4",
-        "path": "sprites/SPR_chaos_mghz_palette_4/SPR_chaos_mghz_palette_4.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_palette_4_front",
-        "path": "sprites/SPR_chaos_mghz_palette_4_front/SPR_chaos_mghz_palette_4_front.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_strip",
-        "path": "sprites/SPR_chaos_mghz_strip/SPR_chaos_mghz_strip.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_strip_front",
-        "path": "sprites/SPR_chaos_mghz_strip_front/SPR_chaos_mghz_strip_front.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_mghz_effects",
-        "path": "scripts/SCR_chaos_mghz_effects/SCR_chaos_mghz_effects.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_blocks",
-        "path": "sprites/SPR_chaos_mghz_blocks/SPR_chaos_mghz_blocks.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_object_21",
-        "path": "sprites/SPR_chaos_mghz_object_21/SPR_chaos_mghz_object_21.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_spring_shoes",
-        "path": "sprites/SPR_chaos_mghz_spring_shoes/SPR_chaos_mghz_spring_shoes.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_monitor_04",
-        "path": "sprites/SPR_chaos_mghz_monitor_04/SPR_chaos_mghz_monitor_04.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_object_24",
-        "path": "sprites/SPR_chaos_mghz_object_24/SPR_chaos_mghz_object_24.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_object_2E",
-        "path": "sprites/SPR_chaos_mghz_object_2E/SPR_chaos_mghz_object_2E.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_mghz_m3",
-        "path": "scripts/SCR_chaos_mghz_m3/SCR_chaos_mghz_m3.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_boss_56",
-        "path": "sprites/SPR_chaos_mghz_boss_56/SPR_chaos_mghz_boss_56.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_boss_56_flash",
-        "path": "sprites/SPR_chaos_mghz_boss_56_flash/SPR_chaos_mghz_boss_56_flash.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_boss_puff_34",
-        "path": "sprites/SPR_chaos_mghz_boss_puff_34/SPR_chaos_mghz_boss_puff_34.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_boss_sparkle_0A",
-        "path": "sprites/SPR_chaos_mghz_boss_sparkle_0A/SPR_chaos_mghz_boss_sparkle_0A.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_mghz_boss_data",
-        "path": "scripts/SCR_chaos_mghz_boss_data/SCR_chaos_mghz_boss_data.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_mghz_boss",
-        "path": "scripts/SCR_chaos_mghz_boss/SCR_chaos_mghz_boss.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_object_56",
-        "path": "objects/OBJ_chaos_object_56/OBJ_chaos_object_56.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_mghz_boss_poof_0F",
-        "path": "sprites/SPR_chaos_mghz_boss_poof_0F/SPR_chaos_mghz_boss_poof_0F.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez1_terrain_0",
-        "path": "sprites/SPR_chaos_sez1_terrain_0/SPR_chaos_sez1_terrain_0.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez1_terrain_1",
-        "path": "sprites/SPR_chaos_sez1_terrain_1/SPR_chaos_sez1_terrain_1.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez1_terrain_2",
-        "path": "sprites/SPR_chaos_sez1_terrain_2/SPR_chaos_sez1_terrain_2.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez1_terrain_3",
-        "path": "sprites/SPR_chaos_sez1_terrain_3/SPR_chaos_sez1_terrain_3.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_sez1_terrain",
-        "path": "objects/OBJ_chaos_sez1_terrain/OBJ_chaos_sez1_terrain.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "ROM_chaos_sez1",
-        "path": "rooms/ROM_chaos_sez1/ROM_chaos_sez1.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez2_terrain_0",
-        "path": "sprites/SPR_chaos_sez2_terrain_0/SPR_chaos_sez2_terrain_0.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez2_terrain_1",
-        "path": "sprites/SPR_chaos_sez2_terrain_1/SPR_chaos_sez2_terrain_1.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez2_terrain_2",
-        "path": "sprites/SPR_chaos_sez2_terrain_2/SPR_chaos_sez2_terrain_2.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez2_terrain_3",
-        "path": "sprites/SPR_chaos_sez2_terrain_3/SPR_chaos_sez2_terrain_3.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_sez2_terrain",
-        "path": "objects/OBJ_chaos_sez2_terrain/OBJ_chaos_sez2_terrain.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "ROM_chaos_sez2",
-        "path": "rooms/ROM_chaos_sez2/ROM_chaos_sez2.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez3_terrain_0",
-        "path": "sprites/SPR_chaos_sez3_terrain_0/SPR_chaos_sez3_terrain_0.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez3_terrain_1",
-        "path": "sprites/SPR_chaos_sez3_terrain_1/SPR_chaos_sez3_terrain_1.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez3_terrain_2",
-        "path": "sprites/SPR_chaos_sez3_terrain_2/SPR_chaos_sez3_terrain_2.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez3_terrain_3",
-        "path": "sprites/SPR_chaos_sez3_terrain_3/SPR_chaos_sez3_terrain_3.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "OBJ_chaos_sez3_terrain",
-        "path": "objects/OBJ_chaos_sez3_terrain/OBJ_chaos_sez3_terrain.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "ROM_chaos_sez3",
-        "path": "rooms/ROM_chaos_sez3/ROM_chaos_sez3.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_block_46",
-        "path": "sprites/SPR_chaos_sez_block_46/SPR_chaos_sez_block_46.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_block_47",
-        "path": "sprites/SPR_chaos_sez_block_47/SPR_chaos_sez_block_47.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_block_9b",
-        "path": "sprites/SPR_chaos_sez_block_9b/SPR_chaos_sez_block_9b.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_block_9c",
-        "path": "sprites/SPR_chaos_sez_block_9c/SPR_chaos_sez_block_9c.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_block_9d",
-        "path": "sprites/SPR_chaos_sez_block_9d/SPR_chaos_sez_block_9d.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_foreground",
-        "path": "sprites/SPR_chaos_sez_foreground/SPR_chaos_sez_foreground.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_platform",
-        "path": "sprites/SPR_chaos_sez_platform/SPR_chaos_sez_platform.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_ring",
-        "path": "sprites/SPR_chaos_sez_ring/SPR_chaos_sez_ring.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_terrain_ring",
-        "path": "sprites/SPR_chaos_sez_terrain_ring/SPR_chaos_sez_terrain_ring.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_spring",
-        "path": "sprites/SPR_chaos_sez_spring/SPR_chaos_sez_spring.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_spike",
-        "path": "sprites/SPR_chaos_sez_spike/SPR_chaos_sez_spike.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_poof",
-        "path": "sprites/SPR_chaos_sez_poof/SPR_chaos_sez_poof.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_sign",
-        "path": "sprites/SPR_chaos_sez_sign/SPR_chaos_sez_sign.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_monitor_01",
-        "path": "sprites/SPR_chaos_sez_monitor_01/SPR_chaos_sez_monitor_01.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_monitor_02",
-        "path": "sprites/SPR_chaos_sez_monitor_02/SPR_chaos_sez_monitor_02.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_monitor_04",
-        "path": "sprites/SPR_chaos_sez_monitor_04/SPR_chaos_sez_monitor_04.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_monitor_06",
-        "path": "sprites/SPR_chaos_sez_monitor_06/SPR_chaos_sez_monitor_06.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_sez_data",
-        "path": "scripts/SCR_chaos_sez_data/SCR_chaos_sez_data.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_blocks",
-        "path": "sprites/SPR_chaos_sez_blocks/SPR_chaos_sez_blocks.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_effect5",
-        "path": "sprites/SPR_chaos_sez_effect5/SPR_chaos_sez_effect5.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_effect5_front",
-        "path": "sprites/SPR_chaos_sez_effect5_front/SPR_chaos_sez_effect5_front.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_puff",
-        "path": "sprites/SPR_chaos_sez_puff/SPR_chaos_sez_puff.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_ring_sparkle",
-        "path": "sprites/SPR_chaos_sez_ring_sparkle/SPR_chaos_sez_ring_sparkle.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_shard",
-        "path": "sprites/SPR_chaos_sez_shard/SPR_chaos_sez_shard.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_sparkle",
-        "path": "sprites/SPR_chaos_sez_sparkle/SPR_chaos_sez_sparkle.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_spring_shoes",
-        "path": "sprites/SPR_chaos_sez_spring_shoes/SPR_chaos_sez_spring_shoes.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_sez_effects",
-        "path": "scripts/SCR_chaos_sez_effects/SCR_chaos_sez_effects.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_sez_s2_data",
-        "path": "scripts/SCR_chaos_sez_s2_data/SCR_chaos_sez_s2_data.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_sez_s2",
-        "path": "scripts/SCR_chaos_sez_s2/SCR_chaos_sez_s2.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_enemy_20",
-        "path": "sprites/SPR_chaos_sez_enemy_20/SPR_chaos_sez_enemy_20.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_enemy_20_conv",
-        "path": "sprites/SPR_chaos_sez_enemy_20_conv/SPR_chaos_sez_enemy_20_conv.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_enemy_23",
-        "path": "sprites/SPR_chaos_sez_enemy_23/SPR_chaos_sez_enemy_23.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_sez_enemy",
-        "path": "scripts/SCR_chaos_sez_enemy/SCR_chaos_sez_enemy.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_boss_54",
-        "path": "sprites/SPR_chaos_sez_boss_54/SPR_chaos_sez_boss_54.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_boss_54_flash",
-        "path": "sprites/SPR_chaos_sez_boss_54_flash/SPR_chaos_sez_boss_54_flash.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_boss_55",
-        "path": "sprites/SPR_chaos_sez_boss_55/SPR_chaos_sez_boss_55.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_boss_55_flash",
-        "path": "sprites/SPR_chaos_sez_boss_55_flash/SPR_chaos_sez_boss_55_flash.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_sez_boss_data",
-        "path": "scripts/SCR_chaos_sez_boss_data/SCR_chaos_sez_boss_data.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SCR_chaos_sez_boss",
-        "path": "scripts/SCR_chaos_sez_boss/SCR_chaos_sez_boss.yy"
-      }
-    },
-    {
-      "id": {
-        "name": "SPR_chaos_sez_boss_poof",
-        "path": "sprites/SPR_chaos_sez_boss_poof/SPR_chaos_sez_boss_poof.yy"
+        "name": "SCR_chaos_player_animation_data",
+        "path": "scripts/SCR_chaos_player_animation_data/SCR_chaos_player_animation_data.yy"
       }
     }
   ],
@@ -5189,6 +6384,24 @@
       "roomId": {
         "name": "ROM_chaos_sez3",
         "path": "rooms/ROM_chaos_sez3/ROM_chaos_sez3.yy"
+      }
+    },
+    {
+      "roomId": {
+        "name": "ROM_chaos_aqz1",
+        "path": "rooms/ROM_chaos_aqz1/ROM_chaos_aqz1.yy"
+      }
+    },
+    {
+      "roomId": {
+        "name": "ROM_chaos_aqz2",
+        "path": "rooms/ROM_chaos_aqz2/ROM_chaos_aqz2.yy"
+      }
+    },
+    {
+      "roomId": {
+        "name": "ROM_chaos_aqz3",
+        "path": "rooms/ROM_chaos_aqz3/ROM_chaos_aqz3.yy"
       }
     }
   ],
