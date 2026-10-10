@@ -98,6 +98,7 @@ function chaos_level_install_layout() {
         array_copy(global.chaosTileIds,0,cp_ids,0,array_length(cp_ids));
         global.chaosBrokenCells = [];
         global.chaosS2 = chaos_s2_new(); // S2: the layout reload restores every $AF and the level clear ($297E) zeroes the remembered cell $D356 and the object slots
+        global.chaosAqz59=noone;global.chaosAqzBossActive=false;
         global.chaosSez54 = noone;       // S5: the boss controller (placement record, camera limits) is rebuilt by chaos_level_spawn_objects
         global.chaosAqzEnv=chaos_aqz_env_new(chaos_aqz_act());
         chaos_aqz_create_water(global.chaosAqzEnv,global.chaosS2);
@@ -115,6 +116,7 @@ function chaos_level_install_layout() {
         array_copy(global.chaosTileIds,0,cp_ids,0,array_length(cp_ids));
         global.chaosBrokenCells = [];
         global.chaosS2 = chaos_s2_new(); // S2: the layout reload restores every $AF and the level clear ($297E) zeroes the remembered cell $D356 and the object slots
+        global.chaosAqz59=noone;global.chaosAqzBossActive=false;
         global.chaosSez54 = noone;       // S5: the boss controller (placement record, camera limits) is rebuilt by chaos_level_spawn_objects
         return;
     }
@@ -180,6 +182,7 @@ function chaos_level_spawn_objects() {
     global.chaosSkippedByType = array_create(256, 0);
     global.chaosSpawnedIndices = [];
     global.chaosSezEnemies = [];   // S4 enemy records: a room (re)start rebuilds them, so defeated placements return only with the act
+    global.chaosAqz59=noone;global.chaosAqzBossActive=false;
     global.chaosSez54 = noone;     // S5: the SEZ3 boss controller exists only when the act's record is registered below
     var cp_rows = chaos_level_object_rows();
     for (var cp_i = 0; cp_i < array_length(cp_rows); cp_i++) {
@@ -195,6 +198,7 @@ function chaos_level_spawn_objects() {
             chaos_54_register(cp_r); global.chaosSpawnedByType[cp_type]++; array_push(global.chaosSpawnedIndices,cp_r[0]); continue;
         }
         if (chaos_is_sez() && (cp_type == $13 || cp_type == $55 || (cp_type == $28 && cp_r[5] != $83 && cp_r[5] != $84 && cp_r[5] != $86 && cp_r[5] != $04))) { global.chaosSkippedByType[cp_type]++; continue; } // pending: no speculative runtime ($13 is never placed: S2 creates it only from the surface-$0C floor handler, SCR_chaos_sez_s2)
+        if (chaos_aqz_act()==3 && cp_type == $59) {chaos_59_register(cp_r);global.chaosSpawnedByType[cp_type]++;array_push(global.chaosSpawnedIndices,cp_r[0]);continue;}
         if (chaos_is_aqz() && (cp_type == $3C || cp_type == $3D)) {
             chaos_aqz_enemy_register(cp_r);global.chaosSpawnedByType[cp_type]++;array_push(global.chaosSpawnedIndices,cp_r[0]);continue;
         }

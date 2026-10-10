@@ -6273,6 +6273,78 @@
         "name": "SPR_chaos_aqz_enemy_3d",
         "path": "sprites/SPR_chaos_aqz_enemy_3d/SPR_chaos_aqz_enemy_3d.yy"
       }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_aqz_boss",
+        "path": "scripts/SCR_chaos_aqz_boss/SCR_chaos_aqz_boss.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SCR_chaos_aqz_boss_data",
+        "path": "scripts/SCR_chaos_aqz_boss_data/SCR_chaos_aqz_boss_data.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_boss_59",
+        "path": "sprites/SPR_chaos_aqz_boss_59/SPR_chaos_aqz_boss_59.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_boss_59_flash",
+        "path": "sprites/SPR_chaos_aqz_boss_59_flash/SPR_chaos_aqz_boss_59_flash.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_boss_5a",
+        "path": "sprites/SPR_chaos_aqz_boss_5a/SPR_chaos_aqz_boss_5a.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_boss_5a_flash",
+        "path": "sprites/SPR_chaos_aqz_boss_5a_flash/SPR_chaos_aqz_boss_5a_flash.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_boss_5b",
+        "path": "sprites/SPR_chaos_aqz_boss_5b/SPR_chaos_aqz_boss_5b.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_boss_5b_flash",
+        "path": "sprites/SPR_chaos_aqz_boss_5b_flash/SPR_chaos_aqz_boss_5b_flash.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_boss_5c",
+        "path": "sprites/SPR_chaos_aqz_boss_5c/SPR_chaos_aqz_boss_5c.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_boss_5c_flash",
+        "path": "sprites/SPR_chaos_aqz_boss_5c_flash/SPR_chaos_aqz_boss_5c_flash.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_boss_5d",
+        "path": "sprites/SPR_chaos_aqz_boss_5d/SPR_chaos_aqz_boss_5d.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "SPR_chaos_aqz_boss_5d_flash",
+        "path": "sprites/SPR_chaos_aqz_boss_5d_flash/SPR_chaos_aqz_boss_5d_flash.yy"
+      }
     }
   ],
   "resourceType": "GMProject",

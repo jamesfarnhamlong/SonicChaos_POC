@@ -160,6 +160,7 @@ function chaos_s2_phase(cp_c,cp_have) {
     var cp_b=chaos_s2_state(),cp_vp=chaos_vp_current(),cp_hold=false;
     chaos_s2_ring_bridge(cp_b);
     cp_b.passes++;
+    var cp_boss59=chaos_59_pass_begin(cp_vp);
     var cp_boss=chaos_54_pass_begin(cp_vp);                                   // S5: SEZ3 boss $54 chain (noone in every other act)
     for (var cp_i=0;cp_i<19;cp_i++) {
         var cp_s=cp_b.slots[cp_i];
@@ -169,6 +170,7 @@ function chaos_s2_phase(cp_c,cp_have) {
             continue;
         }
         if (variable_struct_exists(cp_s,"enemy") && cp_s.enemy) { chaos_aqz_enemy_visit(global.chaosAqzEnv,cp_b,cp_s,cp_c,cp_have,cp_vp);continue; }
+        if (variable_struct_exists(cp_s,"boss59") && cp_s.boss59) {if (cp_boss59 != noone) chaos_59_visit(cp_boss59,cp_b,cp_i,cp_c,cp_have,cp_vp);continue;}
         if (cp_s.boss) {                                                       // boss, $55 children, $12 / $34 / $0A / $0F support: one ascending pass with the slots around them
             if (cp_boss != noone) { chaos_54_visit(cp_boss,cp_b,cp_i,cp_c,cp_have,cp_vp); if (cp_have) cp_hold=true; }
             continue;
@@ -183,6 +185,7 @@ function chaos_s2_phase(cp_c,cp_have) {
         if (cp_s.type != $13) continue;   // occupancy-only placeholders (fixtures) are never run
         if (chaos_s2_step13(cp_b,cp_s,cp_i,cp_c,cp_have,cp_vp)) cp_hold=true;
     }
+    if (cp_boss59 != noone) {chaos_59_pass_end(cp_boss59,cp_b,cp_c,cp_have,cp_vp);if (cp_boss59.active && cp_have) cp_hold=true;}
     if (cp_boss != noone) { chaos_54_pass_end(cp_boss,cp_b,cp_c,cp_have,cp_vp); if (cp_boss.active && cp_have) cp_hold=true; }   // contact may have projected Sonic: the caller republishes the core
     return cp_hold;
 }

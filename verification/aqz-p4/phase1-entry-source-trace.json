@@ -1,0 +1,281 @@
+{
+  "source": "boss-59-game-checks.json passive_children; approved opaque bounds",
+  "children": [
+    {
+      "slot": 55104,
+      "allocation": {
+        "u": 106,
+        "camera": [
+          1446,
+          136
+        ],
+        "position": [
+          2048,
+          238,
+          0,
+          0
+        ]
+      },
+      "first_move": {
+        "u": 107,
+        "camera": [
+          1447,
+          135
+        ],
+        "position": [
+          2047,
+          236,
+          128,
+          20
+        ]
+      },
+      "visible": {
+        "u": 335,
+        "camera": [
+          1675,
+          78
+        ],
+        "position": [
+          1933,
+          215,
+          128,
+          240
+        ],
+        "opaque": [
+          254,
+          261
+        ]
+      }
+    },
+    {
+      "slot": 55168,
+      "allocation": {
+        "u": 170,
+        "camera": [
+          1510,
+          78
+        ],
+        "position": [
+          2048,
+          238,
+          0,
+          0
+        ]
+      },
+      "first_move": {
+        "u": 171,
+        "camera": [
+          1511,
+          78
+        ],
+        "position": [
+          2047,
+          236,
+          128,
+          20
+        ]
+      },
+      "visible": {
+        "u": 356,
+        "camera": [
+          1696,
+          78
+        ],
+        "position": [
+          1955,
+          219,
+          0,
+          72
+        ],
+        "opaque": [
+          255,
+          262
+        ]
+      }
+    },
+    {
+      "slot": 55232,
+      "allocation": {
+        "u": 234,
+        "camera": [
+          1574,
+          78
+        ],
+        "position": [
+          2048,
+          238,
+          0,
+          0
+        ]
+      },
+      "first_move": {
+        "u": 235,
+        "camera": [
+          1575,
+          78
+        ],
+        "position": [
+          2047,
+          236,
+          128,
+          20
+        ]
+      },
+      "visible": {
+        "u": 377,
+        "camera": [
+          1717,
+          78
+        ],
+        "position": [
+          1976,
+          225,
+          128,
+          192
+        ],
+        "opaque": [
+          255,
+          262
+        ]
+      }
+    },
+    {
+      "slot": 55296,
+      "allocation": {
+        "u": 298,
+        "camera": [
+          1638,
+          78
+        ],
+        "position": [
+          2048,
+          238,
+          0,
+          0
+        ]
+      },
+      "first_move": {
+        "u": 299,
+        "camera": [
+          1639,
+          78
+        ],
+        "position": [
+          2047,
+          236,
+          128,
+          20
+        ]
+      },
+      "visible": {
+        "u": 421,
+        "camera": [
+          1727,
+          78
+        ],
+        "position": [
+          1986,
+          214,
+          128,
+          248
+        ],
+        "opaque": [
+          255,
+          262
+        ]
+      }
+    },
+    {
+      "slot": 55360,
+      "allocation": {
+        "u": 362,
+        "camera": [
+          1702,
+          78
+        ],
+        "position": [
+          2048,
+          238,
+          0,
+          0
+        ]
+      },
+      "first_move": {
+        "u": 363,
+        "camera": [
+          1703,
+          78
+        ],
+        "position": [
+          2047,
+          236,
+          128,
+          20
+        ]
+      },
+      "visible": {
+        "u": 485,
+        "camera": [
+          1727,
+          78
+        ],
+        "position": [
+          1986,
+          214,
+          128,
+          248
+        ],
+        "opaque": [
+          255,
+          262
+        ]
+      }
+    },
+    {
+      "slot": 55424,
+      "allocation": {
+        "u": 426,
+        "camera": [
+          1727,
+          78
+        ],
+        "position": [
+          2048,
+          238,
+          0,
+          0
+        ]
+      },
+      "first_move": {
+        "u": 427,
+        "camera": [
+          1727,
+          78
+        ],
+        "position": [
+          2047,
+          236,
+          128,
+          20
+        ]
+      },
+      "visible": {
+        "u": 549,
+        "camera": [
+          1727,
+          78
+        ],
+        "position": [
+          1986,
+          214,
+          128,
+          248
+        ],
+        "opaque": [
+          255,
+          262
+        ]
+      }
+    }
+  ]
+}

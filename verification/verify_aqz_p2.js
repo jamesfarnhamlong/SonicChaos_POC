@@ -43,7 +43,7 @@ for(const v of D.callback_support){
 // Natural placements from the real loader, with original scheduler phase order.
 for(const act of [1,2,3]){
  enter(act);c.chaos_level_spawn_objects();eq(w.platforms.filter(o=>o.chaosType3f).length,act===1?2:act===2?1:0);
- eq(g.chaosSpawnedByType[60]||0,act===1?8:act===2?3:0,'P3 3C census');eq(g.chaosSpawnedByType[61]||0,act===1?9:act===2?10:0,'P3 3D census');eq(g.chaosSpawnedByType[89]||0,0,'P4 remains absent');
+ eq(g.chaosSpawnedByType[60]||0,act===1?8:act===2?3:0,'P3 3C census');eq(g.chaosSpawnedByType[61]||0,act===1?9:act===2?10:0,'P3 3D census');eq(g.chaosSpawnedByType[89]||0,act===3?1:0,'P4 mapped boss census');
 }
 // Supplemental original-ROM controls for interrupted sag and staged flags.
 const EXTRA=JSON.parse(fs.readFileSync(path.join(root,'verification/aqz-p2/extra-rom-controls.json')));

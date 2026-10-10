@@ -8,8 +8,8 @@ const census=JSON.parse(fs.readFileSync(path.join(root,'POC_notes/rom-cache/aqz/
 for(let act=1;act<=3;act++){
  h.reset();c.room=c['ROM_chaos_aqz'+act];const a=manifest.acts['aqz'+act];w.roomWidth=a.dimensions_pixels[0];w.roomHeight=a.dimensions_pixels[1];w.cam={x:0,y:a.descriptor.start.ram_d2d8,w:256,h:192};
  c.chaos_level_install_layout();c.chaos_level_apply_loops();c.chaos_level_spawn_objects();eq(g.chaosMapWidth,a.dimensions_cells[0]);
- const records=census.acts['aqz'+act].records;const active=records.filter(r=>['0x0C','0x10','0x18','0x30','0x3F','0x3C','0x3D'].includes(r.type_id));eq(g.chaosSpawnedIndices,active.map(r=>r.index));
- for(const t of [0x59])eq(g.chaosSkippedByType[t],records.filter(r=>parseInt(r.type_id,16)===t).length);
+ const records=census.acts['aqz'+act].records;const active=records.filter(r=>['0x0C','0x10','0x18','0x30','0x3F','0x3C','0x3D','0x59'].includes(r.type_id));eq(g.chaosSpawnedIndices,active.map(r=>r.index));
+ if(act===3)eq(g.chaosAqz59.record[1],1856);
  const p=h.newPlayer(a.descriptor.start.ram_d511,a.descriptor.start.ram_d514,{state:5,move:0});eq(p.chaosCore.zone,4);
  const initialControllers=g.chaosS2.slots.filter(s=>s.type===13).length;eq(initialControllers,act===3?0:2);
  for(let i=0;i<3;i++)h.frame({right:true});eq(g.chaosAqzEnv.calls,act===3?0:3);eq(g.chaosAqzEnv.line,act===3?0:act===1?568:788);

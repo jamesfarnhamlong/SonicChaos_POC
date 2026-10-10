@@ -50,6 +50,12 @@ def main():
     source=source.replace("        full = Image.new('RGBA',tuple(act['dimensions_pixels']))", "        blocks[176]=Image.new('RGBA',(32,32))\n        full = Image.new('RGBA',tuple(act['dimensions_pixels']))")
     source=source.replace("(ROOT/'objects'/obj/'Draw_0.gml').write_text('\\n'.join(draws)+'\\n')", "(ROOT/'objects'/obj/'Draw_0.gml').write_text('chaos_aqz_palette_begin(false);\\n'+'\\n'.join(draws)+'\\nchaos_aqz_palette_end();\\n')")
     source=source.replace('        draws = []',"        draws = ['draw_set_color(make_color_rgb('+','.join(str(c) for c in bg[0][:3])+'));','var cp_cam=view_camera[0];','draw_rectangle(camera_get_view_x(cp_cam),camera_get_view_y(cp_cam),camera_get_view_x(cp_cam)+camera_get_view_width(cp_cam),camera_get_view_y(cp_cam)+camera_get_view_height(cp_cam),false);','draw_set_color(c_white);']")
+    # P4 I2: all AQZ acts VDP R7=0, CRAM16=$10, including water splits. Paint backdrop before indexed shader;
+    # texture decoding cannot decode a vertex-only make_color_rgb(1,1,1) tint.
+    needle="(ROOT/'objects'/obj/'Draw_0.gml').write_text('chaos_aqz_palette_begin(false);\\n'+'\\n'.join(draws)+'\\nchaos_aqz_palette_end();\\n')"
+    replacement="(ROOT/'objects'/obj/'Draw_0.gml').write_text(('\\n'.join([draws[0].replace('make_color_rgb(1,1,1)','make_color_rgb(0,0,85)')]+draws[1:4])+ '\\nchaos_aqz_palette_begin(false);\\n'+'\\n'.join(draws[4:])+'\\nchaos_aqz_palette_end();\\n') if key in ('aqz1','aqz2','aqz3') else ('chaos_aqz_palette_begin(false);\\n'+'\\n'.join(draws)+'\\nchaos_aqz_palette_end();\\n'))"
+    source=source.replace(needle,replacement)
+
     start=source.index("        draws.append('for (var cp_cell")
     end=source.index('        obj =',start);source=source[:start]+"        draws.append('chaos_aqz_terrain_dynamic(false);')\n"+source[end:]
     source=source.replace('for b in (70,71,157):','for b in (70,71,155,156,157):')

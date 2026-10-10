@@ -182,7 +182,7 @@ function SCR_chaos_adapter_step(cp_p) {
     }
     // Original player edge clamp, active between sign contact and state $20: EDGE(LEFT,+16)..EDGE(RIGHT,-9) of the live view as
     // full-width integers (GameMaker adapter; the ROM's 8-bit low-byte clamp is not reproduced, see chaos_goal_clamp_player).
-    if ((global.chaosGoalContact || (chaos_gpz_act()==3 && instance_exists(OBJ_chaos_object_51) && instance_find(OBJ_chaos_object_51,0).chaosBoss51.active) || chaos_56_owns_camera() || chaos_54_owns_camera()) && cp_c.state != 32 && cp_c.next != 32) {
+    if ((global.chaosGoalContact || (chaos_gpz_act()==3 && instance_exists(OBJ_chaos_object_51) && instance_find(OBJ_chaos_object_51,0).chaosBoss51.active) || chaos_56_owns_camera() || chaos_54_owns_camera() || chaos_59_owns_camera()) && cp_c.state != 32 && cp_c.next != 32) {
         var cp_clamp = chaos_goal_clamp_player(chaos_vp_current(), cp_c.xu, cp_c.vx);
         cp_c.xu = cp_clamp.xu; cp_c.vx = cp_clamp.vx;
     }

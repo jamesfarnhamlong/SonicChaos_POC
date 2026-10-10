@@ -37,7 +37,9 @@ base='d4705ce63ddafcfcab663c5bc75da493cdd297bd'
 for folder in ['SCR_chaos_core','SCR_chaos_adapter','SCR_chaos_motion','SCR_chaos_spring','SCR_chaos_player_animation','SCR_chaos_player_animation_data','SCR_chaos_terrain_ring','SCR_chaos_anim_counter','SCR_chaos_aqz_data','SCR_chaos_aqz_environment_data','SCR_chaos_debug_select','SCR_chaos_platform']:
     for p in (ROOT/'scripts'/folder).glob('*'):
         rel=p.relative_to(ROOT).as_posix();before=subprocess.check_output(['git','show',base+':'+rel],cwd=ROOT)
-        eq(p.read_bytes().replace(b'\r\n',b'\n'),before.replace(b'\r\n',b'\n'))
+        actual=p.read_bytes().replace(b'\r\n',b'\n')
+        if folder=='SCR_chaos_adapter':actual=actual.replace(b' || chaos_59_owns_camera()',b'').replace(b'var cp_clamp = chaos_59_owns_camera() ? chaos_59_clamp_player(chaos_59_state(),chaos_vp_current(),cp_c.xu,cp_c.vx) : chaos_goal_clamp_player(chaos_vp_current(), cp_c.xu, cp_c.vx);',b'var cp_clamp = chaos_goal_clamp_player(chaos_vp_current(), cp_c.xu, cp_c.vx);')
+        eq(actual,before.replace(b'\r\n',b'\n'))
 for act in [1,2,3]:
     for p in (ROOT/'rooms'/('ROM_chaos_aqz'+str(act))).glob('*'):
         rel=p.relative_to(ROOT).as_posix();before=subprocess.check_output(['git','show',base+':'+rel],cwd=ROOT)

@@ -1,0 +1,24 @@
+const fs=require('fs'),vm=require('vm'),cp=require('child_process'),assert=require('assert'),{loadHost,hex,root}=require('./chaos_world_harness');let checks=0;const yes=(x,m)=>{assert(x,m);checks++};
+function deathRun(old){
+ const h=loadHost(),c=h.ctx,g=h.g,w=h.world;
+ if(old){const script=cp.execFileSync('..\\sonic-chaos-reference-work\\.venv\\Scripts\\python.exe',['-c',"import zipfile;z=zipfile.ZipFile('../releases/SonicChaos_AQZ_P4_20261010_H.zip');print(z.read('SonicChaos_AQZ_P4_20261010_H/scripts/SCR_chaos_aqz_boss/SCR_chaos_aqz_boss.gml').decode())"],{cwd:root,encoding:'utf8'});vm.runInContext(hex(script),c);}
+ // GML rejects field access on noone; JS normally masks this as undefined.
+ vm.runInContext('Object.defineProperty(Number.prototype,"xu",{get(){throw new Error("GML noone.xu dereference")}})',c);
+ h.reset();c.room=c.ROM_chaos_aqz3;w.roomWidth=2560;w.roomHeight=512;w.follow=false;w.cam={x:1727,y:78,w:348,h:196};c.chaos_level_install_layout();
+ const b=c.chaos_59_new(),s=c.chaos_59_slot(89,0,1856,141,1);g.chaosAqz59=b;Object.assign(b,{active:true,camera_mode:3,pan_x:1728,pan_y:78});Object.assign(s,{state:14,requested:14,counter:16,keep:true,frame:10,ex:20,ey:32});g.chaosS2.slots[7]=s;
+ const p=h.newPlayer(1743,238,{state:1,move:0,bg:2,contacts:2});if(old)c.chaos_59_salvo_begin(s,p.chaosCore,c.chaos_vp_current());else{c.chaos_59_target_snapshot(b,p.chaosCore,true);c.chaos_59_salvo_begin(b,s,c.chaos_vp_current());}
+ const change=c.instance_change;c.instance_change=(type,perform)=>{change(type,perform);p.object_index=type;};
+ const cb=c.chaos_59_callback;const absent=[];c.chaos_59_callback=function(b,p,s,pc,k,present,v){if(!present&&s.type===89)absent.push({update:b.tick,callback:pc,state:s.state,request:s.requested,k});return cb(b,p,s,pc,k,present,v);};
+ let error=null,u=0;try{for(;u<1100;u++)h.frame({});}catch(e){error=e.message;}
+ return {old,error,u,dead:p.dead,lastSnapshot:b.target_xu,snapshotTick:b.target_tick,absent:absent.filter(a=>a.callback===0xABCB||a.callback===0xAB8D)};
+}
+const old=deathRun(true),fixed=deathRun(false);yes(old.error==='GML noone.xu dereference','archived H reproduces natural post-death callback crash');yes(old.absent.some(a=>a.callback===0xABCB&&a.k===-4),'actual absent-player scheduler path reaches ABCB');yes(fixed.dead&&!fixed.error&&fixed.u===1100,'I continues natural scheduler after player instance changes to death');yes(fixed.absent.length>0&&fixed.lastSnapshot>=1743*256,'valid player snapshot retained rather than X0 fallback');
+const h=loadHost(),c=h.ctx,w=h.world,g=h.g,entry=[];
+for(const W of [256,348]){h.reset();c.room=c.ROM_chaos_aqz3;w.cam={x:1727,y:78,w:W,h:196};c.chaos_level_install_layout();const b=c.chaos_59_new(),s=c.chaos_59_slot(89,0,1856,14,0);Object.assign(s,{state:7,requested:7,field34:0,counter:0,keep:true});g.chaosS2.slots[7]=s;g.chaosAqz59=b;const k=c.SCR_cc_new(2000,238),vp=c.chaos_vp_current();c.chaos_59_visit(b,g.chaosS2,7,k,true,vp);yes(c.chaos_59_x(s)-1727===(W===256?129:221),'EDGE(RIGHT,-127) main entry');yes(s.saved_x===1856&&s.requested===8,'canonical source retained, original state transition');entry.push({width:W,screenX:c.chaos_59_x(s)-1727,sourceX:s.saved_x});}
+// The other transition: original 5B exits, signals parent, then AB8D starts a
+// salvo while no player instance is available. Last valid snapshot is explicit.
+h.reset();c.room=c.ROM_chaos_aqz3;w.cam={x:1727,y:78,w:348,h:196};c.chaos_level_install_layout();const b=c.chaos_59_new(),s=c.chaos_59_slot(89,0,1856,141,1),k=c.SCR_cc_new(2027,238);g.chaosAqz59=b;g.chaosS2.slots[7]=s;Object.assign(b,{active:true,camera_mode:3});Object.assign(s,{state:13,requested:13,keep:true});c.chaos_59_target_snapshot(b,k,true);const child=c.chaos_59_slot(91,0,1856,0,0);Object.assign(child,{state:1,requested:1,asleep:true,keep:true});g.chaosS2.slots[8]=child;const vp=c.chaos_vp_current();for(let i=0;i<4;i++)c.chaos_s2_phase(c.noone,false);yes(s.requested===14||s.state===14,'5B signal reaches upper start without Sonic');yes(s.salvo_left===92,'absent-player latch uses valid saved X300');
+// A canonical left-only shot releases a capped wide firing waypoint even when
+// it cannot reach Sonic behind the launcher; the next existing jump resumes body approach.
+for(const target of [200,339]){const k=c.SCR_cc_new((1727+target),238);s.wide_route=1;s.xu=(1727+311)*256;s.yu=191*256;c.chaos_59_script_alloc(b,g.chaosS2,s,[0,4,93,-8,-32,0],k,true,vp);const shot=g.chaosS2.slots[b.last_spawn];c.chaos_59_callback(b,g.chaosS2,shot,0xAEE9,k,true,vp);yes(s.wide_route===0&&shot.vx===-576,'left-only shot releases firing waypoint');yes(s.wide_body_x===1727+Math.min(target,311),'body target resumes without an additional hop');}
+fs.mkdirSync(root+'/build/aqz-p4-i',{recursive:true});fs.writeFileSync(root+'/build/aqz-p4-i/flow-results.json',JSON.stringify({status:'PASS',assertions:checks,old,fixed,entry},null,2));console.log({checks,oldCrashUpdate:old.u,fixedUpdates:fixed.u,entry});
